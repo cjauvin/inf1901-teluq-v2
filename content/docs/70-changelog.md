@@ -2,6 +2,10 @@
 title: "Évolution du cours (venez voir de temps en temps!)"
 weight: 70
 slug: changelog
+# Désactivée pour la v2 : ni générée ni listée dans le menu (retirer ce bloc pour la réactiver)
+build:
+  render: never
+  list: never
 ---
 
 # Évolution du cours
