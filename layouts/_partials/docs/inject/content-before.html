@@ -1,0 +1,7 @@
+{{- /* Sur le serveur local seulement : signale les pages des modules pas encore
+       publiés en ligne (voir le cascade en fin de hugo.toml). */ -}}
+{{- if and (not hugo.IsProduction) (findRE `^/docs/module[345](/|$)` .Path) -}}
+<blockquote class="book-hint warning">
+<strong>Module non publié&nbsp;:</strong> visible seulement en local. Cette page n'est pas sur le site en ligne.
+</blockquote>
+{{- end -}}
