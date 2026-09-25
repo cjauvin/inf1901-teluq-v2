@@ -68,10 +68,10 @@
 /**
  * Régression logistique ajustée à la main. La frontière est une droite ; de
  * part et d'autre, le modèle donne une probabilité qui passe en douceur du
- * rouge au bleu (le fond). L'erreur est l'entropie croisée moyenne : un
- * point bien rangé coûte presque rien, un point du mauvais côté coûte
- * d'autant plus qu'il est loin. La meilleure frontière est obtenue par
- * descente de gradient.
+ * rouge au bleu (le fond). L'erreur affichée est la part des points du
+ * mauvais côté : un point bien rangé ne coûte rien. Le modèle choisit de
+ * quel côté mettre le bleu, si bien que l'erreur ne dépasse jamais 50 %.
+ * La meilleure frontière est obtenue par descente de gradient.
  */
 const W = 620, H = 420, PENTE_PROBA = 9;             // raideur de la sigmoïde
 const COUL = { fond: '#fbf7ee', grille: '#e8dfc9', axe: '#b8a888', rouge: '#c4564a', bleu: '#3a6ea5',
@@ -88,11 +88,17 @@ const sigm = z => 1 / (1 + Math.exp(-z));
 function normale() { return { nx: -Math.sin(fr.angle), ny: Math.cos(fr.angle) }; }
 function scoreBrut(x, y) { const { nx, ny } = normale(); return PENTE_PROBA * ((x - fr.cx) * nx + (y - fr.cy) * ny); }
 // Le modèle choisit lui-même de quel côté mettre le bleu : celui qui fait le moins d'erreurs.
-function sens() { return points.reduce((s, p) => s + (p.c ? 1 : -1) * scoreBrut(p.x, p.y), 0) >= 0 ? 1 : -1; }
+function sens() {
+    const malSi = t => points.filter(p => (t * scoreBrut(p.x, p.y) >= 0) !== (p.c === 1)).length;
+    const a = malSi(1), b = malSi(-1);
+    if (a !== b) return a < b ? 1 : -1;
+    return points.reduce((s, p) => s + (p.c ? 1 : -1) * scoreBrut(p.x, p.y), 0) >= 0 ? 1 : -1;
+}
 function proba(x, y, s) { return sigm(s * scoreBrut(x, y)); }
+// L'erreur : la part des points du mauvais côté (f donne la probabilité d'être bleu).
 function erreur(f) {
     if (!points.length) return 0;
-    return points.reduce((t, p) => { const q = Math.min(1 - 1e-6, Math.max(1e-6, f(p.x, p.y))); return t - (p.c ? Math.log(q) : Math.log(1 - q)); }, 0) / points.length;
+    return points.filter(p => (f(p.x, p.y) >= 0.5) !== (p.c === 1)).length / points.length;
 }
 
 function hasard(seed) { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; }
@@ -159,13 +165,13 @@ function dessiner() {
     ctx.beginPath(); ctx.arc(centre.x, centre.y, 9, 0, 7); ctx.fill(); ctx.stroke();
     ctx.fillRect(rotation.x - 7, rotation.y - 7, 14, 14); ctx.strokeRect(rotation.x - 7, rotation.y - 7, 14, 14);
 
-    // jauge : l'erreur, rapportée à celle d'un modèle qui répond toujours « 50 % »
-    const e = erreur((x, y) => proba(x, y, s)), etalon = Math.log(2);
-    const frac = v => Math.min(1, v / (2 * etalon));
+    // jauge : la part des points du mauvais côté ; le haut de la jauge vaut 50 %
+    const e = erreur((x, y) => proba(x, y, s));
+    const frac = v => Math.min(1, v / 0.5);
     document.getElementById('barre').style.height = frac(e) * 100 + '%';
     const rm = document.getElementById('repereMin');
     if (opt) { rm.style.display = ''; rm.style.bottom = frac(erreur(opt.f)) * 100 + '%'; } else rm.style.display = 'none';
-    document.getElementById('valeur').textContent = points.length ? e.toFixed(2).replace('.', ',') : '–';
+    document.getElementById('valeur').textContent = points.length ? Math.round(e * 100) + '\u00a0%' : '–';
     document.getElementById('malclasses').textContent = points.length ? `${mal} point${mal > 1 ? 's' : ''} du mauvais côté` : '';
 }
 function mel(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
