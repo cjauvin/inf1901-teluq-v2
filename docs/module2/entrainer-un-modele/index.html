@@ -39,7 +39,7 @@ juste assez pour capturer une <em>tendance</em> : une direction et une hauteur.
 m et b, et vous obtenez une autre droite, donc un autre modèle. Tout le jeu va
 consister à trouver le bon couple (m, b) : celui de la droite qui épouse le mieux
 le nuage.</p><p>Essayez vous-même. Dans l&rsquo;applet ci-dessous, déplacez la droite (vous ajustez
-ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1790370910033025487 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez forcément cherché à « bien » la placer. Mais
+ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1790370937042045460 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez forcément cherché à « bien » la placer. Mais
 qu&rsquo;est-ce que « bien », au juste ? Il nous faut une mesure, et nous l&rsquo;avons déjà
 croisée, avec le modèle le plus bête, sans lui donner encore de définition précise : l&rsquo;<strong>erreur</strong>.</p><p>Pour une droite donnée, l&rsquo;erreur sur une maison, c&rsquo;est l&rsquo;écart entre le prix que
 la droite <em>prédit</em> (le point de la droite à la verticale de cette maison) et son
@@ -60,7 +60,7 @@ plus possible.)</p><p>Une jolie façon de <em>sentir</em> cette erreur : imagin
 la droite par un petit ressort vertical. Un point éloigné tire fort ; un point
 proche, à peine. La meilleure droite est celle où tous ces ressorts, tirant
 chacun de leur côté, s&rsquo;équilibrent : la position de moindre tension. C&rsquo;est
-<em>exactement</em> la droite de plus petite erreur. Jouez avec :</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1790370910033706873 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite idéale à la main, comme dans l&rsquo;applet, reste faisable en
+<em>exactement</em> la droite de plus petite erreur. Jouez avec :</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1790370937043027742 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite idéale à la main, comme dans l&rsquo;applet, reste faisable en
 deux dimensions. Mais comment une machine y parvient-elle <em>seule</em>, et même quand
 il n&rsquo;y a plus deux paramètres, mais des milliers ? C&rsquo;est la dernière pièce, et la
 plus belle.</p><h2 id=apprendre-cest-descendre-la-pente>Apprendre, c&rsquo;est descendre la pente<a class=anchor href=#apprendre-cest-descendre-la-pente></a></h2><p>Voici l&rsquo;idée maîtresse, celle qui, sous une forme ou une autre, fait tourner

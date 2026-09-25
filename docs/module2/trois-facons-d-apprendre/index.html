@@ -65,7 +65,7 @@ séparées par du vide.</p><p>L&rsquo;algorithme classique pour cela s&rsquo;app
 image : pour organiser une fête, vous voulez répartir les invités autour de $k$
 tables, en plaçant chaque table au centre de son petit groupe, pour que chacun
 soit au plus près de la sienne. k-means fait exactement cela, par tâtonnements :</p><ol><li>placer $k$ « centres » au hasard ;</li><li>rattacher chaque point au centre le plus proche (voilà les groupes provisoires) ;</li><li>déplacer chaque centre au milieu de son groupe ;</li><li>répéter les étapes 2 et 3 jusqu&rsquo;à ce que plus rien ne bouge.</li></ol><p>Essayez : dans l&rsquo;applet, choisissez le nombre de groupes et regardez les centres
-migrer, pas à pas, vers le cœur des amas.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1790370910054623774 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Un point mérite qu&rsquo;on s&rsquo;y arrête. À première vue, ce résultat ressemble à de la
+migrer, pas à pas, vers le cœur des amas.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1790370937066104690 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Un point mérite qu&rsquo;on s&rsquo;y arrête. À première vue, ce résultat ressemble à de la
 classification : des points répartis en groupes de couleurs. Mais la différence
 est de fond : ici, <strong>les points n&rsquo;avaient aucune étiquette au départ.</strong> Vous
 n&rsquo;avez pas dit à l&rsquo;algorithme ce qu&rsquo;était chaque groupe ; vous lui avez seulement
@@ -119,7 +119,7 @@ possible.</p><p>La stratégie est celle de l&rsquo;<strong>essai-erreur</strong>
 récompenses et punitions, et <strong>renforce</strong> peu à peu les actions qui mènent au
 succès, d&rsquo;où le nom. Voyez-le à l&rsquo;œuvre : dans l&rsquo;applet ci-dessous, un agent
 (le point jaune) cherche la sortie (<strong>+1</strong>) d&rsquo;une petite grille en évitant un
-piège (<strong>−1</strong>), sans rien savoir au départ. Lancez l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1790370910054664821 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent erre au hasard. Puis, épisode après épisode, une <strong>carte de
+piège (<strong>−1</strong>), sans rien savoir au départ. Lancez l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1790370937066144295 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent erre au hasard. Puis, épisode après épisode, une <strong>carte de
 valeur</strong> se dessine (les cases se teintent selon leur promesse) et une
 <strong>politique</strong> émerge : les flèches, indiquant en chaque case le meilleur
 mouvement, finissent par tracer un chemin sûr vers le but. Un détail est
