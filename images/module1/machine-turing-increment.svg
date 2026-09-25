@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 640" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une machine de Turing complète : ajouter 1 à un nombre binaire</title>
+<desc>Une machine de Turing à trois états qui calcule la fonction n ↦ n + 1 sur un nombre écrit en binaire. En haut à gauche, le diagramme de ses états : « droite » (aller au bout du nombre), « retenue » (propager la retenue vers la gauche) et « arrêt ». En haut à droite, sa table de six règles. En bas, l'exécution complète sur le ruban : en neuf instantanés, la tête parcourt 1011 (onze) vers la droite, atteint la case vide, revient en transformant les 1 en 0, puis change le premier 0 rencontré en 1 et s'arrête : le ruban porte 1100 (douze).</desc>
+<rect x="0" y="0" width="660" height="640" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<defs><marker id="fm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5b5249"/></marker></defs>
+<text x="330" y="36" font-size="16" fill="#3a3531" text-anchor="middle" font-weight="600">Une machine complète : la fonction n ↦ n + 1, en binaire</text>
+<text x="160" y="70" font-size="13" fill="#5b5249" text-anchor="middle" font-style="italic">Ses trois états</text>
+<circle cx="70" cy="150" r="30" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="70" y="154" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">droite</text>
+<circle cx="170" cy="150" r="30" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="170" y="154" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">retenue</text>
+<circle cx="270" cy="150" r="30" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<circle cx="270" cy="150" r="25" fill="none" stroke="#9a5b33" stroke-width="1.2"/>
+<text x="270" y="154" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">arrêt</text>
+<line x1="22" y1="150" x2="38" y2="150" stroke="#5b5249" stroke-width="1.4" marker-end="url(#fm)"/>
+<line x1="101" y1="150" x2="138" y2="150" stroke="#5b5249" stroke-width="1.4" marker-end="url(#fm)"/>
+<line x1="201" y1="150" x2="238" y2="150" stroke="#5b5249" stroke-width="1.4" marker-end="url(#fm)"/>
+<text x="120" y="141" font-size="10.5" fill="#7a6f63" text-anchor="middle">␣</text>
+<text x="220" y="141" font-size="10.5" fill="#7a6f63" text-anchor="middle">0 ou ␣</text>
+<path d="M56 123 C 40 80, 100 80, 84 123" fill="none" stroke="#5b5249" stroke-width="1.4" marker-end="url(#fm)"/>
+<text x="70" y="84" font-size="10.5" fill="#7a6f63" text-anchor="middle">0, 1</text>
+<path d="M156 123 C 140 80, 200 80, 184 123" fill="none" stroke="#5b5249" stroke-width="1.4" marker-end="url(#fm)"/>
+<text x="170" y="84" font-size="10.5" fill="#7a6f63" text-anchor="middle">1</text>
+<text x="70" y="202" font-size="10.5" fill="#7a6f63" text-anchor="middle">aller au bout</text>
+<text x="70" y="215" font-size="10.5" fill="#7a6f63" text-anchor="middle">du nombre</text>
+<text x="170" y="202" font-size="10.5" fill="#7a6f63" text-anchor="middle">propager</text>
+<text x="170" y="215" font-size="10.5" fill="#7a6f63" text-anchor="middle">la retenue</text>
+<text x="270" y="202" font-size="10.5" fill="#7a6f63" text-anchor="middle">c'est fini</text>
+<text x="478" y="70" font-size="13" fill="#5b5249" text-anchor="middle" font-style="italic">Sa table de règles</text>
+<rect x="320" y="82" width="316" height="142" rx="8" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.1"/>
+<text x="330" y="98" font-size="11" fill="#5b5249" font-weight="600">État</text>
+<text x="402" y="98" font-size="11" fill="#5b5249" font-weight="600">Lit</text>
+<text x="442" y="98" font-size="11" fill="#5b5249" font-weight="600">Écrit</text>
+<text x="492" y="98" font-size="11" fill="#5b5249" font-weight="600">Va à</text>
+<text x="576" y="98" font-size="11" fill="#5b5249" font-weight="600">Passe à</text>
+<line x1="326" y1="104" x2="630" y2="104" stroke="#b8a888" stroke-width="1"/>
+<text x="330" y="120" font-size="11.5" fill="#3a3531">droite</text>
+<text x="402" y="120" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<text x="442" y="120" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<text x="492" y="120" font-size="11.5" fill="#3a3531">droite →</text>
+<text x="576" y="120" font-size="11.5" fill="#3a3531">droite</text>
+<text x="330" y="139" font-size="11.5" fill="#3a3531">droite</text>
+<text x="402" y="139" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<text x="442" y="139" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<text x="492" y="139" font-size="11.5" fill="#3a3531">droite →</text>
+<text x="576" y="139" font-size="11.5" fill="#3a3531">droite</text>
+<text x="330" y="158" font-size="11.5" fill="#3a3531">droite</text>
+<text x="402" y="158" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="442" y="158" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="492" y="158" font-size="11.5" fill="#3a3531">← gauche</text>
+<text x="576" y="158" font-size="11.5" fill="#3a3531">retenue</text>
+<text x="330" y="177" font-size="11.5" fill="#3a3531">retenue</text>
+<text x="402" y="177" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<text x="442" y="177" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<text x="492" y="177" font-size="11.5" fill="#3a3531">← gauche</text>
+<text x="576" y="177" font-size="11.5" fill="#3a3531">retenue</text>
+<text x="330" y="196" font-size="11.5" fill="#3a3531">retenue</text>
+<text x="402" y="196" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<text x="442" y="196" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<text x="492" y="196" font-size="11.5" fill="#3a3531">← gauche</text>
+<text x="576" y="196" font-size="11.5" fill="#3a3531">arrêt</text>
+<text x="330" y="215" font-size="11.5" fill="#3a3531">retenue</text>
+<text x="402" y="215" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="442" y="215" font-size="11.5" fill="#3a3531" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<text x="492" y="215" font-size="11.5" fill="#3a3531">← gauche</text>
+<text x="576" y="215" font-size="11.5" fill="#3a3531">arrêt</text>
+<text x="330" y="248" font-size="13" fill="#5b5249" text-anchor="middle" font-style="italic">Son exécution sur le ruban : 1011 (onze) devient 1100 (douze)</text>
+<text x="60" y="282" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 0</text>
+<text x="209" y="282" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">droite</text>
+<rect x="225" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="282" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="262" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="270.0" y="282" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="282" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="282" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="282" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="282" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="262" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="282" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="282" font-size="11" fill="#7a6f63">lit 1, écrit 1, va à droite</text>
+<text x="60" y="320" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 1</text>
+<text x="209" y="320" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">droite</text>
+<rect x="225" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="320" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="320" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="300" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="300.0" y="320" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="320" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="320" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="320" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="300" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="320" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="320" font-size="11" fill="#7a6f63">lit 0, écrit 0, va à droite</text>
+<text x="60" y="358" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 2</text>
+<text x="209" y="358" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">droite</text>
+<rect x="225" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="358" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="358" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="358" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="338" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="330.0" y="358" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="358" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="358" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="338" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="358" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="358" font-size="11" fill="#7a6f63">lit 1, écrit 1, va à droite</text>
+<text x="60" y="396" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 3</text>
+<text x="209" y="396" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">droite</text>
+<rect x="225" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="396" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="396" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="396" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="396" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="376" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="360.0" y="396" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="396" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="376" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="396" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="396" font-size="11" fill="#7a6f63">lit 1, écrit 1, va à droite</text>
+<text x="60" y="434" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 4</text>
+<text x="209" y="434" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">droite</text>
+<rect x="225" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="434" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="434" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="434" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="434" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="434" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="414" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="390.0" y="434" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="414" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="434" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="434" font-size="11" fill="#7a6f63">lit ␣, écrit ␣, va à gauche</text>
+<text x="60" y="472" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 5</text>
+<text x="209" y="472" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">retenue</text>
+<rect x="225" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="472" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="472" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="472" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="472" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="452" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="360.0" y="472" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="375" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="472" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="452" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="472" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="472" font-size="11" fill="#7a6f63">lit 1, écrit 0, va à gauche</text>
+<text x="60" y="510" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 6</text>
+<text x="209" y="510" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">retenue</text>
+<rect x="225" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="510" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="510" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="510" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="490" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="330.0" y="510" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="345" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="510" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="375" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="510" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="490" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="510" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="510" font-size="11" fill="#7a6f63">lit 1, écrit 0, va à gauche</text>
+<text x="60" y="548" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 7</text>
+<text x="209" y="548" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="600">retenue</text>
+<rect x="225" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="548" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="270.0" y="548" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="528" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="300.0" y="548" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="315" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="548" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="345" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="548" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="375" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="548" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="528" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="548" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="548" font-size="11" fill="#7a6f63">lit 0, écrit 1, va à gauche</text>
+<text x="60" y="586" font-size="11.5" fill="#7a6f63" text-anchor="start">étape 8</text>
+<text x="209" y="586" font-size="12" fill="#9a5b33" text-anchor="end" font-weight="600">arrêt</text>
+<rect x="225" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="240.0" y="586" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="255" y="566" width="30" height="30" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="270.0" y="586" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="285" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="300.0" y="586" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">1</text>
+<rect x="315" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="330.0" y="586" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="345" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="360.0" y="586" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">0</text>
+<rect x="375" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="390.0" y="586" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<rect x="405" y="566" width="30" height="30" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="420.0" y="586" font-size="14" fill="#b8a888" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">␣</text>
+<text x="451" y="586" font-size="11.5" fill="#9a5b33" font-weight="600">résultat : 1100</text>
+<rect x="233" y="606" width="14" height="14" fill="#f4e3b5" stroke="#b8862b" stroke-width="2"/>
+<text x="255" y="618" font-size="11.5" fill="#5b5249">la case sous la tête de lecture</text>
+</svg>

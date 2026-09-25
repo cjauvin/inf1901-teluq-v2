@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le cadre (frame) « chambre d'hôtel »</title>
+<desc>Une situation type représentée comme une fiche à cases — lit, salle de bain, porte, fenêtre, téléviseur — chacune munie d'une valeur par défaut, admise tant que rien ne la contredit.</desc>
+
+<rect x="0" y="0" width="560" height="320" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<rect x="40" y="26" width="480" height="44" rx="8" fill="#c2603f" stroke="#93462d" stroke-width="1.5"/>
+<text x="60" y="54" font-size="17" font-weight="500" fill="#fff" text-anchor="start">cadre « chambre d'hôtel »</text>
+
+<text x="60" y="90" font-size="12" fill="#8a7a5c" text-anchor="start">case</text>
+<text x="300" y="90" font-size="12" fill="#8a7a5c" text-anchor="start">valeur par défaut</text>
+
+<g>
+<line x1="40" y1="100" x2="520" y2="100" stroke="#ddd0b3" stroke-width="1"/>
+<line x1="40" y1="140" x2="520" y2="140" stroke="#ddd0b3" stroke-width="1"/>
+<line x1="40" y1="180" x2="520" y2="180" stroke="#ddd0b3" stroke-width="1"/>
+<line x1="40" y1="220" x2="520" y2="220" stroke="#ddd0b3" stroke-width="1"/>
+<line x1="40" y1="260" x2="520" y2="260" stroke="#ddd0b3" stroke-width="1"/>
+</g>
+
+<g font-size="15" fill="#3a3531" font-weight="500" text-anchor="start">
+<text x="60" y="125">lit</text>
+<text x="60" y="165">salle de bain</text>
+<text x="60" y="205">porte</text>
+<text x="60" y="245">fenêtre</text>
+<text x="60" y="285">téléviseur</text>
+</g>
+
+<g font-size="14" fill="#5b5249" text-anchor="start">
+<rect x="290" y="111" width="220" height="26" rx="6" fill="#fbf7ee" stroke="#d4c4a0"/><text x="302" y="129">un lit double</text>
+<rect x="290" y="151" width="220" height="26" rx="6" fill="#fbf7ee" stroke="#d4c4a0"/><text x="302" y="169">privée</text>
+<rect x="290" y="191" width="220" height="26" rx="6" fill="#fbf7ee" stroke="#d4c4a0"/><text x="302" y="209">donne sur le couloir</text>
+<rect x="290" y="231" width="220" height="26" rx="6" fill="#fbf7ee" stroke="#d4c4a0"/><text x="302" y="249">présente</text>
+<rect x="290" y="271" width="220" height="26" rx="6" fill="#fbf7ee" stroke="#d4c4a0"/><text x="302" y="289">présent</text>
+</g>
+</svg>

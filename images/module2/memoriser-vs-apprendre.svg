@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8c8175"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="580" fill="#efe7d3" stroke="#d9cbac" stroke-width="2"/>
+
+  <!-- ============ L'image qui se présente ============ -->
+  <text x="450" y="36" text-anchor="middle" font-size="17" font-weight="600" fill="#3a3531">Une image se présente</text>
+  <rect x="405" y="50" width="90" height="68" rx="8" fill="#fbf7ee" stroke="#b8862b" stroke-width="2"/>
+  <text x="450" y="100" text-anchor="middle" font-size="36" font-weight="600" fill="#b8862b">?</text>
+
+  <line x1="450" y1="122" x2="450" y2="138" stroke="#8c8175" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ============ La question ============ -->
+  <rect x="250" y="142" width="400" height="44" rx="22" fill="#f3ecda" stroke="#d9cbac" stroke-width="1.5"/>
+  <text x="450" y="170" text-anchor="middle" font-size="16" font-weight="500" fill="#3a3531">Fait-elle partie des 1000 images déjà vues ?</text>
+
+  <line x1="420" y1="190" x2="250" y2="216" stroke="#8c8175" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="480" y1="190" x2="650" y2="216" stroke="#8c8175" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- ============ Panneau gauche : oui ============ -->
+  <rect x="50" y="228" width="380" height="272" rx="10" fill="#f3ecda" stroke="#d9cbac" stroke-width="1.5"/>
+  <text x="240" y="264" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="1" fill="#9a5b33">OUI — elle est dans le lot</text>
+
+  <g fill="#d9cbac">
+    <rect x="170" y="288" width="14" height="14" rx="2"/><rect x="188" y="288" width="14" height="14" rx="2"/><rect x="206" y="288" width="14" height="14" rx="2"/><rect x="224" y="288" width="14" height="14" rx="2"/><rect x="242" y="288" width="14" height="14" rx="2"/><rect x="260" y="288" width="14" height="14" rx="2"/><rect x="278" y="288" width="14" height="14" rx="2"/><rect x="296" y="288" width="14" height="14" rx="2"/>
+    <rect x="170" y="306" width="14" height="14" rx="2"/><rect x="188" y="306" width="14" height="14" rx="2"/><rect x="206" y="306" width="14" height="14" rx="2"/><rect x="224" y="306" width="14" height="14" rx="2"/><rect x="260" y="306" width="14" height="14" rx="2"/><rect x="278" y="306" width="14" height="14" rx="2"/><rect x="296" y="306" width="14" height="14" rx="2"/>
+    <rect x="170" y="324" width="14" height="14" rx="2"/><rect x="188" y="324" width="14" height="14" rx="2"/><rect x="206" y="324" width="14" height="14" rx="2"/><rect x="224" y="324" width="14" height="14" rx="2"/><rect x="242" y="324" width="14" height="14" rx="2"/><rect x="260" y="324" width="14" height="14" rx="2"/><rect x="278" y="324" width="14" height="14" rx="2"/><rect x="296" y="324" width="14" height="14" rx="2"/>
+    <rect x="170" y="342" width="14" height="14" rx="2"/><rect x="188" y="342" width="14" height="14" rx="2"/><rect x="206" y="342" width="14" height="14" rx="2"/><rect x="224" y="342" width="14" height="14" rx="2"/><rect x="242" y="342" width="14" height="14" rx="2"/><rect x="260" y="342" width="14" height="14" rx="2"/><rect x="278" y="342" width="14" height="14" rx="2"/><rect x="296" y="342" width="14" height="14" rx="2"/>
+    <rect x="170" y="360" width="14" height="14" rx="2"/><rect x="188" y="360" width="14" height="14" rx="2"/><rect x="206" y="360" width="14" height="14" rx="2"/><rect x="224" y="360" width="14" height="14" rx="2"/><rect x="242" y="360" width="14" height="14" rx="2"/><rect x="260" y="360" width="14" height="14" rx="2"/><rect x="278" y="360" width="14" height="14" rx="2"/><rect x="296" y="360" width="14" height="14" rx="2"/>
+  </g>
+  <rect x="240" y="304" width="18" height="18" rx="3" fill="#b8862b"/>
+
+  <text x="240" y="404" text-anchor="middle" font-size="14" font-style="italic" fill="#6b625a">elle est là, il suffit de la retrouver</text>
+
+  <text x="240" y="450" text-anchor="middle" font-size="17" font-weight="600" fill="#9a5b33">Facile — et sans intérêt.</text>
+  <text x="240" y="474" text-anchor="middle" font-size="14" fill="#6b625a">une machine range et retrouve sans effort</text>
+
+  <!-- ============ Panneau droit : non ============ -->
+  <rect x="470" y="228" width="380" height="272" rx="10" fill="#f3ecda" stroke="#d9cbac" stroke-width="1.5"/>
+  <text x="660" y="264" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="1" fill="#2f6f6a">NON — elle est inédite</text>
+
+  <g fill="#d9cbac">
+    <rect x="547" y="288" width="14" height="14" rx="2"/><rect x="565" y="288" width="14" height="14" rx="2"/><rect x="583" y="288" width="14" height="14" rx="2"/><rect x="601" y="288" width="14" height="14" rx="2"/><rect x="619" y="288" width="14" height="14" rx="2"/><rect x="637" y="288" width="14" height="14" rx="2"/><rect x="655" y="288" width="14" height="14" rx="2"/><rect x="673" y="288" width="14" height="14" rx="2"/>
+    <rect x="547" y="306" width="14" height="14" rx="2"/><rect x="565" y="306" width="14" height="14" rx="2"/><rect x="583" y="306" width="14" height="14" rx="2"/><rect x="601" y="306" width="14" height="14" rx="2"/><rect x="619" y="306" width="14" height="14" rx="2"/><rect x="637" y="306" width="14" height="14" rx="2"/><rect x="655" y="306" width="14" height="14" rx="2"/><rect x="673" y="306" width="14" height="14" rx="2"/>
+    <rect x="547" y="324" width="14" height="14" rx="2"/><rect x="565" y="324" width="14" height="14" rx="2"/><rect x="583" y="324" width="14" height="14" rx="2"/><rect x="601" y="324" width="14" height="14" rx="2"/><rect x="619" y="324" width="14" height="14" rx="2"/><rect x="637" y="324" width="14" height="14" rx="2"/><rect x="655" y="324" width="14" height="14" rx="2"/><rect x="673" y="324" width="14" height="14" rx="2"/>
+    <rect x="547" y="342" width="14" height="14" rx="2"/><rect x="565" y="342" width="14" height="14" rx="2"/><rect x="583" y="342" width="14" height="14" rx="2"/><rect x="601" y="342" width="14" height="14" rx="2"/><rect x="619" y="342" width="14" height="14" rx="2"/><rect x="637" y="342" width="14" height="14" rx="2"/><rect x="655" y="342" width="14" height="14" rx="2"/><rect x="673" y="342" width="14" height="14" rx="2"/>
+    <rect x="547" y="360" width="14" height="14" rx="2"/><rect x="565" y="360" width="14" height="14" rx="2"/><rect x="583" y="360" width="14" height="14" rx="2"/><rect x="601" y="360" width="14" height="14" rx="2"/><rect x="619" y="360" width="14" height="14" rx="2"/><rect x="637" y="360" width="14" height="14" rx="2"/><rect x="655" y="360" width="14" height="14" rx="2"/><rect x="673" y="360" width="14" height="14" rx="2"/>
+  </g>
+
+  <line x1="702" y1="286" x2="702" y2="376" stroke="#c9bda6" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <rect x="717" y="303" width="56" height="56" rx="6" fill="#fbf7ee" stroke="#b8862b" stroke-width="2"/>
+  <text x="745" y="341" text-anchor="middle" font-size="26" font-weight="600" fill="#b8862b">?</text>
+
+  <text x="660" y="404" text-anchor="middle" font-size="14" font-style="italic" fill="#6b625a">elle n'est nulle part dans le lot</text>
+
+  <text x="660" y="450" text-anchor="middle" font-size="17" font-weight="600" fill="#2f6f6a">Difficile — et c'est tout l'enjeu.</text>
+  <text x="660" y="474" text-anchor="middle" font-size="14" fill="#6b625a">trancher sans l'avoir jamais vue : généraliser</text>
+
+  <!-- ============ La morale ============ -->
+  <line x1="200" y1="526" x2="700" y2="526" stroke="#d9cbac" stroke-width="1.5"/>
+  <text x="450" y="554" text-anchor="middle" font-size="16" fill="#3a3531">Un modèle ne vaut que par ce qu'il fait du second cas.</text>
+</svg>

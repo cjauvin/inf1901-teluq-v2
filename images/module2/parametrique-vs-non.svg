@@ -1,0 +1,46 @@
+<svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Modèle paramétrique ou non-paramétrique</title>
+<desc>À gauche, un nuage de points (estompé) est résumé par une droite réduite à deux réglages m et b : le modèle paramétrique distille les données, puis peut les jeter. À droite, les mêmes points sont conservés tels quels : le modèle non-paramétrique garde toutes les données et s'appuie dessus.</desc>
+<rect x="0" y="0" width="660" height="340" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<g stroke="#b8a888" stroke-width="1.6" fill="none">
+<line x1="55" y1="60" x2="55" y2="250"/>
+<line x1="55" y1="250" x2="300" y2="250"/>
+</g>
+<line x1="68" y1="242" x2="300" y2="72" stroke="#9a5b33" stroke-width="2.6"/>
+<g fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.2" opacity="0.32">
+<circle cx="80" cy="236" r="6"/>
+<circle cx="110" cy="205" r="6"/>
+<circle cx="140" cy="193" r="6"/>
+<circle cx="165" cy="166" r="6"/>
+<circle cx="195" cy="153" r="6"/>
+<circle cx="220" cy="126" r="6"/>
+<circle cx="250" cy="114" r="6"/>
+<circle cx="275" cy="86" r="6"/>
+<circle cx="295" cy="80" r="6"/>
+</g>
+<rect x="66.0" y="79.0" width="132" height="38" rx="9" fill="#efe7d3" stroke="#5b5249" stroke-width="1.4"/>
+<text x="132" y="96" font-size="14.5" fill="#3a3531" text-anchor="middle" font-weight="600">modèle = (m, b)</text>
+<text x="132" y="112" font-size="11.5" fill="#7a6f63" text-anchor="middle">deux nombres suffisent</text>
+<g stroke="#b8a888" stroke-width="1.6" fill="none">
+<line x1="375" y1="60" x2="375" y2="250"/>
+<line x1="375" y1="250" x2="620" y2="250"/>
+</g>
+<g fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.3">
+<circle cx="400" cy="236" r="6.5"/>
+<circle cx="430" cy="205" r="6.5"/>
+<circle cx="460" cy="193" r="6.5"/>
+<circle cx="485" cy="166" r="6.5"/>
+<circle cx="515" cy="153" r="6.5"/>
+<circle cx="540" cy="126" r="6.5"/>
+<circle cx="570" cy="114" r="6.5"/>
+<circle cx="595" cy="86" r="6.5"/>
+<circle cx="615" cy="80" r="6.5"/>
+</g>
+<rect x="371.0" y="79.0" width="168" height="38" rx="9" fill="#efe7d3" stroke="#5b5249" stroke-width="1.4"/>
+<text x="455" y="96" font-size="14.5" fill="#3a3531" text-anchor="middle" font-weight="600">modèle = tous les points</text>
+<text x="455" y="112" font-size="11.5" fill="#7a6f63" text-anchor="middle">rien n'est jeté</text>
+<text x="177" y="296" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">paramétrique</text>
+<text x="177" y="316" font-size="12.5" fill="#7a6f63" text-anchor="middle">distiller, puis jeter les données</text>
+<text x="497" y="296" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">non-paramétrique</text>
+<text x="497" y="316" font-size="12.5" fill="#7a6f63" text-anchor="middle">garder toutes les données</text>
+</svg>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : une frontière de décision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        canvas { touch-action: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex gap-3 items-stretch">
+        <div class="relative flex-1 bg-slate-50 rounded-lg overflow-hidden">
+            <canvas id="plan" class="w-full block"></canvas>
+            <div class="absolute top-2 left-2 bg-white/85 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">
+                Glissez le rond pour déplacer la frontière, le carré pour la faire pivoter.
+            </div>
+        </div>
+        <div class="w-24 flex flex-col items-center">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Erreur</div>
+            <div class="relative flex-1 w-8 bg-slate-100 border border-slate-300 rounded">
+                <div id="barre" class="absolute bottom-0 left-0 right-0 rounded-b" style="background:#c4564a;height:0"></div>
+                <div id="repereMin" class="absolute left-[-6px] right-[-6px] border-t-2 border-dashed" style="border-color:#2f6f6a;bottom:0;display:none"></div>
+            </div>
+            <div id="valeur" class="text-sm font-bold mt-1" style="color:#c4564a">–</div>
+            <div id="malclasses" class="text-[10px] text-slate-500 text-center leading-tight mt-1">–</div>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3 w-full md:w-1/2">
+            <div class="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-1 w-full text-sm">
+                <span class="font-bold text-slate-700 whitespace-nowrap">Points par couleur : <span id="nAff">10</span></span>
+                <input type="range" id="nPoints" min="3" max="30" value="10" class="w-full accent-indigo-600">
+                <span class="font-bold text-slate-700 whitespace-nowrap">Mélange : <span id="recAff">moyen</span></span>
+                <input type="range" id="recouvrement" min="0" max="2" value="1" class="w-full accent-indigo-600">
+            </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 justify-center">
+            <div class="flex items-center gap-1 bg-white border border-slate-200 rounded shadow-sm p-1" title="Couleur des points ajoutés en cliquant">
+                <button id="btnRouge" onclick="choisir('rouge')" class="w-7 h-7 rounded-full border-2" style="background:#c4564a;border-color:#8f3a31"></button>
+                <button id="btnBleu" onclick="choisir('bleu')" class="w-7 h-7 rounded-full border-2" style="background:#3a6ea5;border-color:#264c75"></button>
+            </div>
+            <button onclick="nouveauxPoints()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Nouveaux points</button>
+            <label class="flex items-center gap-2 text-sm text-slate-600">
+                <input type="checkbox" id="optimum" onchange="dessiner()" class="accent-indigo-600"> meilleure frontière
+            </label>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#c4564a"></div>rouge</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#3a6ea5"></div>bleu</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border-2 border-amber-500"></div>du mauvais côté</div>
+        <div class="flex items-center gap-2"><div class="w-4 h-3 rounded-sm" style="background:linear-gradient(90deg,#e9c6c1,#fbf7ee,#c3d3e6)"></div>probabilité donnée par le modèle</div>
+        <div class="flex items-center gap-2"><div class="w-4 border-t-2 border-dashed" style="border-color:#2f6f6a"></div>meilleure frontière</div>
+        <div class="text-slate-500">glissez un point pour le déplacer, cliquez dessus pour le retirer, cliquez dans le vide pour en ajouter</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Régression logistique ajustée à la main. La frontière est une droite ; de
+ * part et d'autre, le modèle donne une probabilité qui passe en douceur du
+ * rouge au bleu (le fond). L'erreur est l'entropie croisée moyenne : un
+ * point bien rangé coûte presque rien, un point du mauvais côté coûte
+ * d'autant plus qu'il est loin. La meilleure frontière est obtenue par
+ * descente de gradient.
+ */
+const W = 620, H = 420, PENTE_PROBA = 9;             // raideur de la sigmoïde
+const COUL = { fond: '#fbf7ee', grille: '#e8dfc9', axe: '#b8a888', rouge: '#c4564a', bleu: '#3a6ea5',
+               droite: '#9a5b33', optimum: '#2f6f6a', mal: '#f59e0b' };
+const canvas = document.getElementById('plan'), ctx = canvas.getContext('2d');
+canvas.width = W; canvas.height = H;
+
+let points = [];                                       // {x, y dans [0,1], c: 1 = bleu, 0 = rouge}
+let fr = { cx: 0.5, cy: 0.5, angle: 0.35 };            // la frontière : un point et une direction
+let couleur = 'rouge';
+const px = x => x * W, py = y => (1 - y) * H, ux = X => X / W, uy = Y => 1 - Y / H;
+const sigm = z => 1 / (1 + Math.exp(-z));
+
+function normale() { return { nx: -Math.sin(fr.angle), ny: Math.cos(fr.angle) }; }
+function scoreBrut(x, y) { const { nx, ny } = normale(); return PENTE_PROBA * ((x - fr.cx) * nx + (y - fr.cy) * ny); }
+// Le modèle choisit lui-même de quel côté mettre le bleu : celui qui fait le moins d'erreurs.
+function sens() { return points.reduce((s, p) => s + (p.c ? 1 : -1) * scoreBrut(p.x, p.y), 0) >= 0 ? 1 : -1; }
+function proba(x, y, s) { return sigm(s * scoreBrut(x, y)); }
+function erreur(f) {
+    if (!points.length) return 0;
+    return points.reduce((t, p) => { const q = Math.min(1 - 1e-6, Math.max(1e-6, f(p.x, p.y))); return t - (p.c ? Math.log(q) : Math.log(1 - q)); }, 0) / points.length;
+}
+
+function hasard(seed) { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; }
+function gauss(r) { return Math.sqrt(-2 * Math.log(r() + 1e-9)) * Math.cos(2 * Math.PI * r()); }
+function nouveauxPoints() {
+    const n = +document.getElementById('nPoints').value, rec = +document.getElementById('recouvrement').value;
+    const e = [0.09, 0.14, 0.2][rec], r = hasard(Math.floor(Math.random() * 1e9));
+    points = [];
+    for (let i = 0; i < n; i++) points.push({ x: clamp(0.33 + e * gauss(r)), y: clamp(0.65 + e * gauss(r)), c: 0 });
+    for (let i = 0; i < n; i++) points.push({ x: clamp(0.67 + e * gauss(r)), y: clamp(0.35 + e * gauss(r)), c: 1 });
+    fr = { cx: 0.5, cy: 0.5, angle: 0.35 };
+    dessiner();
+}
+const clamp = v => Math.min(0.97, Math.max(0.03, v));
+
+// La meilleure frontière : régression logistique par descente de gradient.
+function meilleure() {
+    if (points.length < 2 || new Set(points.map(p => p.c)).size < 2) return null;
+    let w0 = 0, w1 = 0, w2 = 0;
+    for (let it = 0; it < 3000; it++) {
+        let g0 = 0, g1 = 0, g2 = 0;
+        for (const p of points) { const d = sigm(w0 + w1 * (p.x - 0.5) * 10 + w2 * (p.y - 0.5) * 10) - p.c; g0 += d; g1 += d * (p.x - 0.5) * 10; g2 += d * (p.y - 0.5) * 10; }
+        const n = points.length, l2 = 0.02;
+        w0 -= 0.5 * g0 / n; w1 -= 0.5 * (g1 / n + l2 * w1); w2 -= 0.5 * (g2 / n + l2 * w2);
+    }
+    return { f: (x, y) => sigm(w0 + w1 * (x - 0.5) * 10 + w2 * (y - 0.5) * 10), w0, w1, w2 };
+}
+
+function dessiner() {
+    const s = sens();
+    // fond : la probabilité d'être bleu
+    const img = ctx.createImageData(W, H), pas = 4;
+    for (let Y = 0; Y < H; Y += pas) for (let X = 0; X < W; X += pas) {
+        const q = proba(ux(X + pas / 2), uy(Y + pas / 2), s);
+        const [r, g, b] = q > 0.5 ? mel([251, 247, 238], [195, 211, 230], (q - 0.5) * 2) : mel([251, 247, 238], [233, 198, 193], (0.5 - q) * 2);
+        for (let dy = 0; dy < pas; dy++) for (let dx = 0; dx < pas; dx++) { const i = ((Y + dy) * W + X + dx) * 4; img.data[i] = r; img.data[i + 1] = g; img.data[i + 2] = b; img.data[i + 3] = 255; }
+    }
+    ctx.putImageData(img, 0, 0);
+    ctx.strokeStyle = COUL.grille; ctx.lineWidth = 1;
+    for (let k = 1; k < 10; k++) { ctx.beginPath(); ctx.moveTo(px(k / 10), 0); ctx.lineTo(px(k / 10), H); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, py(k / 10)); ctx.lineTo(W, py(k / 10)); ctx.stroke(); }
+
+    const opt = document.getElementById('optimum').checked ? meilleure() : null;
+    if (opt && (opt.w1 || opt.w2)) {
+        // droite où la probabilité vaut 0,5 : w0 + w1·10(x−0,5) + w2·10(y−0,5) = 0
+        ctx.setLineDash([7, 6]); ctx.strokeStyle = COUL.optimum; ctx.lineWidth = 2; ctx.beginPath();
+        if (Math.abs(opt.w2) > Math.abs(opt.w1)) { for (const x of [0, 1]) { const y = 0.5 - (opt.w0 + opt.w1 * 10 * (x - 0.5)) / (10 * opt.w2); x ? ctx.lineTo(px(x), py(y)) : ctx.moveTo(px(x), py(y)); } }
+        else { for (const y of [0, 1]) { const x = 0.5 - (opt.w0 + opt.w2 * 10 * (y - 0.5)) / (10 * opt.w1); y ? ctx.lineTo(px(x), py(y)) : ctx.moveTo(px(x), py(y)); } }
+        ctx.stroke(); ctx.setLineDash([]);
+    }
+    const u = { x: Math.cos(fr.angle), y: Math.sin(fr.angle) };
+    ctx.strokeStyle = COUL.droite; ctx.lineWidth = 3; ctx.beginPath();
+    ctx.moveTo(px(fr.cx - 2 * u.x), py(fr.cy - 2 * u.y)); ctx.lineTo(px(fr.cx + 2 * u.x), py(fr.cy + 2 * u.y)); ctx.stroke();
+
+    let mal = 0;
+    for (const p of points) {
+        const q = proba(p.x, p.y, s), faux = (q >= 0.5) !== (p.c === 1);
+        if (faux) mal++;
+        ctx.beginPath(); ctx.arc(px(p.x), py(p.y), 7, 0, 7); ctx.fillStyle = p.c ? COUL.bleu : COUL.rouge; ctx.fill();
+        ctx.strokeStyle = COUL.fond; ctx.lineWidth = 1.5; ctx.stroke();
+        if (faux) { ctx.beginPath(); ctx.arc(px(p.x), py(p.y), 11, 0, 7); ctx.strokeStyle = COUL.mal; ctx.lineWidth = 2.5; ctx.stroke(); }
+    }
+    const { centre, rotation } = poignees();
+    ctx.fillStyle = '#fff'; ctx.strokeStyle = COUL.droite; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(centre.x, centre.y, 9, 0, 7); ctx.fill(); ctx.stroke();
+    ctx.fillRect(rotation.x - 7, rotation.y - 7, 14, 14); ctx.strokeRect(rotation.x - 7, rotation.y - 7, 14, 14);
+
+    // jauge : l'erreur, rapportée à celle d'un modèle qui répond toujours « 50 % »
+    const e = erreur((x, y) => proba(x, y, s)), etalon = Math.log(2);
+    const frac = v => Math.min(1, v / (2 * etalon));
+    document.getElementById('barre').style.height = frac(e) * 100 + '%';
+    const rm = document.getElementById('repereMin');
+    if (opt) { rm.style.display = ''; rm.style.bottom = frac(erreur(opt.f)) * 100 + '%'; } else rm.style.display = 'none';
+    document.getElementById('valeur').textContent = points.length ? e.toFixed(2).replace('.', ',') : '–';
+    document.getElementById('malclasses').textContent = points.length ? `${mal} point${mal > 1 ? 's' : ''} du mauvais côté` : '';
+}
+function mel(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
+function poignees() {
+    const u = { x: Math.cos(fr.angle), y: Math.sin(fr.angle) };
+    return { centre: { x: px(fr.cx), y: py(fr.cy) }, rotation: { x: px(fr.cx + 0.22 * u.x), y: py(fr.cy + 0.22 * u.y) } };
+}
+function choisir(c) {
+    couleur = c;
+    document.getElementById('btnRouge').style.boxShadow = c === 'rouge' ? '0 0 0 2px #fff, 0 0 0 4px #94a3b8' : '';
+    document.getElementById('btnBleu').style.boxShadow = c === 'bleu' ? '0 0 0 2px #fff, 0 0 0 4px #94a3b8' : '';
+}
+
+let mode = null, indice = -1, bouge = false, depart = null;
+function souris(ev) { const r = canvas.getBoundingClientRect(); return { x: (ev.clientX - r.left) * W / r.width, y: (ev.clientY - r.top) * H / r.height }; }
+canvas.addEventListener('pointerdown', ev => {
+    const m = souris(ev), { centre, rotation } = poignees(); bouge = false; depart = m;
+    canvas.setPointerCapture(ev.pointerId);
+    if (Math.hypot(m.x - rotation.x, m.y - rotation.y) < 14) { mode = 'rotation'; return; }
+    if (Math.hypot(m.x - centre.x, m.y - centre.y) < 14) { mode = 'centre'; return; }
+    indice = points.findIndex(p => Math.hypot(px(p.x) - m.x, py(p.y) - m.y) < 10);
+    mode = indice >= 0 ? 'point' : 'vide';
+});
+canvas.addEventListener('pointermove', ev => {
+    const m = souris(ev);
+    if (!mode) {
+        const { centre, rotation } = poignees();
+        canvas.style.cursor = (Math.hypot(m.x - rotation.x, m.y - rotation.y) < 14 || Math.hypot(m.x - centre.x, m.y - centre.y) < 14
+            || points.some(p => Math.hypot(px(p.x) - m.x, py(p.y) - m.y) < 10)) ? 'grab' : 'crosshair';
+        return;
+    }
+    if (Math.hypot(m.x - depart.x, m.y - depart.y) > 3) bouge = true;
+    const x = clamp(ux(m.x)), y = clamp(uy(m.y));
+    if (mode === 'centre') { fr.cx = x; fr.cy = y; }
+    else if (mode === 'rotation') fr.angle = Math.atan2(uy(m.y) - fr.cy, ux(m.x) - fr.cx);
+    else if (mode === 'point') { points[indice].x = x; points[indice].y = y; }
+    dessiner();
+});
+canvas.addEventListener('pointerup', ev => {
+    const m = souris(ev);
+    if (mode === 'point' && !bouge) points.splice(indice, 1);
+    if (mode === 'vide' && !bouge) points.push({ x: clamp(ux(m.x)), y: clamp(uy(m.y)), c: couleur === 'bleu' ? 1 : 0 });
+    mode = null; indice = -1; dessiner();
+});
+document.getElementById('nPoints').addEventListener('input', e => { document.getElementById('nAff').textContent = e.target.value; nouveauxPoints(); });
+document.getElementById('recouvrement').addEventListener('input', e => { document.getElementById('recAff').textContent = ['faible', 'moyen', 'fort'][+e.target.value]; nouveauxPoints(); });
+
+choisir('rouge');
+nouveauxPoints();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

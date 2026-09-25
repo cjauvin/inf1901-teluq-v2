@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 732 380" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le jeu de l'imitation</title>
+<desc>Un juge humain, à gauche, dialogue par écrit avec deux interlocuteurs cachés derrière une cloison, à droite. Chaque interlocuteur est représenté par une silhouette humaine et un robot séparés d'un point d'interrogation, sous-titrés « humain ou machine ? » : derrière chaque écran se trouve soit un humain, soit une machine, sans qu'on sache lequel. Les deux interlocuteurs sont identiques et indiscernables pour le juge, qui doit deviner lequel est la machine.</desc>
+
+<rect x="0" y="0" width="732" height="380" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="28" y="34" font-size="15" fill="#5b5249" text-anchor="start">Le jeu de l'imitation</text>
+
+<!-- Juge (icône personne) -->
+<rect x="28" y="132" width="120" height="112" rx="10" fill="#fffdf8" stroke="#d4c4a0"/>
+<circle cx="88" cy="162" r="12" fill="#7a6a52"/>
+<path d="M 66 198 q 0 -24 22 -24 q 22 0 22 24 Z" fill="#7a6a52"/>
+<text x="88" y="222" font-size="14" fill="#4a4030" text-anchor="middle">Juge</text>
+<text x="88" y="238" font-size="11" fill="#8a7a5c" text-anchor="middle">(humain)</text>
+<text x="88" y="270" font-size="10.5" fill="#8a7a5c" text-anchor="middle">doit deviner</text>
+<text x="88" y="284" font-size="10.5" fill="#8a7a5c" text-anchor="middle">laquelle est la machine</text>
+
+<!-- Canal : dialogue par écrit -->
+<text x="253" y="164" font-size="11" fill="#8a7a5c" text-anchor="middle">questions</text>
+<line x1="150" y1="174" x2="348" y2="174" stroke="#c2a878" stroke-width="2"/>
+<polygon points="358,174 348,169 348,179" fill="#c2a878"/>
+
+<text x="253" y="196" font-size="10.5" fill="#a89878" text-anchor="middle" font-style="italic">par écrit : ni voix, ni visage</text>
+
+<line x1="356" y1="210" x2="156" y2="210" stroke="#c2a878" stroke-width="2"/>
+<polygon points="146,210 156,205 156,215" fill="#c2a878"/>
+<text x="253" y="230" font-size="11" fill="#8a7a5c" text-anchor="middle">réponses (texte)</text>
+
+<!-- Cloison -->
+<text x="367" y="34" font-size="10" fill="#8a7a5c" text-anchor="middle">cloison</text>
+<rect x="360" y="46" width="14" height="292" fill="#cdbb95" stroke="#b8a888"/>
+<line x1="360" y1="80" x2="374" y2="80" stroke="#b8a888"/>
+<line x1="360" y1="140" x2="374" y2="140" stroke="#b8a888"/>
+<line x1="360" y1="200" x2="374" y2="200" stroke="#b8a888"/>
+<line x1="360" y1="260" x2="374" y2="260" stroke="#b8a888"/>
+<line x1="360" y1="320" x2="374" y2="320" stroke="#b8a888"/>
+
+<line x1="374" y1="106" x2="408" y2="106" stroke="#c9b78f" stroke-dasharray="4 4"/>
+<line x1="374" y1="254" x2="408" y2="254" stroke="#c9b78f" stroke-dasharray="4 4"/>
+
+<!-- Interlocuteur A : humain ? machine -->
+<rect x="408" y="54" width="176" height="104" rx="10" fill="#fffdf8" stroke="#d4c4a0"/>
+<circle cx="460" cy="86" r="11" fill="#7a6a52"/>
+<path d="M 444 114 q 0 -22 16 -22 q 16 0 16 22 Z" fill="#7a6a52"/>
+<line x1="532" y1="74" x2="532" y2="66" stroke="#7a6a52" stroke-width="2"/>
+<circle cx="532" cy="64" r="3" fill="#7a6a52"/>
+<rect x="517" y="74" width="30" height="30" rx="6" fill="#7a6a52"/>
+<circle cx="525" cy="86" r="3" fill="#fbf7ee"/>
+<circle cx="539" cy="86" r="3" fill="#fbf7ee"/>
+<rect x="524" y="94" width="16" height="3" rx="1.5" fill="#fbf7ee"/>
+<circle cx="496" cy="86" r="14" fill="#efe7d3" stroke="#c2603f" stroke-width="1.5"/>
+<text x="496" y="93" font-size="18" fill="#c2603f" text-anchor="middle">?</text>
+<text x="496" y="142" font-size="13" fill="#4a4030" text-anchor="middle">Interlocuteur A</text>
+<text x="496" y="176" font-size="11" fill="#93462d" text-anchor="middle" font-style="italic">humain ou machine ?</text>
+
+<!-- Interlocuteur B : identique -->
+<rect x="408" y="202" width="176" height="104" rx="10" fill="#fffdf8" stroke="#d4c4a0"/>
+<circle cx="460" cy="234" r="11" fill="#7a6a52"/>
+<path d="M 444 262 q 0 -22 16 -22 q 16 0 16 22 Z" fill="#7a6a52"/>
+<line x1="532" y1="222" x2="532" y2="214" stroke="#7a6a52" stroke-width="2"/>
+<circle cx="532" cy="212" r="3" fill="#7a6a52"/>
+<rect x="517" y="222" width="30" height="30" rx="6" fill="#7a6a52"/>
+<circle cx="525" cy="234" r="3" fill="#fbf7ee"/>
+<circle cx="539" cy="234" r="3" fill="#fbf7ee"/>
+<rect x="524" y="242" width="16" height="3" rx="1.5" fill="#fbf7ee"/>
+<circle cx="496" cy="234" r="14" fill="#efe7d3" stroke="#c2603f" stroke-width="1.5"/>
+<text x="496" y="241" font-size="18" fill="#c2603f" text-anchor="middle">?</text>
+<text x="496" y="290" font-size="13" fill="#4a4030" text-anchor="middle">Interlocuteur B</text>
+<text x="496" y="324" font-size="11" fill="#93462d" text-anchor="middle" font-style="italic">humain ou machine ?</text>
+
+<!-- Accolade : question -->
+<path d="M 602 78 q 8 0 8 12 v 60 q 0 12 8 12 q -8 0 -8 12 v 60 q 0 12 -8 12" fill="none" stroke="#b8a888" stroke-width="1.5"/>
+<text x="626" y="176" font-size="10.5" fill="#8a7a5c" text-anchor="start">identiques :</text>
+<text x="626" y="191" font-size="10.5" fill="#8a7a5c" text-anchor="start">indiscernables</text>
+<text x="626" y="206" font-size="10.5" fill="#8a7a5c" text-anchor="start">pour le juge ?</text>
+</svg>

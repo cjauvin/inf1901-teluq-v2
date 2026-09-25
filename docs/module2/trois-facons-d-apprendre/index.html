@@ -1,0 +1,185 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Trois façons d’apprendre Nous avons refermé le chapitre précédent sur une prise de conscience : tout ce que nous avons construit dans ce module (régression, classification, la droite, Bayes) appartenait à une seule et même famille, l’apprentissage supervisé, celle où chaque exemple arrive accompagné de sa bonne réponse. Mais nous avons aussi entrevu que ce n’était pas la seule façon d’apprendre.
+Ce qui distingue les grandes familles de l’apprentissage automatique, c’est la nature du signal dont le modèle se nourrit, ce qui, dans les données, lui tient lieu de guide. Et il n’en existe, au fond, que trois grands types :
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Trois façons d'apprendre"><meta property="og:description" content="Trois façons d’apprendre Nous avons refermé le chapitre précédent sur une prise de conscience : tout ce que nous avons construit dans ce module (régression, classification, la droite, Bayes) appartenait à une seule et même famille, l’apprentissage supervisé, celle où chaque exemple arrive accompagné de sa bonne réponse. Mais nous avons aussi entrevu que ce n’était pas la seule façon d’apprendre.
+Ce qui distingue les grandes familles de l’apprentissage automatique, c’est la nature du signal dont le modèle se nourrit, ce qui, dans les données, lui tient lieu de guide. Et il n’en existe, au fond, que trois grands types :"><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Trois façons d'apprendre"><meta itemprop=description content="Trois façons d’apprendre Nous avons refermé le chapitre précédent sur une prise de conscience : tout ce que nous avons construit dans ce module (régression, classification, la droite, Bayes) appartenait à une seule et même famille, l’apprentissage supervisé, celle où chaque exemple arrive accompagné de sa bonne réponse. Mais nous avons aussi entrevu que ce n’était pas la seule façon d’apprendre.
+Ce qui distingue les grandes familles de l’apprentissage automatique, c’est la nature du signal dont le modèle se nourrit, ce qui, dans les données, lui tient lieu de guide. Et il n’en existe, au fond, que trois grands types :"><meta itemprop=wordCount content="2386"><title>Trois façons d'apprendre • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/changelog/>Évolution du cours (venez voir de temps en temps!)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle checked>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/ class=active>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Trois façons d'apprendre</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#apprendre-avec-un-professeur-le-supervisé>Apprendre avec un professeur : le supervisé</a></li><li><a href=#apprendre-sans-réponses-le-non-supervisé>Apprendre sans réponses : le non-supervisé</a><ul><li><a href=#fabriquer-soi-même-ses-réponses-lauto-supervision>Fabriquer soi-même ses réponses : l&rsquo;auto-supervision</a></li></ul></li><li><a href=#apprendre-par-lexpérience-le-renforcement>Apprendre par l&rsquo;expérience : le renforcement</a></li><li><a href=#un-même-squelette-dun-bout-à-lautre>Un même squelette, d&rsquo;un bout à l&rsquo;autre</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=trois-façons-dapprendre>Trois façons d&rsquo;apprendre<a class=anchor href=#trois-fa%c3%a7ons-dapprendre></a></h1><p>Nous avons refermé le chapitre précédent sur une prise de conscience : tout ce
+que nous avons construit dans ce module (régression, classification, la droite,
+Bayes) appartenait à une seule et même famille, l&rsquo;<strong>apprentissage supervisé</strong>,
+celle où chaque exemple arrive accompagné de sa bonne réponse. Mais nous avons
+aussi entrevu que ce n&rsquo;était pas la seule façon d&rsquo;apprendre.</p><p>Ce qui distingue les grandes familles de l&rsquo;apprentissage automatique, c&rsquo;est la
+nature du <strong>signal</strong> dont le modèle se nourrit, ce qui, dans les données, lui
+tient lieu de guide. Et il n&rsquo;en existe, au fond, que trois grands types :</p><ul><li>une <strong>réponse fournie</strong> pour chaque exemple : c&rsquo;est l&rsquo;apprentissage
+<strong>supervisé</strong>, notre terrain depuis le début ;</li><li><strong>aucune réponse</strong>, juste des données brutes dans lesquelles il faut débusquer
+une structure : l&rsquo;apprentissage <strong>non supervisé</strong> ;</li><li>ni réponse ni structure donnée, mais une <strong>récompense</strong> qui arrive après coup,
+au fil de l&rsquo;action : l&rsquo;apprentissage par <strong>renforcement</strong>.</li></ul><label class=book-image for=book-image-toggle-cde8ce6a11cb><input class="hidden toggle" type=checkbox id=book-image-toggle-cde8ce6a11cb>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/trois-paradigmes.svg alt="Trois panneaux. « Supervisé » : des points étiquetés en bleu et rouge, la réponse étant donnée. « Non supervisé » : les mêmes points, tous gris et sans étiquette, que l'algorithme regroupe en cercles pointillés, et l'on découvre des groupes. « Renforcement » : une boucle entre un agent et son environnement, reliés par une flèche « action » et une flèche « récompense »." loading=lazy title="Les trois grandes familles, par la nature de leur signal : réponse donnée (supervisé), structure à découvrir (non supervisé), récompense au fil de l'action (renforcement)." width=680 height=270 style=--largeur-plafond:680px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-cde8ce6a11cb"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Trois signaux, trois façons d&rsquo;apprendre. Nous avons passé tout le module dans la
+première ; ce dernier chapitre part à la rencontre des deux autres, moins pour
+les maîtriser que pour situer ce que nous avons appris dans un paysage plus vaste,
+et apercevoir les routes qui mènent aux modules suivants.</p><h2 id=apprendre-avec-un-professeur-le-supervisé>Apprendre avec un professeur : le supervisé<a class=anchor href=#apprendre-avec-un-professeur-le-supervis%c3%a9></a></h2><p>Commençons par ce que nous connaissons déjà par cœur. En apprentissage supervisé,
+le signal est une <strong>réponse toute prête</strong>, attachée à chaque exemple : le prix de
+cette maison, l&rsquo;étiquette <em>pourriel</em> de ce courriel, la couleur de ce point. Le
+modèle n&rsquo;a qu&rsquo;un but : apprendre à relier l&rsquo;entrée à cette réponse. Une fois
+entraîné, il l&rsquo;applique à des cas neufs. C&rsquo;est l&rsquo;image même du professeur qui
+corrige : il connaît la bonne réponse, et c&rsquo;est en s&rsquo;y comparant que l&rsquo;élève
+progresse.</p><p>Nous en avons rencontré les deux visages : la <strong>régression</strong>, quand la réponse
+est un nombre (un prix), et la <strong>classification</strong>, quand c&rsquo;est une catégorie
+(pourriel ou non). Malgré leurs différences, tous deux carburent au même
+signal (une cible fournie d&rsquo;avance) et à la même mécanique : régler des
+paramètres pour minimiser l&rsquo;écart à cette cible.</p><p>Cette dépendance à des réponses toutes prêtes est la grande force du supervisé…
+et son talon d&rsquo;Achille. Car ces étiquettes, il faut bien que <em>quelqu&rsquo;un</em> les
+fournisse, souvent à la main, un exemple à la fois.</p><blockquote class="book-hint info"><p><strong>Le socle humain du supervisé</strong></p><p>Nous avons vu, dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9><em>Bien évaluer un modèle</em></a>,
+que l&rsquo;étiquetage des données est devenu une industrie à part entière. Elle a
+une face sombre : trancher « ce message est haineux, celui-là non », des
+milliers de fois par jour, c&rsquo;est aussi s&rsquo;exposer aux contenus les plus violents
+du Web, et la modération de contenus est l&rsquo;un des métiers les plus éprouvants
+de cette chaîne. Même les assistants les plus récents en dépendent : une part
+de l&rsquo;entraînement de ChatGPT repose sur des humains qui notent et corrigent ses
+réponses (nous y reviendrons au <span title="Ce module sera publié plus tard">Module 4</span>). L&rsquo;« intelligence »
+de ces systèmes s&rsquo;appuie ainsi sur un socle très humain, et soulève des
+questions que nous retrouverons au <span title="Ce module sera publié plus tard">Module 5</span>.</p></blockquote><p>Que faire, alors, quand personne n&rsquo;a fourni ces réponses ?</p><h2 id=apprendre-sans-réponses-le-non-supervisé>Apprendre sans réponses : le non-supervisé<a class=anchor href=#apprendre-sans-r%c3%a9ponses-le-non-supervis%c3%a9></a></h2><p>Souvent, personne n&rsquo;a fourni d&rsquo;étiquettes. On dispose d&rsquo;un grand tas de données
+brutes (des clients, des photos, des textes) et rien d&rsquo;autre : aucune « bonne
+réponse » à imiter. Peut-on quand même apprendre quelque chose ? Oui, mais le but
+change du tout au tout. Il ne s&rsquo;agit plus de <em>prédire</em> une réponse donnée, mais
+de <strong>découvrir une structure</strong> cachée dans les données elles-mêmes. C&rsquo;est
+l&rsquo;apprentissage <strong>non supervisé</strong> : explorer un territoire sans carte, et en
+dresser une.</p><p>La tâche la plus courante est le <strong>regroupement</strong> (ou <em>clustering</em>) : rassembler
+les exemples qui se ressemblent. Et « se ressembler », nous savons déjà ce que ça
+veut dire : c&rsquo;est être <strong>proches</strong> dans l&rsquo;espace des caractéristiques, comme l&rsquo;a posé
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/><em>Prédire par ressemblance</em></a>.
+Regrouper, c&rsquo;est donc repérer les amas naturels de points : les zones denses,
+séparées par du vide.</p><p>L&rsquo;algorithme classique pour cela s&rsquo;appelle <strong>k-means</strong>. Son idée tient en une
+image : pour organiser une fête, vous voulez répartir les invités autour de $k$
+tables, en plaçant chaque table au centre de son petit groupe, pour que chacun
+soit au plus près de la sienne. k-means fait exactement cela, par tâtonnements :</p><ol><li>placer $k$ « centres » au hasard ;</li><li>rattacher chaque point au centre le plus proche (voilà les groupes provisoires) ;</li><li>déplacer chaque centre au milieu de son groupe ;</li><li>répéter les étapes 2 et 3 jusqu&rsquo;à ce que plus rien ne bouge.</li></ol><p>Essayez : dans l&rsquo;applet, choisissez le nombre de groupes et regardez les centres
+migrer, pas à pas, vers le cœur des amas.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1790370910054623774 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Un point mérite qu&rsquo;on s&rsquo;y arrête. À première vue, ce résultat ressemble à de la
+classification : des points répartis en groupes de couleurs. Mais la différence
+est de fond : ici, <strong>les points n&rsquo;avaient aucune étiquette au départ.</strong> Vous
+n&rsquo;avez pas dit à l&rsquo;algorithme ce qu&rsquo;était chaque groupe ; vous lui avez seulement
+donné leur <em>nombre</em>, et il a inventé le reste. Il n&rsquo;y a pas de « bonne réponse »
+à retrouver — juste une structure à révéler.</p><p>Ce genre de méthode est partout : segmenter une clientèle en profils-types pour
+le marketing, repérer une transaction anormale au milieu de millions d&rsquo;autres
+(détection de fraude), ou compresser des données en les résumant par leurs
+groupes.</p><p>Et le regroupement n&rsquo;est qu&rsquo;une porte d&rsquo;entrée. Le non-supervisé recouvre aussi
+la <strong>réduction de dimension</strong> (simplifier des données à mille variables sans trop
+perdre) et, plus profond encore, l&rsquo;<strong>apprentissage de représentations</strong> :
+découvrir <em>tout seul</em>, sans étiquettes, de bonnes caractéristiques pour décrire
+les données. Cette idée, laisser la machine forger ses propres descripteurs, est
+l&rsquo;un des grands moteurs de l&rsquo;IA moderne ; nous la retrouverons avec les
+<strong>autoencodeurs</strong> (<span title="Ce module sera publié plus tard">Module 3</span>) et les <strong>plongements</strong> de mots (<span title="Ce module sera publié plus tard">Module 4</span>).</p><details><summary>Les mathématiques de k-means (optionnel)</summary><div class=markdown-inner><p>k-means cherche à minimiser une fonction d&rsquo;erreur, l&rsquo;<strong>inertie</strong> (la somme des
+carrés des distances de chaque point à son centre) :</p>$$J = \sum_{i=1}^{n} \min_{j=1}^{k} \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$$<p>où $\mathbf{x}_i$ est le $i$-ème point et $\boldsymbol{\mu}_j$ le centre du groupe
+$j$. Les deux étapes de l&rsquo;algorithme alternent :</p><ul><li><strong>assignation</strong> : chaque point rejoint le centre le plus proche,
+$c_i = \arg\min_j \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$ ;</li><li><strong>mise à jour</strong> : chaque centre se replace à la moyenne de ses points,
+$\boldsymbol{\mu}<em>j = \frac{1}{n_j} \sum</em>{i : c_i = j} \mathbf{x}_i$.</li></ul><p>On répète jusqu&rsquo;à convergence. Deux remarques : le nombre de groupes $k$ est un
+<strong>hyper-paramètre</strong> (on le choisit d&rsquo;avance, comme le $k$ de kNN), et
+l&rsquo;algorithme peut se figer dans un minimum <em>local</em>, d&rsquo;où l&rsquo;usage de le relancer
+plusieurs fois avec des centres initiaux différents, pour garder la meilleure
+solution.</p></div></details><h3 id=fabriquer-soi-même-ses-réponses-lauto-supervision>Fabriquer soi-même ses réponses : l&rsquo;auto-supervision<a class=anchor href=#fabriquer-soi-m%c3%aame-ses-r%c3%a9ponses-lauto-supervision></a></h3><p>Entre le supervisé, qui exige des étiquettes, et le non-supervisé, qui s&rsquo;en
+passe, il existe une ruse qui a changé le visage du domaine : <strong>fabriquer les
+étiquettes à partir des données elles-mêmes</strong>. Prenez un texte, cachez-en un
+mot, et demandez au modèle de le deviner : la « bonne réponse » est là, dans
+le texte, sans qu&rsquo;aucun humain n&rsquo;ait rien étiqueté. Prenez une photo, cachez-en
+un morceau, et demandez de le reconstituer. Tournez une image, et demandez de
+combien. À chaque fois, le problème a la forme du supervisé, une entrée et une
+réponse attendue, mais la réponse a été <em>découpée dans la donnée brute</em>. C&rsquo;est
+l&rsquo;apprentissage <strong>auto-supervisé</strong> (<em>self-supervised learning</em>).</p><p>La ruse paraît modeste ; elle est immense, parce qu&rsquo;elle lève la barrière de
+l&rsquo;étiquetage. Le Web contient des milliers de milliards de mots, tous
+disponibles, sans qu&rsquo;il en coûte une seule heure de travail humain : chaque
+phrase est un exercice avec son corrigé. C&rsquo;est ainsi, en apprenant à prédire
+le mot suivant, que les grands modèles de langage du <span title="Ce module sera publié plus tard">Module 4</span>
+sont entraînés, et c&rsquo;est pour cela qu&rsquo;ils ont pu lire une bonne partie de ce
+que l&rsquo;humanité a écrit. Le supervisé leur fournit ensuite, en bien plus petites
+quantités, les réponses notées par des humains dont l&rsquo;encart plus haut
+parlait ; mais le gros de leur savoir vient de ce jeu de devinettes avec
+eux-mêmes.</p><h2 id=apprendre-par-lexpérience-le-renforcement>Apprendre par l&rsquo;expérience : le renforcement<a class=anchor href=#apprendre-par-lexp%c3%a9rience-le-renforcement></a></h2><p>Reste une troisième situation, très différente des deux premières. Pas
+d&rsquo;étiquettes ; mais cette fois, pas non plus un simple tas de données à
+structurer. Ici, le modèle, qu&rsquo;on appelle un <strong>agent</strong>, doit <em>agir</em>, et il
+apprend des <strong>conséquences</strong> de ses actes. Pensez à un enfant qui apprend à faire
+du vélo, à un robot qui apprend à marcher, ou à un joueur qui découvre un jeu :
+personne ne leur dicte le bon geste à chaque instant ; ils essaient, tombent,
+recommencent, et retiennent ce qui marche.</p><p>Le signal, ici, c&rsquo;est une <strong>récompense</strong> : un point gagné, une partie remportée,
+une chute évitée. Sa particularité : elle arrive souvent <strong>bien après</strong> les
+actions qui l&rsquo;ont causée. Quand on gagne une partie d&rsquo;échecs, quel coup, au juste,
+fut décisif ? Ce décalage est toute la difficulté du renforcement : il faut
+apprendre à relier une récompense tardive aux actions qui l&rsquo;ont, un jour, rendue
+possible.</p><p>La stratégie est celle de l&rsquo;<strong>essai-erreur</strong>. L&rsquo;agent explore, encaisse
+récompenses et punitions, et <strong>renforce</strong> peu à peu les actions qui mènent au
+succès, d&rsquo;où le nom. Voyez-le à l&rsquo;œuvre : dans l&rsquo;applet ci-dessous, un agent
+(le point jaune) cherche la sortie (<strong>+1</strong>) d&rsquo;une petite grille en évitant un
+piège (<strong>−1</strong>), sans rien savoir au départ. Lancez l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1790370910054664821 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent erre au hasard. Puis, épisode après épisode, une <strong>carte de
+valeur</strong> se dessine (les cases se teintent selon leur promesse) et une
+<strong>politique</strong> émerge : les flèches, indiquant en chaque case le meilleur
+mouvement, finissent par tracer un chemin sûr vers le but. Un détail est
+instructif : le curseur d&rsquo;<strong>exploration</strong> (ε). À zéro, l&rsquo;agent ne fait
+qu&rsquo;exploiter ce qu&rsquo;il croit déjà savoir et peut rester coincé dans un chemin
+médiocre ; un peu de hasard le pousse à <em>explorer</em> d&rsquo;autres routes, et parfois à
+en trouver de meilleures. Cet arbitrage entre <strong>explorer et exploiter</strong> est au
+cœur du renforcement.</p><p>Reconnaissez-vous un air de famille ? Au <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lapog%c3%a9e-deep-blue-bat-kasparov-1997>Module 1</a>, nous parlions des machines qui
+jouent aux échecs en <em>cherchant</em> dans l&rsquo;arbre des coups possibles. Le
+renforcement, c&rsquo;est cette quête, mais où la machine <em>apprend</em> elle-même à évaluer
+les positions plutôt que de tout calculer. C&rsquo;est précisément ce mariage (la
+recherche du GOFAI et l&rsquo;apprentissage) qui a permis à <strong>AlphaGo</strong> de battre les
+meilleurs joueurs de go humains, là où la seule force brute échouait.</p><p>Le renforcement est aussi la famille la plus gourmande en calcul, et c&rsquo;est en le
+mariant aux <strong>réseaux de neurones</strong> (le <em>deep reinforcement learning</em>, <span title="Ce module sera publié plus tard">Module 3</span>)
+qu&rsquo;il a pris son essor. Vous le recroiserez même au cœur des assistants modernes :
+c&rsquo;est en partie par renforcement, à partir des préférences d&rsquo;évaluateurs humains
+(le fameux <strong>RLHF</strong>), qu&rsquo;on façonne le comportement de ChatGPT. Et c&rsquo;est par
+renforcement encore, mais avec des récompenses <em>vérifiables</em> cette fois (un
+problème de mathématiques a une bonne réponse, un programme passe ou non ses
+tests : le <strong>RLVR</strong>), qu&rsquo;on a appris aux modèles les plus récents à
+« raisonner » longuement avant de répondre. Nous y viendrons au
+<span title="Ce module sera publié plus tard">Module 4</span>.</p><h2 id=un-même-squelette-dun-bout-à-lautre>Un même squelette, d&rsquo;un bout à l&rsquo;autre<a class=anchor href=#un-m%c3%aame-squelette-dun-bout-%c3%a0-lautre></a></h2><p>Trois signaux, trois familles, trois réponses à une seule question : <em>de quoi le
+modèle apprend-il ?</em> Une réponse fournie, une structure à découvrir, une
+récompense à conquérir. Mais si l&rsquo;on gratte sous la surface, ces trois mondes
+partagent la même charpente : celle, précisément, qui a couru tout au long de ce
+module.</p><p>Rappelez-vous le chemin. On part de <strong>données</strong>, qu&rsquo;on décrit par des nombres,
+des points dans un espace. On choisit un <strong>modèle</strong> : une fonction de prédiction,
+réglée par des paramètres. On mesure son <strong>erreur</strong> de prédiction. On règle alors
+les paramètres du modèle pour la <strong>minimiser</strong>, le plus souvent en dévalant la
+pente par descente de gradient. Et
+l&rsquo;on vérifie qu&rsquo;il <strong>généralise</strong> au-delà des exemples appris. Tout ce que nous
+avons croisé n&rsquo;est qu&rsquo;une variation sur cette grammaire : le modèle bête et son
+unique nombre, kNN et ses zéro paramètre, la droite et ses deux, l&rsquo;arbre et
+ses questions, la régression logistique et Bayes qui classent, k-means qui regroupe sans étiquettes, l&rsquo;agent
+qui apprend d&rsquo;une récompense. Même démarche, décors différents.</p><p>C&rsquo;est là, au fond, toute la démystification que visait ce module. « Apprendre »,
+pour une machine, n&rsquo;a rien de magique : c&rsquo;est <strong>ajuster des réglages pour réduire
+une erreur sur des exemples</strong>. La question que nous posions dès la première page —
+<em>en quoi est-ce de l&rsquo;intelligence ?</em> — reste ouverte, et c&rsquo;est très bien ainsi ;
+mais vous savez désormais, concrètement, ce qui se passe sous le capot.</p><p>Un dernier mot, pour boucler la parenté annoncée à l&rsquo;ouverture du module. Tout
+ce que nous avons fait ici, un statisticien l&rsquo;aurait reconnu : ajuster une
+droite, estimer une probabilité, tirer un échantillon, se méfier d&rsquo;un score. Ce
+qui a changé, ce n&rsquo;est pas le socle, c&rsquo;est l&rsquo;accent et l&rsquo;échelle. L&rsquo;accent :
+prédire d&rsquo;abord, expliquer ensuite, et parfois jamais. L&rsquo;échelle : des millions
+d&rsquo;exemples, des milliards de paramètres, et des modèles que plus personne ne
+lit. C&rsquo;est à cette échelle que la statistique a pris le nom d&rsquo;apprentissage
+automatique, et c&rsquo;est là qu&rsquo;elle a produit quelque chose que ses fondateurs
+n&rsquo;auraient pas prévu.</p><p>Il ne reste plus qu&rsquo;à changer d&rsquo;échelle. Un chercheur qui a passé sa vie sur
+l&rsquo;apprentissage par renforcement, Richard Sutton, a tiré de soixante-dix ans
+d&rsquo;histoire de l&rsquo;IA une leçon qu&rsquo;il dit amère, <a href=http://www.incompleteideas.net/IncIdeas/BitterLesson.html>« The Bitter
+Lesson »</a>
+(2019) : à long terme, les méthodes générales qui exploitent la puissance de
+calcul finissent toujours par battre celles où l&rsquo;on avait inscrit à la main le
+savoir des humains, et il n&rsquo;y en a que deux qui passent vraiment à
+l&rsquo;échelle : la <strong>recherche</strong>, celle du Module 1, et l&rsquo;<strong>apprentissage</strong>, celui
+de ce module. Ce que cette leçon signifie, et ce qu&rsquo;elle coûte, sera le point
+de départ du <span title="Ce module sera publié plus tard"><strong>Module 3</strong></span>, où nous empilerons ces fonctions
+réglables en <strong>réseaux de neurones</strong> profonds, et verrons pourquoi c&rsquo;est là que
+l&rsquo;image et le langage prennent enfin leur envol. Au <span title="Ce module sera publié plus tard"><strong>Module 4</strong></span>,
+ces mêmes réseaux deviendront <strong>génératifs</strong>, capables de produire textes et
+images : les grands modèles de langage. Le squelette ne changera pas. Il grandira.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Bien évaluer un modèle</span>
+</a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/ class="flex align-center"><span>Travail noté 2</span>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#apprendre-avec-un-professeur-le-supervisé>Apprendre avec un professeur : le supervisé</a></li><li><a href=#apprendre-sans-réponses-le-non-supervisé>Apprendre sans réponses : le non-supervisé</a><ul><li><a href=#fabriquer-soi-même-ses-réponses-lauto-supervision>Fabriquer soi-même ses réponses : l&rsquo;auto-supervision</a></li></ul></li><li><a href=#apprendre-par-lexpérience-le-renforcement>Apprendre par l&rsquo;expérience : le renforcement</a></li><li><a href=#un-même-squelette-dun-bout-à-lautre>Un même squelette, d&rsquo;un bout à l&rsquo;autre</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>

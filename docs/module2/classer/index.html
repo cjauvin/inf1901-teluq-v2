@@ -1,0 +1,245 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Classer Le chapitre précédent nous a donné un vrai modèle qui apprend : une droite, deux paramètres, une erreur à minimiser, une descente vers le creux. Mais il répond toujours par un nombre : un prix. Or quantité de questions n’attendent pas un nombre, plutôt une catégorie : ce courriel est-il un pourriel ? cette tumeur est-elle bénigne ou maligne ? cette photo montre-t-elle un chat ou un chien ? C’est la tâche de classification, déjà croisée au chapitre kNN, mais cette fois, nous voulons un modèle qui s’entraîne.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Classer"><meta property="og:description" content="Classer Le chapitre précédent nous a donné un vrai modèle qui apprend : une droite, deux paramètres, une erreur à minimiser, une descente vers le creux. Mais il répond toujours par un nombre : un prix. Or quantité de questions n’attendent pas un nombre, plutôt une catégorie : ce courriel est-il un pourriel ? cette tumeur est-elle bénigne ou maligne ? cette photo montre-t-elle un chat ou un chien ? C’est la tâche de classification, déjà croisée au chapitre kNN, mais cette fois, nous voulons un modèle qui s’entraîne."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Classer"><meta itemprop=description content="Classer Le chapitre précédent nous a donné un vrai modèle qui apprend : une droite, deux paramètres, une erreur à minimiser, une descente vers le creux. Mais il répond toujours par un nombre : un prix. Or quantité de questions n’attendent pas un nombre, plutôt une catégorie : ce courriel est-il un pourriel ? cette tumeur est-elle bénigne ou maligne ? cette photo montre-t-elle un chat ou un chien ? C’est la tâche de classification, déjà croisée au chapitre kNN, mais cette fois, nous voulons un modèle qui s’entraîne."><meta itemprop=wordCount content="3435"><title>Classer • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/changelog/>Évolution du cours (venez voir de temps en temps!)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle checked>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/ class=active>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Classer</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#tracer-une-frontière-la-régression-logistique>Tracer une frontière : la régression logistique</a></li><li><a href=#renverser-le-problème-la-classification-bayésienne>Renverser le problème : la classification bayésienne</a></li><li><a href=#le-cas-des-pourriels>Le cas des pourriels</a></li><li><a href=#sous-les-modèles-des-probabilités>Sous les modèles, des probabilités</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=classer>Classer<a class=anchor href=#classer></a></h1><p>Le chapitre précédent nous a donné un vrai modèle qui apprend : une droite, deux
+paramètres, une erreur à minimiser, une descente vers le creux. Mais il répond
+toujours par un <strong>nombre</strong> : un prix. Or quantité de questions n&rsquo;attendent pas un
+nombre, plutôt une <strong>catégorie</strong> : ce courriel est-il un pourriel ? cette tumeur
+est-elle bénigne ou maligne ? cette photo montre-t-elle un chat ou un chien ?
+C&rsquo;est la tâche de <strong>classification</strong>, déjà croisée au chapitre kNN, mais cette
+fois, nous voulons un modèle qui <em>s&rsquo;entraîne</em>.</p><p>Bonne nouvelle, annoncée en fin de chapitre : presque toute la machinerie va
+resservir. Des paramètres réglables, une fonction d&rsquo;erreur, une descente de
+gradient pour la minimiser : ce trio est si général qu&rsquo;il s&rsquo;adapte aussi bien à
+la classification qu&rsquo;à la régression. Deux choses seulement changent : la
+<strong>forme</strong> du modèle et la <strong>façon de compter l&rsquo;erreur</strong>.</p><p>Pour la forme, le glissement est d&rsquo;une simplicité élégante. En régression, la
+droite <em>suivait</em> le nuage : elle passait <em>à travers</em> les points pour en épouser
+la tendance. En classification, la droite <em>sépare</em> le nuage : elle passe <em>entre</em>
+deux groupes pour les départager. Même objet — une droite, deux paramètres —
+mais un rôle inversé.</p><label class=book-image for=book-image-toggle-3ac67738fd8b><input class="hidden toggle" type=checkbox id=book-image-toggle-3ac67738fd8b>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/suivre-vs-separer.svg alt="Deux nuages de points côte à côte. À gauche, une droite traverse le nuage de maisons en suivant sa tendance : c'est la régression. À droite, une droite passe entre un groupe de points bleus et un groupe de points rouges pour les départager : c'est la classification." loading=lazy title="Deux usages de la même droite : à gauche elle suit le nuage (régression), à droite elle le sépare (classification)." width=660 height=360 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-3ac67738fd8b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Pour fixer les idées, abandonnons un instant les maisons et imaginons le cas le
+plus simple : des points de deux couleurs, <code>bleus</code> et <code>rouges</code>, dispersés dans
+le plan (deux caractéristiques, $x_1$ et $x_2$). Apprendre à classer, ce sera
+trouver la droite qui range le mieux les bleus d&rsquo;un côté et les rouges de
+l&rsquo;autre. Et il y a, pour y arriver, deux grandes façons de penser, deux
+philosophies que nous allons explorer tour à tour.</p><h2 id=tracer-une-frontière-la-régression-logistique>Tracer une frontière : la régression logistique<a class=anchor href=#tracer-une-fronti%c3%a8re-la-r%c3%a9gression-logistique></a></h2><p>La première façon de penser est la plus directe : si je veux séparer les bleus
+des rouges, je n&rsquo;ai qu&rsquo;à <strong>tracer la frontière</strong> entre eux. Pas besoin de
+comprendre ce qui distingue un bleu d&rsquo;un rouge dans le fond : il me suffit de
+trouver <em>où passe la ligne</em>. C&rsquo;est l&rsquo;approche dite <strong>discriminative</strong> : le modèle
+apprend à discriminer les classes, sans chercher à les décrire.</p><p>Cette frontière, dans notre plan, c&rsquo;est une droite, et nous savons déjà qu&rsquo;une
+droite tient en deux paramètres, une pente et une hauteur. Mais son rôle a
+changé. En régression, on lisait la droite <em>verticalement</em> : à telle superficie,
+tel prix. Ici, on la lit <em>latéralement</em> : de quel <strong>côté</strong> de la ligne tombe le
+point ? D&rsquo;un côté, on répond <code>bleu</code> ; de l&rsquo;autre, <code>rouge</code>. La même équation,
+$m x_1 + b$, ne sert plus à calculer une valeur mais à partager le plan en deux.</p><p>Cet algorithme s&rsquo;appelle la <strong>régression logistique</strong> ; mis au point par des
+statisticiens dans les années 1950, il est, malgré ce nom trompeur (il
+contient « régression » alors qu&rsquo;il <em>classe</em>), l&rsquo;un des classificateurs les
+plus utilisés au monde. Essayez-le : dans l&rsquo;applet, déplacez
+la ligne de décision pour séparer au mieux les deux groupes. Vous ajustez ainsi
+ses deux paramètres à la main, exactement comme vous déplaciez la droite de
+régression au chapitre précédent. Vous pouvez aussi ajouter, retirer ou déplacer
+des points.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1790370910038359340 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Et l&rsquo;erreur ? C&rsquo;est le second changement. On ne peut plus mesurer une « distance
+verticale au point », puisqu&rsquo;on ne prédit plus une valeur. Ce qu&rsquo;on compte
+désormais, c&rsquo;est à quel point le modèle se <strong>trompe de côté</strong> : un point bien
+rangé ne coûte rien, un point du mauvais côté coûte cher. La barre à droite de
+l&rsquo;applet affiche cette erreur. Cherchez à la rendre la plus petite possible,
+idéalement zéro, quand la ligne sépare parfaitement les deux couleurs.</p><p>Vous remarquerez deux choses en jouant. D&rsquo;abord, ce n&rsquo;est <strong>pas toujours
+possible</strong> d&rsquo;atteindre zéro : si les couleurs se chevauchent, aucune droite ne
+les sépare proprement. Ensuite, l&rsquo;erreur ne dépasse jamais <strong>50 %</strong> : même la
+pire ligne classe correctement la moitié des points par accident, et s&rsquo;il fait
+pire, le modèle n&rsquo;a qu&rsquo;à inverser sa convention (« ce côté-ci est rouge, pas
+bleu ») pour repasser sous la barre.</p><blockquote class="book-hint info"><p>Matière à réflexion : pourquoi n&rsquo;est-il pas toujours possible de séparer
+parfaitement les deux groupes par une droite ? Dans quelles conditions y
+arrive-t-on ? Et qu&rsquo;est-ce qui pourrait rendre la chose possible quand elle ne
+l&rsquo;est pas ? <em>(Nous y reviendrons : c&rsquo;est l&rsquo;une des grandes affaires du <span title="Ce module sera publié plus tard">Module 3</span>.)</em></p></blockquote><p>Reste la question de fond : comment la machine trouve-t-elle <em>seule</em> la bonne
+ligne, sans qu&rsquo;on la déplace à la souris ? La réponse ne vous surprendra pas —
+c&rsquo;est, mot pour mot, celle du chapitre précédent. L&rsquo;erreur est une fonction des
+deux paramètres ; cela dessine un paysage ; et la <strong>descente de gradient</strong> dévale
+ce paysage jusqu&rsquo;à son creux. Le même moteur, réutilisé tel quel. Seule la forme
+de la fonction d&rsquo;erreur diffère. Pour ceux que les détails intéressent, les
+voici.</p><details><summary>Les mathématiques de la régression logistique (optionnel)</summary><div class=markdown-inner><p>Bien que nous en ayons parlé en termes purement géométriques, la régression
+logistique est en réalité une méthode <em>probabiliste</em> : plutôt que de trancher
+sèchement <code>bleu</code> ou <code>rouge</code>, elle estime la <strong>probabilité</strong> qu&rsquo;un point soit
+bleu. Un point loin de la frontière, du côté bleu, sera bleu « à 99 % » ; un
+point juste sur la ligne, bleu « à 50 % », l&rsquo;hésitation maximale.</p><p>Pour transformer la position d&rsquo;un point (une valeur quelconque) en une
+probabilité (un nombre forcément entre 0 et 1), on emploie la <strong>fonction
+sigmoïde</strong>, ou logistique : c&rsquo;est elle qui donne son nom à l&rsquo;algorithme. Sa
+courbe en S écrase n&rsquo;importe quelle valeur dans l&rsquo;intervalle $[0, 1]$ :</p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/Logistic-curve-02.png alt width=3228 height=1924></p><p>Adoptons la notation classique de l&rsquo;apprentissage automatique. Un point est un
+vecteur $\mathbf{x} = [x_1, x_2]$ ; sa vraie classe est $y \in {0, 1}$ (0 pour
+rouge, 1 pour bleu, arbitrairement) ; les paramètres forment un vecteur
+$\mathbf{w} = [w_1, w_2]$ accompagné de $b$. On calcule d&rsquo;abord un <strong>score</strong>
+(combien, et de quel côté, le point s&rsquo;écarte de la frontière) :</p>$$z = w_1 x_1 + w_2 x_2 + b$$<p>puis on le passe dans la sigmoïde pour obtenir la probabilité estimée :</p>$$\hat{y} = \frac{1}{1 + e^{-z}}$$<p>où $\hat{y} \in [0, 1]$ est une <em>probabilité</em>, à distinguer de $y \in {0, 1}$,
+la <em>vraie</em> classe. La décision finale est alors : bleu si $\hat{y} \ge 0{,}5$,
+rouge sinon.</p><p>L&rsquo;erreur sur un point compare la probabilité prédite $\hat{y}$ à la vérité $y$.
+On utilise l&rsquo;<strong>entropie croisée</strong> :</p>$$E(y, \hat{y}) = -\big[\,y \log(\hat{y}) + (1 - y)\log(1 - \hat{y})\,\big]$$<p>Son comportement est exactement celui qu&rsquo;on souhaite : si le point est bleu
+($y = 1$) et que le modèle en est sûr ($\hat{y} = 0{,}9$), l&rsquo;erreur est minime
+($-\log 0{,}9 \approx 0{,}1$) ; mais s&rsquo;il se trompe avec aplomb
+($\hat{y} = 0{,}1$ pour un vrai bleu), l&rsquo;erreur explose
+($-\log 0{,}1 \approx 2{,}3$). La confiance mal placée est lourdement punie.</p><p>L&rsquo;erreur totale, sur les $n$ points, en est la moyenne :</p>$$J(\mathbf{w}, b) = \frac{1}{n} \sum_{i=1}^{n} E\big(y^{(i)}, \hat{y}^{(i)}\big)$$<p>C&rsquo;est cette fonction $J(\mathbf{w}, b)$ qui joue le rôle de « paysage » : à chaque
+choix de paramètres, une hauteur d&rsquo;erreur. La descente de gradient en mesure la
+pente,</p>$$\frac{\partial J}{\partial \mathbf{w}} = \frac{1}{n} \sum_{i=1}^n \big(\hat{y}^{(i)} - y^{(i)}\big)\,\mathbf{x}^{(i)}, \qquad \frac{\partial J}{\partial b} = \frac{1}{n} \sum_{i=1}^n \big(\hat{y}^{(i)} - y^{(i)}\big)$$<p>et fait un pas en sens inverse, d&rsquo;une taille réglée par le taux d&rsquo;apprentissage
+$\alpha$ :</p>$$\mathbf{w} \leftarrow \mathbf{w} - \alpha\,\frac{\partial J}{\partial \mathbf{w}}, \qquad b \leftarrow b - \alpha\,\frac{\partial J}{\partial b}$$<p>On répète jusqu&rsquo;à ce que l&rsquo;erreur ne diminue plus. C&rsquo;est, trait pour trait, la
+mécanique du chapitre précédent : seule la fonction d&rsquo;erreur a changé de visage.</p></div></details><h2 id=renverser-le-problème-la-classification-bayésienne>Renverser le problème : la classification bayésienne<a class=anchor href=#renverser-le-probl%c3%a8me-la-classification-bay%c3%a9sienne></a></h2><p>La seconde façon de penser prend le problème par l&rsquo;autre bout. Plutôt que de
+tracer d&rsquo;emblée la frontière, elle commence par <strong>décrire chaque classe</strong>. À quoi
+ressemble un point bleu, typiquement ? Et un rouge ? Si je dispose d&rsquo;un bon
+portrait de chacun, je peux classer un nouveau point en demandant simplement :
+<em>ressemble-t-il davantage à un bleu ou à un rouge ?</em></p><label class=book-image for=book-image-toggle-382e3584fb78><input class="hidden toggle" type=checkbox id=book-image-toggle-382e3584fb78>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/qui-je-ressemble.svg alt="Deux nuages de points, l'un bleu, l'autre rouge, chacun entouré d'un halo qui figure son « portrait » (sa répartition). Un point neuf, posé entre les deux, demande : à qui je ressemble le plus ? On le compare à chaque portrait pour décider de sa classe." loading=lazy title="L'approche générative : on décrit le « portrait » de chaque classe, puis on demande auquel le nouveau point ressemble le plus." width=660 height=380 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-382e3584fb78"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>C&rsquo;est l&rsquo;approche dite <strong>générative</strong>, et le mot mérite qu&rsquo;on s&rsquo;y arrête. Décrire
+une classe assez finement pour reconnaître ses membres, c&rsquo;est aussi savoir, en
+principe, en <em>fabriquer</em> de nouveaux : un modèle qui connaît le portrait-robot du
+« bleu typique » pourrait inventer des bleus plausibles qu&rsquo;il n&rsquo;a jamais vus.
+D&rsquo;où <em>génératif</em> : il pourrait générer des données, pas seulement les trancher.
+Retenez cette idée : elle paraît modeste ici, mais c&rsquo;est elle qui, poussée à
+l&rsquo;extrême, donnera l&rsquo;IA <em>générative</em> d&rsquo;aujourd&rsquo;hui. Un <strong>grand modèle de
+langage</strong> (un LLM, comme celui derrière ChatGPT) n&rsquo;est, au fond, rien d&rsquo;autre
+qu&rsquo;un portrait immensément détaillé de la classe « texte écrit par des
+humains », assez fin pour en fabriquer du neuf, mot après mot ; les générateurs
+d&rsquo;images font de même avec les photos. Le <span title="Ce module sera publié plus tard">Module 4</span> leur est consacré.</p><p>Comment dresse-t-on le portrait d&rsquo;une classe ? En décrivant <strong>comment ses points
+se répartissent</strong> le long de chaque caractéristique. Les maisons bleues se
+concentrent-elles autour de telle valeur de $x_1$ ? Les rouges, plus haut ? Cette
+répartition se résume par une courbe familière, la fameuse <strong>courbe en cloche</strong>
+(ou <em>gaussienne</em>) : un sommet là où les points sont denses, des bords qui
+s&rsquo;amincissent là où ils se raréfient. Un portrait de classe, c&rsquo;est une poignée de
+ces cloches, une par caractéristique.</p><p>Pour garder le calcul simple, on fait une hypothèse délibérément grossière : on
+traite <strong>chaque caractéristique séparément</strong>, comme si elles étaient
+indépendantes. C&rsquo;est rarement tout à fait vrai (la superficie et le nombre de
+pièces, par exemple, vont de pair), et c&rsquo;est précisément ce que veut dire le mot
+<strong>naïve</strong> dans le nom de la méthode. Naïve, mais redoutablement efficace en
+pratique.</p><p>Reste alors un dernier tour de passe-passe. Nos portraits répondent à la
+question : « <em>si</em> ce point est bleu, à quel point est-il typique ? », autrement
+dit, la probabilité du point <em>sachant</em> la classe. Mais ce qu&rsquo;on veut, c&rsquo;est
+l&rsquo;inverse : « ce point étant donné, quelle est la probabilité qu&rsquo;il soit bleu ? »
+Renverser ainsi le conditionnement, passer de <em>probabilité du point sachant la
+classe</em> à <em>probabilité de la classe sachant le point</em>, est exactement ce que
+permet un résultat fondamental des probabilités, le <strong>théorème de Bayes</strong>, publié en 1763.
+C&rsquo;est lui qui donne son nom à la méthode, la <strong>classification bayésienne naïve</strong>.</p><p>Voilà donc deux routes vers le même but :</p><table><thead><tr><th></th><th><strong>Régression logistique</strong></th><th><strong>Bayes naïf</strong></th></tr></thead><tbody><tr><td>Philosophie</td><td><strong>discriminative</strong></td><td><strong>générative</strong></td></tr><tr><td>Stratégie</td><td>tracer la frontière</td><td>décrire chaque classe</td></tr><tr><td>Question posée</td><td><em>de quel côté ?</em></td><td><em>à quel portrait ressemble-t-il le plus ?</em></td></tr><tr><td>Bonus</td><td>—</td><td>pourrait <em>générer</em> de nouveaux exemples</td></tr></tbody></table><p>Fait remarquable : sur nos données en deux dimensions, ces deux chemins si
+différents aboutissent à la <strong>même forme de frontière</strong> : une droite. Mais la
+distinction entre apprendre à <em>séparer</em> et apprendre à <em>décrire</em> est l&rsquo;une des
+plus profondes de tout le domaine. Nous la retrouverons, en grand, au <span title="Ce module sera publié plus tard">Module 4</span> :
+les modèles qui <em>classent</em> d&rsquo;un côté, ceux qui <em>engendrent</em> du contenu de
+l&rsquo;autre.</p><details><summary>Les mathématiques de la classification bayésienne naïve (optionnel)</summary><div class=markdown-inner><p>Chaque couple <strong>caractéristique + classe</strong> est modélisé par une gaussienne à une
+dimension, soit, sur nos deux caractéristiques et nos deux classes, quatre
+cloches en tout. La gaussienne (ou loi normale) décrit comment la « masse de
+probabilité » se répartit autour d&rsquo;une valeur centrale, la moyenne :</p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/gaussian.png alt width=1157 height=735></p><p>Un point subtil : la hauteur de la courbe en un endroit n&rsquo;est <em>pas</em> la
+probabilité de ce point. Comme la courbe est continue, une probabilité
+correspond à une <strong>aire</strong> sous la courbe (entre deux bornes) ; l&rsquo;aire totale vaut
+1, et l&rsquo;aire à gauche de la moyenne vaut donc 0,5.</p><p>Concrètement, on projette d&rsquo;abord les points sur l&rsquo;axe $x_1$, ce qui les rend
+unidimensionnels…</p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/nb_x1_proj.png alt width=934 height=607></p><p>…puis on ajuste une cloche par classe, dont la largeur épouse la dispersion des
+points projetés :</p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/nb_x1_gauss.png alt width=743 height=498></p><p>et on recommence sur l&rsquo;axe $x_2$ :</p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/nb_x2_proj.png alt width=847 height=553></p><p><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/nb_x2_gauss.png alt width=760 height=543></p><p>On dispose alors de quatre modèles $p(x_j \mid \text{classe})$. La moyenne $\mu$
+et l&rsquo;écart-type $\sigma$ de chaque cloche s&rsquo;obtiennent <strong>directement</strong> par un
+simple calcul de moyenne et de dispersion sur les points concernés (pas besoin,
+ici, de descente de gradient itérative) :</p>$$\hat\mu_{j,c} = \frac{1}{N_c}\sum_{i \in c} x_{ij}, \qquad \hat\sigma^2_{j,c} = \frac{1}{N_c}\sum_{i \in c} \big(x_{ij} - \hat\mu_{j,c}\big)^2$$<p>L&rsquo;hypothèse <em>naïve</em> d&rsquo;indépendance permet de combiner les caractéristiques par
+simple multiplication :</p>$$p(\mathbf{x} \mid c) = p(x_1 \mid c)\,\cdot\,p(x_2 \mid c)$$<p>Ce modèle est <em>génératif</em> : il décrit la probabilité d&rsquo;un point $\mathbf{x}$
+<em>sachant</em> sa classe, $P(\mathbf{x} \mid y)$. Mais la classification réclame
+l&rsquo;inverse, $P(y \mid \mathbf{x})$. Le <strong>théorème de Bayes</strong> opère le
+renversement :</p>$$P(y \mid \mathbf{x}) = \frac{P(\mathbf{x} \mid y)\,P(y)}{P(\mathbf{x})}$$<p>où $P(y)$ est la proportion de chaque classe (souvent 50/50 si les données sont
+équilibrées). Comme le dénominateur $P(\mathbf{x})$ ne dépend pas de la classe,
+on peut l&rsquo;ignorer pour décider :</p>$$\text{classe}(\mathbf{x}) = \begin{cases} \mathtt{rouge} & \text{si } P(\mathbf{x}\mid\text{rouge})\,P(\text{rouge}) \ge P(\mathbf{x}\mid\text{bleu})\,P(\text{bleu}) \\ \mathtt{bleu} & \text{sinon} \end{cases}$$<p>On compare donc, pour le point observé, lequel des deux portraits le rend le plus
+<strong>vraisemblable</strong>, et c&rsquo;est le portrait gagnant qui donne la classe.</p></div></details><h2 id=le-cas-des-pourriels>Le cas des pourriels<a class=anchor href=#le-cas-des-pourriels></a></h2><p>Quittons maintenant les points colorés et leur plan abstrait pour un problème
+bien réel, celui-là même qui vous attend au <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>travail noté
+2</a> : reconnaître automatiquement les <strong>pourriels</strong> (les
+courriels indésirables, le <em>spam</em>). C&rsquo;est un cas d&rsquo;école de classification :
+deux classes, <code>pourriel</code> ou <code>courriel</code> légitime, et une décision à prendre pour
+chaque message qui arrive.</p><p>Mais un premier obstacle se dresse. Nos deux classificateurs attendent un
+<strong>point</strong>, une petite liste de nombres. Un courriel, lui, est un <em>texte</em>.
+Comment transformer « <em>Félicitations ! Vous avez gagné un prix…</em> » en
+coordonnées ?</p><p>La réponse reprend exactement la démarche de <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/><em>Regarder les
+données</em></a> : une chose se décrit par une <strong>liste de nombres</strong>, et
+devient ainsi un point dans un espace. Pour un texte, le procédé le plus simple
+s&rsquo;appelle le <strong>sac de mots</strong> : on dresse la liste de tous les mots possibles (le
+<em>vocabulaire</em>), et on décrit un courriel en comptant combien de fois chacun y
+apparaît. Une dimension par mot du vocabulaire ; la valeur, le nombre
+d&rsquo;occurrences. Le mot « gratuit » apparaît deux fois, « réunion » zéro fois, et
+ainsi de suite.</p>$$\mathbf{x} = (n_1, n_2, \ldots, n_V)$$<p>La seule différence avec le vecteur d&rsquo;une maison, c&rsquo;est l&rsquo;échelle : là où la
+maison tenait en quelques caractéristiques, le vocabulaire compte des <em>dizaines
+de milliers</em> de mots. Notre courriel est donc un point — un vrai —, mais dans un
+espace d&rsquo;une vertigineuse dimension. Et, comme nos points bleus et rouges, les
+pourriels et les courriels légitimes y forment deux nuages distincts :</p><label class=book-image for=book-image-toggle-34ee8f7bb560><input class="hidden toggle" type=checkbox id=book-image-toggle-34ee8f7bb560>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/spam_vector_space.png alt="Un système d'axes où chaque axe représente un mot du vocabulaire. Les courriels sont des points dans cet espace de très haute dimension ; les pourriels se regroupent dans une région, les courriels légitimes dans une autre." loading=lazy title="Chaque mot du vocabulaire est un axe ; un courriel devient un point dans cet espace. Pourriels et courriels légitimes y forment deux nuages." width=2102 height=1252 style=--largeur-plafond:1175px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-34ee8f7bb560"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Deux nuages dans un espace : nous savons faire. Toute la machinerie de la section
+précédente s&rsquo;applique telle quelle. On dresse le <strong>portrait</strong> de chaque classe
+(à quoi ressemblent les mots d&rsquo;un pourriel typique ? d&rsquo;un courriel honnête ?),
+puis on classe un nouveau message en demandant lequel des deux portraits rend ses
+mots les plus vraisemblables. C&rsquo;est, encore une fois, l&rsquo;approche <strong>générative</strong> de
+Bayes naïf ; et l&rsquo;hypothèse « naïve » revient à supposer que les mots sont tirés
+<strong>indépendamment</strong> les uns des autres : faux (« carte » appelle « bancaire »),
+mais commode et étonnamment efficace.</p><p>Un seul détail technique change par rapport à la section précédente. Là, nos
+caractéristiques étaient des valeurs <em>continues</em>, qu&rsquo;on décrivait par une courbe
+en cloche. Ici, ce sont des <em>comptes</em>, des nombres entiers : zéro, une, deux
+occurrences. La cloche cède donc la place à une loi taillée pour les comptes, la
+<strong>loi multinomiale</strong> ; mais l&rsquo;esprit est identique. Le portrait d&rsquo;une classe, ce
+n&rsquo;est plus une moyenne et une dispersion, c&rsquo;est la liste des mots qu&rsquo;elle emploie
+volontiers : « gratuit », « urgent », « félicitations » pèsent lourd côté
+pourriel, beaucoup moins côté courriel ordinaire.</p><blockquote class="book-hint info"><p>C&rsquo;est précisément ce classificateur (Bayes naïf multinomial sur un sac de mots)
+que vous mettrez en œuvre au <strong>travail noté 2</strong> pour bâtir votre propre filtre
+anti-pourriel.</p></blockquote><details><summary>Les mathématiques du Bayes naïf multinomial (optionnel)</summary><div class=markdown-inner><p>Un courriel est le vecteur de comptes $\mathbf{x} = (n_1, \ldots, n_V)$, où $n_i$
+est le nombre d&rsquo;occurrences du mot $i$ et $V$ la taille du vocabulaire. Si ce
+courriel appartient à la classe <code>pourriel</code>, la probabilité d&rsquo;observer ce vecteur,
+selon la loi multinomiale, est :</p>$$P(\mathbf{x} \mid \text{pourriel}) = \frac{N!}{n_1!\,n_2!\cdots n_V!} \prod_{i=1}^{V} p_i^{\,n_i}$$<p>où $N = \sum_i n_i$ est le nombre total de mots du courriel, et $p_i$ la
+probabilité, dans un pourriel, que le mot tiré soit le mot $i$ (plus élevée pour
+« prix » que pour « parent », disons). On définit de même un modèle pour la
+classe <code>courriel</code>. Ces $p_i$ s&rsquo;estiment directement, en comptant la fréquence de
+chaque mot dans les courriels d&rsquo;entraînement de la classe, exactement comme on
+estimait la moyenne d&rsquo;une gaussienne.</p><p>La décision se prend ensuite par le théorème de Bayes, comme à la section
+précédente. En ignorant le dénominateur $P(\mathbf{x})$ (le même pour les deux
+classes) :</p>$$\text{classe}(\mathbf{x}) = \begin{cases} \mathtt{pourriel} & \text{si } P(\mathbf{x}\mid\text{pourriel})\,P(\text{pourriel}) \ge P(\mathbf{x}\mid\text{courriel})\,P(\text{courriel}) \\ \mathtt{courriel} & \text{sinon} \end{cases}$$<p>On retrouve, sous le calcul, une décision <strong>linéaire</strong> dans l&rsquo;espace des mots :
+le même genre de frontière que celle de la régression logistique. Les deux
+familles, discriminative et générative, se rejoignent une fois de plus.</p></div></details><h2 id=sous-les-modèles-des-probabilités>Sous les modèles, des probabilités<a class=anchor href=#sous-les-mod%c3%a8les-des-probabilit%c3%a9s></a></h2><p>Prenons un peu de hauteur avant de quitter la classification, car un fil
+discret a couru sous toute cette page, et il mérite d&rsquo;être tiré : celui des
+<strong>probabilités</strong>. La régression logistique ne répond pas « bleu » ou
+« rouge » ; elle répond « bleu à 80 % ». Bayes non plus : il compare deux
+probabilités. Ce n&rsquo;est pas un détail d&rsquo;implantation. Un modèle qui donne une
+probabilité exprime une <strong>croyance</strong>, avec son degré de certitude, et cette
+croyance vaut souvent plus que le verdict : un filtre qui jette un courriel à
+51 % et un autre à 99,9 % n&rsquo;a pas la même chose à dire, et le seuil que nous
+déplacerons dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un modèle</em></a>
+n&rsquo;existe que parce que le modèle sait douter. Encore faut-il que ces
+probabilités soient <em>honnêtes</em> : parmi les courriels qu&rsquo;un bon modèle jette
+« à 90 % », neuf sur dix doivent réellement être des pourriels. C&rsquo;est ce
+qu&rsquo;on appelle la <strong>calibration</strong>, et elle se vérifie.</p><p>Le fil remonte plus loin qu&rsquo;on ne croit. Rappelez-vous la fonction d&rsquo;erreur de
+la droite, la moyenne des carrés des écarts, et celle de la régression
+logistique, qui punit d&rsquo;autant plus fort que le modèle se trompe avec aplomb.
+Elles semblent sans rapport ; elles sont deux visages d&rsquo;un même principe, le
+plus important de toute la statistique : le <strong>maximum de vraisemblance</strong>. Au
+lieu de demander « quels paramètres réduisent l&rsquo;erreur ? », on demande
+« sous quels paramètres les données que j&rsquo;ai observées étaient-elles les plus
+<em>probables</em> ? ». Supposez que les prix des maisons s&rsquo;écartent de la droite
+selon une courbe en cloche : chercher la droite qui rend les vingt prix les
+plus probables, c&rsquo;est <em>exactement</em> minimiser les carrés des écarts. Supposez
+que chaque étiquette est tirée avec la probabilité que le modèle annonce :
+chercher les paramètres qui rendent les étiquettes observées les plus
+probables, c&rsquo;est exactement la fonction d&rsquo;erreur de la régression logistique.
+Minimiser une erreur et maximiser une vraisemblance, c&rsquo;est la même descente,
+vue de deux côtés.</p><p>Reste le théorème de Bayes, que nous avons employé comme une formule. Il
+décrit en réalité une manière d&rsquo;<strong>apprendre</strong>, et peut-être la plus profonde.
+On part d&rsquo;une croyance <em>a priori</em> : avant d&rsquo;avoir lu quoi que ce soit, ce
+courriel a, disons, une chance sur dix d&rsquo;être un pourriel, parce que c&rsquo;est la
+proportion habituelle. Puis on observe une évidence, les mots du courriel, et
+le théorème dit comment <strong>réviser</strong> la croyance : la probabilité <em>a
+posteriori</em> est la croyance de départ, corrigée par ce que l&rsquo;évidence rend plus
+ou moins probable. Chaque mot lu déplace un peu le curseur ; « gratuit » le
+pousse vers le pourriel, « réunion » vers le courriel légitime ; et l&rsquo;a
+posteriori d&rsquo;aujourd&rsquo;hui devient l&rsquo;a priori de demain. Apprendre, dans cette
+vision, c&rsquo;est <em>mettre à jour ses croyances à mesure que l&rsquo;évidence arrive</em>, et
+le théorème de Bayes est la règle exacte de cette mise à jour. La vision
+bayésienne irrigue tout le domaine, jusqu&rsquo;à la façon dont on tente,
+aujourd&rsquo;hui, de faire dire aux grands modèles à quel point ils sont sûrs de ce
+qu&rsquo;ils affirment.</p><p>Trois modèles qui s&rsquo;entraînent, donc, et tous par le même moteur : une
+fonction d&rsquo;erreur qu&rsquo;on fait descendre. Avant de nous demander ce que valent
+leurs prédictions sur des données neuves, un dernier modèle, d&rsquo;une tout autre
+espèce : il ne calcule pas, il pose des questions.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Un modèle qui s'entraîne</span>
+</a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/ class="flex align-center"><span>Poser des questions : les arbres de décision</span>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#tracer-une-frontière-la-régression-logistique>Tracer une frontière : la régression logistique</a></li><li><a href=#renverser-le-problème-la-classification-bayésienne>Renverser le problème : la classification bayésienne</a></li><li><a href=#le-cas-des-pourriels>Le cas des pourriels</a></li><li><a href=#sous-les-modèles-des-probabilités>Sous les modèles, des probabilités</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>

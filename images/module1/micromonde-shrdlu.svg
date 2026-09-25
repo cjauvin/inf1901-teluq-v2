@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le micro-monde de blocs de SHRDLU</title>
+<desc>Une table portant quelques objets simples (un cube rouge, deux blocs empilés, une pyramide bleue et une boîte ouverte) qu'un bras robotique virtuel peut déplacer.</desc>
+
+<rect x="0" y="0" width="660" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<rect x="60" y="298" width="540" height="12" rx="3" fill="#c8b48e"/>
+<rect x="92" y="310" width="12" height="40" fill="#b09c74"/>
+<rect x="556" y="310" width="12" height="40" fill="#b09c74"/>
+
+<line x1="282" y1="44" x2="282" y2="150" stroke="#8a8278" stroke-width="4"/>
+<rect x="270" y="150" width="24" height="11" rx="2" fill="#8a8278"/>
+
+<rect x="110" y="238" width="60" height="60" rx="3" fill="#c2603f" stroke="#93462d" stroke-width="1.5"/>
+<text x="140" y="324" font-size="13" fill="#5b3a2c" text-anchor="middle">cube rouge</text>
+
+<rect x="250" y="248" width="64" height="50" rx="3" fill="#6f8f5a" stroke="#51703f" stroke-width="1.5"/>
+<rect x="258" y="204" width="48" height="44" rx="3" fill="#c9a23f" stroke="#9c7b27" stroke-width="1.5"/>
+<text x="282" y="324" font-size="13" fill="#4a4030" text-anchor="middle">pile de blocs</text>
+
+<path d="M370 298 L430 298 L400 236 Z" fill="#4a6d8c" stroke="#34506b" stroke-width="1.5"/>
+<text x="400" y="324" font-size="13" fill="#2f4459" text-anchor="middle">pyramide</text>
+
+<rect x="468" y="252" width="72" height="46" fill="#e2d2b0" stroke="none"/>
+<path d="M468 252 L468 298 L540 298 L540 252" fill="none" stroke="#8a6d4a" stroke-width="3" stroke-linejoin="round"/>
+<text x="504" y="324" font-size="13" fill="#6b5436" text-anchor="middle">boîte</text>
+</svg>

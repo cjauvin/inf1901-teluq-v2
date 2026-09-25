@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La règle de Hebb</title>
+<desc>À gauche, deux neurones A et B au repos, reliés par un lien fin. Lorsqu'ils s'activent ensemble (à droite), les deux neurones s'allument et le lien qui les unit s'épaissit : il se renforce. Slogan : neurons that fire together, wire together.</desc>
+
+<rect x="0" y="0" width="680" height="240" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="28" y="32" font-size="15" fill="#5b5249" text-anchor="start">La règle de Hebb</text>
+
+<!-- Avant : au repos -->
+<line x1="122" y1="112" x2="216" y2="112" stroke="#c9b78f" stroke-width="2"/>
+<circle cx="96" cy="112" r="26" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="96" y="118" font-size="15" fill="#4a4030" text-anchor="middle">A</text>
+<circle cx="242" cy="112" r="26" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="242" y="118" font-size="15" fill="#4a4030" text-anchor="middle">B</text>
+<text x="169" y="170" font-size="11" fill="#8a7a5c" text-anchor="middle">au repos : lien faible</text>
+
+<!-- Transition -->
+<text x="340" y="100" font-size="10.5" fill="#8a7a5c" text-anchor="middle">s'activent</text>
+<text x="340" y="114" font-size="10.5" fill="#8a7a5c" text-anchor="middle">ensemble</text>
+<line x1="300" y1="130" x2="380" y2="130" stroke="#c2a878" stroke-width="2"/>
+<polygon points="388,130 380,126 380,134" fill="#c2a878"/>
+
+<!-- Après : actifs, lien renforcé -->
+<line x1="472" y1="112" x2="566" y2="112" stroke="#c2603f" stroke-width="6"/>
+<g stroke="#c2603f" stroke-width="1.5" stroke-linecap="round">
+<line x1="424" y1="80" x2="418" y2="72"/>
+<line x1="446" y1="78" x2="446" y2="69"/>
+<line x1="468" y1="80" x2="474" y2="72"/>
+<line x1="570" y1="80" x2="564" y2="72"/>
+<line x1="592" y1="78" x2="592" y2="69"/>
+<line x1="614" y1="80" x2="620" y2="72"/>
+</g>
+<circle cx="446" cy="112" r="26" fill="#fbe3d4" stroke="#c2603f"/>
+<text x="446" y="118" font-size="15" fill="#93462d" text-anchor="middle">A</text>
+<circle cx="592" cy="112" r="26" fill="#fbe3d4" stroke="#c2603f"/>
+<text x="592" y="118" font-size="15" fill="#93462d" text-anchor="middle">B</text>
+<text x="519" y="170" font-size="11" fill="#93462d" text-anchor="middle">actifs ensemble : lien renforcé</text>
+
+<!-- Slogan -->
+<text x="340" y="214" font-size="12" fill="#4a4030" text-anchor="middle" font-style="italic">« Neurons that fire together, wire together. »</text>
+</svg>

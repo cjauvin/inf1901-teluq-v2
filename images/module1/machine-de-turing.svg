@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 250" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une machine de Turing</title>
+<desc>Un ruban divisé en cases portant des symboles, une tête de lecture/écriture pointant la case courante, un état courant, et une ligne de la table de règles qui dicte quoi faire.</desc>
+
+<rect x="0" y="0" width="660" height="250" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<rect x="40" y="24" width="160" height="30" rx="8" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="52" y="44" font-size="14" fill="#5b5249" text-anchor="start">état courant : A</text>
+
+<polygon points="330,96 318,72 342,72" fill="#c2603f"/>
+<text x="330" y="66" font-size="12" fill="#93462d" text-anchor="middle">tête</text>
+
+<text x="112" y="130" font-size="20" fill="#8a7a5c" text-anchor="middle">···</text>
+<text x="548" y="130" font-size="20" fill="#8a7a5c" text-anchor="middle">···</text>
+
+<g font-family="ui-monospace, monospace" font-size="20" fill="#3a3531" text-anchor="middle">
+<rect x="123" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/>
+<rect x="169" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/><text x="192" y="132">1</text>
+<rect x="215" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/><text x="238" y="132">0</text>
+<rect x="261" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/><text x="284" y="132">1</text>
+<rect x="307" y="100" width="46" height="46" fill="#f7eede" stroke="#c2603f" stroke-width="2"/><text x="330" y="132">1</text>
+<rect x="353" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/><text x="376" y="132">0</text>
+<rect x="399" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/><text x="422" y="132">1</text>
+<rect x="445" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/>
+<rect x="491" y="100" width="46" height="46" fill="#fbf7ee" stroke="#b8a888"/>
+</g>
+
+<text x="70" y="174" font-size="12" fill="#8a7a5c" text-anchor="start">une ligne de la table de règles</text>
+<rect x="70" y="182" width="520" height="42" rx="8" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="330" y="208" font-size="14" fill="#4a4030" text-anchor="middle">si (état A, lit « 1 ») → écrire « 0 », aller à droite, passer à l'état B</text>
+</svg>

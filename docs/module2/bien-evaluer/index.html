@@ -1,0 +1,281 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Bien évaluer un modèle La page précédente a posé la règle d’or : on juge un modèle sur des exemples qu’il n’a jamais vus. C’est nécessaire, mais ce n’est pas suffisant. Un score sur le jeu de test n’a de valeur que s’il est honnête (le modèle n’a-t-il vraiment rien vu du test ?), fiable (tient-il au hasard de la coupe entre entraînement et test ?), pertinent (mesure-t-il ce qui coûte vraiment quand on se trompe ?) et valable (vaut-il pour les données qu’on rencontrera vraiment ?). Quatre questions, quatre sections. Aucune ne demande de nouveau modèle ; toutes demandent de la méthode, et c’est là, bien plus que dans le choix d’un algorithme, que se joue la différence entre un modèle qui marche et un modèle qui a l’air de marcher.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Bien évaluer un modèle"><meta property="og:description" content="Bien évaluer un modèle La page précédente a posé la règle d’or : on juge un modèle sur des exemples qu’il n’a jamais vus. C’est nécessaire, mais ce n’est pas suffisant. Un score sur le jeu de test n’a de valeur que s’il est honnête (le modèle n’a-t-il vraiment rien vu du test ?), fiable (tient-il au hasard de la coupe entre entraînement et test ?), pertinent (mesure-t-il ce qui coûte vraiment quand on se trompe ?) et valable (vaut-il pour les données qu’on rencontrera vraiment ?). Quatre questions, quatre sections. Aucune ne demande de nouveau modèle ; toutes demandent de la méthode, et c’est là, bien plus que dans le choix d’un algorithme, que se joue la différence entre un modèle qui marche et un modèle qui a l’air de marcher."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Bien évaluer un modèle"><meta itemprop=description content="Bien évaluer un modèle La page précédente a posé la règle d’or : on juge un modèle sur des exemples qu’il n’a jamais vus. C’est nécessaire, mais ce n’est pas suffisant. Un score sur le jeu de test n’a de valeur que s’il est honnête (le modèle n’a-t-il vraiment rien vu du test ?), fiable (tient-il au hasard de la coupe entre entraînement et test ?), pertinent (mesure-t-il ce qui coûte vraiment quand on se trompe ?) et valable (vaut-il pour les données qu’on rencontrera vraiment ?). Quatre questions, quatre sections. Aucune ne demande de nouveau modèle ; toutes demandent de la méthode, et c’est là, bien plus que dans le choix d’un algorithme, que se joue la différence entre un modèle qui marche et un modèle qui a l’air de marcher."><meta itemprop=wordCount content="3485"><title>Bien évaluer un modèle • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/changelog/>Évolution du cours (venez voir de temps en temps!)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle checked>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/ class=active>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Bien évaluer un modèle</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#le-score-trop-beau-pour-être-vrai-la-fuite-de-données>Le score trop beau pour être vrai : la fuite de données</a></li><li><a href=#quand-les-données-sont-rares-la-validation-croisée>Quand les données sont rares : la validation croisée</a></li><li><a href=#compter-juste-les-métriques>Compter juste : les métriques</a></li><li><a href=#jamais-vu-mais-du-même-monde-la-question-de-la-distribution>Jamais vu, mais du même monde : la question de la distribution</a></li><li><a href=#tout-cela-portait-un-nom-lapprentissage-supervisé>Tout cela portait un nom : l&rsquo;apprentissage supervisé</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=bien-évaluer-un-modèle>Bien évaluer un modèle<a class=anchor href=#bien-%c3%a9valuer-un-mod%c3%a8le></a></h1><p>La page précédente a posé la règle d&rsquo;or : on juge un modèle sur des exemples
+qu&rsquo;il n&rsquo;a jamais vus. C&rsquo;est nécessaire, mais ce n&rsquo;est pas suffisant. Un score
+sur le jeu de test n&rsquo;a de valeur que s&rsquo;il est <strong>honnête</strong> (le modèle n&rsquo;a-t-il
+vraiment rien vu du test ?), <strong>fiable</strong> (tient-il au hasard de la coupe entre
+entraînement et test ?), <strong>pertinent</strong> (mesure-t-il ce qui coûte vraiment
+quand on se trompe ?) et <strong>valable</strong> (vaut-il pour les données qu&rsquo;on
+rencontrera vraiment ?). Quatre questions, quatre sections. Aucune ne demande de
+nouveau modèle ; toutes demandent de la méthode, et c&rsquo;est là, bien plus que dans
+le choix d&rsquo;un algorithme, que se joue la différence entre un modèle qui marche
+et un modèle qui a l&rsquo;air de marcher.</p><h2 id=le-score-trop-beau-pour-être-vrai-la-fuite-de-données>Le score trop beau pour être vrai : la fuite de données<a class=anchor href=#le-score-trop-beau-pour-%c3%aatre-vrai-la-fuite-de-donn%c3%a9es></a></h2><p>Commençons par le piège le plus courant, et le plus sournois. Un modèle affiche
+99 % de bonnes réponses sur le jeu de test ; on le déploie ; il s&rsquo;effondre. Que
+s&rsquo;est-il passé ? Le plus souvent, une <strong>fuite de données</strong> : une information qui
+n&rsquo;aurait pas dû être disponible s&rsquo;est glissée dans l&rsquo;entraînement, et le test
+n&rsquo;était plus vraiment neuf.</p><p>La fuite prend deux formes. La première est la <strong>contamination</strong> : le jeu de
+test contient, sous un déguisement, des exemples que le modèle a déjà vus. La
+même maison, vendue deux fois en trois ans, une fois dans chaque paquet ; la
+même photo, en deux résolutions ; le même courriel, transféré à trois personnes.
+Le modèle ne généralise pas, il <em>reconnaît</em>, et le score le récompense pour sa
+mémoire. À grande échelle, c&rsquo;est exactement le problème des grands modèles de
+langage évoqué dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/#un-mod%c3%a8le-se-juge-sur-ce-quil-na-jamais-vu>l&rsquo;encart de la page précédente</a> :
+quand les données d&rsquo;entraînement sont tout le Web, on ne sait plus ce qui a
+fui.</p><p>La seconde forme est plus subtile : <strong>une caractéristique qui contient la
+réponse</strong>, ou qu&rsquo;on ne possédera pas au moment de prédire. L&rsquo;exemple le plus
+célèbre vient du naufrage du <em>Titanic</em>, dont la liste des passagers est un
+classique des cours d&rsquo;apprentissage automatique : on y prédit qui a survécu à
+partir de la classe, du sexe, de l&rsquo;âge, du tarif payé. La <a href=https://hbiostat.org/data/repo/titanic.html>version complète de
+cette liste</a>, compilée à partir de
+l&rsquo;<em>Encyclopedia Titanica</em> et hébergée par l&rsquo;Université Vanderbilt, comporte
+deux colonnes de plus : le numéro du canot de sauvetage et le numéro
+d&rsquo;identification du corps repêché. Donnez-les au modèle, et il devient parfait,
+et pour cause : avoir un numéro de canot, <em>c&rsquo;est</em> avoir survécu ; avoir un
+numéro de corps, <em>c&rsquo;est</em> être mort. Le modèle n&rsquo;a rien deviné, il a lu la
+réponse, à peine maquillée, dans la question. Nos maisons ont leur version du
+même piège : pour prédire le prix, la « taxe foncière » ferait des merveilles,
+puisqu&rsquo;elle est calculée à partir de la valeur de la maison.</p><label class=book-image for=book-image-toggle-b7d1510d00b0><input class="hidden toggle" type=checkbox id=book-image-toggle-b7d1510d00b0>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/fuite-de-donnees.svg alt="Le même découpage entraînement / test que dans la page précédente, mais deux exemples du bloc de test ont un jumeau dans le bloc d'entraînement, reliés par un trait pointillé rouge : les mêmes exemples, sous un déguisement. Le modèle les reconnaît au lieu de généraliser, et le score du test ment." loading=lazy title="Une fuite par contamination : deux exemples du test ont un jumeau dans l'entraînement. Le modèle les reconnaît, et le score le récompense pour sa mémoire." width=660 height=356 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-b7d1510d00b0"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il n&rsquo;existe pas de détecteur automatique de fuites ; il existe une discipline.
+D&rsquo;abord, la méfiance : un score exceptionnel est un symptôme avant d&rsquo;être une
+bonne nouvelle, et la première question à poser est « qu&rsquo;est-ce qui pourrait
+avoir fui ? ». Ensuite, une règle mécanique : <strong>tout ce qu&rsquo;on calcule à partir
+des données se calcule sur l&rsquo;ensemble d&rsquo;entraînement seul</strong>, moyennes, écarts,
+choix des caractéristiques, réglages ; le jeu de test ne sert qu&rsquo;une fois, à la
+toute fin, comme un examen qu&rsquo;on ne corrige pas en cours de route.</p><blockquote class="book-hint info"><p><strong>Le jeu de test sous clé : Kaggle.</strong> Cette discipline a une version
+institutionnelle. Sur <a href=https://www.kaggle.com/>Kaggle</a>, la plateforme de
+compétitions d&rsquo;apprentissage automatique, on reçoit les données d&rsquo;entraînement
+avec leurs réponses, et les données de test <em>sans</em> : les vraies réponses du
+test restent <strong>privées</strong>, entre les mains des organisateurs, qui calculent
+eux-mêmes le score de chaque soumission. Personne ne peut donc, même par
+inadvertance, entraîner son modèle sur l&rsquo;examen. Et la plateforme va plus
+loin : pendant la compétition, le classement public n&rsquo;est calculé que sur une
+<em>partie</em> du jeu de test ; le classement final, sur l&rsquo;autre partie, gardée
+secrète jusqu&rsquo;au bout. C&rsquo;est la parade à une fuite plus subtile encore, celle
+où l&rsquo;on ajuste son modèle, soumission après soumission, au score affiché,
+jusqu&rsquo;à coller au jeu de test sans jamais l&rsquo;avoir vu. Le bouleversement du
+classement final, quand les deux moitiés diffèrent, est un spectacle bien connu
+des participants.</p></blockquote><blockquote class="book-hint info"><p><strong>Une unité n&rsquo;est pas l&rsquo;autre : mettre à l&rsquo;échelle.</strong> Cette règle a un cas
+d&rsquo;application très concret, que nous avons contourné sans le dire. Dans le plan
+des maisons, kNN mesure une distance entre une différence de kilomètres et une
+différence d&rsquo;années ; or rien ne dit qu&rsquo;un kilomètre « vaut » une année. Si
+l&rsquo;on avait mis la superficie en mètres carrés à côté du nombre de chambres, un
+écart de 50 m² aurait écrasé un écart d&rsquo;une chambre, et la distance n&rsquo;aurait
+plus mesuré grand-chose. On corrige en <strong>mettant à l&rsquo;échelle</strong> chaque
+caractéristique, par exemple en la ramenant entre 0 et 1, ou en soustrayant sa
+moyenne et en divisant par son écart-type. La descente de gradient y gagne
+aussi, car une cuvette étirée dans une direction se descend mal. Et la règle
+s&rsquo;applique : les moyennes et les écarts servant à la mise à l&rsquo;échelle se
+calculent sur l&rsquo;entraînement, puis s&rsquo;appliquent tels quels au test.</p></blockquote><h2 id=quand-les-données-sont-rares-la-validation-croisée>Quand les données sont rares : la validation croisée<a class=anchor href=#quand-les-donn%c3%a9es-sont-rares-la-validation-crois%c3%a9e></a></h2><p>Deuxième question : le score est-il <em>fiable</em> ? Revenons à nos vingt maisons.
+Suivre la règle d&rsquo;or, c&rsquo;est en mettre quatre sous scellés et n&rsquo;apprendre que sur
+seize. Deux ennuis, aussitôt. Seize maisons, c&rsquo;est peu pour apprendre, et l&rsquo;on
+aimerait bien se servir des vingt. Surtout, le score dépend beaucoup
+<em>desquelles</em> quatre on a écartées : tombez sur les deux exceptions du nuage
+coloré, et le modèle paraîtra mauvais ; tombez sur quatre maisons bien typiques,
+et il paraîtra excellent. Le hasard d&rsquo;une seule coupe pèse trop lourd.</p><p>La parade est élégante : plutôt que de couper une fois, on <strong>tourne</strong>. On
+partage les vingt maisons en cinq paquets de quatre. Au premier tour, le premier
+paquet sert de test et les seize autres maisons servent à apprendre ; au
+deuxième tour, c&rsquo;est le deuxième paquet qui est mis à l&rsquo;épreuve, et ainsi de
+suite. Cinq tours, cinq scores, et l&rsquo;on prend leur moyenne. Chaque maison a
+servi de test exactement une fois, et toutes ont servi à l&rsquo;entraînement quatre
+fois sur cinq. C&rsquo;est la <strong>validation croisée</strong>, et le nombre de paquets se règle
+à volonté : cinq ou dix le plus souvent, jusqu&rsquo;à <em>n</em> paquets d&rsquo;un seul exemple
+quand les données sont vraiment rares.</p><label class=book-image for=book-image-toggle-201095d82b49><input class="hidden toggle" type=checkbox id=book-image-toggle-201095d82b49>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/validation-croisee.svg alt="Cinq rangées de vingt points, une par tour. Dans chaque rangée, seize points en vert-bleu forment l'ensemble d'entraînement et quatre points en brun, encadrés, l'ensemble de test ; le bloc de test se déplace de quatre places d'une rangée à l'autre, si bien que chaque maison sert de test exactement une fois. À droite de chaque rangée, un score ; en bas, leur moyenne." loading=lazy title="La validation croisée sur nos vingt maisons : cinq tours, chaque maison testée une fois, et le score final est la moyenne des cinq." width=660 height=380 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-201095d82b49"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La validation croisée coûte cinq entraînements au lieu d&rsquo;un, ce qui n&rsquo;est rien
+pour une droite et beaucoup pour un réseau de neurones géant ; c&rsquo;est pourquoi
+on la voit partout sur de petits jeux de données et presque jamais sur les très
+grands, où un seul jeu de test suffit, parce qu&rsquo;il est lui-même énorme.</p><p>C&rsquo;est aussi le cadre naturel pour une opération que nous avons faite plusieurs
+fois sans la nommer tout à fait : régler ce qui ne s&rsquo;apprend pas. Le nombre de
+voisins <em>k</em>, la sévérité λ de la pénalité, le taux d&rsquo;apprentissage de la
+descente : aucun de ces nombres n&rsquo;est un paramètre du modèle, aucun ne descend
+la pente avec les autres. Ce sont des <strong>hyperparamètres</strong>, des réglages <em>de la
+procédure</em>, fixés avant l&rsquo;entraînement. On les choisit en essayant plusieurs
+valeurs et en gardant celle qui donne le meilleur score de validation croisée ;
+puis, et seulement alors, on ouvre les scellés du jeu de test pour le verdict
+final. C&rsquo;est exactement le rôle de l&rsquo;ensemble de validation de la page
+précédente, en version tournante.</p><h2 id=compter-juste-les-métriques>Compter juste : les métriques<a class=anchor href=#compter-juste-les-m%c3%a9triques></a></h2><p>Troisième question : le score mesure-t-il ce qui coûte vraiment ? Jusqu&rsquo;ici,
+pour une catégorie, nous avons compté le <strong>taux de bonnes réponses</strong>, et il a un
+défaut que nous connaissons déjà : dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/><em>Le modèle le plus
+bête</em></a>, un filtre qui ne signalait
+<em>jamais</em> de pourriel obtenait 99 % de bonnes réponses, parce que les pourriels
+étaient rares. Un seul nombre ne peut pas dire à la fois combien de pourriels on
+attrape et combien de vrais courriels on jette. Il faut compter <em>séparément</em>.</p><p>Prenons 1000 courriels, dont 50 pourriels, et un filtre qui en jette une
+partie. Quatre choses peuvent arriver à chaque courriel, et on les range dans un
+tableau, la <strong>matrice de confusion</strong> : un pourriel jeté (<strong>vrai positif</strong>), un
+pourriel passé au travers (<strong>faux négatif</strong>), un vrai courriel jeté (<strong>faux
+positif</strong>), un vrai courriel gardé (<strong>vrai négatif</strong>). « Positif » veut dire
+ici « signalé par le filtre », et n&rsquo;a rien d&rsquo;une bonne nouvelle.</p><p>Ces deux façons de se tromper n&rsquo;ont d&rsquo;ailleurs rien de propre à l&rsquo;intelligence
+artificielle. La statistique les a nommées bien avant, en 1933, sous la plume
+de Jerzy Neyman et Egon Pearson : l&rsquo;<strong>erreur de première espèce</strong>, voir un
+effet là où il n&rsquo;y en a pas (notre faux positif), et l&rsquo;<strong>erreur de seconde
+espèce</strong>, manquer un effet bien réel (notre faux négatif), en anglais <a href=https://en.wikipedia.org/wiki/Type_I_and_type_II_errors><em>type I
+and type II errors</em></a>.
+C&rsquo;est la grammaire de tout test, de l&rsquo;essai clinique au contrôle de qualité en
+usine ; un tribunal qui condamne un innocent ou acquitte un coupable commet
+exactement ces deux erreurs-là. L&rsquo;apprentissage automatique n&rsquo;a fait qu&rsquo;en
+hériter, avec son vocabulaire à lui.</p><label class=book-image for=book-image-toggle-2b1d79a5947a><input class="hidden toggle" type=checkbox id=book-image-toggle-2b1d79a5947a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/matrice-confusion.svg alt="Un tableau à quatre cases croisant la réalité (pourriel ou courriel légitime, en lignes) et la décision du filtre (jeté ou gardé, en colonnes), pour 1000 courriels dont 50 pourriels. Vrais positifs : 40 pourriels jetés. Faux négatifs : 10 pourriels gardés. Faux positifs : 20 courriels légitimes jetés. Vrais négatifs : 930 courriels légitimes gardés. Les deux cases d'erreur sont teintées en rouge ; sous le tableau, le taux de bonnes réponses (97 %), la précision (67 %) et le rappel (80 %)." loading=lazy title="La matrice de confusion : quatre cases au lieu d'un seul score. Les deux cases rouges sont les deux façons de se tromper, et elles ne coûtent pas la même chose." width=660 height=420 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-2b1d79a5947a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ce filtre affiche 97 % de bonnes réponses ; « jamais un pourriel » en aurait eu
+95. Le taux global cache presque tout. Deux questions plus précises se lisent
+dans le tableau, et chacune a son nom. La <strong>précision</strong> : parmi ce que le
+filtre a jeté, quelle part était vraiment du pourriel ? Ici 40 sur 60, soit
+67 % ; le reste, ce sont des courriels légitimes perdus. Le <strong>rappel</strong> : parmi
+les vrais pourriels, quelle part le filtre a-t-il attrapée ? Ici 40 sur 50,
+soit 80 % ; le reste est passé au travers. Deux nombres au lieu d&rsquo;un, et ils
+tirent en sens contraires.</p><label class=book-image for=book-image-toggle-056fcc3c0724><input class="hidden toggle" type=checkbox id=book-image-toggle-056fcc3c0724>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/precision-rappel.svg alt="À gauche, des courriels figurés par des points, rouges pour les pourriels, bleus pour les légitimes, et un lasso pointillé autour de ce que le filtre a jeté : 40 rouges et 20 bleus à l'intérieur, 10 rouges restés dehors. À droite, deux barres. La barre de la précision représente les 60 courriels jetés, dont 40 rouges : 67 %. La barre du rappel représente les 50 vrais pourriels, dont 40 attrapés : 80 %." loading=lazy title="Précision et rappel, avec les nombres de la matrice : deux questions, deux dénominateurs. La précision se lit à l'intérieur du lasso ; le rappel, parmi les points rouges." width=660 height=440 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-056fcc3c0724"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces deux mots ne viennent pas non plus de l&rsquo;IA, mais de la <strong>recherche
+d&rsquo;information</strong>, la discipline des catalogues de bibliothèque puis des moteurs
+de recherche. Devant une requête, un bon système ramène des documents
+<em>pertinents</em>, sans les noyer dans du bruit (la précision), et n&rsquo;en oublie pas
+en route (le rappel) ; c&rsquo;est pour départager les systèmes de recherche
+documentaire, dès les années 1960, qu&rsquo;on a fait de ce couple la mesure de
+référence, et il l&rsquo;est resté : <a href=https://fr.wikipedia.org/wiki/Pr%c3%a9cision_et_rappel>précision et
+rappel</a> sont aujourd&rsquo;hui le
+vocabulaire commun de tout ce qui <em>trie</em>. Un filtre anti-pourriel n&rsquo;est
+d&rsquo;ailleurs qu&rsquo;une recherche déguisée : retrouver les pourriels parmi les
+courriels.</p><p>Car ils tirent en sens contraires. Souvenez-vous de la régression logistique de
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/><em>Classer</em></a> : elle donne une probabilité, et nous
+avons tranché à 0,5. Rien n&rsquo;y oblige. Placez le seuil à 0,9, et le filtre ne
+jette plus que ce dont il est presque sûr : la précision monte, le rappel
+s&rsquo;effondre. Placez-le à 0,1, et il jette au moindre doute : le rappel monte, la
+précision s&rsquo;effondre. Le même modèle, sans rien réentraîner, peut être strict
+ou indulgent, et le choix n&rsquo;appartient pas aux mathématiques mais au problème.
+Pour un filtre anti-pourriel, un vrai courriel jeté coûte plus cher qu&rsquo;un
+pourriel qui passe : on privilégie la précision. Pour un test de dépistage, un
+malade manqué coûte plus cher qu&rsquo;une fausse alerte qu&rsquo;un second examen
+dissipera : on privilégie le rappel.</p><p>Le cas le plus parlant est celui d&rsquo;un mécanisme d&rsquo;<strong>alerte</strong>. Un détecteur de
+fumée commet deux erreurs possibles : sonner pour un toast brûlé, ou se taire
+pendant un incendie. La première coûte un agacement ; la seconde coûte la
+maison, et parfois des vies. Devant une telle <strong>asymétrie</strong>, on règle
+l&rsquo;appareil de façon à ne <em>jamais</em> commettre la seconde, quitte à commettre
+souvent la première : un détecteur de fumée se déclenche pour rien plusieurs
+fois par an, et c&rsquo;est voulu. Sa tolérance aux faux positifs n&rsquo;est pas un
+défaut de conception, c&rsquo;est le prix, accepté d&rsquo;avance, d&rsquo;un rappel proche de
+100 %. Le filtre anti-pourriel fait le raisonnement inverse, parce que chez
+lui c&rsquo;est le faux positif qui coûte cher. Même modèle, même curseur, réglages
+opposés : tout dépend de l&rsquo;erreur qu&rsquo;on ne peut pas se permettre. Le réglage
+n&rsquo;en reste pas moins délicat, car il a deux bornes absurdes. Une alarme qui
+sonnerait <em>sans arrêt</em> ne raterait aucun incendie, et un filtre qui ne
+jetterait <em>rien</em> ne perdrait aucun courriel ; l&rsquo;un et l&rsquo;autre auraient un
+rappel ou une précision parfaits, et seraient parfaitement inutiles, puisqu&rsquo;ils
+ne trient plus rien. Tolérer l&rsquo;erreur bénigne ne veut pas dire la multiplier
+sans limite : le seuil se pousse du côté sûr, jusqu&rsquo;au point où l&rsquo;alerte
+cesserait de vouloir dire quelque chose, et pas au-delà.</p><label class=book-image for=book-image-toggle-5f42417a83c4><input class="hidden toggle" type=checkbox id=book-image-toggle-5f42417a83c4>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/erreurs-asymetriques.svg alt="Deux panneaux. À gauche, le détecteur de fumée : le faux positif (une alarme pour un toast brûlé) coûte un agacement, le faux négatif (un incendie sans alarme) coûte la maison ; le curseur du seuil d'alerte est placé du côté indulgent, pour ne rater aucun incendie. À droite, le filtre anti-pourriel : le faux positif (un vrai courriel jeté) coûte un message perdu, le faux négatif (un pourriel dans la boîte) coûte une seconde d'agacement ; le curseur est placé du côté strict, pour ne jeter que ce dont on est sûr." loading=lazy title="Le seuil se règle sur l'erreur la plus grave : l'alarme tolère les fausses alertes pour ne rien rater ; le filtre tolère ce qui passe pour ne rien jeter à tort." width=660 height=360 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-5f42417a83c4"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>C&rsquo;est cette question, <em>quelle erreur coûte
+le plus ?</em>, que le <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>travail noté</a> vous posera
+sur un vrai filtre.</p><p>Pour un nombre, la question se pose aussi, plus simplement. L&rsquo;erreur
+quadratique moyenne d&rsquo;<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle qui s&rsquo;entraîne</em></a>
+est faite pour être <em>minimisée</em> : ses carrés sont commodes pour la descente,
+mais illisibles pour un humain (des dollars au carré). Pour <em>rendre compte</em>, on
+préfère l&rsquo;<strong>erreur absolue moyenne</strong> : sur nos vingt maisons, la droite se
+trompe de 41 000 \$ en moyenne, et de 59 000 \$ au pire. Voilà qui se comprend,
+et qui permet de juger si le modèle est bon <em>pour l&rsquo;usage qu&rsquo;on en fera</em> :
+excellent pour un aperçu, insuffisant pour fixer un prix de vente.</p><p>Une métrique, en somme, est un choix : elle dit ce qu&rsquo;on décide de compter
+comme réussite. Avant de lire un score, demandez toujours lequel.</p><h2 id=jamais-vu-mais-du-même-monde-la-question-de-la-distribution>Jamais vu, mais du même monde : la question de la distribution<a class=anchor href=#jamais-vu-mais-du-m%c3%aame-monde-la-question-de-la-distribution></a></h2><p>Dernière question, et la plus facile à oublier : le score vaut-il pour les
+données qu&rsquo;on rencontrera <em>vraiment</em> ? Pour la comprendre, faisons un détour
+par les sondages. Interroger mille personnes pour connaître l&rsquo;opinion de
+millions d&rsquo;autres, c&rsquo;est un pari : on suppose que l&rsquo;échantillon <strong>ressemble</strong>
+à la population, qu&rsquo;il en est un petit modèle réduit. Quand ce n&rsquo;est pas le
+cas, le sondage se trompe avec une assurance parfaite. L&rsquo;exemple le plus
+célèbre date de 1936 : un grand magazine américain, le <a href=https://en.wikipedia.org/wiki/The_Literary_Digest><em>Literary Digest</em></a>,
+avait recueilli plus de deux millions de réponses et prédisait une large
+défaite de Roosevelt ; il fut réélu triomphalement. Les réponses venaient de
+listes d&rsquo;abonnés au téléphone et de propriétaires d&rsquo;automobiles, en pleine
+crise économique : un échantillon immense, mais tiré d&rsquo;un autre monde que
+celui des électeurs. Ce n&rsquo;est pas la quantité qui garantit un sondage, c&rsquo;est la
+<strong>représentativité</strong>.</p><p>Un jeu de données est un sondage. Nos vingt maisons ne sont pas <em>les</em>
+maisons ; ce sont vingt tirages dans un réservoir bien plus vaste, celui de
+toutes les maisons qu&rsquo;un tel modèle pourrait rencontrer, et les statisticiens
+appellent ce réservoir une <strong>distribution</strong>. Le jeu d&rsquo;entraînement en est un
+échantillon, le jeu de test un autre, et toute la méthode de ce chapitre repose
+sur une hypothèse muette : les deux viennent du même réservoir, et les
+données de demain aussi. On dit alors que le test est <strong>en distribution</strong>.
+Généraliser, c&rsquo;est toujours généraliser <em>à ce réservoir-là</em>, jamais au monde
+entier.</p><p>Que se passe-t-il quand l&rsquo;hypothèse tombe, quand une donnée est <strong>hors
+distribution</strong> ? Trois visages du même problème.</p><ul><li><strong>L&rsquo;extrapolation.</strong> Nos maisons vont de 112 à 280 m². Demandez à la droite
+le prix d&rsquo;un manoir de 600 m² : elle répond, 1 696 000 \$, avec le même
+aplomb que pour une maison de 180 m². Mais aucune donnée ne soutient plus
+cette réponse ; la droite se prolonge dans le vide, et rien ne dit que les
+manoirs obéissent à la même règle que les bungalows.</li><li><strong>Le changement de lieu ou de population.</strong> Un modèle entraîné sur les ventes
+de Montréal, appliqué à Vancouver ; un test de dépistage mis au point sur des
+adultes, appliqué à des enfants. Les mêmes caractéristiques, mais un autre
+réservoir : le score obtenu là-bas ne dit rien d&rsquo;ici.</li><li><strong>La dérive dans le temps.</strong> Un filtre anti-pourriel entraîné sur les
+pourriels de 2010, face à ceux de 2025 : les mots ont changé, les ruses
+aussi. La distribution a glissé sous le modèle, sans qu&rsquo;il s&rsquo;en aperçoive, et
+son score d&rsquo;hier ne dit plus rien d&rsquo;aujourd&rsquo;hui.</li></ul><label class=book-image for=book-image-toggle-530c429dfccc><input class="hidden toggle" type=checkbox id=book-image-toggle-530c429dfccc>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/hors-distribution.svg alt="Le nuage des vingt maisons (de 112 à 280 m²) et sa droite, avec la zone couverte par les données ombrée. Loin à droite, un manoir de 600 m² pour lequel la droite, prolongée en pointillé, annonce environ 1 696 000 dollars, accompagné d'un point d'interrogation : le modèle répond avec le même aplomb, mais aucune donnée ne le soutient plus." loading=lazy title="Hors distribution : dans la zone que les données couvrent, le score du test veut dire quelque chose ; au-delà, la droite répond encore, mais plus rien ne la garantit." width=660 height=470 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-530c429dfccc"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>C&rsquo;est le <em>Literary Digest</em> à chaque fois : un échantillon, parfois énorme, mais
+tiré d&rsquo;un autre monde que celui où l&rsquo;on prédit. La leçon pratique tient en deux
+règles. Le jeu de test doit ressembler au <strong>déploiement</strong>, pas seulement à
+l&rsquo;entraînement : si le modèle servira à Vancouver, il faut des maisons de
+Vancouver dans le test, et l&rsquo;on aura vite fait de découvrir qu&rsquo;il en faut aussi
+dans l&rsquo;entraînement. Et un modèle mis en service doit être <strong>surveillé</strong>, parce
+que le monde bouge et que rien, dans le modèle, ne l&rsquo;avertira que la
+distribution a changé.</p><p>Rappelez-vous la 1001ᵉ image du début du module : la question était de savoir
+si elle faisait partie des 1000. Il y avait une question cachée derrière :
+vient-elle seulement <em>du même monde</em> que les 1000 ? Une photo prise de nuit,
+quand toutes les autres l&rsquo;ont été de jour, est neuve d&rsquo;une façon que le modèle
+ne sait pas traiter. Et pour les grands modèles de langage de l&rsquo;encart de
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/#un-mod%c3%a8le-se-juge-sur-ce-quil-na-jamais-vu><em>Généraliser</em></a>,
+la question devient vertigineuse : quand l&rsquo;entraînement est tout le Web, où
+finit « en distribution » ?</p><p>Une dernière conséquence, et elle dépasse la technique. Un modèle apprend <em>ce
+qu&rsquo;il y a</em> dans ses données, pas ce qui devrait y être. Si les vingt maisons
+du registre viennent toutes des mêmes quartiers, le modèle héritera de leurs
+particularités ; et si des décisions humaines passées ont laissé leur trace
+dans les exemples (des prêts refusés plus souvent à certains groupes, des
+dossiers triés selon des habitudes que nul n&rsquo;a jamais écrites), le modèle
+apprendra ces habitudes avec le reste, sans le savoir et sans le dire, et les
+appliquera avec l&rsquo;assurance d&rsquo;une machine. C&rsquo;est le <strong>biais des données</strong> : il
+ne se mesure sur aucun jeu de test, puisque le test vient des mêmes données. Un
+score honnête, fiable, pertinent et valable peut donc coiffer un modèle
+injuste ; c&rsquo;est une raison de plus de regarder d&rsquo;où viennent les données, et
+non seulement combien il y en a. Le <span title="Ce module sera publié plus tard">Module 5</span> y reviendra.</p><h2 id=tout-cela-portait-un-nom-lapprentissage-supervisé>Tout cela portait un nom : l&rsquo;apprentissage supervisé<a class=anchor href=#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9></a></h2><p>Prenons un peu de recul. Depuis la première page de ce module, une chose n&rsquo;a
+jamais changé, si discrète qu&rsquo;on l&rsquo;a à peine remarquée : <strong>la bonne réponse était
+toujours là.</strong> Chaque maison venait avec son prix ; chaque courriel, avec son
+étiquette pourriel ou non ; chaque point, avec sa couleur. Le modèle n&rsquo;avait qu&rsquo;à
+apprendre le chemin de la question vers une réponse <em>qu&rsquo;on lui fournissait
+d&rsquo;avance</em>.</p><p>Cette situation porte un nom, que nous pouvons enfin prononcer, maintenant que
+nous l&rsquo;avons vécue de bout en bout : l&rsquo;<strong>apprentissage supervisé</strong>. « Supervisé »,
+comme un élève qu&rsquo;un professeur corrige, parce qu&rsquo;il connaît, lui, la réponse
+attendue. Régression ou classification, droite ou Bayes, paramétrique ou non :
+tout ce que nous avons construit relève de cette grande famille, celle où l&rsquo;on
+apprend à partir d&rsquo;exemples <strong>étiquetés</strong>.</p><p>Mais cette réponse toute prête, d&rsquo;où vient-elle ? Quelqu&rsquo;un a dû, quelque part,
+étiqueter ces milliers d&rsquo;exemples un à un, travail souvent long, coûteux,
+parfois impossible. Il est si central qu&rsquo;il est devenu une <strong>industrie à part
+entière</strong>, celle de l&rsquo;<em>étiquetage de données</em>. Des entreprises comme Scale AI
+(dans laquelle Meta a investi une quinzaine de milliards de dollars en 2025),
+Appen, Sama ou Labelbox, ou des plateformes comme le Mechanical Turk d&rsquo;Amazon,
+emploient ou mobilisent des centaines de milliers de personnes pour tracer des
+contours sur des images, transcrire des enregistrements, classer des textes, et,
+depuis les grands modèles de langage, comparer et noter des réponses générées.
+Ce travail, souvent invisible et mal payé, réalisé en bonne partie au Kenya, aux
+Philippines ou au Venezuela, est l&rsquo;envers discret de l&rsquo;apprentissage
+supervisé : derrière chaque « bonne réponse » fournie au modèle, il y a eu un
+humain. Et le monde déborde de données <em>sans</em> étiquette : des
+millions de photos que personne n&rsquo;a triées, des historiques d&rsquo;achats sans
+catégories, des textes en vrac. Peut-on apprendre quelque chose de données
+brutes, livrées sans la moindre bonne réponse ? Et à l&rsquo;inverse, quand un robot
+apprend à marcher, nul ne lui souffle le « bon » mouvement à chaque instant : il
+ne reçoit qu&rsquo;un encouragement ou une chute, bien plus tard. Est-ce encore de
+l&rsquo;apprentissage ?</p><p>Oui — mais d&rsquo;une autre sorte. Ce qui distingue ces situations, c&rsquo;est la nature du
+<strong>signal</strong> dont le modèle apprend : une réponse donnée, une structure à découvrir
+sans guide, ou une récompense différée. C&rsquo;est cette typologie, et les nouveaux
+mondes qu&rsquo;elle ouvre, que nous explorons au chapitre suivant.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Généraliser</span>
+</a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/ class="flex align-center"><span>Trois façons d'apprendre</span>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#le-score-trop-beau-pour-être-vrai-la-fuite-de-données>Le score trop beau pour être vrai : la fuite de données</a></li><li><a href=#quand-les-données-sont-rares-la-validation-croisée>Quand les données sont rares : la validation croisée</a></li><li><a href=#compter-juste-les-métriques>Compter juste : les métriques</a></li><li><a href=#jamais-vu-mais-du-même-monde-la-question-de-la-distribution>Jamais vu, mais du même monde : la question de la distribution</a></li><li><a href=#tout-cela-portait-un-nom-lapprentissage-supervisé>Tout cela portait un nom : l&rsquo;apprentissage supervisé</a></li></ul></nav></div></aside></main></body></html>

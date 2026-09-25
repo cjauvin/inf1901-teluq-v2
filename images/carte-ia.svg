@@ -1,0 +1,33 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La carte de l'intelligence artificielle et les modules du cours</title>
+<desc>Un diagramme de régions imbriquées. L'intelligence artificielle contient, d'une part l'IA classique (Module 1), d'autre part l'apprentissage automatique, qui contient lui-même les méthodes classiques diverses (Module 2) et les réseaux de neurones / l'apprentissage profond (Module 3), qui contiennent à leur tour l'IA générative et ChatGPT (Module 4).</desc>
+<rect x="0" y="0" width="760" height="560" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<ellipse cx="380" cy="288" rx="366" ry="260" fill="none" stroke="#b8a888" stroke-width="1.8"/>
+<text x="380" y="52" font-size="21" fill="#3a3531" text-anchor="middle" font-weight="700" font-style="normal">Intelligence artificielle</text>
+<ellipse cx="182" cy="322" rx="104" ry="150" fill="rgba(58,110,165,0.12)" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="182" y="322" font-size="17" fill="#2b4a6b" text-anchor="middle" font-weight="700" font-style="normal">IA « classique »</text>
+<rect x="149" y="199" width="66" height="22" rx="11" fill="#3a6ea5"/>
+<text x="182" y="214" font-size="12" fill="#f6f0e2" text-anchor="middle" font-weight="700">Module 1</text>
+<ellipse cx="516" cy="302" rx="222" ry="212" fill="rgba(47,111,106,0.05)" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="466" y="138" font-size="15" fill="#245954" text-anchor="middle" font-weight="700" font-style="normal">Apprentissage automatique</text>
+<text x="466" y="157" font-size="13" fill="#5b7a76" text-anchor="middle" font-weight="400" font-style="italic">(machine learning)</text>
+<ellipse cx="398" cy="372" rx="66" ry="120" fill="rgba(47,111,106,0.16)" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="398" y="372" font-size="13" fill="#245954" text-anchor="middle" font-weight="600" font-style="normal">Méthodes d'AA</text>
+<text x="398" y="390" font-size="13" fill="#245954" text-anchor="middle" font-weight="600" font-style="normal">diverses</text>
+<rect x="365" y="261" width="66" height="22" rx="11" fill="#2f6f6a"/>
+<text x="398" y="276" font-size="12" fill="#f6f0e2" text-anchor="middle" font-weight="700">Module 2</text>
+<ellipse cx="606" cy="344" rx="126" ry="168" fill="rgba(154,91,51,0.09)" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="624" y="224" font-size="13" fill="#7a4526" text-anchor="middle" font-weight="700" font-style="normal">Réseaux de neurones</text>
+<rect x="591" y="191" width="66" height="22" rx="11" fill="#9a5b33"/>
+<text x="624" y="206" font-size="12" fill="#f6f0e2" text-anchor="middle" font-weight="700">Module 3</text>
+<ellipse cx="614" cy="378" rx="105" ry="130" fill="rgba(154,91,51,0.13)" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="628" y="292" font-size="12" fill="#7a4526" text-anchor="middle" font-weight="600" font-style="normal">Apprentissage profond</text>
+<text x="628" y="308" font-size="11.5" fill="#8a6a52" text-anchor="middle" font-weight="400" font-style="italic">(deep learning)</text>
+<ellipse cx="620" cy="410" rx="80" ry="84" fill="rgba(200,150,60,0.22)" stroke="#b8862b" stroke-width="1.8"/>
+<text x="632" y="360" font-size="12.5" fill="#8a6414" text-anchor="middle" font-weight="700" font-style="normal">IA générative</text>
+<rect x="599" y="331" width="66" height="22" rx="11" fill="#b8862b"/>
+<text x="632" y="346" font-size="12" fill="#f6f0e2" text-anchor="middle" font-weight="700">Module 4</text>
+<ellipse cx="626" cy="440" rx="45" ry="41" fill="#f1e6c9" stroke="#b8862b" stroke-width="1.8"/>
+<text x="626" y="444" font-size="12" fill="#6f5010" text-anchor="middle" font-weight="700" font-style="normal">ChatGPT</text>
+<text x="380" y="532" font-size="12" fill="#7a6f63" text-anchor="middle" font-weight="400" font-style="italic">Le Module 5 (enjeux éthiques et philosophiques) traverse tout ce paysage.</text>
+</svg>

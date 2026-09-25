@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 345" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'arbre de décision du Titanic</title>
+<desc>Un arbre à deux niveaux appris sur les 1309 passagers du Titanic. Première question : une femme ? Pour les hommes, la question suivante est « plus de 9 ans ? » : les garçons (43) ont survécu à 58 %, les hommes adultes (800) à 17 %. Pour les femmes, « en troisième classe ? » : celles de première ou deuxième classe (250) ont survécu à 93 %, celles de troisième (216) à 49 %. Trois questions, 79 % de bonnes réponses.</desc>
+<rect x="0" y="0" width="660" height="345" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<rect x="277.3" y="36" width="105.4" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="330.0" y="56" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">Une femme ?</text>
+<line x1="330.0" y1="66" x2="180.0" y2="124" stroke="#b8a888" stroke-width="1.4"/>
+<text x="245.0" y="99.0" font-size="12" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<rect x="112.5" y="124" width="135.0" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="180.0" y="144" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">Plus de 9 ans ?</text>
+<line x1="180.0" y1="154" x2="105.0" y2="212" stroke="#b8a888" stroke-width="1.4"/>
+<text x="132.5" y="187.0" font-size="12" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="105.0" cy="226" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="105.0" y="256" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">43 garçons</text>
+<text x="105.0" y="272" font-size="12" fill="#5b5249" text-anchor="middle">58 % ont survécu</text>
+<line x1="180.0" y1="154" x2="255.0" y2="212" stroke="#b8a888" stroke-width="1.4"/>
+<text x="227.5" y="187.0" font-size="12" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="255.0" cy="226" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="255.0" y="256" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">800 hommes adultes</text>
+<text x="255.0" y="272" font-size="12" fill="#5b5249" text-anchor="middle">17 % ont survécu</text>
+<line x1="330.0" y1="66" x2="480.0" y2="124" stroke="#b8a888" stroke-width="1.4"/>
+<text x="415.0" y="99.0" font-size="12" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<rect x="390.3" y="124" width="179.4" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="480.0" y="144" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">En troisième classe ?</text>
+<line x1="480.0" y1="154" x2="405.0" y2="212" stroke="#b8a888" stroke-width="1.4"/>
+<text x="432.5" y="187.0" font-size="12" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="405.0" cy="226" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="405.0" y="256" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">250 femmes</text>
+<text x="405.0" y="272" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">de 1ʳᵉ ou 2ᵉ classe</text>
+<text x="405.0" y="288" font-size="12" fill="#5b5249" text-anchor="middle">93 % ont survécu</text>
+<line x1="480.0" y1="154" x2="555.0" y2="212" stroke="#b8a888" stroke-width="1.4"/>
+<text x="527.5" y="187.0" font-size="12" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="555.0" cy="226" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="555.0" y="256" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">216 femmes</text>
+<text x="555.0" y="272" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="600">de 3ᵉ classe</text>
+<text x="555.0" y="288" font-size="12" fill="#5b5249" text-anchor="middle">49 % ont survécu</text>
+<circle cx="200" cy="316" r="7" fill="#3a6ea5"/><text x="212" y="320" font-size="12.5" fill="#3a3531">La majorité a survécu</text>
+<circle cx="380" cy="316" r="7" fill="#c4564a"/><text x="392" y="320" font-size="12.5" fill="#3a3531">La majorité a péri</text>
+</svg>

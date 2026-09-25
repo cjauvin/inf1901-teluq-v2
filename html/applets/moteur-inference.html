@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un moteur d'inférence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .regle { transition: background-color .25s, border-color .25s, box-shadow .25s; }
+        .examinee { background: #fef3c7; border-color: #f59e0b; box-shadow: 0 0 0 2px #fcd34d; }
+        .declenchee { background: #dcfce7; border-color: #16a34a; }
+        .fait { transition: opacity .3s, transform .3s; }
+        .nouveau { animation: apparait .5s ease-out; }
+        @keyframes apparait { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-4 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="grid md:grid-cols-3 gap-4">
+        <!-- Faits observés -->
+        <div>
+            <div class="font-bold text-slate-700 mb-2">1. Ce qu'on observe</div>
+            <div class="space-y-3 text-sm">
+                <div>
+                    <div class="text-slate-500 text-xs uppercase font-semibold mb-1">Le moteur…</div>
+                    <label class="flex items-start gap-2"><input type="radio" name="moteur" value="ne_se_lance_pas" checked class="mt-1"> ne se lance pas du tout</label>
+                    <label class="flex items-start gap-2"><input type="radio" name="moteur" value="se_lance" class="mt-1"> se lance normalement, mais la voiture ne démarre pas</label>
+                </div>
+                <div>
+                    <div class="text-slate-500 text-xs uppercase font-semibold mb-1">Les phares…</div>
+                    <label class="flex items-start gap-2"><input type="radio" name="phares" value="faibles" checked class="mt-1"> sont faibles</label>
+                    <label class="flex items-start gap-2"><input type="radio" name="phares" value="normaux" class="mt-1"> sont normaux</label>
+                </div>
+                <div>
+                    <div class="text-slate-500 text-xs uppercase font-semibold mb-1">Le réservoir…</div>
+                    <label class="flex items-start gap-2"><input type="radio" name="reservoir" value="vide" class="mt-1"> est vide</label>
+                    <label class="flex items-start gap-2"><input type="radio" name="reservoir" value="non_vide" checked class="mt-1"> n'est pas vide</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Base de règles -->
+        <div>
+            <div class="font-bold text-slate-700 mb-2">2. La base de règles</div>
+            <div id="regles" class="space-y-2 text-sm"></div>
+        </div>
+
+        <!-- Base de faits -->
+        <div>
+            <div class="font-bold text-slate-700 mb-2">3. La base de faits</div>
+            <div id="faits" class="space-y-1 text-sm min-h-[120px]"></div>
+            <div class="font-bold text-slate-700 mt-4 mb-2">Diagnostic</div>
+            <div id="diagnostic" class="text-sm text-slate-500 italic">pas encore de conclusion</div>
+        </div>
+    </div>
+
+    <div class="mt-4 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center justify-center gap-2">
+        <button id="btnPas" onclick="pasSuivant()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium text-sm shadow-sm">Examiner la règle suivante</button>
+        <button onclick="toutDerouler()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Tout dérouler</button>
+        <button onclick="recommencer()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Recommencer</button>
+    </div>
+    <div id="journal" class="mt-3 text-sm text-slate-700 bg-slate-50 border border-slate-200 rounded-md p-3 min-h-[3.2rem]"></div>
+
+    <div class="flex justify-center gap-5 mt-3 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-sky-200 border border-sky-500"></div>fait observé</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-amber-200 border border-amber-500"></div>fait déduit</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-yellow-100 border border-amber-400"></div>règle examinée</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-green-100 border border-green-600"></div>règle déclenchée</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Un moteur d'inférence en chaînage avant, sur la base de règles de la page :
+ * il parcourt les règles dans l'ordre, déclenche celles dont toutes les
+ * conditions sont dans la base de faits, y ajoute leur conclusion, et
+ * recommence tant qu'une règle nouvelle se déclenche.
+ */
+const LIBELLES = {
+    moteur_ne_se_lance_pas: "le moteur ne se lance pas",
+    moteur_se_lance: "le moteur se lance normalement",
+    phares_faibles: "les phares sont faibles",
+    phares_normaux: "les phares sont normaux",
+    reservoir_vide: "le réservoir est vide",
+    reservoir_non_vide: "le réservoir n'est pas vide",
+    batterie_dechargee: "la batterie est déchargée",
+    recharger_batterie: "recharger ou remplacer la batterie",
+    refaire_le_plein: "refaire le plein",
+    verifier_allumage: "faire vérifier l'allumage",
+};
+const ACTIONS = new Set(["recharger_batterie", "refaire_le_plein", "verifier_allumage"]);
+const REGLES = [
+    { id: "R1", si: ["moteur_ne_se_lance_pas", "phares_faibles"], alors: "batterie_dechargee" },
+    { id: "R2", si: ["batterie_dechargee"], alors: "recharger_batterie" },
+    { id: "R3", si: ["moteur_se_lance", "reservoir_vide"], alors: "refaire_le_plein" },
+    { id: "R4", si: ["moteur_se_lance", "reservoir_non_vide"], alors: "verifier_allumage" },
+];
+
+let faits, observes, declenchees, curseur, tourSansDeclenchement, fini, nouveaux;
+
+function lireObservations() {
+    const v = n => document.querySelector(`input[name="${n}"]:checked`).value;
+    return ["moteur_" + v("moteur"), "phares_" + v("phares"), "reservoir_" + v("reservoir")];
+}
+
+function recommencer() {
+    observes = lireObservations();
+    faits = [...observes];
+    declenchees = new Set();
+    curseur = -1; tourSansDeclenchement = true; fini = false; nouveaux = new Set();
+    document.getElementById('journal').innerHTML = "Le moteur d'inférence part des faits observés. Cliquez sur <b>Examiner la règle suivante</b>.";
+    document.getElementById('btnPas').disabled = false;
+    document.getElementById('btnPas').classList.remove('opacity-50');
+    afficher(null, false);
+}
+
+function pasSuivant() {
+    if (fini) return;
+    curseur++;
+    if (curseur >= REGLES.length) {                     // fin d'un passage sur les règles
+        if (tourSansDeclenchement) { terminer(); return; }
+        curseur = 0; tourSansDeclenchement = true;
+    }
+    const r = REGLES[curseur];
+    const manquantes = r.si.filter(c => !faits.includes(c));
+    nouveaux = new Set();
+    let msg;
+    if (declenchees.has(r.id)) {
+        msg = `<b>${r.id}</b> a déjà été déclenchée ; on passe.`;
+        afficher(r.id, false);
+    } else if (manquantes.length === 0) {
+        faits.push(r.alors); declenchees.add(r.id); nouveaux.add(r.alors); tourSansDeclenchement = false;
+        msg = `<b>${r.id}</b> : toutes ses conditions sont dans la base de faits. Elle se <b>déclenche</b> et ajoute « ${LIBELLES[r.alors]} ».`;
+        afficher(r.id, true);
+    } else {
+        msg = `<b>${r.id}</b> reste muette : il manque « ${manquantes.map(c => LIBELLES[c]).join(" » et « ")} ».`;
+        afficher(r.id, false);
+    }
+    document.getElementById('journal').innerHTML = msg;
+}
+
+function terminer() {
+    fini = true;
+    afficher(null, false);
+    const b = document.getElementById('btnPas'); b.disabled = true; b.classList.add('opacity-50');
+    const actions = faits.filter(f => ACTIONS.has(f));
+    const trace = [...declenchees].join(", puis ");
+    document.getElementById('journal').innerHTML = actions.length
+        ? `Plus aucune règle ne se déclenche : le raisonnement est terminé. <b>Pourquoi cette conclusion ?</b> Parce que ${trace} se sont déclenchées, à partir des faits observés.`
+        : "Plus aucune règle ne se déclenche, et aucune ne conclut : ce cas sort de ce que la base de règles sait traiter. Le système reste muet, sans même savoir qu'il ignore quelque chose.";
+}
+
+function toutDerouler() { let garde = 0; while (!fini && garde++ < 100) pasSuivant(); }
+
+function afficher(examinee, declenchee) {
+    document.getElementById('regles').innerHTML = REGLES.map(r => {
+        let cls = "regle border rounded-md p-2 border-slate-200 bg-white";
+        if (declenchees.has(r.id)) cls += " declenchee";
+        if (r.id === examinee) cls += " examinee";
+        const cond = r.si.map(c => `<span class="${faits.includes(c) ? 'font-semibold text-slate-900' : 'text-slate-500'}">${LIBELLES[c]}</span>`).join(" <b>et</b> ");
+        return `<div class="${cls}"><b>${r.id}</b> : <i>si</i> ${cond}, <i>alors</i> <span class="text-slate-800">${LIBELLES[r.alors]}</span>.</div>`;
+    }).join("");
+    document.getElementById('faits').innerHTML = faits.map(f => {
+        const obs = observes.includes(f);
+        const cls = obs ? "bg-sky-100 border-sky-400" : "bg-amber-100 border-amber-500";
+        return `<div class="fait ${nouveaux.has(f) ? 'nouveau' : ''} border rounded px-2 py-1 ${cls}">${LIBELLES[f]}</div>`;
+    }).join("");
+    const actions = faits.filter(f => ACTIONS.has(f));
+    const d = document.getElementById('diagnostic');
+    if (actions.length) { d.className = "text-sm font-semibold text-green-700"; d.textContent = actions.map(a => LIBELLES[a]).join(" ; "); }
+    else { d.className = "text-sm text-slate-500 italic"; d.textContent = fini ? "aucune conclusion" : "pas encore de conclusion"; }
+}
+
+document.querySelectorAll('input[type=radio]').forEach(i => i.addEventListener('change', recommencer));
+recommencer();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

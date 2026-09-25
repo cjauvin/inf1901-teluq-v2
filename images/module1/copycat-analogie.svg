@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 440" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'énigme d'analogie de Copycat</title>
+<desc>Deux analogies simples — abc devient abd, ijk devient ijl — puis le cas xyz, où le z n'a pas de successeur et plusieurs réponses deviennent défendables.</desc>
+
+<rect x="0" y="0" width="660" height="440" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<g font-family="ui-monospace, monospace" font-size="22" fill="#3a3531" text-anchor="middle">
+<g>
+<rect x="78" y="42" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="96" y="71">a</text>
+<rect x="118" y="42" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="136" y="71">b</text>
+<rect x="158" y="42" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="176" y="71">c</text>
+<text x="222" y="71" font-size="24" fill="#9a5b33">→</text>
+<rect x="250" y="42" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="268" y="71">a</text>
+<rect x="290" y="42" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="308" y="71">b</text>
+<rect x="330" y="42" width="36" height="42" rx="6" fill="#eddcc0" stroke="#9a5b33" stroke-width="1.6"/><text x="348" y="71">d</text>
+</g>
+<g>
+<rect x="78" y="142" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="96" y="171">i</text>
+<rect x="118" y="142" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="136" y="171">j</text>
+<rect x="158" y="142" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="176" y="171">k</text>
+<text x="222" y="171" font-size="24" fill="#9a5b33">→</text>
+<rect x="250" y="142" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="268" y="171">i</text>
+<rect x="290" y="142" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="308" y="171">j</text>
+<rect x="330" y="142" width="36" height="42" rx="6" fill="#eddcc0" stroke="#9a5b33" stroke-width="1.6"/><text x="348" y="171">l</text>
+</g>
+<g>
+<rect x="78" y="248" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="96" y="277">x</text>
+<rect x="118" y="248" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="136" y="277">y</text>
+<rect x="158" y="248" width="36" height="42" rx="6" fill="#fbf7ee" stroke="#b8a888"/><text x="176" y="277">z</text>
+<text x="222" y="277" font-size="24" fill="#9a5b33">→</text>
+<rect x="250" y="248" width="36" height="42" rx="6" fill="#f7eede" stroke="#c2603f" stroke-width="1.8"/><text x="268" y="277" fill="#c2603f">?</text>
+</g>
+</g>
+
+<text x="96" y="108" font-size="13" fill="#6b6258" text-anchor="start">la dernière lettre devient la suivante de l'alphabet</text>
+<text x="96" y="208" font-size="13" fill="#6b6258" text-anchor="start">même règle, sans accroc</text>
+
+<line x1="268" y1="292" x2="305" y2="338" stroke="#cbb896" stroke-width="1.4"/>
+<line x1="268" y1="292" x2="400" y2="338" stroke="#cbb896" stroke-width="1.4"/>
+<line x1="268" y1="292" x2="495" y2="338" stroke="#cbb896" stroke-width="1.4"/>
+
+<g font-size="18" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, monospace">
+<rect x="262" y="338" width="86" height="40" rx="6" fill="#fffdf8" stroke="#d4c4a0"/><text x="305" y="364">xyd</text>
+<rect x="357" y="338" width="86" height="40" rx="6" fill="#fffdf8" stroke="#d4c4a0"/><text x="400" y="364">wyz</text>
+<rect x="452" y="338" width="86" height="40" rx="6" fill="#fffdf8" stroke="#d4c4a0"/><text x="495" y="364">xya</text>
+</g>
+<text x="400" y="406" font-size="13" fill="#6b6258" text-anchor="middle">plusieurs réponses se défendent — tout dépend de comment on « voit » la suite</text>
+</svg>

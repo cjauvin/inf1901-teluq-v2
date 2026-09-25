@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Neural Network</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 800px;
+            height: 420px;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        #canvas {
+            display: block;
+            cursor: default;
+        }
+
+        .info-panel {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .formula {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 4px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas" width="800" height="420"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Neural network data
+        const inputNodes = [
+            { x: 100, y: 90, value: 1.0 },
+            { x: 100, y: 170, value: 0.5 },
+            { x: 100, y: 250, value: -0.5 },
+            { x: 100, y: 330, value: 0.8 }
+        ];
+
+        const outputNode = { x: 600, y: 210, value: 0 };
+
+        const weights = [1.0, -0.5, 0.8, 0.3];
+
+        // Input fields
+        let inputFields = [];
+        let weightFields = [];
+
+        function sigmoid(x) {
+            return 1 / (1 + Math.exp(-x));
+        }
+
+        function calculate() {
+            let sum = 0;
+
+            for (let i = 0; i < inputNodes.length; i++) {
+                sum += inputNodes[i].value * weights[i];
+            }
+
+            const output = sigmoid(sum);
+            outputNode.value = output;
+            outputNode.sum = sum;
+
+            return output;
+        }
+
+        function createInputField(x, y, value, onChange) {
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.step = '0.1';
+            input.value = value.toFixed(2);
+            input.style.position = 'absolute';
+            input.style.left = (canvas.offsetLeft + x - 25) + 'px';
+            input.style.top = (canvas.offsetTop + y - 12) + 'px';
+
+            input.addEventListener('change', (e) => {
+                onChange(parseFloat(e.target.value) || 0);
+                calculate();
+                draw();
+            });
+
+            document.body.appendChild(input);
+            return input;
+        }
+
+        function setupInputFields() {
+            // Clear existing fields
+            inputFields.forEach(field => field.remove());
+            weightFields.forEach(field => field.remove());
+
+            inputFields = [];
+            weightFields = [];
+
+            // Input node fields
+            inputNodes.forEach((node, i) => {
+                const field = createInputField(node.x, node.y, node.value, (val) => {
+                    inputNodes[i].value = val;
+                });
+                inputFields.push(field);
+            });
+
+            // Weight fields
+            inputNodes.forEach((node, i) => {
+                const midX = (node.x + outputNode.x) / 2;
+                const midY = (node.y + outputNode.y) / 2;
+                const field = createInputField(midX, midY - 20, weights[i], (val) => {
+                    weights[i] = val;
+                });
+                weightFields.push(field);
+            });
+        }
+
+        function drawNode(x, y, value, label) {
+            // Node circle
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, Math.PI * 2);
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fill();
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+
+        function drawOutputNode(x, y, value, sum) {
+            // Node circle - make it bigger to fit text
+            ctx.beginPath();
+            ctx.arc(x, y, 55, 0, Math.PI * 2);
+
+            // Color based on output value
+            const hue = value * 120; // 0 (red) to 120 (green)
+            ctx.fillStyle = `hsl(${hue}, 70%, 85%)`;
+            ctx.fill();
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            // Display sum value (top half)
+            ctx.fillStyle = '#555';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Σ = ' + sum.toFixed(2), x, y - 15);
+
+            // Display sigmoid value (bottom half)
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 18px Arial';
+            ctx.fillText('σ = ' + value.toFixed(3), x, y + 12);
+        }
+
+        function drawConnection(x1, y1, x2, y2, weight) {
+            // Line thickness based on weight magnitude
+            const thickness = Math.abs(weight) * 3 + 1;
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+
+            // Color based on weight sign
+            ctx.strokeStyle = weight >= 0 ? '#4CAF50' : '#F44336';
+            ctx.lineWidth = thickness;
+            ctx.stroke();
+        }
+
+        function drawArrow(x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + 60, y);
+            ctx.strokeStyle = '#667eea';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Arrow head
+            ctx.beginPath();
+            ctx.moveTo(x + 60, y);
+            ctx.lineTo(x + 50, y - 8);
+            ctx.lineTo(x + 50, y + 8);
+            ctx.closePath();
+            ctx.fillStyle = '#667eea';
+            ctx.fill();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw connections
+            inputNodes.forEach((node, i) => {
+                drawConnection(node.x + 30, node.y, outputNode.x - 55, outputNode.y, weights[i]);
+            });
+
+            // Draw input nodes
+            inputNodes.forEach((node, i) => {
+                drawNode(node.x, node.y, node.value, `x${i+1}`);
+            });
+
+            // Draw output node
+            drawOutputNode(outputNode.x, outputNode.y, outputNode.value, outputNode.sum || 0);
+
+            // Draw output arrow
+            drawArrow(outputNode.x + 55, outputNode.y);
+
+            // Labels
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+
+            ctx.fillText('Couche d\'entrée (x)', 100, 30);
+            ctx.fillText('Couche de poids (w)', 350, 30);
+            ctx.fillText('Neurone de sortie (y)', outputNode.x, 30);
+        }
+
+        // Initialize
+        calculate();
+        draw();
+        setupInputFields();
+
+        // Redraw on window resize
+        window.addEventListener('resize', () => {
+            setupInputFields();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

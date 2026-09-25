@@ -1,0 +1,42 @@
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La recette kNN se sépare en deux à la dernière étape : régression ou classification</title>
+<desc>Un tronc commun identique — nouvelle maison, puis distances à tous les exemples connus, puis les k plus proches voisins — se sépare ensuite en deux branches à la seule étape d'agrégation. En haut : moyenne des prix des voisins, qui donne un nombre (250 000 $) : c'est la régression. En bas : vote majoritaire des réponses des voisins, qui donne une catégorie (vendue vite) : c'est la classification. Même maison en entrée ; tout est commun sauf cette dernière étape.</desc>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#5b5249" stroke-width="1.7"/></marker>
+<marker id="art" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#2f6f6a" stroke-width="1.9"/></marker>
+<marker id="arb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#3a6ea5" stroke-width="1.9"/></marker>
+</defs>
+<rect x="0" y="0" width="800" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<rect x="22" y="141" width="112" height="48" rx="10" fill="#f3ecda" stroke="#cbbd9c" stroke-width="1.6"/>
+<text x="78" y="161" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">nouvelle</text>
+<text x="78" y="177" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">maison</text>
+<rect x="173" y="141" width="150" height="48" rx="10" fill="#f3ecda" stroke="#cbbd9c" stroke-width="1.6"/>
+<text x="248" y="161" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">distances à tous</text>
+<text x="248" y="177" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">les exemples connus</text>
+<rect x="352" y="141" width="156" height="48" rx="10" fill="#f3ecda" stroke="#cbbd9c" stroke-width="1.6"/>
+<text x="430" y="161" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">les k plus</text>
+<text x="430" y="177" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="600">proches voisins</text>
+<line x1="134" y1="165" x2="173" y2="165" stroke="#5b5249" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="323" y1="165" x2="352" y2="165" stroke="#5b5249" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="252" y="214" font-size="12.5" fill="#8a7d6e" text-anchor="middle" font-style="italic">étapes communes aux deux tâches</text>
+<line x1="508" y1="156" x2="548" y2="96" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#art)"/>
+<line x1="508" y1="174" x2="548" y2="236" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#arb)"/>
+<text x="600" y="161" font-size="12.5" fill="#7a6f63" text-anchor="middle" font-style="italic">seule étape</text>
+<text x="600" y="177" font-size="12.5" fill="#7a6f63" text-anchor="middle" font-style="italic">qui diffère</text>
+<rect x="552" y="67" width="116" height="46" rx="10" fill="rgba(47,111,106,0.10)" stroke="#2f6f6a" stroke-width="1.6"/>
+<text x="610" y="86" font-size="13" fill="#245954" text-anchor="middle" font-weight="600">moyenne</text>
+<text x="610" y="102" font-size="13" fill="#245954" text-anchor="middle" font-weight="600">des prix</text>
+<line x1="668" y1="90" x2="690" y2="90" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#art)"/>
+<rect x="694" y="77" width="92" height="26" rx="13" fill="rgba(47,111,106,0.18)" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="740" y="95" font-size="14" fill="#245954" text-anchor="middle" font-weight="700">250 000 $</text>
+<text x="662" y="40" font-size="15" fill="#2f6f6a" text-anchor="middle" font-weight="700">RÉGRESSION</text>
+<text x="662" y="57" font-size="12" fill="#5b7a76" text-anchor="middle">un nombre — le prix</text>
+<rect x="552" y="219" width="116" height="46" rx="10" fill="rgba(58,110,165,0.10)" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="610" y="238" font-size="13" fill="#2b4a6b" text-anchor="middle" font-weight="600">vote</text>
+<text x="610" y="254" font-size="13" fill="#2b4a6b" text-anchor="middle" font-weight="600">majoritaire</text>
+<line x1="668" y1="242" x2="690" y2="242" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#arb)"/>
+<rect x="686" y="229" width="108" height="26" rx="13" fill="rgba(58,110,165,0.18)" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="740" y="247" font-size="14" fill="#2b4a6b" text-anchor="middle" font-weight="700">vendue vite</text>
+<text x="662" y="292" font-size="15" fill="#3a6ea5" text-anchor="middle" font-weight="700">CLASSIFICATION</text>
+<text x="662" y="309" font-size="12" fill="#5a6b82" text-anchor="middle">une catégorie — vendue vite ou non</text>
+</svg>

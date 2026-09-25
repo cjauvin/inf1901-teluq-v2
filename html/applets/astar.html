@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : recherche aveugle ou A*</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            user-select: none;
+        }
+        canvas { cursor: crosshair; touch-action: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+
+<div class="max-w-4xl w-full">
+    <div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+        <div class="flex flex-col md:flex-row gap-3">
+            <div class="md:w-1/2 flex flex-col items-center">
+                <div class="font-bold text-slate-700 mb-1">Recherche aveugle</div>
+                <div class="text-xs text-slate-500 mb-2">explore dans toutes les directions à la fois</div>
+                <canvas id="cBlind" class="rounded-md border border-slate-300"></canvas>
+                <div class="flex gap-3 mt-2 text-sm">
+                    <div class="bg-slate-100 border border-slate-200 rounded px-3 py-1">cases explorées : <b id="nBlind">0</b></div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center">
+                <div class="font-bold text-slate-700 mb-1">A* (guidé par une heuristique)</div>
+                <div class="text-xs text-slate-500 mb-2">privilégie la direction qui semble mener au but</div>
+                <canvas id="cAstar" class="rounded-md border border-slate-300"></canvas>
+                <div class="flex gap-3 mt-2 text-sm">
+                    <div class="bg-slate-100 border border-slate-200 rounded px-3 py-1">cases explorées : <b id="nAstar">0</b></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-sm text-slate-700 mt-3">Chemin trouvé par les deux : <b id="chemin">–</b></div>
+
+        <div class="mt-4 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center justify-center gap-2">
+            <button onclick="lancer()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium text-sm shadow-sm">Lancer les deux recherches</button>
+            <button onclick="labyrintheInitial()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Labyrinthe de départ</button>
+            <button onclick="labyrintheHasard()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Murs au hasard</button>
+            <button onclick="effacer()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Effacer les murs</button>
+        </div>
+
+        <div class="flex justify-center gap-5 mt-3 pb-1 text-sm text-slate-600 flex-wrap">
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-sm" style="background:#3a6ea5"></div>départ</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-sm" style="background:#c4564a"></div>but</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-sm" style="background:#3a3531"></div>mur (cliquez pour en ajouter ou en retirer)</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-sm" style="background:#f4e3b5"></div>case explorée</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-sm" style="background:#2f6f6a"></div>chemin trouvé</div>
+        </div>
+    </div>
+</div>
+
+<script>
+/**
+ * Deux recherches de chemin sur la même grille, animées côte à côte :
+ * une recherche aveugle (en largeur) et A*, guidé par la distance de
+ * Manhattan jusqu'au but. Les deux trouvent un plus court chemin ; A* en
+ * explore généralement beaucoup moins de cases.
+ */
+const COLS = 25, ROWS = 17, CELL = 16;
+const W = COLS * CELL, H = ROWS * CELL;
+const DEPART = [2, 8], BUT = [22, 8];
+const COUL = { fond: '#fbf7ee', grille: '#e8dfc9', mur: '#3a3531', exploree: '#f4e3b5', frontiere: '#e0b95a',
+               chemin: '#2f6f6a', depart: '#3a6ea5', but: '#c4564a' };
+
+const canvases = { blind: document.getElementById('cBlind'), astar: document.getElementById('cAstar') };
+for (const c of Object.values(canvases)) { c.width = W; c.height = H; c.style.width = '100%'; c.style.maxWidth = W + 'px'; }
+
+let murs = new Set();
+let etats = { blind: null, astar: null };
+let minuterie = null;
+
+const cle = (x, y) => x + ',' + y;
+const egal = (a, b) => a[0] === b[0] && a[1] === b[1];
+
+function labyrintheInitial() {
+    arreter(); murs = new Set();
+    for (let y = 0; y <= 12; y++) murs.add(cle(12, y));           // grand mur, ouvert en bas
+    for (let x = 6; x <= 12; x++) murs.add(cle(x, 3));            // un cul-de-sac tentant
+    for (let y = 5; y <= 16; y++) if (y !== 14) murs.add(cle(17, y));
+    reinitialiserRecherches(); dessiner();
+}
+function labyrintheHasard() {
+    arreter(); murs = new Set();
+    for (let x = 0; x < COLS; x++) for (let y = 0; y < ROWS; y++) {
+        if (Math.random() < 0.28 && !egal([x, y], DEPART) && !egal([x, y], BUT)) murs.add(cle(x, y));
+    }
+    reinitialiserRecherches(); dessiner();
+}
+function effacer() { arreter(); murs = new Set(); reinitialiserRecherches(); dessiner(); }
+
+function voisins([x, y]) {
+    return [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]]
+        .filter(([a, b]) => a >= 0 && b >= 0 && a < COLS && b < ROWS && !murs.has(cle(a, b)));
+}
+const h = ([x, y]) => Math.abs(x - BUT[0]) + Math.abs(y - BUT[1]);
+
+function nouvelleRecherche(type) {
+    return { type, ouverte: [{ n: DEPART, g: 0 }], vus: new Map([[cle(...DEPART), null]]),
+             g: new Map([[cle(...DEPART), 0]]), exploree: new Set(), chemin: null, fini: false };
+}
+function reinitialiserRecherches() {
+    etats = { blind: null, astar: null };
+    for (const k of ['Blind', 'Astar']) document.getElementById('n' + k).textContent = '0';
+    document.getElementById('chemin').textContent = '–';
+}
+
+function pas(e) {
+    if (e.fini) return;
+    if (e.ouverte.length === 0) { e.fini = true; return; }
+    let i = 0;
+    if (e.type === 'astar') {                       // plus petite valeur de g + h, puis plus petit h
+        let best = Infinity, bestH = Infinity;
+        e.ouverte.forEach((o, j) => { const f = o.g + h(o.n), hh = h(o.n); if (f < best || (f === best && hh < bestH)) { best = f; bestH = hh; i = j; } });
+    }
+    const { n, g } = e.ouverte.splice(i, 1)[0];
+    const k = cle(...n);
+    if (e.exploree.has(k)) return;
+    e.exploree.add(k);
+    if (egal(n, BUT)) {
+        const ch = []; let c = k;
+        while (c !== null) { ch.push(c); c = e.vus.get(c); }
+        e.chemin = ch; e.fini = true; return;
+    }
+    for (const v of voisins(n)) {
+        const kv = cle(...v), gv = g + 1;
+        if (e.type === 'blind') {
+            if (!e.vus.has(kv)) { e.vus.set(kv, k); e.ouverte.push({ n: v, g: gv }); }
+        } else if (!e.g.has(kv) || gv < e.g.get(kv)) {
+            e.g.set(kv, gv); e.vus.set(kv, k); e.ouverte.push({ n: v, g: gv });
+        }
+    }
+}
+
+function dessinerUn(nom) {
+    const ctx = canvases[nom].getContext('2d'), e = etats[nom];
+    ctx.fillStyle = COUL.fond; ctx.fillRect(0, 0, W, H);
+    const frontiere = new Set(e ? e.ouverte.map(o => cle(...o.n)) : []);
+    const chemin = new Set(e && e.chemin ? e.chemin : []);
+    for (let x = 0; x < COLS; x++) for (let y = 0; y < ROWS; y++) {
+        const k = cle(x, y);
+        let c = null;
+        if (murs.has(k)) c = COUL.mur;
+        else if (chemin.has(k)) c = COUL.chemin;
+        else if (e && e.exploree.has(k)) c = COUL.exploree;
+        else if (frontiere.has(k)) c = COUL.frontiere;
+        if (c) { ctx.fillStyle = c; ctx.fillRect(x * CELL, y * CELL, CELL, CELL); }
+    }
+    ctx.strokeStyle = COUL.grille; ctx.lineWidth = 1;
+    for (let x = 0; x <= COLS; x++) { ctx.beginPath(); ctx.moveTo(x * CELL + 0.5, 0); ctx.lineTo(x * CELL + 0.5, H); ctx.stroke(); }
+    for (let y = 0; y <= ROWS; y++) { ctx.beginPath(); ctx.moveTo(0, y * CELL + 0.5); ctx.lineTo(W, y * CELL + 0.5); ctx.stroke(); }
+    for (const [p, c] of [[DEPART, COUL.depart], [BUT, COUL.but]]) {
+        ctx.fillStyle = c; ctx.fillRect(p[0] * CELL + 2, p[1] * CELL + 2, CELL - 4, CELL - 4);
+    }
+    const suffixe = nom === 'blind' ? 'Blind' : 'Astar';
+    if (e) {
+        document.getElementById('n' + suffixe).textContent = e.exploree.size;
+
+    }
+}
+function dessiner() {
+    dessinerUn('blind'); dessinerUn('astar');
+    const a = etats.blind, b = etats.astar, el = document.getElementById('chemin');
+    if (!a || !b) return;
+    if (a.fini && b.fini) {
+        el.textContent = a.chemin ? (a.chemin.length - 1) + ' pas (le plus court possible)' : 'aucun chemin possible';
+    } else el.textContent = '…';
+}
+
+function arreter() { if (minuterie) { clearInterval(minuterie); minuterie = null; } }
+function lancer() {
+    arreter();
+    etats = { blind: nouvelleRecherche('blind'), astar: nouvelleRecherche('astar') };
+    minuterie = setInterval(() => {
+        for (let r = 0; r < 2; r++) { pas(etats.blind); pas(etats.astar); }
+        dessiner();
+        if (etats.blind.fini && etats.astar.fini) arreter();
+    }, 25);
+}
+
+// Dessiner ou effacer des murs, sur l'une ou l'autre grille
+let peinture = null;
+function caseSous(c, ev) {
+    const r = c.getBoundingClientRect();
+    return [Math.floor((ev.clientX - r.left) / r.width * COLS), Math.floor((ev.clientY - r.top) / r.height * ROWS)];
+}
+for (const c of Object.values(canvases)) {
+    c.addEventListener('pointerdown', ev => {
+        const [x, y] = caseSous(c, ev);
+        if (egal([x, y], DEPART) || egal([x, y], BUT)) return;
+        arreter(); reinitialiserRecherches();
+        peinture = !murs.has(cle(x, y));
+        peinture ? murs.add(cle(x, y)) : murs.delete(cle(x, y));
+        dessiner();
+    });
+    c.addEventListener('pointermove', ev => {
+        if (peinture === null) return;
+        const [x, y] = caseSous(c, ev);
+        if (x < 0 || y < 0 || x >= COLS || y >= ROWS || egal([x, y], DEPART) || egal([x, y], BUT)) return;
+        peinture ? murs.add(cle(x, y)) : murs.delete(cle(x, y));
+        dessiner();
+    });
+}
+window.addEventListener('pointerup', () => { peinture = null; });
+
+labyrintheInitial();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

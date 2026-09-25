@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 230" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un arbre de décision à une seule question</title>
+<desc>Un arbre à une seule question, « à plus de 11 km du centre ? » : la branche « non » mène à une feuille bleue, 11 maisons sur 12 vendues vite ; la branche « oui » à une feuille rouge, 1 sur 8. Deux erreurs sur vingt, les deux exceptions.</desc>
+<rect x="0" y="0" width="660" height="230" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<rect x="221.8" y="40" width="216.4" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="330.0" y="60" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">À plus de 11 km du centre ?</text>
+<line x1="330.0" y1="70" x2="260.0" y2="116" stroke="#b8a888" stroke-width="1.4"/>
+<text x="285.0" y="97.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="260.0" cy="130" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="260.0" y="160" font-size="11.5" fill="#5b5249" text-anchor="middle">11 sur 12</text>
+<text x="260.0" y="174" font-size="11.5" fill="#5b5249" text-anchor="middle">vendues vite</text>
+<line x1="330.0" y1="70" x2="400.0" y2="116" stroke="#b8a888" stroke-width="1.4"/>
+<text x="375.0" y="97.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="400.0" cy="130" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="400.0" y="160" font-size="11.5" fill="#5b5249" text-anchor="middle">1 sur 8</text>
+<text x="400.0" y="174" font-size="11.5" fill="#5b5249" text-anchor="middle">vendues vite</text>
+<text x="330" y="208" font-size="13" fill="#5b5249" text-anchor="middle">Une question, deux feuilles : 2 erreurs sur 20, les deux exceptions</text>
+</svg>

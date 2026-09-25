@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Les deux erreurs ne coûtent pas la même chose</title>
+<desc>Deux panneaux. À gauche, le détecteur de fumée : le faux positif (une alarme pour un toast brûlé) coûte un agacement, le faux négatif (un incendie sans alarme) coûte la maison ; le curseur du seuil d'alerte est placé du côté indulgent, pour ne rater aucun incendie. À droite, le filtre anti-pourriel : le faux positif (un vrai courriel jeté) coûte un message perdu, le faux négatif (un pourriel dans la boîte) coûte une seconde d'agacement ; le curseur est placé du côté strict, pour ne jeter que ce dont on est sûr.</desc>
+<rect x="0" y="0" width="660" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="330" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le seuil se règle sur l'erreur la plus grave</text>
+<rect x="24" y="58" width="296" height="250" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="172" y="84" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">Détecteur de fumée</text>
+<rect x="38" y="104" width="268" height="54" rx="7" fill="#2f6f6a" fill-opacity="0.08" stroke="#2f6f6a" stroke-width="1"/>
+<text x="50" y="124" font-size="12.5" fill="#3a3531" font-weight="600">Faux positif : alarme pour un toast brûlé</text>
+<text x="50" y="144" font-size="12" fill="#2f6f6a" font-weight="400">coût : un agacement</text>
+<rect x="38" y="170" width="268" height="54" rx="7" fill="#c4564a" fill-opacity="0.16" stroke="#c4564a" stroke-width="2"/>
+<text x="50" y="190" font-size="12.5" fill="#3a3531" font-weight="600">Faux négatif : un incendie sans alarme</text>
+<text x="50" y="210" font-size="12" fill="#c4564a" font-weight="700">coût : la maison, ou pire</text>
+<line x1="64" y1="274" x2="280" y2="274" stroke="#b8a888" stroke-width="3" stroke-linecap="round"/>
+<text x="64" y="300" font-size="11.5" fill="#7a6f63" text-anchor="start">indulgent</text>
+<text x="280" y="300" font-size="11.5" fill="#7a6f63" text-anchor="end">strict</text>
+<text x="172" y="252" font-size="12" fill="#5b5249" text-anchor="middle">seuil d'alerte</text>
+<polygon points="99.2,258 115.2,258 107.2,270" fill="#9a5b33"/>
+<circle cx="107.2" cy="274" r="7" fill="#9a5b33" stroke="#efe7d3" stroke-width="2"/>
+<rect x="340" y="58" width="296" height="250" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="488" y="84" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">Filtre anti-pourriel</text>
+<rect x="354" y="104" width="268" height="54" rx="7" fill="#c4564a" fill-opacity="0.16" stroke="#c4564a" stroke-width="2"/>
+<text x="366" y="124" font-size="12.5" fill="#3a3531" font-weight="600">Faux positif : un vrai courriel jeté</text>
+<text x="366" y="144" font-size="12" fill="#c4564a" font-weight="700">coût : un message important perdu</text>
+<rect x="354" y="170" width="268" height="54" rx="7" fill="#2f6f6a" fill-opacity="0.08" stroke="#2f6f6a" stroke-width="1"/>
+<text x="366" y="190" font-size="12.5" fill="#3a3531" font-weight="600">Faux négatif : un pourriel dans la boîte</text>
+<text x="366" y="210" font-size="12" fill="#2f6f6a" font-weight="400">coût : une seconde d'agacement</text>
+<line x1="380" y1="274" x2="596" y2="274" stroke="#b8a888" stroke-width="3" stroke-linecap="round"/>
+<text x="380" y="300" font-size="11.5" fill="#7a6f63" text-anchor="start">indulgent</text>
+<text x="596" y="300" font-size="11.5" fill="#7a6f63" text-anchor="end">strict</text>
+<text x="488" y="252" font-size="12" fill="#5b5249" text-anchor="middle">seuil d'alerte</text>
+<polygon points="544.8,258 560.8,258 552.8,270" fill="#9a5b33"/>
+<circle cx="552.8" cy="274" r="7" fill="#9a5b33" stroke="#efe7d3" stroke-width="2"/>
+<text x="330" y="338" font-size="13" fill="#5b5249" text-anchor="middle">L'alarme tolère les fausses alertes pour ne rien rater ; le filtre tolère ce qui passe pour ne rien jeter à tort.</text>
+</svg>

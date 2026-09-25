@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : l'arbre de décision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f4f6;
+            user-select: none;
+        }
+        canvas {
+            cursor: crosshair;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        #treeSvg text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        #treeSvg .node { cursor: pointer; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+
+    <div class="max-w-4xl w-full">
+        <div class="bg-white p-2 rounded-xl shadow-xl border border-slate-200 relative overflow-hidden">
+
+            <!-- Plan + arbre -->
+            <div class="flex flex-col md:flex-row gap-2">
+                <div class="relative flex justify-center bg-slate-50 rounded-lg overflow-hidden md:w-1/2">
+                    <canvas id="planCanvas"></canvas>
+                    <div id="hint" class="absolute top-3 left-3 bg-white/80 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">
+                        Cliquez pour ajouter un point ; survolez une zone pour voir son chemin dans l'arbre.
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-lg overflow-hidden md:w-1/2 flex items-start justify-center">
+                    <svg id="treeSvg" width="100%" viewBox="0 0 440 400" preserveAspectRatio="xMidYMin meet"></svg>
+                </div>
+            </div>
+
+            <!-- Commandes -->
+            <div class="mt-4 p-4 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4 w-full md:w-1/2">
+                    <div class="flex flex-col w-full gap-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-slate-700">Profondeur maximale = <span id="depthDisplay">2</span></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Paramètre</span>
+                        </div>
+                        <input type="range" id="depthSlider" min="1" max="8" step="1" value="2" class="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end flex-wrap">
+                    <div class="flex items-center gap-1 bg-white border border-slate-200 rounded shadow-sm p-1" title="Couleur des points ajoutés">
+                        <button id="btnRed" onclick="setColor('red')" class="w-7 h-7 rounded-full bg-red-500 border-2 border-red-700 ring-2 ring-offset-1 ring-slate-400"></button>
+                        <button id="btnBlue" onclick="setColor('blue')" class="w-7 h-7 rounded-full bg-blue-500 border-2 border-blue-700"></button>
+                    </div>
+                    <div class="flex flex-col items-center bg-white border border-slate-200 px-3 py-1 rounded shadow-sm" title="Nombre de points mal classés par l'arbre">
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Erreurs</span>
+                        <span id="errorCountDisplay" class="font-bold text-red-600">0</span>
+                    </div>
+                    <div class="flex flex-col items-center bg-white border border-slate-200 px-3 py-1 rounded shadow-sm" title="Nombre de feuilles de l'arbre">
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Feuilles</span>
+                        <span id="leafCountDisplay" class="font-bold text-slate-700">0</span>
+                    </div>
+                    <button onclick="resetSimulation()" class="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:bg-slate-50 hover:text-indigo-600 transition-colors font-medium text-sm shadow-sm whitespace-nowrap">
+                        Réinitialiser
+                    </button>
+                </div>
+            </div>
+
+            <!-- Légende -->
+            <div class="flex justify-center gap-8 mt-4 pb-2 text-sm font-medium text-slate-600 flex-wrap">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full bg-red-500 border border-red-700"></div>
+                    <span>Classe A (rouge)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full bg-blue-500 border border-blue-700"></div>
+                    <span>Classe B (bleu)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded-full border-2 border-amber-500 bg-transparent"></div>
+                    <span>Mal classé</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-3 border-2 border-dashed border-slate-600"></div>
+                    <span>Coupe (question)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+/**
+ * Un arbre de décision (CART, impureté de Gini) appris en direct sur les
+ * points du plan. Le fond du plan montre la réponse de l'arbre en chaque
+ * point ; l'arbre lui-même est dessiné à droite. Survoler une zone du plan
+ * surligne le chemin correspondant dans l'arbre, et inversement.
+ */
+const canvas = document.getElementById('planCanvas');
+const ctx = canvas.getContext('2d');
+const treeSvg = document.getElementById('treeSvg');
+const depthSlider = document.getElementById('depthSlider');
+
+const W = 440, H = 400, R = 6;
+canvas.width = W; canvas.height = H;
+canvas.style.width = '100%'; canvas.style.maxWidth = W + 'px';
+
+let points = [];          // {x, y, c} avec x, y dans [0, 1], c = 'red' | 'blue'
+let tree = null;
+let currentColor = 'red';
+let highlighted = null;   // feuille survolée
+
+// ---------- données de départ : deux amas et deux exceptions ----------
+function seeded(seed) { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; }
+function initialData() {
+    const rnd = seeded(7);
+    const pts = [];
+    for (let i = 0; i < 12; i++) pts.push({ x: 0.15 + 0.22 * rnd(), y: 0.15 + 0.3 * rnd(), c: 'blue' });
+    for (let i = 0; i < 9; i++) pts.push({ x: 0.55 + 0.35 * rnd(), y: 0.55 + 0.32 * rnd(), c: 'red' });
+    pts.push({ x: 0.27, y: 0.24, c: 'red' });   // exception au milieu des bleus
+    pts.push({ x: 0.72, y: 0.7, c: 'blue' });   // exception au milieu des rouges
+    return pts;
+}
+
+// ---------- apprentissage ----------
+function gini(pts) {
+    if (!pts.length) return 0;
+    const p = pts.filter(q => q.c === 'red').length / pts.length;
+    return 2 * p * (1 - p);
+}
+function majority(pts) {
+    const r = pts.filter(q => q.c === 'red').length;
+    return r * 2 >= pts.length ? 'red' : 'blue';
+}
+function learn(pts, depth, maxDepth, id) {
+    const node = { pts, depth, id: id || 'r', leaf: true };
+    if (depth >= maxDepth || pts.length < 2 || gini(pts) === 0) return node;
+    let best = null;
+    for (const axis of ['x', 'y']) {
+        const vals = [...new Set(pts.map(q => q[axis]))].sort((a, b) => a - b);
+        for (let i = 0; i + 1 < vals.length; i++) {
+            const t = (vals[i] + vals[i + 1]) / 2;
+            const L = pts.filter(q => q[axis] <= t), Rt = pts.filter(q => q[axis] > t);
+            const score = (L.length * gini(L) + Rt.length * gini(Rt)) / pts.length;
+            if (best === null || score < best.score - 1e-12) best = { score, axis, t, L, Rt };
+        }
+    }
+    if (best === null || best.score >= gini(pts) - 1e-12) return node;
+    node.leaf = false; node.axis = best.axis; node.t = best.t;
+    node.left = learn(best.L, depth + 1, maxDepth, node.id + 'g');
+    node.right = learn(best.Rt, depth + 1, maxDepth, node.id + 'd');
+    return node;
+}
+function leafFor(node, x, y) {
+    while (!node.leaf) node = (node.axis === 'x' ? x : y) <= node.t ? node.left : node.right;
+    return node;
+}
+function leaves(node) { return node.leaf ? [node] : [...leaves(node.left), ...leaves(node.right)]; }
+function pathTo(node, id) {
+    // les identifiants sur le chemin de la racine au nœud id (feuille ou non)
+    const ids = [];
+    let n = node;
+    while (n) { ids.push(n.id); if (n.id === id || n.leaf) break; n = id.startsWith(n.left.id) ? n.left : n.right; }
+    return ids;
+}
+
+// ---------- dessin du plan ----------
+const RED = '#ef4444', BLUE = '#3b82f6', RED_BG = 'rgba(239, 68, 68, 0.18)', BLUE_BG = 'rgba(59, 130, 246, 0.18)';
+function drawRegions(node, x0, x1, y0, y1) {
+    if (node.leaf) {
+        ctx.fillStyle = majority(node.pts) === 'red' ? RED_BG : BLUE_BG;
+        ctx.fillRect(x0 * W, y0 * H, (x1 - x0) * W, (y1 - y0) * H);
+        if (highlighted && node.id.startsWith(highlighted.id)) {
+            ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 3;
+            ctx.strokeRect(x0 * W + 1.5, y0 * H + 1.5, (x1 - x0) * W - 3, (y1 - y0) * H - 3);
+        }
+        return;
+    }
+    if (node.axis === 'x') {
+        drawRegions(node.left, x0, node.t, y0, y1); drawRegions(node.right, node.t, x1, y0, y1);
+    } else {
+        drawRegions(node.left, x0, x1, y0, node.t); drawRegions(node.right, x0, x1, node.t, y1);
+    }
+}
+function drawCuts(node, x0, x1, y0, y1) {
+    if (node.leaf) return;
+    ctx.strokeStyle = '#475569'; ctx.lineWidth = 1.5; ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    if (node.axis === 'x') {
+        ctx.moveTo(node.t * W, y0 * H); ctx.lineTo(node.t * W, y1 * H); ctx.stroke();
+        drawCuts(node.left, x0, node.t, y0, y1); drawCuts(node.right, node.t, x1, y0, y1);
+    } else {
+        ctx.moveTo(x0 * W, node.t * H); ctx.lineTo(x1 * W, node.t * H); ctx.stroke();
+        drawCuts(node.left, x0, x1, y0, node.t); drawCuts(node.right, x0, x1, node.t, y1);
+    }
+    ctx.setLineDash([]);
+}
+function drawPlan() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#f8fafc'; ctx.fillRect(0, 0, W, H);
+    if (tree) { drawRegions(tree, 0, 1, 0, 1); drawCuts(tree, 0, 1, 0, 1); }
+    for (const p of points) {
+        ctx.beginPath(); ctx.arc(p.x * W, p.y * H, R, 0, Math.PI * 2);
+        ctx.fillStyle = p.c === 'red' ? RED : BLUE; ctx.fill();
+        ctx.strokeStyle = p.c === 'red' ? '#b91c1c' : '#1d4ed8'; ctx.lineWidth = 1.5; ctx.stroke();
+        if (tree && majority(leafFor(tree, p.x, p.y).pts) !== p.c) {
+            ctx.beginPath(); ctx.arc(p.x * W, p.y * H, R + 4, 0, Math.PI * 2);
+            ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 2.5; ctx.stroke();
+        }
+    }
+}
+
+// ---------- dessin de l'arbre ----------
+function nLeaves(node) { return node.leaf ? 1 : nLeaves(node.left) + nLeaves(node.right); }
+function depthOf(node) { return node.leaf ? 0 : 1 + Math.max(depthOf(node.left), depthOf(node.right)); }
+function fmt(v) { return v.toFixed(2).replace('.', ','); }
+function drawTree() {
+    const svgW = 440;
+    const nl = nLeaves(tree), d = depthOf(tree);
+    const lw = Math.max(34, Math.min(110, svgW / nl));
+    const stepY = Math.max(52, Math.min(80, 360 / (d + 1)));
+    const svgH = 40 + (d + 1) * stepY + 20;
+    treeSvg.setAttribute('viewBox', `0 0 ${svgW} ${svgH}`);
+    const hl = highlighted ? new Set(pathTo(tree, highlighted.id)) : new Set();
+    let out = '';
+    const x0 = (svgW - nl * lw) / 2;
+    function rec(node, xs, y) {
+        const w = nLeaves(node) * lw, cx = xs + w / 2;
+        const on = hl.has(node.id);
+        if (node.leaf) {
+            const col = majority(node.pts) === 'red' ? RED : BLUE;
+            const nr = node.pts.filter(q => q.c === 'red').length;
+            out += `<g class="node" data-id="${node.id}"><circle cx="${cx}" cy="${y + 12}" r="${on ? 13 : 10}" fill="${col}" stroke="${on ? '#f59e0b' : '#fff'}" stroke-width="${on ? 3 : 1.5}"/>`;
+            if (lw >= 44) out += `<text x="${cx}" y="${y + 40}" font-size="10.5" fill="#475569" text-anchor="middle">${nr}R ${node.pts.length - nr}B</text>`;
+            out += `</g>`;
+            return cx;
+        }
+        const q = `${node.axis} ≤ ${fmt(node.t)} ?`;
+        const bw = Math.min(w - 4, 7 * q.length + 16), bh = 24;
+        out += `<g class="node" data-id="${node.id}"><rect x="${cx - bw / 2}" y="${y}" width="${bw}" height="${bh}" rx="6" fill="${on ? '#fef3c7' : '#fff'}" stroke="${on ? '#f59e0b' : '#94a3b8'}" stroke-width="${on ? 2 : 1.2}"/>`;
+        out += `<text x="${cx}" y="${y + 16}" font-size="${bw < 7 * q.length + 16 ? 9 : 11}" fill="#1e293b" text-anchor="middle" font-weight="600">${q}</text></g>`;
+        const wl = nLeaves(node.left) * lw;
+        const kids = [[node.left, xs, 'oui'], [node.right, xs + wl, 'non']];
+        for (const [kid, kx, lab] of kids) {
+            const kcx = kx + nLeaves(kid) * lw / 2;
+            const kon = hl.has(kid.id);
+            out += `<line x1="${cx}" y1="${y + bh}" x2="${kcx}" y2="${y + stepY}" stroke="${kon ? '#f59e0b' : '#94a3b8'}" stroke-width="${kon ? 2.5 : 1.2}"/>`;
+            if (lw >= 44) out += `<text x="${(cx + kcx) / 2 + (lab === 'oui' ? -8 : 8)}" y="${(y + bh + y + stepY) / 2 + 3}" font-size="10" fill="#64748b" text-anchor="${lab === 'oui' ? 'end' : 'start'}" font-style="italic">${lab}</text>`;
+            rec(kid, kx, y + stepY);
+        }
+        return cx;
+    }
+    rec(tree, x0, 20);
+    treeSvg.innerHTML = out;
+    for (const g of treeSvg.querySelectorAll('.node')) {
+        g.addEventListener('mouseenter', () => setHighlight({ id: g.dataset.id }));
+        g.addEventListener('mouseleave', () => setHighlight(null));
+    }
+}
+
+// ---------- mise à jour ----------
+function refit() {
+    tree = learn(points, 0, parseInt(depthSlider.value, 10));
+    highlighted = null;
+    document.getElementById('errorCountDisplay').textContent = points.filter(p => majority(leafFor(tree, p.x, p.y).pts) !== p.c).length;
+    document.getElementById('leafCountDisplay').textContent = nLeaves(tree);
+    drawPlan(); drawTree();
+}
+function setHighlight(leaf) {
+    if ((leaf && leaf.id) === (highlighted && highlighted.id)) return;
+    highlighted = leaf || null;
+    drawPlan(); drawTree();
+}
+function setColor(c) {
+    currentColor = c;
+    document.getElementById('btnRed').classList.toggle('ring-2', c === 'red');
+    document.getElementById('btnBlue').classList.toggle('ring-2', c === 'blue');
+}
+function resetSimulation() { points = initialData(); refit(); }
+
+canvas.addEventListener('click', e => {
+    const r = canvas.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    points.push({ x: Math.min(0.98, Math.max(0.02, x)), y: Math.min(0.98, Math.max(0.02, y)), c: currentColor });
+    refit();
+});
+canvas.addEventListener('mousemove', e => {
+    if (!tree) return;
+    const r = canvas.getBoundingClientRect();
+    setHighlight(leafFor(tree, (e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height));
+});
+canvas.addEventListener('mouseleave', () => setHighlight(null));
+depthSlider.addEventListener('input', () => { document.getElementById('depthDisplay').textContent = depthSlider.value; refit(); });
+
+resetSimulation();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 460" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Prix des maisons en fonction de la superficie</title>
+<desc>Nuage de points : chaque maison est un point situé selon sa superficie (axe horizontal) et son prix de vente (axe vertical). Les points dessinent une montée franche — le prix croît avec la superficie — sans pour autant s'aligner parfaitement.</desc>
+
+<rect x="0" y="0" width="660" height="460" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<g stroke="#e0d4b8" stroke-width="1">
+<line x1="80" y1="351.7" x2="630" y2="351.7"/>
+<line x1="80" y1="238.3" x2="630" y2="238.3"/>
+<line x1="80" y1="125" x2="630" y2="125"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.6">
+<line x1="80" y1="40" x2="80" y2="380"/>
+<line x1="80" y1="380" x2="630" y2="380"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="80" y1="380" x2="80" y2="386"/>
+<line x1="224.7" y1="380" x2="224.7" y2="386"/>
+<line x1="369.5" y1="380" x2="369.5" y2="386"/>
+<line x1="514.2" y1="380" x2="514.2" y2="386"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="middle">
+<text x="80" y="402">100</text>
+<text x="224.7" y="402">150</text>
+<text x="369.5" y="402">200</text>
+<text x="514.2" y="402">250</text>
+<text x="355" y="430" font-size="15" fill="#3a3531">superficie (m²)</text>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="74" y1="351.7" x2="80" y2="351.7"/>
+<line x1="74" y1="238.3" x2="80" y2="238.3"/>
+<line x1="74" y1="125" x2="80" y2="125"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="end">
+<text x="68" y="356.2">300 k$</text>
+<text x="68" y="242.8">500 k$</text>
+<text x="68" y="129.5">700 k$</text>
+</g>
+<text x="18" y="210" font-size="15" fill="#3a3531" text-anchor="middle" transform="rotate(-90 18 210)">prix de vente</text>
+<g fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5">
+<circle cx="114.7" cy="359.1" r="6.5"/>
+<circle cx="137.9" cy="351.1" r="6.5"/>
+<circle cx="166.8" cy="346.0" r="6.5"/>
+<circle cx="201.5" cy="356.8" r="6.5"/>
+<circle cx="224.7" cy="323.3" r="6.5"/>
+<circle cx="247.9" cy="275.7" r="6.5"/>
+<circle cx="276.8" cy="309.7" r="6.5"/>
+<circle cx="299.9" cy="242.8" r="6.5"/>
+<circle cx="311.5" cy="283.7" r="6.5"/>
+<circle cx="340.5" cy="278.6" r="6.5"/>
+<circle cx="363.6" cy="202.6" r="6.5"/>
+<circle cx="392.6" cy="250.8" r="6.5"/>
+<circle cx="415.7" cy="177.1" r="6.5"/>
+<circle cx="427.3" cy="192.9" r="6.5"/>
+<circle cx="462.0" cy="207.1" r="6.5"/>
+<circle cx="490.9" cy="130.6" r="6.5"/>
+<circle cx="519.9" cy="175.9" r="6.5"/>
+<circle cx="548.8" cy="102.2" r="6.5"/>
+<circle cx="577.8" cy="133.4" r="6.5"/>
+<circle cx="600.9" cy="66.5" r="6.5"/>
+</g>
+</svg>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>K‑Means — Minimal Demo</title>
+  <style>
+    :root{--bg:#0b0f14;--panel:#111723;--muted:#98a4b5;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 800px at 80% -10%,#1b2636,var(--bg) 60%);color:#e6edf5}
+    .wrap{max-width:980px;margin:20px auto;padding:0 12px}
+    .panel{background:linear-gradient(180deg,#121821,#0f141c);border:1px solid #1f2a3a;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .toolbar{display:grid;grid-template-columns:repeat(12,1fr);gap:10px;padding:12px;border-bottom:1px solid #1f2a3a}
+    .tool{grid-column:span 4;display:flex;flex-direction:column;gap:6px;min-width:0}
+    .tool.small{grid-column:span 3}
+    label{font-size:12px;color:#9fb0c3}
+    input[type="range"]{width:100%}
+    input[type="number"]{width:100%;padding:8px 10px;background:#0c121a;color:#e6edf5;border:1px solid #243244;border-radius:10px}
+    button{appearance:none;border:none;padding:10px 12px;border-radius:12px;background:#0c121a;color:#e6edf5;border:1px solid #243244;cursor:pointer;transition:transform .04s ease,background .2s ease,border-color .2s ease}
+    button:hover{background:#121b28;border-color:#2f4057}
+    button:active{transform:translateY(1px)}
+    .canvas-wrap{position:relative;background:#0a0f15}
+    canvas{display:block;width:100%;height:520px;background:repeating-linear-gradient(90deg,#0a0f15,#0a0f15 30px,#0b1017 30px,#0b1017 31px),repeating-linear-gradient(0deg,#0a0f15,#0a0f15 30px,#0b1017 30px,#0b1017 31px)}
+    .stats{display:flex;gap:12px;padding:10px 12px;color:#c9d4e3;border-top:1px solid #1f2a3a}
+    .badge{padding:6px 10px;border-radius:999px;background:#0c121a;border:1px solid #243244;font-variant-numeric:tabular-nums}
+    @media(max-width:900px){.tool{grid-column:span 6}canvas{height:400px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <div class="toolbar">
+        <div class="tool small">
+          <label for="k">K (nombre de centroides)</label>
+          <div class="row">
+            <input id="k" type="range" min="1" max="8" value="3" />
+            <input id="kNum" type="number" min="1" max="8" value="3" />
+          </div>
+        </div>
+        <div class="tool small">
+          <label for="n">Points</label>
+          <div class="row">
+            <input id="n" type="range" min="10" max="1000" value="300" />
+            <input id="nNum" type="number" min="10" max="1000" value="300" />
+          </div>
+        </div>
+        <div class="tool" style="align-self:end;display:flex;gap:8px;flex-direction:row">
+          <button id="btnGenerate">Regénérer les points</button>
+          <button id="btnInit">Initialiser les centroides</button>
+          <button id="btnStep">Itérer</button>
+        </div>
+      </div>
+      <div class="canvas-wrap"><canvas id="canvas" width="1000" height="520"></canvas></div>
+      <div class="stats">
+        <div class="badge" id="iterBadge">Itération: 0</div>
+        <div class="badge" id="errBadge">Erreur: –</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const rand=(a=0,b=1)=>a+Math.random()*(b-a);const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const dist2=(ax,ay,bx,by)=>{const dx=ax-bx,dy=ay-by;return dx*dx+dy*dy};
+  function colorFor(i,k){const h=(i*360/k)%360;return `hsl(${h}deg 75% 55%)`}
+
+  const canvas=document.getElementById('canvas');const ctx=canvas.getContext('2d');
+  function resizeCanvas(){const dpr=window.devicePixelRatio||1;const r=canvas.getBoundingClientRect();canvas.width=Math.max(600,r.width)*dpr;canvas.height=r.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);draw()}window.addEventListener('resize',resizeCanvas);
+
+  const kRange=document.getElementById('k'),kNum=document.getElementById('kNum');
+  const nRange=document.getElementById('n'),nNum=document.getElementById('nNum');
+  const btnGenerate=document.getElementById('btnGenerate');
+  const btnInit=document.getElementById('btnInit');
+  const btnStep=document.getElementById('btnStep');
+  const iterBadge=document.getElementById('iterBadge');
+  const errBadge=document.getElementById('errBadge');
+  function link(a,b){a.addEventListener('input',()=>{b.value=a.value;onConfigChanged()});b.addEventListener('input',()=>{b.value=clamp(+b.value,+b.min,+b.max);a.value=b.value;onConfigChanged()})}
+  link(kRange,kNum);link(nRange,nNum);
+
+  let points=[];let centroids=[];let k=+kRange.value;let iter=0;const eps2=1e-4;
+  function bounds(){const pad=16;const rect=canvas.getBoundingClientRect();return{x0:pad,y0:pad,x1:rect.width-pad,y1:rect.height-pad}}
+  function randomCloud(n){const {x0,y0,x1,y1}=bounds();const w=x1-x0,h=y1-y0;const blobs=Math.max(2,Math.min(5,Math.round(k*1.5)));const centers=Array.from({length:blobs},()=>({x:rand(x0+.15*w,x1-.15*w),y:rand(y0+.15*h,y1-.15*h),sx:rand(30,90),sy:rand(30,90)}));points=[];for(let i=0;i<n;i++){const g=centers[Math.floor(rand(0,blobs))];const u=Math.random()||1e-9,v=Math.random();const r=Math.sqrt(-2*Math.log(u));const th=2*Math.PI*v;const nx=r*Math.cos(th),ny=r*Math.sin(th);const x=clamp(g.x+nx*g.sx,x0,x1);const y=clamp(g.y+ny*g.sy,y0,y1);points.push({x,y,c:-1})}centroids=[];iter=0;updateBadges();draw()}
+  function onConfigChanged(){k=+kRange.value;if(points.length!==+nRange.value)randomCloud(+nRange.value);draw()}
+
+  // k-means++ init only (no option in UI)
+  function initKPP(){if(points.length===0)return;centroids=[];let idx=Math.floor(Math.random()*points.length);centroids.push({x:points[idx].x,y:points[idx].y});while(centroids.length<k){const d2=points.map(p=>{let best=Infinity;for(const c of centroids)best=Math.min(best,dist2(p.x,p.y,c.x,c.y));return best});const total=d2.reduce((a,b)=>a+b,0);if(total===0){initRandomFromPoints();return;}let r=Math.random()*total;for(let i=0;i<points.length;i++){r-=d2[i];if(r<=0){centroids.push({x:points[i].x,y:points[i].y});break}}}iter=0;updateBadges();draw()}
+  function initRandomFromPoints(){centroids=[];const chosen=new Set();while(centroids.length<k&&chosen.size<points.length){const i=Math.floor(Math.random()*points.length);if(!chosen.has(i)){chosen.add(i);const p=points[i];centroids.push({x:p.x,y:p.y})}}iter=0;updateBadges();draw()}
+
+  function assign(){if(centroids.length!==k||points.length===0)return false;let changed=0;for(const p of points){let bi=-1,bd=Infinity;for(let i=0;i<centroids.length;i++){const c=centroids[i];const d=dist2(p.x,p.y,c.x,c.y);if(d<bd){bd=d;bi=i}}if(p.c!==bi){p.c=bi;changed++}}return changed>0}
+  function update(){if(centroids.length!==k||points.length===0)return 0;const acc=Array.from({length:k},()=>({x:0,y:0,count:0}));for(const p of points){if(p.c>=0){acc[p.c].x+=p.x;acc[p.c].y+=p.y;acc[p.c].count++}}let moved2=0;for(let i=0;i<k;i++){if(acc[i].count===0){const rp=points[Math.floor(Math.random()*points.length)];moved2+=dist2(centroids[i].x,centroids[i].y,rp.x,rp.y);centroids[i].x=rp.x;centroids[i].y=rp.y;continue}const nx=acc[i].x/acc[i].count,ny=acc[i].y/acc[i].count;moved2+=dist2(centroids[i].x,centroids[i].y,nx,ny);centroids[i].x=nx;centroids[i].y=ny}return moved2}
+  function error(){if(centroids.length!==k)return NaN;let s=0;for(const p of points){if(p.c>=0){const c=centroids[p.c];s+=dist2(p.x,p.y,c.x,c.y)}}return s}
+  function step(){if(centroids.length!==k){initKPP()}const changed=assign();const moved2=update();iter++;updateBadges();draw();if(!changed&&moved2<eps2) {/* converged; nothing else */} }
+
+  function draw(){const {width:W,height:H}=canvas.getBoundingClientRect();ctx.clearRect(0,0,W,H);ctx.save();ctx.globalAlpha=.8;ctx.lineWidth=1;ctx.strokeStyle='#0f151e';const s=30;for(let x=0;x<W;x+=s){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=0;y<H;y+=s){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}ctx.restore();for(const p of points){const c=p.c>=0?p.c:0;ctx.fillStyle=p.c>=0?colorFor(c,Math.max(k,1)):'#6c7a8a';ctx.beginPath();ctx.arc(p.x,p.y,3.2,0,Math.PI*2);ctx.fill()}if(centroids.length){for(let i=0;i<centroids.length;i++){const c=centroids[i];ctx.strokeStyle='#ffffff';ctx.lineWidth=4;ctx.beginPath();ctx.arc(c.x,c.y,10,0,Math.PI*2);ctx.stroke();ctx.strokeStyle=colorFor(i,Math.max(k,1));ctx.lineWidth=3;ctx.beginPath();ctx.arc(c.x,c.y,10,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(c.x-8,c.y);ctx.lineTo(c.x+8,c.y);ctx.moveTo(c.x,c.y-8);ctx.lineTo(c.x,c.y+8);ctx.stroke()}}}
+  function updateBadges(){iterBadge.textContent=`Itération : ${iter}`;const v=error();errBadge.textContent=Number.isFinite(v)?`Erreur : ${v.toFixed(0)}`:'Erreur : –'}
+
+  canvas.addEventListener('click',e=>{const r=canvas.getBoundingClientRect();const x=e.clientX-r.left;const y=e.clientY-r.top;if(e.shiftKey){if(points.length){let bi=-1,bd=Infinity;for(let i=0;i<points.length;i++){const d=dist2(x,y,points[i].x,points[i].y);if(d<bd){bd=d;bi=i}}if(bi>=0)points.splice(bi,1)}}else{points.push({x,y,c:-1})}centroids=[];iter=0;updateBadges();draw();nRange.value=nNum.value=points.length});
+
+  btnGenerate.addEventListener('click',()=>randomCloud(+nRange.value));
+  btnInit.addEventListener('click',()=>initKPP());
+  btnStep.addEventListener('click',()=>step());
+
+  randomCloud(+nRange.value);resizeCanvas();updateBadges();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

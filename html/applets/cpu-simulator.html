@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur CPU</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    /* --- instructions --- */
+    ul.instructions {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    ul.instructions li {
+      padding: .3rem .6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: .3rem;
+    }
+    ul.instructions li.current {
+      background-color: rgba(33, 150, 243, 0.20); /* bleu + opacité 20 % */
+      border-color: #2196f3;
+      color: inherit; /* conserve la couleur de texte courante */
+    }
+
+    /* --- mémoire & registre --- */
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+    .row label {
+      width: 130px;
+      font-weight: bold;
+    }
+    .row span {
+      display: inline-block;
+      width: 90px;
+      text-align: right;
+      padding: .3rem .5rem;
+      border: 1px solid #888;
+      border-radius: 4px;
+    }
+
+    /* --- boutons --- */
+    .buttons {
+      margin-top: 1rem;
+    }
+    button {
+      padding: .5rem 1.2rem;
+      margin-right: .5rem;
+    }
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <ul class="instructions">
+    <li data-op="MOV" data-arg="1000">MOV 1000</li>
+    <li data-op="ADD" data-arg="1">ADD 0001</li>
+    <li data-op="STR" data-arg="2000">STR 2000</li>
+  </ul>
+
+  <!-- ordre demandé : Registre, puis mémoire 1000 et 2000 -->
+  <div class="row">
+    <label>Registre&nbsp;:</label><span id="reg"></span>
+  </div>
+  <div class="row">
+    <label>Adresse 1000&nbsp;:</label><span id="mem1000"></span>
+  </div>
+  <div class="row">
+    <label>Adresse 2000&nbsp;:</label><span id="mem2000"></span>
+  </div>
+
+  <div class="buttons">
+    <button id="execBtn">Exécuter</button>
+    <button id="resetBtn">Réinitialiser</button>
+  </div>
+
+  <script>
+  (function () {
+    /* --- éléments du DOM --- */
+    const instrElems = [...document.querySelectorAll('.instructions li')];
+    const mem1000   = document.getElementById('mem1000');
+    const mem2000   = document.getElementById('mem2000');
+    const reg       = document.getElementById('reg');
+    const execBtn   = document.getElementById('execBtn');
+    const resetBtn  = document.getElementById('resetBtn');
+
+    let pc = 0; // program counter
+
+    /* --- fonctions utilitaires --- */
+    function highlight() {
+      instrElems.forEach((li, i) => li.classList.toggle('current', i === pc));
+    }
+    function updateBtnState() {
+      execBtn.disabled = pc >= instrElems.length;
+    }
+
+    /* --- réinitialisation --- */
+    function reset() {
+      mem1000.textContent = Math.floor(Math.random() * 256); // valeur aléatoire 0-255
+      reg.textContent     = '_';
+      mem2000.textContent = '_';
+      pc = 0;
+      highlight();
+      updateBtnState();
+    }
+
+    /* --- exécution pas à pas --- */
+    function step() {
+      if (pc >= instrElems.length) return;
+
+      const li  = instrElems[pc];
+      const op  = li.dataset.op;
+      const arg = parseInt(li.dataset.arg, 10);
+
+      switch (op) {
+        case 'MOV': // MOV 1000
+          reg.textContent = mem1000.textContent || '0';
+          break;
+        case 'ADD': // ADD 0001
+          reg.textContent = (parseInt(reg.textContent || '0', 10) + arg);
+          break;
+        case 'STR': // STR 2000
+          mem2000.textContent = reg.textContent;
+          break;
+      }
+      pc++;
+      highlight();
+      updateBtnState();
+    }
+
+    /* --- événements --- */
+    execBtn.addEventListener('click', step);
+    resetBtn.addEventListener('click', reset);
+
+    /* --- état initial --- */
+    reset();
+  })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

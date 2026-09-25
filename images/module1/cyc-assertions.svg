@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 481" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Quelques assertions de CYC, dans sa langue (CycL)</title>
+<desc>Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français. « #$isa #$BillClinton #$UnitedStatesPresident » : Bill Clinton fait partie des présidents des États-Unis. « #$genls #$Tree-ThePlant #$Plant » : tous les arbres sont des plantes. « #$capitalCity #$France #$Paris » : Paris est la capitale de la France. Une assertion dit que tout animal à colonne vertébrale a une mère biologique. Enfin, une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent.</desc>
+<rect x="0" y="0" width="660" height="481" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="330.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le sens commun, écrit à la main : quelques entrées de CYC</text>
+<text x="44" y="62" font-size="11.5" fill="#7a6f63" font-style="italic">dans la langue de CYC (CycL)</text>
+<text x="616" y="62" font-size="11.5" fill="#7a6f63" font-style="italic" text-anchor="end">ce que cela veut dire</text>
+<rect x="28" y="76" width="604" height="52" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="44" y="98" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">(#$isa #$BillClinton</text>
+<text x="44" y="115" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">      #$UnitedStatesPresident)</text>
+<text x="616" y="98" font-size="12.5" fill="#3a3531" text-anchor="end">Bill Clinton fait partie des</text>
+<text x="616" y="115" font-size="12.5" fill="#3a3531" text-anchor="end">présidents des États-Unis.</text>
+<rect x="28" y="138" width="604" height="52" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="44" y="160" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">(#$genls #$Tree-ThePlant #$Plant)</text>
+<text x="616" y="160" font-size="12.5" fill="#3a3531" text-anchor="end">Tous les arbres sont</text>
+<text x="616" y="177" font-size="12.5" fill="#3a3531" text-anchor="end">des plantes.</text>
+<rect x="28" y="200" width="604" height="52" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="44" y="222" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">(#$capitalCity #$France #$Paris)</text>
+<text x="616" y="222" font-size="12.5" fill="#3a3531" text-anchor="end">Paris est la capitale</text>
+<text x="616" y="239" font-size="12.5" fill="#3a3531" text-anchor="end">de la France.</text>
+<rect x="28" y="262" width="604" height="69" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="44" y="284" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">(#$relationAllExists</text>
+<text x="44" y="301" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">   #$biologicalMother</text>
+<text x="44" y="318" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">   #$ChordataPhylum #$FemaleAnimal)</text>
+<text x="616" y="284" font-size="12.5" fill="#3a3531" text-anchor="end">Tout animal à colonne vertébrale</text>
+<text x="616" y="301" font-size="12.5" fill="#3a3531" text-anchor="end">a une mère biologique, un animal femelle.</text>
+<rect x="28" y="341" width="604" height="86" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1"/>
+<text x="44" y="363" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">(#$implies</text>
+<text x="44" y="380" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">   (#$and (#$isa ?OBJ ?SUBSET)</text>
+<text x="44" y="397" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">          (#$genls ?SUBSET ?SUPERSET))</text>
+<text x="44" y="414" font-size="12.5" fill="#2f6f6a" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" xml:space="preserve">   (#$isa ?OBJ ?SUPERSET))</text>
+<text x="616" y="363" font-size="12.5" fill="#3a3531" text-anchor="end">Règle : si un objet appartient à une</text>
+<text x="616" y="380" font-size="12.5" fill="#3a3531" text-anchor="end">catégorie, il appartient aussi à toutes</text>
+<text x="616" y="397" font-size="12.5" fill="#3a3531" text-anchor="end">celles qui la contiennent.</text>
+<text x="330.0" y="463" font-size="12.5" fill="#5b5249" text-anchor="middle">Des millions d'entrées de ce genre, saisies une à une pendant des décennies.</text>
+</svg>

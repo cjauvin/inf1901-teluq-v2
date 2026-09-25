@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La réponse comme troisième dimension, à deux valeurs</title>
+<desc>Une vue en perspective. Le plan horizontal porte les deux mêmes axes qu'auparavant : la distance au centre et l'année de construction. La réponse à la question « vendue en moins de 30 jours ? » occupe un troisième axe, vertical, qui ne comporte que deux niveaux : « non » en bas et « oui » en haut. Chaque maison se pose donc sur l'un ou l'autre de deux plans superposés. Vu d'en haut, ce dessin redonne exactement le nuage où la réponse était codée par une couleur.</desc>
+<rect x="0" y="0" width="700" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<polygon points="150.0,348.0 400.0,400.0 504.0,316.0 254.0,264.0" fill="rgba(196,86,74,0.07)" stroke="#cbbd9c" stroke-width="1.5"/>
+<g fill="#c4564a" stroke="#efe7d3" stroke-width="1.4">
+<circle cx="312.5" cy="367.2" r="6.5"/>
+<circle cx="373.1" cy="365.3" r="6.5"/>
+<circle cx="301.1" cy="357.6" r="6.5"/>
+<circle cx="370.1" cy="386.5" r="6.5"/>
+<circle cx="280.6" cy="289.6" r="6.5"/>
+<circle cx="350.7" cy="355.1" r="6.5"/>
+<circle cx="281.1" cy="364.3" r="6.5"/>
+<circle cx="390.2" cy="379.7" r="6.5"/>
+</g>
+<line x1="150.0" y1="348.0" x2="150.0" y2="154.0" stroke="#8a7d6e" stroke-width="1.8"/>
+<line x1="143.0" y1="348.0" x2="150.0" y2="348.0" stroke="#8a7d6e" stroke-width="1.6"/>
+<text x="136.0" y="353.0" font-size="15" fill="#3a3531" text-anchor="end" font-weight="700">non</text>
+<line x1="143.0" y1="180.0" x2="150.0" y2="180.0" stroke="#8a7d6e" stroke-width="1.6"/>
+<text x="136.0" y="185.0" font-size="15" fill="#3a3531" text-anchor="end" font-weight="700">oui</text>
+<text x="76.0" y="136.0" font-size="13.5" fill="#3a3531" text-anchor="middle" font-weight="600">vendue vite ?</text>
+<text x="76.0" y="153.0" font-size="11.5" fill="#7a6f63" text-anchor="middle" font-style="italic">deux niveaux seulement</text>
+<polygon points="150.0,180.0 400.0,232.0 504.0,148.0 254.0,96.0" fill="rgba(58,110,165,0.07)" stroke="#cbbd9c" stroke-width="1.5"/>
+<g fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.4">
+<circle cx="246.2" cy="139.9" r="6.5"/>
+<circle cx="302.7" cy="122.5" r="6.5"/>
+<circle cx="249.5" cy="127.8" r="6.5"/>
+<circle cx="338.5" cy="206.5" r="6.5"/>
+<circle cx="298.8" cy="116.2" r="6.5"/>
+<circle cx="279.7" cy="150.5" r="6.5"/>
+<circle cx="275.2" cy="125.9" r="6.5"/>
+<circle cx="244.1" cy="132.2" r="6.5"/>
+<circle cx="315.8" cy="130.7" r="6.5"/>
+<circle cx="304.2" cy="111.9" r="6.5"/>
+<circle cx="249.8" cy="137.0" r="6.5"/>
+<circle cx="290.1" cy="132.7" r="6.5"/>
+</g>
+<line x1="338.5" y1="206.5" x2="338.5" y2="374.5" stroke="#3a6ea5" stroke-width="1.4" stroke-dasharray="3 4" opacity="0.8"/>
+<circle cx="338.5" cy="374.5" r="6.5" fill="none" stroke="#3a6ea5" stroke-width="1.8" stroke-dasharray="2.5 2.5"/>
+<line x1="280.6" y1="289.6" x2="280.6" y2="121.6" stroke="#c4564a" stroke-width="1.4" stroke-dasharray="3 4" opacity="0.8"/>
+<circle cx="280.6" cy="121.6" r="6.5" fill="none" stroke="#c4564a" stroke-width="1.8" stroke-dasharray="2.5 2.5"/>
+<text x="266.0" y="408.0" font-size="13.5" fill="#3a3531" text-anchor="middle" transform="rotate(11.7 266.0 408.0)">distance</text>
+<text x="195.2" y="288.8" font-size="13.5" fill="#3a3531" text-anchor="middle" transform="rotate(-38.9 195.2 288.8)">année</text>
+<text x="350" y="429" font-size="13" fill="#5b5249" text-anchor="middle">La couleur du nuage plat était l'ombre portée de ce troisième axe.</text>
+<text x="350" y="446" font-size="13" fill="#5b5249" text-anchor="middle">Les deux exceptions, vues d'en haut, retombent au milieu de l'autre couleur (points creux).</text>
+</svg>

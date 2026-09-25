@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 500" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La frontière de l'arbre à une question</title>
+<desc>Le plan distance × année des vingt maisons, coupé par une seule ligne verticale pointillée à 11 km : à gauche, le fond est teinté en bleu (vendue vite), à droite en rouge (a traîné). Les deux exceptions se retrouvent chacune du mauvais côté.</desc>
+
+<rect x="0" y="0" width="660" height="500" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<g stroke="#e0d4b8" stroke-width="1">
+<line x1="80" y1="332.7" x2="630" y2="332.7"/>
+<line x1="80" y1="223.6" x2="630" y2="223.6"/>
+<line x1="80" y1="114.5" x2="630" y2="114.5"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.6">
+<line x1="80" y1="40" x2="80" y2="380"/>
+<line x1="80" y1="380" x2="630" y2="380"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="80.0" y1="380" x2="80.0" y2="386"/>
+<line x1="190.0" y1="380" x2="190.0" y2="386"/>
+<line x1="300.0" y1="380" x2="300.0" y2="386"/>
+<line x1="410.0" y1="380" x2="410.0" y2="386"/>
+<line x1="520.0" y1="380" x2="520.0" y2="386"/>
+<line x1="630.0" y1="380" x2="630.0" y2="386"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="middle">
+<text x="80.0" y="402">0</text>
+<text x="190.0" y="402">5</text>
+<text x="300.0" y="402">10</text>
+<text x="410.0" y="402">15</text>
+<text x="520.0" y="402">20</text>
+<text x="630.0" y="402">25</text>
+<text x="355" y="430" font-size="15" fill="#3a3531">distance du centre (km)</text>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="74" y1="332.7" x2="80" y2="332.7"/>
+<line x1="74" y1="223.6" x2="80" y2="223.6"/>
+<line x1="74" y1="114.5" x2="80" y2="114.5"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="end">
+<text x="68" y="337.2">1970</text>
+<text x="68" y="228.1">1990</text>
+<text x="68" y="119.0">2010</text>
+</g>
+<text x="18" y="210" font-size="15" fill="#3a3531" text-anchor="middle" transform="rotate(-90 18 210)">année de construction</text>
+<rect x="80.0" y="40.0" width="242.0" height="320.0" fill="#3a6ea5" fill-opacity="0.16"/>
+<rect x="322.0" y="40.0" width="308.0" height="320.0" fill="#c4564a" fill-opacity="0.16"/>
+<g stroke="#9a5b33" stroke-width="2" stroke-dasharray="7 5">
+<line x1="322.0" y1="40.0" x2="322.0" y2="360.0"/>
+</g>
+<g fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5">
+<circle cx="168.0" cy="185.5" r="7"/>
+<circle cx="234.0" cy="98.2" r="7"/>
+<circle cx="146.0" cy="147.3" r="7"/>
+<circle cx="498.0" cy="327.3" r="7"/>
+<circle cx="212.0" cy="81.8" r="7"/>
+<circle cx="256.0" cy="196.4" r="7"/>
+<circle cx="190.0" cy="125.5" r="7"/>
+<circle cx="146.0" cy="163.6" r="7"/>
+<circle cx="278.0" cy="114.5" r="7"/>
+<circle cx="212.0" cy="65.5" r="7"/>
+<circle cx="168.0" cy="174.5" r="7"/>
+<circle cx="234.0" cy="136.4" r="7"/>
+</g>
+<g fill="#c4564a" stroke="#efe7d3" stroke-width="1.5">
+<circle cx="432.0" cy="321.8" r="7"/>
+<circle cx="542.0" cy="278.2" r="7"/>
+<circle cx="388.0" cy="300.0" r="7"/>
+<circle cx="586.0" cy="343.6" r="7"/>
+<circle cx="190.0" cy="109.1" r="7"/>
+<circle cx="476.0" cy="261.8" r="7"/>
+<circle cx="366.0" cy="332.7" r="7"/>
+<circle cx="608.0" cy="310.9" r="7"/>
+</g>
+<circle cx="150" cy="458" r="7" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="166" y="462" font-size="14" fill="#3a3531" text-anchor="start">vendue en moins de 30 jours</text>
+<circle cx="386" cy="458" r="7" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="402" y="462" font-size="14" fill="#3a3531" text-anchor="start">a traîné</text>
+<text x="355" y="490" font-size="13" fill="#5b5249" text-anchor="middle">Fond : la réponse de l'arbre à une question ; la coupe pointillée est sa frontière</text>
+</svg>

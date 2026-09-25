@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Minimax et élagage sur un petit arbre de jeu</title>
+<desc>Un arbre de jeu à trois niveaux. À la racine, c'est à la machine (MAX) de jouer ; au niveau suivant, trois coups de l'adversaire (MIN) ; en bas, neuf positions estimées par une heuristique. Chaque nœud MIN prend le minimum de ses feuilles : 3, au plus 2, et 2. La racine prend le maximum : 3, et la flèche épaisse montre le coup choisi. Au deuxième nœud MIN, dès que la feuille 2 est vue, les deux autres feuilles sont barrées : l'élagage, car ce coup ne peut plus battre le 3 déjà garanti.</desc>
+<rect x="0" y="0" width="660" height="430" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<line x1="300" y1="86" x2="115" y2="151" stroke="#2f6f6a" stroke-width="4"/>
+<line x1="115" y1="199" x2="55" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="115" y1="199" x2="115" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="115" y1="199" x2="175" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="300" y1="86" x2="300" y2="151" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="300" y1="199" x2="240" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="300" y1="199" x2="300" y2="282" stroke="#b8a888" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.6"/>
+<path d="M291.0 231.5 L309.0 249.5 M291.0 249.5 L309.0 231.5" stroke="#c4564a" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="300" y1="199" x2="360" y2="282" stroke="#b8a888" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.6"/>
+<path d="M321.0 231.5 L339.0 249.5 M321.0 249.5 L339.0 231.5" stroke="#c4564a" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="300" y1="86" x2="485" y2="151" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="485" y1="199" x2="425" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="485" y1="199" x2="485" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="485" y1="199" x2="545" y2="282" stroke="#b8a888" stroke-width="1.6"/>
+<polygon points="300,36 270,86 330,86" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="300" y="78" font-size="16" fill="#3a3531" text-anchor="middle" font-weight="700">3</text>
+<text x="344" y="68" font-size="12.5" fill="#2f6f6a" font-weight="600">MAX : la machine joue</text>
+<text x="344" y="84" font-size="11.5" fill="#7a6f63">elle prend le plus grand</text>
+<polygon points="85,151 145,151 115,201" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="115" y="171" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">3</text>
+<polygon points="270,151 330,151 300,201" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="300" y="171" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">≤ 2</text>
+<polygon points="455,151 515,151 485,201" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="485" y="171" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">2</text>
+<text x="529" y="169" font-size="12.5" fill="#9a5b33" font-weight="600">MIN : l'adversaire</text>
+<text x="529" y="185" font-size="11.5" fill="#7a6f63">il prend le plus petit</text>
+<rect x="37" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="55" y="304" font-size="14" fill="#3a3531" text-anchor="middle">3</text>
+<rect x="97" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="115" y="304" font-size="14" fill="#3a3531" text-anchor="middle">12</text>
+<rect x="157" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="175" y="304" font-size="14" fill="#3a3531" text-anchor="middle">8</text>
+<rect x="222" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="240" y="304" font-size="14" fill="#3a3531" text-anchor="middle">2</text>
+<rect x="282" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.55"/>
+<text x="300" y="304" font-size="14" fill="#7a6f63" text-anchor="middle" opacity="0.6">?</text>
+<rect x="342" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.55"/>
+<text x="360" y="304" font-size="14" fill="#7a6f63" text-anchor="middle" opacity="0.6">?</text>
+<rect x="407" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="425" y="304" font-size="14" fill="#3a3531" text-anchor="middle">14</text>
+<rect x="467" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="485" y="304" font-size="14" fill="#3a3531" text-anchor="middle">5</text>
+<rect x="527" y="282" width="36" height="32" rx="6" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.3"/>
+<text x="545" y="304" font-size="14" fill="#3a3531" text-anchor="middle">2</text>
+<text x="330" y="346" font-size="12.5" fill="#5b5249" text-anchor="middle">En bas : l'estimation heuristique de chaque position (compter les pièces, le contrôle du centre…)</text>
+<text x="330" y="372" font-size="12.5" fill="#5b5249" text-anchor="middle">Élagage : au milieu, dès que l'adversaire peut obtenir 2, ce coup ne battra plus le 3 déjà garanti ;</text>
+<text x="330" y="390" font-size="12.5" fill="#5b5249" text-anchor="middle">inutile d'examiner les deux dernières positions.</text>
+</svg>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 460" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'erreur du modèle moyen : l'écart de chaque maison à la prédiction</title>
+<desc>Le nuage de maisons et la droite plate à 500 000 $. Pour chaque maison, un segment vertical rouge relie son vrai prix à la prédiction : c'est l'erreur du modèle sur cette maison. Les segments sont longs aux extrêmes (maisons très bon marché ou très chères) et courts près du centre.</desc>
+<defs>
+<marker id="arrErr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#c4564a" stroke-width="1.7"/></marker>
+</defs>
+<rect x="0" y="0" width="660" height="460" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<g stroke="#e0d4b8" stroke-width="1">
+<line x1="80" y1="351.7" x2="630" y2="351.7"/>
+<line x1="80" y1="238.3" x2="630" y2="238.3"/>
+<line x1="80" y1="125" x2="630" y2="125"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.6">
+<line x1="80" y1="40" x2="80" y2="380"/>
+<line x1="80" y1="380" x2="630" y2="380"/>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="80" y1="380" x2="80" y2="386"/>
+<line x1="224.7" y1="380" x2="224.7" y2="386"/>
+<line x1="369.5" y1="380" x2="369.5" y2="386"/>
+<line x1="514.2" y1="380" x2="514.2" y2="386"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="middle">
+<text x="80" y="402">100</text>
+<text x="224.7" y="402">150</text>
+<text x="369.5" y="402">200</text>
+<text x="514.2" y="402">250</text>
+<text x="355" y="430" font-size="15" fill="#3a3531">superficie (m²)</text>
+</g>
+
+<g stroke="#b8a888" stroke-width="1.4">
+<line x1="74" y1="351.7" x2="80" y2="351.7"/>
+<line x1="74" y1="238.3" x2="80" y2="238.3"/>
+<line x1="74" y1="125" x2="80" y2="125"/>
+</g>
+<g font-size="13" fill="#5b5249" text-anchor="end">
+<text x="68" y="356.2">300 k$</text>
+<text x="68" y="242.8">500 k$</text>
+<text x="68" y="129.5">700 k$</text>
+</g>
+<text x="18" y="210" font-size="15" fill="#3a3531" text-anchor="middle" transform="rotate(-90 18 210)">prix de vente</text>
+<line x1="80" y1="238.3" x2="630" y2="238.3" stroke="#9a5b33" stroke-width="2.6" stroke-dasharray="7 4"/>
+<text x="624" y="255.3" font-size="13" fill="#9a5b33" text-anchor="end" font-weight="600">toujours 500 k$</text>
+<g stroke="#c4564a" stroke-width="1.8" opacity="0.85">
+<line x1="114.7" y1="359.1" x2="114.7" y2="238.3"/>
+<line x1="137.9" y1="351.1" x2="137.9" y2="238.3"/>
+<line x1="166.8" y1="346.0" x2="166.8" y2="238.3"/>
+<line x1="201.5" y1="356.8" x2="201.5" y2="238.3"/>
+<line x1="224.7" y1="323.3" x2="224.7" y2="238.3"/>
+<line x1="247.9" y1="275.7" x2="247.9" y2="238.3"/>
+<line x1="276.8" y1="309.7" x2="276.8" y2="238.3"/>
+<line x1="299.9" y1="242.8" x2="299.9" y2="238.3"/>
+<line x1="311.5" y1="283.7" x2="311.5" y2="238.3"/>
+<line x1="340.5" y1="278.6" x2="340.5" y2="238.3"/>
+<line x1="363.6" y1="202.6" x2="363.6" y2="238.3"/>
+<line x1="392.6" y1="250.8" x2="392.6" y2="238.3"/>
+<line x1="415.7" y1="177.1" x2="415.7" y2="238.3"/>
+<line x1="427.3" y1="192.9" x2="427.3" y2="238.3"/>
+<line x1="462.0" y1="207.1" x2="462.0" y2="238.3"/>
+<line x1="490.9" y1="130.6" x2="490.9" y2="238.3"/>
+<line x1="519.9" y1="175.9" x2="519.9" y2="238.3"/>
+<line x1="548.8" y1="102.2" x2="548.8" y2="238.3"/>
+<line x1="577.8" y1="133.4" x2="577.8" y2="238.3"/>
+<line x1="600.9" y1="66.5" x2="600.9" y2="238.3"/>
+</g>
+<g fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5">
+<circle cx="114.7" cy="359.1" r="6.5"/>
+<circle cx="137.9" cy="351.1" r="6.5"/>
+<circle cx="166.8" cy="346.0" r="6.5"/>
+<circle cx="201.5" cy="356.8" r="6.5"/>
+<circle cx="224.7" cy="323.3" r="6.5"/>
+<circle cx="247.9" cy="275.7" r="6.5"/>
+<circle cx="276.8" cy="309.7" r="6.5"/>
+<circle cx="299.9" cy="242.8" r="6.5"/>
+<circle cx="311.5" cy="283.7" r="6.5"/>
+<circle cx="340.5" cy="278.6" r="6.5"/>
+<circle cx="363.6" cy="202.6" r="6.5"/>
+<circle cx="392.6" cy="250.8" r="6.5"/>
+<circle cx="415.7" cy="177.1" r="6.5"/>
+<circle cx="427.3" cy="192.9" r="6.5"/>
+<circle cx="462.0" cy="207.1" r="6.5"/>
+<circle cx="490.9" cy="130.6" r="6.5"/>
+<circle cx="519.9" cy="175.9" r="6.5"/>
+<circle cx="548.8" cy="102.2" r="6.5"/>
+<circle cx="577.8" cy="133.4" r="6.5"/>
+<circle cx="600.9" cy="66.5" r="6.5"/>
+</g>
+<text x="250" y="62" font-size="15" fill="#c4564a" text-anchor="middle" font-weight="700">erreur du modèle</text>
+<g stroke="#c4564a" stroke-width="1.6" fill="none" stroke-dasharray="5 3">
+<line x1="215" y1="74" x2="117.5" y2="300" marker-end="url(#arrErr)"/>
+<line x1="300" y1="74" x2="427.3" y2="218" marker-end="url(#arrErr)"/>
+</g>
+</svg>

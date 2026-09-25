@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le paradoxe du menteur</title>
+<desc>Un personnage déclare, dans une bulle de dialogue, « Je mens toujours. » Un symbole de boucle indique que l'affirmation tourne sans fin : s'il dit vrai, alors il ment ; s'il ment, alors il dit vrai. Impossible de trancher.</desc>
+
+<rect x="0" y="0" width="600" height="300" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="24" y="32" font-size="15" fill="#5b5249" text-anchor="start">Le paradoxe du menteur</text>
+
+<!-- Personnage -->
+<circle cx="150" cy="134" r="26" fill="#7a6a52"/>
+<path d="M 104 226 L 116 178 Q 150 160 184 178 L 196 226 Z" fill="#7a6a52"/>
+
+<!-- Bulle de dialogue -->
+<polygon points="250,152 282,152 205,172" fill="#fffdf8" stroke="#d4c4a0"/>
+<rect x="232" y="86" width="224" height="66" rx="16" fill="#fffdf8" stroke="#d4c4a0"/>
+<line x1="251" y1="152" x2="281" y2="152" stroke="#fffdf8" stroke-width="2"/>
+<text x="344" y="126" font-size="18" fill="#4a4030" text-anchor="middle" font-style="italic">« Je mens toujours. »</text>
+
+<!-- Boucle -->
+<text x="514" y="140" font-size="42" fill="#c2603f" text-anchor="middle">⟳</text>
+<text x="514" y="164" font-size="10.5" fill="#c2603f" text-anchor="middle">sans fin</text>
+
+<!-- Raisonnement -->
+<text x="300" y="252" font-size="12.5" fill="#4a4030" text-anchor="middle">S'il dit vrai, alors il ment. S'il ment, alors il dit vrai.</text>
+<text x="300" y="274" font-size="11.5" fill="#93462d" text-anchor="middle">La phrase se mord la queue : impossible de trancher.</text>
+</svg>

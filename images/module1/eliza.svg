@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>ELIZA : l'illusion de comprendre</title>
+<desc>Une fenêtre de conversation avec ELIZA. L'utilisateur écrit « je me sens seul ces temps-ci » ; ELIZA répond « depuis quand vous sentez-vous seul ? ». Sous le capot, le programme repère le mot-clé « seul » et le replace dans un gabarit tout prêt, sans aucune compréhension : la phrase de l'utilisateur lui est simplement retournée en question.</desc>
+
+<rect x="0" y="0" width="680" height="320" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="28" y="32" font-size="15" fill="#5b5249" text-anchor="start">ELIZA : l'illusion de comprendre</text>
+
+<!-- Fenêtre de conversation -->
+<rect x="120" y="50" width="440" height="150" rx="12" fill="#fffdf8" stroke="#d4c4a0"/>
+<circle cx="136" cy="66" r="3" fill="#cbb98f"/>
+<circle cx="147" cy="66" r="3" fill="#cbb98f"/>
+<circle cx="158" cy="66" r="3" fill="#cbb98f"/>
+<text x="340" y="70" font-size="11" fill="#8a7a5c" text-anchor="middle">ELIZA — le psychothérapeute</text>
+<line x1="120" y1="80" x2="560" y2="80" stroke="#eaddc0"/>
+
+<text x="520" y="97" font-size="9" fill="#8a7a5c" text-anchor="end">vous</text>
+<rect x="300" y="100" width="246" height="34" rx="16" fill="#f3e7d6" stroke="#e0cfb0"/>
+<text x="313" y="122" font-size="12" text-anchor="start"><tspan fill="#4a4030">je me sens </tspan><tspan fill="#c2603f" font-weight="600">seul</tspan><tspan fill="#4a4030"> ces temps-ci</tspan></text>
+
+<text x="134" y="150" font-size="9" fill="#5a7d4f" text-anchor="start">ELIZA</text>
+<rect x="134" y="154" width="326" height="34" rx="16" fill="#eef3ea" stroke="#cdd9c2"/>
+<text x="147" y="176" font-size="12" text-anchor="start"><tspan fill="#4a4030">depuis quand vous sentez-vous </tspan><tspan fill="#c2603f" font-weight="600">seul</tspan><tspan fill="#4a4030"> ?</tspan></text>
+
+<!-- Sous le capot -->
+<text x="120" y="232" font-size="11" fill="#8a7a5c" text-anchor="start">sous le capot :</text>
+<rect x="120" y="240" width="180" height="44" rx="8" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="210" y="266" font-size="11" fill="#4a4030" text-anchor="middle">repère le mot-clé « seul »</text>
+<line x1="304" y1="262" x2="334" y2="262" stroke="#c2a878" stroke-width="2"/>
+<polygon points="342,262 334,258 334,266" fill="#c2a878"/>
+<rect x="348" y="240" width="252" height="44" rx="8" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="474" y="260" font-size="10.5" fill="#4a4030" text-anchor="middle">le glisse dans un gabarit tout prêt :</text>
+<text x="474" y="276" font-size="11" fill="#93462d" text-anchor="middle" font-style="italic">« depuis quand… ___ ? »</text>
+
+<text x="340" y="308" font-size="11" fill="#8a7a5c" text-anchor="middle" font-style="italic">Aucune compréhension : votre phrase vous est simplement retournée en question.</text>
+</svg>

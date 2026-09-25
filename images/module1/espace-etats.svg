@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Du labyrinthe à l'arbre de recherche</title>
+<desc>À gauche, un labyrinthe dessiné comme un arbre de couloirs, avec des états étiquetés S, A, B, C, D, E, G. À droite, exactement le même arbre dessiné avec des nœuds et des arêtes, portant les mêmes étiquettes. Le chemin de S jusqu'au but G, passant par A et D, est surligné à l'identique des deux côtés ; C et E sont des impasses.</desc>
+
+<rect x="0" y="0" width="720" height="344" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="28" y="32" font-size="15" fill="#5b5249" text-anchor="start">Du labyrinthe à l'arbre de recherche</text>
+
+<!-- ===== GAUCHE : labyrinthe (arbre de couloirs) ===== -->
+<text x="48" y="58" font-size="11.5" fill="#8a7a5c" text-anchor="start">Le labyrinthe</text>
+<rect x="48" y="68" width="210" height="220" rx="6" fill="#cdbb95" stroke="#8a7a5c" stroke-width="2"/>
+
+<!-- couloirs -->
+<g stroke="#fbf7ee" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+<line x1="150" y1="98" x2="150" y2="152"/>
+<line x1="100" y1="152" x2="206" y2="152"/>
+<line x1="100" y1="152" x2="100" y2="216"/>
+<line x1="74" y1="216" x2="128" y2="216"/>
+<line x1="128" y1="216" x2="128" y2="262"/>
+<line x1="206" y1="152" x2="206" y2="216"/>
+</g>
+<!-- chemin solution -->
+<polyline points="150,98 150,152 100,152 100,216 128,216 128,262" fill="none" stroke="#c2603f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- nœuds (états) -->
+<circle cx="150" cy="98" r="12" fill="#e8efe0" stroke="#5a7d4f" stroke-width="2"/>
+<text x="150" y="102" font-size="11" fill="#5a7d4f" text-anchor="middle">S</text>
+<circle cx="100" cy="152" r="12" fill="#fffdf8" stroke="#c2603f" stroke-width="2"/>
+<text x="100" y="156" font-size="11" fill="#93462d" text-anchor="middle">A</text>
+<circle cx="206" cy="152" r="12" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="206" y="156" font-size="11" fill="#5b5249" text-anchor="middle">B</text>
+<circle cx="74" cy="216" r="12" fill="#fffdf8" stroke="#c9b78f"/>
+<text x="74" y="220" font-size="11" fill="#8a7a5c" text-anchor="middle">C</text>
+<circle cx="128" cy="216" r="12" fill="#fffdf8" stroke="#c2603f" stroke-width="2"/>
+<text x="128" y="220" font-size="11" fill="#93462d" text-anchor="middle">D</text>
+<circle cx="206" cy="216" r="12" fill="#fffdf8" stroke="#c9b78f"/>
+<text x="206" y="220" font-size="11" fill="#8a7a5c" text-anchor="middle">E</text>
+<circle cx="128" cy="262" r="12" fill="#fbe3d4" stroke="#c2603f" stroke-width="2"/>
+<text x="128" y="266" font-size="11" fill="#93462d" text-anchor="middle">G</text>
+
+<text x="153" y="310" font-size="10.5" fill="#8a7a5c" text-anchor="middle">S : départ  ·  G : but</text>
+
+<!-- ===== MILIEU ===== -->
+<text x="356" y="176" font-size="11" fill="#8a7a5c" text-anchor="middle">se ramène à</text>
+<line x1="316" y1="192" x2="388" y2="192" stroke="#c2a878" stroke-width="2"/>
+<polygon points="396,192 388,188 388,196" fill="#c2a878"/>
+
+<!-- ===== DROITE : arbre ===== -->
+<text x="440" y="58" font-size="11.5" fill="#8a7a5c" text-anchor="start">L'arbre de recherche</text>
+
+<g stroke="#c9b78f" stroke-width="2">
+<line x1="548" y1="96" x2="608" y2="156"/>
+<line x1="498" y1="156" x2="470" y2="216"/>
+<line x1="608" y1="156" x2="608" y2="216"/>
+</g>
+<g stroke="#c2603f" stroke-width="4">
+<line x1="548" y1="96" x2="498" y2="156"/>
+<line x1="498" y1="156" x2="534" y2="216"/>
+<line x1="534" y1="216" x2="534" y2="272"/>
+</g>
+
+<text x="548" y="74" font-size="10.5" fill="#5a7d4f" text-anchor="middle">départ</text>
+<circle cx="548" cy="96" r="14" fill="#e8efe0" stroke="#5a7d4f" stroke-width="2"/>
+<text x="548" y="100" font-size="12" fill="#5a7d4f" text-anchor="middle">S</text>
+
+<circle cx="498" cy="156" r="12" fill="#fffdf8" stroke="#c2603f" stroke-width="2"/>
+<text x="498" y="160" font-size="11" fill="#93462d" text-anchor="middle">A</text>
+<circle cx="608" cy="156" r="12" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="608" y="160" font-size="11" fill="#5b5249" text-anchor="middle">B</text>
+
+<circle cx="470" cy="216" r="12" fill="#fffdf8" stroke="#c9b78f"/>
+<text x="470" y="220" font-size="11" fill="#8a7a5c" text-anchor="middle">C</text>
+<circle cx="534" cy="216" r="12" fill="#fffdf8" stroke="#c2603f" stroke-width="2"/>
+<text x="534" y="220" font-size="11" fill="#93462d" text-anchor="middle">D</text>
+<circle cx="608" cy="216" r="12" fill="#fffdf8" stroke="#c9b78f"/>
+<text x="608" y="220" font-size="11" fill="#8a7a5c" text-anchor="middle">E</text>
+
+<circle cx="534" cy="272" r="12" fill="#fbe3d4" stroke="#c2603f" stroke-width="2"/>
+<text x="534" y="276" font-size="11" fill="#93462d" text-anchor="middle">G</text>
+<text x="534" y="298" font-size="10.5" fill="#93462d" text-anchor="middle">but</text>
+
+<text x="548" y="320" font-size="10.5" fill="#8a7a5c" text-anchor="middle">chaque nœud = un état · chaque arête = une action</text>
+<text x="548" y="336" font-size="10.5" fill="#c2603f" text-anchor="middle">en rouge : le chemin vers le but · en gris : les impasses</text>
+</svg>

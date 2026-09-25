@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le même arbre, laissé pousser sur trois niveaux</title>
+<desc>L'arbre laissé pousser sur trois niveaux : après « à plus de 11 km du centre ? », il pose des questions sur l'année puis sur la distance jusqu'à isoler chacune des deux exceptions dans une feuille à elle. Six feuilles, chacune annotée du nombre de maisons vendues vite sur le nombre de maisons de la feuille : plus aucune erreur sur les vingt maisons.</desc>
+<rect x="0" y="0" width="660" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<rect x="221.8" y="36" width="216.4" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="330.0" y="56" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">À plus de 11 km du centre ?</text>
+<line x1="330.0" y1="66" x2="186.0" y2="114" stroke="#b8a888" stroke-width="1.4"/>
+<text x="248.0" y="94.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<rect x="92.2" y="114" width="187.6" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="186.0" y="134" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Construite après 2010 ?</text>
+<line x1="186.0" y1="144" x2="90.0" y2="192" stroke="#b8a888" stroke-width="1.4"/>
+<text x="128.0" y="172.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="90.0" cy="206" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="90.0" y="236" font-size="11.5" fill="#5b5249" text-anchor="middle">8 sur 8</text>
+<line x1="186.0" y1="144" x2="234.0" y2="192" stroke="#b8a888" stroke-width="1.4"/>
+<text x="220.0" y="172.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<rect x="158.2" y="192" width="151.6" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="234.0" y="212" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">À plus de 5,5 km ?</text>
+<line x1="234.0" y1="222" x2="186.0" y2="270" stroke="#b8a888" stroke-width="1.4"/>
+<text x="200.0" y="250.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="186.0" cy="284" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="186.0" y="314" font-size="11.5" fill="#5b5249" text-anchor="middle">0 sur 1</text>
+<line x1="234.0" y1="222" x2="282.0" y2="270" stroke="#b8a888" stroke-width="1.4"/>
+<text x="268.0" y="250.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="282.0" cy="284" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="282.0" y="314" font-size="11.5" fill="#5b5249" text-anchor="middle">3 sur 3</text>
+<line x1="330.0" y1="66" x2="474.0" y2="114" stroke="#b8a888" stroke-width="1.4"/>
+<text x="412.0" y="94.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<rect x="380.2" y="114" width="187.6" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="474.0" y="134" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Construite après 1971 ?</text>
+<line x1="474.0" y1="144" x2="426.0" y2="192" stroke="#b8a888" stroke-width="1.4"/>
+<text x="440.0" y="172.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<rect x="332.2" y="192" width="187.6" height="30" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="426.0" y="212" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Construite après 1970 ?</text>
+<line x1="426.0" y1="222" x2="378.0" y2="270" stroke="#b8a888" stroke-width="1.4"/>
+<text x="392.0" y="250.0" font-size="11.5" fill="#7a6f63" text-anchor="end" font-style="italic">non</text>
+<circle cx="378.0" cy="284" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="378.0" y="314" font-size="11.5" fill="#5b5249" text-anchor="middle">0 sur 2</text>
+<line x1="426.0" y1="222" x2="474.0" y2="270" stroke="#b8a888" stroke-width="1.4"/>
+<text x="460.0" y="250.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="474.0" cy="284" r="12" fill="#3a6ea5" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="474.0" y="314" font-size="11.5" fill="#5b5249" text-anchor="middle">1 sur 1</text>
+<line x1="474.0" y1="144" x2="570.0" y2="192" stroke="#b8a888" stroke-width="1.4"/>
+<text x="532.0" y="172.0" font-size="11.5" fill="#7a6f63" text-anchor="start" font-style="italic">oui</text>
+<circle cx="570.0" cy="206" r="12" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="570.0" y="236" font-size="11.5" fill="#5b5249" text-anchor="middle">0 sur 5</text>
+<text x="330" y="338" font-size="13" fill="#5b5249" text-anchor="middle">Chaque feuille : maisons vendues vite sur maisons de la feuille ; 0 erreur sur 20, mais six feuilles</text>
+</svg>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le neurone formel</title>
+<desc>Un neurone formel reçoit trois signaux d'entrée qui convergent vers un corps cellulaire. Celui-ci additionne les signaux (Σ) et compare la somme à un seuil. En sortie, le neurone s'allume (1) si la somme dépasse le seuil, ou reste éteint (0) sinon.</desc>
+
+<rect x="0" y="0" width="680" height="250" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+
+<text x="28" y="32" font-size="15" fill="#5b5249" text-anchor="start">Le neurone formel (McCulloch–Pitts)</text>
+
+<!-- Entrées -->
+<circle cx="86" cy="92" r="10" fill="#fbf3e6" stroke="#c9b78f"/>
+<circle cx="86" cy="135" r="10" fill="#fbf3e6" stroke="#c9b78f"/>
+<circle cx="86" cy="178" r="10" fill="#fbf3e6" stroke="#c9b78f"/>
+<text x="86" y="212" font-size="11" fill="#8a7a5c" text-anchor="middle">signaux reçus</text>
+
+<line x1="98" y1="95" x2="286" y2="120" stroke="#c2a878" stroke-width="2"/>
+<line x1="98" y1="135" x2="282" y2="135" stroke="#c2a878" stroke-width="2"/>
+<line x1="98" y1="175" x2="286" y2="150" stroke="#c2a878" stroke-width="2"/>
+
+<!-- Corps cellulaire -->
+<circle cx="340" cy="135" r="56" fill="#fffdf8" stroke="#d4c4a0"/>
+<text x="340" y="132" font-size="30" fill="#4a4030" text-anchor="middle">Σ</text>
+<text x="340" y="158" font-size="10.5" fill="#8a7a5c" text-anchor="middle">somme ≥ seuil ?</text>
+
+<!-- Sortie -->
+<text x="432" y="122" font-size="10" fill="#8a7a5c" text-anchor="middle" font-style="italic">sortie</text>
+<line x1="398" y1="135" x2="462" y2="135" stroke="#c2a878" stroke-width="2"/>
+<polygon points="470,135 462,131 462,139" fill="#c2a878"/>
+<text x="482" y="128" font-size="12.5" fill="#93462d" text-anchor="start">1 — s'allume</text>
+<text x="482" y="152" font-size="12" fill="#8a7a5c" text-anchor="start">0 — reste éteint</text>
+
+<!-- Légende -->
+<text x="340" y="232" font-size="11" fill="#8a7a5c" text-anchor="middle" font-style="italic">Il combine ses entrées et s'active si leur somme dépasse un seuil.</text>
+</svg>
