@@ -6,6 +6,14 @@ title: "Accueil"
 
 # Bienvenue !
 
+{{% hint warning %}}
+**Version 2, en construction.** Ce site présente la nouvelle version du cours,
+qu'on est en train de refaire. Pour l'instant, seuls les modules 1 et 2 sont
+publiés ; les modules 3 à 5 s'ajouteront à mesure qu'ils seront prêts. La
+version actuelle du cours reste accessible à
+[cjauvin.github.io/inf1901-teluq](https://cjauvin.github.io/inf1901-teluq/).
+{{% /hint %}}
+
 Bienvenue dans le cours **INF 1901 Initiation à l'intelligence artificielle :
 concepts et réflexions**. Ce cours vous offre une occasion unique de vous
 initier au domaine de l’intelligence artificielle (IA) dans un contexte
