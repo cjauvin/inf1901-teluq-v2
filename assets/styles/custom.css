@@ -171,11 +171,11 @@ mjx-container[display="true"] {
 /* Logos monochromes noirs (ex. Lean) : centrés, sans fond, inversés en thème sombre */
 .logo-mono {
   display: block;
-  width: 260px;
-  max-width: 70%;
+  width: 420px;
+  max-width: 85%;
   margin: 0.4rem auto 1.2rem;
 }
-:root[data-theme="dark"] .logo-mono { filter: invert(0.92); }
+:root[data-theme="dark"] .logo-mono { filter: invert(1); }
 @media (prefers-color-scheme: dark) {
-  :root[data-theme="auto"] .logo-mono { filter: invert(0.92); }
+  :root[data-theme="auto"] .logo-mono { filter: invert(1); }
 }
