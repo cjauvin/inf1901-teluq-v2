@@ -6,7 +6,7 @@ slug: predire-par-ressemblance
 
 # Prédire par ressemblance
 
-La page précédente s'est terminée sur l'idée suivante : si décrire des objets par
+La page « [Regarder les données](docs/module2/30-les-donnees) » s'est terminée sur l'idée suivante : si décrire des objets par
 des nombres transforme leur ressemblance en une distance, il doit exister une
 façon très simple de prédire. Cette façon est sans doute l'idée la plus intuitive
 de l'apprentissage automatique : **pour deviner la réponse sur un nouveau cas, on
@@ -43,7 +43,7 @@ Rien dans cette méthode ne dépend du nombre d'axes. Si nos maisons ont six
 caractéristiques, on calcule six écarts au lieu de deux, on les élève au carré, on
 les additionne et on prend la racine carrée du total. On compare les objets
 coordonnée par coordonnée et on obtient un seul nombre, petit s'ils se
-ressemblent, grand s'ils diffèrent. Comme on l'a vu au chapitre précédent, la même
+ressemblent, grand s'ils diffèrent. Comme on l'a vu au chapitre « [Regarder les données](docs/module2/30-les-donnees/#quand-il-y-a-trop-de-dimensions-pour-les-voir) », la même
 formule s'applique à une image, dont les millions de pixels forment autant de
 coordonnées. Pour deux photos, l'écart sur un axe est simplement la différence
 entre la valeur d'un même pixel dans l'une et dans l'autre. On note $A_1$ la
@@ -156,7 +156,7 @@ décision**. Personne ne l'a tracée : elle résulte de l'application de la rè
 chaque point. C'est elle qui détermine la prédiction. Une maison située d'un côté
 sera classée « vendue vite », et une maison située de l'autre côté sera classée
 « a traîné », sans autre nuance. On peut aussi observer ce qui arrive aux deux
-exceptions du premier chapitre. Avec *k* = 3, chacune se trouve dans la région de
+exceptions du [premier chapitre](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature). Avec *k* = 3, chacune se trouve dans la région de
 la couleur opposée, puisque ses trois voisins les plus proches votent pour l'autre
 catégorie.
 
@@ -164,7 +164,7 @@ Cette observation vaut pour tout classificateur, et pas seulement pour kNN :
 **classer revient à diviser l'espace en régions, et un modèle de classification
 est entièrement décrit par la frontière qu'il trace.** C'est pour cette raison que
 la classification est plus facile à visualiser que la régression : en deux
-dimensions, on voit la frontière d'un seul coup d'œil. Au chapitre « Classer »,
+dimensions, on voit la frontière d'un seul coup d'œil. Au chapitre « [Classer](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique) »,
 nous verrons des modèles dont la frontière est une simple droite. Celle de kNN
 peut prendre n'importe quelle forme.
 
@@ -240,4 +240,4 @@ paramètres qui représentent la tendance générale, quitte à ne plus avoir be
 des exemples ensuite. Un tel modèle serait léger à utiliser et contiendrait une
 forme de compréhension des données.
 
-Le prochain chapitre montre comment construire un tel modèle.
+Le prochain chapitre, « [Un modèle qui s'entraîne](docs/module2/50-entrainer-un-modele) », montre comment construire un tel modèle.

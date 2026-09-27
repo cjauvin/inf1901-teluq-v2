@@ -74,7 +74,7 @@ parce qu'une fois la première posée, la seconde n'apporte plus rien, sauf pour
 corriger les deux exceptions. De plus, l'arbre ne conserve pas les vingt
 maisons : une fois la question trouvée, il n'en a plus besoin. Il fait donc
 partie des modèles qui résument les données, comme la droite, et ses seuls
-paramètres sont un seuil et deux réponses. La section suivante explique comment
+paramètres sont un seuil et deux réponses. La [section suivante](#comment-larbre-choisit-ses-questions) explique comment
 il a choisi entre les deux questions et, plus généralement, comment il choisit
 ses questions.
 
@@ -98,7 +98,7 @@ soit deux feuilles presque pures. La question « construite après 1995 ? 
 laissé 2 rouges parmi 11 d'un côté et 2 bleues parmi 9 de l'autre. Le mélange
 étant plus important, cette question est écartée.
 
-Cela explique l'observation précédente. Les questions « construite après
+Cela explique l'[observation précédente](#une-question-suffit-presque). Les questions « construite après
 1989 ? » et « à plus de 11 km du centre ? » obtenaient exactement le même score,
 11 sur 12 et 1 sur 8. En cas d'égalité parfaite, l'arbre prend la première
 question trouvée. Il faut donc retenir que, lorsque deux caractéristiques
@@ -311,7 +311,7 @@ cette opposition entre performance et explicabilité avec les grands modèles de
 langage du [Module 4](docs/module4).
 
 Les faiblesses de l'arbre découlent de sa méthode. D'abord, un arbre est
-**instable**. Rappelez-vous l'égalité entre la distance et l'année : si l'on
+**instable**. Rappelez-vous l'[égalité entre la distance et l'année](#comment-larbre-choisit-ses-questions) : si l'on
 retire deux maisons, la première question peut changer, et tout l'arbre avec
 elle. Deux jeux de données presque identiques peuvent produire deux arbres très
 différents, qui font pourtant à peu près les mêmes prédictions. Ensuite, ses
@@ -393,12 +393,12 @@ Il y a là une difficulté. Un modèle peut ne faire aucune erreur sur ses donn�
 d'entraînement et faire beaucoup d'erreurs sur des données nouvelles, comme un
 étudiant qui aurait appris par cœur les réponses du corrigé sans comprendre la
 matière. C'est le sur-apprentissage (*overfitting*), déjà rencontré deux fois,
-que la page suivante traite en détail. Nous venons d'en voir l'exemple le plus
-net : l'arbre laissé pousser jusqu'à isoler chaque exception, qui ne se trompe
+que la page suivante, « [Généraliser](docs/module2/70-generaliser) », traite en détail. Nous venons d'en voir l'exemple le plus
+net : l'[arbre laissé pousser](#jusquoù-laisser-pousser-larbre) jusqu'à isoler chaque exception, qui ne se trompe
 plus sur les vingt maisons mais n'en a retenu que ce qu'il peut reproduire. Nous
-avions déjà rencontré ce problème avec kNN et le réglage de $k$ : trop s'ajuster
+avions déjà rencontré ce problème [avec kNN](docs/module2/40-predire-par-ressemblance/#le-choix-de-k) et le réglage de $k$ : trop s'ajuster
 aux exemples peut être une faiblesse plutôt qu'une force.
 
 Il faut donc savoir mesurer si un modèle a vraiment appris ou s'il a seulement
 retenu les exemples, et savoir éviter ce problème. C'est la question de la
-**généralisation**, qui fait l'objet de la page suivante.
+**généralisation**, qui fait l'objet de la [page suivante](docs/module2/70-generaliser).

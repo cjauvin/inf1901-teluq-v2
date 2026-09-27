@@ -6,7 +6,7 @@ slug: generaliser
 
 # Généraliser
 
-Le chapitre précédent s'est terminé sur un doute. Nous savons maintenant
+Le chapitre « [Poser des questions : les arbres de décision](docs/module2/65-arbres-de-decision/#et-sur-des-données-neuves) » s'est terminé sur un doute. Nous savons maintenant
 entraîner plusieurs sortes de modèles (une droite qui prédit un prix, des
 classificateurs qui rangent en catégories), et tous apprennent de la même façon,
 en rendant leur erreur la plus petite possible sur les exemples qu'on leur
@@ -133,10 +133,10 @@ kNN, au contraire, a une frontière qui peut prendre n'importe quelle forme. Ell
 peut entourer des îlots et contourner des groupes de points, car aucune
 contrainte de forme ne s'applique à elle. kNN résout le XOR sans difficulté,
 parce que chaque point regarde ses voisins et que les voisins d'un coin bleu sont
-bleus. kNN est donc un modèle **non-linéaire**, et c'était le premier que nous
-avons vu.
+bleus. kNN est donc un modèle **non-linéaire**, et c'était le [premier que nous
+avons vu](docs/module2/40-predire-par-ressemblance/#les-k-plus-proches-voisins).
 
-L'arbre de décision de la page précédente résout lui aussi le XOR, en deux
+L'arbre de décision de la [page précédente](docs/module2/65-arbres-de-decision) résout lui aussi le XOR, en deux
 questions, « à droite ? » puis « en haut ? ». Il obtient quatre rectangles, un
 par coin, soit la frontière que le perceptron ne pouvait pas tracer. Ses coupes
 parallèles aux axes sont une autre façon d'être non-linéaire, très différente de
@@ -158,11 +158,11 @@ caractéristique construire.
 Le [Module 3](docs/module3) traitera cette question. Les réseaux de neurones
 apprennent à **construire eux-mêmes** les caractéristiques qui rendent le
 problème séparable, en empilant des couches. La limite constatée en 1969 sera
-dépassée en 1986. C'est la question que le [Module 1](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) avait laissée ouverte, et le Module 3 y répondra.
+dépassée en 1986. C'est la question que le [Module 1](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) avait laissée ouverte, et le [Module 3](docs/module3) y répondra.
 
 Cependant, la capacité de produire des frontières courbes n'est pas un avantage
 en soi. Un modèle capable de suivre n'importe quelle forme peut aussi suivre des
-formes qui ne correspondent à rien. C'est le sujet de la section suivante.
+formes qui ne correspondent à rien. C'est le sujet de la [section suivante](#trop-coller-ou-trop-lisser-le-compromis-biais-variance).
 
 ## Trop coller, ou trop lisser : le compromis biais-variance
 
@@ -226,8 +226,8 @@ modèle se trouve au bas du U, à l'équilibre entre biais et variance.
 {{< image src="/images/module2/bias-vs-variance-with-errors.png" alt="Deux courbes en fonction de k. L'erreur d'entraînement (rouge) croît régulièrement de k=1 à k=21. L'erreur de test (bleu) a une forme en U : elle décroît, atteint un minimum, puis remonte. Deux droites diagonales figurent la variance (décroissante) et le biais (croissant) ; leur croisement marque le minimum de l'erreur de test." title="L'erreur de test (en bleu) suit une courbe en U : trop de variance à gauche, trop de biais à droite. Le meilleur modèle est au creux." loading="lazy" >}}
 
 Ce phénomène **n'est pas propre à kNN.** Chaque modèle a un réglage de
-souplesse : le nombre de termes d'une courbe plus souple qu'une droite (nous le
-verrons plus bas), la profondeur d'un arbre de décision ou le nombre de
+souplesse : le nombre de termes d'une courbe plus souple qu'une droite ([nous le
+verrons plus bas](#garder-un-modèle-riche-mais-le-tenir-en-laisse-la-régularisation)), la profondeur d'un arbre de décision ou le nombre de
 paramètres d'un réseau de neurones. Chacun présente la même courbe en U et le
 même arbitrage entre s'ajuster aux données et lisser. C'est le **compromis
 biais-variance**, et savoir le régler est une compétence essentielle en
@@ -264,7 +264,7 @@ d'Occam** : entre deux explications qui rendent compte des mêmes faits, il fau
 préférer la plus simple. La pénalité en est une traduction chiffrée. Elle
 n'affirme pas que le monde est simple. Elle impose qu'un modèle reste simple
 tant que les données n'exigent pas davantage, et que chaque complication
-apporte un gain visible. La courbe en U de la section précédente illustre
+apporte un gain visible. La courbe en U de la [section précédente](#trop-coller-ou-trop-lisser-le-compromis-biais-variance) illustre
 expérimentalement ce principe : au-delà d'un certain point, la complexité
 supplémentaire ne sert qu'à apprendre du bruit.
 
@@ -361,7 +361,7 @@ Chaque famille a ses avantages et ses inconvénients :
   tout conserver), lent pour la prédiction et plus exposé au risque de suivre le
   bruit. C'est de la **variance**.
 
-On retrouve ici le compromis de la section précédente. Résumer les données ou
+On retrouve ici le [compromis biais-variance](#trop-coller-ou-trop-lisser-le-compromis-biais-variance). Résumer les données ou
 tout conserver, supposer une forme ou suivre les données : il n'existe pas de
 réponse universelle. Il faut faire des choix adaptés au problème, et c'est une
 part importante du travail dans la discipline.
@@ -371,4 +371,4 @@ part importante du travail dans la discipline.
 Nous savons maintenant ce qu'un modèle peut dessiner, jusqu'à quel point il
 faut le laisser se courber et comment contrôler sa souplesse. Il reste à
 mesurer tout cela correctement, car un score peut être trompeur de plusieurs
-façons. C'est l'objet de la page suivante.
+façons. C'est l'objet de la page suivante, « [Bien évaluer un modèle](docs/module2/75-bien-evaluer) ».

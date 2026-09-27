@@ -49,7 +49,9 @@ Le premier hiver de l'IA ne toucha donc pas la tradition dominante, mais sa
 Comme le connexionnisme était mis de côté, les vingt années suivantes furent celles
 d'une **domination symbolique** presque complète : la recherche dans un espace
 d'états, les systèmes experts et l'ensemble des travaux présentés dans les chapitres
-précédents. Le déclin d'une tradition a ainsi favorisé le développement de l'autre.
+« [Chercher et raisonner](docs/module1/30-chercher-raisonner) », « [Représenter le
+monde](docs/module1/40-representer-le-monde) » et « [Capturer
+l'expertise](docs/module1/50-systemes-experts) ». Le déclin d'une tradition a ainsi favorisé le développement de l'autre.
 
 La démonstration de Minsky et Papert avait cependant une limite. Elle ne valait que
 pour le perceptron le plus simple, formé d'une **seule couche**. On pensait qu'en
@@ -145,7 +147,8 @@ théorèmes**. Les deux sources de la programmation fonctionnelle moderne vienne
 du raisonnement symbolique.
 
 **[La représentation des connaissances](docs/module1/40-representer-le-monde)**. Les
-réseaux sémantiques et les frames, présentés plus tôt, ont eu des successeurs. Les
+réseaux sémantiques et les frames, [présentés plus
+tôt](docs/module1/40-representer-le-monde/#donner-un-savoir-à-la-machine), ont eu des successeurs. Les
 **ontologies** et les **knowledge graphs** qui structurent le savoir du web en sont
 les héritiers directs. Quand Google affiche une fiche résumée à côté des résultats,
 ou quand on interroge Wikidata, c'est la même idée qui est utilisée : relier des
@@ -157,7 +160,7 @@ texte pour les humains, mais aussi des faits structurés pour les programmes (*c
 personne est née en telle année*, *ce produit coûte tant*), reliés par des
 vocabulaires communs, c'est-à-dire des ontologies. Des normes sont écrites dans ce
 but (RDF, OWL). Le projet complet ne s'est pas réalisé, pour une raison déjà vue dans
-ce module : il supposait que des millions d'auteurs décrivent soigneusement le sens
+« [Représenter le monde](docs/module1/40-representer-le-monde/#le-mur-du-sens-commun) » : il supposait que des millions d'auteurs décrivent soigneusement le sens
 de ce qu'ils publient. C'est le même travail d'inscription à la main qui avait limité
 CYC, mais à l'échelle de la planète. Certaines de ses composantes ont cependant été
 conservées : les balises que les sites ajoutent aujourd'hui pour que les moteurs de
@@ -166,10 +169,10 @@ héritiers directs. Quant aux frames, avec leurs cases à valeurs par défaut et
 hiérarchies d'héritage, elles sont **apparentées** à l'**objet** de la programmation
 moderne. Elles n'en sont pas l'ancêtre (l'orienté-objet doit davantage à la
 simulation qu'à l'IA), mais elles reposent sur la même intuition. Une dernière
-remarque prépare le module 4 : tout ce savoir est **structuré à la main** par des
+remarque prépare le [module 4](docs/module4) : tout ce savoir est **structuré à la main** par des
 humains. C'est l'opposé de la façon dont les grands modèles de langage acquièrent
 leur savoir, en traitant d'énormes quantités de texte. Ces deux conceptions du savoir
-seront comparées plus loin dans le cours.
+seront comparées [plus loin dans le cours](docs/module4).
 
 Ces quatre exemples ne sont pas les seuls. Aucune de ces techniques ne porte plus
 l'étiquette « IA », parce qu'elles font maintenant partie de l'informatique
@@ -250,16 +253,17 @@ vers l'autre tradition.
 Une question, apparue avec les difficultés du GOFAI, va réorganiser le domaine : au
 lieu de dicter ses règles à la machine, on peut la laisser les découvrir dans les
 données. Ce changement d'approche s'appelle l'**apprentissage automatique**, et c'est
-l'objet du **Module 2**. La tradition connexionniste, relancée par la
+l'objet du **[Module 2](docs/module2)**. La tradition connexionniste, relancée par la
 rétropropagation et la puissance des machines modernes, le mènera ensuite, au
-**Module 3**, à des résultats que ni Turing, ni Rosenblatt, ni Minsky n'avaient
+**[Module 3](docs/module3)**, à des résultats que ni Turing, ni Rosenblatt, ni Minsky n'avaient
 imaginés.
 
 Le module peut se résumer par le passage d'un verbe à un autre. Pendant trois
 décennies, être intelligent, pour une machine, a surtout voulu dire **chercher** :
 explorer un espace de possibilités, guidé par des règles fixées à l'avance. La
 période suivante remplace ce verbe par **apprendre**. Les deux verbes restent
-cependant proches, et la suite du cours y reviendra : apprendre, c'est encore
+cependant proches, et la [suite du
+cours](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente) y reviendra : apprendre, c'est encore
 chercher, mais dans un autre espace. Au lieu d'explorer les coups d'une partie, on
 explore l'ensemble des réglages possibles d'un modèle, jusqu'à trouver ceux qui
 correspondent aux données. Le GOFAI cherchait la solution, alors que

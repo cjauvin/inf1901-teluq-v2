@@ -6,7 +6,7 @@ slug: trois-facons-d-apprendre
 
 # Trois façons d'apprendre
 
-Le chapitre précédent s'est terminé sur un constat. Tout ce que nous avons
+Le chapitre « [Bien évaluer un modèle](docs/module2/75-bien-evaluer/#tout-cela-portait-un-nom-lapprentissage-supervisé) » s'est terminé sur un constat. Tout ce que nous avons
 construit dans ce module (régression, classification, la droite, Bayes)
 appartient à une seule famille, l'**apprentissage supervisé**, dans laquelle
 chaque exemple est accompagné de sa bonne réponse. Nous avons aussi vu que ce
@@ -28,8 +28,8 @@ données, lui sert de guide. Il en existe trois grands types :
 
 Nous avons passé tout le module dans la première famille. Ce dernier chapitre
 présente les deux autres. Le but n'est pas de les maîtriser, mais de situer ce
-que nous avons appris dans un ensemble plus large et de préparer les modules
-suivants.
+que nous avons appris dans un ensemble plus large et de préparer les [modules
+suivants](docs/module3).
 
 ## Apprendre avec un professeur : le supervisé
 
@@ -67,7 +67,7 @@ partie sur un travail humain, ce qui soulève des questions que nous
 retrouverons au [Module 5](docs/module5).
 {{% /hint %}}
 
-La section suivante traite du cas où personne n'a fourni ces réponses.
+La [section suivante](#apprendre-sans-réponses-le-non-supervisé) traite du cas où personne n'a fourni ces réponses.
 
 ## Apprendre sans réponses : le non-supervisé
 
@@ -166,7 +166,7 @@ façon, en apprenant à prédire le mot suivant, que les grands modèles de lang
 du [Module 4](docs/module4) sont entraînés, et c'est pour cette raison qu'ils
 ont pu traiter une grande partie de ce que l'humanité a écrit. L'apprentissage
 supervisé intervient ensuite, sur des quantités beaucoup plus petites, avec les
-réponses notées par des humains dont parlait l'encadré plus haut. Cependant,
+réponses notées par des humains dont parlait l'[encadré plus haut](#apprendre-avec-un-professeur-le-supervisé). Cependant,
 l'essentiel de leurs connaissances provient de cette tâche de prédiction sur
 les textes eux-mêmes.
 
@@ -267,7 +267,7 @@ Lesson »](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
 (2019). Selon lui, à long terme, les méthodes générales qui exploitent la
 puissance de calcul finissent toujours par l'emporter sur celles où l'on avait
 inscrit à la main le savoir humain, et seules deux méthodes passent vraiment à
-l'échelle, la **recherche**, celle du Module 1, et l'**apprentissage**, celui
+l'échelle, la **recherche**, celle du [Module 1](docs/module1/30-chercher-raisonner), et l'**apprentissage**, celui
 de ce module. Le sens et le coût de cette leçon seront le point de départ du
 [**Module 3**](docs/module3). Nous y combinerons ces fonctions réglables en
 **réseaux de neurones** profonds, et nous verrons pourquoi ces réseaux ont

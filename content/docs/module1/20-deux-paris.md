@@ -120,6 +120,33 @@ pari, celui de l'apprentissage, et ne contiennent aucune règle de logique écri
 à la main. Nous y reviendrons au [Module 4](docs/module4).
 {{% /hint %}}
 
+{{% hint info %}}
+**Lean, un vérificateur de preuves.** Une preuve « vérifiable par machine » est
+écrite dans un langage comme **Lean**, créé en 2013 par Leonardo de Moura chez
+Microsoft Research. Dans Lean, chaque étape d'une démonstration doit être justifiée
+par une règle de logique précise. Un petit programme central, le *noyau*, vérifie
+ensuite que chaque étape respecte ces règles. Si le noyau accepte la preuve, le
+théorème est établi avec une certitude qu'aucune relecture humaine ne peut garantir
+pour des démonstrations de centaines de pages. Par exemple, l'énoncé suivant est
+vérifié par Lean :
+
+```lean
+theorem deux_plus_deux : 2 + 2 = 4 := by norm_num
+```
+
+Des mathématiciens du monde entier alimentent une bibliothèque commune,
+**Mathlib**, qui contient déjà une grande partie des mathématiques enseignées à
+l'université.
+
+Lean appartient à la tradition symbolique présentée dans ce chapitre : des règles
+explicites, appliquées mécaniquement. Il est aujourd'hui au centre d'une
+combinaison des deux paris. Un modèle de langage, issu de l'apprentissage, propose
+des étapes de démonstration, et Lean vérifie qu'elles sont correctes. Le modèle peut
+se tromper, mais une erreur ne passe pas la vérification. C'est ainsi qu'ont été
+obtenus plusieurs des résultats mentionnés ci-dessus. Pour en savoir plus :
+[lean-lang.org](https://lean-lang.org/).
+{{% /hint %}}
+
 Ces succès suscitent un grand enthousiasme. Newell et Simon formulent une
 hypothèse forte : un système qui manipule des symboles de la bonne manière
 posséderait tout ce qu'il faut pour être intelligent. Pendant les décennies
@@ -196,7 +223,7 @@ tour**. Dès la fin des années 1960, comme nous le verrons dans « [Les hiver
 bascule](docs/module1/60-hivers) », le camp symbolique met presque fin aux
 recherches sur le perceptron, et
 l'approche symbolique domine presque seule les vingt années suivantes. Il faut
-attendre les années 2010, étudiées au module 3 de ce cours, pour que la tradition
+attendre les années 2010, étudiées au [Module 3](docs/module3) de ce cours, pour que la tradition
 connexionniste revienne au premier plan, sous le nom d'*apprentissage profond*.
 
 {{% hint info %}}

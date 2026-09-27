@@ -6,7 +6,7 @@ slug: travail-noté-1
 
 # Vous êtes le moteur d'inférence : un système expert (travail noté 1)
 
-Au Module 1, nous avons vu qu'avant l'apprentissage automatique (que nous commencerons à étudier en détail au module 2), la grande idée de
+Au [Module 1](docs/module1), nous avons vu qu'avant l'apprentissage automatique (que nous commencerons à étudier en détail au [module 2](docs/module2)), la grande idée de
 l'IA « classique » (le GOFAI) était de **capturer la connaissance dans des règles
 explicites**. Les **[systèmes experts](docs/module1/50-systemes-experts)** sont
 l'aboutissement de cette idée. Ils comportent une **base de règles** `si… alors…`,
@@ -150,7 +150,7 @@ Modifiez-la si nécessaire.
 
 3. Le système peut **expliquer** sa conclusion (le tableau de trace que vous avez
    rempli le montre). En quoi est-ce une force&nbsp;? Comparez avec ce que vous
-   anticipez d'un réseau de neurones (Module 3).
+   anticipez d'un réseau de neurones ([Module 3](docs/module3)).
 
 4. Vous avez fait fonctionner le moteur « vers l'avant » (des faits vers la
    conclusion), ce qu'on appelle le **chaînage avant**. Comment auriez-vous procédé
@@ -175,7 +175,7 @@ Modifiez-la si nécessaire.
 
 9. Ce système **apprend-il** de son expérience&nbsp;? Si on lui présentait mille
    animaux, ses règles s'amélioreraient-elles d'elles-mêmes&nbsp;? Quelle conséquence
-   cela a-t-il, et vers quel changement de paradigme (Module 2) cela conduit-il&nbsp;?
+   cela a-t-il, et vers quel changement de paradigme ([Module 2](docs/module2)) cela conduit-il&nbsp;?
 
 10. Toute « l'intelligence » du moteur tient dans la formule de la colonne
     *Activable ?*. Diriez-vous que ce système pense&nbsp;? Reliez votre réponse au

@@ -6,7 +6,7 @@ slug: bien-evaluer
 
 # Bien évaluer un modèle
 
-La page précédente a posé la règle d'or : on juge un modèle sur des exemples
+La page « [Généraliser](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu) » a posé la règle d'or : on juge un modèle sur des exemples
 qu'il n'a jamais vus. Cette règle est nécessaire, mais elle ne suffit pas. Un
 score sur le jeu de test n'a de valeur que s'il est **honnête** (le modèle
 n'a-t-il vraiment rien vu du test ?), **fiable** (le score dépend-il du hasard du
@@ -133,7 +133,7 @@ aucun n'est ajusté par la descente de gradient avec les autres. Ce sont des
 l'entraînement. On les choisit en essayant plusieurs valeurs et en gardant
 celle qui donne le meilleur score de validation croisée. Ensuite seulement, on
 utilise le jeu de test pour l'évaluation finale. C'est le rôle de l'ensemble de
-validation de la page précédente, appliqué en rotation.
+validation de la [page précédente](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu), appliqué en rotation.
 
 ## Compter juste : les métriques
 
@@ -325,7 +325,7 @@ question.
 
 ## Tout cela portait un nom : l'apprentissage supervisé
 
-Depuis la première page de ce module, un élément n'a jamais changé, et nous
+Depuis la [première page de ce module](docs/module2/10-le-probleme), un élément n'a jamais changé, et nous
 l'avons à peine remarqué : **la bonne réponse était toujours fournie.** Chaque
 maison avait son prix, chaque courriel son étiquette (pourriel ou non) et chaque
 point sa couleur. Le modèle devait seulement apprendre à passer de la question
@@ -363,5 +363,5 @@ d'apprentissage.
 C'est bien de l'apprentissage, mais d'un autre type. Ces situations se
 distinguent par la nature du **signal** à partir duquel le modèle apprend : une
 réponse fournie, une structure à découvrir sans guide ou une récompense
-différée. Le chapitre suivant présente cette typologie et les nouvelles
+différée. Le chapitre suivant, « [Trois façons d'apprendre](docs/module2/80-trois-facons-d-apprendre) », présente cette typologie et les nouvelles
 possibilités qu'elle ouvre.

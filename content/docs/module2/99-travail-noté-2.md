@@ -18,7 +18,7 @@ cet algorithme. On cherche à estimer la probabilité qu'un courriel soit un
 pourriel à partir des mots qu'il contient, parce que certains mots sont plus
 souvent utilisés dans les pourriels et d'autres dans les courriels.
 
-Comme nous l'avons vu, la classification naïve bayésienne est un algorithme
+Comme nous l'avons vu au chapitre « [Classer](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne) », la classification naïve bayésienne est un algorithme
 d'apprentissage *génératif*. On considère donc d'abord deux modèles (un pour
 chaque classe, `pourriel` ou `courriel`), dont le rôle est de générer les données
 observées plutôt que de les classifier directement :
@@ -53,7 +53,7 @@ $$
 
 2. Une fois le fichier complété et fonctionnel, [partagez votre fichier](docs/50-google-sheets/#fonction-de-partage-anonyme-dun-fichier) et copiez le lien vers celui-ci dans un document PDF (**Attention : aucun autre format que PDF ne sera accepté**).
 
-3. Répondez aux questions d'interprétation de la dernière section dans le même fichier PDF, en fournissant des réponses claires et précises.
+3. Répondez aux questions d'interprétation de la [dernière section](#questions-dinterprétation) dans le même fichier PDF, en fournissant des réponses claires et précises.
 
 ## Entraînement du modèle
 
@@ -121,7 +121,7 @@ les paramètres linguistiques de votre Google Sheets ne soient pas [correctement
 
 {{% /hint %}}
 
-Ces probabilités à priori serviront plus loin. Définissez ensuite la colonne `D`
+Ces probabilités à priori serviront [plus loin](#utilisation-du-modèle-inférence). Définissez ensuite la colonne `D`
 avec cette formule :
 
 ```
@@ -180,7 +180,7 @@ le courriel est un pourriel (`oui`) :
 
 Les colonnes `G` et `H` doivent elles aussi avoir la même taille que le
 vocabulaire (colonne `D`). Il faut donc utiliser le remplissage automatique
-décrit plus haut.
+[décrit plus haut](#entraînement-du-modèle).
 
 ![](/images/module2/tn2/sheets_cols_g_et_h.png)
 

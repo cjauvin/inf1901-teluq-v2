@@ -178,7 +178,7 @@ question :
 
 {{< image src="/images/module2/maisons-vendues.svg" alt="Les mêmes maisons, dans un tout autre plan : la distance du centre-ville en abscisse, l'année de construction en ordonnée. Chaque point est coloré selon qu'il s'est vendu en moins de 30 jours (en bleu) ou qu'il a traîné (en rouge). Les points forment deux amas compacts, logés dans des coins opposés du dessin et séparés par un large vide : en haut à gauche, en bleu, les maisons proches du centre et récentes ; en bas à droite, en rouge, les maisons éloignées et anciennes. Deux points traversent ce vide : une vieille maison éloignée partie vite, une récente et proche qui a traîné." title="Les mêmes maisons, une autre question, et un autre plan. Ce n'est plus la hauteur du point qu'on cherche à deviner, mais sa couleur." loading="lazy" >}}
 
-La différence avec le premier graphique est nette. Dans le premier, on cherchait
+La différence avec le [premier graphique](#notre-fil-rouge-des-maisons-à-vendre) est nette. Dans le premier, on cherchait
 à deviner la **hauteur** du point, c'est-à-dire sa position sur une échelle
 continue. Ici, les deux coordonnées sont données, et on cherche la **couleur**.
 Le motif est clair : les points forment **deux amas** situés dans des coins
@@ -186,7 +186,7 @@ opposés, séparés par un large espace vide. Les maisons proches du centre et
 récentes se vendent vite. Les maisons éloignées et anciennes se vendent
 lentement. Seules deux exceptions se trouvent dans l'espace vide.
 
-On a changé de plan parce que, dans le graphique précédent (la superficie et le
+On a changé de plan parce que, dans le [graphique précédent](#notre-fil-rouge-des-maisons-à-vendre) (la superficie et le
 prix), les deux couleurs auraient été mêlées et n'auraient rien montré. Le motif
 était bien présent dans le registre, mais pas dans ces renseignements-là. Ce
 point annonce une leçon qui reviendra tout au long du module : la difficulté d'un
@@ -212,14 +212,14 @@ qui s'est vendue vite se trouve sur le plan du haut, mais à la verticale de
 l'amas rouge. La maison récente et proche qui s'est vendue lentement se trouve
 sur le plan du bas, à la verticale de l'amas bleu. Le pointillé montre où chacune
 se place vue d'en haut, c'est-à-dire au milieu de l'autre couleur. Nous
-reprendrons cette figure quand nous saurons quoi écrire sur ces deux barreaux.
+reprendrons cette figure au chapitre « [Regarder les données](docs/module2/30-les-donnees/#et-quand-la-cible-est-une-catégorie) », quand nous saurons quoi écrire sur ces deux barreaux.
 
-Dans les **prochains chapitres**, nous suivrons surtout la première question,
+Dans les [**prochains chapitres**](docs/module2/20-modele-le-plus-bete), nous suivrons surtout la première question,
 parce que le prix se prête mieux aux dessins et aux premières explications. La
-seconde question fera ensuite l'objet d'un chapitre entier. C'est d'ailleurs une
+seconde question fera ensuite l'objet d'un chapitre entier, « [Classer](docs/module2/60-classer) ». C'est d'ailleurs une
 question de ce type, *ce courriel est-il un pourriel ?*, que vous traiterez dans
-le travail noté. Nous verrons alors que presque tout ce qu'on aura appris pour
-l'une vaut aussi pour l'autre. **Plusieurs** des exemples du début de ce chapitre
+le [travail noté](docs/module2/99-travail-noté-2). Nous verrons alors que presque tout ce qu'on aura appris pour
+l'une vaut aussi pour l'autre. **Plusieurs** des exemples du [début de ce chapitre](#pourquoi-on-ne-peut-pas-simplement-le-programmer)
 appartiennent à cette seconde famille. Reconnaître un chat ou repérer un
 pourriel sont des questions dont la réponse n'est pas un nombre, mais **une
 catégorie**.
@@ -235,4 +235,4 @@ avec ses deux réponses, est le cas le plus simple de cette famille.
 
 Avant de construire un modèle élaboré, il est utile de se demander quelle est la
 prédiction la plus bête possible, celle en dessous de laquelle il serait absurde
-de descendre. C'est par cette question que commence la suite du module.
+de descendre. C'est par cette question que commence [la suite du module](docs/module2/20-modele-le-plus-bete).

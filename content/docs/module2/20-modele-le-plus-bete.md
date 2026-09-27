@@ -6,7 +6,7 @@ slug: modele-le-plus-bete
 
 # Le modèle le plus bête
 
-À la fin de la page précédente, nous avons posé une question qui peut sembler
+À la fin de la page « [Le problème](docs/module2/10-le-probleme) », nous avons posé une question qui peut sembler
 absurde : quelle est la prédiction la plus bête qu'on puisse imaginer ? Cette
 question mérite d'être prise au sérieux, parce que la pire réponse possible est
 instructive. Elle nous obligera aussi à préciser ce qu'est un *modèle*.
@@ -23,7 +23,7 @@ dépend donc plus de rien. Elle est de 500 000 \\$ pour un très petit studio, e
 de 500 000 \\$ aussi pour un grand manoir. C'est évidemment absurde.
 
 Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et
-il donne toujours une réponse. Sur le nuage de points de la page précédente, il
+il donne toujours une réponse. Sur le nuage de points de la [page précédente](docs/module2/10-le-probleme/#notre-fil-rouge-des-maisons-à-vendre), il
 correspond à une simple **ligne horizontale**, à la même hauteur (500 000 \\$)
 quelle que soit la superficie. Cette ligne traverse le nuage en son milieu,
 au-dessus des maisons bon marché et en dessous des plus chères.
@@ -33,7 +33,7 @@ au-dessus des maisons bon marché et en dessous des plus chères.
 ## La même bêtise, pour l'autre question
 
 Le prédicteur le plus bête existe aussi pour la **seconde question** du chapitre
-précédent, *cette maison partira-t-elle vite ?* Il suit la même logique : il
+« [Le problème](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature) », *cette maison partira-t-elle vite ?* Il suit la même logique : il
 ignore la maison qu'on lui présente et répond toujours la même chose.
 
 Il ne peut cependant pas répondre la moyenne, parce qu'on ne peut pas faire la
@@ -99,7 +99,7 @@ On peut faire cette comparaison concrètement, sans formule, en mesurant **de
 combien un modèle se trompe, en moyenne**. Pour le prédicteur bête, l'écart entre
 le prix annoncé (toujours 500 000 \\$) et le vrai prix dépasse 250 000 \\$ pour
 les maisons situées aux extrêmes. C'est cette « distance à la vérité » qu'un
-meilleur modèle cherchera à réduire. Nous lui donnerons plus loin un nom et une
+meilleur modèle cherchera à réduire. Nous lui donnerons au chapitre « [Un modèle qui s'entraîne](docs/module2/50-entrainer-un-modele/#mesurer-lerreur) » un nom et une
 définition précise, la *fonction d'erreur*, mais l'idée suffit pour l'instant :
 un bon modèle est un modèle qui se trompe moins.
 
@@ -118,7 +118,7 @@ raison dans 60 % des cas. C'est l'étalon à battre.
 
 {{< image src="/images/module2/maisons-erreurs-oui-non.svg" alt="Le nuage coloré de la page précédente : les mêmes maisons, aux mêmes places, la distance du centre-ville en abscisse et l'année de construction en ordonnée. Toutes sont maintenant bleues, parce que le modèle répond « oui » (vendue en moins de 30 jours) pour chacune, sans tenir compte de leurs caractéristiques. Un ✗ rouge marque celles qui s'étaient en réalité vendues lentement, c'est-à-dire celles qui étaient rouges sur la figure d'origine. Ce sont ses erreurs, et elles occupent presque tout l'amas du bas à droite, celui des maisons éloignées et anciennes." title="Le prédicteur jumeau colore toutes les maisons en « oui », et les ✗ marquent celles où il se trompe. On ne mesure plus un écart en dollars, on compte les réponses justes." loading="lazy" >}}
 
-Il s'agit du nuage coloré de la page précédente, sans modification : les **mêmes
+Il s'agit du nuage coloré de la [page précédente](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature), sans modification : les **mêmes
 maisons**, aux mêmes places. Seule leur couleur a changé. Comme le modèle répond
 « oui » partout, il les colore toutes en bleu, et les ✗ indiquent celles qui
 étaient rouges. Presque tous les ✗ se trouvent dans l'amas du bas à droite,
@@ -126,8 +126,8 @@ celui des maisons éloignées et anciennes. Le prédicteur bête se trompe sur
 presque tout cet amas, ce qui est normal, puisqu'il répond « oui » sans tenir
 compte de la distance ni de l'année.
 
-On peut comparer cette figure avec le graphique des écarts de prix présenté plus
-haut. Les axes sont différents (ils ne peuvent pas être les mêmes, parce que les
+On peut comparer cette figure avec le graphique des écarts de prix [présenté plus
+haut](#pourquoi-un-modèle-aussi-bête-est-utile). Les axes sont différents (ils ne peuvent pas être les mêmes, parce que les
 deux questions ne se lisent pas dans le même plan), mais la différence principale
 est ailleurs. Dans le graphique des prix, chaque maison portait un segment plus
 ou moins long, et l'erreur se **mesurait**. Ici, chaque réponse est simplement
@@ -139,7 +139,7 @@ beaucoup plus déséquilibrée, *ce courriel est-il un pourriel ?*, dans une b
 où 99 % des messages sont légitimes. Le prédicteur le plus bête, qui répond « ce
 n'est jamais un pourriel », obtient **99 % de bonnes réponses**, tout en étant
 inutile, puisqu'il ne détecte aucun pourriel. Un chiffre élevé peut donc cacher
-un modèle sans valeur. Nous y reviendrons, car bien mesurer la qualité d'un
+un modèle sans valeur. Nous y reviendrons dans « [Bien évaluer un modèle](docs/module2/75-bien-evaluer/#compter-juste-les-métriques) », car bien mesurer la qualité d'un
 modèle est plus difficile qu'il n'y paraît.
 {{% /hint %}}
 

@@ -37,7 +37,9 @@ La recherche n'est pas une technique parmi d'autres. C'est le mécanisme
 central de l'IA symbolique. Pour démontrer un théorème, planifier un trajet,
 diagnostiquer une panne ou lever l'ambiguïté d'une phrase, le GOFAI ramène le
 problème à l'exploration d'un espace de possibilités, jusqu'à y trouver une
-solution. Nous la retrouverons dans les pages suivantes.
+solution. Nous la retrouverons dans « [Représenter le
+monde](docs/module1/40-representer-le-monde) » et « [Capturer
+l'expertise](docs/module1/50-systemes-experts) ».
 À la fin du module, dans [*Les hivers et la
 bascule*](docs/module1/60-hivers/#la-bascule), c'est aussi elle qui marquera la
 différence avec l'autre tradition : l'IA symbolique cherche une solution, alors
@@ -116,7 +118,8 @@ fois qu'un champion du monde en exercice perd contre un ordinateur dans un match
 en conditions officielles. L'événement a un retentissement mondial, et la presse
 y voit le jour où la machine a « dépassé » l'humain.
 
-Deep Blue applique directement les techniques décrites plus haut. Il n'utilise
+Deep Blue applique directement les techniques [décrites plus
+haut](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire). Il n'utilise
 aucun réseau de neurones et aucun apprentissage. Il repose sur de la **recherche
 par force brute** (la machine évalue jusqu'à 200 millions de positions par
 seconde), guidée par des **heuristiques** mises au point avec l'aide de grands
@@ -155,11 +158,12 @@ Les tâches que nous jugeons les plus « intellectuelles » (jouer aux éche
 démontrer un théorème) se sont révélées **relativement faciles** à mécaniser. À
 l'inverse, ce qu'un enfant de trois ans fait sans effort (comprendre une phrase,
 reconnaître une scène, faire preuve de bon sens) a longtemps résisté. C'est le
-**paradoxe de Moravec**, sur lequel nous reviendrons.
+**paradoxe de Moravec**, sur lequel nous reviendrons au
+[Module 2](docs/module2/10-le-probleme/#pourquoi-on-ne-peut-pas-simplement-le-programmer).
 {{% /hint %}}
 
 Ces difficultés montrent déjà les limites de cette période, sur lesquelles nous
-reviendrons. La même époque a cependant produit un autre type de programme. Il ne
+reviendrons dans « [Les hivers et la bascule](docs/module1/60-hivers) ». La même époque a cependant produit un autre type de programme. Il ne
 calcule pas pour gagner une partie, mais semble parler et écouter, et son cas est
 encore plus surprenant.
 
@@ -192,9 +196,9 @@ ELIZA »** cette forte tendance à *projeter* de la compréhension, et même d
 
 ELIZA est en quelque sorte l'inverse du test de Turing. Elle montre qu'il peut
 être facile de donner l'illusion de penser sans rien comprendre. Cette mise en
-garde prendra toute son importance avec les agents conversationnels (module 4) et
+garde prendra toute son importance avec les agents conversationnels ([module 4](docs/module4)) et
 dans le débat, toujours ouvert, sur ce que « comprendre » veut dire pour une
-machine (module 5).
+machine ([module 5](docs/module5)).
 
 Une dernière précision est importante pour la suite. On pourrait voir en ELIZA
 l'ancêtre direct de ChatGPT, comme s'il s'agissait du même procédé à plus grande

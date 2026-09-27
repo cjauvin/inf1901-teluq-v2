@@ -6,7 +6,7 @@ slug: entrainer-un-modele
 
 # Un modèle qui s'entraîne
 
-Le chapitre précédent s'est terminé sur un objectif : obtenir un modèle qui ne se
+Le chapitre « [Prédire par ressemblance](docs/module2/40-predire-par-ressemblance/#langle-mort-de-knn) » s'est terminé sur un objectif : obtenir un modèle qui ne se
 contente pas de mémoriser les exemples, mais qui en extrait une tendance générale,
 résumée en quelques paramètres, qu'on pourra ensuite appliquer sans conserver
 toutes les données.
@@ -88,7 +88,7 @@ l'observer dans l'applet suivante :
 Trouver cette droite à la main, comme dans l'applet, reste possible en deux
 dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
 quand le modèle n'a plus deux paramètres, mais des milliers. C'est l'objet de la
-section suivante.
+[section suivante](#apprendre-cest-descendre-la-pente).
 
 ## Apprendre, c'est descendre la pente
 
@@ -170,7 +170,7 @@ ici un prix.
 Beaucoup de questions demandent cependant comme réponse une **catégorie** plutôt
 qu'un nombre. Par exemple, ce courriel est-il un pourriel ou non ? Cette photo
 montre-t-elle un chat ou un chien ? Nous avons rencontré ce type de tâche au
-chapitre sur kNN : la **classification**. Cependant, kNN n'apprenait rien. Nous
+[chapitre sur kNN](docs/module2/40-predire-par-ressemblance/#les-k-plus-proches-voisins) : la **classification**. Cependant, kNN n'apprenait rien. Nous
 voulons maintenant un modèle qui s'entraîne comme notre droite, mais dont la
 sortie est une catégorie plutôt qu'une valeur.
 
@@ -179,4 +179,4 @@ Un modèle réglé par des paramètres, une fonction d'erreur et une descente de
 gradient pour la minimiser forment un ensemble assez général pour s'appliquer à
 la classification comme à la régression. Il suffira de modifier la *forme* du
 modèle (une droite qui *sépare* les points, plutôt qu'une droite qui *suit* leur
-tendance) et la *façon de calculer l'erreur*. C'est l'objet du prochain chapitre.
+tendance) et la *façon de calculer l'erreur*. C'est l'objet du prochain chapitre, « [Classer](docs/module2/60-classer) ».

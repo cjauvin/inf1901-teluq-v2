@@ -30,7 +30,8 @@ blocs que parce que ce monde était très petit. Les systèmes experts réduisen
 aussi le monde à un domaine restreint, mais il s'agit cette fois de domaines réels,
 qui ont une valeur commerciale. Cette approche va fonctionner. L'IA symbolique va
 sortir des universités, produire des revenus et convaincre le monde des affaires
-que l'intelligence artificielle est utilisable. La section suivante explique
+que l'intelligence artificielle est utilisable. La [section
+suivante](docs/module1/50-systemes-experts/#lanatomie-dun-système-expert) explique
 comment une machine peut raisonner avec des règles.
 
 ## L'anatomie d'un système expert
@@ -96,9 +97,11 @@ n'y écrit que des faits et des règles, et le langage fournit lui-même le mote
 d'inférence, un chaînage arrière comme celui qu'on vient de décrire. On n'indique
 pas au programme comment calculer, mais ce qui est vrai. Cette approche s'appelle la
 **programmation logique**. Elle est différente de la programmation fonctionnelle du
-langage Lisp (celui des machines de la photo plus bas). Prolog a longtemps été le
+langage Lisp (celui des machines de la photo [plus
+bas](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom)). Prolog a longtemps été le
 langage de référence de l'IA symbolique en Europe. Le projet japonais de
-**Cinquième Génération**, présenté plus bas, l'a choisi comme langage principal, et
+**Cinquième Génération**, [présenté plus
+bas](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom), l'a choisi comme langage principal, et
 ses principes se retrouvent aujourd'hui dans Datalog et dans les moteurs de règles.
 {{% /hint %}}
 
@@ -139,7 +142,8 @@ partir des faits, ou **vers l'arrière**, à partir d'un but. Le chaînage arri�
 mieux adapté au diagnostic, parce qu'il ne pose que les questions utiles à
 l'hypothèse examinée, au lieu de demander toutes les mesures d'avance. C'est pour
 cette raison que le plus connu des systèmes experts, le système de diagnostic
-médical **MYCIN**, l'utilisait. Il est présenté dans la section suivante.
+médical **MYCIN**, l'utilisait. Il est présenté dans la [section
+suivante](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom).
 
 Dans l'applet ci-dessous, choisissez ce que vous observez sur la voiture, puis
 faites avancer le moteur d'inférence règle par règle. Vous le verrez examiner
@@ -157,7 +161,8 @@ données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus c
 est cependant **MYCIN**, conçu au début des années 1970 par **Edward Shortliffe**.
 MYCIN diagnostiquait les **infections bactériennes du sang** et recommandait un
 antibiotique et une dose. Il comptait environ **600 règles** et utilisait le
-**chaînage arrière** décrit plus haut. Il partait d'une hypothèse sur le germe en
+**chaînage arrière** [décrit plus
+haut](docs/module1/50-systemes-experts/#lanatomie-dun-système-expert). Il partait d'une hypothèse sur le germe en
 cause et posait des questions au médecin jusqu'à sa conclusion. Grâce à ce même
 mécanisme, il pouvait **justifier** sa démarche. Quand on lui demandait pourquoi il
 posait une question, il indiquait la règle qu'il cherchait à vérifier.
@@ -194,7 +199,7 @@ millions de dollars par an** à DEC. Ce succès a montré que les systèmes expe
 pouvaient être rentables en dehors des laboratoires. Un problème est cependant
 apparu : le nombre de règles de XCON augmentait sans cesse, jusqu'à plusieurs
 milliers, et il fallait constamment les ajuster les unes aux autres. Nous y
-reviendrons plus bas.
+reviendrons [plus bas](docs/module1/50-systemes-experts/#le-goulot-détranglement).
 
 Après XCON, les investissements se sont multipliés. Au début des années 1980, l'IA
 est devenue pour la première fois une **industrie**. On vendait des **coquilles**

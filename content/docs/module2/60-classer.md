@@ -6,16 +6,16 @@ slug: classer
 
 # Classer
 
-Le chapitre précédent a présenté un modèle qui apprend vraiment : une droite, deux
+Le chapitre « [Un modèle qui s'entraîne](docs/module2/50-entrainer-un-modele) » a présenté un modèle qui apprend vraiment : une droite, deux
 paramètres, une erreur à minimiser et une descente vers le creux. Ce modèle
 répond cependant toujours par un **nombre**, ici un prix. Or beaucoup de questions
 n'appellent pas un nombre, mais une **catégorie**. Par exemple, on peut se
 demander si un courriel est un pourriel, si une tumeur est bénigne ou maligne, ou
 si une photo montre un chat ou un chien. C'est la tâche de **classification**,
-déjà rencontrée au chapitre kNN. Cette fois, cependant, nous voulons un modèle
+déjà rencontrée au [chapitre kNN](docs/module2/40-predire-par-ressemblance/#les-k-plus-proches-voisins). Cette fois, cependant, nous voulons un modèle
 qui s'entraîne.
 
-Comme l'annonçait la fin du chapitre précédent, presque toute la machinerie va
+Comme l'annonçait la fin du [chapitre précédent](docs/module2/50-entrainer-un-modele/#et-pour-prédire-une-catégorie), presque toute la machinerie va
 servir de nouveau. Des paramètres réglables, une fonction d'erreur et une
 descente de gradient pour la minimiser forment un ensemble assez général pour
 s'appliquer à la classification comme à la régression. Seules deux choses
@@ -57,7 +57,7 @@ des statisticiens dans les années 1950 et, malgré son nom (il contient
 « régression » alors qu'il classe), c'est l'un des classificateurs les plus
 utilisés. Dans l'applet ci-dessous, déplacez la ligne de décision pour séparer
 au mieux les deux groupes. Vous ajustez ainsi ses deux paramètres à la main,
-comme vous déplaciez la droite de régression au chapitre précédent. Vous pouvez
+comme vous déplaciez la droite de régression au [chapitre précédent](docs/module2/50-entrainer-un-modele/#un-modèle-qui-tient-en-deux-nombres). Vous pouvez
 aussi ajouter, retirer ou déplacer des points.
 
 {{< applet src="/html/applets/logistic-regression.html" height="663" >}}
@@ -87,7 +87,7 @@ l'est pas ? (Nous y reviendrons : c'est l'une des questions centrales du [Mod
 {{% /hint %}}
 
 Il reste à savoir comment la machine trouve seule la bonne ligne, sans qu'on la
-déplace à la souris. La réponse est la même qu'au chapitre précédent. L'erreur
+déplace à la souris. La réponse est la même qu'au [chapitre précédent](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente). L'erreur
 est une fonction des deux paramètres, ce qui définit un paysage, et la
 **descente de gradient** parcourt ce paysage jusqu'à son creux. Le mécanisme est
 réutilisé tel quel. Seule la forme de la fonction d'erreur diffère. Les détails
@@ -152,7 +152,7 @@ $\alpha$ :
 $$\mathbf{w} \leftarrow \mathbf{w} - \alpha\,\frac{\partial J}{\partial \mathbf{w}}, \qquad b \leftarrow b - \alpha\,\frac{\partial J}{\partial b}$$
 
 On répète jusqu'à ce que l'erreur ne diminue plus. C'est le même mécanisme qu'au
-chapitre précédent. Seule la fonction d'erreur a changé.
+[chapitre précédent](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente). Seule la fonction d'erreur a changé.
 
 {{% /details %}}
 
@@ -309,8 +309,8 @@ et les courriels légitimes y forment deux nuages distincts :
 
 {{< image src="/images/module2/spam_vector_space.png" alt="Un système d'axes où chaque axe représente un mot du vocabulaire. Les courriels sont des points dans cet espace de très haute dimension ; les pourriels se regroupent dans une région, les courriels légitimes dans une autre." title="Chaque mot du vocabulaire est un axe ; un courriel devient un point dans cet espace. Pourriels et courriels légitimes y forment deux nuages." loading="lazy" >}}
 
-Nous savons déjà traiter deux nuages dans un espace, et la méthode de la section
-précédente s'applique telle quelle. On établit le **portrait** de chaque classe
+Nous savons déjà traiter deux nuages dans un espace, et la méthode de la [section
+précédente](#renverser-le-problème-la-classification-bayésienne) s'applique telle quelle. On établit le **portrait** de chaque classe
 (quels mots trouve-t-on dans un pourriel typique, et dans un courriel
 légitime ?), puis on classe un nouveau message en déterminant lequel des deux
 portraits rend ses mots les plus vraisemblables. Il s'agit encore de l'approche
@@ -318,7 +318,7 @@ portraits rend ses mots les plus vraisemblables. Il s'agit encore de l'approche
 mots sont tirés **indépendamment** les uns des autres. C'est faux (« carte »
 appelle souvent « bancaire »), mais c'est commode et étonnamment efficace.
 
-Un seul détail technique change par rapport à la section précédente. Les
+Un seul détail technique change par rapport à la [section précédente](#renverser-le-problème-la-classification-bayésienne). Les
 caractéristiques y étaient des valeurs continues, décrites par une courbe en
 cloche. Ici, ce sont des comptes, des nombres entiers : zéro, une ou deux
 occurrences, par exemple. On remplace donc la cloche par une loi adaptée aux
@@ -352,8 +352,8 @@ pour la classe `courriel`. Ces $p_i$ s'estiment directement, en comptant la
 fréquence de chaque mot dans les courriels d'entraînement de la classe, comme on
 estimait la moyenne d'une gaussienne.
 
-La décision se prend ensuite avec le théorème de Bayes, comme à la section
-précédente. En ignorant le dénominateur $P(\mathbf{x})$, qui est le même pour les
+La décision se prend ensuite avec le théorème de Bayes, comme à la [section
+précédente](#renverser-le-problème-la-classification-bayésienne). En ignorant le dénominateur $P(\mathbf{x})$, qui est le même pour les
 deux classes, on obtient :
 
 $$\text{classe}(\mathbf{x}) = \begin{cases} \mathtt{pourriel} & \text{si } P(\mathbf{x}\mid\text{pourriel})\,P(\text{pourriel}) \ge P(\mathbf{x}\mid\text{courriel})\,P(\text{courriel}) \\ \mathtt{courriel} & \text{sinon} \end{cases}$$
@@ -413,5 +413,5 @@ faire indiquer aux grands modèles leur degré de certitude.
 
 Nous avons donc vu trois modèles qui s'entraînent, tous avec le même mécanisme :
 une fonction d'erreur qu'on fait diminuer. Avant d'examiner la qualité de leurs
-prédictions sur des données nouvelles, la page suivante présente un dernier
+prédictions sur des données nouvelles, la page suivante, « [Poser des questions : les arbres de décision](docs/module2/65-arbres-de-decision) », présente un dernier
 modèle, d'un autre type, qui ne calcule pas mais pose des questions.

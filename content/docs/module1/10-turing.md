@@ -64,7 +64,7 @@ Dans l'article, le jeu est d'abord présenté avec un homme et une femme, que
 l'interrogateur doit distinguer. Turing demande ensuite ce qui arriverait si une
 machine prenait la place de l'un des deux. C'est cette seconde version qui a été
 retenue par la suite, et vous pouvez le vérifier sur la page de *Mind* reproduite
-plus haut.
+[plus haut](docs/module1/10-turing/#le-moment).
 
 {{< image src="/images/module1/jeu-imitation.svg" alt="Schéma du jeu de l'imitation : un juge humain dialogue par écrit, à travers une cloison, avec deux interlocuteurs cachés et identiques ; chacun peut être un humain ou une machine, et le juge doit deviner lequel est la machine." title="Le jeu de l'imitation : le juge ne dispose que du texte échangé pour reconnaître la machine." loading="lazy" >}}
 
@@ -183,7 +183,7 @@ tout *n*, parce que la connaître permettrait de savoir, pour n'importe quelle
 machine, si elle s'arrêtera un jour. Il suffirait de laisser tourner la machine
 pendant le nombre de pas du castor affairé. Si elle tourne encore après ce nombre
 de pas, elle ne s'arrêtera jamais. Il s'agit en fait du problème de l'arrêt,
-présenté plus bas, sous une autre forme. On a donc une suite de nombres
+[présenté plus bas](docs/module1/10-turing/#lombre-de-gödel), sous une autre forme. On a donc une suite de nombres
 parfaitement définis, dont les premiers sont petits, mais dont on ne connaîtra
 jamais que les tout premiers termes. Elle montre concrètement où se trouve une
 limite du calcul.

@@ -166,6 +166,6 @@ Quatre semaines, soit environ 36 heures.
 
 ## Évaluation
 
-Un travail noté (20 % de la note finale) où vous construirez, pas à pas, un
+Un [travail noté](docs/module2/99-travail-noté-2) (20 % de la note finale) où vous construirez, pas à pas, un
 filtre anti-pourriel par classification bayésienne naïve, avec des questions
 d'interprétation sur le fonctionnement de l'algorithme.

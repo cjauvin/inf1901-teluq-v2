@@ -144,8 +144,8 @@ quel autre, lequel est rouge, lequel est libre, ce que le bras tient à ce momen
 rappeler son action précédente et de justifier ce qu'il a fait. SHRDLU ne se
 contente donc pas de parler des blocs, il en possède une représentation exacte.
 Cette idée est importante : **un modèle du monde est une représentation interne de
-la réalité, sur laquelle on peut raisonner**. Nous la retrouverons beaucoup plus
-loin dans le cours, au centre d'un débat important sur les IA actuelles.
+la réalité, sur laquelle on peut raisonner**. Nous la retrouverons [beaucoup plus
+loin dans le cours](docs/module4), au centre d'un débat important sur les IA actuelles.
 
 Cette réussite repose cependant sur une simplification. Le modèle du monde de
 SHRDLU est exact parce qu'il a très peu de choses à représenter : quelques blocs,
@@ -161,7 +161,7 @@ combinatoire](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) des
 possibilités. Avec quelques blocs, tout peut être représenté et chaque question
 obtient une réponse immédiatement. C'est ce qui explique la réussite de SHRDLU, et
 c'est aussi sa limite, parce que le monde réel n'est pas traitable en ce sens,
-comme le montre la section suivante.
+comme le montre la [section suivante](docs/module1/40-representer-le-monde/#le-mur-du-sens-commun).
 
 En dehors de la table à blocs, SHRDLU ne peut rien faire. Son modèle du monde ne
 contient rien sur la pluie, un mensonge ou un escalier. Il ne peut pas être étendu

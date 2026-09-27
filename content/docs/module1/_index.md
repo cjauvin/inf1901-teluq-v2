@@ -21,7 +21,7 @@ Ce module présente cette histoire en **six chapitres**. Chacun associe un
 capable de programmer ces systèmes, mais de comprendre l'**idée** sur laquelle ils
 reposent et les **difficultés** qu'ils ont rencontrées. En comprenant pourquoi
 cette première IA a atteint ses limites, on comprend mieux pourquoi la suite (les
-modules 2 à 4) est si différente.
+modules [2](docs/module2), [3](docs/module3) et [4](docs/module4)) est si différente.
 
 Dans l'ensemble du domaine de l'intelligence artificielle, l'IA symbolique
 correspond à l'**IA « classique »**, qui se distingue de l'apprentissage
@@ -33,7 +33,7 @@ Une idée traverse tout le module. Dès les années 1950, **deux grandes hypoth�
 rivales** sur la nature de l'intelligence apparaissent presque en même temps.
 L'une considère l'esprit comme de la **logique** (manipuler des symboles,
 appliquer des règles). L'autre le considère comme un **cerveau** (un réseau qui
-apprend de ses expériences). Le Module 1 présente cette opposition, et le Module 3
+apprend de ses expériences). Le Module 1 présente cette opposition, et le [Module 3](docs/module3)
 montrera comment elle a évolué.
 
 ## Objectifs
@@ -41,7 +41,7 @@ montrera comment elle a évolué.
 À la fin de ce module, vous devriez être en mesure de :
 
 * Expliquer ce qu'est l'IA symbolique et en quoi elle se distingue de
-  l'apprentissage automatique étudié dans les modules suivants;
+  l'apprentissage automatique étudié dans les modules [2](docs/module2) à [4](docs/module4);
 * Situer les grandes étapes et les figures marquantes de l'histoire de l'IA, du
   test de Turing (1950) aux systèmes experts et aux « hivers » de l'IA;
 * Décrire les idées algorithmiques centrales du GOFAI (recherche dans un espace

@@ -6,7 +6,7 @@ slug: les-donnees
 
 # Regarder les données
 
-La page précédente s'est terminée sur une exigence : pour faire mieux que la
+La page « [Le modèle le plus bête](docs/module2/20-modele-le-plus-bete/#leur-défaut-et-ce-quil-révèle) » s'est terminée sur une exigence : pour faire mieux que la
 moyenne, un modèle doit tenir compte des caractéristiques d'une maison (sa
 superficie, son âge, son nombre de chambres). Il faut donc les lui présenter sous
 une forme qu'il peut manipuler.
@@ -66,7 +66,7 @@ couple de valeurs), mais il a l'avantage de faire de la cible une grandeur comme
 une autre. Avec cette convention, une catégorie devient un nombre, et tout ce qui
 suit s'applique sans changement.
 
-Le relief du premier chapitre ne change pas, sauf pour deux étiquettes : ses deux
+Le relief du chapitre « [Le problème](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature) » ne change pas, sauf pour deux étiquettes : ses deux
 barreaux, *non* et *oui*, s'appellent maintenant 0 et 1. Ce changement est
 cependant important, parce que la réponse devient une **grandeur** comme les
 autres. Un modèle peut la calculer, la comparer et se tromper sur elle d'une
@@ -101,7 +101,7 @@ caractéristiques. Cela lui donne aussi une **place dans l'espace**.
 Prenons deux caractéristiques, la superficie et le nombre de chambres. On peut
 placer chaque maison comme un **point** sur un graphe, avec la superficie à
 l'horizontale et le nombre de chambres à la verticale. Une maison correspond alors
-à un endroit du plan, de la même façon que, dans le nuage des pages précédentes,
+à un endroit du plan, de la même façon que, dans le nuage des [pages précédentes](docs/module2/10-le-probleme/#notre-fil-rouge-des-maisons-à-vendre),
 chaque maison était déjà un point. Un vecteur à deux composantes est donc une
 position dans un plan.
 
@@ -117,7 +117,7 @@ espace à n dimensions.**
 Cette représentation géométrique est très utile. Deux maisons aux
 caractéristiques semblables sont deux points proches, et deux maisons très
 différentes sont deux points éloignés. La ressemblance entre objets devient donc
-une **distance** entre points. Le prochain chapitre repose sur cette idée.
+une **distance** entre points. Le prochain chapitre, « [Prédire par ressemblance](docs/module2/40-predire-par-ressemblance) », repose sur cette idée.
 
 ## Quand il y a trop de dimensions pour les voir
 
@@ -169,13 +169,13 @@ Ces axes ne mesurent rien de physique, ni une taille ni une couleur. Ils
 contiennent seulement un compte, et l'ordre des mots est perdu. L'idée reste
 cependant valable : deux courriels qui emploient les mêmes mots sont deux points
 voisins, et un pourriel ressemble à d'autres pourriels. C'est cette
-représentation que nous utiliserons, au chapitre sur la classification, pour
+représentation que nous utiliserons, au chapitre « [Classer](docs/module2/60-classer/#le-cas-des-pourriels) », pour
 construire un filtre.
 
 On aurait pu décrire les courriels de façon encore plus grossière, en notant
 seulement si chaque mot est présent ou non, par 1 ou 0, au lieu de compter ses
 occurrences. Un tel axe n'a que deux barreaux, comme le relief *non*/*oui* du
-premier chapitre, et dans notre plan tous les courriels se retrouveraient aux
+[premier chapitre](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature), et dans notre plan tous les courriels se retrouveraient aux
 quatre coins d'un carré. Compter les mots ou noter leur simple présence, avec un
 nombre entier ou avec 0/1, est un choix de représentation, et il en existe
 beaucoup d'autres. Nous garderons les comptes, qui sont plus précis.
@@ -183,7 +183,7 @@ beaucoup d'autres. Nous garderons les comptes, qui sont plus précis.
 L'idée s'applique donc à des objets très différents. Qu'il s'agisse d'une maison,
 d'une image ou d'un courriel, dès qu'on sait décrire un objet par des nombres, il
 devient un point dans un espace, et la ressemblance entre objets se mesure par
-leur proximité. Le prochain chapitre utilise cette idée pour **prédire par
+leur proximité. Le [prochain chapitre](docs/module2/40-predire-par-ressemblance) utilise cette idée pour **prédire par
 ressemblance**.
 
 {{% details "Sous le capot : des vecteurs aux bits (optionnel)" %}}
