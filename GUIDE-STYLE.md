@@ -51,7 +51,7 @@ agréable, mais sans mise en scène.
 ## Ne jamais toucher
 
 Titres de sections `##`/`###` (leurs ancres sont liées ailleurs), front matter,
-liens et ancres, shortcodes (`{{< image … >}}`, `{{< applet … >}}`,
+liens et ancres, shortcodes (`{{< image … >}}` : seuls `alt` et `title` peuvent être neutralisés, `{{< applet … >}}`,
 `{{< youtube … >}}`, `{{% hint %}}`, `{{% details "…" %}}` dont le titre peut
 toutefois être neutralisé), images et leurs attributs, blocs de code, formules
 mathématiques, tableaux (sauf le texte des cellules, à neutraliser au besoin),
