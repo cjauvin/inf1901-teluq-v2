@@ -253,25 +253,25 @@
       <g
          id="g1636">
         <path
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.921816"
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round"
            d="M 323.27424,164.46165 H 179.97856 v -5.37733 H 323.27424 V 49.426527 H 176.82233 v -5.0454 H 329.6023 V 279.49677 H 24.725019 V 44.384482 h 6.339258 V 274.48623 H 323.27424 Z"
            id="path188"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccccccccccccccc" />
         <path
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.921816"
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round"
            d="M 554.5792,279.49677 V 54.817138 L 737.45268,279.49677 h 6.32807 V 44.463181 H 737.8433 V 270.08311 L 553.78233,44.463181 h -5.5312 V 279.49677 Z"
            id="path196"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccccccccccc" />
         <path
-           style="fill:none;stroke:#000000;stroke-width:5.88524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:11;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
            d="M 326.6547,45.441137 438.66586,272.71558 551.19521,45.530869"
            id="path75"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccc" />
         <path
-           style="fill:none;stroke:#000000;stroke-width:5.88524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:11;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
            d="M 383.1837,161.62227 H 494.68689"
            id="path77"
            inkscape:connector-curvature="0"
@@ -283,7 +283,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-1"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3132"
            x="74.570259"
@@ -291,7 +291,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-2"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3134"
            x="127.04873"
@@ -299,7 +299,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-3"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3136"
            x="170.01956"
@@ -307,7 +307,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-4"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3138"
            x="241.79297"
@@ -315,7 +315,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-5"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3140"
            x="291.10223"
@@ -323,7 +323,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-3"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3142"
            x="334.07306"
@@ -331,7 +331,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-6"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3144"
            x="399.97409"
@@ -339,7 +339,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-7"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3146"
            x="432.78479"
@@ -347,7 +347,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-8"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3148"
            x="481.34836"
@@ -355,7 +355,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-9"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3150"
            x="530.47119"
@@ -363,7 +363,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-10"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3154"
            x="599.16858"
@@ -371,7 +371,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-11"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3156"
            x="654.16376"
@@ -379,7 +379,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-12"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
         <use
            id="use3158"
            x="697.13458"
@@ -387,7 +387,7 @@
            width="770"
            height="415"
            xlink:href="#glyph2-9"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.6;stroke-linejoin:round" />
       </g>
     </g>
   </g>
