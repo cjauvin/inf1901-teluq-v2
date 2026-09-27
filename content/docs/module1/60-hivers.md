@@ -6,6 +6,10 @@ slug: hivers-et-bascule
 
 # Les hivers et la bascule
 
+{{< image src="/images/module1/bruegel-chasseurs-neige.jpg" alt="Tableau de Bruegel : trois chasseurs et leurs chiens rentrent au village par une colline enneigée ; en contrebas, des étangs gelés où patinent des villageois, et des montagnes au loin sous un ciel gris-vert." title="Pieter Bruegel l'Ancien, Les Chasseurs dans la neige (1565). L'expression « hiver de l'IA » désigne les périodes où l'intérêt et le financement pour la recherche en IA ont fortement diminué." loading="lazy" >}}
+
+<p class="image-credit">Pieter Bruegel l'Ancien, <em>Les Chasseurs dans la neige</em> (1565), Kunsthistorisches Museum, Vienne. Domaine public, via Wikimedia Commons.</p>
+
 ## Le premier hiver : la mort du perceptron (1969)
 
 Le chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » a présenté le

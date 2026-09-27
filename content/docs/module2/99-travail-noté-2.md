@@ -264,19 +264,19 @@ La classification finale se trouve dans la colonne `O` :
 
 8. Quelles sont les probabilités non conditionnelles (à priori) ? À quoi servent-elles ?
 
-8. Est-ce qu'il serait possible d'utiliser seulement ces probabilités
+9. Est-ce qu'il serait possible d'utiliser seulement ces probabilités
    non conditionnelles pour faire un modèle de classification ? Quelles
    conséquences cela entraînerait-il ?
 
-9. De quelle manière peut-on dire que ce modèle généralise ?
+10. De quelle manière peut-on dire que ce modèle généralise ?
 
-10. Est-ce que l'ordre des mots joue un rôle dans les décisions de ce
+11. Est-ce que l'ordre des mots joue un rôle dans les décisions de ce
     modèle ? Expliquez pourquoi.
 
-11. Si l'ordre des mots ne joue pas de rôle, comment pourrait-on
+12. Si l'ordre des mots ne joue pas de rôle, comment pourrait-on
     modifier le modèle pour qu'il en joue un ?
 
-12. Est-ce que certains mots aident particulièrement le modèle ? Si oui,
+13. Est-ce que certains mots aident particulièrement le modèle ? Si oui,
     pourquoi ?
 
-13. Est-ce que certains mots sont moins utiles ? Si oui, pourquoi ?
+14. Est-ce que certains mots sont moins utiles ? Si oui, pourquoi ?
