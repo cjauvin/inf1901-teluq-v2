@@ -6,177 +6,171 @@ slug: modele-le-plus-bete
 
 # Le modèle le plus bête
 
-À la fin de la page précédente, nous nous sommes posé une question presque
-absurde : quelle est la prédiction la plus bête qu'on puisse imaginer ?
-Prenons-la au sérieux, car la pire réponse possible a, paradoxalement, beaucoup
-à nous apprendre. Et, chemin faisant, elle va nous obliger à dire ce qu'est, au
-juste, un *modèle*.
+À la fin de la page précédente, nous avons posé une question qui peut sembler
+absurde : quelle est la prédiction la plus bête qu'on puisse imaginer ? Cette
+question mérite d'être prise au sérieux, parce que la pire réponse possible est
+instructive. Elle nous obligera aussi à préciser ce qu'est un *modèle*.
 
 ## Toujours prédire la moyenne
 
-Voici donc le pire « prédicteur » concevable : pour *n'importe quelle* maison, on
-ignore tout d'elle (sa superficie, son âge, son nombre de chambres) et on
-annonce toujours le **même** prix : le **prix moyen** de toutes les maisons de
-notre liste.
+Le pire « prédicteur » qu'on puisse concevoir est le suivant : pour n'importe
+quelle maison, on ignore toutes ses caractéristiques (sa superficie, son âge, son
+nombre de chambres) et on annonce toujours le **même** prix, le **prix moyen** de
+toutes les maisons de notre liste.
 
-Dans notre exemple, ce prix moyen tourne autour de **500 000 \\$**. La prédiction
-ne dépend alors plus de rien : un minuscule studio ? 500 000 \\$. Un vaste manoir ?
-500 000 \\$ aussi. C'est manifestement ridicule.
+Dans notre exemple, ce prix moyen est d'environ **500 000 \\$**. La prédiction ne
+dépend donc plus de rien. Elle est de 500 000 \\$ pour un très petit studio, et
+de 500 000 \\$ aussi pour un grand manoir. C'est évidemment absurde.
 
-Et pourtant — c'est parfaitement défini, ça ne « plante » jamais, et ça donne
-toujours une réponse. Sur le nuage de points de la page précédente, ce
-prédicteur se réduit à une simple **ligne horizontale** : la même hauteur
-(500 000 \\$) quelle que soit la superficie. Elle traverse le nuage en son milieu,
-au-dessus des maisons bon marché, en dessous des plus chères.
+Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et
+il donne toujours une réponse. Sur le nuage de points de la page précédente, il
+correspond à une simple **ligne horizontale**, à la même hauteur (500 000 \\$)
+quelle que soit la superficie. Cette ligne traverse le nuage en son milieu,
+au-dessus des maisons bon marché et en dessous des plus chères.
 
 {{< image src="/images/module2/maisons-baseline.svg" alt="Le nuage de maisons traversé par une droite horizontale à 500 000 $ : un modèle qui prédit toujours le prix moyen, sans tenir compte de la superficie." title="Le modèle le plus bête : une droite plate à 500 000 $, qui ignore complètement la superficie." loading="lazy" >}}
 
 ## La même bêtise, pour l'autre question
 
-Et si l'on nous posait plutôt la **seconde question** du chapitre précédent :
-*cette maison partira-t-elle vite ?* Le prédicteur le plus bête existe là aussi,
-et il obéit à la même logique : ignorer superbement la maison qu'on lui présente,
-et répondre toujours la même chose.
+Le prédicteur le plus bête existe aussi pour la **seconde question** du chapitre
+précédent, *cette maison partira-t-elle vite ?* Il suit la même logique : il
+ignore la maison qu'on lui présente et répond toujours la même chose.
 
-Mais répondre quoi ? Pas la moyenne, cette fois : on ne peut pas faire la moyenne
-de « oui » et de « non ». La bêtise équivalente consiste à donner **la réponse la
-plus fréquente**, celle qui revient le plus souvent dans nos registres. Si, parmi
-les maisons déjà vendues, 60 % ont trouvé preneur en moins de trente jours, notre
-prédicteur bête répondra « oui », toujours, pour une maison neuve à deux pas du
-centre comme pour une bicoque des années 1970 perdue en banlieue.
+Il ne peut cependant pas répondre la moyenne, parce qu'on ne peut pas faire la
+moyenne de « oui » et de « non ». L'équivalent consiste à donner **la réponse la
+plus fréquente**, celle qui revient le plus souvent dans nos registres. Si 60 %
+des maisons déjà vendues ont trouvé preneur en moins de trente jours, ce
+prédicteur répondra toujours « oui », aussi bien pour une maison neuve proche du
+centre que pour une vieille maison des années 1970 située loin en banlieue.
 
-Deux questions de nature très différente, et pourtant la **même ossature** : une
-entrée qu'on ignore, une sortie constante, et une réponse tirée des seules
-données. C'est la première fois que nous voyons cette parenté ; ce ne sera pas la
-dernière.
+Les deux questions sont de nature très différente, mais les deux prédicteurs ont
+la **même structure** : une entrée qu'on ignore, une sortie constante et une
+réponse tirée uniquement des données. Nous retrouverons souvent cette
+ressemblance entre les deux questions.
 
 ## Qu'est-ce qu'un modèle, au juste ?
 
-Nous venons d'appeler ce prédicteur un « modèle ». Profitons-en pour fixer le
-sens de ce mot, car il sera au cœur de tout le module.
+Nous venons d'appeler ce prédicteur un « modèle ». Il faut préciser le sens de ce
+mot, qui sera central dans tout le module.
 
 > Un **modèle**, c'est une recette qui transforme une description (l'entrée) en
 > une prédiction (la sortie).
 
-C'est tout. Notre prédicteur bête y entre de plein droit : on lui donne une
-maison en entrée, il renvoie un prix en sortie. Qu'il ignore superbement cette
-entrée ne le disqualifie pas : ça en fait juste un *très mauvais* modèle, pas un
-non-modèle.
+Notre prédicteur bête correspond à cette définition : on lui donne une maison en
+entrée, et il renvoie un prix en sortie. Le fait qu'il ignore cette entrée ne
+l'empêche pas d'être un modèle. C'est seulement un très mauvais modèle.
 
-Remarquez de quoi ce modèle est fait : **un seul nombre**, le prix moyen
-(500 000 \\$). Ce nombre, c'est ce que le modèle a « retenu » des données ; on
-l'appelle son **paramètre**. Et le calculer (faire la moyenne des prix observés),
-c'est déjà une forme rudimentaire d'*apprentissage* : le modèle a tiré son
-unique connaissance des exemples qu'on lui a montrés.
+Ce modèle est composé d'**un seul nombre**, le prix moyen (500 000 \\$). Ce
+nombre représente ce que le modèle a « retenu » des données ; on l'appelle son
+**paramètre**. Le calcul de ce nombre (la moyenne des prix observés) est déjà une
+forme simple d'*apprentissage*, puisque le modèle a tiré sa seule connaissance
+des exemples qu'on lui a fournis.
 
-Ce nombre n'a donc rien d'arbitraire. On aurait pu annoncer 12 \\$, ou un
-milliard : ç'aurait été tout aussi bête, puisque tout aussi aveugle à la maison
-qu'on présente, mais bien plus faux. Le prix moyen, lui, a été **calculé** à
-partir des ventes passées, et il fait sens : de tous les nombres qu'on pourrait
-annoncer à toutes les maisons à la fois, c'est celui qui se trompe le moins, en
-moyenne. La bêtise du modèle tient à ce qu'il ignore, pas à ce qu'il retient.
-Son jumeau ne fonctionne pas autrement : son unique paramètre, à lui, est la
-réponse majoritaire (« oui »), obtenue en comptant plutôt qu'en moyennant, et
-tout aussi sensée, puisque c'est la réponse qui a le plus de chances d'être la
-bonne quand on ne sait rien d'autre.
+Ce nombre n'est donc pas arbitraire. On aurait pu annoncer 12 \\$, ou un
+milliard. Ce modèle aurait été tout aussi bête, puisqu'il ignorerait lui aussi la
+maison présentée, mais il se tromperait beaucoup plus. Le prix moyen a été
+**calculé** à partir des ventes passées, et il a un sens : parmi tous les nombres
+qu'on pourrait annoncer pour toutes les maisons à la fois, c'est celui qui se
+trompe le moins, en moyenne. La faiblesse du modèle vient de ce qu'il ignore, et
+non de ce qu'il retient. Le modèle jumeau fonctionne de la même façon. Son unique
+paramètre est la réponse majoritaire (« oui »), obtenue en comptant plutôt qu'en
+calculant une moyenne. Ce choix est lui aussi justifié, puisque c'est la réponse
+qui a le plus de chances d'être correcte quand on ne sait rien d'autre.
 
-Tout le reste du module ne fera qu'enrichir cette image. Les modèles que nous
-construirons auront davantage de paramètres : un, puis deux, puis des milliers,
-puis des milliards. Toute la difficulté consistera à trouver les *bonnes
-valeurs* pour ces paramètres, celles qui collent le mieux aux données. Mais
-l'ossature, elle, ne changera jamais : une entrée, une recette réglée par des
+Le reste du module développe cette idée. Les modèles que nous construirons
+auront davantage de paramètres : un, puis deux, puis des milliers, puis des
+milliards. La principale difficulté consistera à trouver les bonnes valeurs pour
+ces paramètres, celles qui correspondent le mieux aux données. La structure
+restera cependant toujours la même : une entrée, une recette réglée par des
 paramètres, une sortie.
 
 ## Pourquoi un modèle aussi bête est utile
 
-Si ce modèle est si mauvais, pourquoi s'y attarder ? Parce qu'il nous offre un
-**étalon**, un point de comparaison contre lequel juger tous les modèles à
-venir.
+Ce modèle est très mauvais, mais il est utile parce qu'il fournit un **étalon**,
+c'est-à-dire un point de comparaison pour juger tous les modèles suivants.
 
-« Bon » et « mauvais » ne veulent en effet rien dire dans l'absolu. Pour savoir
-si un modèle vaut quelque chose, il faut une référence ; et la plus honnête qui
-soit, c'est : *fait-il mieux que de ne rien regarder du tout ?* Un modèle, si
-sophistiqué soit-il, incapable de battre « toujours 500 000 \\$ » n'aurait,
-littéralement, rien appris d'utile.
+Les mots « bon » et « mauvais » n'ont pas de sens dans l'absolu. Pour savoir si
+un modèle a de la valeur, il faut une référence. La référence la plus élémentaire
+consiste à vérifier s'il fait mieux qu'un modèle qui ne regarde rien du tout. Un
+modèle, même sophistiqué, qui ne fait pas mieux que « toujours 500 000 \\$ » n'a
+rien appris d'utile.
 
-On peut rendre cette comparaison concrète sans la moindre formule : il suffit de
-mesurer **de combien un modèle se trompe, en moyenne**. Pour le prédicteur bête,
-l'écart entre le prix annoncé (toujours 500 000 \\$) et le vrai prix dépasse
-250 000 \\$ aux extrêmes. C'est exactement cette
-« distance à la vérité » qu'un meilleur modèle cherchera à réduire. Nous lui
-donnerons plus loin un nom et une définition précise, la *fonction d'erreur*,
-mais l'intuition suffit ici : un bon modèle, c'est un modèle qui se trompe moins.
+On peut faire cette comparaison concrètement, sans formule, en mesurant **de
+combien un modèle se trompe, en moyenne**. Pour le prédicteur bête, l'écart entre
+le prix annoncé (toujours 500 000 \\$) et le vrai prix dépasse 250 000 \\$ pour
+les maisons situées aux extrêmes. C'est cette « distance à la vérité » qu'un
+meilleur modèle cherchera à réduire. Nous lui donnerons plus loin un nom et une
+définition précise, la *fonction d'erreur*, mais l'idée suffit pour l'instant :
+un bon modèle est un modèle qui se trompe moins.
 
 {{< image src="/images/module2/maisons-erreurs.svg" alt="Le nuage de maisons et la droite plate à 500 000 $, avec un segment vertical rouge reliant chaque maison à la droite : c'est l'erreur du modèle sur cette maison, longue aux extrêmes et courte près du centre." title="L'erreur du modèle, maison par maison : l'écart vertical entre le vrai prix et la prédiction." loading="lazy" >}}
 
-C'est ce rôle d'étalon qui, en pratique, évite bien des illusions. Un chiffre de
-performance ne signifie rien tout seul : la première question à poser devant un
-modèle est toujours *« fait-il vraiment mieux que de prédire bêtement la
-moyenne ? »*. Étonnamment souvent, la réponse est non — et c'est précisément
-l'étalon qui le révèle.
+En pratique, ce rôle d'étalon évite bien des erreurs d'interprétation. Un chiffre
+de performance ne signifie rien à lui seul. Devant un modèle, la première
+question à poser est toujours de savoir s'il fait vraiment mieux que de prédire
+bêtement la moyenne. La réponse est assez souvent non, et c'est l'étalon qui
+permet de le constater.
 
-Pour la question en oui/non, le principe est identique ; seule la façon de
-compter change. Plutôt qu'un écart en dollars, on regarde tout simplement **quelle
-proportion des réponses le modèle obtient justes**. Notre prédicteur jumeau, qui
-répond « oui » à tout, aura donc raison dans 60 % des cas : voilà l'étalon à
-battre.
+Pour la question en oui/non, le principe est le même, mais on compte autrement.
+Au lieu d'un écart en dollars, on regarde **quelle proportion des réponses le
+modèle obtient justes**. Le prédicteur jumeau, qui répond « oui » à tout, a donc
+raison dans 60 % des cas. C'est l'étalon à battre.
 
-{{< image src="/images/module2/maisons-erreurs-oui-non.svg" alt="Exactement le nuage coloré de la page précédente : les mêmes maisons, aux mêmes places, la distance du centre-ville en abscisse et l'année de construction en ordonnée. Mais toutes sont maintenant bleues : le modèle répond « oui » (vendue en moins de 30 jours) pour chacune, sans jamais les regarder. Un ✗ rouge barre celles qui avaient en réalité traîné, c'est-à-dire précisément celles qui étaient rouges sur la figure d'origine : ce sont ses erreurs, et elles remplissent presque tout l'amas du bas à droite, celui des maisons éloignées et anciennes." title="Le prédicteur jumeau à l'œuvre. Il peint toutes les maisons en « oui » ; les ✗ marquent celles où il se trompe. On ne mesure plus un écart en dollars — on compte les réponses justes." loading="lazy" >}}
+{{< image src="/images/module2/maisons-erreurs-oui-non.svg" alt="Le nuage coloré de la page précédente : les mêmes maisons, aux mêmes places, la distance du centre-ville en abscisse et l'année de construction en ordonnée. Toutes sont maintenant bleues, parce que le modèle répond « oui » (vendue en moins de 30 jours) pour chacune, sans tenir compte de leurs caractéristiques. Un ✗ rouge marque celles qui s'étaient en réalité vendues lentement, c'est-à-dire celles qui étaient rouges sur la figure d'origine. Ce sont ses erreurs, et elles occupent presque tout l'amas du bas à droite, celui des maisons éloignées et anciennes." title="Le prédicteur jumeau colore toutes les maisons en « oui », et les ✗ marquent celles où il se trompe. On ne mesure plus un écart en dollars, on compte les réponses justes." loading="lazy" >}}
 
-C'est le nuage coloré de la page précédente, à l'identique : les **mêmes
-maisons**, aux mêmes places. Seule leur couleur a changé : le modèle répondant
-« oui » partout, il les peint toutes en bleu, et les ✗ signalent celles qui
-étaient rouges. Remarquez où ils tombent : presque tous dans l'amas du bas à
-droite, celui des maisons éloignées et anciennes. Le prédicteur bête s'y trompe
-en bloc, et c'est bien normal, puisqu'il répond « oui » sans jamais regarder ni
-la distance ni l'année.
+Il s'agit du nuage coloré de la page précédente, sans modification : les **mêmes
+maisons**, aux mêmes places. Seule leur couleur a changé. Comme le modèle répond
+« oui » partout, il les colore toutes en bleu, et les ✗ indiquent celles qui
+étaient rouges. Presque tous les ✗ se trouvent dans l'amas du bas à droite,
+celui des maisons éloignées et anciennes. Le prédicteur bête se trompe sur
+presque tout cet amas, ce qui est normal, puisqu'il répond « oui » sans tenir
+compte de la distance ni de l'année.
 
-Comparez maintenant avec le graphique des écarts de prix, quelques lignes plus
-haut. Les axes ne sont pas les mêmes (ils ne peuvent pas l'être, les deux
-questions ne se lisant pas dans le même plan), mais ce n'est pas là qu'est le
-contraste. Là, chaque maison portait un segment plus ou moins long, et l'erreur
-se **mesurait** ; ici, chaque maison est simplement juste ou fausse, et l'erreur
-se **compte**.
+On peut comparer cette figure avec le graphique des écarts de prix présenté plus
+haut. Les axes sont différents (ils ne peuvent pas être les mêmes, parce que les
+deux questions ne se lisent pas dans le même plan), mais la différence principale
+est ailleurs. Dans le graphique des prix, chaque maison portait un segment plus
+ou moins long, et l'erreur se **mesurait**. Ici, chaque réponse est simplement
+juste ou fausse, et l'erreur se **compte**.
 
 {{% hint warning %}}
-Cet étalon-là réserve une surprise, et elle est instructive. Imaginez une question
-bien plus déséquilibrée : *ce courriel est-il un pourriel ?*, dans une boîte où
-99 % des messages sont légitimes. Le prédicteur le plus bête — « ce n'est jamais
-un pourriel » — obtient d'emblée **99 % de bonnes réponses**… tout en étant
-parfaitement inutile, puisqu'il ne détecte aucun pourriel. Un chiffre flatteur
-peut donc masquer un modèle sans la moindre valeur. Nous y reviendrons : *bien*
-mesurer la qualité d'un modèle est autrement plus subtil qu'il n'y paraît.
+Cet étalon peut être trompeur, et ce cas est instructif. Prenons une question
+beaucoup plus déséquilibrée, *ce courriel est-il un pourriel ?*, dans une boîte
+où 99 % des messages sont légitimes. Le prédicteur le plus bête, qui répond « ce
+n'est jamais un pourriel », obtient **99 % de bonnes réponses**, tout en étant
+inutile, puisqu'il ne détecte aucun pourriel. Un chiffre élevé peut donc cacher
+un modèle sans valeur. Nous y reviendrons, car bien mesurer la qualité d'un
+modèle est plus difficile qu'il n'y paraît.
 {{% /hint %}}
 
 ## Leur défaut, et ce qu'il révèle
 
-Nos deux modèles ont le **même** défaut, et il saute aux yeux. Le premier accorde
-le même prix à un studio et à un manoir. Le second promet une vente rapide aussi
-bien à une maison neuve près du centre qu'à une vieille bicoque à vingt
-kilomètres de là. Ni l'un ni l'autre n'a, à aucun moment, *regardé* la maison
-qu'on lui présente. Toute l'information utile (la superficie, l'âge, la distance)
-est là, sous leurs yeux, et ils la jettent.
+Les deux modèles ont le **même** défaut, qui est évident. Le premier attribue le
+même prix à un studio et à un manoir. Le second prévoit une vente rapide aussi
+bien pour une maison neuve près du centre que pour une vieille maison à vingt
+kilomètres de là. Aucun des deux ne tient compte de la maison qu'on lui présente.
+Toute l'information utile (la superficie, l'âge, la distance) est disponible, et
+ils ne l'utilisent pas.
 
-Les deux dernières figures le montrent d'ailleurs de façon frappante, et il vaut
-la peine de s'y arrêter : **les erreurs ne sont pas dispersées au hasard**. Les
-segments les plus longs se trouvent tous aux extrémités du nuage, du côté des
-maisons très bon marché ou très chères ; et les ✗ se massent dans un seul coin du
-dessin, celui des maisons éloignées et anciennes. Or une erreur qui se
-concentre quelque part est une erreur qu'on peut **prévoir** — donc corriger.
-Si nos modèles se trompaient de façon parfaitement imprévisible, il n'y aurait
-rien à en tirer ; c'est justement parce que leurs ratés dessinent un motif qu'il
-reste du travail à faire.
+Les deux dernières figures montrent aussi un point important : **les erreurs ne
+sont pas dispersées au hasard**. Les segments les plus longs se trouvent aux
+extrémités du nuage, du côté des maisons très bon marché ou très chères, et les
+✗ se concentrent dans un seul coin du graphique, celui des maisons éloignées et
+anciennes. Or une erreur qui se concentre à un endroit est une erreur qu'on peut
+**prévoir**, donc corriger. Si les modèles se trompaient de façon totalement
+imprévisible, on ne pourrait rien en tirer. C'est parce que leurs erreurs forment
+un motif qu'il est possible de les améliorer.
 
-C'est précisément là que se loge la marge de progression. Si la moyenne (ou la
-réponse majoritaire) est notre meilleur point de départ *tant qu'on ignore tout*
-d'une maison, alors la seule façon de faire mieux est de **cesser de l'ignorer** :
-tenir compte de ses caractéristiques. Une grande maison devrait tirer la
-prédiction de prix vers le haut ; une vieille bicoque, vers le bas. Et une maison
+C'est là que se trouve la marge de progression. Si la moyenne (ou la réponse
+majoritaire) est le meilleur point de départ quand on ne sait rien d'une maison,
+la seule façon de faire mieux est de **cesser de l'ignorer**, c'est-à-dire de
+tenir compte de ses caractéristiques. Une grande maison devrait faire monter la
+prédiction de prix, et une vieille maison devrait la faire baisser. Une maison
 éloignée du centre devrait faire pencher la réponse du second modèle vers le
-« non ». Un bon modèle, ce sera un modèle qui *écoute* l'entrée.
+« non ». Un bon modèle est donc un modèle qui tient compte de l'entrée.
 
-Mais avant de pouvoir s'en servir, encore faut-il savoir ce qu'« écouter
-l'entrée » signifie concrètement. Qu'est-ce, au juste, qu'une « donnée » pour une
-machine ? Comment une maison, ou une image, ou un courriel, se transforme-t-elle
-en quelque chose qu'un modèle peut manipuler ? C'est l'objet de la [page
+Il faut cependant d'abord préciser ce que signifie concrètement « tenir compte de
+l'entrée », c'est-à-dire ce qu'est une « donnée » pour une machine, et comment
+une maison, une image ou un courriel est transformé en quelque chose qu'un modèle
+peut manipuler. C'est l'objet de la [page
 suivante](docs/module2/30-les-donnees).

@@ -8,111 +8,112 @@ slug: representer-le-monde
 
 ## Le sens, angle mort de la machine
 
-Faisons le bilan des chapitres précédents. Le [Logic
+Les chapitres précédents ont présenté plusieurs programmes. Le [Logic
 Theorist](docs/module1/20-deux-paris) démontrait des théorèmes, [Deep
 Blue](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997)
-gagnait aux échecs, [ELIZA](docs/module1/30-chercher-raisonner/#lautre-visage-eliza-ou-lillusion-de-comprendre)
-tenait la conversation, mais
-tous, au fond, faisaient *la même chose* : **manipuler des symboles d'après leur
-forme**, selon des règles. ELIZA repérait le mot « mère » sans avoir la moindre
-idée de ce qu'est une mère. C'est ce qu'on appelle le niveau de la **syntaxe** :
-agencer des symboles correctement, sans toucher à leur sens.
+gagnait aux échecs et [ELIZA](docs/module1/30-chercher-raisonner/#lautre-visage-eliza-ou-lillusion-de-comprendre)
+tenait une conversation. Tous faisaient cependant la même chose : ils
+**manipulaient des symboles d'après leur forme**, selon des règles. Par exemple,
+ELIZA repérait le mot « mère » sans savoir ce qu'est une mère. On parle dans ce cas
+du niveau de la **syntaxe**, qui consiste à agencer correctement des symboles sans
+tenir compte de leur sens.
 
-Or comprendre le monde demande bien davantage. Les spécialistes du langage
-distinguent trois niveaux, qu'un seul petit exemple suffit à éclairer. Imaginez
-qu'à table, quelqu'un vous dise : **« Pouvez-vous me passer le sel ? »**
+Comprendre le monde demande davantage. Les spécialistes du langage distinguent
+trois niveaux, qu'on peut illustrer par un exemple simple. À table, quelqu'un vous
+dit **« Pouvez-vous me passer le sel ? »**
 
-- La **syntaxe**, c'est la *forme* : la phrase est une question grammaticalement
-  bien construite. Une machine peut vérifier ça sans rien comprendre.
-- La **sémantique**, c'est le *sens littéral* : la phrase interroge votre
-  *capacité* à passer le sel. Pour y accéder, il faut savoir ce que veulent dire
-  « sel », « passer », « pouvoir ».
-- La **pragmatique**, c'est l'*intention réelle en contexte* : tout le monde
+- La **syntaxe** concerne la *forme*. La phrase est une question grammaticalement
+  bien construite. Une machine peut le vérifier sans rien comprendre.
+- La **sémantique** concerne le *sens littéral*. La phrase porte sur votre
+  *capacité* à passer le sel. Pour la comprendre à ce niveau, il faut savoir ce que
+  signifient « sel », « passer » et « pouvoir ».
+- La **pragmatique** concerne l'*intention réelle en contexte*. Tout le monde
   comprend qu'il ne s'agit pas d'une question sur vos aptitudes (« oui, je peux
-  passer le sel! »), mais d'une **demande** polie : « passez-moi le sel ». Saisir
-  cela exige du contexte et une montagne de sous-entendus que nous partageons
-  tous.
+  passer le sel! »), mais d'une **demande** polie, « passez-moi le sel ». Pour
+  comprendre cela, il faut connaître le contexte et un grand nombre de
+  sous-entendus que nous partageons tous.
 
-Voilà le drame de l'IA symbolique résumé en une phrase : elle excellait au niveau
-de la **syntaxe**, peinait à atteindre la **sémantique**, et se fracassait sur la
-**pragmatique**. Car pour passer de la forme au sens, une machine a besoin de
-quelque chose dont Deep Blue et ELIZA étaient totalement dépourvus : des
-**connaissances** sur le monde. C'est le grand chantier de ce chapitre, et, on
-le verra, sa grande déconvenue. Reste la question vertigineuse par laquelle tout
-commence : comment loger dans une machine *ce que tout le monde sait* ?
+On peut résumer ainsi la situation de l'IA symbolique : elle réussissait bien au
+niveau de la **syntaxe**, atteignait difficilement la **sémantique** et échouait
+au niveau de la **pragmatique**. Pour passer de la forme au sens, une machine a
+besoin de **connaissances** sur le monde, et Deep Blue et ELIZA n'en avaient
+aucune. Ce chapitre porte sur les tentatives pour fournir ces connaissances aux
+machines et sur leur échec. La question de départ est la suivante : comment
+mettre dans une machine ce que tout le monde sait ?
 
 ## Donner un savoir à la machine
 
-Si l'intelligence exige des connaissances, il faut trouver le moyen de les
+Si l'intelligence exige des connaissances, il faut trouver un moyen de les
 **inscrire dans la machine** sous une forme qu'elle puisse exploiter. Entre la fin
-des années 1960 et les années 1970, trois grandes idées s'imposent, trois façons
-de structurer le savoir.
+des années 1960 et les années 1970, trois grandes façons de structurer le savoir
+sont proposées.
 
-**Les réseaux sémantiques** (Ross Quillian). L'idée : représenter les
-connaissances comme un **réseau de concepts reliés** par des relations. « Canari »
-est relié à « oiseau » par un lien *est-un*, lui-même relié à « animal » ;
-« oiseau » est relié à « ailes » par un lien *possède*. L'intérêt est que la
-machine peut alors **déduire** ce qu'on ne lui a jamais dit explicitement : un
-canari a-t-il des ailes ? Il suffit de suivre les flèches — *canari est-un
-oiseau*, *oiseau possède ailes* — pour conclure que oui. (Notez que ces réseaux
-portent le mot **sémantique** dans leur nom : c'est tout l'enjeu, passer de la
-forme au *sens*.)
+**Les réseaux sémantiques** (Ross Quillian). On représente les connaissances comme
+un **réseau de concepts reliés** par des relations. « Canari » est relié à
+« oiseau » par un lien *est-un*, et « oiseau » est relié à « animal » de la même
+façon. « Oiseau » est relié à « ailes » par un lien *possède*. La machine peut
+alors **déduire** des faits qu'on ne lui a pas donnés explicitement. Par exemple,
+pour savoir si un canari a des ailes, il suffit de suivre les liens (*canari est-un
+oiseau*, *oiseau possède ailes*) pour conclure que oui. Ces réseaux portent le mot
+**sémantique** dans leur nom parce que leur objectif est de passer de la forme au
+sens.
 
 {{< image src="/images/module1/reseau-semantique.svg" alt="Réseau sémantique reliant canari, oiseau et animal par des liens « est-un », avec héritage des propriétés." title="Un réseau sémantique : les propriétés s'héritent en remontant les liens « est-un »." loading="lazy" >}}
 
-**Les frames, ou « cadres »** (Marvin Minsky, 1974). Plutôt que des concepts
-isolés, Minsky propose de regrouper le savoir en **situations types** munies de
+**Les frames, ou « cadres »** (Marvin Minsky, 1974). Au lieu de concepts isolés,
+Minsky propose de regrouper le savoir en **situations types** qui comportent des
 « cases » à remplir, avec des valeurs par défaut. Le cadre « chambre d'hôtel »
-comporte des cases pour le lit, la porte, la salle de bain ; par défaut, on
+comporte des cases pour le lit, la porte et la salle de bain. Par défaut, on
 s'attend à y trouver un lit. Quand vous entrez dans une chambre d'hôtel inconnue,
-vous n'analysez pas la scène de zéro : vous chargez ce cadre tout prêt, et vous ne
-corrigez que ce qui détonne. C'est une manière de capturer nos **attentes**.
+vous n'analysez pas toute la scène. Vous utilisez ce cadre déjà connu et vous ne
+corrigez que ce qui ne correspond pas. Les frames permettent donc de représenter
+nos **attentes**.
 
-{{< image src="/images/module1/frame-chambre-hotel.svg" alt="Le cadre « chambre d'hôtel » sous forme de fiche : des cases (lit, salle de bain, porte, fenêtre, téléviseur) avec leurs valeurs par défaut." title="Un frame : une situation type aux cases déjà pré-remplies de valeurs par défaut." loading="lazy" >}}
+{{< image src="/images/module1/frame-chambre-hotel.svg" alt="Le cadre « chambre d'hôtel » sous forme de fiche : des cases (lit, salle de bain, porte, fenêtre, téléviseur) avec leurs valeurs par défaut." title="Un frame : une situation type dont les cases ont des valeurs par défaut." loading="lazy" >}}
 
-**Les scripts** (Roger Schank et Robert Abelson). Même idée, mais appliquée aux
-**enchaînements d'actions**. Le « script du restaurant » décrit la séquence
-attendue : entrer, s'asseoir, consulter le menu, commander, manger, payer, partir.
-Grâce à lui, une machine peut **combler les trous** d'un récit : si on lui dit
-« Jean est allé au restaurant et a commandé un steak », elle infère qu'il s'est
-assis, qu'il a mangé, puis payé, bien que rien de tout cela n'ait été dit.
+**Les scripts** (Roger Schank et Robert Abelson). L'idée est la même, mais elle
+s'applique à des **enchaînements d'actions**. Le « script du restaurant » décrit la
+séquence attendue : entrer, s'asseoir, consulter le menu, commander, manger, payer,
+partir. Grâce à ce script, une machine peut **compléter** un récit. Si on lui dit
+« Jean est allé au restaurant et a commandé un steak », elle en déduit qu'il s'est
+assis, qu'il a mangé et qu'il a payé, même si le récit ne le dit pas.
 
-{{< image src="/images/module1/script-restaurant.svg" alt="Le script du restaurant en sept étapes ; seules « entrer » et « commander » sont dites, les autres sont comblées par le script." title="Un script : la séquence attendue, où la machine comble d'elle-même les étapes non dites." loading="lazy" >}}
+{{< image src="/images/module1/script-restaurant.svg" alt="Le script du restaurant en sept étapes ; seules « entrer » et « commander » sont dites, les autres sont comblées par le script." title="Un script : la séquence attendue, dont la machine complète les étapes non dites." loading="lazy" >}}
 
-Le point commun de ces trois approches est ce qui faisait défaut à Deep Blue et à
-ELIZA : la capacité à **inférer l'implicite**, à mobiliser un savoir de fond pour
-aller au-delà de ce qui est littéralement énoncé. C'est un pas réel en direction
-de la *sémantique*.
+Ces trois approches ont en commun une capacité qui manquait à Deep Blue et à
+ELIZA, celle d'**inférer l'implicite**, c'est-à-dire d'utiliser un savoir de fond
+pour aller au-delà de ce qui est dit littéralement. Elles représentent un progrès
+réel vers la sémantique.
 
-Ces représentations partagent d'ailleurs un ancêtre plus rigoureux : la **logique
-formelle**, qui rêvait depuis Boole et Frege de réduire le raisonnement à un
-*calcul* sur des symboles : « Socrate est un homme ; tous les hommes sont mortels ;
-donc Socrate est mortel ». Le syllogisme a beau sembler relever du sens, il
-s'obtient par pure mécanique sur la *forme* des énoncés. Et c'est là le fond du
-problème : qu'on enchaîne des règles logiques ou qu'on suive des flèches dans un
-réseau, on manipule toujours la **forme** des symboles. Reste à savoir si la forme
-suffit à capturer le **sens**. Ce pas vers la sémantique, on va le voir, traîne
-avec lui une fragilité redoutable.
+Ces représentations ont un ancêtre plus rigoureux, la **logique formelle**. Depuis
+Boole et Frege, la logique cherche à réduire le raisonnement à un *calcul* sur des
+symboles : « Socrate est un homme ; tous les hommes sont mortels ; donc Socrate est
+mortel ». Ce syllogisme semble porter sur le sens, mais on l'obtient par une
+opération mécanique sur la *forme* des énoncés. Le problème est là. Qu'on enchaîne
+des règles logiques ou qu'on suive des liens dans un réseau, on manipule toujours
+la **forme** des symboles. La question est de savoir si la forme suffit à
+représenter le **sens**. Comme on va le voir, ce progrès vers la sémantique
+s'accompagne d'une fragilité importante.
 
 {{% hint info %}}
 Ces façons de structurer le savoir (réseaux de concepts, cases à remplir,
-hiérarchies *est-un*) pourraient sembler s'être éteintes avec le GOFAI. Il n'en est
-rien : elles ont essaimé. Le **web sémantique**, les **ontologies** et les
-**knowledge graphs** qui font
-tourner la recherche de Google ou Wikidata en descendent en droite ligne, et les
-*cases héritées* des frames ne sont pas sans rappeler les **objets** de la
+hiérarchies *est-un*) n'ont pas disparu avec le GOFAI. Elles ont été reprises
+ailleurs. Le **web sémantique**, les **ontologies** et les
+**knowledge graphs** utilisés
+par la recherche de Google ou par Wikidata en sont les descendants directs, et les
+*cases héritées* des frames ressemblent aux **objets** de la
 programmation moderne. Nous y reviendrons dans « [Les hivers et la
-bascule](docs/module1/60-hivers) », pour mesurer ce que le GOFAI a *vraiment* légué.
+bascule](docs/module1/60-hivers) », pour évaluer ce que le GOFAI a laissé.
 {{% /hint %}}
 
 ## SHRDLU, ou le sommet de l'ambition
 
-C'est dans ce climat d'optimisme qu'un jeune chercheur du MIT, **Terry Winograd**,
-réalise vers **1970** ce qui passe encore pour le sommet de l'IA symbolique :
-**SHRDLU**. Le programme dialogue *en anglais ordinaire* avec un humain, à propos
-d'un petit monde de **blocs colorés** (cubes, pyramides, boîtes posés sur une
-table) qu'il peut déplacer à l'aide d'un bras robotique virtuel. Et la
-conversation est, pour l'époque, stupéfiante :
+C'est dans ce contexte optimiste qu'un jeune chercheur du MIT, **Terry Winograd**,
+réalise vers **1970** un programme qu'on considère encore comme l'un des résultats
+les plus avancés de l'IA symbolique, **SHRDLU**. Le programme dialogue en anglais
+ordinaire avec un humain à propos d'un petit monde de **blocs colorés** (cubes,
+pyramides, boîtes posés sur une table), qu'il peut déplacer à l'aide d'un bras
+robotique virtuel. Pour l'époque, la conversation est très impressionnante :
 
 > — *Prends un gros bloc rouge.*
 > — D'accord.
@@ -122,173 +123,176 @@ conversation est, pour l'époque, stupéfiante :
 > — Par « **le** », je suppose que vous parlez du bloc plus haut que celui que je
 >   tiens.
 
-Regardez ce que SHRDLU réussit là. Il **lève une ambiguïté** (« quelle
-pyramide ? »), il **résout un pronom** (à quoi renvoie « le » ?), il **agit** sur
-le monde et il **se souvient** de ce qu'il vient de faire. Mieux : on peut lui
-demander *« Pourquoi as-tu fait ça ? »* et il **explique** son raisonnement.
+Dans cet échange, SHRDLU **lève une ambiguïté** (quelle pyramide), **résout un
+pronom** (ce à quoi renvoie « le »), **agit** sur le monde et **se souvient** de ce
+qu'il vient de faire. On peut aussi lui demander « Pourquoi as-tu fait ça ? », et
+il **explique** son raisonnement.
 
-{{< image src="/images/module1/micromonde-shrdlu.svg" alt="Le micro-monde de SHRDLU : un cube rouge, une pile de blocs, une pyramide et une boîte posés sur une table, avec un bras robotique." title="Le « micro-monde » de SHRDLU : un univers de poche, entièrement décrit à la main." loading="lazy" >}}
+{{< image src="/images/module1/micromonde-shrdlu.svg" alt="Le micro-monde de SHRDLU : un cube rouge, une pile de blocs, une pyramide et une boîte posés sur une table, avec un bras robotique." title="Le « micro-monde » de SHRDLU : un univers très petit, entièrement décrit à la main." loading="lazy" >}}
 
-Voici SHRDLU à l'œuvre, dans un film de démonstration d'époque (en anglais) :
-les ordres tapés au clavier, les réponses du programme, et le bras virtuel qui
-déplace les blocs.
+Le film de démonstration d'époque ci-dessous (en anglais) montre SHRDLU en
+fonctionnement : les ordres tapés au clavier, les réponses du programme et le bras
+virtuel qui déplace les blocs.
 
 {{< youtube id="bo4RvYJYOzI" >}}
 
-Comment fait-il ? Parce que, derrière le dialogue, SHRDLU entretient un **modèle du
-monde** (*world model*), une représentation interne de sa petite scène : quel bloc
-repose sur quel autre, lequel est rouge, lequel est libre, ce que le bras tient à
-l'instant. À chaque action, il **met ce modèle à jour** ; à chaque question, il le
-**consulte**. C'est cette maquette intérieure qui lui permet de résoudre « le », de
-se rappeler son action passée, de justifier ce qu'il a fait. SHRDLU ne fait pas que
-*parler* des blocs : il en tient, au-dedans de lui, une carte fidèle. Retenez bien
-cette idée : **un modèle du monde est une représentation interne de la réalité, sur
-laquelle on peut raisonner** ; nous la retrouverons, beaucoup plus loin dans le
-cours, au cœur d'un grand débat sur les IA d'aujourd'hui.
+SHRDLU y parvient parce qu'il maintient un **modèle du monde** (*world model*),
+c'est-à-dire une représentation interne de sa petite scène : quel bloc repose sur
+quel autre, lequel est rouge, lequel est libre, ce que le bras tient à ce moment.
+À chaque action, il **met ce modèle à jour**, et à chaque question, il le
+**consulte**. C'est ce modèle interne qui lui permet de résoudre « le », de se
+rappeler son action précédente et de justifier ce qu'il a fait. SHRDLU ne se
+contente donc pas de parler des blocs, il en possède une représentation exacte.
+Cette idée est importante : **un modèle du monde est une représentation interne de
+la réalité, sur laquelle on peut raisonner**. Nous la retrouverons beaucoup plus
+loin dans le cours, au centre d'un débat important sur les IA actuelles.
 
-Sauf que ce tour de force cache un **tour de passe-passe**. Si le modèle du monde de
-SHRDLU est si fidèle, c'est qu'il n'a presque rien à représenter : une poignée de
-blocs, une table, une boîte, quelques formes et couleurs. Dans cet univers de poche,
-on *peut* tout dire à la machine : la liste complète des objets, des propriétés, des
-actions possibles. Le « monde » de SHRDLU tient tout entier dans une représentation
-**codée à la main**. Winograd l'avait d'ailleurs baptisé un **micro-monde** (*blocks
-world*), et le mot *micro* dit tout. Le micro-monde a une vertu précise : il rend le
-problème **traitable** (*tractable*, en anglais). En informatique, un problème
-est traitable quand une machine peut le résoudre en un temps raisonnable, sans
-se perdre dans l'[explosion
+Cette réussite repose cependant sur une simplification. Le modèle du monde de
+SHRDLU est exact parce qu'il a très peu de choses à représenter : quelques blocs,
+une table, une boîte, quelques formes et couleurs. Dans un univers aussi petit, on
+peut tout décrire à la machine, c'est-à-dire la liste complète des objets, des
+propriétés et des actions possibles. Le « monde » de SHRDLU tient entièrement dans
+une représentation **codée à la main**. Winograd l'appelait d'ailleurs un
+**micro-monde** (*blocks world*), et le préfixe *micro* indique bien sa taille.
+L'intérêt du micro-monde est qu'il rend le problème **traitable** (*tractable*, en
+anglais). En informatique, un problème est traitable quand une machine peut le
+résoudre en un temps raisonnable, sans être freinée par l'[explosion
 combinatoire](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) des
-possibilités. Avec une poignée de blocs, tout peut être représenté et chaque
-question trouve sa réponse en un instant. C'est tout le secret de SHRDLU, et
-toute sa limite : le monde réel, lui, n'a rien de traitable en ce sens, comme
-la section suivante va le montrer.
+possibilités. Avec quelques blocs, tout peut être représenté et chaque question
+obtient une réponse immédiatement. C'est ce qui explique la réussite de SHRDLU, et
+c'est aussi sa limite, parce que le monde réel n'est pas traitable en ce sens,
+comme le montre la section suivante.
 
-Que se passe-t-il si l'on sort de la table à blocs ? Rien. Le modèle du monde de
-SHRDLU ne sait rien de la pluie, d'un mensonge ou d'un escalier ; il ne peut pas
-*grandir* vers le monde réel, parce qu'il faudrait alors y faire entrer… tout. C'est
-le sort commun de toutes les approches de ce chapitre : elles brillent tant qu'on
-reste dans un domaine assez petit pour être entièrement décrit, et s'effondrent dès
-qu'affleure l'immensité de ce que nous, humains, tenons pour évident. Cette immensité
-a un nom, et c'est le mur sur lequel le GOFAI tout entier va se briser.
+En dehors de la table à blocs, SHRDLU ne peut rien faire. Son modèle du monde ne
+contient rien sur la pluie, un mensonge ou un escalier. Il ne peut pas être étendu
+au monde réel, parce qu'il faudrait alors y représenter tout ce qui existe. Toutes
+les approches de ce chapitre ont la même limite. Elles fonctionnent tant qu'on
+reste dans un domaine assez petit pour être entièrement décrit, et elles échouent
+dès qu'il faut tenir compte de la très grande quantité de choses que les humains
+considèrent comme évidentes. Cette quantité de savoir évident a un nom, et elle
+constitue la principale limite du GOFAI.
 
 ## Le mur du sens commun
 
-Ce mur a un nom : le **sens commun**. C'est l'immense réservoir de choses si
-évidentes que personne ne prend jamais la peine de les dire. Que l'eau mouille.
-Qu'un objet lâché tombe. Qu'on ne peut pas pousser une corde. Que votre mère est
-plus âgée que vous. Que si Jean entre dans un restaurant, il y entre par la porte
-et non par le plafond. Nous mobilisons à chaque instant des millions de ces
-certitudes muettes, et c'est précisément parce qu'elles vont **sans dire** que
-personne ne les a jamais écrites nulle part.
+Cette limite s'appelle le **sens commun**. Il s'agit de l'ensemble très vaste des
+choses si évidentes que personne ne prend la peine de les dire. Par exemple, l'eau
+mouille, un objet qu'on lâche tombe, on ne peut pas pousser une corde, votre mère
+est plus âgée que vous, et si Jean entre dans un restaurant, il y entre par la
+porte et non par le plafond. Nous utilisons en permanence des millions de
+certitudes de ce genre. Comme elles vont **sans dire**, personne ne les a jamais
+écrites.
 
-Or toute l'IA symbolique repose sur un pari : pour qu'une machine sache, il faut
-lui **inscrire** son savoir. Réseaux sémantiques, frames, scripts, SHRDLU : tous
-fonctionnent tant que ce savoir tient dans un domaine assez petit pour être décrit
-à la main. La machine ne sait que ce qu'on lui a explicitement fourni ; et le sens
-commun, lui, **n'a pas de bord**. Pour le donner à une machine, il faudrait lui
-fournir… le monde entier.
+Or toute l'IA symbolique repose sur un principe : pour qu'une machine sache
+quelque chose, il faut lui **inscrire** ce savoir. Les réseaux sémantiques, les
+frames, les scripts et SHRDLU fonctionnent tant que ce savoir tient dans un domaine
+assez petit pour être décrit à la main. La machine ne sait que ce qu'on lui a
+fourni explicitement. Le sens commun, lui, **n'a pas de limite**. Pour le donner à
+une machine, il faudrait lui décrire le monde entier.
 
-Un homme a pris ce défi au mot. En **1984**, **Douglas Lenat** lance **CYC** (de
-l'anglais *encyclopedia*), une entreprise d'une ambition vertigineuse : **encoder à
-la main**, fait après fait, règle après règle, la totalité du sens commun humain.
-Des équipes ont passé des **décennies** et des dizaines de millions de dollars à
-saisir patiemment des millions d'assertions : « un café chaud refroidit si on le
-laisse », « on ne peut pas être à deux endroits à la fois »… Le projet le plus
-héroïque, et le plus fou, de toute l'histoire du GOFAI.
+Un chercheur a tenté de le faire. En **1984**, **Douglas Lenat** lance **CYC** (de
+l'anglais *encyclopedia*), un projet très ambitieux dont l'objectif est
+d'**encoder à la main**, fait après fait et règle après règle, la totalité du sens
+commun humain. Des équipes y ont consacré des **décennies** et des dizaines de
+millions de dollars, et ont saisi des millions d'assertions, comme « un café chaud
+refroidit si on le laisse » ou « on ne peut pas être à deux endroits à la fois ».
+C'est le projet le plus ambitieux de l'histoire du GOFAI.
 
-{{< image src="/images/module1/cyc-assertions.svg" alt="Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français : Bill Clinton fait partie des présidents des États-Unis ; tous les arbres sont des plantes ; Paris est la capitale de la France ; tout animal à colonne vertébrale a une mère biologique ; et une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent." title="Le sens commun, écrit à la main : quelques entrées de CYC dans sa langue, CycL, et ce qu'elles veulent dire." loading="lazy" >}}
+{{< image src="/images/module1/cyc-assertions.svg" alt="Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français : Bill Clinton fait partie des présidents des États-Unis ; tous les arbres sont des plantes ; Paris est la capitale de la France ; tout animal à colonne vertébrale a une mère biologique ; et une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent." title="Le sens commun écrit à la main : quelques entrées de CYC dans son langage, CycL, et leur signification." loading="lazy" >}}
 
-Et il n'a jamais atteint son but. Non par manque d'argent ou de talent, mais parce
-que la tâche est **sans fond** : pour chaque évidence saisie, dix autres surgissent,
-et chacune en présuppose cent. On ne *remplit* pas le sens commun à la cuillère ; il
-se dérobe à mesure qu'on l'écrit. CYC a buté, comme tout le reste de ce chapitre,
-sur la même vérité — **le savoir implicite d'un humain ordinaire est trop vaste pour
-être énuméré**.
+CYC n'a jamais atteint son objectif. La raison n'est pas un manque d'argent ou de
+compétence, mais le fait que la tâche n'a **pas de fin**. Chaque évidence saisie
+en fait apparaître dix autres, et chacune de celles-ci en suppose cent. On ne peut
+pas compléter le sens commun par petites quantités, parce qu'il s'étend à mesure
+qu'on l'écrit. CYC s'est heurté au même problème que le reste de ce chapitre :
+**le savoir implicite d'un humain ordinaire est trop vaste pour être énuméré**.
 
-C'est ici que le GOFAI plafonne. On avait cru qu'il suffisait de *donner* des
-connaissances à la machine ; or les connaissances qui comptent vraiment sont
-justement celles que personne ne formule. Et pourtant, à l'écart du courant
-dominant, un trublion soutenait depuis longtemps qu'on s'y prenait à l'envers, qu'on
-cherchait le sens là où il ne pouvait pas se trouver. Avant de quitter l'âge d'or
-symbolique, il faut écouter cette voix dissidente.
+Le GOFAI atteint donc ici sa limite. On pensait qu'il suffisait de donner des
+connaissances à la machine, mais les connaissances les plus importantes sont
+justement celles que personne ne formule. Cependant, en dehors du courant
+dominant, un chercheur affirmait depuis longtemps qu'on abordait le problème dans
+le mauvais sens et qu'on cherchait le sens au mauvais endroit. Avant de terminer
+sur l'âge d'or symbolique, il faut présenter ce point de vue dissident.
 
 ## L'objection de Hofstadter
 
-Cette voix, nous l'avons déjà entendue. Le trublion, c'est **Douglas Hofstadter**,
-l'homme de la *boucle étrange*, croisé dès « [Turing et la question
+Ce chercheur est **Douglas Hofstadter**, l'auteur de la notion de *boucle étrange*,
+déjà présenté dans « [Turing et la question
 fondatrice](docs/module1/10-turing) » à propos de Gödel.
-Tandis que ses collègues bâtissaient des moteurs d'échecs et des bases de règles,
-lui n'a cessé de répéter que l'IA dominante courait après la mauvaise proie. Battre
-Kasparov par force brute, aligner des millions d'assertions à la manière de CYC :
-pour Hofstadter, rien de tout cela ne touche au cœur de la pensée.
+Pendant que ses collègues construisaient des moteurs d'échecs et des bases de
+règles, il répétait que l'IA dominante ne s'attaquait pas au bon problème. Selon
+Hofstadter, battre Kasparov par force brute ou accumuler des millions d'assertions
+comme CYC ne concerne pas l'essentiel de la pensée.
 
-Ce cœur, selon lui, c'est l'**analogie**. Penser, ce n'est pas dérouler des règles :
-c'est *percevoir des ressemblances*, plier des **concepts fluides** à des situations
-neuves, comprendre l'inconnu à travers le déjà-connu. Quand vous parlez du *pied*
-d'une montagne, des *jambes* d'une table ou de la *bouche* d'un fleuve, vous faites —
-sans y penser — de l'analogie : l'opération la plus banale et la plus profonde de
-l'esprit. Or une analogie ne se *liste* pas dans une base de connaissances ; elle se
-*fabrique* à la volée, selon le contexte. C'est exactement ce que le rêve de CYC ne
-pouvait pas capturer.
+Pour lui, l'essentiel de la pensée est l'**analogie**. Penser ne consiste pas à
+appliquer des règles, mais à *percevoir des ressemblances*, à adapter des
+**concepts fluides** à des situations nouvelles et à comprendre l'inconnu à partir
+de ce qu'on connaît déjà. Quand vous parlez du *pied* d'une montagne, des *jambes*
+d'une table ou de la *bouche* d'un fleuve, vous faites de l'analogie sans y penser.
+C'est l'opération de l'esprit la plus courante et aussi la plus fondamentale. Or
+une analogie ne peut pas être inscrite d'avance dans une base de connaissances.
+Elle se construit au moment où on en a besoin, selon le contexte. C'est
+précisément ce qu'un projet comme CYC ne pouvait pas représenter.
 
-Pour le démontrer, Hofstadter et sa collaboratrice **Melanie Mitchell** ont conçu un
-programme, **Copycat**, qui vit lui aussi dans un micro-monde, mais d'un genre tout
-différent de celui de SHRDLU. Son univers : de simples **chaînes de lettres**. On lui
-pose des énigmes d'analogie : *« si `abc` se change en `abd`, que devient `ijk` ? »*
-La réponse naturelle est `ijl` : on a remplacé la dernière lettre par la suivante
-dans l'alphabet. Facile. Mais Copycat n'applique pas une règle figée : il *perçoit*
-une structure, et il peut en percevoir plusieurs. Demandez-lui ce que devient
-**`xyz`** selon la même analogie, et tout se complique : le `z` n'a pas de lettre
-suivante. Il n'y a plus de réponse unique : on peut défendre `xyd`, ou `wyz`, ou
-repartir de l'autre bout de l'alphabet… Le « bon » résultat dépend de la *manière*
-dont on voit la situation. Et c'est là tout le propos : l'intelligence n'est pas
-l'exécution d'une règle, mais une **perception fluide, sensible au contexte**.
+Pour le démontrer, Hofstadter et sa collaboratrice **Melanie Mitchell** ont conçu
+un programme, **Copycat**, qui fonctionne lui aussi dans un micro-monde, mais d'un
+genre très différent de celui de SHRDLU. Son univers est constitué de simples
+**chaînes de lettres**. On lui pose des problèmes d'analogie, par exemple : si
+`abc` devient `abd`, que devient `ijk` ? La réponse naturelle est `ijl`, parce
+qu'on remplace la dernière lettre par la suivante dans l'alphabet. Cependant,
+Copycat n'applique pas une règle fixe. Il *perçoit* une structure, et il peut en
+percevoir plusieurs. Si on lui demande ce que devient **`xyz`** selon la même
+analogie, le problème est plus difficile, parce que le `z` n'a pas de lettre
+suivante. Il n'y a plus de réponse unique. On peut proposer `xyd`, ou `wyz`, ou
+recommencer au début de l'alphabet. La « bonne » réponse dépend de la façon dont
+on perçoit la situation. C'est ce que Hofstadter veut montrer : l'intelligence
+n'est pas l'exécution d'une règle, mais une **perception fluide, sensible au
+contexte**.
 
-{{< image src="/images/module1/copycat-analogie.svg" alt="L'énigme de Copycat : abc devient abd, ijk devient ijl, puis le cas xyz qui admet plusieurs réponses (xyd, wyz, xya)." title="L'énigme de Copycat : pour « xyz », la réponse dépend de la manière dont on perçoit la suite." loading="lazy" >}}
+{{< image src="/images/module1/copycat-analogie.svg" alt="L'énigme de Copycat : abc devient abd, ijk devient ijl, puis le cas xyz qui admet plusieurs réponses (xyd, wyz, xya)." title="L'énigme de Copycat : pour « xyz », la réponse dépend de la façon dont on perçoit la suite." loading="lazy" >}}
 
-Voilà le renversement. SHRDLU, lui aussi, vivait dans un micro-monde, mais il
-l'avait rapetissé pour **tricher** : un univers assez petit pour qu'on puisse tout y
-énumérer d'avance. Hofstadter rapetisse le sien pour la raison **inverse** : écarter
-tout le bric-à-brac du savoir encyclopédique afin d'**isoler l'essence**, l'acte
-d'analogie à l'état pur. Deux micro-mondes, deux idées opposées de ce qu'est, au
-fond, l'intelligence.
+Les deux micro-mondes ont donc des rôles opposés. SHRDLU utilisait un micro-monde
+pour **simplifier** le problème, c'est-à-dire pour avoir un univers assez petit
+pour tout y énumérer d'avance. Hofstadter réduit le sien pour la raison
+**inverse**. Il écarte tout le savoir encyclopédique afin d'**isoler l'essentiel**,
+l'analogie elle-même. Ces deux micro-mondes correspondent à deux conceptions
+opposées de l'intelligence.
 
-Reste la question qui hante tout ce chapitre : *comment du sens peut-il naître de
-simples symboles ?* La réponse de Hofstadter prolonge sa **boucle étrange**. Le sens,
-dit-il, ne s'**injecte** pas de l'extérieur, fait après fait, comme CYC l'espérait :
-il **émerge** d'un système assez riche pour se replier sur lui-même, percevoir ses
-propres structures, faire analogie entre ses propres états. On ne *remplit* pas un
-esprit de significations ; on met en place une mécanique d'où la signification
-*jaillit*. C'est l'exact contraire de la démarche GOFAI, qui voulait tout écrire à la
-main.
+Reste la question qui traverse tout ce chapitre, celle de savoir comment le sens
+peut apparaître à partir de simples symboles. La réponse de Hofstadter prolonge
+son idée de **boucle étrange**. Selon lui, le sens n'est pas **injecté** de
+l'extérieur, fait après fait, comme CYC l'espérait. Il **émerge** d'un système
+assez riche pour s'observer lui-même, percevoir ses propres structures et établir
+des analogies entre ses propres états. On ne remplit pas un esprit de
+significations. On met en place un mécanisme dont la signification émerge. C'est
+l'opposé de la démarche du GOFAI, qui voulait tout écrire à la main.
 
-Hofstadter avait-il raison ? Oui et non. Sa **vision** a vu juste : on le verra,
-c'est bien du côté de l'émergence — et non de l'inscription — que l'IA finira par
-décoller. Mais sa **solution** n'a jamais atteint l'ampleur de son ambition : Copycat
-est resté un petit programme de laboratoire, magnifique et confiné. Hofstadter
-n'était pas non plus un homme des réseaux de neurones. Il a montré la bonne direction
-sans construire le véhicule qui y mènerait.
+Hofstadter avait en partie raison. Sa **vision** était juste. Comme on le verra,
+c'est par l'émergence, et non par l'inscription, que l'IA finira par progresser.
+Cependant, sa **solution** n'a jamais eu l'ampleur de son ambition. Copycat est
+resté un petit programme de laboratoire, remarquable mais limité. Hofstadter ne
+travaillait pas non plus sur les réseaux de neurones. Il a indiqué la bonne
+direction sans construire l'outil qui permettrait de la suivre.
 
-Car ce véhicule existait déjà, en sommeil. Depuis « [Deux paris
-rivaux](docs/module1/20-deux-paris) », une **autre
-tradition** attend dans l'ombre : celle qui ne prétend pas *dire* le monde à la
-machine, mais la laisse l'**apprendre** d'elle-même, à partir d'exemples. Le GOFAI
-vient de se cogner à son plafond ; le sens commun lui a résisté ; et l'idée
-d'émergence, soufflée par sa propre voix dissidente, pointe déjà vers la sortie. *Et
-si, plutôt que de tout dire à la machine, on la laissait apprendre ?* Cette
-question-là couve encore en silence ; il faudra un long hiver avant qu'elle ne
-s'impose. Car l'âge d'or symbolique, lui, n'a pas dit son dernier mot : avant de
-s'effondrer, il connaîtra son heure de gloire la plus éclatante.
+Cet outil existait déjà, mais il était alors peu développé. Depuis « [Deux paris
+rivaux](docs/module1/20-deux-paris) », nous savons qu'il existe une **autre
+tradition**, qui ne cherche pas à décrire le monde à la machine, mais qui la laisse
+l'**apprendre** elle-même à partir d'exemples. Le GOFAI a atteint sa limite, le
+sens commun lui a résisté, et l'idée d'émergence, proposée par l'un de ses
+critiques, va déjà dans cette direction. L'idée de laisser la machine apprendre
+plutôt que de tout lui dire ne s'imposera toutefois qu'après une longue période
+de recul de l'IA. Avant ce déclin, l'IA symbolique connaîtra encore sa période de
+plus grand succès.
 
-{{% details "Pour aller plus loin : comment « pense » Copycat" %}}
-Copycat ne contient aucune règle du genre « remplace la dernière lettre ». Il explore
-en parallèle une multitude de petits rapprochements possibles (*cette lettre est-elle
-un début ? une fin ? le successeur d'une autre ?*), qui se renforcent ou s'inhibent
-mutuellement. Une mesure interne, que ses auteurs appellent la **« température »**,
-indique à quel point une interprétation cohérente a émergé : tant que tout reste flou,
-la température est haute et le programme continue d'explorer presque au hasard ; quand
-une structure d'ensemble se cristallise, la température baisse et la réponse se fige.
-Le sens n'y est donc pas *calculé* d'un trait, mais **gagné** peu à peu, par une
-compétition de perceptions partielles : une image, à petite échelle, de ce que
-Hofstadter tient pour le propre de la cognition.
+{{% details "Pour aller plus loin : le fonctionnement de Copycat" %}}
+Copycat ne contient aucune règle du genre « remplace la dernière lettre ». Il
+explore en parallèle un grand nombre de petits rapprochements possibles (une
+lettre est-elle un début, une fin, le successeur d'une autre ?), qui se renforcent
+ou s'inhibent mutuellement. Une mesure interne, que ses auteurs appellent la
+**« température »**, indique à quel point une interprétation cohérente a émergé.
+Tant que tout reste flou, la température est élevée et le programme continue
+d'explorer presque au hasard. Quand une structure d'ensemble se forme, la
+température baisse et la réponse se stabilise. Le sens n'est donc pas *calculé* en
+une seule étape, mais **construit** peu à peu, par une compétition entre des
+perceptions partielles. Selon Hofstadter, ce mécanisme illustre à petite échelle
+ce qui caractérise la cognition.
 {{% /details %}}
-

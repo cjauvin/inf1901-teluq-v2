@@ -7,37 +7,35 @@ slug: travail-noté-2
 # Classification naïve bayésienne pour détecter les pourriels (travail noté 2)
 
 La classification naïve bayésienne est un algorithme d'apprentissage supervisé
-qui fonctionne avec les probabilités. Nous avons vu deux variantes de cet
+qui repose sur les probabilités. Nous avons vu deux variantes de cet
 algorithme :
 
 1. [La classification de simples points en 2d avec un modèle gaussien](docs/module2/60-classer/#renverser-le-problème--la-classification-bayésienne)
 2. [La classification de vecteurs en haute dimension avec un modèle multinomial](docs/module2/60-classer/#le-cas-des-pourriels)
 
-Un problème classique qui peut être traité avec cet algorithme est la
-classification de courriels. On peut tenter d'estimer la probabilité qu'un
-courriel soit en fait un pourriel en prenant en compte les mots particuliers
-qu'il contient, l'idée étant que certains mots auront tendance à être plus
-souvent utilisés selon qu'il s'agit d'un pourriel ou d'un courriel.
+La classification de courriels est un problème classique qu'on peut traiter avec
+cet algorithme. On cherche à estimer la probabilité qu'un courriel soit un
+pourriel à partir des mots qu'il contient, parce que certains mots sont plus
+souvent utilisés dans les pourriels et d'autres dans les courriels.
 
-Comme nous l'avons vu, la classification naive bayésienne est un algorithme
-d'apprentissage *génératif*, ce qui veut donc dire qu'on considère tout d'abord
-deux modèles (un pour chaque classe, `pourriel` ou `courriel`) qui sont en
-charge de *générer* les données qu'on observe (plutôt que de directement les
-*classifier*) :
+Comme nous l'avons vu, la classification naïve bayésienne est un algorithme
+d'apprentissage *génératif*. On considère donc d'abord deux modèles (un pour
+chaque classe, `pourriel` ou `courriel`), dont le rôle est de générer les données
+observées plutôt que de les classifier directement :
 
 $$P(\text{les mots générés} \mid \text{il s'agit d'un pourriel})$$
 $$P(\text{les mots générés} \mid \text{il s'agit d'un courriel})$$
 
-ou encore, de manière plus compacte :
+ou, de manière plus compacte :
 
 $$P(\mathbf{x} \mid \mathtt{pourriel})$$
 $$P(\mathbf{x} \mid \mathtt{courriel})$$
 
-Mais étant donné que ce qui nous intéresse, dans ce contexte, est de classifier
-les courriels, nous utilisons le [théorème de
+Comme ce qui nous intéresse ici est de classifier les courriels, nous utilisons
+le [théorème de
 Bayes](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Bayes) pour
-"inverser" les modèles, pour ainsi obtenir une règle de classification simple
-(qui prédit la classe plutôt que les mots):
+« inverser » les modèles et obtenir une règle de classification simple, qui
+prédit la classe plutôt que les mots :
 
 $$
 \text{classification}(\mathbf{x}) =
@@ -51,23 +49,23 @@ $$
 
 ## Consignes
 
-1. Suivez les instructions qui suivent pour construire tout d'abord le fichier Google Sheets avec toutes les données nécessaires.
+1. Suivez les instructions ci-dessous pour construire d'abord le fichier Google Sheets avec toutes les données nécessaires.
 
-2. Une fois qu'il est complété et fonctionnel, [partagez votre fichier](docs/50-google-sheets/#fonction-de-partage-anonyme-dun-fichier) et copier le lien vers celui-ci dans un document PDF (**Attention&nbsp;: aucun autre format que PDF ne sera accepté**).
+2. Une fois le fichier complété et fonctionnel, [partagez votre fichier](docs/50-google-sheets/#fonction-de-partage-anonyme-dun-fichier) et copiez le lien vers celui-ci dans un document PDF (**Attention : aucun autre format que PDF ne sera accepté**).
 
 3. Répondez aux questions d'interprétation de la dernière section dans le même fichier PDF, en fournissant des réponses claires et précises.
 
 ## Entraînement du modèle
 
-Voyons comment il est possible de calculer ces probabilités en entraînant un
-modèle de classification sur une série de courriels particuliers.
+Cette section montre comment calculer ces probabilités en entraînant un modèle
+de classification sur une série de courriels.
 
-Étant donné que nous allons utiliser le tableur en ligne [Google Sheets](docs/50-google-sheets), assurez-vous tout d'abord qu'il est
+Comme nous allons utiliser le tableur en ligne [Google Sheets](docs/50-google-sheets), assurez-vous d'abord qu'il est
 correctement configuré.
 
-Copiez tout d'abord ces 10 mini-courriels dans la colonne A d'une nouvelle
-"feuille" Google Sheets, un courriel par rangée (assurez-vous d'utiliser
-correctement la [fonction "copier-coller"](docs/50-google-sheets/#fonction-copier-coller), si vous le faites) :
+Copiez d'abord ces 10 mini-courriels dans la colonne A d'une nouvelle
+« feuille » Google Sheets, un courriel par rangée (si vous utilisez le
+copier-coller, assurez-vous de bien appliquer la [fonction « copier-coller »](docs/50-google-sheets/#fonction-copier-coller)) :
 
 ```
 voici le colis est arrivé
@@ -82,14 +80,14 @@ livraison spéciale pour vous
 merci encore pour votre carte
 ```
 
-Pour avoir un aperçu de la tâche d’étiquetage des données (qui dans un scénario
-réel peut s'avérer très coûteuse et laborieuse), vous êtes invités à tenter tout
-d'abord de catégoriser vous-mêmes les courriels dans la colonne `B`, en
-utilisant la valeur `oui` si vous considérez qu'il s'agit d'un pourriel, ou
-`non` (ce n'est pas un pourriel) sinon.
+Pour avoir un aperçu de la tâche d’étiquetage des données (qui, dans un scénario
+réel, peut être très coûteuse et laborieuse), nous vous proposons d'abord de
+catégoriser vous-mêmes les courriels dans la colonne `B`, en utilisant la valeur
+`oui` si vous considérez qu'il s'agit d'un pourriel, ou `non` (ce n'est pas un
+pourriel) sinon.
 
-Si vous n'avez pas envie de vous soumettre à cet exercice à ce stade,
-vous pouvez toujours copier ces valeurs (dans la colonne `B`) :
+Si vous préférez ne pas faire cet exercice maintenant, vous pouvez copier ces
+valeurs (dans la colonne `B`) :
 
 ```
 non
@@ -108,9 +106,9 @@ non
 
 ![](/images/module2/tn2/sheets_cols_a_et_b.png)
 
-Calculons tout d'abord dans la colonne `C` la probabilité à priori qu'un
-courriel quelconque soit un pourriel ou non (sans prendre en
-considérations les mots donc, pour le moment) :
+Calculez d'abord, dans la colonne `C`, la probabilité à priori qu'un courriel
+quelconque soit un pourriel ou non (sans tenir compte des mots pour le
+moment) :
 
 ```
 =MAP(UNIQUE(B1:B10), LAMBDA(x, COUNTIF(B1:B10, x) / COUNTA(B1:B10)))
@@ -123,8 +121,8 @@ les paramètres linguistiques de votre Google Sheets ne soient pas [correctement
 
 {{% /hint %}}
 
-Ces probabilités à priori nous serviront plus loin. Définissez ensuite
-la colonne `D` avec cette formule :
+Ces probabilités à priori serviront plus loin. Définissez ensuite la colonne `D`
+avec cette formule :
 
 ```
 =UNIQUE(TRANSPOSE(SPLIT(TEXTJOIN(" ", TRUE, A:A), " ")))
@@ -134,16 +132,16 @@ La colonne `D` devrait maintenant contenir le vocabulaire des courriels :
 
 ![](/images/module2/tn2/sheets_col_d_voc.png)
 
-La colonne `E` devrait ensuite correspondre au nombre de fois où les
-mots de la colonne `D` apparaissent dans les courriels valides (qui donc
-`non`, ne sont pas des pourriels) :
+La colonne `E` doit ensuite contenir le nombre de fois où les mots de la colonne
+`D` apparaissent dans les courriels valides (ceux marqués `non`, qui ne sont pas
+des pourriels) :
 
 ```
 =SUMPRODUCT((B$1:B$10="non") * ISNUMBER(SEARCH(D1, A$1:A$10)))
 ```
 
-et de manière similaire pour la colonne `F` et la fréquence des mots qui
-apparaissent dans les courriels qui `oui`, sont des pourriels :
+De la même manière, la colonne `F` contient la fréquence des mots qui
+apparaissent dans les courriels marqués `oui`, qui sont des pourriels :
 
 ```
 =SUMPRODUCT((B$1:B$10="oui") * ISNUMBER(SEARCH(D1, A$1:A$10)))
@@ -151,12 +149,11 @@ apparaissent dans les courriels qui `oui`, sont des pourriels :
 
 {{% hint warning %}}
 
-Notez que les colonnes `E` et `F` doivent avoir le même nombre d'éléments
-que la colonne `D` (il faut donc utiliser la fonction de remplissage
-automatique, pour laquelle le plus simple est de soit glisser (drag)
-la première cellule vers le bas, une fois qu'elle a été calculée, ou
-encore de double-cliquer sur le petit "+" noir qui apparaît en bas à
-droite de la première cellule).
+Notez que les colonnes `E` et `F` doivent avoir le même nombre d'éléments que la
+colonne `D`. Il faut donc utiliser la fonction de remplissage automatique. Le
+plus simple est de glisser (*drag*) la première cellule vers le bas, une fois
+qu'elle a été calculée, ou de double-cliquer sur le petit « + » noir qui apparaît
+en bas à droite de la première cellule.
 
 {{% /hint %}}
 
@@ -164,83 +161,79 @@ droite de la première cellule).
 
 ![](/images/module2/tn2/sheets_cols_e_et_f.png)
 
-À partir de ces fréquences de mots pour chaque classe (`oui` ou
-`non`), on peut maintenant calculer la probabilité conditionnelle de
-chaque mot du vocabulaire, étant donné le fait qu'un courriel soit
-`oui` ou `non` un pourriel. Donc la colonne `G` correspond à la
-probabilité des mots étant donné que `non` il ne s'agit pas d'un
-pourriel :
+À partir de ces fréquences de mots pour chaque classe (`oui` ou `non`), on peut
+maintenant calculer la probabilité conditionnelle de chaque mot du vocabulaire,
+selon que le courriel est un pourriel (`oui`) ou non (`non`). La colonne `G`
+correspond à la probabilité des mots sachant que le courriel n'est pas un
+pourriel (`non`) :
 
 ```
 =(E1 + 1) / (SUM(E:E) + COUNTA(D:D))
 ```
 
-et de manière similaire la colonne `H` est la probabilité des mots quand
-on sait que `oui` il s'agit d'un pourriel :
+De la même manière, la colonne `H` contient la probabilité des mots sachant que
+le courriel est un pourriel (`oui`) :
 
 ```
 =(F1 + 1) / (SUM(F:F) + COUNTA(D:D))
 ```
 
-Encore une fois les colonnes `G` et `H` doivent avoir la même taille que
-celle du vocabulaire (colonne `D`), il faut donc s'assurer d'utiliser le
-mécanisme du remplissage automatique décrit précédemment.
+Les colonnes `G` et `H` doivent elles aussi avoir la même taille que le
+vocabulaire (colonne `D`). Il faut donc utiliser le remplissage automatique
+décrit plus haut.
 
 ![](/images/module2/tn2/sheets_cols_g_et_h.png)
 
-Notre modèle est maintenant entièrement entraîné, et il est donc prêt
-pour son utilisation!
+Le modèle est maintenant entièrement entraîné et prêt à être utilisé.
 
 ---
 
 ## Utilisation du modèle (inférence)
 
-Nous allons maintenant utiliser le modèle pour déterminer si un
-nouveau courriel (qui n'a pas servi à l'entraînement) est un pourriel
-ou non. Dans la colonne `I` entrez un courriel à tester :
+Nous allons maintenant utiliser le modèle pour déterminer si un nouveau courriel
+(qui n'a pas servi à l'entraînement) est un pourriel ou non. Dans la colonne `I`,
+entrez un courriel à tester :
 
 ```
 voici votre carte spéciale
 ```
 
-Faites l'extraction des mots du courriel dans la colonne `J` :
+Extrayez les mots du courriel dans la colonne `J` :
 
 ```
 =TRANSPOSE(SPLIT(I1, " "))
 ```
 
-Nous avons maintenant besoin, dans la colonne `K`, de la probabilité des
-mots de ce courriel de test dans l'hypothèse où `non`, ça ne serait
-pas un pourriel :
+Il faut ensuite, dans la colonne `K`, la probabilité des mots de ce courriel de
+test dans l'hypothèse où ce n'est pas un pourriel (`non`) :
 
 ```
 =IFERROR(XLOOKUP(J1, D:D, G:G), 1E-5)
 ```
 
-et de manière similaire pour la colonne `L`, avec la probabilité des
-mots du courriel dans l'hypothèse où `oui` il s'agit d'un pourriel :
+De la même manière, la colonne `L` contient la probabilité des mots du courriel
+dans l'hypothèse où il s'agit d'un pourriel (`oui`) :
 
 ```
 =IFERROR(XLOOKUP(J1, D:D, H:H), 1E-5)
 ```
 
-Les colonnes `K` et `L` doivent avoir la même taille que la colonne `J`,
-donc assurez-vous d'utiliser le remplissage automatique. Calculons
-dans la colonne `M` la probabilité que `non` le courriel n'est pas un
-pourriel :
+Les colonnes `K` et `L` doivent avoir la même taille que la colonne `J`.
+Utilisez donc le remplissage automatique. Calculez ensuite, dans la colonne `M`,
+la probabilité que le courriel ne soit pas un pourriel (`non`) :
 
 ```
 =PRODUCT(K:K) * C1
 ```
 
-Et dans la colonne `N` la probabilité que `oui` le courriel est un
-pourriel :
+Dans la colonne `N`, calculez la probabilité que le courriel soit un pourriel
+(`oui`) :
 
 ```
 =PRODUCT(L:L) * C2
 ```
 
-Notre classification finale sera dans la colonne `O` :
+La classification finale se trouve dans la colonne `O` :
 
 ```
 =IF(M1 > N1; "non"; "oui")
@@ -250,40 +243,40 @@ Notre classification finale sera dans la colonne `O` :
 
 ## Questions d'interprétation
 
-1. Que se passe-t-il si vous changez le mot "spéciale" par le mot
-   "livrée" dans le courriel de test de la cellule `I1`?
+1. Que se passe-t-il si vous remplacez le mot « spéciale » par le mot
+   « livrée » dans le courriel de test de la cellule `I1` ?
 
-2. Après ce changement, expliquez les probabilités qu'on retrouve aux cellules
-   `K4` et `L4` associées au nouveau mot "livrée". D'où proviennent ces nouvelles
-   valeurs, et pourquoi a-t-on besoin d'avoir recours à celles-ci dans le cadre du calcul?
+2. Après ce changement, expliquez les probabilités qu'on trouve aux cellules
+   `K4` et `L4` associées au nouveau mot « livrée ». D'où proviennent ces nouvelles
+   valeurs, et pourquoi a-t-on besoin d'y avoir recours dans le calcul ?
 
-3. Est-ce que ce modèle est [paramétrique](docs/module2/70-generaliser/#paramétrique-ou-non-paramétrique) ou non? Expliquez pourquoi.
+3. Est-ce que ce modèle est [paramétrique](docs/module2/70-generaliser/#paramétrique-ou-non-paramétrique) ou non ? Expliquez pourquoi.
 
 4. S'il s'agit d'un modèle paramétrique, quels sont les paramètres du
-   modèle (quelles colonnes)?
+   modèle (quelles colonnes) ?
 
-5. Quelles colonnes constituent la partie *générative* du modèle? Expliquez pourquoi.
+5. Quelles colonnes constituent la partie *générative* du modèle ? Expliquez pourquoi.
 
-6. Quelles colonnes constituent la partie *discriminative* du modèle? Expliquez pourquoi.
+6. Quelles colonnes constituent la partie *discriminative* du modèle ? Expliquez pourquoi.
 
 7. Quelle est la signification des nombres dans les cellules `G11` et
-   `H11`, comment peut-on les interpréter?
+   `H11` ? Comment peut-on les interpréter ?
 
-8. Quelles sont les probabilités non-conditionnelles (à priori)? À quoi servent-elles?
+8. Quelles sont les probabilités non conditionnelles (à priori) ? À quoi servent-elles ?
 
 8. Est-ce qu'il serait possible d'utiliser seulement ces probabilités
-   non-conditionnelles pour faire un modèle de classification? Quelles
-   conséquences ça entraînerait?
+   non conditionnelles pour faire un modèle de classification ? Quelles
+   conséquences cela entraînerait-il ?
 
-9. De quelle manière peut-t-on dire que ce modèle généralise?
+9. De quelle manière peut-on dire que ce modèle généralise ?
 
 10. Est-ce que l'ordre des mots joue un rôle dans les décisions de ce
-    modèle? Expliquez pourquoi c'est ainsi.
+    modèle ? Expliquez pourquoi.
 
 11. Si l'ordre des mots ne joue pas de rôle, comment pourrait-on
-    modifier le modèle de manière à ce qu'il en joue un?
+    modifier le modèle pour qu'il en joue un ?
 
-12. Est-ce que certains mots aident particulièrement le modèle? Si oui
-    pourquoi?
+12. Est-ce que certains mots aident particulièrement le modèle ? Si oui,
+    pourquoi ?
 
-13. Est-ce que certains mots sont moins utiles? Si oui pourquoi?
+13. Est-ce que certains mots sont moins utiles ? Si oui, pourquoi ?

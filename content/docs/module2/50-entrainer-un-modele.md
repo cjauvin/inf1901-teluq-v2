@@ -6,30 +6,30 @@ slug: entrainer-un-modele
 
 # Un modèle qui s'entraîne
 
-Le chapitre précédent s'est achevé sur un souhait : un modèle qui ne se contente
-pas de mémoriser les exemples, mais qui en *extrait* quelque chose : une tendance
-générale, résumée en quelques paramètres, qu'on pourra ensuite appliquer sans
-traîner toutes les données derrière soi.
+Le chapitre précédent s'est terminé sur un objectif : obtenir un modèle qui ne se
+contente pas de mémoriser les exemples, mais qui en extrait une tendance générale,
+résumée en quelques paramètres, qu'on pourra ensuite appliquer sans conserver
+toutes les données.
 
-Construisons-le. Et puisque nous cherchons le plus simple, faisons la chose la
-plus élémentaire qu'on puisse imaginer devant un nuage de points : **y faire
-passer une droite.**
+Nous allons construire ce modèle. Comme nous cherchons le plus simple, nous allons
+faire l'opération la plus élémentaire qu'on puisse faire sur un nuage de points :
+**y faire passer une droite.**
 
 ## Un modèle qui tient en deux nombres
 
-Reprenons notre nuage de maisons (la superficie en horizontale, le prix en
-verticale). Faire passer une droite à travers ce nuage, c'est parier qu'il existe
-une relation simple et régulière entre la taille d'une maison et son prix :
-« chaque mètre carré supplémentaire ajoute, en gros, tant de dollars ». Cette
-droite, c'est notre modèle. C'est aussi le plus vieux modèle de ce module : Legendre
-et Gauss ajustaient déjà des droites aux moindres carrés vers 1805, pour
-prédire la trajectoire des comètes, et c'est Francis Galton qui, en 1886, lui a
-donné le nom de *régression*, en étudiant la taille des enfants par rapport à
-celle de leurs parents.
+Reprenons notre nuage de maisons (la superficie à l'horizontale, le prix à la
+verticale). Faire passer une droite à travers ce nuage revient à supposer qu'il
+existe une relation simple et régulière entre la taille d'une maison et son prix,
+du type « chaque mètre carré supplémentaire ajoute environ tant de dollars ».
+Cette droite est notre modèle. C'est aussi le plus ancien modèle de ce module.
+Legendre et Gauss ajustaient déjà des droites par la méthode des moindres carrés
+vers 1805 pour prédire la trajectoire des comètes, et c'est Francis Galton qui, en
+1886, lui a donné le nom de *régression*, en étudiant la taille des enfants par
+rapport à celle de leurs parents.
 
-{{< image src="/images/module2/maisons-droite.svg" alt="Le nuage de maisons traversé par une droite inclinée qui en épouse la tendance : le modèle de régression linéaire." title="La droite qui épouse le nuage : voilà notre modèle." loading="lazy" >}}
+{{< image src="/images/module2/maisons-droite.svg" alt="Le nuage de maisons traversé par une droite inclinée qui suit sa tendance : le modèle de régression linéaire." title="La droite qui suit la tendance du nuage : c'est notre modèle." loading="lazy" >}}
 
-Et une droite, en mathématiques, se résume à deux nombres :
+En mathématiques, une droite se résume à deux nombres :
 
 $$\text{prix} = m \times \text{superficie} + b$$
 
@@ -38,13 +38,13 @@ $$\text{prix} = m \times \text{superficie} + b$$
 - **b**, l'*ordonnée à l'origine* : le point de départ, là où la droite croise
   l'axe vertical.
 
-Ces deux nombres, m et b, sont les **paramètres** du modèle — et, cette fois, ils
-veulent dire quelque chose. Là où [le modèle le plus bête](docs/module2/20-modele-le-plus-bete) distillait tout en
-un seul nombre (la moyenne), et où kNN n'en avait aucun, notre droite en a deux :
-juste assez pour capturer une *tendance* : une direction et une hauteur. Changez
-m et b, et vous obtenez une autre droite, donc un autre modèle. Tout le jeu va
-consister à trouver le bon couple (m, b) : celui de la droite qui épouse le mieux
-le nuage.
+Ces deux nombres, m et b, sont les **paramètres** du modèle, et ils ont ici une
+signification. [Le modèle le plus bête](docs/module2/20-modele-le-plus-bete)
+résumait tout en un seul nombre (la moyenne), et kNN n'avait aucun paramètre.
+Notre droite en a deux, ce qui suffit pour représenter une *tendance*, avec une
+direction et une hauteur. Si on change m et b, on obtient une autre droite, donc
+un autre modèle. Le problème consiste à trouver le couple (m, b) qui donne la
+droite la mieux ajustée au nuage.
 
 Essayez vous-même. Dans l'applet ci-dessous, déplacez la droite (vous ajustez
 ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.
@@ -53,82 +53,85 @@ ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.
 
 ## Mesurer l'erreur
 
-En déplaçant la droite, vous avez forcément cherché à « bien » la placer. Mais
-qu'est-ce que « bien », au juste ? Il nous faut une mesure, et nous l'avons déjà
-croisée, avec le modèle le plus bête, sans lui donner encore de définition précise : l'**erreur**.
+En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
+préciser ce que « bien » veut dire. Il nous faut une mesure, que nous avons déjà
+rencontrée avec le modèle le plus bête sans encore la définir précisément :
+l'**erreur**.
 
-Pour une droite donnée, l'erreur sur une maison, c'est l'écart entre le prix que
-la droite *prédit* (le point de la droite à la verticale de cette maison) et son
-prix *réel*. C'est, exactement comme pour le modèle le plus bête, un segment vertical, sauf
-qu'ici la droite est *inclinée*, et qu'elle peut donc serrer les points de bien
-plus près qu'une droite plate.
+Pour une droite donnée, l'erreur sur une maison est l'écart entre le prix que la
+droite *prédit* (le point de la droite à la verticale de cette maison) et son prix
+*réel*. Comme pour le modèle le plus bête, cet écart est un segment vertical. La
+différence est qu'ici la droite est inclinée, et qu'elle peut donc passer beaucoup
+plus près des points qu'une droite horizontale.
 
-{{< image src="/images/module2/maisons-erreurs-droite.svg" alt="Le nuage de maisons et la droite de régression inclinée, avec un court segment rouge reliant chaque maison à la droite : l'erreur, bien plus courte qu'avec la droite plate du modèle le plus bête." title="Les mêmes erreurs qu'avec le modèle le plus bête, mais contre une droite inclinée : bien plus courtes." loading="lazy" >}}
+{{< image src="/images/module2/maisons-erreurs-droite.svg" alt="Le nuage de maisons et la droite de régression inclinée, avec un court segment rouge reliant chaque maison à la droite : l'erreur, bien plus courte qu'avec la droite plate du modèle le plus bête." title="Les mêmes erreurs qu'avec le modèle le plus bête, mais par rapport à une droite inclinée : elles sont beaucoup plus courtes." loading="lazy" >}}
 
-L'erreur totale du modèle combine tous ces écarts. On les met au carré (pour que
-les écarts au-dessus et en dessous ne s'annulent pas, et pour pénaliser
-davantage les grosses bourdes), puis on en fait la moyenne. Ce nombre unique, la
-moyenne des carrés des écarts, porte un nom un peu technique, l'*erreur
-quadratique moyenne*, mais l'idée est simple : **plus il est petit, mieux la
-droite épouse le nuage.** (Prenez le temps de visualiser le cas limite : si la
-droite passait exactement par tous les points, chaque écart serait nul, chaque
-carré aussi, et l'erreur vaudrait zéro. C'est le plancher. Avec un nuage comme
-le nôtre, aucune droite ne l'atteint, et tout l'enjeu est de s'en approcher le
-plus possible.)
+L'erreur totale du modèle combine tous ces écarts. On les met au carré, pour que
+les écarts au-dessus et en dessous de la droite ne s'annulent pas et pour pénaliser
+davantage les grands écarts, puis on en fait la moyenne. Ce nombre, la moyenne des
+carrés des écarts, porte un nom technique, l'*erreur quadratique moyenne*, mais
+l'idée est simple : **plus il est petit, mieux la droite s'ajuste au nuage.**
+(Considérez le cas limite. Si la droite passait exactement par tous les points,
+chaque écart serait nul, chaque carré aussi, et l'erreur vaudrait zéro. C'est la
+valeur minimale possible. Avec un nuage comme le nôtre, aucune droite ne
+l'atteint, et l'objectif est de s'en approcher le plus possible.)
 
-Une jolie façon de *sentir* cette erreur : imaginez que chaque point est relié à
-la droite par un petit ressort vertical. Un point éloigné tire fort ; un point
-proche, à peine. La meilleure droite est celle où tous ces ressorts, tirant
-chacun de leur côté, s'équilibrent : la position de moindre tension. C'est
-*exactement* la droite de plus petite erreur. Jouez avec :
+On peut se représenter cette erreur de la façon suivante. Imaginez que chaque
+point est relié à la droite par un petit ressort vertical. Un point éloigné tire
+fort, un point proche tire à peine. La meilleure droite est celle où les forces de
+tous ces ressorts s'équilibrent, c'est-à-dire la position de moindre tension.
+Cette position correspond à la droite de plus petite erreur. Vous pouvez
+l'observer dans l'applet suivante :
 
 {{< applet src="/html/applets/linear-regression-with-springs.html" height="635" >}}
 
-Trouver cette droite idéale à la main, comme dans l'applet, reste faisable en
-deux dimensions. Mais comment une machine y parvient-elle *seule*, et même quand
-il n'y a plus deux paramètres, mais des milliers ? C'est la dernière pièce, et la
-plus belle.
+Trouver cette droite à la main, comme dans l'applet, reste possible en deux
+dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
+quand le modèle n'a plus deux paramètres, mais des milliers. C'est l'objet de la
+section suivante.
 
 ## Apprendre, c'est descendre la pente
 
-Voici l'idée maîtresse, celle qui, sous une forme ou une autre, fait tourner
-*tout* l'apprentissage automatique moderne, jusqu'aux plus grands modèles
-d'aujourd'hui.
+L'idée présentée dans cette section est au cœur de tout l'apprentissage
+automatique moderne, sous une forme ou une autre, y compris dans les plus grands
+modèles actuels.
 
 Repartons de l'erreur. Pour chaque choix de paramètres (m, b), le modèle commet
-une certaine erreur totale : l'erreur est donc elle-même une *fonction* des
-paramètres. Imaginons alors un **paysage** : les deux paramètres sont les
-coordonnées sur une carte (est-ouest pour m, nord-sud pour b), et l'erreur est
-l'**altitude** en chaque point. Le paysage a donc **trois dimensions** : deux
-pour les paramètres, *m* et *b*, et une troisième, verticale, pour l'erreur.
-Les hauteurs sont les mauvais modèles (grande erreur) ; les vallées, les bons.
-Trouver le meilleur modèle, c'est trouver le **point le plus bas** de ce
+une certaine erreur totale. L'erreur est donc elle-même une *fonction* des
+paramètres. On peut la représenter comme un **paysage**. Les deux paramètres sont
+les coordonnées sur une carte (est-ouest pour m, nord-sud pour b), et l'erreur est
+l'**altitude** en chaque point. Le paysage a donc **trois dimensions** : deux pour
+les paramètres, *m* et *b*, et une troisième, verticale, pour l'erreur. Les
+sommets correspondent aux mauvais modèles (grande erreur), et les vallées aux bons.
+Trouver le meilleur modèle revient à trouver le **point le plus bas** de ce
 paysage.
 
-{{< image src="/images/module2/descente-gradient.svg" alt="Une cuvette en trois dimensions (paraboloïde) représentant l'erreur du modèle au-dessus du plan des réglages (m, b). Une bille lâchée au hasard sur le bord dévale la pente jusqu'au creux, où l'erreur est minimale : le meilleur modèle." title="La descente de gradient : l'erreur forme une cuvette au-dessus des réglages (m, b) ; la bille roule jusqu'au creux — le meilleur modèle." loading="lazy" >}}
+{{< image src="/images/module2/descente-gradient.svg" alt="Une cuvette en trois dimensions (paraboloïde) représentant l'erreur du modèle au-dessus du plan des réglages (m, b). Une bille placée au hasard sur le bord descend la pente jusqu'au creux, où l'erreur est minimale : le meilleur modèle." title="La descente de gradient : l'erreur forme une cuvette au-dessus des réglages (m, b) ; la bille descend jusqu'au creux, qui correspond au meilleur modèle." loading="lazy" >}}
 
-Comment l'atteindre, sans carte du relief ? La machine fait ce que ferait un
-randonneur dans le brouillard : elle tâte la **pente** sous ses pieds et fait un
-pas dans la direction qui descend le plus. Puis elle recommence. Pas après pas,
-elle dévale vers le creux, comme une bille lâchée sur le flanc d'une vallée
-roule vers le fond. Quand la pente s'annule, le fond est atteint : les meilleurs
-paramètres sont trouvés. Cette méthode porte un nom, la **descente de gradient**
-(le « gradient » étant simplement la direction de plus forte pente), et c'est
-*le* moteur de l'apprentissage.
+La machine ne connaît pas la forme complète de ce paysage. Elle procède comme un
+randonneur dans le brouillard : elle mesure la **pente** à l'endroit où elle se
+trouve et fait un pas dans la direction qui descend le plus. Puis elle recommence.
+Pas après pas, elle descend vers le creux, comme une bille posée sur le flanc
+d'une vallée roule vers le fond. Quand la pente devient nulle, le fond est
+atteint, et les meilleurs paramètres sont trouvés. Cette méthode s'appelle la
+**descente de gradient** (le « gradient » désigne la direction de plus forte
+pente). C'est le mécanisme central de l'apprentissage.
 
-Un détail compte : la taille des pas. Trop grands, on risque d'enjamber le creux
-et de zigzaguer sans fin ; trop petits, la descente dure une éternité. Ce réglage,
-le *taux d'apprentissage*, n'est pas un paramètre du modèle, mais un réglage
-de la *procédure* : on l'appelle un **hyper-paramètre**.
+La taille des pas a de l'importance. Si les pas sont trop grands, on risque de
+dépasser le creux et d'osciller autour sans l'atteindre. S'ils sont trop petits,
+la descente est très longue. Ce réglage, le *taux d'apprentissage*, n'est pas un
+paramètre du modèle, mais un réglage de la *procédure*. On l'appelle un
+**hyper-paramètre**.
 
-Reconnaissez-vous quelque chose ? À la toute fin du [Module 1](docs/module1/60-hivers/#la-bascule), nous annoncions
-qu'*« apprendre, c'est encore chercher, mais dans un autre espace »* : non plus
-fouiller les coups d'une partie d'échecs, mais l'immensité des réglages possibles
-d'un modèle. Nous y sommes : la descente de gradient *est* cette recherche. Là où
-le GOFAI cherchait *la solution*, l'apprentissage cherche *de quoi la fabriquer* :
-les paramètres. Et sa beauté est de ne pas changer d'échelle : que le paysage
-ait deux dimensions (m et b) ou plusieurs milliards (les poids d'un grand réseau
-de neurones), c'est toujours la même marche vers le bas.
+Cette idée rejoint la fin du [Module 1](docs/module1/60-hivers/#la-bascule), où
+nous annoncions qu'*« apprendre, c'est encore chercher, mais dans un autre
+espace »*. Il ne s'agit plus d'explorer les coups d'une partie d'échecs, mais
+l'ensemble très vaste des réglages possibles d'un modèle. La descente de gradient
+est cette recherche. Le GOFAI cherchait la solution elle-même, alors que
+l'apprentissage cherche les paramètres qui permettent de la produire. De plus, la
+méthode reste la même quelle que soit l'échelle : que le paysage ait deux
+dimensions (m et b) ou plusieurs milliards (les poids d'un grand réseau de
+neurones), il s'agit toujours de descendre la pente.
 
 {{% details "Les mathématiques de la régression linéaire (optionnel)" %}}
 
@@ -137,42 +140,43 @@ L'erreur quadratique moyenne, pour $n$ maisons, s'écrit :
 $$J(m, b) = \frac{1}{n} \sum_{i=1}^{n} \big(y_i - (m x_i + b)\big)^2$$
 
 où $x_i$ est la superficie de la maison $i$, $y_i$ son vrai prix, et $m x_i + b$
-le prix prédit. C'est la « carte d'altitude » du paysage : à chaque couple
-$(m, b)$, une hauteur d'erreur.
+le prix prédit. Cette fonction correspond à la « carte d'altitude » du paysage :
+à chaque couple $(m, b)$, elle associe une hauteur d'erreur.
 
 La descente de gradient mesure, en un point, la pente de cette surface dans
 chaque direction (les *dérivées partielles*) :
 
 $$\frac{\partial J}{\partial m} = -\frac{2}{n} \sum_{i=1}^{n} x_i\big(y_i - (m x_i + b)\big), \qquad \frac{\partial J}{\partial b} = -\frac{2}{n} \sum_{i=1}^{n} \big(y_i - (m x_i + b)\big)$$
 
-puis fait un pas en sens inverse de la pente, d'une taille réglée par le taux
+puis fait un pas dans le sens inverse de la pente, d'une taille réglée par le taux
 d'apprentissage $\alpha$ :
 
 $$m \leftarrow m - \alpha\,\frac{\partial J}{\partial m}, \qquad b \leftarrow b - \alpha\,\frac{\partial J}{\partial b}$$
 
-On répète jusqu'à ce que l'erreur ne diminue plus. *(Pour la régression
-linéaire, il existe même une formule directe (les moindres carrés de Gauss)
-qui donne la solution d'un coup ; mais la descente de gradient, elle, marche pour
-des modèles bien plus complexes, jusqu'aux réseaux de neurones.)*
+On répète ces étapes jusqu'à ce que l'erreur ne diminue plus. Pour la régression
+linéaire, il existe même une formule directe (les moindres carrés de Gauss) qui
+donne la solution en une seule étape. La descente de gradient a cependant
+l'avantage de fonctionner pour des modèles beaucoup plus complexes, jusqu'aux
+réseaux de neurones.
 
 {{% /details %}}
 
 ## Et pour prédire une catégorie ?
 
-Nous avons maintenant un vrai modèle qui apprend : une droite, deux paramètres,
-une erreur à minimiser, une descente vers le creux. Et il prédit un **nombre** —
-un prix.
+Nous avons maintenant un modèle qui apprend : une droite, deux paramètres, une
+erreur à minimiser et une descente vers le creux. Ce modèle prédit un **nombre**,
+ici un prix.
 
-Mais quantité de questions n'attendent pas un nombre pour réponse, plutôt une
-**catégorie**. Ce courriel est-il un pourriel, oui ou non ? Cette photo
+Beaucoup de questions demandent cependant comme réponse une **catégorie** plutôt
+qu'un nombre. Par exemple, ce courriel est-il un pourriel ou non ? Cette photo
 montre-t-elle un chat ou un chien ? Nous avons rencontré ce type de tâche au
-chapitre kNN : la **classification**. Mais kNN, justement, n'apprenait rien. Nous
-aimerions cette fois un modèle qui *s'entraîne*, comme notre droite, mais dont
-la sortie soit une catégorie plutôt qu'une valeur.
+chapitre sur kNN : la **classification**. Cependant, kNN n'apprenait rien. Nous
+voulons maintenant un modèle qui s'entraîne comme notre droite, mais dont la
+sortie est une catégorie plutôt qu'une valeur.
 
-Bonne nouvelle : presque toute la machinerie que nous venons de bâtir va
-resservir. Un modèle réglé par des paramètres, une fonction d'erreur, une
-descente de gradient pour la minimiser : ce trio est si général qu'il s'adapte
-aussi bien à la classification qu'à la régression. Il suffira de revoir la
-*forme* du modèle (une droite qui *sépare*, plutôt qu'une droite qui *suit*) et
-la *façon de compter l'erreur*. C'est l'objet du prochain chapitre.
+Presque tous les éléments que nous venons de construire vont servir de nouveau.
+Un modèle réglé par des paramètres, une fonction d'erreur et une descente de
+gradient pour la minimiser forment un ensemble assez général pour s'appliquer à
+la classification comme à la régression. Il suffira de modifier la *forme* du
+modèle (une droite qui *sépare* les points, plutôt qu'une droite qui *suit* leur
+tendance) et la *façon de calculer l'erreur*. C'est l'objet du prochain chapitre.

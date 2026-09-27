@@ -8,226 +8,223 @@ slug: chercher-raisonner
 
 ## Résoudre, c'est explorer
 
-Une fois le pari symbolique posé, une question pratique se pose : par où commencer
-pour faire *raisonner* une machine ? Les pionniers de l'IA trouvent une réponse
-d'une grande puissance, parce qu'elle s'applique à une foule de problèmes très
-différents. L'idée : presque tout problème peut se reformuler comme
-l'**exploration d'un espace de possibilités**.
+Une fois le pari symbolique posé, il reste une question pratique : comment faire
+raisonner une machine ? Les pionniers de l'IA trouvent une réponse très générale,
+parce qu'elle s'applique à des problèmes très différents. Presque tout problème
+peut se reformuler comme l'**exploration d'un espace de possibilités**.
 
-Prenons un labyrinthe. À chaque instant, vous êtes dans une certaine position :
-appelons ça un **état**. À partir de cet état, quelques actions s'offrent à vous
-(avancer, tourner à gauche, à droite), et chacune vous mène à un nouvel état. De
-proche en proche, l'ensemble de tous les états atteignables forme une sorte
-d'arborescence géante : l'**espace d'états**. Résoudre le labyrinthe, ce n'est
-alors rien d'autre que **trouver un chemin** dans cette arborescence, depuis
-l'état de départ jusqu'à l'état-but (la sortie).
+Prenons l'exemple d'un labyrinthe. À chaque instant, vous êtes dans une certaine
+position, qu'on appelle un **état**. À partir de cet état, quelques actions sont
+possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un
+nouvel état. L'ensemble de tous les états atteignables forme une grande
+arborescence, l'**espace d'états**. Résoudre le labyrinthe revient alors à
+**trouver un chemin** dans cette arborescence, depuis l'état de départ jusqu'à
+l'état-but (la sortie).
 
 {{< image src="/images/module1/espace-etats.svg" alt="À gauche, un labyrinthe dessiné comme un arbre de couloirs dont les états sont étiquetés S, A, B, C, D, E, G ; à droite, exactement le même arbre dessiné avec des nœuds et des arêtes portant les mêmes étiquettes. Le chemin S→A→D→G vers le but est surligné à l'identique des deux côtés ; C et E sont des impasses." title="Un labyrinthe est un arbre d'états : résoudre, c'est trouver un chemin de S (départ) à G (but)." loading="lazy" >}}
 
-Ce qui rend l'idée si féconde, c'est qu'une multitude de problèmes en apparence
-sans rapport prennent soudain la *même forme*. Le casse-tête du taquin (ces
-petites tuiles numérotées qu'on fait glisser), une partie d'échecs, la
-planification d'un itinéraire, la démonstration d'un théorème : dans chaque cas,
-on a un état de départ, des actions qui font passer d'un état à un autre, un but
-à atteindre ; résoudre revient alors à **chercher un chemin** vers ce but. Newell et
-Simon, les auteurs du Logic Theorist, pousseront l'idée jusqu'à bâtir un
-programme au nom révélateur, le *General Problem Solver* (« solutionneur général
-de problèmes »), censé attaquer n'importe quel problème exprimé sous cette forme.
+Cette idée est utile parce que beaucoup de problèmes qui semblent sans rapport
+prennent alors la même forme. Le taquin (un jeu de petites tuiles numérotées
+qu'on fait glisser), une partie d'échecs, la planification d'un itinéraire et la
+démonstration d'un théorème comportent tous un état de départ, des actions qui
+font passer d'un état à un autre et un but à atteindre. Dans chaque cas, résoudre
+le problème revient à **chercher un chemin** vers ce but. Newell et Simon, les
+auteurs du Logic Theorist, poussent l'idée jusqu'à construire un programme appelé
+*General Problem Solver* (« solutionneur général de problèmes »), conçu pour
+traiter n'importe quel problème exprimé sous cette forme.
 
-La recherche n'est pas une technique parmi d'autres : c'est le mécanisme
-central de l'IA symbolique. Démontrer un théorème, planifier un trajet,
-diagnostiquer une panne, lever l'ambiguïté d'une phrase : dans chaque cas, le
-GOFAI ramène le problème à l'exploration d'un espace de possibilités, jusqu'à
-ce qu'il y trouve une solution. Nous la retrouverons dans les pages suivantes.
+La recherche n'est pas une technique parmi d'autres. C'est le mécanisme
+central de l'IA symbolique. Pour démontrer un théorème, planifier un trajet,
+diagnostiquer une panne ou lever l'ambiguïté d'une phrase, le GOFAI ramène le
+problème à l'exploration d'un espace de possibilités, jusqu'à y trouver une
+solution. Nous la retrouverons dans les pages suivantes.
 À la fin du module, dans [*Les hivers et la
 bascule*](docs/module1/60-hivers/#la-bascule), c'est aussi elle qui marquera la
-différence avec l'autre tradition : l'IA symbolique cherche une solution,
-l'apprentissage automatique apprend à partir d'exemples.
+différence avec l'autre tradition : l'IA symbolique cherche une solution, alors
+que l'apprentissage automatique apprend à partir d'exemples.
 
 ## L'explosion combinatoire
 
-L'idée d'explorer un arbre de possibilités est séduisante… mais elle se heurte
-vite à un mur. Pour la plupart des problèmes intéressants, cet arbre est d'une
-taille **proprement astronomique**.
+L'exploration d'un arbre de possibilités a cependant une limite importante. Pour
+la plupart des problèmes intéressants, cet arbre est **extrêmement grand**.
 
-Les échecs en sont l'exemple emblématique. À chaque tour, un joueur dispose en
-moyenne d'une trentaine de coups possibles ; chacun ouvre une trentaine de
-réponses adverses, et ainsi de suite. Regarder seulement quelques coups à
-l'avance fait déjà exploser le nombre de branches à examiner. Si l'on voulait
-dérouler *toutes* les parties d'échecs possibles, on obtiendrait un nombre si
-grand — le **nombre de Shannon**, environ un 1 suivi de 120 zéros — qu'il dépasse
-de très loin le nombre d'atomes dans l'univers observable. Aucune machine, si
-rapide soit-elle, ne pourra jamais explorer un tel espace en entier.
+Les échecs en sont l'exemple le plus connu. À chaque tour, un joueur dispose en
+moyenne d'une trentaine de coups possibles. Chacun de ces coups permet une
+trentaine de réponses de l'adversaire, et ainsi de suite. Regarder seulement
+quelques coups à l'avance multiplie déjà fortement le nombre de branches à
+examiner. Le nombre de toutes les parties d'échecs possibles, appelé **nombre de
+Shannon**, vaut environ un 1 suivi de 120 zéros. Il dépasse de très loin le
+nombre d'atomes dans l'univers observable. Aucune machine, aussi rapide soit-elle,
+ne pourra jamais explorer un tel espace en entier.
 
 {{< image src="/images/module1/explosion-combinatoire.svg" alt="Un arbre de jeu qui s'évase : une position donne environ 30 coups, chacun environ 900, puis environ 27 000, et ainsi de suite. En dessous, le nombre de parties d'échecs possibles (environ 10 puissance 120, le nombre de Shannon) est comparé au nombre d'atomes de l'univers observable (environ 10 puissance 80), qu'il dépasse de très loin." title="L'explosion combinatoire : à ~30 coups par tour, l'arbre des parties dépasse vite le nombre d'atomes de l'univers." loading="lazy" >}}
 
 Pour les jeux à deux adversaires, les chercheurs mettent au point une stratégie
-élégante, le **minimax**. L'idée : la machine explore l'arbre des coups en
-supposant que son adversaire jouera toujours du mieux possible. À chaque étape,
-elle cherche à *maximiser* son avantage, tout en tenant pour acquis que
-l'adversaire cherchera, lui, à le *minimiser*, d'où le nom. En remontant les
-conséquences de chaque coup, elle choisit celui qui lui garantit le meilleur sort
-dans le pire des cas.
+appelée **minimax**. La machine explore l'arbre des coups en supposant que son
+adversaire jouera toujours le mieux possible. À chaque étape, elle cherche à
+maximiser son avantage, en supposant que l'adversaire cherchera à le minimiser,
+d'où le nom. En remontant les conséquences de chaque coup, elle choisit celui qui
+lui garantit le meilleur résultat dans le pire des cas.
 
-Mais comme l'arbre reste trop grand pour être exploré jusqu'au bout, il faut
-**ruser**. Plutôt que d'aller jusqu'aux fins de partie, la machine s'arrête à une
-certaine profondeur et *estime* la qualité d'une position à l'aide d'une **règle
-empirique** (une « heuristique ») : compter les pièces, évaluer le contrôle du
-centre, etc. D'autres astuces, comme l'**élagage** (ignorer d'emblée les branches
-qui ne peuvent pas changer la décision), évitent d'explorer inutilement.
+Comme l'arbre reste trop grand pour être exploré jusqu'au bout, il faut des
+**raccourcis**. Au lieu d'aller jusqu'aux fins de partie, la machine s'arrête à
+une certaine profondeur et estime la qualité d'une position à l'aide d'une
+**règle empirique** (une « heuristique »), par exemple en comptant les pièces ou
+en évaluant le contrôle du centre. D'autres techniques, comme l'**élagage**
+(ignorer dès le départ les branches qui ne peuvent pas changer la décision),
+évitent des explorations inutiles.
 
 {{< image src="/images/module1/minimax-elagage.svg" alt="Un arbre de jeu à trois niveaux. À la racine, c'est à la machine (MAX) de jouer ; au niveau suivant, trois coups de l'adversaire (MIN) ; en bas, neuf positions estimées par une heuristique. Chaque nœud MIN prend le minimum de ses feuilles : 3, au plus 2, et 2. La racine prend le maximum : 3, et une flèche épaisse montre le coup choisi. Au deuxième nœud MIN, dès que la feuille 2 est vue, les deux autres feuilles sont barrées : c'est l'élagage, car ce coup ne peut plus battre le 3 déjà garanti." title="Minimax sur un petit arbre : les estimations remontent, en alternant le plus petit (l'adversaire) et le plus grand (la machine) ; au milieu, l'élagage évite d'examiner deux positions inutiles." loading="lazy" >}}
 
-La même ruse vaut hors des jeux, lorsqu'il s'agit de **trouver un chemin**, par
-exemple notre labyrinthe du début, ou le calcul d'un itinéraire routier. Plutôt
-que d'explorer aveuglément dans toutes les directions, un algorithme célèbre
-nommé **A\*** (prononcé « A étoile ») se laisse guider par une heuristique : à
-chaque embranchement, il privilégie la direction qui *semble* se rapprocher le
-plus du but (par exemple, la distance à vol d'oiseau jusqu'à la destination). Le
-GPS qui vous calcule une route emprunte, au fond, ce genre de stratégie, tout
-comme, très classiquement, l'**IA des jeux vidéo** : les personnages non joueurs
-qui trouvent leur route sur la carte, les ennemis qui vous traquent ou vous
-contournent s'appuient le plus souvent sur ces mêmes algorithmes de recherche de
-chemin, A\* en tête. La leçon
-profonde de tout l'âge d'or est là : être intelligent, ce n'est pas tout explorer
-— c'est explorer **au bon endroit**. Tout l'art réside dans la qualité des
-heuristiques.
+Le même principe s'applique en dehors des jeux, lorsqu'il faut **trouver un
+chemin**, par exemple dans le labyrinthe du début ou pour calculer un itinéraire
+routier. Au lieu d'explorer dans toutes les directions, un algorithme connu
+nommé **A\*** (prononcé « A étoile ») se laisse guider par une heuristique. À
+chaque embranchement, il privilégie la direction qui semble le rapprocher le plus
+du but (par exemple, selon la distance à vol d'oiseau jusqu'à la destination). Le
+GPS qui calcule une route utilise ce genre de stratégie. C'est aussi le cas de
+l'**IA des jeux vidéo** : les personnages non joueurs qui trouvent leur route sur
+la carte, ou les ennemis qui poursuivent ou contournent le joueur, s'appuient le
+plus souvent sur ces mêmes algorithmes de recherche de chemin, en particulier A\*.
+La principale leçon de cette période est donc la suivante : un système efficace
+n'explore pas tout, il explore **au bon endroit**. La qualité des heuristiques
+est déterminante.
 
-L'applet ci-dessous met les deux stratégies face à face, sur le même labyrinthe.
-À gauche, une recherche aveugle, qui s'étend dans toutes les directions comme
-une tache d'huile ; à droite, A*, guidé par la distance qui le sépare du but.
-Lancez les deux recherches, puis comparez le nombre de cases explorées : elles
-trouvent le même chemin, mais pas au même prix. Ajoutez ou retirez des murs en
-cliquant sur la grille, et voyez dans quels cas l'heuristique aide beaucoup, et
-dans quels cas elle se laisse piéger.
+L'applet ci-dessous compare les deux stratégies sur le même labyrinthe. À gauche,
+une recherche aveugle s'étend dans toutes les directions à la fois. À droite, A*
+est guidé par la distance qui le sépare du but. Lancez les deux recherches, puis
+comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
+avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
+observez dans quels cas l'heuristique aide beaucoup et dans quels cas elle mène
+la recherche dans une mauvaise direction.
 
 {{< applet src="/html/applets/astar.html" height="557" >}}
 
-Nous retrouverons ce mur, sous un autre nom, quand il s'agira d'apprendre à
-partir de données décrites par des milliers de caractéristiques : ce sera la
+Nous retrouverons cette limite, sous un autre nom, quand il s'agira d'apprendre à
+partir de données décrites par des milliers de caractéristiques. Ce sera la
 [malédiction de la dimension](docs/module2/40-predire-par-ressemblance), au
 [Module 2](docs/module2).
 
 
 ## L'apogée : Deep Blue bat Kasparov (1997)
 
-En mai 1997, à New York, se joue un match devenu légendaire. D'un côté, **Garry
+En mai 1997, à New York, se joue un match devenu célèbre. D'un côté, **Garry
 Kasparov**, champion du monde d'échecs en titre, considéré par beaucoup comme le
 plus grand joueur de l'histoire. De l'autre, **Deep Blue**, un superordinateur
-conçu par IBM. Au terme de six parties, la machine l'emporte. Pour la première
-fois, un champion du monde en exercice s'incline face à un ordinateur dans un
-match en conditions officielles. Le retentissement est mondial : la presse y voit
-le jour où la machine a « dépassé » l'humain.
+conçu par IBM. Au terme de six parties, la machine l'emporte. C'est la première
+fois qu'un champion du monde en exercice perd contre un ordinateur dans un match
+en conditions officielles. L'événement a un retentissement mondial, et la presse
+y voit le jour où la machine a « dépassé » l'humain.
 
-Deep Blue est l'aboutissement direct de tout ce que nous venons de décrire. Aucun
-réseau de neurones, aucun apprentissage : seulement de la **recherche par force
-brute** (la machine évalue jusqu'à 200 millions de positions par seconde),
-guidée par des **heuristiques** affinées avec l'aide de grands maîtres, et
-appuyée sur d'immenses bibliothèques d'ouvertures et de fins de partie. C'est du
-GOFAI à l'état pur, porté à son sommet par la puissance de calcul.
+Deep Blue applique directement les techniques décrites plus haut. Il n'utilise
+aucun réseau de neurones et aucun apprentissage. Il repose sur de la **recherche
+par force brute** (la machine évalue jusqu'à 200 millions de positions par
+seconde), guidée par des **heuristiques** mises au point avec l'aide de grands
+maîtres, et sur de très grandes bibliothèques d'ouvertures et de fins de partie.
+C'est du GOFAI typique, rendu très performant par la puissance de calcul.
 
-Le match lui-même fut tendu et théâtral. Déstabilisé par un coup étrangement
-subtil de la machine en début de rencontre, trop « humain » à son goût,
-Kasparov en vint à soupçonner une intervention humaine et accusa IBM de
-tricherie. Il réclama une revanche que l'entreprise lui refusa, démontant Deep
-Blue dans la foulée. L'ironie est savoureuse : ce coup déroutant aurait en réalité
-résulté d'un simple bogue dans le programme.
+Le match a été tendu. Au début de la rencontre, un coup subtil et inattendu de la
+machine, qu'il jugeait trop « humain », a déstabilisé Kasparov. Il en est venu à
+soupçonner une intervention humaine et a accusé IBM de tricherie. Il a réclamé une
+revanche, que l'entreprise a refusée, et Deep Blue a été démonté peu après. Ce
+coup inattendu aurait en réalité résulté d'un simple bogue dans le programme.
 
-La réaction de Kasparov, au moment d'abandonner la sixième et dernière partie,
-le 11 mai 1997, dit mieux qu'un long commentaire ce que représentait cette
-défaite :
+La vidéo suivante montre la réaction de Kasparov au moment où il abandonne la
+sixième et dernière partie, le 11 mai 1997. Elle montre bien ce que représentait
+cette défaite :
 
 {{< youtube id="EsMk1Nbcs-s" >}}
 
-Mais au-delà de l'anecdote, la victoire laisse un goût étrange, et relance
-aussitôt *la* question. Car Deep Blue ne « comprend » pas les échecs comme
-Kasparov les comprend. Il ne sait même pas qu'il joue aux échecs ; il ne ressent
-ni la beauté d'une combinaison ni la tension d'une partie ; il ne saurait rien
-faire d'autre, pas même expliquer pourquoi il a joué tel coup. Est-ce alors de
-l'*intelligence*, ou une prodigieuse machine à calculer déguisée en joueur
-d'échecs ?
+Au-delà de l'anecdote, cette victoire pose de nouveau la question de
+l'intelligence des machines. Deep Blue ne « comprend » pas les échecs comme
+Kasparov les comprend. Il ne sait même pas qu'il joue aux échecs. Il ne perçoit
+ni la beauté d'une combinaison ni la tension d'une partie, il ne sait rien faire
+d'autre et il ne peut pas expliquer pourquoi il a joué tel coup. On peut donc se
+demander s'il s'agit d'*intelligence* ou seulement d'une machine à calculer très
+puissante qui joue aux échecs.
 
-IBM récidivera quatorze ans plus tard, sur un terrain autrement plus glissant :
-le langage. En 2011, son système Watson battra les meilleurs champions du jeu
-télévisé *Jeopardy!*, en mariant le savoir structuré de l'IA symbolique et
+IBM a relevé un autre défi quatorze ans plus tard, dans un domaine beaucoup plus
+difficile, le langage. En 2011, son système Watson a battu les meilleurs champions
+du jeu télévisé *Jeopardy!*, en combinant le savoir structuré de l'IA symbolique et
 l'apprentissage statistique. Nous le retrouverons à la fin du module, dans
 [*Les hivers et la bascule*](docs/module1/60-hivers/#un-éclair-hybride-watson-2011).
 
 {{% hint info %}}
-Le cas Deep Blue illustre une ironie qui traverse toute l'histoire de l'IA : les
-tâches que nous jugeons les plus « intellectuelles » (jouer aux échecs, démontrer
-un théorème) se sont révélées **relativement faciles** à mécaniser, tandis que ce
-qu'un enfant de trois ans fait sans effort — comprendre une phrase, reconnaître
-une scène, exercer son bon sens — a longtemps résisté. Nous touchons là au
+Le cas Deep Blue illustre un constat qui revient dans toute l'histoire de l'IA.
+Les tâches que nous jugeons les plus « intellectuelles » (jouer aux échecs,
+démontrer un théorème) se sont révélées **relativement faciles** à mécaniser. À
+l'inverse, ce qu'un enfant de trois ans fait sans effort (comprendre une phrase,
+reconnaître une scène, faire preuve de bon sens) a longtemps résisté. C'est le
 **paradoxe de Moravec**, sur lequel nous reviendrons.
 {{% /hint %}}
 
-Cette résistance dessine déjà les limites de l'âge d'or, sur lesquelles nous
-reviendrons. Mais la même époque nous réserve une tout autre histoire : non plus
-une machine qui *calcule* pour gagner, mais une qui semble *parler* et écouter.
-Et elle est, à sa façon, encore plus déroutante.
+Ces difficultés montrent déjà les limites de cette période, sur lesquelles nous
+reviendrons. La même époque a cependant produit un autre type de programme. Il ne
+calcule pas pour gagner une partie, mais semble parler et écouter, et son cas est
+encore plus surprenant.
 
 ## L'autre visage : ELIZA, ou l'illusion de comprendre
 
-L'âge d'or symbolique ne fut pas que recherche et calcul. Un de ses moments les
-plus marquants, et les plus troublants, concerne une machine qui semblait, non
-pas *jouer*, mais *parler*. En 1966, au MIT, l'informaticien **Joseph
-Weizenbaum** écrit **ELIZA**, un programme qui imite un psychothérapeute. La
-conversation paraît étonnamment naturelle : vous tapez « je me sens seul ces
-temps-ci », ELIZA répond « depuis quand vous sentez-vous seul ? ».
+L'IA symbolique de cette période ne se limite pas à la recherche et au calcul.
+L'un de ses épisodes les plus marquants concerne une machine qui semblait non pas
+jouer, mais parler. En 1966, au MIT, l'informaticien **Joseph Weizenbaum** écrit
+**ELIZA**, un programme qui imite un psychothérapeute. La conversation paraît
+étonnamment naturelle. Si vous tapez « je me sens seul ces temps-ci », ELIZA
+répond « depuis quand vous sentez-vous seul ? ».
 
-Pourtant, sous le capot, il n'y a *aucune compréhension*. ELIZA se contente de
-repérer des mots-clés et de **renvoyer les phrases de l'utilisateur sous forme de
-questions**, selon une poignée de règles toutes simples. Dites « ma mère ne
-m'écoute jamais » et le mot « mère » déclenche « parlez-moi de votre famille ».
-C'est un tour de passe-passe, sans le moindre savoir sur le monde, sur la
-solitude ou sur les mères.
+Pourtant, le programme ne comprend rien. ELIZA se contente de repérer des
+mots-clés et de **renvoyer les phrases de l'utilisateur sous forme de
+questions**, selon quelques règles très simples. Si vous écrivez « ma mère ne
+m'écoute jamais », le mot « mère » déclenche la réponse « parlez-moi de votre
+famille ». Le programme ne possède aucun savoir sur le monde, sur la solitude ou
+sur les mères.
 
 {{< image src="/images/module1/eliza.svg" alt="Une fenêtre de conversation : l'utilisateur écrit « je me sens seul ces temps-ci » et ELIZA répond « depuis quand vous sentez-vous seul ? ». Sous le capot, le programme repère le mot-clé « seul » et le glisse dans un gabarit tout prêt, sans aucune compréhension." title="ELIZA : repérer un mot-clé et renvoyer la phrase en question, sans rien comprendre." loading="lazy" >}}
 
-Le plus fascinant est ce qui se produisit alors. Les gens s'attachèrent à ELIZA.
-La propre secrétaire de Weizenbaum, qui savait pourtant pertinemment qu'il
-s'agissait d'un programme, lui demanda un jour de quitter la pièce pour pouvoir
-« parler en privé » avec la machine. Des utilisateurs lui confièrent leurs
-tourments intimes, persuadés d'être écoutés. Weizenbaum en fut si troublé qu'il
-devint l'un des grands critiques de l'IA. On appelle aujourd'hui **« effet
-ELIZA »** cette tendance puissante que nous avons à *projeter* de la
-compréhension, voire des émotions, sur la moindre machine qui manie le langage.
+La réaction des utilisateurs est ce qui a le plus marqué. Les gens se sont
+attachés à ELIZA. La secrétaire de Weizenbaum, qui savait pourtant qu'il
+s'agissait d'un programme, lui a un jour demandé de quitter la pièce pour pouvoir
+« parler en privé » avec la machine. Des utilisateurs lui ont confié des problèmes
+personnels, persuadés d'être écoutés. Weizenbaum en a été si troublé qu'il est
+devenu l'un des principaux critiques de l'IA. On appelle aujourd'hui **« effet
+ELIZA »** cette forte tendance à *projeter* de la compréhension, et même des
+émotions, sur n'importe quelle machine qui manie le langage.
 
-ELIZA est en quelque sorte le négatif du test de Turing : elle montre à quel
-point il peut être *facile* de donner l'illusion de penser sans rien comprendre
-du tout. C'est une mise en garde dont nous mesurerons toute la portée à l'ère des
-agents conversationnels (module 4) et dans le débat, jamais clos, sur ce que
-« comprendre » veut dire pour une machine (module 5).
+ELIZA est en quelque sorte l'inverse du test de Turing. Elle montre qu'il peut
+être facile de donner l'illusion de penser sans rien comprendre. Cette mise en
+garde prendra toute son importance avec les agents conversationnels (module 4) et
+dans le débat, toujours ouvert, sur ce que « comprendre » veut dire pour une
+machine (module 5).
 
-Une dernière précision, cruciale pour la suite. On serait tenté de voir en ELIZA
-l'ancêtre direct de ChatGPT : « le même tour de passe-passe, en plus gros ».
-C'est presque l'inverse. ELIZA n'est qu'une poignée de règles écrites à la main
-(repérer un mot, réciter un gabarit), sans le moindre apprentissage ni aucun
-savoir sur le monde : du GOFAI pur, taillé au clavier par son auteur. Les grands
-**modèles de langage** (les *LLM*) derrière ChatGPT relèvent, eux, du **pari
-adverse**, celui du perceptron et des réseaux de neurones : personne ne leur a
-dicté de règles ; ils ont *appris*, à partir de quantités colossales de textes, un
-modèle statistique du langage riche de milliards de paramètres, et *fabriquent*
-des réponses inédites sur presque tout. La ressemblance est de pure surface : sous
-le capot, ELIZA et ChatGPT incarnent les **deux paris rivaux** de ce module, dos à
-dos. Ce qui ne règle en rien la question de fond — un LLM *comprend*-il, ou n'est-il
-qu'un imitateur infiniment plus habile ? —, celle-là même que l'effet ELIZA nous
-invite à ne pas trancher trop vite.
+Une dernière précision est importante pour la suite. On pourrait voir en ELIZA
+l'ancêtre direct de ChatGPT, comme s'il s'agissait du même procédé à plus grande
+échelle. C'est presque l'inverse. ELIZA n'est qu'un petit ensemble de règles
+écrites à la main (repérer un mot, produire une réponse à partir d'un gabarit),
+sans aucun apprentissage ni savoir sur le monde. C'est du GOFAI pur, entièrement
+programmé par son auteur. Les grands **modèles de langage** (les *LLM*) sur
+lesquels repose ChatGPT relèvent au contraire du **pari adverse**, celui du
+perceptron et des réseaux de neurones. Personne ne leur a donné de règles. Ils ont
+appris, à partir de très grandes quantités de textes, un modèle statistique du
+langage qui comporte des milliards de paramètres, et ils produisent des réponses
+nouvelles sur presque tous les sujets. La ressemblance n'est donc que
+superficielle. ELIZA et ChatGPT représentent les **deux paris rivaux** de ce
+module. Cela ne règle pas la question de fond, qui est de savoir si un LLM
+comprend ou s'il n'est qu'un imitateur beaucoup plus habile. L'effet ELIZA
+invite justement à ne pas trancher cette question trop vite.
 
-**Un mot sur l'outil.** ELIZA, comme la quasi-totalité des programmes de l'âge
-d'or, était écrite en **Lisp**, un langage inventé par John McCarthy en 1958,
+**Un mot sur l'outil.** ELIZA, comme presque tous les programmes de cette
+période, était écrite en **Lisp**, un langage inventé par John McCarthy en 1958,
 l'année même du perceptron. C'est l'un des plus anciens langages de programmation
-encore vivants aujourd'hui, et il a profondément marqué l'informatique (la
-récursion, le ramasse-miettes de mémoire, l'invite interactive… nombre d'idées
-qu'on tient pour acquises y sont nées). Son nom dit déjà beaucoup : *Lisp* pour
-*LISt Processing*, le « traitement de listes ». Là où la plupart des langages
-sont d'abord pensés pour calculer des nombres, Lisp est taillé pour **manipuler
-des symboles** (des mots, des concepts, des relations), ce qui en faisait
-l'outil rêvé du pari symbolique.
+encore utilisés aujourd'hui, et il a beaucoup influencé l'informatique (la
+récursion, le ramasse-miettes de mémoire, l'invite interactive et bien d'autres
+idées aujourd'hui courantes y sont nées). Son nom vient de *LISt Processing*, le
+« traitement de listes ». La plupart des langages sont d'abord conçus pour
+calculer des nombres, alors que Lisp est conçu pour **manipuler des symboles**
+(des mots, des concepts, des relations). C'était donc l'outil idéal pour le pari
+symbolique.
 
 {{% details "Pour aller plus loin : à quoi ressemble du Lisp ?" %}}
-En Lisp, à peu près *tout* s'écrit sous forme de listes entre parenthèses, avec
+En Lisp, presque tout s'écrit sous forme de listes entre parenthèses, avec
 l'opération placée en tête. Une addition s'écrit ainsi :
 
 ```lisp
@@ -235,37 +232,36 @@ l'opération placée en tête. Une addition s'écrit ainsi :
 (* 3 (+ 2 4))  ; vaut 18, soit 3 × (2 + 4)
 ```
 
-Rien d'extraordinaire jusqu'ici. Mais voici l'idée féconde : une liste peut tout
-aussi bien contenir des *symboles* (des mots) que des nombres. On peut écrire une
-liste de concepts…
+Jusqu'ici, rien de particulier. L'idée importante est qu'une liste peut contenir
+des *symboles* (des mots) aussi bien que des nombres. On peut écrire une liste de
+concepts :
 
 ```lisp
 (chien chat oiseau)
 ```
 
-…ou même représenter une connaissance, un fait sur le monde :
+On peut aussi représenter une connaissance, c'est-à-dire un fait sur le monde :
 
 ```lisp
 (est-un Socrate humain)   ; « Socrate est un humain »
 ```
 
-Le point crucial est que, en Lisp, **un programme a exactement la même forme que
-les données qu'il manipule** : dans les deux cas, des listes. Un programme peut
-donc lire, transformer et même *fabriquer* d'autres programmes aussi aisément
-qu'il manie une liste d'épicerie. Cette propriété — « le code est une donnée
-comme une autre » — est précisément ce qui rendait Lisp si naturel pour bâtir des
-systèmes censés *raisonner* sur des symboles.
+Le point essentiel est qu'en Lisp, **un programme a exactement la même forme que
+les données qu'il manipule**, puisque dans les deux cas il s'agit de listes. Un
+programme peut donc lire, transformer et même produire d'autres programmes aussi
+facilement qu'il manipule une liste d'épicerie. Cette propriété (« le code est une
+donnée comme une autre ») explique pourquoi Lisp convenait si bien à des systèmes
+destinés à raisonner sur des symboles.
 {{% /details %}}
 
-Pendant des décennies, Lisp resta la langue maternelle de l'IA symbolique. On
-construisit même des ordinateurs spécialisés, les **« machines Lisp »**, pour le
-faire tourner au mieux. Nous recroiserons leur effondrement, vers 1987, dans
-« [Les hivers et la bascule](docs/module1/60-hivers) » : il y marquera l'un des
-hivers de l'IA.
+Pendant des décennies, Lisp est resté le langage principal de l'IA symbolique. On
+a même construit des ordinateurs spécialisés, les **« machines Lisp »**, pour
+l'exécuter plus efficacement. Nous verrons dans « [Les hivers et la
+bascule](docs/module1/60-hivers) » que leur effondrement, vers 1987,
+marque l'un des hivers de l'IA.
 
-Deep Blue *cherchait*, ELIZA *bricolait du langage*, mais ni l'un ni l'autre ne
-*connaissait* véritablement le monde. Pour aller plus loin, il fallait doter la
-machine de quelque chose qui lui manquait cruellement : une façon de
-**représenter ce qu'elle sait**. C'est le grand chantier, et la grande
-déconvenue, de « [Représenter le monde](docs/module1/40-representer-le-monde) ».
-
+Deep Blue cherchait et ELIZA manipulait du langage, mais aucun des deux ne
+connaissait vraiment le monde. Pour aller plus loin, il fallait donner à la
+machine une façon de **représenter ce qu'elle sait**. C'est le grand chantier de
+« [Représenter le monde](docs/module1/40-representer-le-monde) », qui s'est
+soldé par un échec important.

@@ -6,264 +6,273 @@ slug: trois-facons-d-apprendre
 
 # Trois façons d'apprendre
 
-Nous avons refermé le chapitre précédent sur une prise de conscience : tout ce
-que nous avons construit dans ce module (régression, classification, la droite,
-Bayes) appartenait à une seule et même famille, l'**apprentissage supervisé**,
-celle où chaque exemple arrive accompagné de sa bonne réponse. Mais nous avons
-aussi entrevu que ce n'était pas la seule façon d'apprendre.
+Le chapitre précédent s'est terminé sur un constat. Tout ce que nous avons
+construit dans ce module (régression, classification, la droite, Bayes)
+appartient à une seule famille, l'**apprentissage supervisé**, dans laquelle
+chaque exemple est accompagné de sa bonne réponse. Nous avons aussi vu que ce
+n'est pas la seule façon d'apprendre.
 
-Ce qui distingue les grandes familles de l'apprentissage automatique, c'est la
-nature du **signal** dont le modèle se nourrit, ce qui, dans les données, lui
-tient lieu de guide. Et il n'en existe, au fond, que trois grands types :
+Les grandes familles de l'apprentissage automatique se distinguent par la
+nature du **signal** que le modèle utilise, c'est-à-dire ce qui, dans les
+données, lui sert de guide. Il en existe trois grands types :
 
-- une **réponse fournie** pour chaque exemple : c'est l'apprentissage
-  **supervisé**, notre terrain depuis le début ;
-- **aucune réponse**, juste des données brutes dans lesquelles il faut débusquer
-  une structure : l'apprentissage **non supervisé** ;
-- ni réponse ni structure donnée, mais une **récompense** qui arrive après coup,
-  au fil de l'action : l'apprentissage par **renforcement**.
+- une **réponse fournie** pour chaque exemple, ce qui correspond à
+  l'apprentissage **supervisé**, étudié depuis le début du module ;
+- **aucune réponse**, seulement des données brutes dans lesquelles il faut
+  trouver une structure, ce qui correspond à l'apprentissage **non supervisé** ;
+- ni réponse ni structure donnée, mais une **récompense** qui arrive après
+  coup, au fil des actions, ce qui correspond à l'apprentissage par
+  **renforcement**.
 
-{{< image src="/images/module2/trois-paradigmes.svg" alt="Trois panneaux. « Supervisé » : des points étiquetés en bleu et rouge, la réponse étant donnée. « Non supervisé » : les mêmes points, tous gris et sans étiquette, que l'algorithme regroupe en cercles pointillés, et l'on découvre des groupes. « Renforcement » : une boucle entre un agent et son environnement, reliés par une flèche « action » et une flèche « récompense »." title="Les trois grandes familles, par la nature de leur signal : réponse donnée (supervisé), structure à découvrir (non supervisé), récompense au fil de l'action (renforcement)." loading="lazy" >}}
+{{< image src="/images/module2/trois-paradigmes.svg" alt="Trois panneaux. « Supervisé » : des points étiquetés en bleu et rouge, la réponse étant donnée. « Non supervisé » : les mêmes points, tous gris et sans étiquette, que l'algorithme regroupe en cercles pointillés pour former des groupes. « Renforcement » : une boucle entre un agent et son environnement, reliés par une flèche « action » et une flèche « récompense »." title="Les trois grandes familles, par la nature de leur signal : réponse donnée (supervisé), structure à découvrir (non supervisé), récompense au fil de l'action (renforcement)." loading="lazy" >}}
 
-Trois signaux, trois façons d'apprendre. Nous avons passé tout le module dans la
-première ; ce dernier chapitre part à la rencontre des deux autres, moins pour
-les maîtriser que pour situer ce que nous avons appris dans un paysage plus vaste,
-et apercevoir les routes qui mènent aux modules suivants.
+Nous avons passé tout le module dans la première famille. Ce dernier chapitre
+présente les deux autres. Le but n'est pas de les maîtriser, mais de situer ce
+que nous avons appris dans un ensemble plus large et de préparer les modules
+suivants.
 
 ## Apprendre avec un professeur : le supervisé
 
-Commençons par ce que nous connaissons déjà par cœur. En apprentissage supervisé,
-le signal est une **réponse toute prête**, attachée à chaque exemple : le prix de
-cette maison, l'étiquette *pourriel* de ce courriel, la couleur de ce point. Le
-modèle n'a qu'un but : apprendre à relier l'entrée à cette réponse. Une fois
-entraîné, il l'applique à des cas neufs. C'est l'image même du professeur qui
-corrige : il connaît la bonne réponse, et c'est en s'y comparant que l'élève
-progresse.
+Commençons par ce que nous connaissons déjà. En apprentissage supervisé, le
+signal est une **réponse fournie** avec chaque exemple, par exemple le prix
+d'une maison, l'étiquette *pourriel* d'un courriel ou la couleur d'un point. Le
+modèle apprend à relier l'entrée à cette réponse. Une fois entraîné, il
+applique ce qu'il a appris à de nouveaux cas. On peut le comparer à un
+professeur qui corrige : il connaît la bonne réponse, et l'élève progresse en
+comparant sa réponse à celle-ci.
 
-Nous en avons rencontré les deux visages : la **régression**, quand la réponse
-est un nombre (un prix), et la **classification**, quand c'est une catégorie
-(pourriel ou non). Malgré leurs différences, tous deux carburent au même
-signal (une cible fournie d'avance) et à la même mécanique : régler des
+Nous en avons vu les deux formes : la **régression**, quand la réponse est un
+nombre (un prix), et la **classification**, quand c'est une catégorie
+(pourriel ou non). Malgré leurs différences, les deux utilisent le même signal
+(une cible fournie d'avance) et le même mécanisme, qui consiste à régler des
 paramètres pour minimiser l'écart à cette cible.
 
-Cette dépendance à des réponses toutes prêtes est la grande force du supervisé…
-et son talon d'Achille. Car ces étiquettes, il faut bien que *quelqu'un* les
-fournisse, souvent à la main, un exemple à la fois.
+Cette dépendance à des réponses fournies est à la fois la principale force du
+supervisé et sa principale limite. En effet, il faut que quelqu'un fournisse
+ces étiquettes, souvent à la main, un exemple à la fois.
 
 {{% hint info %}}
 **Le socle humain du supervisé**
 
 Nous avons vu, dans [*Bien évaluer un modèle*](docs/module2/75-bien-evaluer/#tout-cela-portait-un-nom-lapprentissage-supervisé),
-que l'étiquetage des données est devenu une industrie à part entière. Elle a
-une face sombre : trancher « ce message est haineux, celui-là non », des
-milliers de fois par jour, c'est aussi s'exposer aux contenus les plus violents
-du Web, et la modération de contenus est l'un des métiers les plus éprouvants
-de cette chaîne. Même les assistants les plus récents en dépendent : une part
-de l'entraînement de ChatGPT repose sur des humains qui notent et corrigent ses
-réponses (nous y reviendrons au [Module 4](docs/module4)). L'« intelligence »
-de ces systèmes s'appuie ainsi sur un socle très humain, et soulève des
-questions que nous retrouverons au [Module 5](docs/module5).
+que l'étiquetage des données est devenu une industrie à part entière. Cette
+industrie a aussi des aspects difficiles. Décider des milliers de fois par jour
+qu'un message est haineux et qu'un autre ne l'est pas, c'est aussi être exposé
+aux contenus les plus violents du Web, et la modération de contenus est l'un
+des métiers les plus éprouvants de cette chaîne. Les assistants les plus
+récents en dépendent aussi : une partie de l'entraînement de ChatGPT repose sur
+des humains qui notent et corrigent ses réponses (nous y reviendrons au
+[Module 4](docs/module4)). L'« intelligence » de ces systèmes repose donc en
+partie sur un travail humain, ce qui soulève des questions que nous
+retrouverons au [Module 5](docs/module5).
 {{% /hint %}}
 
-Que faire, alors, quand personne n'a fourni ces réponses ?
+La section suivante traite du cas où personne n'a fourni ces réponses.
 
 ## Apprendre sans réponses : le non-supervisé
 
-Souvent, personne n'a fourni d'étiquettes. On dispose d'un grand tas de données
-brutes (des clients, des photos, des textes) et rien d'autre : aucune « bonne
-réponse » à imiter. Peut-on quand même apprendre quelque chose ? Oui, mais le but
-change du tout au tout. Il ne s'agit plus de *prédire* une réponse donnée, mais
-de **découvrir une structure** cachée dans les données elles-mêmes. C'est
-l'apprentissage **non supervisé** : explorer un territoire sans carte, et en
-dresser une.
+Souvent, les données n'ont pas d'étiquettes. On dispose d'un grand ensemble de
+données brutes (des clients, des photos, des textes), sans aucune « bonne
+réponse » à imiter. On peut quand même en apprendre quelque chose, mais le but
+est différent. Il ne s'agit plus de prédire une réponse donnée, mais de
+**découvrir une structure** présente dans les données elles-mêmes. C'est
+l'apprentissage **non supervisé**.
 
-La tâche la plus courante est le **regroupement** (ou *clustering*) : rassembler
-les exemples qui se ressemblent. Et « se ressembler », nous savons déjà ce que ça
-veut dire : c'est être **proches** dans l'espace des caractéristiques, comme l'a posé
+La tâche la plus courante est le **regroupement** (ou *clustering*), qui
+consiste à rassembler les exemples qui se ressemblent. Nous savons déjà ce que
+« se ressembler » veut dire : c'est être **proches** dans l'espace des
+caractéristiques, comme l'a expliqué
 [*Prédire par ressemblance*](docs/module2/40-predire-par-ressemblance).
-Regrouper, c'est donc repérer les amas naturels de points : les zones denses,
-séparées par du vide.
+Regrouper consiste donc à repérer les amas naturels de points, c'est-à-dire les
+zones denses séparées par des zones vides.
 
-L'algorithme classique pour cela s'appelle **k-means**. Son idée tient en une
-image : pour organiser une fête, vous voulez répartir les invités autour de $k$
-tables, en plaçant chaque table au centre de son petit groupe, pour que chacun
-soit au plus près de la sienne. k-means fait exactement cela, par tâtonnements :
+L'algorithme classique pour cette tâche s'appelle **k-means**. On peut
+l'expliquer par une comparaison. Pour organiser une fête, on veut répartir les
+invités autour de $k$ tables, en plaçant chaque table au centre de son groupe,
+pour que chacun soit le plus près possible de la sienne. k-means procède de
+cette façon, par ajustements successifs :
 
 1. placer $k$ « centres » au hasard ;
-2. rattacher chaque point au centre le plus proche (voilà les groupes provisoires) ;
+2. rattacher chaque point au centre le plus proche (ce qui donne des groupes provisoires) ;
 3. déplacer chaque centre au milieu de son groupe ;
-4. répéter les étapes 2 et 3 jusqu'à ce que plus rien ne bouge.
+4. répéter les étapes 2 et 3 jusqu'à ce que plus rien ne change.
 
-Essayez : dans l'applet, choisissez le nombre de groupes et regardez les centres
-migrer, pas à pas, vers le cœur des amas.
+Dans l'applet ci-dessous, choisissez le nombre de groupes et observez les
+centres se déplacer, étape par étape, vers le centre des amas.
 
 {{< applet src="/html/applets/kmeans.html" height="596" >}}
 
-Un point mérite qu'on s'y arrête. À première vue, ce résultat ressemble à de la
-classification : des points répartis en groupes de couleurs. Mais la différence
-est de fond : ici, **les points n'avaient aucune étiquette au départ.** Vous
-n'avez pas dit à l'algorithme ce qu'était chaque groupe ; vous lui avez seulement
-donné leur *nombre*, et il a inventé le reste. Il n'y a pas de « bonne réponse »
-à retrouver — juste une structure à révéler.
+Ce résultat ressemble à de la classification, puisque les points sont répartis
+en groupes de couleurs. La différence est cependant importante : ici, **les
+points n'avaient aucune étiquette au départ.** Vous n'avez pas indiqué à
+l'algorithme ce que représente chaque groupe. Vous lui avez seulement donné le
+nombre de groupes, et il a déterminé le reste. Il n'y a pas de « bonne
+réponse » à retrouver, seulement une structure à mettre en évidence.
 
-Ce genre de méthode est partout : segmenter une clientèle en profils-types pour
-le marketing, repérer une transaction anormale au milieu de millions d'autres
-(détection de fraude), ou compresser des données en les résumant par leurs
-groupes.
+Ce type de méthode est très répandu. On l'utilise pour segmenter une clientèle
+en profils types pour le marketing, pour repérer une transaction anormale parmi
+des millions d'autres (détection de fraude) ou pour compresser des données en
+les résumant par leurs groupes.
 
-Et le regroupement n'est qu'une porte d'entrée. Le non-supervisé recouvre aussi
-la **réduction de dimension** (simplifier des données à mille variables sans trop
-perdre) et, plus profond encore, l'**apprentissage de représentations** :
-découvrir *tout seul*, sans étiquettes, de bonnes caractéristiques pour décrire
-les données. Cette idée, laisser la machine forger ses propres descripteurs, est
-l'un des grands moteurs de l'IA moderne ; nous la retrouverons avec les
-**autoencodeurs** ([Module 3](docs/module3)) et les **plongements** de mots ([Module 4](docs/module4)).
+Le regroupement n'est qu'une partie du non-supervisé. Celui-ci comprend aussi
+la **réduction de dimension** (simplifier des données à mille variables en
+perdant le moins d'information possible) et l'**apprentissage de
+représentations**, qui consiste à découvrir sans étiquettes de bonnes
+caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
+la machine construire ses propres descripteurs, joue un rôle central dans l'IA
+moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3)) et les **plongements** de mots ([Module 4](docs/module4)).
 
 {{% details "Les mathématiques de k-means (optionnel)" %}}
 
-k-means cherche à minimiser une fonction d'erreur, l'**inertie** (la somme des
-carrés des distances de chaque point à son centre) :
+k-means cherche à minimiser une fonction d'erreur, l'**inertie**, qui est la
+somme des carrés des distances de chaque point à son centre :
 
 $$J = \sum_{i=1}^{n} \min_{j=1}^{k} \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$$
 
 où $\mathbf{x}_i$ est le $i$-ème point et $\boldsymbol{\mu}_j$ le centre du groupe
-$j$. Les deux étapes de l'algorithme alternent :
+$j$. L'algorithme alterne deux étapes :
 
-- **assignation** : chaque point rejoint le centre le plus proche,
+- **assignation** : chaque point est rattaché au centre le plus proche,
   $c_i = \arg\min_j \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$ ;
-- **mise à jour** : chaque centre se replace à la moyenne de ses points,
+- **mise à jour** : chaque centre est placé à la moyenne de ses points,
   $\boldsymbol{\mu}_j = \frac{1}{n_j} \sum_{i : c_i = j} \mathbf{x}_i$.
 
-On répète jusqu'à convergence. Deux remarques : le nombre de groupes $k$ est un
-**hyper-paramètre** (on le choisit d'avance, comme le $k$ de kNN), et
-l'algorithme peut se figer dans un minimum *local*, d'où l'usage de le relancer
-plusieurs fois avec des centres initiaux différents, pour garder la meilleure
-solution.
+On répète ces étapes jusqu'à convergence. Deux remarques s'imposent. Le nombre
+de groupes $k$ est un **hyper-paramètre**, qu'on choisit d'avance comme le $k$
+de kNN. De plus, l'algorithme peut s'arrêter dans un minimum local. C'est
+pourquoi on le relance habituellement plusieurs fois avec des centres initiaux
+différents, et on garde la meilleure solution.
 
 {{% /details %}}
 
 ### Fabriquer soi-même ses réponses : l'auto-supervision
 
-Entre le supervisé, qui exige des étiquettes, et le non-supervisé, qui s'en
-passe, il existe une ruse qui a changé le visage du domaine : **fabriquer les
-étiquettes à partir des données elles-mêmes**. Prenez un texte, cachez-en un
-mot, et demandez au modèle de le deviner : la « bonne réponse » est là, dans
-le texte, sans qu'aucun humain n'ait rien étiqueté. Prenez une photo, cachez-en
-un morceau, et demandez de le reconstituer. Tournez une image, et demandez de
-combien. À chaque fois, le problème a la forme du supervisé, une entrée et une
-réponse attendue, mais la réponse a été *découpée dans la donnée brute*. C'est
-l'apprentissage **auto-supervisé** (*self-supervised learning*).
+Entre le supervisé, qui exige des étiquettes, et le non-supervisé, qui n'en
+utilise pas, il existe une approche qui a beaucoup transformé le domaine :
+**fabriquer les étiquettes à partir des données elles-mêmes**. On peut prendre
+un texte, en cacher un mot et demander au modèle de le deviner. La « bonne
+réponse » se trouve dans le texte, sans qu'aucun humain ait eu à étiqueter quoi
+que ce soit. On peut aussi cacher une partie d'une photo et demander au modèle
+de la reconstituer, ou faire pivoter une image et lui demander de quel angle.
+Dans chaque cas, le problème a la forme d'un problème supervisé, avec une
+entrée et une réponse attendue, mais la réponse est tirée de la donnée brute.
+C'est l'apprentissage **auto-supervisé** (*self-supervised learning*).
 
-La ruse paraît modeste ; elle est immense, parce qu'elle lève la barrière de
-l'étiquetage. Le Web contient des milliers de milliards de mots, tous
-disponibles, sans qu'il en coûte une seule heure de travail humain : chaque
-phrase est un exercice avec son corrigé. C'est ainsi, en apprenant à prédire
-le mot suivant, que les grands modèles de langage du [Module 4](docs/module4)
-sont entraînés, et c'est pour cela qu'ils ont pu lire une bonne partie de ce
-que l'humanité a écrit. Le supervisé leur fournit ensuite, en bien plus petites
-quantités, les réponses notées par des humains dont l'encart plus haut
-parlait ; mais le gros de leur savoir vient de ce jeu de devinettes avec
-eux-mêmes.
+Cette approche semble simple, mais elle a une portée considérable, parce
+qu'elle supprime le besoin d'étiquetage. Le Web contient des milliers de
+milliards de mots disponibles, qui ne demandent aucune heure de travail
+humain : chaque phrase fournit un exercice avec son corrigé. C'est de cette
+façon, en apprenant à prédire le mot suivant, que les grands modèles de langage
+du [Module 4](docs/module4) sont entraînés, et c'est pour cette raison qu'ils
+ont pu traiter une grande partie de ce que l'humanité a écrit. L'apprentissage
+supervisé intervient ensuite, sur des quantités beaucoup plus petites, avec les
+réponses notées par des humains dont parlait l'encadré plus haut. Cependant,
+l'essentiel de leurs connaissances provient de cette tâche de prédiction sur
+les textes eux-mêmes.
 
 ## Apprendre par l'expérience : le renforcement
 
-Reste une troisième situation, très différente des deux premières. Pas
-d'étiquettes ; mais cette fois, pas non plus un simple tas de données à
-structurer. Ici, le modèle, qu'on appelle un **agent**, doit *agir*, et il
-apprend des **conséquences** de ses actes. Pensez à un enfant qui apprend à faire
-du vélo, à un robot qui apprend à marcher, ou à un joueur qui découvre un jeu :
-personne ne leur dicte le bon geste à chaque instant ; ils essaient, tombent,
-recommencent, et retiennent ce qui marche.
+La troisième situation est très différente des deux premières. Il n'y a pas
+d'étiquettes, et il n'y a pas non plus seulement un ensemble de données à
+structurer. Le modèle, qu'on appelle ici un **agent**, doit agir, et il apprend
+à partir des **conséquences** de ses actions. On peut penser à un enfant qui
+apprend à faire du vélo, à un robot qui apprend à marcher ou à un joueur qui
+découvre un jeu. Personne ne leur indique le bon mouvement à chaque instant.
+Ils essaient, échouent, recommencent et retiennent ce qui fonctionne.
 
-Le signal, ici, c'est une **récompense** : un point gagné, une partie remportée,
-une chute évitée. Sa particularité : elle arrive souvent **bien après** les
-actions qui l'ont causée. Quand on gagne une partie d'échecs, quel coup, au juste,
-fut décisif ? Ce décalage est toute la difficulté du renforcement : il faut
-apprendre à relier une récompense tardive aux actions qui l'ont, un jour, rendue
-possible.
+Le signal est ici une **récompense**, par exemple un point gagné, une partie
+remportée ou une chute évitée. Cette récompense arrive souvent **bien après**
+les actions qui l'ont produite. Quand on gagne une partie d'échecs, il est
+difficile de savoir quel coup a été décisif. Ce décalage est la principale
+difficulté du renforcement, parce qu'il faut apprendre à relier une récompense
+tardive aux actions qui l'ont rendue possible.
 
-La stratégie est celle de l'**essai-erreur**. L'agent explore, encaisse
-récompenses et punitions, et **renforce** peu à peu les actions qui mènent au
-succès, d'où le nom. Voyez-le à l'œuvre : dans l'applet ci-dessous, un agent
-(le point jaune) cherche la sortie (**+1**) d'une petite grille en évitant un
-piège (**−1**), sans rien savoir au départ. Lancez l'entraînement.
+La stratégie utilisée est celle de l'**essai-erreur**. L'agent explore, reçoit
+des récompenses et des punitions, et **renforce** peu à peu les actions qui
+mènent au succès, d'où le nom de cette famille. Dans l'applet ci-dessous, un
+agent (le point jaune) cherche la sortie (**+1**) d'une petite grille en
+évitant un piège (**−1**), sans aucune connaissance au départ. Lancez
+l'entraînement.
 
 {{< applet src="/html/applets/reinforcement.html" height="728" >}}
 
-Au début, l'agent erre au hasard. Puis, épisode après épisode, une **carte de
-valeur** se dessine (les cases se teintent selon leur promesse) et une
-**politique** émerge : les flèches, indiquant en chaque case le meilleur
-mouvement, finissent par tracer un chemin sûr vers le but. Un détail est
-instructif : le curseur d'**exploration** (ε). À zéro, l'agent ne fait
-qu'exploiter ce qu'il croit déjà savoir et peut rester coincé dans un chemin
-médiocre ; un peu de hasard le pousse à *explorer* d'autres routes, et parfois à
-en trouver de meilleures. Cet arbitrage entre **explorer et exploiter** est au
-cœur du renforcement.
+Au début, l'agent se déplace au hasard. Puis, d'un épisode à l'autre, une
+**carte de valeur** se forme (les cases se colorent selon leur valeur estimée)
+et une **politique** apparaît. Les flèches, qui indiquent pour chaque case le
+meilleur mouvement, finissent par former un chemin sûr vers le but. Le curseur
+d'**exploration** (ε) est instructif. À zéro, l'agent ne fait qu'exploiter ce
+qu'il croit déjà savoir, et il peut rester dans un chemin médiocre. Un peu de
+hasard l'amène à explorer d'autres chemins, et parfois à en trouver de
+meilleurs. Ce compromis entre **explorer et exploiter** est au centre du
+renforcement.
 
-Reconnaissez-vous un air de famille ? Au [Module 1](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997), nous parlions des machines qui
-jouent aux échecs en *cherchant* dans l'arbre des coups possibles. Le
-renforcement, c'est cette quête, mais où la machine *apprend* elle-même à évaluer
-les positions plutôt que de tout calculer. C'est précisément ce mariage (la
-recherche du GOFAI et l'apprentissage) qui a permis à **AlphaGo** de battre les
-meilleurs joueurs de go humains, là où la seule force brute échouait.
+Cette approche rappelle une notion déjà vue. Au [Module 1](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997), nous avons étudié les machines qui
+jouent aux échecs en cherchant dans l'arbre des coups possibles. Le
+renforcement reprend cette recherche, mais la machine apprend elle-même à
+évaluer les positions au lieu de tout calculer. C'est cette combinaison de la
+recherche du GOFAI et de l'apprentissage qui a permis à **AlphaGo** de battre
+les meilleurs joueurs de go humains, alors que la force brute seule n'y
+parvenait pas.
 
-Le renforcement est aussi la famille la plus gourmande en calcul, et c'est en le
-mariant aux **réseaux de neurones** (le *deep reinforcement learning*, [Module 3](docs/module3))
-qu'il a pris son essor. Vous le recroiserez même au cœur des assistants modernes :
-c'est en partie par renforcement, à partir des préférences d'évaluateurs humains
-(le fameux **RLHF**), qu'on façonne le comportement de ChatGPT. Et c'est par
-renforcement encore, mais avec des récompenses *vérifiables* cette fois (un
-problème de mathématiques a une bonne réponse, un programme passe ou non ses
-tests : le **RLVR**), qu'on a appris aux modèles les plus récents à
-« raisonner » longuement avant de répondre. Nous y viendrons au
-[Module 4](docs/module4).
+Le renforcement est aussi la famille qui demande le plus de calcul, et il s'est
+surtout développé lorsqu'on l'a combiné aux **réseaux de neurones** (le *deep reinforcement learning*, [Module 3](docs/module3)).
+On le retrouve aussi dans les assistants modernes. Le comportement de ChatGPT
+est en partie ajusté par renforcement, à partir des préférences d'évaluateurs
+humains (le **RLHF**). Le renforcement sert également, avec des récompenses
+vérifiables (un problème de mathématiques a une bonne réponse, un programme
+réussit ou non ses tests, ce qu'on appelle le **RLVR**), à entraîner les
+modèles les plus récents à « raisonner » longuement avant de répondre. Nous
+verrons ces méthodes au [Module 4](docs/module4).
 
 ## Un même squelette, d'un bout à l'autre
 
-Trois signaux, trois familles, trois réponses à une seule question : *de quoi le
-modèle apprend-il ?* Une réponse fournie, une structure à découvrir, une
-récompense à conquérir. Mais si l'on gratte sous la surface, ces trois mondes
-partagent la même charpente : celle, précisément, qui a couru tout au long de ce
-module.
+Les trois familles répondent de trois façons à une même question, celle de
+savoir à partir de quoi le modèle apprend : une réponse fournie, une structure
+à découvrir ou une récompense à obtenir. Ces trois familles partagent cependant
+la même structure de base, celle qui a servi tout au long de ce module.
 
-Rappelez-vous le chemin. On part de **données**, qu'on décrit par des nombres,
-des points dans un espace. On choisit un **modèle** : une fonction de prédiction,
-réglée par des paramètres. On mesure son **erreur** de prédiction. On règle alors
-les paramètres du modèle pour la **minimiser**, le plus souvent en dévalant la
-pente par descente de gradient. Et
-l'on vérifie qu'il **généralise** au-delà des exemples appris. Tout ce que nous
-avons croisé n'est qu'une variation sur cette grammaire : le modèle bête et son
-unique nombre, kNN et ses zéro paramètre, la droite et ses deux, l'arbre et
-ses questions, la régression logistique et Bayes qui classent, k-means qui regroupe sans étiquettes, l'agent
-qui apprend d'une récompense. Même démarche, décors différents.
+Cette structure comporte plusieurs étapes. On part de **données**, qu'on décrit
+par des nombres, donc par des points dans un espace. On choisit un
+**modèle**, c'est-à-dire une fonction de prédiction réglée par des paramètres.
+On mesure son **erreur** de prédiction. On règle ensuite les paramètres du
+modèle pour **minimiser** cette erreur, le plus souvent par descente de
+gradient. On vérifie enfin que le modèle **généralise** au-delà des exemples
+appris. Toutes les méthodes vues dans ce module sont des variantes de ce
+schéma : le modèle simple et son unique nombre, kNN et ses zéro paramètre, la
+droite et ses deux paramètres, l'arbre et ses questions, la régression
+logistique et Bayes qui classent, k-means qui regroupe sans étiquettes et
+l'agent qui apprend à partir d'une récompense. La démarche est la même, mais
+elle s'applique à des problèmes différents.
 
-C'est là, au fond, toute la démystification que visait ce module. « Apprendre »,
-pour une machine, n'a rien de magique : c'est **ajuster des réglages pour réduire
-une erreur sur des exemples**. La question que nous posions dès la première page —
-*en quoi est-ce de l'intelligence ?* — reste ouverte, et c'est très bien ainsi ;
-mais vous savez désormais, concrètement, ce qui se passe sous le capot.
+C'est ce que ce module voulait montrer. Pour une machine, « apprendre » n'a
+rien de magique : c'est **ajuster des réglages pour réduire une erreur sur des
+exemples**. La question posée dès la première page, qui était de savoir en quoi
+il s'agit d'intelligence, reste ouverte. Vous savez cependant maintenant,
+concrètement, comment ces systèmes fonctionnent.
 
-Un dernier mot, pour boucler la parenté annoncée à l'ouverture du module. Tout
-ce que nous avons fait ici, un statisticien l'aurait reconnu : ajuster une
+Il reste à revenir sur le lien avec la statistique annoncé au début du module.
+Un statisticien reconnaîtrait tout ce que nous avons fait ici : ajuster une
 droite, estimer une probabilité, tirer un échantillon, se méfier d'un score. Ce
-qui a changé, ce n'est pas le socle, c'est l'accent et l'échelle. L'accent :
-prédire d'abord, expliquer ensuite, et parfois jamais. L'échelle : des millions
-d'exemples, des milliards de paramètres, et des modèles que plus personne ne
-lit. C'est à cette échelle que la statistique a pris le nom d'apprentissage
-automatique, et c'est là qu'elle a produit quelque chose que ses fondateurs
-n'auraient pas prévu.
+qui a changé, ce n'est pas la base, mais l'accent et l'échelle. L'accent est
+mis sur la prédiction d'abord, l'explication ensuite, et parfois jamais.
+L'échelle se compte en millions d'exemples et en milliards de paramètres, avec
+des modèles que personne ne lit plus. C'est à cette échelle que la statistique
+a pris le nom d'apprentissage automatique, et qu'elle a produit des résultats
+que ses fondateurs n'avaient pas prévus.
 
-Il ne reste plus qu'à changer d'échelle. Un chercheur qui a passé sa vie sur
-l'apprentissage par renforcement, Richard Sutton, a tiré de soixante-dix ans
-d'histoire de l'IA une leçon qu'il dit amère, [« The Bitter
+L'étape suivante est ce changement d'échelle. Richard Sutton, un chercheur qui
+a consacré sa carrière à l'apprentissage par renforcement, a tiré de
+soixante-dix ans d'histoire de l'IA une leçon qu'il qualifie d'amère, [« The Bitter
 Lesson »](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
-(2019) : à long terme, les méthodes générales qui exploitent la puissance de
-calcul finissent toujours par battre celles où l'on avait inscrit à la main le
-savoir des humains, et il n'y en a que deux qui passent vraiment à
-l'échelle : la **recherche**, celle du Module 1, et l'**apprentissage**, celui
-de ce module. Ce que cette leçon signifie, et ce qu'elle coûte, sera le point
-de départ du [**Module 3**](docs/module3), où nous empilerons ces fonctions
-réglables en **réseaux de neurones** profonds, et verrons pourquoi c'est là que
-l'image et le langage prennent enfin leur envol. Au [**Module 4**](docs/module4),
-ces mêmes réseaux deviendront **génératifs**, capables de produire textes et
-images : les grands modèles de langage. Le squelette ne changera pas. Il grandira.
+(2019). Selon lui, à long terme, les méthodes générales qui exploitent la
+puissance de calcul finissent toujours par l'emporter sur celles où l'on avait
+inscrit à la main le savoir humain, et seules deux méthodes passent vraiment à
+l'échelle, la **recherche**, celle du Module 1, et l'**apprentissage**, celui
+de ce module. Le sens et le coût de cette leçon seront le point de départ du
+[**Module 3**](docs/module3). Nous y combinerons ces fonctions réglables en
+**réseaux de neurones** profonds, et nous verrons pourquoi ces réseaux ont
+permis de grands progrès dans le traitement de l'image et du langage. Au
+[**Module 4**](docs/module4), ces mêmes réseaux deviendront **génératifs**,
+capables de produire des textes et des images : ce sont les grands modèles de
+langage. La structure de base restera la même, mais à une échelle beaucoup plus
+grande.

@@ -8,248 +8,256 @@ slug: hivers-et-bascule
 
 ## Le premier hiver : la mort du perceptron (1969)
 
-Souvenez-vous : dans « [Deux paris rivaux](docs/module1/20-deux-paris) », nous avions
-laissé le **perceptron** de Rosenblatt au
-sommet de sa promesse — *une machine qui apprend de ses erreurs* —, salué par le *New
-York Times* comme l'aube d'une intelligence électronique. Nous avions aussi annoncé
-qu'un coup terrible l'attendait. Le voici.
+Le chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » a présenté le
+**perceptron** de Rosenblatt, une machine qui apprend de ses erreurs, que le *New
+York Times* avait décrit comme le début d'une intelligence électronique. Ce chapitre
+annonçait aussi que le perceptron allait subir une critique sévère. Cette section
+présente cette critique.
 
-En **1969**, deux poids lourds du camp symbolique — **Marvin Minsky**, l'un des pères
-de Dartmouth, et son collègue **Seymour Papert** — publient un livre au titre sobre,
-*Perceptrons*. Ce n'est pas un pamphlet, mais une analyse mathématique rigoureuse ; et
-sa conclusion tombe comme un couperet. Le perceptron, démontrent-ils, est frappé d'une
-limite de principe : il est incapable d'apprendre certaines fonctions d'une simplicité
-pourtant dérisoire. L'exemple resté emblématique est le **XOR**, le « ou exclusif ».
+En **1969**, deux chercheurs importants du camp symbolique, **Marvin Minsky** (l'un
+des organisateurs de Dartmouth) et son collègue **Seymour Papert**, publient un livre
+intitulé *Perceptrons*. Il ne s'agit pas d'un pamphlet, mais d'une analyse
+mathématique rigoureuse. Minsky et Papert y démontrent que le perceptron a une limite
+de principe : il est incapable d'apprendre certaines fonctions pourtant très simples.
+L'exemple le plus connu est le **XOR**, le « ou exclusif ».
 
-Le XOR, c'est cette règle : *l'un ou l'autre, mais pas les deux à la fois*. Vous la
-connaissez sans le savoir — c'est le principe du **va-et-vient**, ces deux interrupteurs
-qui commandent une même lampe au bout d'un couloir. Basculez l'un *ou* l'autre, la
-lumière change d'état ; les deux interrupteurs dans la même position, elle est éteinte ;
-dans des positions opposées, elle s'allume. Deux entrées, une réponse qui dépend de leur
-*désaccord*. Un enfant manie cela tous les jours. Or le perceptron, lui, ne peut pas
-l'apprendre : aucun réglage de ses connexions ne lui permet de séparer d'un même trait
-les cas « allumé » des cas « éteint ». Une tâche triviale, et pourtant hors de sa portée.
+Le XOR correspond à la règle suivante : l'un ou l'autre, mais pas les deux à la fois.
+C'est par exemple le principe du **va-et-vient**, où deux interrupteurs commandent
+une même lampe, souvent aux deux bouts d'un couloir. Quand on bascule l'un ou l'autre
+interrupteur, la lumière change d'état. Si les deux interrupteurs sont dans la même
+position, la lampe est éteinte ; s'ils sont dans des positions opposées, elle est
+allumée. La réponse dépend donc du désaccord entre les deux entrées. Cette règle est
+facile à comprendre pour un humain, mais le perceptron ne peut pas l'apprendre, parce
+qu'aucun réglage de ses connexions ne lui permet de séparer par une seule droite les
+cas « allumé » des cas « éteint ».
 
-L'effet fut dévastateur. Minsky n'était pas n'importe qui : une autorité immense, et de
-surcroît du camp adverse. Son verdict, mathématiquement imparable, fut reçu comme un
-arrêt de mort. Les financements de la recherche sur les réseaux de neurones se tarirent
-presque du jour au lendemain ; les revues se fermèrent, les étudiants se détournèrent.
-Le camp connexionniste entra dans un long sommeil — un **hiver** d'une quinzaine
-d'années. Rosenblatt lui-même n'en verrait pas la fin : il mourut en 1971, à
-quarante-trois ans, dans un accident de bateau.
+Le livre eut des conséquences importantes. Minsky avait une grande autorité, et il
+appartenait au camp adverse. Sa démonstration, mathématiquement correcte, fut
+interprétée comme une condamnation de toute l'approche. Les financements de la
+recherche sur les réseaux de neurones diminuèrent très rapidement, les revues
+publièrent moins de travaux sur le sujet et les étudiants choisirent d'autres
+domaines. Le camp connexionniste connut un **hiver** d'une quinzaine d'années.
+Rosenblatt n'en vit pas la fin : il mourut en 1971, à quarante-trois ans, dans un
+accident de bateau.
 
-Ainsi, le premier hiver de l'IA ne frappa pas la tradition dominante, mais sa
-**rivale** — et c'est un homme du camp symbolique qui, de fait, l'y plongea. En écartant
-le connexionnisme, *Perceptrons* dégagea la scène : les vingt années suivantes seraient
-celles du **règne symbolique** sans partage — la recherche, les systèmes experts, tout
-l'âge d'or que nous venons de parcourir. Quand une tradition gèle, l'autre fleurit.
+Le premier hiver de l'IA ne toucha donc pas la tradition dominante, mais sa
+**rivale**, et c'est un chercheur du camp symbolique qui en fut en partie la cause.
+Comme le connexionnisme était mis de côté, les vingt années suivantes furent celles
+d'une **domination symbolique** presque complète : la recherche dans un espace
+d'états, les systèmes experts et l'ensemble des travaux présentés dans les chapitres
+précédents. Le déclin d'une tradition a ainsi favorisé le développement de l'autre.
 
-Un détail, pourtant, allait un jour tout changer. La démonstration de Minsky et Papert
-ne valait que pour le perceptron le plus simple, fait d'une **seule couche**. On
-pressentait qu'en **empilant les couches**, on franchirait l'obstacle du XOR — mais un
-mystère restait entier : comment faire *apprendre* un tel empilement ? La réponse ne
-viendrait qu'en 1986, et c'est par elle que le dégel commencerait. N'anticipons pas :
-pour l'heure, c'est au tour du camp symbolique d'approcher de son propre hiver.
+La démonstration de Minsky et Papert avait cependant une limite. Elle ne valait que
+pour le perceptron le plus simple, formé d'une **seule couche**. On pensait qu'en
+**empilant plusieurs couches**, on pourrait traiter le XOR, mais on ne savait pas
+comment faire apprendre un tel réseau. La solution n'apparut qu'en 1986, et c'est
+elle qui permit la reprise des travaux connexionnistes. Avant d'y arriver, il faut
+d'abord voir comment le camp symbolique connut lui aussi un hiver.
 
 ## Le second hiver : l'effondrement du symbolique (fin des années 1980)
 
-L'âge d'or symbolique, on l'a vu, reposait sur une promesse vertigineuse : capturer
-l'expertise humaine dans des règles. Mais les fissures de « [Capturer
-l'expertise](docs/module1/50-systemes-experts) » — le savoir
-tacite qu'on n'extrait pas, la rigidité sans bon sens, les bases ingérables — finirent
-par lézarder l'édifice tout entier. À mesure que les systèmes experts livrés
-décevaient, l'écart se creusa entre ce qu'on avait *promis* aux investisseurs et ce que
-l'IA *tenait*. Et quand un tel écart devient trop visible, l'argent s'en va.
+L'âge d'or symbolique reposait sur une promesse ambitieuse : capturer l'expertise
+humaine dans des règles. Les limites décrites dans « [Capturer
+l'expertise](docs/module1/50-systemes-experts) » (le savoir tacite difficile à
+extraire, la rigidité sans sens commun, les bases de règles difficiles à maintenir)
+finirent par affaiblir l'ensemble de l'approche. Comme les systèmes experts livrés
+décevaient souvent, l'écart grandit entre ce qu'on avait promis aux investisseurs et
+ce que l'IA réalisait vraiment. Quand cet écart devint trop visible, les
+investissements diminuèrent.
 
-Le symbole de la débâcle fut le **krach des machines Lisp**, vers 1987. Ces ordinateurs
-spécialisés, taillés pour l'IA, coûtaient une fortune — et, presque du jour au
-lendemain, de simples stations de travail bon marché, puis les ordinateurs personnels,
-se mirent à faire aussi bien pour une fraction du prix. Le marché s'effondra ; les
-entreprises qui en vivaient disparurent. Au même moment, l'ambitieux projet japonais de
-**Cinquième Génération**, lancé en fanfare en 1982, s'acheminait vers une fin discrète,
-sans avoir tenu aucune de ses grandes promesses.
+L'événement le plus représentatif de ce recul fut le **krach des machines Lisp**,
+vers 1987. Ces ordinateurs spécialisés, conçus pour l'IA, coûtaient très cher. En peu
+de temps, des stations de travail bon marché, puis les ordinateurs personnels,
+offrirent des performances comparables pour une fraction du prix. Le marché
+s'effondra et les entreprises qui en dépendaient disparurent. À la même époque, le
+projet japonais de **Cinquième Génération**, lancé en 1982 avec beaucoup de
+publicité, se terminait sans avoir atteint ses principaux objectifs.
 
-Le découragement gagna tout le domaine. Les agences de financement, échaudées,
-coupèrent les crédits ; « intelligence artificielle » devint une étiquette presque
-honteuse, que les chercheurs évitaient désormais sur leurs demandes de subvention. On
-parla, pour cette période, d'un second **hiver de l'IA** — le mot collait maintenant à
-la peau du symbolique, comme il avait collé, vingt ans plus tôt, à celle du perceptron.
-La leçon, au fond, était la même que dans « [Représenter le
+Le découragement toucha tout le domaine. Les agences de financement réduisirent leurs
+crédits, et l'étiquette « intelligence artificielle » devint si mal perçue que les
+chercheurs évitaient de l'utiliser dans leurs demandes de subvention. On parle, pour
+cette période, d'un second **hiver de l'IA**. Le terme s'appliquait maintenant au
+camp symbolique, comme il s'était appliqué vingt ans plus tôt au perceptron. La leçon
+était la même que dans « [Représenter le
 monde](docs/module1/40-representer-le-monde) » et « [Capturer
-l'expertise](docs/module1/50-systemes-experts) » : le monde réel, têtu, résiste
-à qui prétend l'enfermer dans des règles écrites à la main.
+l'expertise](docs/module1/50-systemes-experts) » : le monde réel se laisse
+difficilement décrire par des règles écrites à la main.
 
-Et pourtant — c'est la grande ironie de notre histoire — pendant que le camp symbolique
-sombrait, l'autre, qu'on croyait mort depuis 1969, **respirait de nouveau**. En 1986,
-un petit groupe de chercheurs, parmi lesquels un certain **Geoffrey Hinton**, avait
-fait paraître une méthode appelée **rétropropagation** : enfin un moyen de faire
-*apprendre* les réseaux à **plusieurs couches** — ceux-là mêmes qui, on l'avait
-pressenti, pouvaient venir à bout du XOR. Le verrou de *Perceptrons* sautait. Ce dégel
-ne ferait pas de bruit tout de suite : il lui faudrait les **données** et la
-**puissance de calcul** des années 2010 pour éclater au grand jour. Mais, une fois
-encore, les deux traditions échangeaient leurs rôles — à l'hiver de l'une répondait le
-printemps de l'autre.
+Pendant que le camp symbolique déclinait, le camp connexionniste, qu'on croyait
+abandonné depuis 1969, **reprenait de l'activité**. En 1986, un petit groupe de
+chercheurs, dont **Geoffrey Hinton**, avait publié une méthode appelée
+**rétropropagation**. Elle permettait de faire apprendre les réseaux à **plusieurs
+couches**, c'est-à-dire justement ceux qui, selon les intuitions de l'époque,
+pouvaient traiter le XOR. L'obstacle signalé dans *Perceptrons* était donc levé. Ce
+retour resta toutefois discret au début : il fallut attendre les **données** et la
+**puissance de calcul** des années 2010 pour qu'il devienne largement visible. Les
+deux traditions échangeaient de nouveau leurs rôles : le déclin de l'une coïncidait
+avec la reprise de l'autre.
 
 ## L'héritage invisible
 
-Deux hivers coup sur coup : on serait tenté de refermer le dossier du GOFAI sur un
-constat d'échec. Ce serait manquer l'essentiel. Car il existe, en intelligence
-artificielle, un curieux phénomène que les chercheurs ont fini par nommer l'**« effet
-IA »** : *dès qu'une technique se met à marcher pour de bon, on cesse de l'appeler
-« intelligence artificielle » — elle devient « juste un algorithme ».* La formule la
-plus ramassée revient à l'informaticien Larry Tesler, et c'est **Hofstadter** — encore
-lui — qui l'a popularisée : *« l'IA, c'est tout ce qui n'a pas encore été fait. »*
+Après deux hivers successifs, on pourrait conclure que le GOFAI a échoué. Cette
+conclusion serait cependant incomplète, à cause d'un phénomène que les chercheurs
+appellent l'**« effet IA »** : dès qu'une technique fonctionne bien, on cesse de
+l'appeler « intelligence artificielle » et on la considère comme « juste un
+algorithme ». La formule la plus courte est attribuée à l'informaticien Larry Tesler,
+et c'est **Hofstadter** qui l'a popularisée : *« l'IA, c'est tout ce qui n'a pas
+encore été fait. »*
 
-Vu ainsi, le GOFAI n'est pas mort : il s'est **dissous** dans l'informatique de tous
-les jours. Ses plus belles réussites sont devenues si banales, si fiables, qu'on a
-oublié qu'elles sortaient des laboratoires d'IA. Suivons-en quatre à la trace — vous
-les côtoyez sans doute chaque jour.
+De ce point de vue, le GOFAI n'a pas disparu : il s'est **intégré** à l'informatique
+courante. Ses réussites sont devenues si ordinaires et si fiables qu'on a oublié
+qu'elles venaient des laboratoires d'IA. Les quatre exemples suivants sont des
+techniques que vous utilisez probablement chaque jour.
 
-**[La recherche dans un arbre](docs/module1/30-chercher-raisonner)**. Les algorithmes d'exploration — minimax,
-A\* — qui faisaient gagner les machines aux échecs sont aujourd'hui partout : ce sont
-eux qui calculent votre itinéraire **GPS** en une fraction de seconde, qui animent les
-personnages des jeux vidéo, qui optimisent les tournées d'un transporteur ou les gestes
-d'un robot. Personne, en suivant la flèche bleue sur son téléphone, ne songe qu'il fait
-tourner de l'« intelligence artificielle » des années 1960.
+**[La recherche dans un arbre](docs/module1/30-chercher-raisonner)**. Les algorithmes d'exploration (minimax,
+A\*) qui permettaient aux machines de jouer aux échecs sont aujourd'hui très répandus.
+Ce sont eux qui calculent votre itinéraire **GPS** en une fraction de seconde, qui
+dirigent les personnages des jeux vidéo et qui optimisent les tournées d'un
+transporteur ou les mouvements d'un robot. Les personnes qui suivent un itinéraire
+sur leur téléphone ne pensent généralement pas qu'elles utilisent une technique
+d'« intelligence artificielle » des années 1960.
 
-**[Les moteurs de règles](docs/module1/50-systemes-experts)**. Les systèmes experts n'ont pas disparu : ils ont
-changé de nom. On les appelle « règles métier », et ils décident en silence de l'octroi
-d'un prêt, du repérage d'une transaction frauduleuse, du calcul d'une prime
-d'assurance. Les **configurateurs** qui, sur un site marchand, vérifient que les
-options de votre voiture ou de votre ordinateur sont compatibles sont les enfants
-directs de XCON. Et quand votre logiciel d'**impôts** vous guide de question en
-question jusqu'au bon formulaire, il fait, à la lettre, le métier de MYCIN.
+**[Les moteurs de règles](docs/module1/50-systemes-experts)**. Les systèmes experts n'ont pas disparu, mais ils
+ont changé de nom. On parle aujourd'hui de « règles métier », et ces systèmes
+décident automatiquement de l'octroi d'un prêt, du repérage d'une transaction
+frauduleuse ou du calcul d'une prime d'assurance. Les **configurateurs** qui, sur un
+site marchand, vérifient que les options d'une voiture ou d'un ordinateur sont
+compatibles descendent directement de XCON. De même, un logiciel d'**impôts** qui
+vous guide de question en question jusqu'au bon formulaire fait le même travail que
+MYCIN.
 
-**[Les idées de Lisp](docs/module1/30-chercher-raisonner)**. C'est peut-être l'héritage le plus profond. Le
-langage de McCarthy a fait passer dans la programmation réelle tout un courant, la
-**programmation fonctionnelle** : traiter les fonctions comme des valeurs (les
-*lambdas*), enchaîner des opérations comme `map`, `filter`, `reduce`, manier des
-*closures*. Ouvrez du code Python, JavaScript ou Java d'aujourd'hui : ces tournures,
-devenues banales, sont nées dans les labos d'IA. Lisp y a aussi inventé des commodités
-qu'on tient pour acquises — le **ramasse-miettes** (la gestion automatique de la
-mémoire) et le **REPL**, cette console où l'on essaie son code à la volée. Détail
-piquant : l'*autre* grande tradition fonctionnelle, celle des langages typés comme
-Haskell, descend du langage **ML**, que Robin Milner avait créé pour faire tourner… un
-**assistant de démonstration de théorèmes**. Les deux sources de la programmation
-fonctionnelle moderne jaillissent donc, l'une comme l'autre, du raisonnement
-symbolique.
+**[Les idées de Lisp](docs/module1/30-chercher-raisonner)**. Cet héritage est
+peut-être le plus important. Le langage de McCarthy a introduit dans la
+programmation courante la **programmation fonctionnelle** : traiter les fonctions
+comme des valeurs (les *lambdas*), enchaîner des opérations comme `map`, `filter`,
+`reduce`, utiliser des *closures*. Ces constructions, courantes aujourd'hui en
+Python, en JavaScript ou en Java, viennent des laboratoires d'IA. Lisp a aussi
+introduit des outils qu'on considère maintenant comme normaux : le
+**ramasse-miettes** (la gestion automatique de la mémoire) et le **REPL**, la console
+qui permet d'essayer du code au fur et à mesure. L'autre grande tradition
+fonctionnelle, celle des langages typés comme Haskell, descend du langage **ML**, que
+Robin Milner avait créé pour programmer un **assistant de démonstration de
+théorèmes**. Les deux sources de la programmation fonctionnelle moderne viennent donc
+du raisonnement symbolique.
 
-**[La représentation des connaissances](docs/module1/40-representer-le-monde)**. Souvenez-vous des réseaux
-sémantiques et des frames : on les avait dits promis à une descendance vivante. La
-voici. Les **ontologies** et les **knowledge graphs** qui structurent le savoir du web
-en sont les héritiers directs : quand Google affiche une fiche toute prête à côté de vos
-résultats, quand on interroge Wikidata, c'est cette vieille idée — relier des concepts
-par des liens *est-un*, *possède* — qui œuvre sous le capot. Entre les deux, il y eut une tentative grandiose, qui mérite d'être
-nommée : le [**web sémantique**](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique).
-En 2001, Tim Berners-Lee, l'inventeur du Web, propose de le transformer en une
-immense base de connaissances que les machines pourraient lire : chaque page
-déclarerait non seulement du texte pour les humains, mais aussi des faits
-structurés pour les programmes (*cette personne est née en telle année*, *ce
-produit coûte tant*), reliés par des vocabulaires communs, des ontologies. Des
-normes sont écrites pour cela (RDF, OWL). Le rêve, dans sa forme complète, ne
-s'est pas réalisé, et pour une raison que vous connaissez maintenant : il
-supposait que des millions d'auteurs décrivent patiemment et proprement le sens
-de ce qu'ils publient, la même inscription à la main qui avait fait buter CYC,
-mais à l'échelle de la planète. Ses pièces, en revanche, ont survécu : les
-balises que les sites ajoutent aujourd'hui pour que les moteurs de recherche
-comprennent une recette ou un horaire, et Wikidata lui-même, en sont les
-héritiers directs. Quant aux frames, avec
-leurs cases à valeurs par défaut et leurs hiérarchies d'héritage, ce sont les
-**cousins**, du côté de l'IA, de l'**objet** de la programmation moderne : non pas son
-ancêtre — l'orienté-objet doit plus à la simulation qu'à l'IA —, mais un jumeau né de
-la même intuition. Une remarque, en passant, qui prépare le module 4 : tout ce savoir
-est **structuré à la main**, patiemment, par des humains — à l'exact opposé de la façon
-dont les grands modèles de langage, eux, *absorberont* le leur en avalant des océans de
-texte. Deux philosophies du savoir que nous verrons bientôt s'affronter.
+**[La représentation des connaissances](docs/module1/40-representer-le-monde)**. Les
+réseaux sémantiques et les frames, présentés plus tôt, ont eu des successeurs. Les
+**ontologies** et les **knowledge graphs** qui structurent le savoir du web en sont
+les héritiers directs. Quand Google affiche une fiche résumée à côté des résultats,
+ou quand on interroge Wikidata, c'est la même idée qui est utilisée : relier des
+concepts par des liens *est-un* ou *possède*. Entre les deux, il y a eu une tentative
+ambitieuse, qui mérite d'être mentionnée : le [**web sémantique**](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique).
+En 2001, Tim Berners-Lee, l'inventeur du Web, propose d'en faire une grande base de
+connaissances lisible par les machines. Chaque page contiendrait non seulement du
+texte pour les humains, mais aussi des faits structurés pour les programmes (*cette
+personne est née en telle année*, *ce produit coûte tant*), reliés par des
+vocabulaires communs, c'est-à-dire des ontologies. Des normes sont écrites dans ce
+but (RDF, OWL). Le projet complet ne s'est pas réalisé, pour une raison déjà vue dans
+ce module : il supposait que des millions d'auteurs décrivent soigneusement le sens
+de ce qu'ils publient. C'est le même travail d'inscription à la main qui avait limité
+CYC, mais à l'échelle de la planète. Certaines de ses composantes ont cependant été
+conservées : les balises que les sites ajoutent aujourd'hui pour que les moteurs de
+recherche comprennent une recette ou un horaire, ainsi que Wikidata, en sont les
+héritiers directs. Quant aux frames, avec leurs cases à valeurs par défaut et leurs
+hiérarchies d'héritage, elles sont **apparentées** à l'**objet** de la programmation
+moderne. Elles n'en sont pas l'ancêtre (l'orienté-objet doit davantage à la
+simulation qu'à l'IA), mais elles reposent sur la même intuition. Une dernière
+remarque prépare le module 4 : tout ce savoir est **structuré à la main** par des
+humains. C'est l'opposé de la façon dont les grands modèles de langage acquièrent
+leur savoir, en traitant d'énormes quantités de texte. Ces deux conceptions du savoir
+seront comparées plus loin dans le cours.
 
-Quatre traces, et l'on pourrait en suivre d'autres. Aucune ne porte plus l'étiquette
-« IA » : elles sont devenues l'air qu'on respire en informatique. C'est là le sort
-secret du GOFAI — non pas une impasse, mais une **diaspora**. Ses idées ont quitté la
-maison « intelligence artificielle » pour s'installer, anonymes et indispensables, au
-cœur de la programmation ordinaire.
+Ces quatre exemples ne sont pas les seuls. Aucune de ces techniques ne porte plus
+l'étiquette « IA », parce qu'elles font maintenant partie de l'informatique
+ordinaire. Le GOFAI n'a donc pas été une impasse : ses idées se sont **dispersées**
+hors du domaine de l'intelligence artificielle et sont devenues des éléments courants
+et indispensables de la programmation.
 
 ## Un éclair hybride : Watson (2011)
 
-Avant de refermer le module, arrêtons-nous sur une dernière image — celle qui montre le
-mieux que le GOFAI ne s'est pas seulement *dissous*, mais qu'il a parfois resurgi en
-pleine lumière, métissé. En février **2011**, un système d'IBM nommé **Watson** affronte,
-au jeu télévisé américain *Jeopardy!*, les deux plus grands champions de l'histoire de
-l'émission, Ken Jennings et Brad Rutter — et les bat à plate couture.
+Un dernier exemple montre que le GOFAI ne s'est pas seulement intégré à
+l'informatique courante, mais qu'il est aussi réapparu, combiné à d'autres méthodes.
+En février **2011**, un système d'IBM nommé **Watson** affronte, au jeu télévisé
+américain *Jeopardy!*, les deux meilleurs champions de l'histoire de l'émission, Ken
+Jennings et Brad Rutter, et les bat nettement.
 
-L'exploit est d'une tout autre nature que celui de Deep Blue. Les échecs ont des règles
-nettes et un espace de recherche bien défini ; *Jeopardy!*, lui, baigne dans le
-**langage** le plus retors — calembours, allusions, jeux de mots, indices tordus. Rien
-que comprendre *ce que la question demande* est déjà un défi. Et Watson y répond en
-quelques secondes, en puisant dans une immense réserve de connaissances.
+Cette réussite est d'une autre nature que celle de Deep Blue. Les échecs ont des
+règles précises et un espace de recherche bien défini. *Jeopardy!*, au contraire,
+repose sur un **langage** difficile, fait de calembours, d'allusions, de jeux de mots
+et d'indices indirects. Comprendre ce que la question demande est déjà un problème
+difficile. Watson y répond en quelques secondes, en utilisant une très grande base de
+connaissances.
 
-Mais voici le point qui nous intéresse : Watson n'est **ni du GOFAI pur, ni un réseau de
-neurones**. C'est un **hybride**. D'un côté, il hérite en droite ligne du symbolique —
-une vaste base de connaissances, des traitements du langage à base de règles. De l'autre,
-il pèse ses centaines d'indices et calcule sa **confiance** par des méthodes
-**statistiques**, apprises sur des milliers de questions passées. Quatorze ans après Deep
-Blue, ce n'est plus la seule force brute de la recherche qui triomphe, mais un *mariage* :
-le savoir structuré du GOFAI et l'apprentissage statistique, attelés ensemble. Watson
-est, à sa manière, le portrait même de la **charnière** où nous venons d'arriver — un
-pied dans chaque âge.
+Watson n'est **ni du GOFAI pur, ni un réseau de neurones**. C'est un **hybride**.
+D'une part, il reprend des éléments du symbolique : une grande base de connaissances
+et des traitements du langage à base de règles. D'autre part, il pondère des
+centaines d'indices et calcule sa **confiance** avec des méthodes **statistiques**,
+apprises sur des milliers de questions passées. Quatorze ans après Deep Blue, ce n'est
+donc plus seulement la force brute de la recherche qui permet de gagner, mais une
+combinaison du savoir structuré du GOFAI et de l'apprentissage statistique. Watson
+illustre ainsi la **charnière** où se trouve maintenant le module, entre deux
+périodes.
 
 {{% hint warning %}}
-La suite de Watson ressemble, à s'y méprendre, à celle des systèmes experts. Galvanisé
-par le triomphe de 2011, IBM promit de **révolutionner la médecine** avec *Watson
-Health* : on annonça une machine capable de conseiller les cancérologues mieux que leurs
-confrères. La réalité fut tout autre. Les recommandations se révélèrent parfois douteuses,
-voire dangereuses ; de grands hôpitaux partenaires abandonnèrent le projet après des
-dizaines de millions de dollars engloutis ; et IBM finit par **revendre** Watson Health
-en 2022. Trente ans après MYCIN — brillant en démonstration, jamais admis au chevet d'un
-vrai patient —, la même leçon se répétait : entre l'exploit de laboratoire (ou de plateau
-télé) et le monde réel, têtu, l'écart reste vertigineux. La promesse trop grande, encore
-une fois, avait précédé la déception.
+La suite de l'histoire de Watson ressemble à celle des systèmes experts. Après le
+succès de 2011, IBM annonça que *Watson Health* allait **transformer la médecine** :
+la machine devait conseiller les cancérologues mieux que leurs collègues. Les
+résultats furent très différents. Certaines recommandations se révélèrent douteuses,
+voire dangereuses. De grands hôpitaux partenaires abandonnèrent le projet après y
+avoir dépensé des dizaines de millions de dollars, et IBM finit par **revendre**
+Watson Health en 2022. Trente ans après MYCIN, qui avait bien fonctionné en
+démonstration sans jamais être utilisé auprès de vrais patients, la même leçon se
+répétait : l'écart reste très grand entre une réussite en laboratoire (ou sur un
+plateau de télévision) et le monde réel. Une fois de plus, une promesse trop
+ambitieuse avait précédé la déception.
 {{% /hint %}}
 
 ## La bascule
 
-Reprenons le chemin parcouru. Tout est parti, dans « [Turing et la question
-fondatrice](docs/module1/10-turing) », d'un pari : *penser, c'est calculer*. De ce pari est née une famille d'idées — manipuler des
-symboles selon des règles — qui a porté, trois décennies durant, des réussites
-éclatantes : des machines qui démontrent des théorèmes, qui gagnent aux échecs, qui
-dialoguent, qui représentent le monde, qui diagnostiquent comme des médecins. Le
-programme symbolique fut tout sauf un échec : il a fondé l'informatique du raisonnement,
-et nous en vivons encore.
+Voici un résumé du chemin parcouru. Le chapitre « [Turing et la question
+fondatrice](docs/module1/10-turing) » est parti d'une hypothèse : penser, c'est calculer. De cette hypothèse est née une famille d'idées
+(manipuler des symboles selon des règles) qui a produit, pendant trois décennies,
+des réussites importantes : des machines qui démontrent des théorèmes, qui jouent aux
+échecs, qui dialoguent, qui représentent le monde et qui établissent des diagnostics
+comme des médecins. Le programme symbolique n'a donc pas été un échec : il a fondé
+l'informatique du raisonnement, qui est encore utilisée aujourd'hui.
 
-Et pourtant, deux fois, il s'est cogné au même mur. Dans « [Représenter le
-monde](docs/module1/40-representer-le-monde) », le **sens commun** : cet océan
-d'évidences que personne ne pense à formuler, et qu'on ne peut donc pas écrire. Dans
-« [Capturer l'expertise](docs/module1/50-systemes-experts) », le **goulot
-d'étranglement** : l'expertise qui se dérobe dès
-qu'on veut la mettre en règles, parce qu'une grande part du savoir humain ne se dit pas.
-Deux visages d'une seule et même leçon — celle, peut-être, que Hofstadter avait
-pressentie le premier : *on n'inscrit pas l'intelligence de l'extérieur, fait après
-fait ; le savoir qui compte est trop vaste, trop tacite, trop vivant pour tenir dans une
-liste de règles.*
+Il s'est cependant heurté deux fois à la même difficulté. Dans « [Représenter le
+monde](docs/module1/40-representer-le-monde) », il s'agissait du **sens commun**,
+l'ensemble des évidences que personne ne pense à formuler et qu'on ne peut donc pas
+écrire. Dans « [Capturer l'expertise](docs/module1/50-systemes-experts) », il
+s'agissait du **goulot d'étranglement** : l'expertise est difficile à mettre en
+règles, parce qu'une grande partie du savoir humain n'est pas exprimée. Ces deux
+difficultés relèvent d'une même leçon, que Hofstadter avait peut-être formulée le
+premier : on ne peut pas inscrire l'intelligence de l'extérieur, fait après fait,
+parce que le savoir utile est trop vaste, trop tacite et trop changeant pour tenir
+dans une liste de règles.
 
-Si l'on ne peut pas *dicter* ce savoir à la machine, alors il faut qu'elle l'**acquière
-elle-même**. Or l'idée n'était pas neuve : elle dormait depuis 1958 dans le perceptron
-de Rosenblatt — *une machine qui apprend de ses erreurs* — que le camp symbolique avait
-cru tuer en 1969. C'est ici que se dénoue le fil rouge tendu depuis « [Deux paris
-rivaux](docs/module1/20-deux-paris) ». Les
-deux traditions, la symbolique et la connexionniste, ne se sont jamais succédé
-proprement : elles ont coexisté en rivales, s'éclipsant tour à tour. L'hiver symbolique
-de la fin des années 1980 n'est pas la fin de l'histoire — c'est l'instant où le
-balancier, lentement, repart dans l'autre sens.
+Si l'on ne peut pas dicter ce savoir à la machine, il faut qu'elle l'**acquière
+elle-même**. Cette idée n'était pas nouvelle : elle se trouvait déjà en 1958 dans le
+perceptron de Rosenblatt, une machine qui apprend de ses erreurs, que le camp
+symbolique pensait avoir écarté en 1969. C'est ici que se termine le fil suivi depuis
+« [Deux paris rivaux](docs/module1/20-deux-paris) ». Les deux traditions, symbolique
+et connexionniste, ne se sont jamais simplement succédé : elles ont coexisté en
+rivales, et chacune a dominé à son tour. L'hiver symbolique de la fin des années 1980
+n'est donc pas la fin de l'histoire, mais le moment où l'avantage commence à revenir
+vers l'autre tradition.
 
-Une question, dès lors, va tout réorganiser — celle-là même que les déboires du GOFAI
-avaient fini par faire surgir : *et si, plutôt que de dicter ses règles à la machine, on
-la laissait les découvrir dans les données ?* Ce renversement a un nom :
-l'**apprentissage automatique**, et c'est l'objet du **Module 2**. Quant à la vieille
-tradition connexionniste, qu'on réveillera avec la rétropropagation et la puissance des
-machines modernes, elle le portera, au **Module 3**, jusqu'à des sommets que ni Turing,
-ni Rosenblatt, ni Minsky n'avaient osé imaginer.
+Une question, apparue avec les difficultés du GOFAI, va réorganiser le domaine : au
+lieu de dicter ses règles à la machine, on peut la laisser les découvrir dans les
+données. Ce changement d'approche s'appelle l'**apprentissage automatique**, et c'est
+l'objet du **Module 2**. La tradition connexionniste, relancée par la
+rétropropagation et la puissance des machines modernes, le mènera ensuite, au
+**Module 3**, à des résultats que ni Turing, ni Rosenblatt, ni Minsky n'avaient
+imaginés.
 
-Tout le module se résume alors à un glissement d'un verbe à l'autre. Trois décennies
-durant, être intelligent, pour une machine, ce fut **chercher** — explorer un espace de
-possibilités, guidée par des règles posées d'avance. L'ère qui s'ouvre lui substitue
-**apprendre**. Et pourtant — retenez-le, car la suite y reviendra — les deux verbes ne
-sont pas si éloignés : apprendre, c'est encore chercher, mais dans un autre espace. Non
-plus fouiller les coups d'une partie, mais l'immensité des réglages possibles d'un
-modèle, jusqu'à trouver ceux qui épousent les données. Là où le GOFAI cherchait *la
-solution*, l'apprentissage cherchera *de quoi la fabriquer*. L'âge de la recherche
-s'achève ; celui de l'apprentissage — une recherche d'un genre nouveau — commence.
+Le module peut se résumer par le passage d'un verbe à un autre. Pendant trois
+décennies, être intelligent, pour une machine, a surtout voulu dire **chercher** :
+explorer un espace de possibilités, guidé par des règles fixées à l'avance. La
+période suivante remplace ce verbe par **apprendre**. Les deux verbes restent
+cependant proches, et la suite du cours y reviendra : apprendre, c'est encore
+chercher, mais dans un autre espace. Au lieu d'explorer les coups d'une partie, on
+explore l'ensemble des réglages possibles d'un modèle, jusqu'à trouver ceux qui
+correspondent aux données. Le GOFAI cherchait la solution, alors que
+l'apprentissage cherche de quoi la produire. La période de la recherche se termine
+donc, et celle de l'apprentissage, qui est une autre forme de recherche, commence.
