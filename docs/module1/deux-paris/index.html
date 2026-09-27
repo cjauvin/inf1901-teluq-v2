@@ -92,7 +92,7 @@ version de l&rsquo;un des sept problèmes du millénaire, celui des équations d
 Navier-Stokes, un résultat que les mathématiciens sont encore en train de
 vérifier. Ces machines raisonnent elles aussi, mais elles sont issues de l&rsquo;autre
 pari, celui de l&rsquo;apprentissage, et ne contiennent aucune règle de logique écrite
-à la main. Nous y reviendrons au <span title="Ce module sera publié plus tard">Module 4</span>.</p></blockquote><blockquote class="book-hint info"><p><strong>Lean, un vérificateur de preuves.</strong> Une preuve « vérifiable par machine » est
+à la main. Nous y reviendrons au <span title="Ce module sera publié plus tard">Module 4</span>.</p></blockquote><blockquote class="book-hint info"><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/lean-logo.svg alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." style="width:180px;display:block;margin:.2rem 0 .8rem;padding:.5rem .8rem;background:#fbf7ee;border-radius:6px"><p><strong>Lean, un vérificateur de preuves.</strong> Une preuve « vérifiable par machine » est
 écrite dans un langage comme <strong>Lean</strong>, créé en 2013 par Leonardo de Moura chez
 Microsoft Research. Dans Lean, chaque étape d&rsquo;une démonstration doit être justifiée
 par une règle de logique précise. Un petit programme central, le <em>noyau</em>, vérifie
@@ -122,16 +122,16 @@ et <strong>Walter Pitts</strong>, proposent un modèle mathématique très simpl
 C&rsquo;est une petite unité qui reçoit des signaux, les combine et « s&rsquo;allume » ou non
 selon que leur somme dépasse un certain seuil. Ils montrent qu&rsquo;en reliant ces
 unités en réseau, on peut en principe réaliser des opérations logiques. C&rsquo;est le
-premier lien établi entre le fonctionnement du cerveau et le calcul.</p><label class=book-image for=book-image-toggle-5c1e984c0f8e><input class="hidden toggle" type=checkbox id=book-image-toggle-5c1e984c0f8e>
+premier lien établi entre le fonctionnement du cerveau et le calcul.</p><label class=book-image for=book-image-toggle-abaaa5398dc2><input class="hidden toggle" type=checkbox id=book-image-toggle-abaaa5398dc2>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/neurone-formel.svg alt="Schéma d'un neurone formel : trois signaux d'entrée convergent vers un corps cellulaire qui les additionne (Σ) et compare la somme à un seuil ; en sortie, le neurone s'allume (1) si le seuil est dépassé, ou reste éteint (0)." loading=lazy title="Le neurone formel : combiner des signaux, puis s'activer si leur somme dépasse un seuil." width=680 height=250 style=--largeur-plafond:680px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-5c1e984c0f8e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il restait à expliquer comment un tel réseau pourrait apprendre. En 1949, le
+</label><script>(function(){const e=document.getElementById("book-image-toggle-abaaa5398dc2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il restait à expliquer comment un tel réseau pourrait apprendre. En 1949, le
 psychologue <strong>Donald Hebb</strong> propose l&rsquo;idée suivante : lorsque deux neurones
 s&rsquo;activent ensemble de façon répétée, le lien qui les unit se renforce
 (« <em>neurons that fire together, wire together</em> »). Dans cette optique, apprendre
 ne consiste pas à réécrire des règles, mais à <strong>ajuster la force des
-connexions</strong>. C&rsquo;est ce principe que Rosenblatt va appliquer dans sa machine.</p><label class=book-image for=book-image-toggle-e416530694b8><input class="hidden toggle" type=checkbox id=book-image-toggle-e416530694b8>
+connexions</strong>. C&rsquo;est ce principe que Rosenblatt va appliquer dans sa machine.</p><label class=book-image for=book-image-toggle-c53c8bf3e100><input class="hidden toggle" type=checkbox id=book-image-toggle-c53c8bf3e100>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/regle-de-hebb.svg alt="Schéma de la règle de Hebb : à gauche, deux neurones A et B au repos reliés par un lien fin ; à droite, lorsqu'ils s'activent ensemble, ils s'allument et le lien qui les unit s'épaissit, illustrant son renforcement." loading=lazy title="La règle de Hebb : deux neurones qui s'activent ensemble voient leur lien se renforcer." width=680 height=240 style=--largeur-plafond:680px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-e416530694b8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En 1958, le psychologue <strong>Frank Rosenblatt</strong> construit une machine réelle fondée
+</label><script>(function(){const e=document.getElementById("book-image-toggle-c53c8bf3e100"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En 1958, le psychologue <strong>Frank Rosenblatt</strong> construit une machine réelle fondée
 sur cette idée, le <strong>perceptron</strong>. Au lieu de lui donner une règle, on montre au
 perceptron des exemples, par exemple des images étiquetées « cercle » ou
 « carré ». À chaque essai, s&rsquo;il se trompe, il <strong>ajuste légèrement ses réglages
