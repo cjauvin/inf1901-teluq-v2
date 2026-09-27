@@ -61,13 +61,15 @@ def corriger_texte(texte):
 if __name__ == "__main__":
     verifier = "--verifier" in sys.argv
     touches = 0
-    for f in sorted(RACINE.rglob("*.md")):
+    # fichiers donnés en argument, sinon tout content/
+    fichiers = [Path(a).resolve() for a in sys.argv[1:] if not a.startswith("--")] or sorted(RACINE.rglob("*.md"))
+    for f in fichiers:
         avant = f.read_text(encoding="utf-8")
         apres = corriger_texte(avant)
         if apres != avant:
             touches += 1
             n = sum(1 for a, b in zip(avant.split("\n"), apres.split("\n")) if a != b)
-            print(f"{'à corriger' if verifier else 'corrigé'} : {f.relative_to(RACINE.parent)} ({n} lignes)")
+            print(f"{'à corriger' if verifier else 'corrigé'} : {f.relative_to(RACINE.parent) if f.is_relative_to(RACINE.parent) else f} ({n} lignes)")
             if not verifier:
                 f.write_text(apres, encoding="utf-8")
     print(f"{touches} fichier(s) {'à corriger' if verifier else 'corrigé(s)'}")

@@ -10,7 +10,7 @@ La classification naïve bayésienne est un algorithme d'apprentissage supervis�
 qui repose sur les probabilités. Nous avons vu deux variantes de cet
 algorithme :
 
-1. [La classification de simples points en 2d avec un modèle gaussien](docs/module2/60-classer/#renverser-le-problème--la-classification-bayésienne)
+1. [La classification de simples points en 2d avec un modèle gaussien](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne)
 2. [La classification de vecteurs en haute dimension avec un modèle multinomial](docs/module2/60-classer/#le-cas-des-pourriels)
 
 La classification de courriels est un problème classique qu'on peut traiter avec

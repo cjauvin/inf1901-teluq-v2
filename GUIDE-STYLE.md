@@ -48,6 +48,31 @@ agréable, mais sans mise en scène.
   parenthèses, « geste » banni au sens figuré, `\\$` pour le dollar, espaces
   insécables (relancer `scripts/espaces_insecables.py`).
 
+## Renvois : toujours un lien
+
+**Tout renvoi à une autre partie du cours porte un lien Markdown, sans
+exception.** Cela vaut pour une page, une section, un module, un encadré ou une
+figure situés ailleurs, et pour toutes les formulations vagues :
+« la page précédente », « le chapitre suivant », « la section suivante »,
+« les chapitres précédents », « présenté plus tôt », « au Module 3 »,
+« plus loin dans le cours ».
+
+- Le lien vise la page par son fichier (`docs/module2/60-classer`), avec l'ancre
+  de la section quand le renvoi porte sur une section précise
+  (`docs/module2/60-classer/#le-cas-des-pourriels`). Les ancres se lisent dans la
+  page servie (`curl … | grep '<h2 id'`), jamais de mémoire.
+- Dans une même page, « décrit plus haut », « présenté plus bas » renvoient à une
+  section : lien vers son ancre (`#ancre`). Seule exception : un élément
+  immédiatement adjacent (« la figure ci-dessous », « l'applet ci-dessous »).
+- Un renvoi vague se précise en nommant la cible : « le chapitre précédent »
+  devient « le chapitre « [Un modèle qui s'entraîne](docs/module2/50-entrainer-un-modele) » ».
+- Modules 3 à 5, pas encore publiés : lien vers l'index du module
+  (`docs/module3`) ; il s'affiche en texte simple sur le site en ligne.
+- Jamais de numéro de page ou de fichier dans le texte : on nomme la page par son
+  titre.
+- Vérifier avec `uv run scripts/verifier_liens.py` (serveur local en marche) :
+  0 lien cassé.
+
 ## Ne jamais toucher
 
 Titres de sections `##`/`###` (leurs ancres sont liées ailleurs), front matter,
