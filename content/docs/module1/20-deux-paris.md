@@ -121,7 +121,7 @@ pari, celui de l'apprentissage, et ne contiennent aucune règle de logique écri
 {{% /hint %}}
 
 {{% hint info %}}
-<img src="/images/module1/lean-logo.svg" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." style="width:180px; display:block; margin:0.2rem 0 0.8rem; padding:0.5rem 0.8rem; background:#fbf7ee; border-radius:6px;">
+<img src="/images/module1/lean-logo.svg" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." class="logo-mono">
 
 **Lean, un vérificateur de preuves.** Une preuve « vérifiable par machine » est
 écrite dans un langage comme **Lean**, créé en 2013 par Leonardo de Moura chez
