@@ -33,7 +33,8 @@ blocs que parce que ce monde était très petit. Les systèmes experts réduisen
 aussi le monde à un domaine restreint, mais il s&rsquo;agit cette fois de domaines réels,
 qui ont une valeur commerciale. Cette approche va fonctionner. L&rsquo;IA symbolique va
 sortir des universités, produire des revenus et convaincre le monde des affaires
-que l&rsquo;intelligence artificielle est utilisable. La section suivante explique
+que l&rsquo;intelligence artificielle est utilisable. La <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#lanatomie-dun-syst%c3%a8me-expert>section
+suivante</a> explique
 comment une machine peut raisonner avec des règles.</p><h2 id=lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert<a class=anchor href=#lanatomie-dun-syst%c3%a8me-expert></a></h2><p>Un système expert comporte <strong>trois composantes</strong>. La première est une <strong>base de
 règles</strong>, qui contient la connaissance du domaine sous forme d&rsquo;énoncés <em>si… alors…</em>.
 La deuxième est une <strong>base de faits</strong> (ou « mémoire de travail »), qui rassemble ce
@@ -74,9 +75,11 @@ n&rsquo;y écrit que des faits et des règles, et le langage fournit lui-même l
 d&rsquo;inférence, un chaînage arrière comme celui qu&rsquo;on vient de décrire. On n&rsquo;indique
 pas au programme comment calculer, mais ce qui est vrai. Cette approche s&rsquo;appelle la
 <strong>programmation logique</strong>. Elle est différente de la programmation fonctionnelle du
-langage Lisp (celui des machines de la photo plus bas). Prolog a longtemps été le
+langage Lisp (celui des machines de la photo <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#l%c3%a2ge-dor-mycin-xcon-et-le-boom>plus
+bas</a>). Prolog a longtemps été le
 langage de référence de l&rsquo;IA symbolique en Europe. Le projet japonais de
-<strong>Cinquième Génération</strong>, présenté plus bas, l&rsquo;a choisi comme langage principal, et
+<strong>Cinquième Génération</strong>, <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#l%c3%a2ge-dor-mycin-xcon-et-le-boom>présenté plus
+bas</a>, l&rsquo;a choisi comme langage principal, et
 ses principes se retrouvent aujourd&rsquo;hui dans Datalog et dans les moteurs de règles.</p></blockquote><details><summary>Pour aller plus loin : à quoi ressemble du Prolog ?</summary><div class=markdown-inner><p>Reprenons l&rsquo;exemple de la voiture. En Prolog, on écrit d&rsquo;abord les <strong>faits</strong>
 observés, puis les <strong>règles</strong>. Dans une règle, la conclusion est placée avant le
 symbole <code>:-</code>, qui se lit « <em>si</em> », et les conditions sont séparées par des virgules,
@@ -98,17 +101,19 @@ partir des faits, ou <strong>vers l&rsquo;arrière</strong>, à partir d&rsquo;u
 mieux adapté au diagnostic, parce qu&rsquo;il ne pose que les questions utiles à
 l&rsquo;hypothèse examinée, au lieu de demander toutes les mesures d&rsquo;avance. C&rsquo;est pour
 cette raison que le plus connu des systèmes experts, le système de diagnostic
-médical <strong>MYCIN</strong>, l&rsquo;utilisait. Il est présenté dans la section suivante.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous observez sur la voiture, puis
+médical <strong>MYCIN</strong>, l&rsquo;utilisait. Il est présenté dans la <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#l%c3%a2ge-dor-mycin-xcon-et-le-boom>section
+suivante</a>.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous observez sur la voiture, puis
 faites avancer le moteur d&rsquo;inférence règle par règle. Vous le verrez examiner
 chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
 faits à la base, jusqu&rsquo;au diagnostic. Essayez plusieurs combinaisons, et trouvez
-celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1790536292063525510 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
+celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1790536797613860902 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
 développé à Stanford à partir de 1965. Il identifiait des <strong>molécules</strong> à partir de
 données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
 est cependant <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>.
 MYCIN diagnostiquait les <strong>infections bactériennes du sang</strong> et recommandait un
 antibiotique et une dose. Il comptait environ <strong>600 règles</strong> et utilisait le
-<strong>chaînage arrière</strong> décrit plus haut. Il partait d&rsquo;une hypothèse sur le germe en
+<strong>chaînage arrière</strong> <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#lanatomie-dun-syst%c3%a8me-expert>décrit plus
+haut</a>. Il partait d&rsquo;une hypothèse sur le germe en
 cause et posait des questions au médecin jusqu&rsquo;à sa conclusion. Grâce à ce même
 mécanisme, il pouvait <strong>justifier</strong> sa démarche. Quand on lui demandait pourquoi il
 posait une question, il indiquait la règle qu&rsquo;il cherchait à vérifier.</p><p>En médecine, cependant, peu de choses sont certaines. Un symptôme peut suggérer un
@@ -139,7 +144,7 @@ millions de dollars par an</strong> à DEC. Ce succès a montré que les systèm
 pouvaient être rentables en dehors des laboratoires. Un problème est cependant
 apparu : le nombre de règles de XCON augmentait sans cesse, jusqu&rsquo;à plusieurs
 milliers, et il fallait constamment les ajuster les unes aux autres. Nous y
-reviendrons plus bas.</p><p>Après XCON, les investissements se sont multipliés. Au début des années 1980, l&rsquo;IA
+reviendrons <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/#le-goulot-d%c3%a9tranglement>plus bas</a>.</p><p>Après XCON, les investissements se sont multipliés. Au début des années 1980, l&rsquo;IA
 est devenue pour la première fois une <strong>industrie</strong>. On vendait des <strong>coquilles</strong>
 (<em>shells</em>), c&rsquo;est-à-dire des moteurs d&rsquo;inférence vides, prêts à recevoir la base de
 règles de n&rsquo;importe quel domaine. Un nouveau métier est apparu, celui d&rsquo;<strong>ingénieur
@@ -148,9 +153,9 @@ ont été créées et ont attiré des capitaux. On a même construit des ordinat
 spécialisés pour ces programmes, les <strong>machines Lisp</strong>. Le Japon a lancé un grand
 projet national, la <strong>Cinquième Génération</strong>, pour devenir le leader de ce type
 d&rsquo;informatique. Les limites des systèmes experts commençaient toutefois à
-apparaître.</p><label class=book-image for=book-image-toggle-94f7dfb67b6a><input class="hidden toggle" type=checkbox id=book-image-toggle-94f7dfb67b6a>
+apparaître.</p><label class=book-image for=book-image-toggle-8ccfb553fc91><input class="hidden toggle" type=checkbox id=book-image-toggle-8ccfb553fc91>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/symbolics-3620.jpg alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." loading=lazy title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé conçu pour faire tourner les programmes d'IA symbolique." width=1400 height=933 style=--largeur-plafond:1050px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-94f7dfb67b6a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>La première limite, et la plus importante, concerne l&rsquo;origine des règles. Quelqu&rsquo;un
+</label><script>(function(){const e=document.getElementById("book-image-toggle-8ccfb553fc91"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>La première limite, et la plus importante, concerne l&rsquo;origine des règles. Quelqu&rsquo;un
 doit les écrire. C&rsquo;est le travail de l&rsquo;<strong>ingénieur de la connaissance</strong>, qui
 interroge longuement un expert pour traduire son savoir en règles <em>si… alors…</em>. Ce
 travail s&rsquo;est révélé très lent. De plus, une grande partie de l&rsquo;expertise est
