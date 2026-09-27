@@ -9,51 +9,50 @@ slug: systemes-experts
 ## Rétrécir et codifier le monde pour réussir
 
 Le chapitre « [Représenter le monde](docs/module1/40-representer-le-monde) » s'est
-achevé sur un constat sévère : on ne peut pas *écrire* le sens commun, parce qu'il
-n'a pas de fond. Faut-il pour autant renoncer ? Les
-chercheurs des années 1970 tirent du mur une leçon plus rusée que désespérée. Si le
-savoir général est hors d'atteinte, c'est peut-être qu'on visait trop large. Alors :
-visons **étroit**.
+terminé sur un constat : on ne peut pas écrire le sens commun, parce qu'il n'a pas
+de limite. Les chercheurs des années 1970 en tirent une conclusion pratique. Si le
+savoir général est hors d'atteinte, il faut viser un savoir plus **étroit**.
 
-L'idée est d'une simplicité presque provocante. Renonçons à l'intelligence générale ;
-choisissons **un seul domaine**, bien délimité (diagnostiquer une infection,
-configurer un ordinateur, prospecter un gisement minier), et tâchons d'y reproduire
-la compétence d'**un seul expert**. Car dans un domaine pointu, le savoir-faire d'un
-spécialiste ressemble souvent à un vaste répertoire de règles du type *si telles
-conditions, alors telle conclusion*. Le médecin qui raisonne « *si* le patient a de
-la fièvre **et** telle bactérie dans le sang, *alors* prescrire tel antibiotique »
-applique, au fond, une règle. Recueillons assez de ces règles, inscrivons-les dans la
-machine, et celle-ci devrait, dans ce périmètre, *raisonner comme l'expert*. C'est le
-pari des **systèmes experts**, et le mot d'ordre de tout ce chapitre : **connaissance =
-règles explicites**.
+L'idée est la suivante. Au lieu de chercher une intelligence générale, on choisit
+**un seul domaine** bien délimité (diagnostiquer une infection, configurer un
+ordinateur, prospecter un gisement minier) et on tente d'y reproduire la compétence
+d'**un seul expert**. Dans un domaine spécialisé, le savoir-faire d'un expert
+ressemble souvent à un grand ensemble de règles de la forme *si telles conditions,
+alors telle conclusion*. Le médecin qui raisonne « *si* le patient a de la fièvre
+**et** telle bactérie dans le sang, *alors* prescrire tel antibiotique » applique
+une règle. Si on recueille assez de ces règles et qu'on les inscrit dans la
+machine, celle-ci devrait raisonner comme l'expert, du moins dans ce domaine. C'est
+le principe des **systèmes experts**, qu'on peut résumer par la formule suivante :
+**connaissance = règles explicites**.
 
-On reconnaît là une vieille ruse. SHRDLU ne « comprenait » son monde de blocs que
-parce que ce monde était minuscule ; les systèmes experts reprennent exactement la
-même tactique — **réussir en rétrécissant le monde** —, mais en la braquant cette
-fois non sur un jouet de laboratoire, mais sur des domaines réels et lucratifs. Et le
-pari, pour une fois, va *payer* : l'IA symbolique va sortir des universités, gagner de
-l'argent, et faire dire au monde des affaires que l'intelligence artificielle, enfin,
-« marche ». Reste à voir *comment*, concrètement, une machine peut raisonner avec des
-règles : c'est l'affaire de la section suivante.
+La démarche est la même que celle de SHRDLU, qui ne « comprenait » son monde de
+blocs que parce que ce monde était très petit. Les systèmes experts réduisent eux
+aussi le monde à un domaine restreint, mais il s'agit cette fois de domaines réels,
+qui ont une valeur commerciale. Cette approche va fonctionner. L'IA symbolique va
+sortir des universités, produire des revenus et convaincre le monde des affaires
+que l'intelligence artificielle est utilisable. La section suivante explique
+comment une machine peut raisonner avec des règles.
 
 ## L'anatomie d'un système expert
 
-Un système expert tient en **trois pièces**. D'abord une **base de règles** : la
-connaissance du domaine, traduite en énoncés *si… alors…*. Ensuite une **base de
-faits** (ou « mémoire de travail ») : ce qu'on sait du cas précis qu'on traite : les
-symptômes du patient, l'état de la voiture devant soi. Enfin, un **moteur
-d'inférence** : un mécanisme général qui confronte les faits aux règles, déclenche
-celles qui s'appliquent, et en tire de nouveaux faits, jusqu'à une conclusion.
+Un système expert comporte **trois composantes**. La première est une **base de
+règles**, qui contient la connaissance du domaine sous forme d'énoncés *si… alors…*.
+La deuxième est une **base de faits** (ou « mémoire de travail »), qui rassemble ce
+qu'on sait du cas traité, par exemple les symptômes d'un patient ou l'état d'une
+voiture. La troisième est un **moteur d'inférence**, un mécanisme général qui
+compare les faits aux règles, applique celles dont les conditions sont remplies et
+en tire de nouveaux faits, jusqu'à une conclusion.
 
-La trouvaille est dans cette **séparation**. Le moteur d'inférence ne sait *rien* de
-médecine, d'automobile ou de minéralogie : c'est une machine à enchaîner des règles,
-point. Toute la compétence loge dans la base de règles, qu'on peut changer comme une
-cartouche. Remplacez les règles, et le même moteur devient tour à tour médecin,
-mécanicien ou géologue. Le savoir d'un côté, le raisonnement de l'autre : pour la
-première fois, on peut bâtir des « experts » à la chaîne, sans tout reprogrammer.
+L'intérêt de cette architecture tient à la **séparation** entre ces composantes. Le
+moteur d'inférence ne contient aucune connaissance de médecine, d'automobile ou de
+minéralogie. Il se contente d'enchaîner des règles. Toute la compétence se trouve
+dans la base de règles, qu'on peut remplacer comme une cartouche. Avec d'autres
+règles, le même moteur devient un système de diagnostic médical, mécanique ou
+géologique. Comme le savoir est séparé du raisonnement, on peut construire
+plusieurs systèmes experts sans tout reprogrammer à chaque fois.
 
-Voyons-le à l'œuvre sur un cas que tout le monde connaît : **une voiture qui refuse
-de démarrer**. Donnons à notre système une poignée de règles :
+Prenons un exemple simple, **une voiture qui refuse de démarrer**. On donne au
+système les règles suivantes :
 
 > **R1** : *si* le moteur ne se lance pas du tout **et** les phares sont faibles,
 > *alors* la batterie est déchargée.
@@ -66,49 +65,48 @@ de démarrer**. Donnons à notre système une poignée de règles :
 > **R4** : *si* le moteur se lance normalement **et** le réservoir n'est pas vide,
 > *alors* faire vérifier l'allumage.
 
-Et deux faits observés au départ : *le moteur ne se lance pas* et *les phares sont
-faibles*. Mettez-vous à la place du moteur d'inférence. Vous parcourez les règles :
-**R1** voit ses deux conditions satisfaites : elle se **déclenche** et inscrit un fait
-nouveau, *la batterie est déchargée*. Ce fait satisfait à son tour la condition de
-**R2**, qui se déclenche et livre la conclusion : *recharger ou remplacer la
-batterie*. R3 et R4, dont les conditions ne sont pas remplies, restent muettes. En
-deux pas, parti de simples symptômes, le système a « diagnostiqué » la panne, et,
-détail précieux, il peut **retracer son raisonnement** : *pourquoi* la batterie ? à
-cause de R1, à cause des phares faibles.
+On lui fournit aussi deux faits observés, *le moteur ne se lance pas* et *les phares
+sont faibles*. Le moteur d'inférence parcourt alors les règles. Les deux conditions
+de **R1** sont satisfaites, donc R1 se **déclenche** et ajoute un fait nouveau, *la
+batterie est déchargée*. Ce fait satisfait la condition de **R2**, qui se déclenche
+à son tour et donne la conclusion *recharger ou remplacer la batterie*. Les
+conditions de R3 et de R4 ne sont pas remplies, et ces règles ne font rien. En deux
+étapes, le système a établi un diagnostic à partir des symptômes. Il peut aussi
+**retracer son raisonnement** : il conclut à la batterie à cause de R1, donc à cause
+des phares faibles.
 
-Ce que vous venez de faire — partir des faits et avancer jusqu'à la conclusion — porte
-un nom : le **chaînage avant**. C'est le raisonnement du curieux, qui observe d'abord
-et regarde ensuite où cela le mène. Très efficace quand on dispose déjà de beaucoup de
-faits et qu'on se demande *ce qui en découle*.
+Ce mode de raisonnement, qui part des faits pour arriver à une conclusion, s'appelle
+le **chaînage avant**. Il convient bien quand on dispose déjà de nombreux faits et
+qu'on veut savoir ce qui en découle.
 
-Mais on peut prendre le problème par l'autre bout. Supposez que vous ayez une
-intuition (*« et si c'était la batterie ? »*) et que vous vouliez la vérifier. Le
-moteur d'inférence part alors de cette **hypothèse**, comme d'un but à atteindre, et
-remonte les règles à reculons. Pour affirmer « recharger la batterie » (R2), il
-faudrait que *la batterie soit déchargée* ; et pour cela (R1), il faudrait que *le
-moteur ne se lance pas* **et** que *les phares soient faibles*. Or ces deux derniers
-points, aucune règle ne les produit : ce sont des choses à **observer**. Le système
-vous les demande donc (*« les phares sont-ils faibles ? »*) et n'examine *que* ce
-qui sert l'hypothèse poursuivie. C'est le **chaînage arrière**.
+On peut aussi procéder dans l'autre sens. Supposons qu'on soupçonne la batterie et
+qu'on veuille vérifier cette hypothèse. Le moteur d'inférence part alors de
+l'**hypothèse**, traitée comme un but, et remonte les règles. Pour conclure
+« recharger la batterie » (R2), il faut que la batterie soit déchargée. Pour cela
+(R1), il faut que le moteur ne se lance pas **et** que les phares soient faibles.
+Aucune règle ne produit ces deux derniers faits, qu'il faut donc **observer**. Le
+système pose alors la question à l'utilisateur (« les phares sont-ils faibles ? »)
+et n'examine que ce qui concerne l'hypothèse étudiée. C'est le **chaînage arrière**.
 
 {{% hint info %}}
-**Prolog : le chaînage arrière fait langage.** L'idée « déclarer des faits et des
-règles *si… alors…*, puis laisser un moteur général les enchaîner » s'est révélée
-si puissante qu'on en a fait, dès 1972, un **langage de programmation** à part
-entière : **Prolog**. Le programmeur n'y écrit *que* des faits et des règles ; le
-langage, lui, fournit d'office le moteur d'inférence : un chaînage arrière comme
-celui qu'on vient de dérouler à la main. On ne lui dit pas *comment* calculer,
-mais *ce qui est vrai* : c'est la **programmation logique**, cousine du Lisp
-fonctionnel (le langage des machines de la photo) mais d'un esprit tout autre.
-Longtemps l'étendard européen de l'IA symbolique, Prolog sera le pari du projet
-japonais de **Cinquième Génération** que nous croisons plus bas, et sa
-descendance déclarative se perpétue aujourd'hui, de Datalog aux moteurs de règles.
+**Prolog, un langage fondé sur le chaînage arrière.** En 1972, on a fait de ce
+principe (déclarer des faits et des règles *si… alors…*, puis laisser un moteur
+général les enchaîner) un **langage de programmation**, **Prolog**. Le programmeur
+n'y écrit que des faits et des règles, et le langage fournit lui-même le moteur
+d'inférence, un chaînage arrière comme celui qu'on vient de décrire. On n'indique
+pas au programme comment calculer, mais ce qui est vrai. Cette approche s'appelle la
+**programmation logique**. Elle est différente de la programmation fonctionnelle du
+langage Lisp (celui des machines de la photo plus bas). Prolog a longtemps été le
+langage de référence de l'IA symbolique en Europe. Le projet japonais de
+**Cinquième Génération**, présenté plus bas, l'a choisi comme langage principal, et
+ses principes se retrouvent aujourd'hui dans Datalog et dans les moteurs de règles.
 {{% /hint %}}
 
 {{% details "Pour aller plus loin : à quoi ressemble du Prolog ?" %}}
-Reprenons notre panne de voiture. En Prolog, on écrit d'abord les **faits**
-observés, puis les **règles**, la tête *avant* le `:-`, qui se lit « *si* », et
-les conditions séparées par des virgules qui se lisent « *et* » :
+Reprenons l'exemple de la voiture. En Prolog, on écrit d'abord les **faits**
+observés, puis les **règles**. Dans une règle, la conclusion est placée avant le
+symbole `:-`, qui se lit « *si* », et les conditions sont séparées par des virgules,
+qui se lisent « *et* » :
 
 ```prolog
 % Les faits observés :
@@ -120,146 +118,143 @@ batterie_dechargee   :- moteur_ne_se_lance_pas, phares_faibles.
 recharger_batterie   :- batterie_dechargee.
 ```
 
-On **interroge** ensuite le programme en lui soumettant un but à prouver (le `?-`
-est l'invite) :
+On **interroge** ensuite le programme en lui soumettant un but à prouver (`?-` est
+l'invite) :
 
 ```prolog
 ?- recharger_batterie.
 true.
 ```
 
-Pour répondre, Prolog fait *exactement* le chaînage arrière qu'on vient de
-dérouler : pour établir `recharger_batterie`, il lui faut `batterie_dechargee` ;
-pour celle-ci, les deux faits `moteur_ne_se_lance_pas` et `phares_faibles`, tous
-deux connus. But atteint : `true`. Nulle part on n'a écrit *comment* mener cette
-recherche ; le moteur du langage s'en charge.
+Pour répondre, Prolog effectue le chaînage arrière décrit plus haut. Pour établir
+`recharger_batterie`, il lui faut `batterie_dechargee`. Pour établir
+`batterie_dechargee`, il lui faut les deux faits `moteur_ne_se_lance_pas` et
+`phares_faibles`, qui sont connus. Le but est donc atteint, et Prolog répond
+`true`. Le programme n'indique nulle part comment mener cette recherche, puisque le
+moteur du langage s'en charge.
 {{% /details %}}
 
-Deux directions, donc, pour une même base de règles : **en avant**, poussé par les
-faits ; **en arrière**, tiré par un but. Le second a un avantage décisif pour le
-diagnostic : plutôt que de tout mesurer d'avance, il ne pose que les questions
-*utiles* à la piste qu'il suit. C'est exactement pour cette raison que l'employait le
-plus célèbre des systèmes experts, un diagnostiqueur médical nommé **MYCIN**, qui
-nous attend dans la section suivante.
+Une même base de règles peut donc être parcourue dans deux sens, **vers l'avant**, à
+partir des faits, ou **vers l'arrière**, à partir d'un but. Le chaînage arrière est
+mieux adapté au diagnostic, parce qu'il ne pose que les questions utiles à
+l'hypothèse examinée, au lieu de demander toutes les mesures d'avance. C'est pour
+cette raison que le plus connu des systèmes experts, le système de diagnostic
+médical **MYCIN**, l'utilisait. Il est présenté dans la section suivante.
 
-Mettez-vous maintenant aux commandes. Dans l'applet ci-dessous, choisissez ce
-que vous observez sur la voiture, puis faites avancer le moteur d'inférence
-règle par règle : vous le verrez examiner chaque règle, déclencher celles dont
-les conditions sont réunies et enrichir la base de faits, jusqu'au diagnostic.
-Essayez plusieurs combinaisons, et cherchez celle devant laquelle le système
-n'a plus rien à dire.
+Dans l'applet ci-dessous, choisissez ce que vous observez sur la voiture, puis
+faites avancer le moteur d'inférence règle par règle. Vous le verrez examiner
+chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
+faits à la base, jusqu'au diagnostic. Essayez plusieurs combinaisons, et trouvez
+celle pour laquelle le système ne peut rien conclure.
 
 {{< applet src="/html/applets/moteur-inference.html" height="640" >}}
 
 ## L'âge d'or : MYCIN, XCON et le boom
 
-L'aventure commence dès 1965, à Stanford, avec **DENDRAL**, souvent tenu pour le
-tout premier système expert : un programme capable d'identifier des **molécules** à
-partir de données de spectrométrie, à la manière d'un chimiste chevronné. Mais c'est
-son cadet, **MYCIN**, conçu au début des années 1970 par **Edward Shortliffe**, qui
-deviendra la vedette du genre. Sa spécialité : diagnostiquer les **infections
-bactériennes du sang** et recommander le bon antibiotique, à la bonne dose. Sous le
-capot, quelque **600 règles** et le **chaînage arrière** que nous venons de décrire :
-MYCIN part d'une hypothèse de germe et interroge le médecin, question après question,
-jusqu'à sa conclusion. Et, vertu du même mécanisme, il peut à tout moment
-**justifier** sa démarche : demandez-lui *pourquoi* il pose telle question, il vous
-montre la règle qu'il cherche à satisfaire.
+Le premier système expert est généralement considéré comme étant **DENDRAL**,
+développé à Stanford à partir de 1965. Il identifiait des **molécules** à partir de
+données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
+est cependant **MYCIN**, conçu au début des années 1970 par **Edward Shortliffe**.
+MYCIN diagnostiquait les **infections bactériennes du sang** et recommandait un
+antibiotique et une dose. Il comptait environ **600 règles** et utilisait le
+**chaînage arrière** décrit plus haut. Il partait d'une hypothèse sur le germe en
+cause et posait des questions au médecin jusqu'à sa conclusion. Grâce à ce même
+mécanisme, il pouvait **justifier** sa démarche. Quand on lui demandait pourquoi il
+posait une question, il indiquait la règle qu'il cherchait à vérifier.
 
-Une difficulté, pourtant : en médecine, rien n'est sûr à 100 %. Tel symptôme
-*suggère* un germe sans le garantir. MYCIN introduit donc des **facteurs de
-certitude** (un nombre accolé à chaque règle, indiquant à quel point sa conclusion
-est fiable) qu'il combine au fil du raisonnement. Bricolage avant l'heure : des
-années plus tard, une théorie autrement plus rigoureuse de l'incertitude, les
-**réseaux bayésiens**, viendra prendre le relais (nous la croiserons au [Module
-2](docs/module2/60-classer/#sous-les-modèles-des-probabilités)).
-Mais l'intuition est déjà là : un système qui *raisonne* doit aussi savoir *douter*.
+En médecine, cependant, peu de choses sont certaines. Un symptôme peut suggérer un
+germe sans le confirmer. MYCIN utilisait donc des **facteurs de certitude** (un
+nombre associé à chaque règle, qui indique à quel point sa conclusion est fiable)
+et les combinait au cours du raisonnement. Cette méthode était approximative. Plus
+tard, une théorie plus rigoureuse de l'incertitude, celle des **réseaux
+bayésiens**, l'a remplacée (voir le [Module
+2](docs/module2/60-classer/#sous-les-modèles-des-probabilités)). MYCIN montrait
+déjà qu'un système qui raisonne doit aussi tenir compte de l'incertitude.
 
-Et MYCIN était bon. Lors d'une évaluation restée célèbre, en 1979, on soumit ses
-recommandations à un jury d'experts qui les compara à celles de médecins humains,
-sans savoir lesquelles venaient de la machine. Verdict : MYCIN faisait **jeu égal,
-voire mieux**, que les spécialistes. Un programme venait, sur son terrain, d'égaler
-les meilleurs cliniciens. Et pourtant — c'est tout le paradoxe — **MYCIN ne fut
-jamais utilisé auprès d'un seul vrai patient.** Les obstacles n'étaient pas
-scientifiques, mais humains et pratiques : qui serait **responsable** si la machine se
-trompait : le médecin, l'hôpital, le programmeur ? Comment l'**intégrer** au travail
-réel, à une époque sans ordinateur au chevet du malade, où il fallait tout saisir à la
-main sur un terminal ? Et quel médecin accepterait de **déléguer** son jugement à une
-boîte ? MYCIN réussissait tout, sauf à exister dans le monde. Premier signe, discret,
-que la fragilité des systèmes experts ne serait pas que technique.
+MYCIN donnait de bons résultats. En 1979, une évaluation a soumis ses
+recommandations à un jury d'experts, qui les a comparées à celles de médecins sans
+savoir lesquelles venaient du programme. Le jury a jugé les recommandations de
+MYCIN **aussi bonnes, voire meilleures**, que celles des spécialistes. Pourtant,
+**MYCIN n'a jamais été utilisé pour soigner un patient.** Les obstacles étaient
+humains et pratiques plutôt que scientifiques. On ne savait pas qui serait
+**responsable** en cas d'erreur (le médecin, l'hôpital ou le programmeur). Il était
+difficile de l'**intégrer** au travail clinique, à une époque où il n'y avait pas
+d'ordinateur au chevet des patients et où tout devait être saisi sur un terminal.
+Enfin, les médecins n'étaient pas prêts à **déléguer** leur jugement à un
+programme. Le cas de MYCIN montre que les difficultés des systèmes experts
+n'étaient pas seulement techniques.
 
-Là où la médecine résistait, l'industrie, elle, ouvrit grand les bras. À la fin des
-années 1970, le constructeur informatique **DEC** se débattait avec un casse-tête :
-chacune de ses commandes d'ordinateurs **VAX** devait être configurée sur mesure : des
-centaines de composants à assortir sans erreur ni oubli. On confia la tâche à un
-système expert, **XCON**. Ce fut un triomphe : XCON configurait les commandes plus
-vite et plus sûrement que les humains, et fit **économiser des dizaines de millions de
-dollars par an** à DEC. Le message porta : les systèmes experts n'étaient pas qu'une
-curiosité de laboratoire : *ça marchait, et ça rapportait*. (Un détail qu'on n'écouta
-guère sur le moment : XCON enflait sans cesse, jusqu'à des milliers de règles qu'il
-fallait sans relâche réajuster les unes aux autres. Nous y reviendrons.)
+L'industrie a adopté les systèmes experts plus facilement que la médecine. À la fin
+des années 1970, le constructeur informatique **DEC** devait configurer sur mesure
+chaque commande de ses ordinateurs **VAX**, ce qui impliquait d'assembler des
+centaines de composants sans erreur ni oubli. Cette tâche a été confiée à un
+système expert, **XCON**. XCON configurait les commandes plus rapidement et avec
+moins d'erreurs que les employés, et il faisait **économiser des dizaines de
+millions de dollars par an** à DEC. Ce succès a montré que les systèmes experts
+pouvaient être rentables en dehors des laboratoires. Un problème est cependant
+apparu : le nombre de règles de XCON augmentait sans cesse, jusqu'à plusieurs
+milliers, et il fallait constamment les ajuster les unes aux autres. Nous y
+reviendrons plus bas.
 
-Le succès de XCON déclencha une ruée. Au début des années 1980, l'« IA » devint, pour
-la première fois, une véritable **industrie**. On vendit des **coquilles** (*shells*),
-des moteurs d'inférence vides, prêts à recevoir la base de règles de n'importe quel
-métier ; un nouveau métier apparut, l'**ingénieur de la connaissance**, chargé
-d'extraire le savoir des experts ; des entreprises se montèrent, des capitaux
-affluèrent. On construisit même des ordinateurs spécialisés, les **machines Lisp**,
-taillés pour ces programmes ; et le Japon lança un projet national pharaonique, la
-**Cinquième Génération**, pour prendre la tête de cette informatique du raisonnement.
-Jamais l'IA symbolique n'avait semblé si près de tenir ses promesses. Mais le sommet
-est aussi l'endroit d'où l'on commence à redescendre, et, déjà, des fissures
-couraient sous l'édifice.
+Après XCON, les investissements se sont multipliés. Au début des années 1980, l'IA
+est devenue pour la première fois une **industrie**. On vendait des **coquilles**
+(*shells*), c'est-à-dire des moteurs d'inférence vides, prêts à recevoir la base de
+règles de n'importe quel domaine. Un nouveau métier est apparu, celui d'**ingénieur
+de la connaissance**, chargé de recueillir le savoir des experts. Des entreprises
+ont été créées et ont attiré des capitaux. On a même construit des ordinateurs
+spécialisés pour ces programmes, les **machines Lisp**. Le Japon a lancé un grand
+projet national, la **Cinquième Génération**, pour devenir le leader de ce type
+d'informatique. Les limites des systèmes experts commençaient toutefois à
+apparaître.
 
-{{< image src="/images/module1/symbolics-3620.jpg" alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé taillé pour faire tourner les programmes d'IA symbolique." loading="lazy" >}}
+{{< image src="/images/module1/symbolics-3620.jpg" alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé conçu pour faire tourner les programmes d'IA symbolique." loading="lazy" >}}
 
 <p class="image-credit">Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Wikimedia Commons.</p>
 
 ## Le goulot d'étranglement
 
-Reprenons les fissures une à une. La première, et la plus profonde, tient à une
-question d'apparence innocente : *d'où viennent les règles ?* Quelqu'un doit les
-écrire — l'**ingénieur de la connaissance** —, en interrogeant longuement un expert
-pour traduire son savoir en *si… alors…*. Or ce travail s'est révélé d'une lenteur
-désespérante. Pire : une grande part de l'expertise se laisse mal mettre en mots. Le
-médecin chevronné qui « sent » un diagnostic au premier coup d'œil, le mécanicien qui
-devine la panne à l'oreille, ne savent pas toujours *dire* ce qu'ils savent : leur
-compétence est un **savoir tacite**, fait d'intuition et d'expérience, et non une
-liste de règles dormant dans un tiroir. On ne codifie pas ce qui n'a jamais été
-formulé. Ce blocage a reçu un nom resté célèbre : le **goulot d'étranglement de
-l'acquisition des connaissances**.
+La première limite, et la plus importante, concerne l'origine des règles. Quelqu'un
+doit les écrire. C'est le travail de l'**ingénieur de la connaissance**, qui
+interroge longuement un expert pour traduire son savoir en règles *si… alors…*. Ce
+travail s'est révélé très lent. De plus, une grande partie de l'expertise est
+difficile à exprimer. Le médecin expérimenté qui reconnaît un diagnostic au premier
+coup d'œil, ou le mécanicien qui identifie une panne au bruit du moteur, ne savent
+pas toujours expliquer ce qu'ils savent. Leur compétence est un **savoir tacite**,
+fondé sur l'intuition et l'expérience, et non une liste de règles qu'il suffirait
+de noter. On ne peut pas codifier ce qui n'a jamais été formulé. Ce problème est
+connu sous le nom de **goulot d'étranglement de l'acquisition des connaissances**.
 
-Deuxième fissure, déjà rencontrée dans « [Représenter le
-monde](docs/module1/40-representer-le-monde) » : la **rigidité**. Un système expert
-ne connaît que ses règles, et rien autour. Tant qu'on reste pile dans son domaine, il
-brille ; qu'on en sorte d'un pas, et il ne *fléchit* pas : il s'effondre, sans le
-moindre signe d'embarras. MYCIN diagnostiquait les infections du sang ; si on lui
-avait décrit une jambe cassée, il aurait cherché un microbe, car il n'avait aucune
-idée de ce qu'il ignorait. Et faute du moindre **bon sens**, rien ne l'empêchait
-d'avaler une absurdité (un patient âgé de moins de zéro an, une dose mille fois trop
-forte) qu'un étudiant de première année aurait flairée aussitôt. Le mur du sens
-commun, qu'on croyait avoir contourné en rétrécissant le monde, était simplement
-revenu par la fenêtre.
+La deuxième limite, déjà évoquée dans « [Représenter le
+monde](docs/module1/40-representer-le-monde) », est la **rigidité**. Un système
+expert ne connaît que ses règles. Il fonctionne bien à l'intérieur de son domaine,
+mais dès qu'on en sort, il ne donne plus de résultats utiles, et il ne signale pas
+qu'il est hors de son domaine. MYCIN diagnostiquait les infections du sang. Si on
+lui avait décrit une jambe cassée, il aurait cherché un microbe, parce qu'il
+n'avait aucun moyen de savoir ce qu'il ignorait. Faute de **sens commun**, il
+pouvait aussi accepter des données absurdes (un patient âgé de moins de zéro an, une
+dose mille fois trop forte) qu'un étudiant en médecine aurait repérées
+immédiatement. Réduire le monde à un domaine restreint ne réglait donc pas le
+problème du sens commun.
 
-Troisième fissure : l'**ingérabilité**. Tant qu'un système compte quelques dizaines de
-règles, tout va bien. Mais XCON en accumula des milliers, et l'on découvrit qu'au-delà
-d'un certain seuil, les règles **interagissent** de façon imprévisible. En ajouter une
-pour corriger un cas pouvait en dérégler trois autres, ailleurs, sans qu'on le voie
-venir. Maintenir une grosse base devenait un cauchemar : on passait plus de temps à
-rattraper les effets de bord qu'à enrichir le savoir. La connaissance explicite,
-écrite à la main, ne **passait pas à l'échelle**.
+La troisième limite est la difficulté de **maintenance**. Un système de quelques
+dizaines de règles reste gérable. XCON en a accumulé des milliers, et on a constaté
+qu'au-delà d'un certain nombre, les règles **interagissent** de façon imprévisible.
+Ajouter une règle pour corriger un cas pouvait en perturber plusieurs autres, sans
+qu'on s'en aperçoive. Maintenir une grande base de règles demandait plus de temps
+pour corriger ces effets de bord que pour ajouter des connaissances. La
+connaissance explicite, écrite à la main, ne **passait pas à l'échelle**.
 
-Mais la fissure la plus décisive est la plus discrète. Un système expert n'**apprend
-rien**. Chaque règle a été déposée là par une main humaine ; le programme peut tourner
-mille fois sur mille cas, il n'en tirera pas une règle nouvelle, ne corrigera pas de
-lui-même celles qui se trompent. Toute son intelligence lui vient du dehors, figée le
-jour de sa programmation. Et c'est en butant sur cette limite-là que les chercheurs
-commencèrent, peu à peu, à retourner la question. Puisque le coûteux, l'impossible,
-c'est d'*extraire* les règles des experts et de les tenir à jour à la main… *et si
-l'on confiait ce travail à la machine elle-même ? Et si, au lieu de lui dicter ses
-règles, on la laissait les découvrir dans les données ?*
+La quatrième limite est la plus fondamentale : un système expert n'**apprend
+rien**. Chacune de ses règles a été écrite par une personne. Le programme peut
+traiter mille cas sans en tirer une seule règle nouvelle, et il ne corrige pas de
+lui-même les règles erronées. Toute sa connaissance lui est fournie de l'extérieur,
+et elle reste figée. C'est à partir de cette limite que des chercheurs ont commencé
+à poser la question autrement. Puisqu'il est coûteux, voire impossible, d'extraire
+les règles des experts et de les maintenir à la main, on pourrait confier ce
+travail à la machine, en la laissant découvrir les règles à partir des données.
 
-Mais cette question-là devra attendre. Car les promesses des systèmes experts étaient
-devenues trop grandes pour des livraisons si minces : à la fin des années 1980, les
-capitaux fuient, les entreprises ferment, les fameuses machines Lisp finissent au
-rebut. Avant que la machine n'apprenne, l'IA devra d'abord traverser un long
-**hiver**, celui de « [Les hivers et la bascule](docs/module1/60-hivers) ».
+Cette approche ne s'imposera que plus tard. À la fin des années 1980, les résultats
+des systèmes experts restent en deçà des promesses. Les investisseurs se retirent,
+des entreprises ferment, et les machines Lisp sont abandonnées. L'IA entre dans une
+longue période de déclin, un **hiver**, décrit dans le chapitre « [Les hivers et la
+bascule](docs/module1/60-hivers) ».
