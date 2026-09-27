@@ -1,5 +1,5 @@
-<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Représenter le monde Le sens, angle mort de la machine Faisons le bilan des chapitres précédents. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs, ELIZA tenait la conversation, mais tous, au fond, faisaient la même chose : manipuler des symboles d’après leur forme, selon des règles. ELIZA repérait le mot « mère » sans avoir la moindre idée de ce qu’est une mère. C’est ce qu’on appelle le niveau de la syntaxe : agencer des symboles correctement, sans toucher à leur sens.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Représenter le monde"><meta property="og:description" content="Représenter le monde Le sens, angle mort de la machine Faisons le bilan des chapitres précédents. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs, ELIZA tenait la conversation, mais tous, au fond, faisaient la même chose : manipuler des symboles d’après leur forme, selon des règles. ELIZA repérait le mot « mère » sans avoir la moindre idée de ce qu’est une mère. C’est ce qu’on appelle le niveau de la syntaxe : agencer des symboles correctement, sans toucher à leur sens."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Représenter le monde"><meta itemprop=description content="Représenter le monde Le sens, angle mort de la machine Faisons le bilan des chapitres précédents. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs, ELIZA tenait la conversation, mais tous, au fond, faisaient la même chose : manipuler des symboles d’après leur forme, selon des règles. ELIZA repérait le mot « mère » sans avoir la moindre idée de ce qu’est une mère. C’est ce qu’on appelle le niveau de la syntaxe : agencer des symboles correctement, sans toucher à leur sens."><meta itemprop=wordCount content="2856"><title>Représenter le monde • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Représenter le monde Le sens, angle mort de la machine Les chapitres précédents ont présenté plusieurs programmes. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs et ELIZA tenait une conversation. Tous faisaient cependant la même chose : ils manipulaient des symboles d’après leur forme, selon des règles. Par exemple, ELIZA repérait le mot « mère » sans savoir ce qu’est une mère. On parle dans ce cas du niveau de la syntaxe, qui consiste à agencer correctement des symboles sans tenir compte de leur sens.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Représenter le monde"><meta property="og:description" content="Représenter le monde Le sens, angle mort de la machine Les chapitres précédents ont présenté plusieurs programmes. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs et ELIZA tenait une conversation. Tous faisaient cependant la même chose : ils manipulaient des symboles d’après leur forme, selon des règles. Par exemple, ELIZA repérait le mot « mère » sans savoir ce qu’est une mère. On parle dans ce cas du niveau de la syntaxe, qui consiste à agencer correctement des symboles sans tenir compte de leur sens."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Représenter le monde"><meta itemprop=description content="Représenter le monde Le sens, angle mort de la machine Les chapitres précédents ont présenté plusieurs programmes. Le Logic Theorist démontrait des théorèmes, Deep Blue gagnait aux échecs et ELIZA tenait une conversation. Tous faisaient cependant la même chose : ils manipulaient des symboles d’après leur forme, selon des règles. Par exemple, ELIZA repérait le mot « mère » sans savoir ce qu’est une mère. On parle dans ce cas du niveau de la syntaxe, qui consiste à agencer correctement des symboles sans tenir compte de leur sens."><meta itemprop=wordCount content="2790"><title>Représenter le monde • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
 </button>
 <button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
@@ -12,213 +12,218 @@
 <label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
 <label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Représenter le monde</h3><input type=checkbox class=toggle id=toc-control>
-<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#le-sens-angle-mort-de-la-machine>Le sens, angle mort de la machine</a></li><li><a href=#donner-un-savoir-à-la-machine>Donner un savoir à la machine</a></li><li><a href=#shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition</a></li><li><a href=#le-mur-du-sens-commun>Le mur du sens commun</a></li><li><a href=#lobjection-de-hofstadter>L&rsquo;objection de Hofstadter</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=représenter-le-monde>Représenter le monde<a class=anchor href=#repr%c3%a9senter-le-monde></a></h1><h2 id=le-sens-angle-mort-de-la-machine>Le sens, angle mort de la machine<a class=anchor href=#le-sens-angle-mort-de-la-machine></a></h2><p>Faisons le bilan des chapitres précédents. Le <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Logic
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#le-sens-angle-mort-de-la-machine>Le sens, angle mort de la machine</a></li><li><a href=#donner-un-savoir-à-la-machine>Donner un savoir à la machine</a></li><li><a href=#shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition</a></li><li><a href=#le-mur-du-sens-commun>Le mur du sens commun</a></li><li><a href=#lobjection-de-hofstadter>L&rsquo;objection de Hofstadter</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=représenter-le-monde>Représenter le monde<a class=anchor href=#repr%c3%a9senter-le-monde></a></h1><h2 id=le-sens-angle-mort-de-la-machine>Le sens, angle mort de la machine<a class=anchor href=#le-sens-angle-mort-de-la-machine></a></h2><p>Les chapitres précédents ont présenté plusieurs programmes. Le <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Logic
 Theorist</a> démontrait des théorèmes, <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lapog%c3%a9e-deep-blue-bat-kasparov-1997>Deep
 Blue</a>
-gagnait aux échecs, <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lautre-visage-eliza-ou-lillusion-de-comprendre>ELIZA</a>
-tenait la conversation, mais
-tous, au fond, faisaient <em>la même chose</em> : <strong>manipuler des symboles d&rsquo;après leur
-forme</strong>, selon des règles. ELIZA repérait le mot « mère » sans avoir la moindre
-idée de ce qu&rsquo;est une mère. C&rsquo;est ce qu&rsquo;on appelle le niveau de la <strong>syntaxe</strong> :
-agencer des symboles correctement, sans toucher à leur sens.</p><p>Or comprendre le monde demande bien davantage. Les spécialistes du langage
-distinguent trois niveaux, qu&rsquo;un seul petit exemple suffit à éclairer. Imaginez
-qu&rsquo;à table, quelqu&rsquo;un vous dise : <strong>« Pouvez-vous me passer le sel ? »</strong></p><ul><li>La <strong>syntaxe</strong>, c&rsquo;est la <em>forme</em> : la phrase est une question grammaticalement
-bien construite. Une machine peut vérifier ça sans rien comprendre.</li><li>La <strong>sémantique</strong>, c&rsquo;est le <em>sens littéral</em> : la phrase interroge votre
-<em>capacité</em> à passer le sel. Pour y accéder, il faut savoir ce que veulent dire
-« sel », « passer », « pouvoir ».</li><li>La <strong>pragmatique</strong>, c&rsquo;est l&rsquo;<em>intention réelle en contexte</em> : tout le monde
+gagnait aux échecs et <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lautre-visage-eliza-ou-lillusion-de-comprendre>ELIZA</a>
+tenait une conversation. Tous faisaient cependant la même chose : ils
+<strong>manipulaient des symboles d&rsquo;après leur forme</strong>, selon des règles. Par exemple,
+ELIZA repérait le mot « mère » sans savoir ce qu&rsquo;est une mère. On parle dans ce cas
+du niveau de la <strong>syntaxe</strong>, qui consiste à agencer correctement des symboles sans
+tenir compte de leur sens.</p><p>Comprendre le monde demande davantage. Les spécialistes du langage distinguent
+trois niveaux, qu&rsquo;on peut illustrer par un exemple simple. À table, quelqu&rsquo;un vous
+dit <strong>« Pouvez-vous me passer le sel ? »</strong></p><ul><li>La <strong>syntaxe</strong> concerne la <em>forme</em>. La phrase est une question grammaticalement
+bien construite. Une machine peut le vérifier sans rien comprendre.</li><li>La <strong>sémantique</strong> concerne le <em>sens littéral</em>. La phrase porte sur votre
+<em>capacité</em> à passer le sel. Pour la comprendre à ce niveau, il faut savoir ce que
+signifient « sel », « passer » et « pouvoir ».</li><li>La <strong>pragmatique</strong> concerne l&rsquo;<em>intention réelle en contexte</em>. Tout le monde
 comprend qu&rsquo;il ne s&rsquo;agit pas d&rsquo;une question sur vos aptitudes (« oui, je peux
-passer le sel! »), mais d&rsquo;une <strong>demande</strong> polie : « passez-moi le sel ». Saisir
-cela exige du contexte et une montagne de sous-entendus que nous partageons
-tous.</li></ul><p>Voilà le drame de l&rsquo;IA symbolique résumé en une phrase : elle excellait au niveau
-de la <strong>syntaxe</strong>, peinait à atteindre la <strong>sémantique</strong>, et se fracassait sur la
-<strong>pragmatique</strong>. Car pour passer de la forme au sens, une machine a besoin de
-quelque chose dont Deep Blue et ELIZA étaient totalement dépourvus : des
-<strong>connaissances</strong> sur le monde. C&rsquo;est le grand chantier de ce chapitre, et, on
-le verra, sa grande déconvenue. Reste la question vertigineuse par laquelle tout
-commence : comment loger dans une machine <em>ce que tout le monde sait</em> ?</p><h2 id=donner-un-savoir-à-la-machine>Donner un savoir à la machine<a class=anchor href=#donner-un-savoir-%c3%a0-la-machine></a></h2><p>Si l&rsquo;intelligence exige des connaissances, il faut trouver le moyen de les
+passer le sel! »), mais d&rsquo;une <strong>demande</strong> polie, « passez-moi le sel ». Pour
+comprendre cela, il faut connaître le contexte et un grand nombre de
+sous-entendus que nous partageons tous.</li></ul><p>On peut résumer ainsi la situation de l&rsquo;IA symbolique : elle réussissait bien au
+niveau de la <strong>syntaxe</strong>, atteignait difficilement la <strong>sémantique</strong> et échouait
+au niveau de la <strong>pragmatique</strong>. Pour passer de la forme au sens, une machine a
+besoin de <strong>connaissances</strong> sur le monde, et Deep Blue et ELIZA n&rsquo;en avaient
+aucune. Ce chapitre porte sur les tentatives pour fournir ces connaissances aux
+machines et sur leur échec. La question de départ est la suivante : comment
+mettre dans une machine ce que tout le monde sait ?</p><h2 id=donner-un-savoir-à-la-machine>Donner un savoir à la machine<a class=anchor href=#donner-un-savoir-%c3%a0-la-machine></a></h2><p>Si l&rsquo;intelligence exige des connaissances, il faut trouver un moyen de les
 <strong>inscrire dans la machine</strong> sous une forme qu&rsquo;elle puisse exploiter. Entre la fin
-des années 1960 et les années 1970, trois grandes idées s&rsquo;imposent, trois façons
-de structurer le savoir.</p><p><strong>Les réseaux sémantiques</strong> (Ross Quillian). L&rsquo;idée : représenter les
-connaissances comme un <strong>réseau de concepts reliés</strong> par des relations. « Canari »
-est relié à « oiseau » par un lien <em>est-un</em>, lui-même relié à « animal » ;
-« oiseau » est relié à « ailes » par un lien <em>possède</em>. L&rsquo;intérêt est que la
-machine peut alors <strong>déduire</strong> ce qu&rsquo;on ne lui a jamais dit explicitement : un
-canari a-t-il des ailes ? Il suffit de suivre les flèches — <em>canari est-un
-oiseau</em>, <em>oiseau possède ailes</em> — pour conclure que oui. (Notez que ces réseaux
-portent le mot <strong>sémantique</strong> dans leur nom : c&rsquo;est tout l&rsquo;enjeu, passer de la
-forme au <em>sens</em>.)</p><label class=book-image for=book-image-toggle-77c35d6ceea3><input class="hidden toggle" type=checkbox id=book-image-toggle-77c35d6ceea3>
+des années 1960 et les années 1970, trois grandes façons de structurer le savoir
+sont proposées.</p><p><strong>Les réseaux sémantiques</strong> (Ross Quillian). On représente les connaissances comme
+un <strong>réseau de concepts reliés</strong> par des relations. « Canari » est relié à
+« oiseau » par un lien <em>est-un</em>, et « oiseau » est relié à « animal » de la même
+façon. « Oiseau » est relié à « ailes » par un lien <em>possède</em>. La machine peut
+alors <strong>déduire</strong> des faits qu&rsquo;on ne lui a pas donnés explicitement. Par exemple,
+pour savoir si un canari a des ailes, il suffit de suivre les liens (<em>canari est-un
+oiseau</em>, <em>oiseau possède ailes</em>) pour conclure que oui. Ces réseaux portent le mot
+<strong>sémantique</strong> dans leur nom parce que leur objectif est de passer de la forme au
+sens.</p><label class=book-image for=book-image-toggle-77c35d6ceea3><input class="hidden toggle" type=checkbox id=book-image-toggle-77c35d6ceea3>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/reseau-semantique.svg alt="Réseau sémantique reliant canari, oiseau et animal par des liens « est-un », avec héritage des propriétés." loading=lazy title="Un réseau sémantique : les propriétés s'héritent en remontant les liens « est-un »." width=660 height=440 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-77c35d6ceea3"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Les frames, ou « cadres »</strong> (Marvin Minsky, 1974). Plutôt que des concepts
-isolés, Minsky propose de regrouper le savoir en <strong>situations types</strong> munies de
+</label><script>(function(){const e=document.getElementById("book-image-toggle-77c35d6ceea3"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Les frames, ou « cadres »</strong> (Marvin Minsky, 1974). Au lieu de concepts isolés,
+Minsky propose de regrouper le savoir en <strong>situations types</strong> qui comportent des
 « cases » à remplir, avec des valeurs par défaut. Le cadre « chambre d&rsquo;hôtel »
-comporte des cases pour le lit, la porte, la salle de bain ; par défaut, on
+comporte des cases pour le lit, la porte et la salle de bain. Par défaut, on
 s&rsquo;attend à y trouver un lit. Quand vous entrez dans une chambre d&rsquo;hôtel inconnue,
-vous n&rsquo;analysez pas la scène de zéro : vous chargez ce cadre tout prêt, et vous ne
-corrigez que ce qui détonne. C&rsquo;est une manière de capturer nos <strong>attentes</strong>.</p><label class=book-image for=book-image-toggle-682753f714a0><input class="hidden toggle" type=checkbox id=book-image-toggle-682753f714a0>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/frame-chambre-hotel.svg alt="Le cadre « chambre d'hôtel » sous forme de fiche : des cases (lit, salle de bain, porte, fenêtre, téléviseur) avec leurs valeurs par défaut." loading=lazy title="Un frame : une situation type aux cases déjà pré-remplies de valeurs par défaut." width=560 height=320 style=--largeur-plafond:560px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-682753f714a0"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Les scripts</strong> (Roger Schank et Robert Abelson). Même idée, mais appliquée aux
-<strong>enchaînements d&rsquo;actions</strong>. Le « script du restaurant » décrit la séquence
-attendue : entrer, s&rsquo;asseoir, consulter le menu, commander, manger, payer, partir.
-Grâce à lui, une machine peut <strong>combler les trous</strong> d&rsquo;un récit : si on lui dit
-« Jean est allé au restaurant et a commandé un steak », elle infère qu&rsquo;il s&rsquo;est
-assis, qu&rsquo;il a mangé, puis payé, bien que rien de tout cela n&rsquo;ait été dit.</p><label class=book-image for=book-image-toggle-761c48562baf><input class="hidden toggle" type=checkbox id=book-image-toggle-761c48562baf>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/script-restaurant.svg alt="Le script du restaurant en sept étapes ; seules « entrer » et « commander » sont dites, les autres sont comblées par le script." loading=lazy title="Un script : la séquence attendue, où la machine comble d'elle-même les étapes non dites." width=720 height=220 style=--largeur-plafond:720px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-761c48562baf"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le point commun de ces trois approches est ce qui faisait défaut à Deep Blue et à
-ELIZA : la capacité à <strong>inférer l&rsquo;implicite</strong>, à mobiliser un savoir de fond pour
-aller au-delà de ce qui est littéralement énoncé. C&rsquo;est un pas réel en direction
-de la <em>sémantique</em>.</p><p>Ces représentations partagent d&rsquo;ailleurs un ancêtre plus rigoureux : la <strong>logique
-formelle</strong>, qui rêvait depuis Boole et Frege de réduire le raisonnement à un
-<em>calcul</em> sur des symboles : « Socrate est un homme ; tous les hommes sont mortels ;
-donc Socrate est mortel ». Le syllogisme a beau sembler relever du sens, il
-s&rsquo;obtient par pure mécanique sur la <em>forme</em> des énoncés. Et c&rsquo;est là le fond du
-problème : qu&rsquo;on enchaîne des règles logiques ou qu&rsquo;on suive des flèches dans un
-réseau, on manipule toujours la <strong>forme</strong> des symboles. Reste à savoir si la forme
-suffit à capturer le <strong>sens</strong>. Ce pas vers la sémantique, on va le voir, traîne
-avec lui une fragilité redoutable.</p><blockquote class="book-hint info"><p>Ces façons de structurer le savoir (réseaux de concepts, cases à remplir,
-hiérarchies <em>est-un</em>) pourraient sembler s&rsquo;être éteintes avec le GOFAI. Il n&rsquo;en est
-rien : elles ont essaimé. Le <strong>web sémantique</strong>, les <strong>ontologies</strong> et les
-<strong>knowledge graphs</strong> qui font
-tourner la recherche de Google ou Wikidata en descendent en droite ligne, et les
-<em>cases héritées</em> des frames ne sont pas sans rappeler les <strong>objets</strong> de la
+vous n&rsquo;analysez pas toute la scène. Vous utilisez ce cadre déjà connu et vous ne
+corrigez que ce qui ne correspond pas. Les frames permettent donc de représenter
+nos <strong>attentes</strong>.</p><label class=book-image for=book-image-toggle-cf2fb4ca761e><input class="hidden toggle" type=checkbox id=book-image-toggle-cf2fb4ca761e>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/frame-chambre-hotel.svg alt="Le cadre « chambre d'hôtel » sous forme de fiche : des cases (lit, salle de bain, porte, fenêtre, téléviseur) avec leurs valeurs par défaut." loading=lazy title="Un frame : une situation type dont les cases ont des valeurs par défaut." width=560 height=320 style=--largeur-plafond:560px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-cf2fb4ca761e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Les scripts</strong> (Roger Schank et Robert Abelson). L&rsquo;idée est la même, mais elle
+s&rsquo;applique à des <strong>enchaînements d&rsquo;actions</strong>. Le « script du restaurant » décrit la
+séquence attendue : entrer, s&rsquo;asseoir, consulter le menu, commander, manger, payer,
+partir. Grâce à ce script, une machine peut <strong>compléter</strong> un récit. Si on lui dit
+« Jean est allé au restaurant et a commandé un steak », elle en déduit qu&rsquo;il s&rsquo;est
+assis, qu&rsquo;il a mangé et qu&rsquo;il a payé, même si le récit ne le dit pas.</p><label class=book-image for=book-image-toggle-47039a54f393><input class="hidden toggle" type=checkbox id=book-image-toggle-47039a54f393>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/script-restaurant.svg alt="Le script du restaurant en sept étapes ; seules « entrer » et « commander » sont dites, les autres sont comblées par le script." loading=lazy title="Un script : la séquence attendue, dont la machine complète les étapes non dites." width=720 height=220 style=--largeur-plafond:720px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-47039a54f393"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces trois approches ont en commun une capacité qui manquait à Deep Blue et à
+ELIZA, celle d&rsquo;<strong>inférer l&rsquo;implicite</strong>, c&rsquo;est-à-dire d&rsquo;utiliser un savoir de fond
+pour aller au-delà de ce qui est dit littéralement. Elles représentent un progrès
+réel vers la sémantique.</p><p>Ces représentations ont un ancêtre plus rigoureux, la <strong>logique formelle</strong>. Depuis
+Boole et Frege, la logique cherche à réduire le raisonnement à un <em>calcul</em> sur des
+symboles : « Socrate est un homme ; tous les hommes sont mortels ; donc Socrate est
+mortel ». Ce syllogisme semble porter sur le sens, mais on l&rsquo;obtient par une
+opération mécanique sur la <em>forme</em> des énoncés. Le problème est là. Qu&rsquo;on enchaîne
+des règles logiques ou qu&rsquo;on suive des liens dans un réseau, on manipule toujours
+la <strong>forme</strong> des symboles. La question est de savoir si la forme suffit à
+représenter le <strong>sens</strong>. Comme on va le voir, ce progrès vers la sémantique
+s&rsquo;accompagne d&rsquo;une fragilité importante.</p><blockquote class="book-hint info"><p>Ces façons de structurer le savoir (réseaux de concepts, cases à remplir,
+hiérarchies <em>est-un</em>) n&rsquo;ont pas disparu avec le GOFAI. Elles ont été reprises
+ailleurs. Le <strong>web sémantique</strong>, les <strong>ontologies</strong> et les
+<strong>knowledge graphs</strong> utilisés
+par la recherche de Google ou par Wikidata en sont les descendants directs, et les
+<em>cases héritées</em> des frames ressemblent aux <strong>objets</strong> de la
 programmation moderne. Nous y reviendrons dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la
-bascule</a> », pour mesurer ce que le GOFAI a <em>vraiment</em> légué.</p></blockquote><h2 id=shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition<a class=anchor href=#shrdlu-ou-le-sommet-de-lambition></a></h2><p>C&rsquo;est dans ce climat d&rsquo;optimisme qu&rsquo;un jeune chercheur du MIT, <strong>Terry Winograd</strong>,
-réalise vers <strong>1970</strong> ce qui passe encore pour le sommet de l&rsquo;IA symbolique :
-<strong>SHRDLU</strong>. Le programme dialogue <em>en anglais ordinaire</em> avec un humain, à propos
-d&rsquo;un petit monde de <strong>blocs colorés</strong> (cubes, pyramides, boîtes posés sur une
-table) qu&rsquo;il peut déplacer à l&rsquo;aide d&rsquo;un bras robotique virtuel. Et la
-conversation est, pour l&rsquo;époque, stupéfiante :</p><blockquote><p>— <em>Prends un gros bloc rouge.</em>
+bascule</a> », pour évaluer ce que le GOFAI a laissé.</p></blockquote><h2 id=shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition<a class=anchor href=#shrdlu-ou-le-sommet-de-lambition></a></h2><p>C&rsquo;est dans ce contexte optimiste qu&rsquo;un jeune chercheur du MIT, <strong>Terry Winograd</strong>,
+réalise vers <strong>1970</strong> un programme qu&rsquo;on considère encore comme l&rsquo;un des résultats
+les plus avancés de l&rsquo;IA symbolique, <strong>SHRDLU</strong>. Le programme dialogue en anglais
+ordinaire avec un humain à propos d&rsquo;un petit monde de <strong>blocs colorés</strong> (cubes,
+pyramides, boîtes posés sur une table), qu&rsquo;il peut déplacer à l&rsquo;aide d&rsquo;un bras
+robotique virtuel. Pour l&rsquo;époque, la conversation est très impressionnante :</p><blockquote><p>— <em>Prends un gros bloc rouge.</em>
 — D&rsquo;accord.
 — <em>Saisis la pyramide.</em>
 — Je ne sais pas de <strong>quelle</strong> pyramide vous parlez.
 — <em>Trouve un bloc plus haut que celui que tu tiens et place-le dans la boîte.</em>
 — Par « <strong>le</strong> », je suppose que vous parlez du bloc plus haut que celui que je
-tiens.</p></blockquote><p>Regardez ce que SHRDLU réussit là. Il <strong>lève une ambiguïté</strong> (« quelle
-pyramide ? »), il <strong>résout un pronom</strong> (à quoi renvoie « le » ?), il <strong>agit</strong> sur
-le monde et il <strong>se souvient</strong> de ce qu&rsquo;il vient de faire. Mieux : on peut lui
-demander <em>« Pourquoi as-tu fait ça ? »</em> et il <strong>explique</strong> son raisonnement.</p><label class=book-image for=book-image-toggle-3b9190829d5d><input class="hidden toggle" type=checkbox id=book-image-toggle-3b9190829d5d>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/micromonde-shrdlu.svg alt="Le micro-monde de SHRDLU : un cube rouge, une pile de blocs, une pyramide et une boîte posés sur une table, avec un bras robotique." loading=lazy title="Le « micro-monde » de SHRDLU : un univers de poche, entièrement décrit à la main." width=660 height=360 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-3b9190829d5d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Voici SHRDLU à l&rsquo;œuvre, dans un film de démonstration d&rsquo;époque (en anglais) :
-les ordres tapés au clavier, les réponses du programme, et le bras virtuel qui
-déplace les blocs.</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading=eager referrerpolicy=strict-origin-when-cross-origin src="https://www.youtube.com/embed/bo4RvYJYOzI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 title="YouTube video"></iframe></div><p>Comment fait-il ? Parce que, derrière le dialogue, SHRDLU entretient un <strong>modèle du
-monde</strong> (<em>world model</em>), une représentation interne de sa petite scène : quel bloc
-repose sur quel autre, lequel est rouge, lequel est libre, ce que le bras tient à
-l&rsquo;instant. À chaque action, il <strong>met ce modèle à jour</strong> ; à chaque question, il le
-<strong>consulte</strong>. C&rsquo;est cette maquette intérieure qui lui permet de résoudre « le », de
-se rappeler son action passée, de justifier ce qu&rsquo;il a fait. SHRDLU ne fait pas que
-<em>parler</em> des blocs : il en tient, au-dedans de lui, une carte fidèle. Retenez bien
-cette idée : <strong>un modèle du monde est une représentation interne de la réalité, sur
-laquelle on peut raisonner</strong> ; nous la retrouverons, beaucoup plus loin dans le
-cours, au cœur d&rsquo;un grand débat sur les IA d&rsquo;aujourd&rsquo;hui.</p><p>Sauf que ce tour de force cache un <strong>tour de passe-passe</strong>. Si le modèle du monde de
-SHRDLU est si fidèle, c&rsquo;est qu&rsquo;il n&rsquo;a presque rien à représenter : une poignée de
-blocs, une table, une boîte, quelques formes et couleurs. Dans cet univers de poche,
-on <em>peut</em> tout dire à la machine : la liste complète des objets, des propriétés, des
-actions possibles. Le « monde » de SHRDLU tient tout entier dans une représentation
-<strong>codée à la main</strong>. Winograd l&rsquo;avait d&rsquo;ailleurs baptisé un <strong>micro-monde</strong> (<em>blocks
-world</em>), et le mot <em>micro</em> dit tout. Le micro-monde a une vertu précise : il rend le
-problème <strong>traitable</strong> (<em>tractable</em>, en anglais). En informatique, un problème
-est traitable quand une machine peut le résoudre en un temps raisonnable, sans
-se perdre dans l&rsquo;<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lexplosion-combinatoire>explosion
+tiens.</p></blockquote><p>Dans cet échange, SHRDLU <strong>lève une ambiguïté</strong> (quelle pyramide), <strong>résout un
+pronom</strong> (ce à quoi renvoie « le »), <strong>agit</strong> sur le monde et <strong>se souvient</strong> de ce
+qu&rsquo;il vient de faire. On peut aussi lui demander « Pourquoi as-tu fait ça ? », et
+il <strong>explique</strong> son raisonnement.</p><label class=book-image for=book-image-toggle-b97d666dcd15><input class="hidden toggle" type=checkbox id=book-image-toggle-b97d666dcd15>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/micromonde-shrdlu.svg alt="Le micro-monde de SHRDLU : un cube rouge, une pile de blocs, une pyramide et une boîte posés sur une table, avec un bras robotique." loading=lazy title="Le « micro-monde » de SHRDLU : un univers très petit, entièrement décrit à la main." width=660 height=360 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-b97d666dcd15"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le film de démonstration d&rsquo;époque ci-dessous (en anglais) montre SHRDLU en
+fonctionnement : les ordres tapés au clavier, les réponses du programme et le bras
+virtuel qui déplace les blocs.</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading=eager referrerpolicy=strict-origin-when-cross-origin src="https://www.youtube.com/embed/bo4RvYJYOzI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 title="YouTube video"></iframe></div><p>SHRDLU y parvient parce qu&rsquo;il maintient un <strong>modèle du monde</strong> (<em>world model</em>),
+c&rsquo;est-à-dire une représentation interne de sa petite scène : quel bloc repose sur
+quel autre, lequel est rouge, lequel est libre, ce que le bras tient à ce moment.
+À chaque action, il <strong>met ce modèle à jour</strong>, et à chaque question, il le
+<strong>consulte</strong>. C&rsquo;est ce modèle interne qui lui permet de résoudre « le », de se
+rappeler son action précédente et de justifier ce qu&rsquo;il a fait. SHRDLU ne se
+contente donc pas de parler des blocs, il en possède une représentation exacte.
+Cette idée est importante : <strong>un modèle du monde est une représentation interne de
+la réalité, sur laquelle on peut raisonner</strong>. Nous la retrouverons beaucoup plus
+loin dans le cours, au centre d&rsquo;un débat important sur les IA actuelles.</p><p>Cette réussite repose cependant sur une simplification. Le modèle du monde de
+SHRDLU est exact parce qu&rsquo;il a très peu de choses à représenter : quelques blocs,
+une table, une boîte, quelques formes et couleurs. Dans un univers aussi petit, on
+peut tout décrire à la machine, c&rsquo;est-à-dire la liste complète des objets, des
+propriétés et des actions possibles. Le « monde » de SHRDLU tient entièrement dans
+une représentation <strong>codée à la main</strong>. Winograd l&rsquo;appelait d&rsquo;ailleurs un
+<strong>micro-monde</strong> (<em>blocks world</em>), et le préfixe <em>micro</em> indique bien sa taille.
+L&rsquo;intérêt du micro-monde est qu&rsquo;il rend le problème <strong>traitable</strong> (<em>tractable</em>, en
+anglais). En informatique, un problème est traitable quand une machine peut le
+résoudre en un temps raisonnable, sans être freinée par l&rsquo;<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lexplosion-combinatoire>explosion
 combinatoire</a> des
-possibilités. Avec une poignée de blocs, tout peut être représenté et chaque
-question trouve sa réponse en un instant. C&rsquo;est tout le secret de SHRDLU, et
-toute sa limite : le monde réel, lui, n&rsquo;a rien de traitable en ce sens, comme
-la section suivante va le montrer.</p><p>Que se passe-t-il si l&rsquo;on sort de la table à blocs ? Rien. Le modèle du monde de
-SHRDLU ne sait rien de la pluie, d&rsquo;un mensonge ou d&rsquo;un escalier ; il ne peut pas
-<em>grandir</em> vers le monde réel, parce qu&rsquo;il faudrait alors y faire entrer… tout. C&rsquo;est
-le sort commun de toutes les approches de ce chapitre : elles brillent tant qu&rsquo;on
-reste dans un domaine assez petit pour être entièrement décrit, et s&rsquo;effondrent dès
-qu&rsquo;affleure l&rsquo;immensité de ce que nous, humains, tenons pour évident. Cette immensité
-a un nom, et c&rsquo;est le mur sur lequel le GOFAI tout entier va se briser.</p><h2 id=le-mur-du-sens-commun>Le mur du sens commun<a class=anchor href=#le-mur-du-sens-commun></a></h2><p>Ce mur a un nom : le <strong>sens commun</strong>. C&rsquo;est l&rsquo;immense réservoir de choses si
-évidentes que personne ne prend jamais la peine de les dire. Que l&rsquo;eau mouille.
-Qu&rsquo;un objet lâché tombe. Qu&rsquo;on ne peut pas pousser une corde. Que votre mère est
-plus âgée que vous. Que si Jean entre dans un restaurant, il y entre par la porte
-et non par le plafond. Nous mobilisons à chaque instant des millions de ces
-certitudes muettes, et c&rsquo;est précisément parce qu&rsquo;elles vont <strong>sans dire</strong> que
-personne ne les a jamais écrites nulle part.</p><p>Or toute l&rsquo;IA symbolique repose sur un pari : pour qu&rsquo;une machine sache, il faut
-lui <strong>inscrire</strong> son savoir. Réseaux sémantiques, frames, scripts, SHRDLU : tous
-fonctionnent tant que ce savoir tient dans un domaine assez petit pour être décrit
-à la main. La machine ne sait que ce qu&rsquo;on lui a explicitement fourni ; et le sens
-commun, lui, <strong>n&rsquo;a pas de bord</strong>. Pour le donner à une machine, il faudrait lui
-fournir… le monde entier.</p><p>Un homme a pris ce défi au mot. En <strong>1984</strong>, <strong>Douglas Lenat</strong> lance <strong>CYC</strong> (de
-l&rsquo;anglais <em>encyclopedia</em>), une entreprise d&rsquo;une ambition vertigineuse : <strong>encoder à
-la main</strong>, fait après fait, règle après règle, la totalité du sens commun humain.
-Des équipes ont passé des <strong>décennies</strong> et des dizaines de millions de dollars à
-saisir patiemment des millions d&rsquo;assertions : « un café chaud refroidit si on le
-laisse », « on ne peut pas être à deux endroits à la fois »… Le projet le plus
-héroïque, et le plus fou, de toute l&rsquo;histoire du GOFAI.</p><label class=book-image for=book-image-toggle-4232ee13a9c4><input class="hidden toggle" type=checkbox id=book-image-toggle-4232ee13a9c4>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/cyc-assertions.svg alt="Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français : Bill Clinton fait partie des présidents des États-Unis ; tous les arbres sont des plantes ; Paris est la capitale de la France ; tout animal à colonne vertébrale a une mère biologique ; et une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent." loading=lazy title="Le sens commun, écrit à la main : quelques entrées de CYC dans sa langue, CycL, et ce qu'elles veulent dire." width=660 height=481 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-4232ee13a9c4"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Et il n&rsquo;a jamais atteint son but. Non par manque d&rsquo;argent ou de talent, mais parce
-que la tâche est <strong>sans fond</strong> : pour chaque évidence saisie, dix autres surgissent,
-et chacune en présuppose cent. On ne <em>remplit</em> pas le sens commun à la cuillère ; il
-se dérobe à mesure qu&rsquo;on l&rsquo;écrit. CYC a buté, comme tout le reste de ce chapitre,
-sur la même vérité — <strong>le savoir implicite d&rsquo;un humain ordinaire est trop vaste pour
-être énuméré</strong>.</p><p>C&rsquo;est ici que le GOFAI plafonne. On avait cru qu&rsquo;il suffisait de <em>donner</em> des
-connaissances à la machine ; or les connaissances qui comptent vraiment sont
-justement celles que personne ne formule. Et pourtant, à l&rsquo;écart du courant
-dominant, un trublion soutenait depuis longtemps qu&rsquo;on s&rsquo;y prenait à l&rsquo;envers, qu&rsquo;on
-cherchait le sens là où il ne pouvait pas se trouver. Avant de quitter l&rsquo;âge d&rsquo;or
-symbolique, il faut écouter cette voix dissidente.</p><h2 id=lobjection-de-hofstadter>L&rsquo;objection de Hofstadter<a class=anchor href=#lobjection-de-hofstadter></a></h2><p>Cette voix, nous l&rsquo;avons déjà entendue. Le trublion, c&rsquo;est <strong>Douglas Hofstadter</strong>,
-l&rsquo;homme de la <em>boucle étrange</em>, croisé dès « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question
+possibilités. Avec quelques blocs, tout peut être représenté et chaque question
+obtient une réponse immédiatement. C&rsquo;est ce qui explique la réussite de SHRDLU, et
+c&rsquo;est aussi sa limite, parce que le monde réel n&rsquo;est pas traitable en ce sens,
+comme le montre la section suivante.</p><p>En dehors de la table à blocs, SHRDLU ne peut rien faire. Son modèle du monde ne
+contient rien sur la pluie, un mensonge ou un escalier. Il ne peut pas être étendu
+au monde réel, parce qu&rsquo;il faudrait alors y représenter tout ce qui existe. Toutes
+les approches de ce chapitre ont la même limite. Elles fonctionnent tant qu&rsquo;on
+reste dans un domaine assez petit pour être entièrement décrit, et elles échouent
+dès qu&rsquo;il faut tenir compte de la très grande quantité de choses que les humains
+considèrent comme évidentes. Cette quantité de savoir évident a un nom, et elle
+constitue la principale limite du GOFAI.</p><h2 id=le-mur-du-sens-commun>Le mur du sens commun<a class=anchor href=#le-mur-du-sens-commun></a></h2><p>Cette limite s&rsquo;appelle le <strong>sens commun</strong>. Il s&rsquo;agit de l&rsquo;ensemble très vaste des
+choses si évidentes que personne ne prend la peine de les dire. Par exemple, l&rsquo;eau
+mouille, un objet qu&rsquo;on lâche tombe, on ne peut pas pousser une corde, votre mère
+est plus âgée que vous, et si Jean entre dans un restaurant, il y entre par la
+porte et non par le plafond. Nous utilisons en permanence des millions de
+certitudes de ce genre. Comme elles vont <strong>sans dire</strong>, personne ne les a jamais
+écrites.</p><p>Or toute l&rsquo;IA symbolique repose sur un principe : pour qu&rsquo;une machine sache
+quelque chose, il faut lui <strong>inscrire</strong> ce savoir. Les réseaux sémantiques, les
+frames, les scripts et SHRDLU fonctionnent tant que ce savoir tient dans un domaine
+assez petit pour être décrit à la main. La machine ne sait que ce qu&rsquo;on lui a
+fourni explicitement. Le sens commun, lui, <strong>n&rsquo;a pas de limite</strong>. Pour le donner à
+une machine, il faudrait lui décrire le monde entier.</p><p>Un chercheur a tenté de le faire. En <strong>1984</strong>, <strong>Douglas Lenat</strong> lance <strong>CYC</strong> (de
+l&rsquo;anglais <em>encyclopedia</em>), un projet très ambitieux dont l&rsquo;objectif est
+d&rsquo;<strong>encoder à la main</strong>, fait après fait et règle après règle, la totalité du sens
+commun humain. Des équipes y ont consacré des <strong>décennies</strong> et des dizaines de
+millions de dollars, et ont saisi des millions d&rsquo;assertions, comme « un café chaud
+refroidit si on le laisse » ou « on ne peut pas être à deux endroits à la fois ».
+C&rsquo;est le projet le plus ambitieux de l&rsquo;histoire du GOFAI.</p><label class=book-image for=book-image-toggle-8dbb0f8900fd><input class="hidden toggle" type=checkbox id=book-image-toggle-8dbb0f8900fd>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/cyc-assertions.svg alt="Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français : Bill Clinton fait partie des présidents des États-Unis ; tous les arbres sont des plantes ; Paris est la capitale de la France ; tout animal à colonne vertébrale a une mère biologique ; et une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent." loading=lazy title="Le sens commun écrit à la main : quelques entrées de CYC dans son langage, CycL, et leur signification." width=660 height=481 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-8dbb0f8900fd"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>CYC n&rsquo;a jamais atteint son objectif. La raison n&rsquo;est pas un manque d&rsquo;argent ou de
+compétence, mais le fait que la tâche n&rsquo;a <strong>pas de fin</strong>. Chaque évidence saisie
+en fait apparaître dix autres, et chacune de celles-ci en suppose cent. On ne peut
+pas compléter le sens commun par petites quantités, parce qu&rsquo;il s&rsquo;étend à mesure
+qu&rsquo;on l&rsquo;écrit. CYC s&rsquo;est heurté au même problème que le reste de ce chapitre :
+<strong>le savoir implicite d&rsquo;un humain ordinaire est trop vaste pour être énuméré</strong>.</p><p>Le GOFAI atteint donc ici sa limite. On pensait qu&rsquo;il suffisait de donner des
+connaissances à la machine, mais les connaissances les plus importantes sont
+justement celles que personne ne formule. Cependant, en dehors du courant
+dominant, un chercheur affirmait depuis longtemps qu&rsquo;on abordait le problème dans
+le mauvais sens et qu&rsquo;on cherchait le sens au mauvais endroit. Avant de terminer
+sur l&rsquo;âge d&rsquo;or symbolique, il faut présenter ce point de vue dissident.</p><h2 id=lobjection-de-hofstadter>L&rsquo;objection de Hofstadter<a class=anchor href=#lobjection-de-hofstadter></a></h2><p>Ce chercheur est <strong>Douglas Hofstadter</strong>, l&rsquo;auteur de la notion de <em>boucle étrange</em>,
+déjà présenté dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question
 fondatrice</a> » à propos de Gödel.
-Tandis que ses collègues bâtissaient des moteurs d&rsquo;échecs et des bases de règles,
-lui n&rsquo;a cessé de répéter que l&rsquo;IA dominante courait après la mauvaise proie. Battre
-Kasparov par force brute, aligner des millions d&rsquo;assertions à la manière de CYC :
-pour Hofstadter, rien de tout cela ne touche au cœur de la pensée.</p><p>Ce cœur, selon lui, c&rsquo;est l&rsquo;<strong>analogie</strong>. Penser, ce n&rsquo;est pas dérouler des règles :
-c&rsquo;est <em>percevoir des ressemblances</em>, plier des <strong>concepts fluides</strong> à des situations
-neuves, comprendre l&rsquo;inconnu à travers le déjà-connu. Quand vous parlez du <em>pied</em>
-d&rsquo;une montagne, des <em>jambes</em> d&rsquo;une table ou de la <em>bouche</em> d&rsquo;un fleuve, vous faites —
-sans y penser — de l&rsquo;analogie : l&rsquo;opération la plus banale et la plus profonde de
-l&rsquo;esprit. Or une analogie ne se <em>liste</em> pas dans une base de connaissances ; elle se
-<em>fabrique</em> à la volée, selon le contexte. C&rsquo;est exactement ce que le rêve de CYC ne
-pouvait pas capturer.</p><p>Pour le démontrer, Hofstadter et sa collaboratrice <strong>Melanie Mitchell</strong> ont conçu un
-programme, <strong>Copycat</strong>, qui vit lui aussi dans un micro-monde, mais d&rsquo;un genre tout
-différent de celui de SHRDLU. Son univers : de simples <strong>chaînes de lettres</strong>. On lui
-pose des énigmes d&rsquo;analogie : <em>« si <code>abc</code> se change en <code>abd</code>, que devient <code>ijk</code> ? »</em>
-La réponse naturelle est <code>ijl</code> : on a remplacé la dernière lettre par la suivante
-dans l&rsquo;alphabet. Facile. Mais Copycat n&rsquo;applique pas une règle figée : il <em>perçoit</em>
-une structure, et il peut en percevoir plusieurs. Demandez-lui ce que devient
-<strong><code>xyz</code></strong> selon la même analogie, et tout se complique : le <code>z</code> n&rsquo;a pas de lettre
-suivante. Il n&rsquo;y a plus de réponse unique : on peut défendre <code>xyd</code>, ou <code>wyz</code>, ou
-repartir de l&rsquo;autre bout de l&rsquo;alphabet… Le « bon » résultat dépend de la <em>manière</em>
-dont on voit la situation. Et c&rsquo;est là tout le propos : l&rsquo;intelligence n&rsquo;est pas
-l&rsquo;exécution d&rsquo;une règle, mais une <strong>perception fluide, sensible au contexte</strong>.</p><label class=book-image for=book-image-toggle-6347e3c746a2><input class="hidden toggle" type=checkbox id=book-image-toggle-6347e3c746a2>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/copycat-analogie.svg alt="L'énigme de Copycat : abc devient abd, ijk devient ijl, puis le cas xyz qui admet plusieurs réponses (xyd, wyz, xya)." loading=lazy title="L'énigme de Copycat : pour « xyz », la réponse dépend de la manière dont on perçoit la suite." width=660 height=440 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-6347e3c746a2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Voilà le renversement. SHRDLU, lui aussi, vivait dans un micro-monde, mais il
-l&rsquo;avait rapetissé pour <strong>tricher</strong> : un univers assez petit pour qu&rsquo;on puisse tout y
-énumérer d&rsquo;avance. Hofstadter rapetisse le sien pour la raison <strong>inverse</strong> : écarter
-tout le bric-à-brac du savoir encyclopédique afin d&rsquo;<strong>isoler l&rsquo;essence</strong>, l&rsquo;acte
-d&rsquo;analogie à l&rsquo;état pur. Deux micro-mondes, deux idées opposées de ce qu&rsquo;est, au
-fond, l&rsquo;intelligence.</p><p>Reste la question qui hante tout ce chapitre : <em>comment du sens peut-il naître de
-simples symboles ?</em> La réponse de Hofstadter prolonge sa <strong>boucle étrange</strong>. Le sens,
-dit-il, ne s&rsquo;<strong>injecte</strong> pas de l&rsquo;extérieur, fait après fait, comme CYC l&rsquo;espérait :
-il <strong>émerge</strong> d&rsquo;un système assez riche pour se replier sur lui-même, percevoir ses
-propres structures, faire analogie entre ses propres états. On ne <em>remplit</em> pas un
-esprit de significations ; on met en place une mécanique d&rsquo;où la signification
-<em>jaillit</em>. C&rsquo;est l&rsquo;exact contraire de la démarche GOFAI, qui voulait tout écrire à la
-main.</p><p>Hofstadter avait-il raison ? Oui et non. Sa <strong>vision</strong> a vu juste : on le verra,
-c&rsquo;est bien du côté de l&rsquo;émergence — et non de l&rsquo;inscription — que l&rsquo;IA finira par
-décoller. Mais sa <strong>solution</strong> n&rsquo;a jamais atteint l&rsquo;ampleur de son ambition : Copycat
-est resté un petit programme de laboratoire, magnifique et confiné. Hofstadter
-n&rsquo;était pas non plus un homme des réseaux de neurones. Il a montré la bonne direction
-sans construire le véhicule qui y mènerait.</p><p>Car ce véhicule existait déjà, en sommeil. Depuis « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris
-rivaux</a> », une <strong>autre
-tradition</strong> attend dans l&rsquo;ombre : celle qui ne prétend pas <em>dire</em> le monde à la
-machine, mais la laisse l&rsquo;<strong>apprendre</strong> d&rsquo;elle-même, à partir d&rsquo;exemples. Le GOFAI
-vient de se cogner à son plafond ; le sens commun lui a résisté ; et l&rsquo;idée
-d&rsquo;émergence, soufflée par sa propre voix dissidente, pointe déjà vers la sortie. <em>Et
-si, plutôt que de tout dire à la machine, on la laissait apprendre ?</em> Cette
-question-là couve encore en silence ; il faudra un long hiver avant qu&rsquo;elle ne
-s&rsquo;impose. Car l&rsquo;âge d&rsquo;or symbolique, lui, n&rsquo;a pas dit son dernier mot : avant de
-s&rsquo;effondrer, il connaîtra son heure de gloire la plus éclatante.</p><details><summary>Pour aller plus loin : comment « pense » Copycat</summary><div class=markdown-inner><p>Copycat ne contient aucune règle du genre « remplace la dernière lettre ». Il explore
-en parallèle une multitude de petits rapprochements possibles (<em>cette lettre est-elle
-un début ? une fin ? le successeur d&rsquo;une autre ?</em>), qui se renforcent ou s&rsquo;inhibent
-mutuellement. Une mesure interne, que ses auteurs appellent la <strong>« température »</strong>,
-indique à quel point une interprétation cohérente a émergé : tant que tout reste flou,
-la température est haute et le programme continue d&rsquo;explorer presque au hasard ; quand
-une structure d&rsquo;ensemble se cristallise, la température baisse et la réponse se fige.
-Le sens n&rsquo;y est donc pas <em>calculé</em> d&rsquo;un trait, mais <strong>gagné</strong> peu à peu, par une
-compétition de perceptions partielles : une image, à petite échelle, de ce que
-Hofstadter tient pour le propre de la cognition.</p></div></details></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+Pendant que ses collègues construisaient des moteurs d&rsquo;échecs et des bases de
+règles, il répétait que l&rsquo;IA dominante ne s&rsquo;attaquait pas au bon problème. Selon
+Hofstadter, battre Kasparov par force brute ou accumuler des millions d&rsquo;assertions
+comme CYC ne concerne pas l&rsquo;essentiel de la pensée.</p><p>Pour lui, l&rsquo;essentiel de la pensée est l&rsquo;<strong>analogie</strong>. Penser ne consiste pas à
+appliquer des règles, mais à <em>percevoir des ressemblances</em>, à adapter des
+<strong>concepts fluides</strong> à des situations nouvelles et à comprendre l&rsquo;inconnu à partir
+de ce qu&rsquo;on connaît déjà. Quand vous parlez du <em>pied</em> d&rsquo;une montagne, des <em>jambes</em>
+d&rsquo;une table ou de la <em>bouche</em> d&rsquo;un fleuve, vous faites de l&rsquo;analogie sans y penser.
+C&rsquo;est l&rsquo;opération de l&rsquo;esprit la plus courante et aussi la plus fondamentale. Or
+une analogie ne peut pas être inscrite d&rsquo;avance dans une base de connaissances.
+Elle se construit au moment où on en a besoin, selon le contexte. C&rsquo;est
+précisément ce qu&rsquo;un projet comme CYC ne pouvait pas représenter.</p><p>Pour le démontrer, Hofstadter et sa collaboratrice <strong>Melanie Mitchell</strong> ont conçu
+un programme, <strong>Copycat</strong>, qui fonctionne lui aussi dans un micro-monde, mais d&rsquo;un
+genre très différent de celui de SHRDLU. Son univers est constitué de simples
+<strong>chaînes de lettres</strong>. On lui pose des problèmes d&rsquo;analogie, par exemple : si
+<code>abc</code> devient <code>abd</code>, que devient <code>ijk</code> ? La réponse naturelle est <code>ijl</code>, parce
+qu&rsquo;on remplace la dernière lettre par la suivante dans l&rsquo;alphabet. Cependant,
+Copycat n&rsquo;applique pas une règle fixe. Il <em>perçoit</em> une structure, et il peut en
+percevoir plusieurs. Si on lui demande ce que devient <strong><code>xyz</code></strong> selon la même
+analogie, le problème est plus difficile, parce que le <code>z</code> n&rsquo;a pas de lettre
+suivante. Il n&rsquo;y a plus de réponse unique. On peut proposer <code>xyd</code>, ou <code>wyz</code>, ou
+recommencer au début de l&rsquo;alphabet. La « bonne » réponse dépend de la façon dont
+on perçoit la situation. C&rsquo;est ce que Hofstadter veut montrer : l&rsquo;intelligence
+n&rsquo;est pas l&rsquo;exécution d&rsquo;une règle, mais une <strong>perception fluide, sensible au
+contexte</strong>.</p><label class=book-image for=book-image-toggle-e05f44cb5125><input class="hidden toggle" type=checkbox id=book-image-toggle-e05f44cb5125>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/copycat-analogie.svg alt="L'énigme de Copycat : abc devient abd, ijk devient ijl, puis le cas xyz qui admet plusieurs réponses (xyd, wyz, xya)." loading=lazy title="L'énigme de Copycat : pour « xyz », la réponse dépend de la façon dont on perçoit la suite." width=660 height=440 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-e05f44cb5125"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Les deux micro-mondes ont donc des rôles opposés. SHRDLU utilisait un micro-monde
+pour <strong>simplifier</strong> le problème, c&rsquo;est-à-dire pour avoir un univers assez petit
+pour tout y énumérer d&rsquo;avance. Hofstadter réduit le sien pour la raison
+<strong>inverse</strong>. Il écarte tout le savoir encyclopédique afin d&rsquo;<strong>isoler l&rsquo;essentiel</strong>,
+l&rsquo;analogie elle-même. Ces deux micro-mondes correspondent à deux conceptions
+opposées de l&rsquo;intelligence.</p><p>Reste la question qui traverse tout ce chapitre, celle de savoir comment le sens
+peut apparaître à partir de simples symboles. La réponse de Hofstadter prolonge
+son idée de <strong>boucle étrange</strong>. Selon lui, le sens n&rsquo;est pas <strong>injecté</strong> de
+l&rsquo;extérieur, fait après fait, comme CYC l&rsquo;espérait. Il <strong>émerge</strong> d&rsquo;un système
+assez riche pour s&rsquo;observer lui-même, percevoir ses propres structures et établir
+des analogies entre ses propres états. On ne remplit pas un esprit de
+significations. On met en place un mécanisme dont la signification émerge. C&rsquo;est
+l&rsquo;opposé de la démarche du GOFAI, qui voulait tout écrire à la main.</p><p>Hofstadter avait en partie raison. Sa <strong>vision</strong> était juste. Comme on le verra,
+c&rsquo;est par l&rsquo;émergence, et non par l&rsquo;inscription, que l&rsquo;IA finira par progresser.
+Cependant, sa <strong>solution</strong> n&rsquo;a jamais eu l&rsquo;ampleur de son ambition. Copycat est
+resté un petit programme de laboratoire, remarquable mais limité. Hofstadter ne
+travaillait pas non plus sur les réseaux de neurones. Il a indiqué la bonne
+direction sans construire l&rsquo;outil qui permettrait de la suivre.</p><p>Cet outil existait déjà, mais il était alors peu développé. Depuis « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris
+rivaux</a> », nous savons qu&rsquo;il existe une <strong>autre
+tradition</strong>, qui ne cherche pas à décrire le monde à la machine, mais qui la laisse
+l&rsquo;<strong>apprendre</strong> elle-même à partir d&rsquo;exemples. Le GOFAI a atteint sa limite, le
+sens commun lui a résisté, et l&rsquo;idée d&rsquo;émergence, proposée par l&rsquo;un de ses
+critiques, va déjà dans cette direction. L&rsquo;idée de laisser la machine apprendre
+plutôt que de tout lui dire ne s&rsquo;imposera toutefois qu&rsquo;après une longue période
+de recul de l&rsquo;IA. Avant ce déclin, l&rsquo;IA symbolique connaîtra encore sa période de
+plus grand succès.</p><details><summary>Pour aller plus loin : le fonctionnement de Copycat</summary><div class=markdown-inner><p>Copycat ne contient aucune règle du genre « remplace la dernière lettre ». Il
+explore en parallèle un grand nombre de petits rapprochements possibles (une
+lettre est-elle un début, une fin, le successeur d&rsquo;une autre ?), qui se renforcent
+ou s&rsquo;inhibent mutuellement. Une mesure interne, que ses auteurs appellent la
+<strong>« température »</strong>, indique à quel point une interprétation cohérente a émergé.
+Tant que tout reste flou, la température est élevée et le programme continue
+d&rsquo;explorer presque au hasard. Quand une structure d&rsquo;ensemble se forme, la
+température baisse et la réponse se stabilise. Le sens n&rsquo;est donc pas <em>calculé</em> en
+une seule étape, mais <strong>construit</strong> peu à peu, par une compétition entre des
+perceptions partielles. Selon Hofstadter, ce mécanisme illustre à petite échelle
+ce qui caractérise la cognition.</p></div></details></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
 <span>L'âge d'or symbolique : chercher et raisonner</span>
 </a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/ class="flex align-center"><span>Capturer l'expertise : les systèmes experts</span>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#le-sens-angle-mort-de-la-machine>Le sens, angle mort de la machine</a></li><li><a href=#donner-un-savoir-à-la-machine>Donner un savoir à la machine</a></li><li><a href=#shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition</a></li><li><a href=#le-mur-du-sens-commun>Le mur du sens commun</a></li><li><a href=#lobjection-de-hofstadter>L&rsquo;objection de Hofstadter</a></li></ul></nav></div></aside></main></body></html>

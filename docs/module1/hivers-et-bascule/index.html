@@ -1,8 +1,8 @@
-<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Souvenez-vous : dans « Deux paris rivaux », nous avions laissé le perceptron de Rosenblatt au sommet de sa promesse — une machine qui apprend de ses erreurs —, salué par le New York Times comme l’aube d’une intelligence électronique. Nous avions aussi annoncé qu’un coup terrible l’attendait. Le voici.
-En 1969, deux poids lourds du camp symbolique — Marvin Minsky, l’un des pères de Dartmouth, et son collègue Seymour Papert — publient un livre au titre sobre, Perceptrons. Ce n’est pas un pamphlet, mais une analyse mathématique rigoureuse ; et sa conclusion tombe comme un couperet. Le perceptron, démontrent-ils, est frappé d’une limite de principe : il est incapable d’apprendre certaines fonctions d’une simplicité pourtant dérisoire. L’exemple resté emblématique est le XOR, le « ou exclusif ».
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Les hivers et la bascule"><meta property="og:description" content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Souvenez-vous : dans « Deux paris rivaux », nous avions laissé le perceptron de Rosenblatt au sommet de sa promesse — une machine qui apprend de ses erreurs —, salué par le New York Times comme l’aube d’une intelligence électronique. Nous avions aussi annoncé qu’un coup terrible l’attendait. Le voici.
-En 1969, deux poids lourds du camp symbolique — Marvin Minsky, l’un des pères de Dartmouth, et son collègue Seymour Papert — publient un livre au titre sobre, Perceptrons. Ce n’est pas un pamphlet, mais une analyse mathématique rigoureuse ; et sa conclusion tombe comme un couperet. Le perceptron, démontrent-ils, est frappé d’une limite de principe : il est incapable d’apprendre certaines fonctions d’une simplicité pourtant dérisoire. L’exemple resté emblématique est le XOR, le « ou exclusif »."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Les hivers et la bascule"><meta itemprop=description content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Souvenez-vous : dans « Deux paris rivaux », nous avions laissé le perceptron de Rosenblatt au sommet de sa promesse — une machine qui apprend de ses erreurs —, salué par le New York Times comme l’aube d’une intelligence électronique. Nous avions aussi annoncé qu’un coup terrible l’attendait. Le voici.
-En 1969, deux poids lourds du camp symbolique — Marvin Minsky, l’un des pères de Dartmouth, et son collègue Seymour Papert — publient un livre au titre sobre, Perceptrons. Ce n’est pas un pamphlet, mais une analyse mathématique rigoureuse ; et sa conclusion tombe comme un couperet. Le perceptron, démontrent-ils, est frappé d’une limite de principe : il est incapable d’apprendre certaines fonctions d’une simplicité pourtant dérisoire. L’exemple resté emblématique est le XOR, le « ou exclusif »."><meta itemprop=wordCount content="2709"><title>Les hivers et la bascule • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Le chapitre « Deux paris rivaux » a présenté le perceptron de Rosenblatt, une machine qui apprend de ses erreurs, que le New York Times avait décrit comme le début d’une intelligence électronique. Ce chapitre annonçait aussi que le perceptron allait subir une critique sévère. Cette section présente cette critique.
+En 1969, deux chercheurs importants du camp symbolique, Marvin Minsky (l’un des organisateurs de Dartmouth) et son collègue Seymour Papert, publient un livre intitulé Perceptrons. Il ne s’agit pas d’un pamphlet, mais d’une analyse mathématique rigoureuse. Minsky et Papert y démontrent que le perceptron a une limite de principe : il est incapable d’apprendre certaines fonctions pourtant très simples. L’exemple le plus connu est le XOR, le « ou exclusif ».
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Les hivers et la bascule"><meta property="og:description" content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Le chapitre « Deux paris rivaux » a présenté le perceptron de Rosenblatt, une machine qui apprend de ses erreurs, que le New York Times avait décrit comme le début d’une intelligence électronique. Ce chapitre annonçait aussi que le perceptron allait subir une critique sévère. Cette section présente cette critique.
+En 1969, deux chercheurs importants du camp symbolique, Marvin Minsky (l’un des organisateurs de Dartmouth) et son collègue Seymour Papert, publient un livre intitulé Perceptrons. Il ne s’agit pas d’un pamphlet, mais d’une analyse mathématique rigoureuse. Minsky et Papert y démontrent que le perceptron a une limite de principe : il est incapable d’apprendre certaines fonctions pourtant très simples. L’exemple le plus connu est le XOR, le « ou exclusif »."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Les hivers et la bascule"><meta itemprop=description content="Les hivers et la bascule Le premier hiver : la mort du perceptron (1969) Le chapitre « Deux paris rivaux » a présenté le perceptron de Rosenblatt, une machine qui apprend de ses erreurs, que le New York Times avait décrit comme le début d’une intelligence électronique. Ce chapitre annonçait aussi que le perceptron allait subir une critique sévère. Cette section présente cette critique.
+En 1969, deux chercheurs importants du camp symbolique, Marvin Minsky (l’un des organisateurs de Dartmouth) et son collègue Seymour Papert, publient un livre intitulé Perceptrons. Il ne s’agit pas d’un pamphlet, mais d’une analyse mathématique rigoureuse. Minsky et Papert y démontrent que le perceptron a une limite de principe : il est incapable d’apprendre certaines fonctions pourtant très simples. L’exemple le plus connu est le XOR, le « ou exclusif »."><meta itemprop=wordCount content="2566"><title>Les hivers et la bascule • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
 </button>
 <button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
@@ -15,191 +15,199 @@ En 1969, deux poids lourds du camp symbolique — Marvin Minsky, l’un des pèr
 <label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
 <label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Les hivers et la bascule</h3><input type=checkbox class=toggle id=toc-control>
-<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#le-premier-hiver-la-mort-du-perceptron-1969>Le premier hiver : la mort du perceptron (1969)</a></li><li><a href=#le-second-hiver-leffondrement-du-symbolique-fin-des-années-1980>Le second hiver : l&rsquo;effondrement du symbolique (fin des années 1980)</a></li><li><a href=#lhéritage-invisible>L&rsquo;héritage invisible</a></li><li><a href=#un-éclair-hybride-watson-2011>Un éclair hybride : Watson (2011)</a></li><li><a href=#la-bascule>La bascule</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=les-hivers-et-la-bascule>Les hivers et la bascule<a class=anchor href=#les-hivers-et-la-bascule></a></h1><h2 id=le-premier-hiver-la-mort-du-perceptron-1969>Le premier hiver : la mort du perceptron (1969)<a class=anchor href=#le-premier-hiver-la-mort-du-perceptron-1969></a></h2><p>Souvenez-vous : dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux</a> », nous avions
-laissé le <strong>perceptron</strong> de Rosenblatt au
-sommet de sa promesse — <em>une machine qui apprend de ses erreurs</em> —, salué par le <em>New
-York Times</em> comme l&rsquo;aube d&rsquo;une intelligence électronique. Nous avions aussi annoncé
-qu&rsquo;un coup terrible l&rsquo;attendait. Le voici.</p><p>En <strong>1969</strong>, deux poids lourds du camp symbolique — <strong>Marvin Minsky</strong>, l&rsquo;un des pères
-de Dartmouth, et son collègue <strong>Seymour Papert</strong> — publient un livre au titre sobre,
-<em>Perceptrons</em>. Ce n&rsquo;est pas un pamphlet, mais une analyse mathématique rigoureuse ; et
-sa conclusion tombe comme un couperet. Le perceptron, démontrent-ils, est frappé d&rsquo;une
-limite de principe : il est incapable d&rsquo;apprendre certaines fonctions d&rsquo;une simplicité
-pourtant dérisoire. L&rsquo;exemple resté emblématique est le <strong>XOR</strong>, le « ou exclusif ».</p><p>Le XOR, c&rsquo;est cette règle : <em>l&rsquo;un ou l&rsquo;autre, mais pas les deux à la fois</em>. Vous la
-connaissez sans le savoir — c&rsquo;est le principe du <strong>va-et-vient</strong>, ces deux interrupteurs
-qui commandent une même lampe au bout d&rsquo;un couloir. Basculez l&rsquo;un <em>ou</em> l&rsquo;autre, la
-lumière change d&rsquo;état ; les deux interrupteurs dans la même position, elle est éteinte ;
-dans des positions opposées, elle s&rsquo;allume. Deux entrées, une réponse qui dépend de leur
-<em>désaccord</em>. Un enfant manie cela tous les jours. Or le perceptron, lui, ne peut pas
-l&rsquo;apprendre : aucun réglage de ses connexions ne lui permet de séparer d&rsquo;un même trait
-les cas « allumé » des cas « éteint ». Une tâche triviale, et pourtant hors de sa portée.</p><p>L&rsquo;effet fut dévastateur. Minsky n&rsquo;était pas n&rsquo;importe qui : une autorité immense, et de
-surcroît du camp adverse. Son verdict, mathématiquement imparable, fut reçu comme un
-arrêt de mort. Les financements de la recherche sur les réseaux de neurones se tarirent
-presque du jour au lendemain ; les revues se fermèrent, les étudiants se détournèrent.
-Le camp connexionniste entra dans un long sommeil — un <strong>hiver</strong> d&rsquo;une quinzaine
-d&rsquo;années. Rosenblatt lui-même n&rsquo;en verrait pas la fin : il mourut en 1971, à
-quarante-trois ans, dans un accident de bateau.</p><p>Ainsi, le premier hiver de l&rsquo;IA ne frappa pas la tradition dominante, mais sa
-<strong>rivale</strong> — et c&rsquo;est un homme du camp symbolique qui, de fait, l&rsquo;y plongea. En écartant
-le connexionnisme, <em>Perceptrons</em> dégagea la scène : les vingt années suivantes seraient
-celles du <strong>règne symbolique</strong> sans partage — la recherche, les systèmes experts, tout
-l&rsquo;âge d&rsquo;or que nous venons de parcourir. Quand une tradition gèle, l&rsquo;autre fleurit.</p><p>Un détail, pourtant, allait un jour tout changer. La démonstration de Minsky et Papert
-ne valait que pour le perceptron le plus simple, fait d&rsquo;une <strong>seule couche</strong>. On
-pressentait qu&rsquo;en <strong>empilant les couches</strong>, on franchirait l&rsquo;obstacle du XOR — mais un
-mystère restait entier : comment faire <em>apprendre</em> un tel empilement ? La réponse ne
-viendrait qu&rsquo;en 1986, et c&rsquo;est par elle que le dégel commencerait. N&rsquo;anticipons pas :
-pour l&rsquo;heure, c&rsquo;est au tour du camp symbolique d&rsquo;approcher de son propre hiver.</p><h2 id=le-second-hiver-leffondrement-du-symbolique-fin-des-années-1980>Le second hiver : l&rsquo;effondrement du symbolique (fin des années 1980)<a class=anchor href=#le-second-hiver-leffondrement-du-symbolique-fin-des-ann%c3%a9es-1980></a></h2><p>L&rsquo;âge d&rsquo;or symbolique, on l&rsquo;a vu, reposait sur une promesse vertigineuse : capturer
-l&rsquo;expertise humaine dans des règles. Mais les fissures de « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
-l&rsquo;expertise</a> » — le savoir
-tacite qu&rsquo;on n&rsquo;extrait pas, la rigidité sans bon sens, les bases ingérables — finirent
-par lézarder l&rsquo;édifice tout entier. À mesure que les systèmes experts livrés
-décevaient, l&rsquo;écart se creusa entre ce qu&rsquo;on avait <em>promis</em> aux investisseurs et ce que
-l&rsquo;IA <em>tenait</em>. Et quand un tel écart devient trop visible, l&rsquo;argent s&rsquo;en va.</p><p>Le symbole de la débâcle fut le <strong>krach des machines Lisp</strong>, vers 1987. Ces ordinateurs
-spécialisés, taillés pour l&rsquo;IA, coûtaient une fortune — et, presque du jour au
-lendemain, de simples stations de travail bon marché, puis les ordinateurs personnels,
-se mirent à faire aussi bien pour une fraction du prix. Le marché s&rsquo;effondra ; les
-entreprises qui en vivaient disparurent. Au même moment, l&rsquo;ambitieux projet japonais de
-<strong>Cinquième Génération</strong>, lancé en fanfare en 1982, s&rsquo;acheminait vers une fin discrète,
-sans avoir tenu aucune de ses grandes promesses.</p><p>Le découragement gagna tout le domaine. Les agences de financement, échaudées,
-coupèrent les crédits ; « intelligence artificielle » devint une étiquette presque
-honteuse, que les chercheurs évitaient désormais sur leurs demandes de subvention. On
-parla, pour cette période, d&rsquo;un second <strong>hiver de l&rsquo;IA</strong> — le mot collait maintenant à
-la peau du symbolique, comme il avait collé, vingt ans plus tôt, à celle du perceptron.
-La leçon, au fond, était la même que dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#le-premier-hiver-la-mort-du-perceptron-1969>Le premier hiver : la mort du perceptron (1969)</a></li><li><a href=#le-second-hiver-leffondrement-du-symbolique-fin-des-années-1980>Le second hiver : l&rsquo;effondrement du symbolique (fin des années 1980)</a></li><li><a href=#lhéritage-invisible>L&rsquo;héritage invisible</a></li><li><a href=#un-éclair-hybride-watson-2011>Un éclair hybride : Watson (2011)</a></li><li><a href=#la-bascule>La bascule</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=les-hivers-et-la-bascule>Les hivers et la bascule<a class=anchor href=#les-hivers-et-la-bascule></a></h1><h2 id=le-premier-hiver-la-mort-du-perceptron-1969>Le premier hiver : la mort du perceptron (1969)<a class=anchor href=#le-premier-hiver-la-mort-du-perceptron-1969></a></h2><p>Le chapitre « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux</a> » a présenté le
+<strong>perceptron</strong> de Rosenblatt, une machine qui apprend de ses erreurs, que le <em>New
+York Times</em> avait décrit comme le début d&rsquo;une intelligence électronique. Ce chapitre
+annonçait aussi que le perceptron allait subir une critique sévère. Cette section
+présente cette critique.</p><p>En <strong>1969</strong>, deux chercheurs importants du camp symbolique, <strong>Marvin Minsky</strong> (l&rsquo;un
+des organisateurs de Dartmouth) et son collègue <strong>Seymour Papert</strong>, publient un livre
+intitulé <em>Perceptrons</em>. Il ne s&rsquo;agit pas d&rsquo;un pamphlet, mais d&rsquo;une analyse
+mathématique rigoureuse. Minsky et Papert y démontrent que le perceptron a une limite
+de principe : il est incapable d&rsquo;apprendre certaines fonctions pourtant très simples.
+L&rsquo;exemple le plus connu est le <strong>XOR</strong>, le « ou exclusif ».</p><p>Le XOR correspond à la règle suivante : l&rsquo;un ou l&rsquo;autre, mais pas les deux à la fois.
+C&rsquo;est par exemple le principe du <strong>va-et-vient</strong>, où deux interrupteurs commandent
+une même lampe, souvent aux deux bouts d&rsquo;un couloir. Quand on bascule l&rsquo;un ou l&rsquo;autre
+interrupteur, la lumière change d&rsquo;état. Si les deux interrupteurs sont dans la même
+position, la lampe est éteinte ; s&rsquo;ils sont dans des positions opposées, elle est
+allumée. La réponse dépend donc du désaccord entre les deux entrées. Cette règle est
+facile à comprendre pour un humain, mais le perceptron ne peut pas l&rsquo;apprendre, parce
+qu&rsquo;aucun réglage de ses connexions ne lui permet de séparer par une seule droite les
+cas « allumé » des cas « éteint ».</p><p>Le livre eut des conséquences importantes. Minsky avait une grande autorité, et il
+appartenait au camp adverse. Sa démonstration, mathématiquement correcte, fut
+interprétée comme une condamnation de toute l&rsquo;approche. Les financements de la
+recherche sur les réseaux de neurones diminuèrent très rapidement, les revues
+publièrent moins de travaux sur le sujet et les étudiants choisirent d&rsquo;autres
+domaines. Le camp connexionniste connut un <strong>hiver</strong> d&rsquo;une quinzaine d&rsquo;années.
+Rosenblatt n&rsquo;en vit pas la fin : il mourut en 1971, à quarante-trois ans, dans un
+accident de bateau.</p><p>Le premier hiver de l&rsquo;IA ne toucha donc pas la tradition dominante, mais sa
+<strong>rivale</strong>, et c&rsquo;est un chercheur du camp symbolique qui en fut en partie la cause.
+Comme le connexionnisme était mis de côté, les vingt années suivantes furent celles
+d&rsquo;une <strong>domination symbolique</strong> presque complète : la recherche dans un espace
+d&rsquo;états, les systèmes experts et l&rsquo;ensemble des travaux présentés dans les chapitres
+précédents. Le déclin d&rsquo;une tradition a ainsi favorisé le développement de l&rsquo;autre.</p><p>La démonstration de Minsky et Papert avait cependant une limite. Elle ne valait que
+pour le perceptron le plus simple, formé d&rsquo;une <strong>seule couche</strong>. On pensait qu&rsquo;en
+<strong>empilant plusieurs couches</strong>, on pourrait traiter le XOR, mais on ne savait pas
+comment faire apprendre un tel réseau. La solution n&rsquo;apparut qu&rsquo;en 1986, et c&rsquo;est
+elle qui permit la reprise des travaux connexionnistes. Avant d&rsquo;y arriver, il faut
+d&rsquo;abord voir comment le camp symbolique connut lui aussi un hiver.</p><h2 id=le-second-hiver-leffondrement-du-symbolique-fin-des-années-1980>Le second hiver : l&rsquo;effondrement du symbolique (fin des années 1980)<a class=anchor href=#le-second-hiver-leffondrement-du-symbolique-fin-des-ann%c3%a9es-1980></a></h2><p>L&rsquo;âge d&rsquo;or symbolique reposait sur une promesse ambitieuse : capturer l&rsquo;expertise
+humaine dans des règles. Les limites décrites dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
+l&rsquo;expertise</a> » (le savoir tacite difficile à
+extraire, la rigidité sans sens commun, les bases de règles difficiles à maintenir)
+finirent par affaiblir l&rsquo;ensemble de l&rsquo;approche. Comme les systèmes experts livrés
+décevaient souvent, l&rsquo;écart grandit entre ce qu&rsquo;on avait promis aux investisseurs et
+ce que l&rsquo;IA réalisait vraiment. Quand cet écart devint trop visible, les
+investissements diminuèrent.</p><p>L&rsquo;événement le plus représentatif de ce recul fut le <strong>krach des machines Lisp</strong>,
+vers 1987. Ces ordinateurs spécialisés, conçus pour l&rsquo;IA, coûtaient très cher. En peu
+de temps, des stations de travail bon marché, puis les ordinateurs personnels,
+offrirent des performances comparables pour une fraction du prix. Le marché
+s&rsquo;effondra et les entreprises qui en dépendaient disparurent. À la même époque, le
+projet japonais de <strong>Cinquième Génération</strong>, lancé en 1982 avec beaucoup de
+publicité, se terminait sans avoir atteint ses principaux objectifs.</p><p>Le découragement toucha tout le domaine. Les agences de financement réduisirent leurs
+crédits, et l&rsquo;étiquette « intelligence artificielle » devint si mal perçue que les
+chercheurs évitaient de l&rsquo;utiliser dans leurs demandes de subvention. On parle, pour
+cette période, d&rsquo;un second <strong>hiver de l&rsquo;IA</strong>. Le terme s&rsquo;appliquait maintenant au
+camp symbolique, comme il s&rsquo;était appliqué vingt ans plus tôt au perceptron. La leçon
+était la même que dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
 monde</a> » et « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
-l&rsquo;expertise</a> » : le monde réel, têtu, résiste
-à qui prétend l&rsquo;enfermer dans des règles écrites à la main.</p><p>Et pourtant — c&rsquo;est la grande ironie de notre histoire — pendant que le camp symbolique
-sombrait, l&rsquo;autre, qu&rsquo;on croyait mort depuis 1969, <strong>respirait de nouveau</strong>. En 1986,
-un petit groupe de chercheurs, parmi lesquels un certain <strong>Geoffrey Hinton</strong>, avait
-fait paraître une méthode appelée <strong>rétropropagation</strong> : enfin un moyen de faire
-<em>apprendre</em> les réseaux à <strong>plusieurs couches</strong> — ceux-là mêmes qui, on l&rsquo;avait
-pressenti, pouvaient venir à bout du XOR. Le verrou de <em>Perceptrons</em> sautait. Ce dégel
-ne ferait pas de bruit tout de suite : il lui faudrait les <strong>données</strong> et la
-<strong>puissance de calcul</strong> des années 2010 pour éclater au grand jour. Mais, une fois
-encore, les deux traditions échangeaient leurs rôles — à l&rsquo;hiver de l&rsquo;une répondait le
-printemps de l&rsquo;autre.</p><h2 id=lhéritage-invisible>L&rsquo;héritage invisible<a class=anchor href=#lh%c3%a9ritage-invisible></a></h2><p>Deux hivers coup sur coup : on serait tenté de refermer le dossier du GOFAI sur un
-constat d&rsquo;échec. Ce serait manquer l&rsquo;essentiel. Car il existe, en intelligence
-artificielle, un curieux phénomène que les chercheurs ont fini par nommer l&rsquo;<strong>« effet
-IA »</strong> : <em>dès qu&rsquo;une technique se met à marcher pour de bon, on cesse de l&rsquo;appeler
-« intelligence artificielle » — elle devient « juste un algorithme ».</em> La formule la
-plus ramassée revient à l&rsquo;informaticien Larry Tesler, et c&rsquo;est <strong>Hofstadter</strong> — encore
-lui — qui l&rsquo;a popularisée : <em>« l&rsquo;IA, c&rsquo;est tout ce qui n&rsquo;a pas encore été fait. »</em></p><p>Vu ainsi, le GOFAI n&rsquo;est pas mort : il s&rsquo;est <strong>dissous</strong> dans l&rsquo;informatique de tous
-les jours. Ses plus belles réussites sont devenues si banales, si fiables, qu&rsquo;on a
-oublié qu&rsquo;elles sortaient des laboratoires d&rsquo;IA. Suivons-en quatre à la trace — vous
-les côtoyez sans doute chaque jour.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>La recherche dans un arbre</a></strong>. Les algorithmes d&rsquo;exploration — minimax,
-A* — qui faisaient gagner les machines aux échecs sont aujourd&rsquo;hui partout : ce sont
-eux qui calculent votre itinéraire <strong>GPS</strong> en une fraction de seconde, qui animent les
-personnages des jeux vidéo, qui optimisent les tournées d&rsquo;un transporteur ou les gestes
-d&rsquo;un robot. Personne, en suivant la flèche bleue sur son téléphone, ne songe qu&rsquo;il fait
-tourner de l&rsquo;« intelligence artificielle » des années 1960.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Les moteurs de règles</a></strong>. Les systèmes experts n&rsquo;ont pas disparu : ils ont
-changé de nom. On les appelle « règles métier », et ils décident en silence de l&rsquo;octroi
-d&rsquo;un prêt, du repérage d&rsquo;une transaction frauduleuse, du calcul d&rsquo;une prime
-d&rsquo;assurance. Les <strong>configurateurs</strong> qui, sur un site marchand, vérifient que les
-options de votre voiture ou de votre ordinateur sont compatibles sont les enfants
-directs de XCON. Et quand votre logiciel d&rsquo;<strong>impôts</strong> vous guide de question en
-question jusqu&rsquo;au bon formulaire, il fait, à la lettre, le métier de MYCIN.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>Les idées de Lisp</a></strong>. C&rsquo;est peut-être l&rsquo;héritage le plus profond. Le
-langage de McCarthy a fait passer dans la programmation réelle tout un courant, la
-<strong>programmation fonctionnelle</strong> : traiter les fonctions comme des valeurs (les
-<em>lambdas</em>), enchaîner des opérations comme <code>map</code>, <code>filter</code>, <code>reduce</code>, manier des
-<em>closures</em>. Ouvrez du code Python, JavaScript ou Java d&rsquo;aujourd&rsquo;hui : ces tournures,
-devenues banales, sont nées dans les labos d&rsquo;IA. Lisp y a aussi inventé des commodités
-qu&rsquo;on tient pour acquises — le <strong>ramasse-miettes</strong> (la gestion automatique de la
-mémoire) et le <strong>REPL</strong>, cette console où l&rsquo;on essaie son code à la volée. Détail
-piquant : l&rsquo;<em>autre</em> grande tradition fonctionnelle, celle des langages typés comme
-Haskell, descend du langage <strong>ML</strong>, que Robin Milner avait créé pour faire tourner… un
-<strong>assistant de démonstration de théorèmes</strong>. Les deux sources de la programmation
-fonctionnelle moderne jaillissent donc, l&rsquo;une comme l&rsquo;autre, du raisonnement
-symbolique.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>La représentation des connaissances</a></strong>. Souvenez-vous des réseaux
-sémantiques et des frames : on les avait dits promis à une descendance vivante. La
-voici. Les <strong>ontologies</strong> et les <strong>knowledge graphs</strong> qui structurent le savoir du web
-en sont les héritiers directs : quand Google affiche une fiche toute prête à côté de vos
-résultats, quand on interroge Wikidata, c&rsquo;est cette vieille idée — relier des concepts
-par des liens <em>est-un</em>, <em>possède</em> — qui œuvre sous le capot. Entre les deux, il y eut une tentative grandiose, qui mérite d&rsquo;être
-nommée : le <a href=https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique><strong>web sémantique</strong></a>.
-En 2001, Tim Berners-Lee, l&rsquo;inventeur du Web, propose de le transformer en une
-immense base de connaissances que les machines pourraient lire : chaque page
-déclarerait non seulement du texte pour les humains, mais aussi des faits
-structurés pour les programmes (<em>cette personne est née en telle année</em>, <em>ce
-produit coûte tant</em>), reliés par des vocabulaires communs, des ontologies. Des
-normes sont écrites pour cela (RDF, OWL). Le rêve, dans sa forme complète, ne
-s&rsquo;est pas réalisé, et pour une raison que vous connaissez maintenant : il
-supposait que des millions d&rsquo;auteurs décrivent patiemment et proprement le sens
-de ce qu&rsquo;ils publient, la même inscription à la main qui avait fait buter CYC,
-mais à l&rsquo;échelle de la planète. Ses pièces, en revanche, ont survécu : les
-balises que les sites ajoutent aujourd&rsquo;hui pour que les moteurs de recherche
-comprennent une recette ou un horaire, et Wikidata lui-même, en sont les
-héritiers directs. Quant aux frames, avec
-leurs cases à valeurs par défaut et leurs hiérarchies d&rsquo;héritage, ce sont les
-<strong>cousins</strong>, du côté de l&rsquo;IA, de l&rsquo;<strong>objet</strong> de la programmation moderne : non pas son
-ancêtre — l&rsquo;orienté-objet doit plus à la simulation qu&rsquo;à l&rsquo;IA —, mais un jumeau né de
-la même intuition. Une remarque, en passant, qui prépare le module 4 : tout ce savoir
-est <strong>structuré à la main</strong>, patiemment, par des humains — à l&rsquo;exact opposé de la façon
-dont les grands modèles de langage, eux, <em>absorberont</em> le leur en avalant des océans de
-texte. Deux philosophies du savoir que nous verrons bientôt s&rsquo;affronter.</p><p>Quatre traces, et l&rsquo;on pourrait en suivre d&rsquo;autres. Aucune ne porte plus l&rsquo;étiquette
-« IA » : elles sont devenues l&rsquo;air qu&rsquo;on respire en informatique. C&rsquo;est là le sort
-secret du GOFAI — non pas une impasse, mais une <strong>diaspora</strong>. Ses idées ont quitté la
-maison « intelligence artificielle » pour s&rsquo;installer, anonymes et indispensables, au
-cœur de la programmation ordinaire.</p><h2 id=un-éclair-hybride-watson-2011>Un éclair hybride : Watson (2011)<a class=anchor href=#un-%c3%a9clair-hybride-watson-2011></a></h2><p>Avant de refermer le module, arrêtons-nous sur une dernière image — celle qui montre le
-mieux que le GOFAI ne s&rsquo;est pas seulement <em>dissous</em>, mais qu&rsquo;il a parfois resurgi en
-pleine lumière, métissé. En février <strong>2011</strong>, un système d&rsquo;IBM nommé <strong>Watson</strong> affronte,
-au jeu télévisé américain <em>Jeopardy!</em>, les deux plus grands champions de l&rsquo;histoire de
-l&rsquo;émission, Ken Jennings et Brad Rutter — et les bat à plate couture.</p><p>L&rsquo;exploit est d&rsquo;une tout autre nature que celui de Deep Blue. Les échecs ont des règles
-nettes et un espace de recherche bien défini ; <em>Jeopardy!</em>, lui, baigne dans le
-<strong>langage</strong> le plus retors — calembours, allusions, jeux de mots, indices tordus. Rien
-que comprendre <em>ce que la question demande</em> est déjà un défi. Et Watson y répond en
-quelques secondes, en puisant dans une immense réserve de connaissances.</p><p>Mais voici le point qui nous intéresse : Watson n&rsquo;est <strong>ni du GOFAI pur, ni un réseau de
-neurones</strong>. C&rsquo;est un <strong>hybride</strong>. D&rsquo;un côté, il hérite en droite ligne du symbolique —
-une vaste base de connaissances, des traitements du langage à base de règles. De l&rsquo;autre,
-il pèse ses centaines d&rsquo;indices et calcule sa <strong>confiance</strong> par des méthodes
-<strong>statistiques</strong>, apprises sur des milliers de questions passées. Quatorze ans après Deep
-Blue, ce n&rsquo;est plus la seule force brute de la recherche qui triomphe, mais un <em>mariage</em> :
-le savoir structuré du GOFAI et l&rsquo;apprentissage statistique, attelés ensemble. Watson
-est, à sa manière, le portrait même de la <strong>charnière</strong> où nous venons d&rsquo;arriver — un
-pied dans chaque âge.</p><blockquote class="book-hint warning"><p>La suite de Watson ressemble, à s&rsquo;y méprendre, à celle des systèmes experts. Galvanisé
-par le triomphe de 2011, IBM promit de <strong>révolutionner la médecine</strong> avec <em>Watson
-Health</em> : on annonça une machine capable de conseiller les cancérologues mieux que leurs
-confrères. La réalité fut tout autre. Les recommandations se révélèrent parfois douteuses,
-voire dangereuses ; de grands hôpitaux partenaires abandonnèrent le projet après des
-dizaines de millions de dollars engloutis ; et IBM finit par <strong>revendre</strong> Watson Health
-en 2022. Trente ans après MYCIN — brillant en démonstration, jamais admis au chevet d&rsquo;un
-vrai patient —, la même leçon se répétait : entre l&rsquo;exploit de laboratoire (ou de plateau
-télé) et le monde réel, têtu, l&rsquo;écart reste vertigineux. La promesse trop grande, encore
-une fois, avait précédé la déception.</p></blockquote><h2 id=la-bascule>La bascule<a class=anchor href=#la-bascule></a></h2><p>Reprenons le chemin parcouru. Tout est parti, dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question
-fondatrice</a> », d&rsquo;un pari : <em>penser, c&rsquo;est calculer</em>. De ce pari est née une famille d&rsquo;idées — manipuler des
-symboles selon des règles — qui a porté, trois décennies durant, des réussites
-éclatantes : des machines qui démontrent des théorèmes, qui gagnent aux échecs, qui
-dialoguent, qui représentent le monde, qui diagnostiquent comme des médecins. Le
-programme symbolique fut tout sauf un échec : il a fondé l&rsquo;informatique du raisonnement,
-et nous en vivons encore.</p><p>Et pourtant, deux fois, il s&rsquo;est cogné au même mur. Dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
-monde</a> », le <strong>sens commun</strong> : cet océan
-d&rsquo;évidences que personne ne pense à formuler, et qu&rsquo;on ne peut donc pas écrire. Dans
-« <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l&rsquo;expertise</a> », le <strong>goulot
-d&rsquo;étranglement</strong> : l&rsquo;expertise qui se dérobe dès
-qu&rsquo;on veut la mettre en règles, parce qu&rsquo;une grande part du savoir humain ne se dit pas.
-Deux visages d&rsquo;une seule et même leçon — celle, peut-être, que Hofstadter avait
-pressentie le premier : <em>on n&rsquo;inscrit pas l&rsquo;intelligence de l&rsquo;extérieur, fait après
-fait ; le savoir qui compte est trop vaste, trop tacite, trop vivant pour tenir dans une
-liste de règles.</em></p><p>Si l&rsquo;on ne peut pas <em>dicter</em> ce savoir à la machine, alors il faut qu&rsquo;elle l&rsquo;<strong>acquière
-elle-même</strong>. Or l&rsquo;idée n&rsquo;était pas neuve : elle dormait depuis 1958 dans le perceptron
-de Rosenblatt — <em>une machine qui apprend de ses erreurs</em> — que le camp symbolique avait
-cru tuer en 1969. C&rsquo;est ici que se dénoue le fil rouge tendu depuis « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris
-rivaux</a> ». Les
-deux traditions, la symbolique et la connexionniste, ne se sont jamais succédé
-proprement : elles ont coexisté en rivales, s&rsquo;éclipsant tour à tour. L&rsquo;hiver symbolique
-de la fin des années 1980 n&rsquo;est pas la fin de l&rsquo;histoire — c&rsquo;est l&rsquo;instant où le
-balancier, lentement, repart dans l&rsquo;autre sens.</p><p>Une question, dès lors, va tout réorganiser — celle-là même que les déboires du GOFAI
-avaient fini par faire surgir : <em>et si, plutôt que de dicter ses règles à la machine, on
-la laissait les découvrir dans les données ?</em> Ce renversement a un nom :
-l&rsquo;<strong>apprentissage automatique</strong>, et c&rsquo;est l&rsquo;objet du <strong>Module 2</strong>. Quant à la vieille
-tradition connexionniste, qu&rsquo;on réveillera avec la rétropropagation et la puissance des
-machines modernes, elle le portera, au <strong>Module 3</strong>, jusqu&rsquo;à des sommets que ni Turing,
-ni Rosenblatt, ni Minsky n&rsquo;avaient osé imaginer.</p><p>Tout le module se résume alors à un glissement d&rsquo;un verbe à l&rsquo;autre. Trois décennies
-durant, être intelligent, pour une machine, ce fut <strong>chercher</strong> — explorer un espace de
-possibilités, guidée par des règles posées d&rsquo;avance. L&rsquo;ère qui s&rsquo;ouvre lui substitue
-<strong>apprendre</strong>. Et pourtant — retenez-le, car la suite y reviendra — les deux verbes ne
-sont pas si éloignés : apprendre, c&rsquo;est encore chercher, mais dans un autre espace. Non
-plus fouiller les coups d&rsquo;une partie, mais l&rsquo;immensité des réglages possibles d&rsquo;un
-modèle, jusqu&rsquo;à trouver ceux qui épousent les données. Là où le GOFAI cherchait <em>la
-solution</em>, l&rsquo;apprentissage cherchera <em>de quoi la fabriquer</em>. L&rsquo;âge de la recherche
-s&rsquo;achève ; celui de l&rsquo;apprentissage — une recherche d&rsquo;un genre nouveau — commence.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+l&rsquo;expertise</a> » : le monde réel se laisse
+difficilement décrire par des règles écrites à la main.</p><p>Pendant que le camp symbolique déclinait, le camp connexionniste, qu&rsquo;on croyait
+abandonné depuis 1969, <strong>reprenait de l&rsquo;activité</strong>. En 1986, un petit groupe de
+chercheurs, dont <strong>Geoffrey Hinton</strong>, avait publié une méthode appelée
+<strong>rétropropagation</strong>. Elle permettait de faire apprendre les réseaux à <strong>plusieurs
+couches</strong>, c&rsquo;est-à-dire justement ceux qui, selon les intuitions de l&rsquo;époque,
+pouvaient traiter le XOR. L&rsquo;obstacle signalé dans <em>Perceptrons</em> était donc levé. Ce
+retour resta toutefois discret au début : il fallut attendre les <strong>données</strong> et la
+<strong>puissance de calcul</strong> des années 2010 pour qu&rsquo;il devienne largement visible. Les
+deux traditions échangeaient de nouveau leurs rôles : le déclin de l&rsquo;une coïncidait
+avec la reprise de l&rsquo;autre.</p><h2 id=lhéritage-invisible>L&rsquo;héritage invisible<a class=anchor href=#lh%c3%a9ritage-invisible></a></h2><p>Après deux hivers successifs, on pourrait conclure que le GOFAI a échoué. Cette
+conclusion serait cependant incomplète, à cause d&rsquo;un phénomène que les chercheurs
+appellent l&rsquo;<strong>« effet IA »</strong> : dès qu&rsquo;une technique fonctionne bien, on cesse de
+l&rsquo;appeler « intelligence artificielle » et on la considère comme « juste un
+algorithme ». La formule la plus courte est attribuée à l&rsquo;informaticien Larry Tesler,
+et c&rsquo;est <strong>Hofstadter</strong> qui l&rsquo;a popularisée : <em>« l&rsquo;IA, c&rsquo;est tout ce qui n&rsquo;a pas
+encore été fait. »</em></p><p>De ce point de vue, le GOFAI n&rsquo;a pas disparu : il s&rsquo;est <strong>intégré</strong> à l&rsquo;informatique
+courante. Ses réussites sont devenues si ordinaires et si fiables qu&rsquo;on a oublié
+qu&rsquo;elles venaient des laboratoires d&rsquo;IA. Les quatre exemples suivants sont des
+techniques que vous utilisez probablement chaque jour.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>La recherche dans un arbre</a></strong>. Les algorithmes d&rsquo;exploration (minimax,
+A*) qui permettaient aux machines de jouer aux échecs sont aujourd&rsquo;hui très répandus.
+Ce sont eux qui calculent votre itinéraire <strong>GPS</strong> en une fraction de seconde, qui
+dirigent les personnages des jeux vidéo et qui optimisent les tournées d&rsquo;un
+transporteur ou les mouvements d&rsquo;un robot. Les personnes qui suivent un itinéraire
+sur leur téléphone ne pensent généralement pas qu&rsquo;elles utilisent une technique
+d&rsquo;« intelligence artificielle » des années 1960.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Les moteurs de règles</a></strong>. Les systèmes experts n&rsquo;ont pas disparu, mais ils
+ont changé de nom. On parle aujourd&rsquo;hui de « règles métier », et ces systèmes
+décident automatiquement de l&rsquo;octroi d&rsquo;un prêt, du repérage d&rsquo;une transaction
+frauduleuse ou du calcul d&rsquo;une prime d&rsquo;assurance. Les <strong>configurateurs</strong> qui, sur un
+site marchand, vérifient que les options d&rsquo;une voiture ou d&rsquo;un ordinateur sont
+compatibles descendent directement de XCON. De même, un logiciel d&rsquo;<strong>impôts</strong> qui
+vous guide de question en question jusqu&rsquo;au bon formulaire fait le même travail que
+MYCIN.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>Les idées de Lisp</a></strong>. Cet héritage est
+peut-être le plus important. Le langage de McCarthy a introduit dans la
+programmation courante la <strong>programmation fonctionnelle</strong> : traiter les fonctions
+comme des valeurs (les <em>lambdas</em>), enchaîner des opérations comme <code>map</code>, <code>filter</code>,
+<code>reduce</code>, utiliser des <em>closures</em>. Ces constructions, courantes aujourd&rsquo;hui en
+Python, en JavaScript ou en Java, viennent des laboratoires d&rsquo;IA. Lisp a aussi
+introduit des outils qu&rsquo;on considère maintenant comme normaux : le
+<strong>ramasse-miettes</strong> (la gestion automatique de la mémoire) et le <strong>REPL</strong>, la console
+qui permet d&rsquo;essayer du code au fur et à mesure. L&rsquo;autre grande tradition
+fonctionnelle, celle des langages typés comme Haskell, descend du langage <strong>ML</strong>, que
+Robin Milner avait créé pour programmer un <strong>assistant de démonstration de
+théorèmes</strong>. Les deux sources de la programmation fonctionnelle moderne viennent donc
+du raisonnement symbolique.</p><p><strong><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>La représentation des connaissances</a></strong>. Les
+réseaux sémantiques et les frames, présentés plus tôt, ont eu des successeurs. Les
+<strong>ontologies</strong> et les <strong>knowledge graphs</strong> qui structurent le savoir du web en sont
+les héritiers directs. Quand Google affiche une fiche résumée à côté des résultats,
+ou quand on interroge Wikidata, c&rsquo;est la même idée qui est utilisée : relier des
+concepts par des liens <em>est-un</em> ou <em>possède</em>. Entre les deux, il y a eu une tentative
+ambitieuse, qui mérite d&rsquo;être mentionnée : le <a href=https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique><strong>web sémantique</strong></a>.
+En 2001, Tim Berners-Lee, l&rsquo;inventeur du Web, propose d&rsquo;en faire une grande base de
+connaissances lisible par les machines. Chaque page contiendrait non seulement du
+texte pour les humains, mais aussi des faits structurés pour les programmes (<em>cette
+personne est née en telle année</em>, <em>ce produit coûte tant</em>), reliés par des
+vocabulaires communs, c&rsquo;est-à-dire des ontologies. Des normes sont écrites dans ce
+but (RDF, OWL). Le projet complet ne s&rsquo;est pas réalisé, pour une raison déjà vue dans
+ce module : il supposait que des millions d&rsquo;auteurs décrivent soigneusement le sens
+de ce qu&rsquo;ils publient. C&rsquo;est le même travail d&rsquo;inscription à la main qui avait limité
+CYC, mais à l&rsquo;échelle de la planète. Certaines de ses composantes ont cependant été
+conservées : les balises que les sites ajoutent aujourd&rsquo;hui pour que les moteurs de
+recherche comprennent une recette ou un horaire, ainsi que Wikidata, en sont les
+héritiers directs. Quant aux frames, avec leurs cases à valeurs par défaut et leurs
+hiérarchies d&rsquo;héritage, elles sont <strong>apparentées</strong> à l&rsquo;<strong>objet</strong> de la programmation
+moderne. Elles n&rsquo;en sont pas l&rsquo;ancêtre (l&rsquo;orienté-objet doit davantage à la
+simulation qu&rsquo;à l&rsquo;IA), mais elles reposent sur la même intuition. Une dernière
+remarque prépare le module 4 : tout ce savoir est <strong>structuré à la main</strong> par des
+humains. C&rsquo;est l&rsquo;opposé de la façon dont les grands modèles de langage acquièrent
+leur savoir, en traitant d&rsquo;énormes quantités de texte. Ces deux conceptions du savoir
+seront comparées plus loin dans le cours.</p><p>Ces quatre exemples ne sont pas les seuls. Aucune de ces techniques ne porte plus
+l&rsquo;étiquette « IA », parce qu&rsquo;elles font maintenant partie de l&rsquo;informatique
+ordinaire. Le GOFAI n&rsquo;a donc pas été une impasse : ses idées se sont <strong>dispersées</strong>
+hors du domaine de l&rsquo;intelligence artificielle et sont devenues des éléments courants
+et indispensables de la programmation.</p><h2 id=un-éclair-hybride-watson-2011>Un éclair hybride : Watson (2011)<a class=anchor href=#un-%c3%a9clair-hybride-watson-2011></a></h2><p>Un dernier exemple montre que le GOFAI ne s&rsquo;est pas seulement intégré à
+l&rsquo;informatique courante, mais qu&rsquo;il est aussi réapparu, combiné à d&rsquo;autres méthodes.
+En février <strong>2011</strong>, un système d&rsquo;IBM nommé <strong>Watson</strong> affronte, au jeu télévisé
+américain <em>Jeopardy!</em>, les deux meilleurs champions de l&rsquo;histoire de l&rsquo;émission, Ken
+Jennings et Brad Rutter, et les bat nettement.</p><p>Cette réussite est d&rsquo;une autre nature que celle de Deep Blue. Les échecs ont des
+règles précises et un espace de recherche bien défini. <em>Jeopardy!</em>, au contraire,
+repose sur un <strong>langage</strong> difficile, fait de calembours, d&rsquo;allusions, de jeux de mots
+et d&rsquo;indices indirects. Comprendre ce que la question demande est déjà un problème
+difficile. Watson y répond en quelques secondes, en utilisant une très grande base de
+connaissances.</p><p>Watson n&rsquo;est <strong>ni du GOFAI pur, ni un réseau de neurones</strong>. C&rsquo;est un <strong>hybride</strong>.
+D&rsquo;une part, il reprend des éléments du symbolique : une grande base de connaissances
+et des traitements du langage à base de règles. D&rsquo;autre part, il pondère des
+centaines d&rsquo;indices et calcule sa <strong>confiance</strong> avec des méthodes <strong>statistiques</strong>,
+apprises sur des milliers de questions passées. Quatorze ans après Deep Blue, ce n&rsquo;est
+donc plus seulement la force brute de la recherche qui permet de gagner, mais une
+combinaison du savoir structuré du GOFAI et de l&rsquo;apprentissage statistique. Watson
+illustre ainsi la <strong>charnière</strong> où se trouve maintenant le module, entre deux
+périodes.</p><blockquote class="book-hint warning"><p>La suite de l&rsquo;histoire de Watson ressemble à celle des systèmes experts. Après le
+succès de 2011, IBM annonça que <em>Watson Health</em> allait <strong>transformer la médecine</strong> :
+la machine devait conseiller les cancérologues mieux que leurs collègues. Les
+résultats furent très différents. Certaines recommandations se révélèrent douteuses,
+voire dangereuses. De grands hôpitaux partenaires abandonnèrent le projet après y
+avoir dépensé des dizaines de millions de dollars, et IBM finit par <strong>revendre</strong>
+Watson Health en 2022. Trente ans après MYCIN, qui avait bien fonctionné en
+démonstration sans jamais être utilisé auprès de vrais patients, la même leçon se
+répétait : l&rsquo;écart reste très grand entre une réussite en laboratoire (ou sur un
+plateau de télévision) et le monde réel. Une fois de plus, une promesse trop
+ambitieuse avait précédé la déception.</p></blockquote><h2 id=la-bascule>La bascule<a class=anchor href=#la-bascule></a></h2><p>Voici un résumé du chemin parcouru. Le chapitre « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/turing/>Turing et la question
+fondatrice</a> » est parti d&rsquo;une hypothèse : penser, c&rsquo;est calculer. De cette hypothèse est née une famille d&rsquo;idées
+(manipuler des symboles selon des règles) qui a produit, pendant trois décennies,
+des réussites importantes : des machines qui démontrent des théorèmes, qui jouent aux
+échecs, qui dialoguent, qui représentent le monde et qui établissent des diagnostics
+comme des médecins. Le programme symbolique n&rsquo;a donc pas été un échec : il a fondé
+l&rsquo;informatique du raisonnement, qui est encore utilisée aujourd&rsquo;hui.</p><p>Il s&rsquo;est cependant heurté deux fois à la même difficulté. Dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
+monde</a> », il s&rsquo;agissait du <strong>sens commun</strong>,
+l&rsquo;ensemble des évidences que personne ne pense à formuler et qu&rsquo;on ne peut donc pas
+écrire. Dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l&rsquo;expertise</a> », il
+s&rsquo;agissait du <strong>goulot d&rsquo;étranglement</strong> : l&rsquo;expertise est difficile à mettre en
+règles, parce qu&rsquo;une grande partie du savoir humain n&rsquo;est pas exprimée. Ces deux
+difficultés relèvent d&rsquo;une même leçon, que Hofstadter avait peut-être formulée le
+premier : on ne peut pas inscrire l&rsquo;intelligence de l&rsquo;extérieur, fait après fait,
+parce que le savoir utile est trop vaste, trop tacite et trop changeant pour tenir
+dans une liste de règles.</p><p>Si l&rsquo;on ne peut pas dicter ce savoir à la machine, il faut qu&rsquo;elle l&rsquo;<strong>acquière
+elle-même</strong>. Cette idée n&rsquo;était pas nouvelle : elle se trouvait déjà en 1958 dans le
+perceptron de Rosenblatt, une machine qui apprend de ses erreurs, que le camp
+symbolique pensait avoir écarté en 1969. C&rsquo;est ici que se termine le fil suivi depuis
+« <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux</a> ». Les deux traditions, symbolique
+et connexionniste, ne se sont jamais simplement succédé : elles ont coexisté en
+rivales, et chacune a dominé à son tour. L&rsquo;hiver symbolique de la fin des années 1980
+n&rsquo;est donc pas la fin de l&rsquo;histoire, mais le moment où l&rsquo;avantage commence à revenir
+vers l&rsquo;autre tradition.</p><p>Une question, apparue avec les difficultés du GOFAI, va réorganiser le domaine : au
+lieu de dicter ses règles à la machine, on peut la laisser les découvrir dans les
+données. Ce changement d&rsquo;approche s&rsquo;appelle l&rsquo;<strong>apprentissage automatique</strong>, et c&rsquo;est
+l&rsquo;objet du <strong>Module 2</strong>. La tradition connexionniste, relancée par la
+rétropropagation et la puissance des machines modernes, le mènera ensuite, au
+<strong>Module 3</strong>, à des résultats que ni Turing, ni Rosenblatt, ni Minsky n&rsquo;avaient
+imaginés.</p><p>Le module peut se résumer par le passage d&rsquo;un verbe à un autre. Pendant trois
+décennies, être intelligent, pour une machine, a surtout voulu dire <strong>chercher</strong> :
+explorer un espace de possibilités, guidé par des règles fixées à l&rsquo;avance. La
+période suivante remplace ce verbe par <strong>apprendre</strong>. Les deux verbes restent
+cependant proches, et la suite du cours y reviendra : apprendre, c&rsquo;est encore
+chercher, mais dans un autre espace. Au lieu d&rsquo;explorer les coups d&rsquo;une partie, on
+explore l&rsquo;ensemble des réglages possibles d&rsquo;un modèle, jusqu&rsquo;à trouver ceux qui
+correspondent aux données. Le GOFAI cherchait la solution, alors que
+l&rsquo;apprentissage cherche de quoi la produire. La période de la recherche se termine
+donc, et celle de l&rsquo;apprentissage, qui est une autre forme de recherche, commence.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
 <span>Capturer l'expertise : les systèmes experts</span>
 </a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/ class="flex align-center"><span>Travail noté 1</span>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#le-premier-hiver-la-mort-du-perceptron-1969>Le premier hiver : la mort du perceptron (1969)</a></li><li><a href=#le-second-hiver-leffondrement-du-symbolique-fin-des-années-1980>Le second hiver : l&rsquo;effondrement du symbolique (fin des années 1980)</a></li><li><a href=#lhéritage-invisible>L&rsquo;héritage invisible</a></li><li><a href=#un-éclair-hybride-watson-2011>Un éclair hybride : Watson (2011)</a></li><li><a href=#la-bascule>La bascule</a></li></ul></nav></div></aside></main></body></html>

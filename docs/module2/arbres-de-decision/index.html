@@ -1,5 +1,5 @@
-<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Poser des questions : les arbres de décision Tous les modèles rencontrés jusqu’ici raisonnent en nombres. kNN mesure des distances ; la droite multiplie et additionne ; la régression logistique et Bayes calculent des probabilités. C’est puissant, mais ce n’est pas ainsi que nous décidons, la plupart du temps. Un médecin devant un patient ne calcule pas : il pose des questions, l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne pareil : l’un pense à un objet, l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, « est-ce un animal ? », « est-il plus gros qu’un chat ? », chaque réponse rétrécissant le champ des possibles. Le guide de dépannage à la fin d’un manuel, de même : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Une suite de questions à réponse oui ou non, qui se ramifie, et qui aboutit à une conclusion.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Poser des questions : les arbres de décision"><meta property="og:description" content="Poser des questions : les arbres de décision Tous les modèles rencontrés jusqu’ici raisonnent en nombres. kNN mesure des distances ; la droite multiplie et additionne ; la régression logistique et Bayes calculent des probabilités. C’est puissant, mais ce n’est pas ainsi que nous décidons, la plupart du temps. Un médecin devant un patient ne calcule pas : il pose des questions, l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne pareil : l’un pense à un objet, l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, « est-ce un animal ? », « est-il plus gros qu’un chat ? », chaque réponse rétrécissant le champ des possibles. Le guide de dépannage à la fin d’un manuel, de même : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Une suite de questions à réponse oui ou non, qui se ramifie, et qui aboutit à une conclusion."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Poser des questions : les arbres de décision"><meta itemprop=description content="Poser des questions : les arbres de décision Tous les modèles rencontrés jusqu’ici raisonnent en nombres. kNN mesure des distances ; la droite multiplie et additionne ; la régression logistique et Bayes calculent des probabilités. C’est puissant, mais ce n’est pas ainsi que nous décidons, la plupart du temps. Un médecin devant un patient ne calcule pas : il pose des questions, l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne pareil : l’un pense à un objet, l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, « est-ce un animal ? », « est-il plus gros qu’un chat ? », chaque réponse rétrécissant le champ des possibles. Le guide de dépannage à la fin d’un manuel, de même : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Une suite de questions à réponse oui ou non, qui se ramifie, et qui aboutit à une conclusion."><meta itemprop=wordCount content="3877"><title>Poser des questions : les arbres de décision • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Poser des questions : les arbres de décision Tous les modèles vus jusqu’ici raisonnent avec des nombres. kNN mesure des distances, la droite multiplie et additionne, la régression logistique et Bayes calculent des probabilités. Ces méthodes sont puissantes, mais ce n’est pas ainsi que nous prenons la plupart de nos décisions. Un médecin devant un patient ne fait pas de calcul : il pose des questions l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne de la même façon. Un joueur pense à un objet, et l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, comme « est-ce un animal ? » ou « est-il plus gros qu’un chat ? ». Chaque réponse réduit l’ensemble des possibilités. Le guide de dépannage à la fin d’un manuel suit le même principe : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Il s’agit chaque fois d’une suite de questions à réponse oui ou non, qui se ramifie et aboutit à une conclusion.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Poser des questions : les arbres de décision"><meta property="og:description" content="Poser des questions : les arbres de décision Tous les modèles vus jusqu’ici raisonnent avec des nombres. kNN mesure des distances, la droite multiplie et additionne, la régression logistique et Bayes calculent des probabilités. Ces méthodes sont puissantes, mais ce n’est pas ainsi que nous prenons la plupart de nos décisions. Un médecin devant un patient ne fait pas de calcul : il pose des questions l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne de la même façon. Un joueur pense à un objet, et l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, comme « est-ce un animal ? » ou « est-il plus gros qu’un chat ? ». Chaque réponse réduit l’ensemble des possibilités. Le guide de dépannage à la fin d’un manuel suit le même principe : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Il s’agit chaque fois d’une suite de questions à réponse oui ou non, qui se ramifie et aboutit à une conclusion."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Poser des questions : les arbres de décision"><meta itemprop=description content="Poser des questions : les arbres de décision Tous les modèles vus jusqu’ici raisonnent avec des nombres. kNN mesure des distances, la droite multiplie et additionne, la régression logistique et Bayes calculent des probabilités. Ces méthodes sont puissantes, mais ce n’est pas ainsi que nous prenons la plupart de nos décisions. Un médecin devant un patient ne fait pas de calcul : il pose des questions l’une après l’autre, et chaque réponse oriente la suivante. Le jeu des vingt questions fonctionne de la même façon. Un joueur pense à un objet, et l’autre doit le deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou par non, comme « est-ce un animal ? » ou « est-il plus gros qu’un chat ? ». Chaque réponse réduit l’ensemble des possibilités. Le guide de dépannage à la fin d’un manuel suit le même principe : « l’appareil s’allume-t-il ? si non, est-il branché ? ». Il s’agit chaque fois d’une suite de questions à réponse oui ou non, qui se ramifie et aboutit à une conclusion."><meta itemprop=wordCount content="3960"><title>Poser des questions : les arbres de décision • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
 </button>
 <button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
@@ -12,300 +12,306 @@
 <label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/ class=active>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
 <label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Poser des questions : les arbres de décision</h3><input type=checkbox class=toggle id=toc-control>
-<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#une-question-suffit-presque>Une question suffit presque</a></li><li><a href=#comment-larbre-choisit-ses-questions>Comment l&rsquo;arbre choisit ses questions</a></li><li><a href=#un-arbre-qui-prédit-un-nombre>Un arbre qui prédit un nombre</a></li><li><a href=#jusquoù-laisser-pousser-larbre>Jusqu&rsquo;où laisser pousser l&rsquo;arbre ?</a></li><li><a href=#larbre-du-titanic>L’arbre du <em>Titanic</em></a></li><li><a href=#ce-quun-arbre-dit-et-ce-quil-tait>Ce qu&rsquo;un arbre dit, et ce qu&rsquo;il tait</a></li><li><a href=#et-sur-des-données-neuves>Et sur des données neuves ?</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=poser-des-questions-les-arbres-de-décision>Poser des questions : les arbres de décision<a class=anchor href=#poser-des-questions-les-arbres-de-d%c3%a9cision></a></h1><p>Tous les modèles rencontrés jusqu&rsquo;ici raisonnent en nombres. kNN mesure des
-distances ; la droite multiplie et additionne ; la régression logistique et
-Bayes calculent des probabilités. C&rsquo;est puissant, mais ce n&rsquo;est pas ainsi que
-<em>nous</em> décidons, la plupart du temps. Un médecin devant un patient ne calcule
-pas : il pose des questions, l&rsquo;une après l&rsquo;autre, et chaque réponse oriente la
-suivante. Le <a href=https://en.wikipedia.org/wiki/Twenty_questions>jeu des vingt questions</a>
-fonctionne pareil : l&rsquo;un pense à un objet, l&rsquo;autre doit le deviner en posant
-au plus vingt questions auxquelles on ne répond que par oui ou par non,
-« est-ce un animal ? », « est-il plus gros qu&rsquo;un chat ? », chaque réponse
-rétrécissant le champ des possibles. Le guide de dépannage à la fin d&rsquo;un
-manuel, de même : « l&rsquo;appareil s&rsquo;allume-t-il ? si non, est-il
-branché ? ». Une suite de questions à réponse oui ou non, qui se ramifie, et
-qui aboutit à une conclusion.</p><p>Cette façon de décider a son modèle, et c&rsquo;est l&rsquo;un des plus anciens et des plus
-intuitifs de l&rsquo;apprentissage automatique : l&rsquo;<strong>arbre de décision</strong>. Comme kNN,
-il traite aussi bien la régression que la classification, et comme lui il tient
-en une idée qu&rsquo;on peut dessiner. Mais il apporte deux choses qu&rsquo;aucun modèle du
-module n&rsquo;offrait encore : une frontière qui n&rsquo;a rien d&rsquo;une droite, et une
-décision qu&rsquo;on peut <em>lire</em>.</p><h2 id=une-question-suffit-presque>Une question suffit presque<a class=anchor href=#une-question-suffit-presque></a></h2><p>Reprenons la seconde question du module, dans le plan où elle se lit : la
+<label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#une-question-suffit-presque>Une question suffit presque</a></li><li><a href=#comment-larbre-choisit-ses-questions>Comment l&rsquo;arbre choisit ses questions</a></li><li><a href=#un-arbre-qui-prédit-un-nombre>Un arbre qui prédit un nombre</a></li><li><a href=#jusquoù-laisser-pousser-larbre>Jusqu&rsquo;où laisser pousser l&rsquo;arbre ?</a></li><li><a href=#larbre-du-titanic>L’arbre du <em>Titanic</em></a></li><li><a href=#ce-quun-arbre-dit-et-ce-quil-tait>Ce qu&rsquo;un arbre dit, et ce qu&rsquo;il tait</a></li><li><a href=#et-sur-des-données-neuves>Et sur des données neuves ?</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=poser-des-questions-les-arbres-de-décision>Poser des questions : les arbres de décision<a class=anchor href=#poser-des-questions-les-arbres-de-d%c3%a9cision></a></h1><p>Tous les modèles vus jusqu&rsquo;ici raisonnent avec des nombres. kNN mesure des
+distances, la droite multiplie et additionne, la régression logistique et Bayes
+calculent des probabilités. Ces méthodes sont puissantes, mais ce n&rsquo;est pas
+ainsi que nous prenons la plupart de nos décisions. Un médecin devant un patient
+ne fait pas de calcul : il pose des questions l&rsquo;une après l&rsquo;autre, et chaque
+réponse oriente la suivante. Le <a href=https://en.wikipedia.org/wiki/Twenty_questions>jeu des vingt questions</a>
+fonctionne de la même façon. Un joueur pense à un objet, et l&rsquo;autre doit le
+deviner en posant au plus vingt questions auxquelles on ne répond que par oui ou
+par non, comme « est-ce un animal ? » ou « est-il plus gros qu&rsquo;un chat ? ».
+Chaque réponse réduit l&rsquo;ensemble des possibilités. Le guide de dépannage à la
+fin d&rsquo;un manuel suit le même principe : « l&rsquo;appareil s&rsquo;allume-t-il ? si non,
+est-il branché ? ». Il s&rsquo;agit chaque fois d&rsquo;une suite de questions à réponse oui
+ou non, qui se ramifie et aboutit à une conclusion.</p><p>Cette façon de décider correspond à l&rsquo;un des modèles les plus anciens et les plus
+intuitifs de l&rsquo;apprentissage automatique, l&rsquo;<strong>arbre de décision</strong>. Comme kNN, il
+traite aussi bien la régression que la classification, et son principe peut se
+dessiner. Il apporte cependant deux choses qu&rsquo;aucun modèle du module n&rsquo;offrait
+encore : une frontière qui n&rsquo;est pas une droite, et une décision qu&rsquo;on peut
+lire.</p><h2 id=une-question-suffit-presque>Une question suffit presque<a class=anchor href=#une-question-suffit-presque></a></h2><p>Reprenons la seconde question du module dans le plan où elle se représente : la
 distance du centre en abscisse, l&rsquo;année de construction en ordonnée, et la
-couleur qui dit si la maison est partie vite. Laissons un arbre apprendre sur
-ces vingt maisons, avec une seule question permise. Voici ce qu&rsquo;il trouve :</p><label class=book-image for=book-image-toggle-fc2c4f71a59d><input class="hidden toggle" type=checkbox id=book-image-toggle-fc2c4f71a59d>
+couleur qui indique si la maison s&rsquo;est vendue vite. Laissons un arbre apprendre
+sur ces vingt maisons, avec une seule question permise. Voici le résultat :</p><label class=book-image for=book-image-toggle-fc2c4f71a59d><input class="hidden toggle" type=checkbox id=book-image-toggle-fc2c4f71a59d>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-maisons.svg alt="Un arbre à une seule question, « à plus de 11 km du centre ? » : la branche « non » mène à une feuille bleue, 11 maisons sur 12 vendues vite ; la branche « oui » à une feuille rouge, 1 sur 8. Deux erreurs sur vingt, les deux exceptions." loading=lazy title="Un arbre à une question : une racine, deux branches, deux feuilles. Dix-huit maisons sur vingt bien classées." width=660 height=230 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-fc2c4f71a59d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>« À plus de 11 km du centre ? » Si non, la maison va dans la feuille de
-gauche, où 11 maisons sur 12 sont parties vite : l&rsquo;arbre répond <em>oui, vendue
-vite</em>. Si oui, elle va dans la feuille de droite, où 1 maison sur 8 seulement
-est partie vite : l&rsquo;arbre répond <em>non</em>. Une question, deux feuilles, et 18
-maisons sur 20 correctement classées. Les deux qui restent sont nos vieilles
-connaissances, les deux exceptions du nuage coloré, chacune du mauvais côté de
-la question.</p><p>Le vocabulaire est celui d&rsquo;un arbre, dessiné à l&rsquo;envers : la première question
-est la <strong>racine</strong>, chaque réponse est une <strong>branche</strong>, et les cases du bas, où
-l&rsquo;on ne pose plus de question mais où l&rsquo;on répond, sont les <strong>feuilles</strong>. Pour
-prédire, on part de la racine avec une maison nouvelle, on répond aux
-questions, et l&rsquo;on descend jusqu&rsquo;à une feuille : sa couleur majoritaire est la
-prédiction.</p><p>Que dessine cet arbre dans le plan ? Une question sur la distance, c&rsquo;est une
-<strong>coupe verticale</strong> à 11 km : tout ce qui est à gauche est bleu, tout ce qui
-est à droite est rouge. C&rsquo;est le panneau de gauche de la figure ci-dessous,
-avec le même fond teinté que pour kNN. Comparez cette frontière à <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>celle de
-kNN</a> sur les mêmes maisons : là,
-une ligne qui serpentait entre les amas ; ici, un trait droit, parfaitement
-vertical, parce qu&rsquo;une question ne regarde qu&rsquo;<em>une</em> caractéristique à la fois.</p><p>Une chose devrait vous intriguer : l&rsquo;arbre n&rsquo;a rien demandé sur l&rsquo;année de
-construction, alors que le nuage coloré semblait dire que les maisons
-anciennes traînent. Aurait-elle fait l&rsquo;affaire ? Oui, et tout aussi bien :
-c&rsquo;est le panneau de droite. « Construite après 1989 ? » est une <strong>coupe
-horizontale</strong>, et elle sépare les mêmes 11 sur 12 d&rsquo;un côté et 1 sur 8 de
-l&rsquo;autre, avec les mêmes deux exceptions.</p><label class=book-image for=book-image-toggle-84c6f4ba4a9e><input class="hidden toggle" type=checkbox id=book-image-toggle-84c6f4ba4a9e>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-fc2c4f71a59d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La question est « à plus de 11 km du centre ? ». Si la réponse est non, la maison
+va dans la feuille de gauche, où 11 maisons sur 12 se sont vendues vite, et
+l&rsquo;arbre répond <em>oui, vendue vite</em>. Si la réponse est oui, elle va dans la feuille
+de droite, où 1 maison sur 8 seulement s&rsquo;est vendue vite, et l&rsquo;arbre répond
+<em>non</em>. Avec une question et deux feuilles, 18 maisons sur 20 sont correctement
+classées. Les deux maisons restantes sont les deux exceptions déjà repérées dans
+le nuage coloré, chacune du mauvais côté de la question.</p><p>Le vocabulaire est celui d&rsquo;un arbre dessiné à l&rsquo;envers. La première question est
+la <strong>racine</strong>, chaque réponse est une <strong>branche</strong>, et les cases du bas, où l&rsquo;on
+ne pose plus de question mais où l&rsquo;on répond, sont les <strong>feuilles</strong>. Pour
+prédire, on part de la racine avec une nouvelle maison, on répond aux questions
+et on descend jusqu&rsquo;à une feuille. La couleur majoritaire de cette feuille est la
+prédiction.</p><p>Dans le plan, une question sur la distance correspond à une <strong>coupe verticale</strong> à
+11 km : tout ce qui est à gauche est bleu, tout ce qui est à droite est rouge.
+C&rsquo;est le panneau de gauche de la figure ci-dessous, avec le même fond teinté que
+pour kNN. Comparez cette frontière à <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>celle de
+kNN</a> sur les mêmes maisons. La
+frontière de kNN était une ligne sinueuse entre les amas. Celle de l&rsquo;arbre est
+un trait droit et vertical, parce qu&rsquo;une question ne porte que sur une seule
+caractéristique à la fois.</p><p>On peut remarquer que l&rsquo;arbre n&rsquo;a rien demandé sur l&rsquo;année de construction, alors
+que le nuage coloré semblait indiquer que les maisons anciennes se vendent
+lentement. Une question sur l&rsquo;année aurait donné un résultat tout aussi bon,
+comme le montre le panneau de droite. La question « construite après 1989 ? »
+correspond à une <strong>coupe horizontale</strong>, et elle place les mêmes 11 maisons sur 12
+d&rsquo;un côté et 1 sur 8 de l&rsquo;autre, avec les mêmes deux exceptions.</p><label class=book-image for=book-image-toggle-6fd907a82f3e><input class="hidden toggle" type=checkbox id=book-image-toggle-6fd907a82f3e>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-maisons-deux-coupes.svg alt="Deux fois le même petit plan distance × année avec les vingt maisons. À gauche, la coupe verticale de la question « À plus de 11 km du centre ? » : bleu à gauche, rouge à droite. À droite, la coupe horizontale de la question « Construite après 1989 ? » : bleu en haut, rouge en bas. Dans les deux cas, les mêmes deux exceptions sont du mauvais côté : deux erreurs sur vingt, à égalité." loading=lazy title="Deux questions à égalité : la coupe sur la distance et la coupe sur l'année classent les mêmes dix-huit maisons, et ratent les deux mêmes." width=660 height=340 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-84c6f4ba4a9e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;arbre avait donc deux questions équivalentes sous la main. Il en a pris une,
-et une seule, parce qu&rsquo;une fois la première posée, l&rsquo;autre n&rsquo;ajoute plus rien,
-sinon pour rattraper les deux exceptions. Et il ne garde rien des vingt
-maisons : une fois la question trouvée, il peut les oublier. Il est du côté
-des modèles qui <em>distillent</em>, comme la droite, avec pour tout paramètre un
-seuil et deux réponses. Comment a-t-il tranché entre les deux questions, et
-plus généralement comment choisit-il ses questions ? C&rsquo;est l&rsquo;objet de la
-section suivante.</p><h2 id=comment-larbre-choisit-ses-questions>Comment l&rsquo;arbre choisit ses questions<a class=anchor href=#comment-larbre-choisit-ses-questions></a></h2><p>Il n&rsquo;y a pas de magie dans le choix de la question, seulement du <strong>comptage</strong>.
-Pour chaque caractéristique et chaque seuil possible, l&rsquo;arbre fait comme si :
-il coupe les vingt maisons en deux et regarde, de chaque côté, à quel point les
+</label><script>(function(){const e=document.getElementById("book-image-toggle-6fd907a82f3e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;arbre disposait donc de deux questions équivalentes. Il n&rsquo;en a pris qu&rsquo;une,
+parce qu&rsquo;une fois la première posée, la seconde n&rsquo;apporte plus rien, sauf pour
+corriger les deux exceptions. De plus, l&rsquo;arbre ne conserve pas les vingt
+maisons : une fois la question trouvée, il n&rsquo;en a plus besoin. Il fait donc
+partie des modèles qui résument les données, comme la droite, et ses seuls
+paramètres sont un seuil et deux réponses. La section suivante explique comment
+il a choisi entre les deux questions et, plus généralement, comment il choisit
+ses questions.</p><h2 id=comment-larbre-choisit-ses-questions>Comment l&rsquo;arbre choisit ses questions<a class=anchor href=#comment-larbre-choisit-ses-questions></a></h2><p>Le choix de la question repose sur un simple <strong>comptage</strong>. Pour chaque
+caractéristique et chaque seuil possible, l&rsquo;arbre fait un essai : il sépare les
+vingt maisons en deux groupes et mesure, de chaque côté, à quel point les
 couleurs sont <strong>mélangées</strong>. Une feuille où toutes les maisons sont de la même
-couleur est <em>pure</em> ; une feuille où elles sont moitié-moitié est le pire des
-cas, puisqu&rsquo;elle ne renseigne sur rien. La bonne question est celle dont les
-deux côtés sont, ensemble, les plus purs possible.</p><p>Les seuils candidats ne sont pas infinis : entre deux maisons voisines sur une
-caractéristique, toutes les coupes se valent, et il suffit d&rsquo;essayer celle du
-milieu. Vingt maisons, deux caractéristiques, cela fait une quarantaine de
-questions à essayer ; un ordinateur les évalue toutes en un clin d&rsquo;œil, et
-garde la meilleure. Sur nos maisons, « à plus de 11 km du centre ? » donne
-d&rsquo;un côté 11 bleues sur 12, de l&rsquo;autre 7 rouges sur 8 : deux feuilles presque
-pures. « Construite après 1995 ? » aurait laissé 2 rouges parmi 11 d&rsquo;un côté
-et 2 bleues parmi 9 de l&rsquo;autre : plus de mélange, question écartée.</p><p>Voilà qui règle l&rsquo;intrigue de tout à l&rsquo;heure : « construite après 1989 ? »
-et « à plus de 11 km du centre ? » obtenaient exactement le même score, 11
-sur 12 et 1 sur 8. À égalité parfaite, l&rsquo;arbre a pris la première venue. Retenez-le : quand deux caractéristiques disent la
-même chose, l&rsquo;arbre en choisit une et ignore l&rsquo;autre, sans que cela signifie
-que l&rsquo;autre ne compte pas. Un arbre n&rsquo;est pas une explication du monde ; c&rsquo;est
-un chemin qui marche.</p><p>Une fois la première question posée, on recommence, séparément, dans chacune
-des deux feuilles : la meilleure question pour les maisons proches du centre,
-la meilleure pour les maisons éloignées, et ainsi de suite, jusqu&rsquo;à ce que les
-feuilles soient pures ou qu&rsquo;on décide d&rsquo;arrêter. Chaque question est choisie
-sans se soucier des suivantes, ce que les informaticiens appellent une
-stratégie <em>gloutonne</em> (<em>greedy</em>, en anglais, le mot qu&rsquo;on entend le plus souvent) : on prend le meilleur pas immédiat, sans regarder plus
-loin. Ce n&rsquo;est pas garanti optimal ; c&rsquo;est rapide, et en pratique
-remarquablement bon.</p><p>Remarquez ce que cet apprentissage n&rsquo;est <em>pas</em>. Le modèle bête moyennait ; la
-droite et ses cousines descendaient la pente d&rsquo;une fonction d&rsquo;erreur, pas à
-pas ; l&rsquo;arbre, lui, <strong>cherche</strong> : il énumère des questions, les essaie, garde
-la meilleure. Pas de paramètres qu&rsquo;on ajuste en continu, pas de gradient : une
-exploration parmi des choix discrets, un peu comme la recherche dans un arbre
-de coups du <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>Module 1</a>, ramenée à
-l&rsquo;apprentissage. C&rsquo;est la troisième façon d&rsquo;apprendre que rencontre ce module,
-et elle a la même ossature que les deux autres : des données, une mesure de ce
-qui est bon (la pureté), et une procédure qui la maximise.</p><blockquote class="book-hint info"><p><strong>Sous le capot : mesurer le mélange.</strong> La mesure la plus courante est l&rsquo;<em>indice
-de Gini</em> : dans une feuille où une proportion $p$ des maisons est bleue, il
-vaut $2p(1-p)$, soit 0 pour une feuille pure et 0,5 pour une feuille
+couleur est dite <em>pure</em>. Une feuille où elles sont moitié-moitié est le pire
+cas, puisqu&rsquo;elle ne donne aucune information. La meilleure question est celle
+dont les deux côtés sont, ensemble, les plus purs possible.</p><p>Le nombre de seuils candidats est limité. Entre deux maisons voisines sur une
+caractéristique, toutes les coupes donnent le même résultat, et il suffit
+d&rsquo;essayer celle du milieu. Avec vingt maisons et deux caractéristiques, cela fait
+une quarantaine de questions à essayer. Un ordinateur les évalue toutes très
+rapidement et garde la meilleure. Sur nos maisons, la question « à plus de 11 km
+du centre ? » donne d&rsquo;un côté 11 bleues sur 12 et de l&rsquo;autre 7 rouges sur 8,
+soit deux feuilles presque pures. La question « construite après 1995 ? » aurait
+laissé 2 rouges parmi 11 d&rsquo;un côté et 2 bleues parmi 9 de l&rsquo;autre. Le mélange
+étant plus important, cette question est écartée.</p><p>Cela explique l&rsquo;observation précédente. Les questions « construite après
+1989 ? » et « à plus de 11 km du centre ? » obtenaient exactement le même score,
+11 sur 12 et 1 sur 8. En cas d&rsquo;égalité parfaite, l&rsquo;arbre prend la première
+question trouvée. Il faut donc retenir que, lorsque deux caractéristiques
+apportent la même information, l&rsquo;arbre en choisit une et ignore l&rsquo;autre, sans
+que cela signifie que l&rsquo;autre soit sans importance. Un arbre ne donne pas une
+explication du monde, mais un chemin de décision qui fonctionne.</p><p>Une fois la première question posée, on recommence séparément dans chacune des
+deux feuilles. On cherche la meilleure question pour les maisons proches du
+centre, puis la meilleure pour les maisons éloignées, et ainsi de suite, jusqu&rsquo;à
+ce que les feuilles soient pures ou qu&rsquo;on décide d&rsquo;arrêter. Chaque question est
+choisie sans tenir compte des suivantes. Les informaticiens appellent cela une
+stratégie <em>gloutonne</em> (<em>greedy</em>, en anglais, le terme le plus souvent employé) :
+on choisit la meilleure étape immédiate, sans regarder plus loin. Cette stratégie
+ne garantit pas le meilleur arbre possible, mais elle est rapide et donne de très
+bons résultats en pratique.</p><p>Cet apprentissage diffère de ceux vus précédemment. Le modèle le plus bête calculait
+une moyenne. La droite et les modèles apparentés descendaient progressivement la
+pente d&rsquo;une fonction d&rsquo;erreur. L&rsquo;arbre, lui, <strong>cherche</strong> : il énumère des
+questions, les essaie et garde la meilleure. Il n&rsquo;y a ni paramètres ajustés de
+façon continue, ni gradient, mais une exploration parmi des choix discrets,
+semblable à la recherche dans un arbre de coups du <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/>Module
+1</a>, appliquée ici à l&rsquo;apprentissage. C&rsquo;est
+la troisième façon d&rsquo;apprendre présentée dans ce module, et elle a la même
+structure que les deux autres : des données, une mesure de ce qui est bon (la
+pureté) et une procédure qui maximise cette mesure.</p><blockquote class="book-hint info"><p><strong>Pour aller plus loin : mesurer le mélange.</strong> La mesure la plus courante est
+l&rsquo;<em>indice de Gini</em>. Dans une feuille où une proportion $p$ des maisons est bleue,
+il vaut $2p(1-p)$, soit 0 pour une feuille pure et 0,5 pour une feuille
 moitié-moitié. Le score d&rsquo;une question est la moyenne des indices de ses deux
-côtés, pondérée par leur taille. Sur nos maisons, l&rsquo;indice de départ vaut
-0,48 ; après la question sur la distance, il tombe à 0,18. Une autre mesure,
-l&rsquo;<em>entropie</em>, venue de la théorie de l&rsquo;information, donne presque toujours le
-même arbre.</p></blockquote><h2 id=un-arbre-qui-prédit-un-nombre>Un arbre qui prédit un nombre<a class=anchor href=#un-arbre-qui-pr%c3%a9dit-un-nombre></a></h2><p>Rien, dans ce qui précède, ne tient à ce que la réponse soit une catégorie.
-Reprenons la première question du module, le prix, et une seule
-caractéristique, la superficie. Un arbre peut la traiter de la même façon :
-des questions sur la superficie, et dans chaque feuille, au lieu d&rsquo;une couleur
-majoritaire, le <strong>prix moyen</strong> des maisons qui s&rsquo;y trouvent. Seule la mesure du
-mélange change : plutôt que des couleurs mélangées, on regarde à quel point
-les prix d&rsquo;une feuille sont dispersés autour de leur moyenne, et la bonne
-question est celle qui resserre le plus les prix de chaque côté.</p><p>Voici l&rsquo;arbre à deux niveaux appris sur nos vingt maisons. Première
-question : « plus de 194 m² ? ». Puis, chez les petites, « plus de
-154 m² ? », et chez les grandes, « plus de 237 m² ? ». Quatre feuilles,
-quatre prix : 308 000, 430 000, 557 000 et 706 000 \$.</p><label class=book-image for=book-image-toggle-43058717d03e><input class="hidden toggle" type=checkbox id=book-image-toggle-43058717d03e>
+côtés, pondérée par leur taille. Sur nos maisons, l&rsquo;indice de départ vaut 0,48,
+et il descend à 0,18 après la question sur la distance. Une autre mesure,
+l&rsquo;<em>entropie</em>, issue de la théorie de l&rsquo;information, donne presque toujours le
+même arbre.</p></blockquote><h2 id=un-arbre-qui-prédit-un-nombre>Un arbre qui prédit un nombre<a class=anchor href=#un-arbre-qui-pr%c3%a9dit-un-nombre></a></h2><p>Rien de ce qui précède ne dépend du fait que la réponse soit une catégorie.
+Reprenons la première question du module, le prix, avec une seule
+caractéristique, la superficie. Un arbre peut la traiter de la même façon. Il
+pose des questions sur la superficie et, dans chaque feuille, il donne le <strong>prix
+moyen</strong> des maisons qui s&rsquo;y trouvent au lieu d&rsquo;une couleur majoritaire. Seule la
+mesure du mélange change. On regarde à quel point les prix d&rsquo;une feuille sont
+dispersés autour de leur moyenne, et la meilleure question est celle qui réduit
+le plus cette dispersion de chaque côté.</p><p>Voici l&rsquo;arbre à deux niveaux appris sur nos vingt maisons. La première question
+est « plus de 194 m² ? ». Pour les petites maisons, la question suivante est
+« plus de 154 m² ? » et, pour les grandes, « plus de 237 m² ? ». On obtient
+quatre feuilles et quatre prix : 308 000, 430 000, 557 000 et 706 000 \$.</p><label class=book-image for=book-image-toggle-89bfe94d236f><input class="hidden toggle" type=checkbox id=book-image-toggle-89bfe94d236f>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-prix-escalier.svg alt="Le nuage des maisons (superficie, prix) avec, en pointillé pâle, la droite ajustée, et en trait plein brun un escalier à quatre marches : l'arbre de régression à deux niveaux de questions coupe la superficie à 194 m², puis à 154 et à 237, et prédit dans chaque intervalle le prix moyen des maisons qui s'y trouvent." loading=lazy title="L'arbre de régression, dessiné sur le nuage : un escalier à quatre paliers, un par feuille. En pointillé, la droite, pour comparer." width=660 height=460 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-43058717d03e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Dessiné sur le nuage, l&rsquo;arbre est un <strong>escalier</strong> : quatre paliers
-horizontaux, un par feuille, avec une marche à chaque seuil. C&rsquo;est une drôle de
-courbe. Elle ne monte pas, elle saute ; entre 154 et 194 m², toutes les
-maisons valent 430 000 \$, qu&rsquo;elles fassent 155 ou 193 m². Et pourtant, avec
-ses quatre paliers, elle colle déjà mieux au nuage que la droite d&rsquo;<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle
-qui s&rsquo;entraîne</em></a> : elle se trompe de
-32 000 \$ en moyenne, contre 41 000 pour la droite. Un niveau de plus, huit
-paliers, et l&rsquo;erreur tombe à 23 000 \$.</p><p>Cette comparaison en dit long sur les deux modèles. La droite <em>parie</em> sur une
-forme, la ligne droite, et ne peut rien faire d&rsquo;autre ; si les prix suivaient
-une courbe, elle la manquerait. L&rsquo;escalier ne parie sur rien : avec assez de
-marches, il épouse n&rsquo;importe quelle forme. C&rsquo;est sa force. Mais chaque palier
-est calculé sur une poignée de maisons seulement, cinq ici, et c&rsquo;est aussi sa
-faiblesse : la droite lisse ses vingt maisons en deux nombres, l&rsquo;escalier les
-découpe en petits groupes qui ne se parlent plus. Et surtout, l&rsquo;escalier ne
-sait pas <em>extrapoler</em> : au-delà de 280 m², il répond 706 000 \$ pour
-toujours, quand la droite, elle, continue de monter. Laquelle a raison hors du
-nuage ? Nous verrons, dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
-modèle</em></a>, que la question est mal posée : ni
-l&rsquo;une ni l&rsquo;autre n&rsquo;a de garantie là-bas.</p><p>Un arbre de régression, donc : les mêmes questions, les mêmes feuilles, et
-une moyenne à la place d&rsquo;un vote. Exactement la bifurcation que kNN nous avait
-montrée, à sa toute dernière étape.</p><h2 id=jusquoù-laisser-pousser-larbre>Jusqu&rsquo;où laisser pousser l&rsquo;arbre ?<a class=anchor href=#jusquo%c3%b9-laisser-pousser-larbre></a></h2><p>Revenons à la classification et laissons l&rsquo;arbre poser d&rsquo;autres questions.
-Après « à plus de 11 km du centre ? », il en cherche une dans chaque
-feuille, puis dans chaque nouvelle feuille, jusqu&rsquo;à ce que plus aucune ne
-mélange les couleurs. Voici ce qu&rsquo;il devient sur trois niveaux :</p><label class=book-image for=book-image-toggle-f8992122f896><input class="hidden toggle" type=checkbox id=book-image-toggle-f8992122f896>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-89bfe94d236f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Dessiné sur le nuage, l&rsquo;arbre forme un <strong>escalier</strong> : quatre paliers
+horizontaux, un par feuille, avec une marche à chaque seuil. Cette courbe ne
+monte pas de façon continue, elle avance par sauts. Par exemple, entre 154 et
+194 m², toutes les maisons valent 430 000 \$, qu&rsquo;elles fassent 155 ou 193 m².
+Pourtant, avec ses quatre paliers, l&rsquo;escalier suit déjà mieux le nuage que la
+droite d&rsquo;<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle qui s&rsquo;entraîne</em></a> :
+son erreur moyenne est de 32 000 \$, contre 41 000 pour la droite. Avec un
+niveau de plus, soit huit paliers, l&rsquo;erreur descend à 23 000 \$.</p><p>Cette comparaison met en évidence les différences entre les deux modèles. La
+droite suppose une forme précise, la ligne droite, et ne peut rien représenter
+d&rsquo;autre. Si les prix suivaient une courbe, elle ne pourrait pas la suivre.
+L&rsquo;escalier ne suppose aucune forme : avec assez de marches, il peut s&rsquo;adapter à
+n&rsquo;importe quelle forme. C&rsquo;est sa force. Cependant, chaque palier est calculé sur
+un petit nombre de maisons, cinq ici, et c&rsquo;est aussi sa faiblesse. La droite
+résume ses vingt maisons en deux nombres, alors que l&rsquo;escalier les découpe en
+petits groupes traités séparément. De plus, l&rsquo;escalier ne peut pas
+extrapoler : au-delà de 280 m², il répond toujours 706 000 \$, alors que la
+droite continue de monter. Nous verrons dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
+modèle</em></a> qu&rsquo;on ne peut pas dire lequel des deux a
+raison hors du nuage, car aucun des deux n&rsquo;offre de garantie dans cette zone.</p><p>Un arbre de régression utilise donc les mêmes questions et les mêmes feuilles
+qu&rsquo;un arbre de classification, avec une moyenne à la place d&rsquo;un vote. C&rsquo;est la
+même distinction que celle que kNN avait présentée à sa dernière étape.</p><h2 id=jusquoù-laisser-pousser-larbre>Jusqu&rsquo;où laisser pousser l&rsquo;arbre ?<a class=anchor href=#jusquo%c3%b9-laisser-pousser-larbre></a></h2><p>Revenons à la classification et laissons l&rsquo;arbre poser d&rsquo;autres questions. Après
+« à plus de 11 km du centre ? », il cherche une question dans chaque feuille,
+puis dans chaque nouvelle feuille, jusqu&rsquo;à ce qu&rsquo;aucune feuille ne mélange plus
+les couleurs. Voici l&rsquo;arbre obtenu sur trois niveaux :</p><label class=book-image for=book-image-toggle-e9877ef0d55f><input class="hidden toggle" type=checkbox id=book-image-toggle-e9877ef0d55f>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-maisons-profond.svg alt="L'arbre laissé pousser sur trois niveaux : après « à plus de 11 km du centre ? », il pose des questions sur l'année puis sur la distance jusqu'à isoler chacune des deux exceptions dans une feuille à elle. Six feuilles, chacune annotée du nombre de maisons vendues vite sur le nombre de maisons de la feuille : plus aucune erreur sur les vingt maisons." loading=lazy title="Le même arbre, laissé pousser sur trois niveaux : six feuilles, zéro erreur, et une feuille sur mesure pour chaque exception." width=660 height=360 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-f8992122f896"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Six feuilles, et plus une seule erreur. L&rsquo;arbre a trouvé le moyen de rattraper
-les deux exceptions : une question sur l&rsquo;année, puis une sur la distance, et
-voilà la vieille maison partie vite isolée dans une feuille à elle ; deux
-questions de plus, et la maison récente qui a traîné a la sienne. Dans le
-plan, chaque question ajoute une coupe, et la frontière devient un assemblage
-de rectangles :</p><label class=book-image for=book-image-toggle-01829935821c><input class="hidden toggle" type=checkbox id=book-image-toggle-01829935821c>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-e9877ef0d55f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;arbre compte maintenant six feuilles et ne fait plus aucune erreur. Il a
+trouvé le moyen de traiter les deux exceptions. Une question sur l&rsquo;année, puis
+une question sur la distance, isolent dans sa propre feuille la maison ancienne
+qui s&rsquo;est vendue vite. Deux questions de plus isolent de même la maison récente
+qui s&rsquo;est vendue lentement. Dans le plan, chaque question ajoute une coupe, et
+la frontière devient un assemblage de rectangles :</p><label class=book-image for=book-image-toggle-957173f55814><input class="hidden toggle" type=checkbox id=book-image-toggle-957173f55814>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-maisons-frontiere-profond.svg alt="Le même plan distance × année, découpé par plusieurs coupes verticales et horizontales en rectangles teintés : l'arbre a isolé chacune des deux exceptions dans un petit rectangle de sa couleur, au prix d'une frontière en escalier." loading=lazy title="La frontière de l'arbre à trois niveaux : des rectangles, dont deux taillés sur mesure autour des exceptions." width=660 height=500 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-01829935821c"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Regardez ces deux petits rectangles taillés sur mesure autour des exceptions.
-Vous les avez déjà vus, sous une autre forme : ce sont les îlots que kNN
-dessinait avec <em>k</em> = 1, dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/#le-choix-de-k><em>Prédire par
-ressemblance</em></a>. Le
-même phénomène, dans un autre modèle. Un arbre laissé libre pousse jusqu&rsquo;à ce
-que chaque feuille soit pure, au besoin en donnant une feuille à chaque
-maison : il <em>colle</em> aux vingt maisons jusqu&rsquo;au dernier détail, et prend pour
-argent comptant les deux qui n&rsquo;obéissent pas à la règle. Une maison nouvelle,
-vieille et loin du centre, qui tomberait dans le rectangle de l&rsquo;exception,
-serait déclarée « vendue vite » sur la foi d&rsquo;un seul précédent.</p><p>Il y a donc, chez l&rsquo;arbre comme chez kNN, un curseur à régler : la
-<strong>profondeur</strong>, le nombre de questions qu&rsquo;on l&rsquo;autorise à poser à la suite.
-Trop peu, et l&rsquo;arbre est grossier ; sur des données où les deux amas
-n&rsquo;auraient pas été si nets, une seule coupe verticale ne suffirait pas. Trop,
-et il apprend par cœur : c&rsquo;est le sur-apprentissage (<em>overfitting</em>) de kNN,
-sous une autre forme, et <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a> en fera
-le cœur du sujet. Entre les deux, la bonne profondeur est celle qui
-capte les vraies régularités sans épouser les accidents ; et rien, dans les
-vingt maisons, ne la désigne. Nous avons rencontré ce dilemme avec <em>k</em>, nous le
-retrouverons pour tout modèle dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a>,
-où l&rsquo;arbre servira d&rsquo;emblème. Retenez pour l&rsquo;instant les deux façons de tenir
-un arbre en laisse : lui interdire de dépasser une profondeur, ou le laisser
-pousser puis <strong>l&rsquo;élaguer</strong>, en coupant après coup les branches qui n&rsquo;apportent
-que du détail.</p><p>L&rsquo;applet ci-dessous vous laisse faire l&rsquo;expérience. Des points rouges et
-bleus, un arbre appris en direct, et son fond dans le plan ; à droite, l&rsquo;arbre
-lui-même, qui se redessine à chaque changement. Faites glisser la profondeur
-maximale de 1 à 8 et regardez les rectangles se multiplier autour des points
-isolés ; ajoutez un point d&rsquo;une couleur au milieu de l&rsquo;autre, et observez ce
-que l&rsquo;arbre invente pour l&rsquo;accommoder. Survolez une zone du plan : son chemin
-s&rsquo;allume dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1790527238552635151 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Quittons nos maisons pour de vraies données, celles que nous croiserons à
-propos des fuites dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un modèle</em></a> :
-la liste des 1309 passagers du <em>Titanic</em>, avec pour chacun la classe, le sexe,
-l&rsquo;âge, et s&rsquo;il a survécu. Trente-huit pour cent ont survécu. Le modèle le plus
-bête, « tout le monde meurt », obtient donc 62 % de bonnes réponses ;
-c&rsquo;est l&rsquo;étalon. Laissons un arbre apprendre sur ces passagers, avec deux
-niveaux de questions :</p><label class=book-image for=book-image-toggle-42607f09992f><input class="hidden toggle" type=checkbox id=book-image-toggle-42607f09992f>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-titanic.svg alt="Un arbre à deux niveaux appris sur les 1309 passagers du Titanic. Première question : une femme ? Pour les hommes, la question suivante est « plus de 9 ans ? » : les garçons (43) ont survécu à 58 %, les hommes adultes (800) à 17 %. Pour les femmes, « en troisième classe ? » : celles de première ou deuxième classe (250) ont survécu à 93 %, celles de troisième (216) à 49 %." loading=lazy title="L'arbre du Titanic, appris sur les vraies données : trois questions, 79 % de bonnes réponses, et une histoire qu'on peut lire." width=660 height=345 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-42607f09992f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La première question que l&rsquo;arbre trouve, à lui seul, sans qu&rsquo;on lui souffle
-rien : « une femme ? ». Elle vaut, seule, 78 % de bonnes réponses, seize
-points de mieux que l&rsquo;étalon. Puis les deux branches posent des questions
-différentes. Chez les hommes : « plus de 9 ans ? » ; les 43 garçons ont
-survécu à 58 %, les 800 hommes adultes à 17 %. Chez les femmes : « en
-troisième classe ? » ; celles de première et deuxième classe ont survécu à
-93 %, celles de troisième à 49 %. Trois questions, et 79 % de bonnes
-réponses.</p><p>Ce que cet arbre a appris, chacun peut le lire : « les femmes et les enfants
-d&rsquo;abord », la consigne donnée cette nuit-là, avec un correctif que l&rsquo;histoire
-confirme : les femmes de troisième classe, logées dans les entreponts, loin
-des canots, ont eu une chance sur deux. L&rsquo;arbre n&rsquo;a pas lu de livre
-d&rsquo;histoire ; il a compté, et il retrouve en trois questions ce que les
-historiens racontent en chapitres. C&rsquo;est aussi l&rsquo;occasion de voir le comptage à
-l&rsquo;œuvre sur un cas ambigu : la feuille des femmes de troisième classe, à
-49 %, est presque moitié-moitié, et l&rsquo;arbre y répond « a péri » à une voix
-près. Une profondeur de plus la découperait selon l&rsquo;âge, sans grand gain :
-passé trois questions, le taux de bonnes réponses ne bouge presque plus. Sur
-ces données, l&rsquo;essentiel tient en trois questions, et le reste est du détail.</p><p>Un dernier point, sur lequel <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
-modèle</em></a> reviendra : ce 79 % a été mesuré sur
-les passagers mêmes qui ont servi à apprendre. Sur un jeu de test, il serait
-un peu plus bas ; avec un arbre plus profond, l&rsquo;écart se creuserait.</p><h2 id=ce-quun-arbre-dit-et-ce-quil-tait>Ce qu&rsquo;un arbre dit, et ce qu&rsquo;il tait<a class=anchor href=#ce-quun-arbre-dit-et-ce-quil-tait></a></h2><p>La grande force de l&rsquo;arbre, vous l&rsquo;avez vue sur le <em>Titanic</em> : il
-<strong>s&rsquo;explique</strong>. Pour toute prédiction, le chemin de la racine à la feuille est
-la justification, lisible en clair : « une femme, en troisième classe, donc
-une chance sur deux ». Cette propriété a un nom, l&rsquo;<strong>explicabilité</strong> (ou
-<em>interprétabilité</em> ; en anglais <em>explainability</em>, <em>interpretability</em>) : la
-capacité d&rsquo;un modèle à rendre compte de ses décisions dans des termes qu&rsquo;un
-humain peut comprendre, vérifier, et contester. L&rsquo;arbre est le modèle le plus
-explicable qui soit, parce que le modèle <em>est</em> son explication : le lire,
-c&rsquo;est déjà savoir pourquoi il répond ce qu&rsquo;il répond.</p><p>Aucun autre modèle de ce module n&rsquo;offre cela au même degré. La droite donne
-une pente, ce qui se comprend encore ; la régression logistique, des poids sur
-chaque caractéristique, qu&rsquo;il faut déjà interpréter ; kNN, une liste de
-voisins, qui décrit sans justifier. Et les grands réseaux de neurones du
-<span title="Ce module sera publié plus tard">Module 3</span> n&rsquo;offriront plus rien de tel : des milliards de
-paramètres dont aucun ne veut rien dire pris isolément. C&rsquo;est ce qu&rsquo;on appelle
-une <strong>boîte noire</strong> : le modèle répond, souvent très bien, mais nul ne peut
-dire <em>pourquoi</em>. Toute une discipline, l&rsquo;<em>IA explicable</em> (<em>XAI</em>, pour
-<em>explainable AI</em>), s&rsquo;efforce aujourd&rsquo;hui de rouvrir ces boîtes après coup, en
-cherchant quelles caractéristiques ont pesé dans une décision ; l&rsquo;arbre, lui,
-n&rsquo;a jamais eu besoin qu&rsquo;on le rouvre.</p><p>L&rsquo;enjeu n&rsquo;est pas seulement intellectuel. Dans les domaines où une décision
-doit pouvoir être contestée (un prêt refusé, un diagnostic, un dossier trié,
-une peine évaluée), un modèle qui ne peut pas s&rsquo;expliquer est difficilement
-acceptable. Cette lisibilité vaut alors plus que quelques points de
-performance, et c&rsquo;est l&rsquo;une des raisons pour lesquelles les arbres, nés dans
-les années 1960 et mis au point en 1984 par quatre statisticiens (c&rsquo;est la
-méthode CART, que nous avons suivie ici), n&rsquo;ont jamais quitté la boîte à outils. Nous
-retrouverons cette tension entre performance et explicabilité, en grand, avec
-les grands modèles de langage du <span title="Ce module sera publié plus tard">Module 4</span>.</p><p>Ses faiblesses sont l&rsquo;envers de sa méthode. D&rsquo;abord, un arbre est
-<strong>instable</strong> : rappelez-vous l&rsquo;égalité entre la distance et l&rsquo;année ; retirez
-deux maisons, et la première question change, et avec elle tout l&rsquo;arbre. Deux
-jeux de données presque identiques peuvent donner deux arbres sans rapport,
-qui prédisent pourtant à peu près la même chose. Ensuite, ses coupes sont
-toujours parallèles aux axes : une question ne regarde qu&rsquo;une
-caractéristique. Devant deux amas séparés par une <strong>diagonale</strong>, l&rsquo;arbre
-s&rsquo;épuise en escalier là où une simple droite, comme celle de la régression
-logistique, passerait d&rsquo;un trait. Un modèle non linéaire, donc, mais d&rsquo;une
-non-linéarité particulière, faite de marches.</p><p>La parade à l&rsquo;instabilité est l&rsquo;une des idées les plus fécondes de la
-discipline, et elle tient en une phrase : si un arbre est fragile, prenez-en
-<strong>cent</strong>. On entraîne des centaines d&rsquo;arbres, chacun sur une variante des
-données (un tirage au sort des maisons, un sous-ensemble des
-caractéristiques), et l&rsquo;on fait voter l&rsquo;ensemble, ou l&rsquo;on moyenne ses
-réponses. Les erreurs de chaque arbre, différentes, se compensent ; la réponse
-collective est plus stable et plus juste que celle de n&rsquo;importe quel arbre
-seul. C&rsquo;est la <strong>forêt aléatoire</strong> (<em>random forest</em>), proposée par Leo Breiman en
-2001, et sa cousine plus ambitieuse, le
-<em>gradient boosting</em>, qui fait pousser chaque arbre pour corriger les erreurs
-des précédents. Sur des données en tableau, comme nos maisons ou les passagers
-du <em>Titanic</em>, ces forêts restent, encore aujourd&rsquo;hui, ce qu&rsquo;il y a de plus
-fort, et elles remportent la plupart des compétitions Kaggle dont <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien
-évaluer un modèle</em></a> parle. Au prix, il est vrai,
-de la lisibilité : cent arbres ne se racontent plus.</p><p>Voici l&rsquo;idée sur nos maisons. Trois arbres, dont chacun n&rsquo;a vu qu&rsquo;une partie
-des vingt maisons, tirée au sort, et qu&rsquo;on a laissé pousser librement,
-dessinent trois frontières sans rapport : des bandes, des îlots, chacun ses
-caprices. Faites-en voter cinquante, et les caprices s&rsquo;annulent ; ne survit
-que ce sur quoi les arbres s&rsquo;accordent.</p><label class=book-image for=book-image-toggle-55f9f8496bdd><input class="hidden toggle" type=checkbox id=book-image-toggle-55f9f8496bdd>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/foret-aleatoire.svg alt="En haut, trois petits plans distance × année : trois arbres, chacun appris sur une partie seulement des vingt maisons, tirée au sort (les maisons laissées de côté sont dessinées en creux, et un compte indique combien l'arbre en a vues), et laissé pousser librement, avec des frontières en rectangles toutes différentes et des îlots à des endroits différents. En bas, un plan plus grand : la frontière obtenue en faisant voter cinquante arbres de ce genre, plus régulière, où les bandes et les îlots des arbres isolés se sont fondus, ne laissant que deux petits îlots autour des exceptions." loading=lazy title="La forêt aléatoire : chaque arbre ne voit qu'une partie des maisons et se trompe à sa façon ; le vote de cinquante arbres garde ce sur quoi ils s'accordent." width=660 height=470 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-55f9f8496bdd"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><blockquote class="book-hint info"><p><strong>Deux cultures.</strong> L&rsquo;homme qui a inventé la forêt aléatoire, Leo Breiman, était
-un statisticien passé du côté de l&rsquo;apprentissage automatique, et il a tiré de
-ce passage un texte devenu classique, <a href=https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full>« Statistical Modeling: The Two
+</label><script>(function(){const e=document.getElementById("book-image-toggle-957173f55814"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Observez les deux petits rectangles découpés autour des exceptions. Ils
+correspondent aux îlots que kNN dessinait avec <em>k</em> = 1, dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/#le-choix-de-k><em>Prédire par
+ressemblance</em></a>. Il
+s&rsquo;agit du même phénomène, dans un autre modèle. Un arbre sans limite continue de
+pousser jusqu&rsquo;à ce que chaque feuille soit pure, au besoin en donnant une feuille
+à chaque maison. Il s&rsquo;ajuste alors aux vingt maisons dans leurs moindres détails
+et traite comme des règles les deux cas qui font exception. Une nouvelle maison,
+ancienne et éloignée du centre, qui tomberait dans le rectangle de l&rsquo;exception
+serait déclarée « vendue vite » sur la base d&rsquo;un seul exemple.</p><p>Il faut donc, pour l&rsquo;arbre comme pour kNN, régler un paramètre : la
+<strong>profondeur</strong>, c&rsquo;est-à-dire le nombre de questions que l&rsquo;arbre peut poser à la
+suite. Avec une profondeur trop faible, l&rsquo;arbre est grossier : sur des données où
+les deux amas seraient moins nets, une seule coupe verticale ne suffirait pas.
+Avec une profondeur trop grande, il apprend les exemples par cœur. C&rsquo;est le
+sur-apprentissage (<em>overfitting</em>) déjà observé avec kNN, sous une autre forme, et
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a> en fera son sujet principal. La
+bonne profondeur se situe entre les deux : elle permet de saisir les vraies
+régularités sans reproduire les cas accidentels. Rien, dans les vingt maisons,
+n&rsquo;indique quelle est cette profondeur. Nous avons rencontré ce problème avec <em>k</em>,
+et nous le retrouverons pour tous les modèles dans
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a>, où l&rsquo;arbre servira d&rsquo;exemple
+principal. Pour l&rsquo;instant, retenez les deux façons de limiter un arbre : fixer
+une profondeur maximale, ou le laisser pousser puis <strong>l&rsquo;élaguer</strong>, c&rsquo;est-à-dire
+supprimer après coup les branches qui n&rsquo;apportent que du détail.</p><p>L&rsquo;applet ci-dessous vous permet d&rsquo;en faire l&rsquo;expérience. Elle présente des points
+rouges et bleus, un arbre appris en direct et le fond correspondant dans le plan.
+À droite, l&rsquo;arbre lui-même se redessine à chaque changement. Faites varier la
+profondeur maximale de 1 à 8 et observez les rectangles se multiplier autour des
+points isolés. Ajoutez un point d&rsquo;une couleur au milieu de l&rsquo;autre couleur et
+observez comment l&rsquo;arbre s&rsquo;adapte. Survolez une zone du plan pour voir son chemin
+s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1790527607351709240 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
+utiliserons à propos des fuites dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
+modèle</em></a> : la liste des 1309 passagers du
+<em>Titanic</em>, avec pour chacun la classe, le sexe, l&rsquo;âge et l&rsquo;indication de sa
+survie. Trente-huit pour cent des passagers ont survécu. Le modèle le plus
+bête, qui répond « tout le monde meurt », obtient donc 62 % de bonnes réponses.
+Il sert de point de comparaison. Laissons un arbre apprendre sur ces passagers,
+avec deux niveaux de questions :</p><label class=book-image for=book-image-toggle-8eaf8abffbf8><input class="hidden toggle" type=checkbox id=book-image-toggle-8eaf8abffbf8>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/arbre-titanic.svg alt="Un arbre à deux niveaux appris sur les 1309 passagers du Titanic. Première question : une femme ? Pour les hommes, la question suivante est « plus de 9 ans ? » : les garçons (43) ont survécu à 58 %, les hommes adultes (800) à 17 %. Pour les femmes, « en troisième classe ? » : celles de première ou deuxième classe (250) ont survécu à 93 %, celles de troisième (216) à 49 %." loading=lazy title="L'arbre du Titanic, appris sur les vraies données : trois questions, 79 % de bonnes réponses, et une histoire qu'on peut lire." width=660 height=345 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-8eaf8abffbf8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La première question que l&rsquo;arbre trouve, sans aucune indication, est « une
+femme ? ». À elle seule, elle donne 78 % de bonnes réponses, soit seize points de
+plus que le modèle de comparaison. Les deux branches posent ensuite des questions
+différentes. Pour les hommes, la question est « plus de 9 ans ? » : les
+43 garçons ont survécu à 58 %, les 800 hommes adultes à 17 %. Pour les femmes, la
+question est « en troisième classe ? » : celles de première et de deuxième classe
+ont survécu à 93 %, celles de troisième classe à 49 %. Avec trois questions,
+l&rsquo;arbre obtient 79 % de bonnes réponses.</p><p>Ce que cet arbre a appris peut être lu par tous : « les femmes et les enfants
+d&rsquo;abord », la consigne donnée cette nuit-là, avec une nuance que les historiens
+confirment. Les femmes de troisième classe, logées dans les entreponts, loin des
+canots, ont eu une chance sur deux de survivre. L&rsquo;arbre n&rsquo;a utilisé aucune
+source historique. Il a seulement compté, et il retrouve en trois questions ce
+que les historiens décrivent. Cet exemple montre aussi le comptage appliqué à un
+cas ambigu. La feuille des femmes de troisième classe, à 49 %, est presque
+moitié-moitié, et l&rsquo;arbre y répond « a péri » à une voix près. Un niveau de plus
+la découperait selon l&rsquo;âge, sans gain important : au-delà de trois questions, le
+taux de bonnes réponses ne change presque plus. Sur ces données, l&rsquo;essentiel tient
+en trois questions, et le reste est du détail.</p><p>Un dernier point sera repris dans <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
+modèle</em></a> : ce taux de 79 % a été mesuré sur les
+passagers qui ont servi à l&rsquo;apprentissage. Sur un jeu de test, il serait un peu
+plus bas, et avec un arbre plus profond, l&rsquo;écart serait plus grand.</p><h2 id=ce-quun-arbre-dit-et-ce-quil-tait>Ce qu&rsquo;un arbre dit, et ce qu&rsquo;il tait<a class=anchor href=#ce-quun-arbre-dit-et-ce-quil-tait></a></h2><p>Comme l&rsquo;a montré l&rsquo;exemple du <em>Titanic</em>, la grande force de l&rsquo;arbre est qu&rsquo;il
+peut <strong>expliquer</strong> ses décisions. Pour toute prédiction, le chemin de la racine à
+la feuille constitue la justification, et elle se lit directement : « une femme,
+en troisième classe, donc une chance sur deux ». Cette propriété s&rsquo;appelle
+l&rsquo;<strong>explicabilité</strong> (ou <em>interprétabilité</em> ; en anglais <em>explainability</em>,
+<em>interpretability</em>). C&rsquo;est la capacité d&rsquo;un modèle à rendre compte de ses
+décisions dans des termes qu&rsquo;un humain peut comprendre, vérifier et contester.
+L&rsquo;arbre est l&rsquo;un des modèles les plus explicables, parce que le modèle est
+lui-même son explication : en le lisant, on sait pourquoi il donne telle
+réponse.</p><p>Aucun autre modèle de ce module n&rsquo;offre cette propriété au même degré. La droite
+donne une pente, qui se comprend facilement. La régression logistique donne des
+poids associés à chaque caractéristique, qu&rsquo;il faut interpréter. kNN donne une
+liste de voisins, qui décrit la décision sans la justifier. Les grands réseaux de
+neurones du <span title="Ce module sera publié plus tard">Module 3</span> n&rsquo;offriront rien de comparable : ils
+comptent des milliards de paramètres, dont aucun n&rsquo;a de sens pris isolément. On
+parle alors de <strong>boîte noire</strong> : le modèle répond, souvent très bien, mais
+personne ne peut dire pourquoi. Tout un domaine de recherche, l&rsquo;<em>IA explicable</em>
+(<em>XAI</em>, pour <em>explainable AI</em>), cherche aujourd&rsquo;hui à analyser ces modèles après
+coup, en déterminant quelles caractéristiques ont compté dans une décision.
+L&rsquo;arbre, lui, n&rsquo;a pas besoin de cette analyse.</p><p>L&rsquo;enjeu n&rsquo;est pas seulement théorique. Dans les domaines où une décision doit
+pouvoir être contestée (un prêt refusé, un diagnostic, un dossier trié, une peine
+évaluée), un modèle qui ne peut pas expliquer ses décisions est difficile à
+accepter. La lisibilité compte alors davantage que quelques points de
+performance. C&rsquo;est l&rsquo;une des raisons pour lesquelles les arbres, apparus dans les
+années 1960 et mis au point en 1984 par quatre statisticiens (c&rsquo;est la méthode
+CART, celle que nous avons suivie ici), sont toujours utilisés. Nous retrouverons
+cette opposition entre performance et explicabilité avec les grands modèles de
+langage du <span title="Ce module sera publié plus tard">Module 4</span>.</p><p>Les faiblesses de l&rsquo;arbre découlent de sa méthode. D&rsquo;abord, un arbre est
+<strong>instable</strong>. Rappelez-vous l&rsquo;égalité entre la distance et l&rsquo;année : si l&rsquo;on
+retire deux maisons, la première question peut changer, et tout l&rsquo;arbre avec
+elle. Deux jeux de données presque identiques peuvent produire deux arbres très
+différents, qui font pourtant à peu près les mêmes prédictions. Ensuite, ses
+coupes sont toujours parallèles aux axes, puisqu&rsquo;une question ne porte que sur
+une caractéristique. Pour séparer deux amas le long d&rsquo;une <strong>diagonale</strong>, l&rsquo;arbre
+doit construire un escalier de nombreuses coupes, alors qu&rsquo;une simple droite,
+comme celle de la régression logistique, y parviendrait en une fois. L&rsquo;arbre est
+donc un modèle non linéaire, mais d&rsquo;un type particulier, fait de marches.</p><p>La solution à l&rsquo;instabilité est l&rsquo;une des idées les plus productives du domaine,
+et elle se résume simplement : si un arbre est fragile, on en utilise <strong>cent</strong>.
+On entraîne des centaines d&rsquo;arbres, chacun sur une variante des données (un
+tirage au sort des maisons, un sous-ensemble des caractéristiques), puis on les
+fait voter ou on fait la moyenne de leurs réponses. Comme les erreurs des arbres
+sont différentes, elles se compensent, et la réponse collective est plus stable
+et plus juste que celle d&rsquo;un arbre seul. C&rsquo;est la <strong>forêt aléatoire</strong> (<em>random
+forest</em>), proposée par Leo Breiman en 2001. Une méthode apparentée et plus
+élaborée, le <em>gradient boosting</em>, construit chaque arbre de façon à corriger les
+erreurs des précédents. Sur des données en tableau, comme nos maisons ou les
+passagers du <em>Titanic</em>, ces méthodes restent aujourd&rsquo;hui parmi les plus
+performantes, et elles remportent la plupart des compétitions Kaggle dont parle
+<a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un modèle</em></a>. Elles perdent
+cependant la lisibilité de l&rsquo;arbre seul, car on ne peut pas lire cent arbres
+comme on en lit un.</p><p>La figure suivante illustre cette idée sur nos maisons. Trois arbres, chacun
+appris sur une partie des vingt maisons tirée au sort et laissé pousser sans
+limite, produisent trois frontières très différentes, avec des bandes et des
+îlots à des endroits différents. Si l&rsquo;on fait voter cinquante arbres de ce type,
+ces particularités s&rsquo;annulent, et il ne reste que ce sur quoi les arbres
+s&rsquo;accordent.</p><label class=book-image for=book-image-toggle-31005aad314b><input class="hidden toggle" type=checkbox id=book-image-toggle-31005aad314b>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module2/foret-aleatoire.svg alt="En haut, trois petits plans distance × année : trois arbres, chacun appris sur une partie seulement des vingt maisons, tirée au sort (les maisons laissées de côté sont dessinées en creux, et un compte indique combien l'arbre en a vues), et laissé pousser librement, avec des frontières en rectangles toutes différentes et des îlots à des endroits différents. En bas, un plan plus grand : la frontière obtenue en faisant voter cinquante arbres de ce genre, plus régulière, où les bandes et les îlots des arbres isolés se sont fondus, ne laissant que deux petits îlots autour des exceptions." loading=lazy title="La forêt aléatoire : chaque arbre ne voit qu'une partie des maisons et se trompe différemment ; le vote de cinquante arbres garde ce sur quoi ils s'accordent." width=660 height=470 style=--largeur-plafond:660px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-31005aad314b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><blockquote class="book-hint info"><p><strong>Deux cultures.</strong> Leo Breiman, l&rsquo;inventeur de la forêt aléatoire, était un
+statisticien venu à l&rsquo;apprentissage automatique. Il a tiré de ce parcours un
+texte devenu classique, <a href=https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full>« Statistical Modeling: The Two
 Cultures »</a>
-(2001), que l&rsquo;accueil de ce module annonçait. Sa thèse : deux cultures se
-partagent l&rsquo;analyse des données. La première, celle de la statistique
-classique, suppose que les données ont été produites par un mécanisme simple
-qu&rsquo;un modèle lisible peut décrire, et juge le modèle à sa fidélité supposée à
-ce mécanisme. La seconde, celle de l&rsquo;apprentissage automatique, traite le
-mécanisme comme inconnu, et ne juge un modèle qu&rsquo;à une chose : la qualité de
-ses prédictions sur des données neuves. L&rsquo;arbre seul appartient à la première
-culture ; la forêt, à la seconde. Breiman y voit un <strong>dilemme d&rsquo;Occam</strong> : le
-rasoir d&rsquo;Occam recommande le modèle le plus simple, mais sur des données
-réelles le modèle le plus précis est rarement le plus simple, et il faut
-choisir entre comprendre et prédire, là où l&rsquo;on aurait aimé avoir les deux. Et Breiman relevait une conséquence
-troublante, qu&rsquo;il appelait l&rsquo;<strong>effet Rashomon</strong>, du nom du film où quatre
-témoins racontent quatre versions du même crime : sur les mêmes données, des
-modèles très différents sont souvent <em>également</em> bons. Vous l&rsquo;avez vu de vos
-yeux : la distance et l&rsquo;année séparaient nos maisons tout aussi bien. Il n&rsquo;y a
-donc pas <em>le</em> bon modèle, et l&rsquo;explication qu&rsquo;en tire un arbre est une
-explication parmi d&rsquo;autres possibles. De quoi tempérer la confiance qu&rsquo;on met
-dans un modèle qui s&rsquo;explique : il dit <em>un</em> chemin qui marche, pas <em>le</em>
-mécanisme du monde. Nous y reviendrons au <span title="Ce module sera publié plus tard">Module 5</span>, quand il
-s&rsquo;agira de se demander ce qu&rsquo;expliquer veut dire.</p></blockquote><h2 id=et-sur-des-données-neuves>Et sur des données neuves ?<a class=anchor href=#et-sur-des-donn%c3%a9es-neuves></a></h2><p>Faisons le point. Nous avons maintenant tout un arsenal : une droite qui
-prédit un nombre, deux classificateurs qui prédisent une catégorie, un arbre
-qui fait les deux en posant des questions, et deux moteurs pour les
+(2001), annoncé dans la page d&rsquo;accueil de ce module. Selon sa thèse, deux
+cultures se partagent l&rsquo;analyse des données. La première, celle de la
+statistique classique, suppose que les données ont été produites par un
+mécanisme simple qu&rsquo;un modèle lisible peut décrire, et elle évalue le modèle
+selon sa fidélité supposée à ce mécanisme. La seconde, celle de l&rsquo;apprentissage
+automatique, considère le mécanisme comme inconnu et n&rsquo;évalue un modèle que sur
+la qualité de ses prédictions sur des données nouvelles. L&rsquo;arbre seul appartient
+à la première culture, la forêt à la seconde. Breiman parle d&rsquo;un <strong>dilemme
+d&rsquo;Occam</strong>. Le rasoir d&rsquo;Occam recommande de choisir le modèle le plus simple, mais
+sur des données réelles le modèle le plus précis est rarement le plus simple, et
+il faut alors choisir entre comprendre et prédire, alors qu&rsquo;on voudrait les deux.
+Breiman relevait aussi une conséquence qu&rsquo;il appelait l&rsquo;<strong>effet Rashomon</strong>, du
+nom du film où quatre témoins racontent quatre versions du même crime : sur les
+mêmes données, des modèles très différents sont souvent également bons. Vous
+l&rsquo;avez constaté avec nos maisons, que la distance et l&rsquo;année séparaient aussi
+bien l&rsquo;une que l&rsquo;autre. Il n&rsquo;existe donc pas un seul bon modèle, et l&rsquo;explication
+fournie par un arbre n&rsquo;est qu&rsquo;une explication possible parmi d&rsquo;autres. Il faut
+donc rester prudent envers un modèle qui s&rsquo;explique : il décrit un chemin de
+décision qui fonctionne, et non le mécanisme réel du monde. Nous reviendrons sur
+cette question au <span title="Ce module sera publié plus tard">Module 5</span>, à propos de ce que signifie
+expliquer.</p></blockquote><h2 id=et-sur-des-données-neuves>Et sur des données neuves ?<a class=anchor href=#et-sur-des-donn%c3%a9es-neuves></a></h2><p>Récapitulons. Nous disposons maintenant de plusieurs modèles : une droite qui
+prédit un nombre, deux classificateurs qui prédisent une catégorie, et un arbre
+qui fait les deux en posant des questions. Nous avons aussi vu deux façons de les
 entraîner : minimiser une fonction d&rsquo;erreur, ou chercher la question la plus
-pure. Chacun apprend en collant le mieux possible <strong>aux exemples qu&rsquo;on lui a
-montrés</strong>.</p><p>Mais relisons cette dernière phrase. <em>Aux exemples qu&rsquo;on lui a montrés.</em> Or ce
-n&rsquo;est pas du tout ce qui nous intéresse ! Un filtre anti-pourriel qui classe
-parfaitement les courriels d&rsquo;hier (ceux qui ont servi à l&rsquo;entraîner) ne vaut
-rien s&rsquo;il se trompe sur ceux qui arriveront demain. Depuis la première page de
-ce module, le but n&rsquo;a jamais été de <em>mémoriser</em> des exemples, mais d&rsquo;en tirer
-de quoi traiter des cas <strong>encore jamais vus</strong>.</p><p>Et là se cache un piège. Un modèle peut très bien réussir un sans-faute sur ses
-données d&rsquo;entraînement <em>et</em> s&rsquo;effondrer sur des données neuves, un peu comme un
-étudiant qui aurait appris les réponses du corrigé par cœur sans rien
-comprendre au sujet. C&rsquo;est le sur-apprentissage (<em>overfitting</em>), déjà croisé
-deux fois, et que la page suivante va enfin prendre de front. Nous venons d&rsquo;en
-voir l&rsquo;image la plus nette : l&rsquo;arbre
-laissé pousser jusqu&rsquo;à isoler chaque exception, qui ne se trompe plus jamais
-sur les vingt maisons, et qui n&rsquo;a rien appris d&rsquo;elles qu&rsquo;il ne puisse réciter.
-Nous avions déjà croisé l&rsquo;ombre de ce problème à propos de kNN et de son
-réglage de $k$ : trop coller aux exemples peut être une <em>faiblesse</em>, pas une
-force.</p><p>Comment, alors, mesurer si un modèle a vraiment <em>appris</em> plutôt que
-<em>retenu</em> ? Comment déjouer le piège ? C&rsquo;est toute la question de la
-<strong>généralisation</strong>, et le sujet de la page suivante.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+pure. Chacun de ces modèles apprend en s&rsquo;ajustant le mieux possible <strong>aux
+exemples qu&rsquo;on lui a montrés</strong>.</p><p>Or ce n&rsquo;est pas ce qui nous intéresse vraiment. Un filtre anti-pourriel qui
+classe parfaitement les courriels d&rsquo;hier (ceux qui ont servi à l&rsquo;entraîner) est
+inutile s&rsquo;il se trompe sur ceux qui arriveront demain. Depuis le début de ce
+module, le but n&rsquo;est pas de mémoriser des exemples, mais d&rsquo;en tirer ce qu&rsquo;il faut
+pour traiter des cas <strong>encore jamais vus</strong>.</p><p>Il y a là une difficulté. Un modèle peut ne faire aucune erreur sur ses données
+d&rsquo;entraînement et faire beaucoup d&rsquo;erreurs sur des données nouvelles, comme un
+étudiant qui aurait appris par cœur les réponses du corrigé sans comprendre la
+matière. C&rsquo;est le sur-apprentissage (<em>overfitting</em>), déjà rencontré deux fois,
+que la page suivante traite en détail. Nous venons d&rsquo;en voir l&rsquo;exemple le plus
+net : l&rsquo;arbre laissé pousser jusqu&rsquo;à isoler chaque exception, qui ne se trompe
+plus sur les vingt maisons mais n&rsquo;en a retenu que ce qu&rsquo;il peut reproduire. Nous
+avions déjà rencontré ce problème avec kNN et le réglage de $k$ : trop s&rsquo;ajuster
+aux exemples peut être une faiblesse plutôt qu&rsquo;une force.</p><p>Il faut donc savoir mesurer si un modèle a vraiment appris ou s&rsquo;il a seulement
+retenu les exemples, et savoir éviter ce problème. C&rsquo;est la question de la
+<strong>généralisation</strong>, qui fait l&rsquo;objet de la page suivante.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
 <span>Classer</span>
 </a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/ class="flex align-center"><span>Généraliser</span>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#une-question-suffit-presque>Une question suffit presque</a></li><li><a href=#comment-larbre-choisit-ses-questions>Comment l&rsquo;arbre choisit ses questions</a></li><li><a href=#un-arbre-qui-prédit-un-nombre>Un arbre qui prédit un nombre</a></li><li><a href=#jusquoù-laisser-pousser-larbre>Jusqu&rsquo;où laisser pousser l&rsquo;arbre ?</a></li><li><a href=#larbre-du-titanic>L’arbre du <em>Titanic</em></a></li><li><a href=#ce-quun-arbre-dit-et-ce-quil-tait>Ce qu&rsquo;un arbre dit, et ce qu&rsquo;il tait</a></li><li><a href=#et-sur-des-données-neuves>Et sur des données neuves ?</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>
