@@ -30,10 +30,28 @@ C'est par exemple le principe du **va-et-vient**, où deux interrupteurs command
 une même lampe, souvent aux deux bouts d'un couloir. Quand on bascule l'un ou l'autre
 interrupteur, la lumière change d'état. Si les deux interrupteurs sont dans la même
 position, la lampe est éteinte ; s'ils sont dans des positions opposées, elle est
-allumée. La réponse dépend donc du désaccord entre les deux entrées. Cette règle est
-facile à comprendre pour un humain, mais le perceptron ne peut pas l'apprendre, parce
-qu'aucun réglage de ses connexions ne lui permet de séparer par une seule droite les
-cas « allumé » des cas « éteint ».
+allumée. La réponse dépend donc du désaccord entre les deux entrées.
+
+On peut résumer le XOR dans une **table de vérité**, qui donne la réponse pour
+chaque combinaison possible des deux entrées. On note 0 pour « bas » (ou « faux »)
+et 1 pour « haut » (ou « vrai ») :
+
+| Interrupteur A | Interrupteur B | Lampe (A XOR B) |
+|:---:|:---:|:---:|
+| 0 | 0 | 0 (éteinte) |
+| 0 | 1 | 1 (allumée) |
+| 1 | 0 | 1 (allumée) |
+| 1 | 1 | 0 (éteinte) |
+
+La sortie vaut 1 seulement quand les deux entrées diffèrent. Si l'on place ces
+quatre cas sur un plan, avec A à l'horizontale et B à la verticale, les deux cas
+« allumé » occupent deux coins opposés d'un carré, et les deux cas « éteint » les
+deux autres coins. Cette règle est facile à comprendre pour un humain, mais le
+perceptron ne peut pas l'apprendre, parce qu'il classe les cas en traçant une seule
+droite, et qu'aucune droite ne sépare ces deux paires de coins. Le
+[Module 2](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner)
+reprend cet exemple avec une figure, et montre comment d'autres modèles réussissent
+là où une droite échoue.
 
 Le livre eut des conséquences importantes. Minsky avait une grande autorité, et il
 appartenait au camp adverse. Sa démonstration, mathématiquement correcte, fut
