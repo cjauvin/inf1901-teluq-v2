@@ -1,5 +1,8 @@
-<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est achevé sur un constat sévère : on ne peut pas écrire le sens commun, parce qu’il n’a pas de fond. Faut-il pour autant renoncer ? Les chercheurs des années 1970 tirent du mur une leçon plus rusée que désespérée. Si le savoir général est hors d’atteinte, c’est peut-être qu’on visait trop large. Alors : visons étroit.
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Capturer l'expertise : les systèmes experts"><meta property="og:description" content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est achevé sur un constat sévère : on ne peut pas écrire le sens commun, parce qu’il n’a pas de fond. Faut-il pour autant renoncer ? Les chercheurs des années 1970 tirent du mur une leçon plus rusée que désespérée. Si le savoir général est hors d’atteinte, c’est peut-être qu’on visait trop large. Alors : visons étroit."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Capturer l'expertise : les systèmes experts"><meta itemprop=description content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est achevé sur un constat sévère : on ne peut pas écrire le sens commun, parce qu’il n’a pas de fond. Faut-il pour autant renoncer ? Les chercheurs des années 1970 tirent du mur une leçon plus rusée que désespérée. Si le savoir général est hors d’atteinte, c’est peut-être qu’on visait trop large. Alors : visons étroit."><meta itemprop=wordCount content="2541"><title>Capturer l'expertise : les systèmes experts • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est terminé sur un constat : on ne peut pas écrire le sens commun, parce qu’il n’a pas de limite. Les chercheurs des années 1970 en tirent une conclusion pratique. Si le savoir général est hors d’atteinte, il faut viser un savoir plus étroit.
+L’idée est la suivante. Au lieu de chercher une intelligence générale, on choisit un seul domaine bien délimité (diagnostiquer une infection, configurer un ordinateur, prospecter un gisement minier) et on tente d’y reproduire la compétence d’un seul expert. Dans un domaine spécialisé, le savoir-faire d’un expert ressemble souvent à un grand ensemble de règles de la forme si telles conditions, alors telle conclusion. Le médecin qui raisonne « si le patient a de la fièvre et telle bactérie dans le sang, alors prescrire tel antibiotique » applique une règle. Si on recueille assez de ces règles et qu’on les inscrit dans la machine, celle-ci devrait raisonner comme l’expert, du moins dans ce domaine. C’est le principe des systèmes experts, qu’on peut résumer par la formule suivante : connaissance = règles explicites.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Capturer l'expertise : les systèmes experts"><meta property="og:description" content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est terminé sur un constat : on ne peut pas écrire le sens commun, parce qu’il n’a pas de limite. Les chercheurs des années 1970 en tirent une conclusion pratique. Si le savoir général est hors d’atteinte, il faut viser un savoir plus étroit.
+L’idée est la suivante. Au lieu de chercher une intelligence générale, on choisit un seul domaine bien délimité (diagnostiquer une infection, configurer un ordinateur, prospecter un gisement minier) et on tente d’y reproduire la compétence d’un seul expert. Dans un domaine spécialisé, le savoir-faire d’un expert ressemble souvent à un grand ensemble de règles de la forme si telles conditions, alors telle conclusion. Le médecin qui raisonne « si le patient a de la fièvre et telle bactérie dans le sang, alors prescrire tel antibiotique » applique une règle. Si on recueille assez de ces règles et qu’on les inscrit dans la machine, celle-ci devrait raisonner comme l’expert, du moins dans ce domaine. C’est le principe des systèmes experts, qu’on peut résumer par la formule suivante : connaissance = règles explicites."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Capturer l'expertise : les systèmes experts"><meta itemprop=description content="Capturer l’expertise : les systèmes experts Rétrécir et codifier le monde pour réussir Le chapitre « Représenter le monde » s’est terminé sur un constat : on ne peut pas écrire le sens commun, parce qu’il n’a pas de limite. Les chercheurs des années 1970 en tirent une conclusion pratique. Si le savoir général est hors d’atteinte, il faut viser un savoir plus étroit.
+L’idée est la suivante. Au lieu de chercher une intelligence générale, on choisit un seul domaine bien délimité (diagnostiquer une infection, configurer un ordinateur, prospecter un gisement minier) et on tente d’y reproduire la compétence d’un seul expert. Dans un domaine spécialisé, le savoir-faire d’un expert ressemble souvent à un grand ensemble de règles de la forme si telles conditions, alors telle conclusion. Le médecin qui raisonne « si le patient a de la fièvre et telle bactérie dans le sang, alors prescrire tel antibiotique » applique une règle. Si on recueille assez de ces règles et qu’on les inscrit dans la machine, celle-ci devrait raisonner comme l’expert, du moins dans ce domaine. C’est le principe des systèmes experts, qu’on peut résumer par la formule suivante : connaissance = règles explicites."><meta itemprop=wordCount content="2354"><title>Capturer l'expertise : les systèmes experts • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=https://cjauvin.github.io/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=https://cjauvin.github.io/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=https://cjauvin.github.io/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/systemes-experts/><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/book.min.26c26a0df9344386f075aa305959e074feb6105acd54dc2228cda0572a2027b9.css integrity="sha256-JsJqDfk0Q4bwdaowWVngdP62EFrNVNwiKM2gVyogJ7k=" crossorigin=anonymous><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=https://cjauvin.github.io/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=https://cjauvin.github.io/inf1901-teluq-v2/><img src=https://cjauvin.github.io/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
 </button>
 <button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
@@ -13,182 +16,177 @@
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
 <label for=menu-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Capturer l'expertise : les systèmes experts</h3><input type=checkbox class=toggle id=toc-control>
 <label for=toc-control><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#rétrécir-et-codifier-le-monde-pour-réussir>Rétrécir et codifier le monde pour réussir</a></li><li><a href=#lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert</a></li><li><a href=#lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom</a></li><li><a href=#le-goulot-détranglement>Le goulot d&rsquo;étranglement</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=capturer-lexpertise-les-systèmes-experts>Capturer l&rsquo;expertise : les systèmes experts<a class=anchor href=#capturer-lexpertise-les-syst%c3%a8mes-experts></a></h1><h2 id=rétrécir-et-codifier-le-monde-pour-réussir>Rétrécir et codifier le monde pour réussir<a class=anchor href=#r%c3%a9tr%c3%a9cir-et-codifier-le-monde-pour-r%c3%a9ussir></a></h2><p>Le chapitre « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a> » s&rsquo;est
-achevé sur un constat sévère : on ne peut pas <em>écrire</em> le sens commun, parce qu&rsquo;il
-n&rsquo;a pas de fond. Faut-il pour autant renoncer ? Les
-chercheurs des années 1970 tirent du mur une leçon plus rusée que désespérée. Si le
-savoir général est hors d&rsquo;atteinte, c&rsquo;est peut-être qu&rsquo;on visait trop large. Alors :
-visons <strong>étroit</strong>.</p><p>L&rsquo;idée est d&rsquo;une simplicité presque provocante. Renonçons à l&rsquo;intelligence générale ;
-choisissons <strong>un seul domaine</strong>, bien délimité (diagnostiquer une infection,
-configurer un ordinateur, prospecter un gisement minier), et tâchons d&rsquo;y reproduire
-la compétence d&rsquo;<strong>un seul expert</strong>. Car dans un domaine pointu, le savoir-faire d&rsquo;un
-spécialiste ressemble souvent à un vaste répertoire de règles du type <em>si telles
-conditions, alors telle conclusion</em>. Le médecin qui raisonne « <em>si</em> le patient a de
-la fièvre <strong>et</strong> telle bactérie dans le sang, <em>alors</em> prescrire tel antibiotique »
-applique, au fond, une règle. Recueillons assez de ces règles, inscrivons-les dans la
-machine, et celle-ci devrait, dans ce périmètre, <em>raisonner comme l&rsquo;expert</em>. C&rsquo;est le
-pari des <strong>systèmes experts</strong>, et le mot d&rsquo;ordre de tout ce chapitre : <strong>connaissance =
-règles explicites</strong>.</p><p>On reconnaît là une vieille ruse. SHRDLU ne « comprenait » son monde de blocs que
-parce que ce monde était minuscule ; les systèmes experts reprennent exactement la
-même tactique — <strong>réussir en rétrécissant le monde</strong> —, mais en la braquant cette
-fois non sur un jouet de laboratoire, mais sur des domaines réels et lucratifs. Et le
-pari, pour une fois, va <em>payer</em> : l&rsquo;IA symbolique va sortir des universités, gagner de
-l&rsquo;argent, et faire dire au monde des affaires que l&rsquo;intelligence artificielle, enfin,
-« marche ». Reste à voir <em>comment</em>, concrètement, une machine peut raisonner avec des
-règles : c&rsquo;est l&rsquo;affaire de la section suivante.</p><h2 id=lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert<a class=anchor href=#lanatomie-dun-syst%c3%a8me-expert></a></h2><p>Un système expert tient en <strong>trois pièces</strong>. D&rsquo;abord une <strong>base de règles</strong> : la
-connaissance du domaine, traduite en énoncés <em>si… alors…</em>. Ensuite une <strong>base de
-faits</strong> (ou « mémoire de travail ») : ce qu&rsquo;on sait du cas précis qu&rsquo;on traite : les
-symptômes du patient, l&rsquo;état de la voiture devant soi. Enfin, un <strong>moteur
-d&rsquo;inférence</strong> : un mécanisme général qui confronte les faits aux règles, déclenche
-celles qui s&rsquo;appliquent, et en tire de nouveaux faits, jusqu&rsquo;à une conclusion.</p><p>La trouvaille est dans cette <strong>séparation</strong>. Le moteur d&rsquo;inférence ne sait <em>rien</em> de
-médecine, d&rsquo;automobile ou de minéralogie : c&rsquo;est une machine à enchaîner des règles,
-point. Toute la compétence loge dans la base de règles, qu&rsquo;on peut changer comme une
-cartouche. Remplacez les règles, et le même moteur devient tour à tour médecin,
-mécanicien ou géologue. Le savoir d&rsquo;un côté, le raisonnement de l&rsquo;autre : pour la
-première fois, on peut bâtir des « experts » à la chaîne, sans tout reprogrammer.</p><p>Voyons-le à l&rsquo;œuvre sur un cas que tout le monde connaît : <strong>une voiture qui refuse
-de démarrer</strong>. Donnons à notre système une poignée de règles :</p><blockquote><p><strong>R1</strong> : <em>si</em> le moteur ne se lance pas du tout <strong>et</strong> les phares sont faibles,
+terminé sur un constat : on ne peut pas écrire le sens commun, parce qu&rsquo;il n&rsquo;a pas
+de limite. Les chercheurs des années 1970 en tirent une conclusion pratique. Si le
+savoir général est hors d&rsquo;atteinte, il faut viser un savoir plus <strong>étroit</strong>.</p><p>L&rsquo;idée est la suivante. Au lieu de chercher une intelligence générale, on choisit
+<strong>un seul domaine</strong> bien délimité (diagnostiquer une infection, configurer un
+ordinateur, prospecter un gisement minier) et on tente d&rsquo;y reproduire la compétence
+d&rsquo;<strong>un seul expert</strong>. Dans un domaine spécialisé, le savoir-faire d&rsquo;un expert
+ressemble souvent à un grand ensemble de règles de la forme <em>si telles conditions,
+alors telle conclusion</em>. Le médecin qui raisonne « <em>si</em> le patient a de la fièvre
+<strong>et</strong> telle bactérie dans le sang, <em>alors</em> prescrire tel antibiotique » applique
+une règle. Si on recueille assez de ces règles et qu&rsquo;on les inscrit dans la
+machine, celle-ci devrait raisonner comme l&rsquo;expert, du moins dans ce domaine. C&rsquo;est
+le principe des <strong>systèmes experts</strong>, qu&rsquo;on peut résumer par la formule suivante :
+<strong>connaissance = règles explicites</strong>.</p><p>La démarche est la même que celle de SHRDLU, qui ne « comprenait » son monde de
+blocs que parce que ce monde était très petit. Les systèmes experts réduisent eux
+aussi le monde à un domaine restreint, mais il s&rsquo;agit cette fois de domaines réels,
+qui ont une valeur commerciale. Cette approche va fonctionner. L&rsquo;IA symbolique va
+sortir des universités, produire des revenus et convaincre le monde des affaires
+que l&rsquo;intelligence artificielle est utilisable. La section suivante explique
+comment une machine peut raisonner avec des règles.</p><h2 id=lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert<a class=anchor href=#lanatomie-dun-syst%c3%a8me-expert></a></h2><p>Un système expert comporte <strong>trois composantes</strong>. La première est une <strong>base de
+règles</strong>, qui contient la connaissance du domaine sous forme d&rsquo;énoncés <em>si… alors…</em>.
+La deuxième est une <strong>base de faits</strong> (ou « mémoire de travail »), qui rassemble ce
+qu&rsquo;on sait du cas traité, par exemple les symptômes d&rsquo;un patient ou l&rsquo;état d&rsquo;une
+voiture. La troisième est un <strong>moteur d&rsquo;inférence</strong>, un mécanisme général qui
+compare les faits aux règles, applique celles dont les conditions sont remplies et
+en tire de nouveaux faits, jusqu&rsquo;à une conclusion.</p><p>L&rsquo;intérêt de cette architecture tient à la <strong>séparation</strong> entre ces composantes. Le
+moteur d&rsquo;inférence ne contient aucune connaissance de médecine, d&rsquo;automobile ou de
+minéralogie. Il se contente d&rsquo;enchaîner des règles. Toute la compétence se trouve
+dans la base de règles, qu&rsquo;on peut remplacer comme une cartouche. Avec d&rsquo;autres
+règles, le même moteur devient un système de diagnostic médical, mécanique ou
+géologique. Comme le savoir est séparé du raisonnement, on peut construire
+plusieurs systèmes experts sans tout reprogrammer à chaque fois.</p><p>Prenons un exemple simple, <strong>une voiture qui refuse de démarrer</strong>. On donne au
+système les règles suivantes :</p><blockquote><p><strong>R1</strong> : <em>si</em> le moteur ne se lance pas du tout <strong>et</strong> les phares sont faibles,
 <em>alors</em> la batterie est déchargée.</p><p><strong>R2</strong> : <em>si</em> la batterie est déchargée, <em>alors</em> recharger ou remplacer la batterie.</p><p><strong>R3</strong> : <em>si</em> le moteur se lance normalement mais ne démarre pas <strong>et</strong> le réservoir
 est vide, <em>alors</em> refaire le plein.</p><p><strong>R4</strong> : <em>si</em> le moteur se lance normalement <strong>et</strong> le réservoir n&rsquo;est pas vide,
-<em>alors</em> faire vérifier l&rsquo;allumage.</p></blockquote><p>Et deux faits observés au départ : <em>le moteur ne se lance pas</em> et <em>les phares sont
-faibles</em>. Mettez-vous à la place du moteur d&rsquo;inférence. Vous parcourez les règles :
-<strong>R1</strong> voit ses deux conditions satisfaites : elle se <strong>déclenche</strong> et inscrit un fait
-nouveau, <em>la batterie est déchargée</em>. Ce fait satisfait à son tour la condition de
-<strong>R2</strong>, qui se déclenche et livre la conclusion : <em>recharger ou remplacer la
-batterie</em>. R3 et R4, dont les conditions ne sont pas remplies, restent muettes. En
-deux pas, parti de simples symptômes, le système a « diagnostiqué » la panne, et,
-détail précieux, il peut <strong>retracer son raisonnement</strong> : <em>pourquoi</em> la batterie ? à
-cause de R1, à cause des phares faibles.</p><p>Ce que vous venez de faire — partir des faits et avancer jusqu&rsquo;à la conclusion — porte
-un nom : le <strong>chaînage avant</strong>. C&rsquo;est le raisonnement du curieux, qui observe d&rsquo;abord
-et regarde ensuite où cela le mène. Très efficace quand on dispose déjà de beaucoup de
-faits et qu&rsquo;on se demande <em>ce qui en découle</em>.</p><p>Mais on peut prendre le problème par l&rsquo;autre bout. Supposez que vous ayez une
-intuition (<em>« et si c&rsquo;était la batterie ? »</em>) et que vous vouliez la vérifier. Le
-moteur d&rsquo;inférence part alors de cette <strong>hypothèse</strong>, comme d&rsquo;un but à atteindre, et
-remonte les règles à reculons. Pour affirmer « recharger la batterie » (R2), il
-faudrait que <em>la batterie soit déchargée</em> ; et pour cela (R1), il faudrait que <em>le
-moteur ne se lance pas</em> <strong>et</strong> que <em>les phares soient faibles</em>. Or ces deux derniers
-points, aucune règle ne les produit : ce sont des choses à <strong>observer</strong>. Le système
-vous les demande donc (<em>« les phares sont-ils faibles ? »</em>) et n&rsquo;examine <em>que</em> ce
-qui sert l&rsquo;hypothèse poursuivie. C&rsquo;est le <strong>chaînage arrière</strong>.</p><blockquote class="book-hint info"><p><strong>Prolog : le chaînage arrière fait langage.</strong> L&rsquo;idée « déclarer des faits et des
-règles <em>si… alors…</em>, puis laisser un moteur général les enchaîner » s&rsquo;est révélée
-si puissante qu&rsquo;on en a fait, dès 1972, un <strong>langage de programmation</strong> à part
-entière : <strong>Prolog</strong>. Le programmeur n&rsquo;y écrit <em>que</em> des faits et des règles ; le
-langage, lui, fournit d&rsquo;office le moteur d&rsquo;inférence : un chaînage arrière comme
-celui qu&rsquo;on vient de dérouler à la main. On ne lui dit pas <em>comment</em> calculer,
-mais <em>ce qui est vrai</em> : c&rsquo;est la <strong>programmation logique</strong>, cousine du Lisp
-fonctionnel (le langage des machines de la photo) mais d&rsquo;un esprit tout autre.
-Longtemps l&rsquo;étendard européen de l&rsquo;IA symbolique, Prolog sera le pari du projet
-japonais de <strong>Cinquième Génération</strong> que nous croisons plus bas, et sa
-descendance déclarative se perpétue aujourd&rsquo;hui, de Datalog aux moteurs de règles.</p></blockquote><details><summary>Pour aller plus loin : à quoi ressemble du Prolog ?</summary><div class=markdown-inner><p>Reprenons notre panne de voiture. En Prolog, on écrit d&rsquo;abord les <strong>faits</strong>
-observés, puis les <strong>règles</strong>, la tête <em>avant</em> le <code>:-</code>, qui se lit « <em>si</em> », et
-les conditions séparées par des virgules qui se lisent « <em>et</em> » :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#75715e>% Les faits observés :</span>
+<em>alors</em> faire vérifier l&rsquo;allumage.</p></blockquote><p>On lui fournit aussi deux faits observés, <em>le moteur ne se lance pas</em> et <em>les phares
+sont faibles</em>. Le moteur d&rsquo;inférence parcourt alors les règles. Les deux conditions
+de <strong>R1</strong> sont satisfaites, donc R1 se <strong>déclenche</strong> et ajoute un fait nouveau, <em>la
+batterie est déchargée</em>. Ce fait satisfait la condition de <strong>R2</strong>, qui se déclenche
+à son tour et donne la conclusion <em>recharger ou remplacer la batterie</em>. Les
+conditions de R3 et de R4 ne sont pas remplies, et ces règles ne font rien. En deux
+étapes, le système a établi un diagnostic à partir des symptômes. Il peut aussi
+<strong>retracer son raisonnement</strong> : il conclut à la batterie à cause de R1, donc à cause
+des phares faibles.</p><p>Ce mode de raisonnement, qui part des faits pour arriver à une conclusion, s&rsquo;appelle
+le <strong>chaînage avant</strong>. Il convient bien quand on dispose déjà de nombreux faits et
+qu&rsquo;on veut savoir ce qui en découle.</p><p>On peut aussi procéder dans l&rsquo;autre sens. Supposons qu&rsquo;on soupçonne la batterie et
+qu&rsquo;on veuille vérifier cette hypothèse. Le moteur d&rsquo;inférence part alors de
+l&rsquo;<strong>hypothèse</strong>, traitée comme un but, et remonte les règles. Pour conclure
+« recharger la batterie » (R2), il faut que la batterie soit déchargée. Pour cela
+(R1), il faut que le moteur ne se lance pas <strong>et</strong> que les phares soient faibles.
+Aucune règle ne produit ces deux derniers faits, qu&rsquo;il faut donc <strong>observer</strong>. Le
+système pose alors la question à l&rsquo;utilisateur (« les phares sont-ils faibles ? »)
+et n&rsquo;examine que ce qui concerne l&rsquo;hypothèse étudiée. C&rsquo;est le <strong>chaînage arrière</strong>.</p><blockquote class="book-hint info"><p><strong>Prolog, un langage fondé sur le chaînage arrière.</strong> En 1972, on a fait de ce
+principe (déclarer des faits et des règles <em>si… alors…</em>, puis laisser un moteur
+général les enchaîner) un <strong>langage de programmation</strong>, <strong>Prolog</strong>. Le programmeur
+n&rsquo;y écrit que des faits et des règles, et le langage fournit lui-même le moteur
+d&rsquo;inférence, un chaînage arrière comme celui qu&rsquo;on vient de décrire. On n&rsquo;indique
+pas au programme comment calculer, mais ce qui est vrai. Cette approche s&rsquo;appelle la
+<strong>programmation logique</strong>. Elle est différente de la programmation fonctionnelle du
+langage Lisp (celui des machines de la photo plus bas). Prolog a longtemps été le
+langage de référence de l&rsquo;IA symbolique en Europe. Le projet japonais de
+<strong>Cinquième Génération</strong>, présenté plus bas, l&rsquo;a choisi comme langage principal, et
+ses principes se retrouvent aujourd&rsquo;hui dans Datalog et dans les moteurs de règles.</p></blockquote><details><summary>Pour aller plus loin : à quoi ressemble du Prolog ?</summary><div class=markdown-inner><p>Reprenons l&rsquo;exemple de la voiture. En Prolog, on écrit d&rsquo;abord les <strong>faits</strong>
+observés, puis les <strong>règles</strong>. Dans une règle, la conclusion est placée avant le
+symbole <code>:-</code>, qui se lit « <em>si</em> », et les conditions sont séparées par des virgules,
+qui se lisent « <em>et</em> » :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#75715e>% Les faits observés :</span>
 </span></span><span style=display:flex><span><span style=color:#e6db74>moteur_ne_se_lance_pas</span>.
 </span></span><span style=display:flex><span><span style=color:#e6db74>phares_faibles</span>.
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>% Les règles R1 et R2, « si … alors … » :</span>
 </span></span><span style=display:flex><span><span style=color:#a6e22e>batterie_dechargee</span>   <span style=color:#f92672>:-</span> <span style=color:#e6db74>moteur_ne_se_lance_pas</span>, <span style=color:#e6db74>phares_faibles</span>.
-</span></span><span style=display:flex><span><span style=color:#a6e22e>recharger_batterie</span>   <span style=color:#f92672>:-</span> <span style=color:#e6db74>batterie_dechargee</span>.</span></span></code></pre></div><p>On <strong>interroge</strong> ensuite le programme en lui soumettant un but à prouver (le <code>?-</code>
-est l&rsquo;invite) :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>?-</span> <span style=color:#e6db74>recharger_batterie</span>.
-</span></span><span style=display:flex><span><span style=color:#e6db74>true</span>.</span></span></code></pre></div><p>Pour répondre, Prolog fait <em>exactement</em> le chaînage arrière qu&rsquo;on vient de
-dérouler : pour établir <code>recharger_batterie</code>, il lui faut <code>batterie_dechargee</code> ;
-pour celle-ci, les deux faits <code>moteur_ne_se_lance_pas</code> et <code>phares_faibles</code>, tous
-deux connus. But atteint : <code>true</code>. Nulle part on n&rsquo;a écrit <em>comment</em> mener cette
-recherche ; le moteur du langage s&rsquo;en charge.</p></div></details><p>Deux directions, donc, pour une même base de règles : <strong>en avant</strong>, poussé par les
-faits ; <strong>en arrière</strong>, tiré par un but. Le second a un avantage décisif pour le
-diagnostic : plutôt que de tout mesurer d&rsquo;avance, il ne pose que les questions
-<em>utiles</em> à la piste qu&rsquo;il suit. C&rsquo;est exactement pour cette raison que l&rsquo;employait le
-plus célèbre des systèmes experts, un diagnostiqueur médical nommé <strong>MYCIN</strong>, qui
-nous attend dans la section suivante.</p><p>Mettez-vous maintenant aux commandes. Dans l&rsquo;applet ci-dessous, choisissez ce
-que vous observez sur la voiture, puis faites avancer le moteur d&rsquo;inférence
-règle par règle : vous le verrez examiner chaque règle, déclencher celles dont
-les conditions sont réunies et enrichir la base de faits, jusqu&rsquo;au diagnostic.
-Essayez plusieurs combinaisons, et cherchez celle devant laquelle le système
-n&rsquo;a plus rien à dire.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1790373837464579189 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>L&rsquo;aventure commence dès 1965, à Stanford, avec <strong>DENDRAL</strong>, souvent tenu pour le
-tout premier système expert : un programme capable d&rsquo;identifier des <strong>molécules</strong> à
-partir de données de spectrométrie, à la manière d&rsquo;un chimiste chevronné. Mais c&rsquo;est
-son cadet, <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>, qui
-deviendra la vedette du genre. Sa spécialité : diagnostiquer les <strong>infections
-bactériennes du sang</strong> et recommander le bon antibiotique, à la bonne dose. Sous le
-capot, quelque <strong>600 règles</strong> et le <strong>chaînage arrière</strong> que nous venons de décrire :
-MYCIN part d&rsquo;une hypothèse de germe et interroge le médecin, question après question,
-jusqu&rsquo;à sa conclusion. Et, vertu du même mécanisme, il peut à tout moment
-<strong>justifier</strong> sa démarche : demandez-lui <em>pourquoi</em> il pose telle question, il vous
-montre la règle qu&rsquo;il cherche à satisfaire.</p><p>Une difficulté, pourtant : en médecine, rien n&rsquo;est sûr à 100 %. Tel symptôme
-<em>suggère</em> un germe sans le garantir. MYCIN introduit donc des <strong>facteurs de
-certitude</strong> (un nombre accolé à chaque règle, indiquant à quel point sa conclusion
-est fiable) qu&rsquo;il combine au fil du raisonnement. Bricolage avant l&rsquo;heure : des
-années plus tard, une théorie autrement plus rigoureuse de l&rsquo;incertitude, les
-<strong>réseaux bayésiens</strong>, viendra prendre le relais (nous la croiserons au <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/#sous-les-mod%c3%a8les-des-probabilit%c3%a9s>Module
-2</a>).
-Mais l&rsquo;intuition est déjà là : un système qui <em>raisonne</em> doit aussi savoir <em>douter</em>.</p><p>Et MYCIN était bon. Lors d&rsquo;une évaluation restée célèbre, en 1979, on soumit ses
-recommandations à un jury d&rsquo;experts qui les compara à celles de médecins humains,
-sans savoir lesquelles venaient de la machine. Verdict : MYCIN faisait <strong>jeu égal,
-voire mieux</strong>, que les spécialistes. Un programme venait, sur son terrain, d&rsquo;égaler
-les meilleurs cliniciens. Et pourtant — c&rsquo;est tout le paradoxe — <strong>MYCIN ne fut
-jamais utilisé auprès d&rsquo;un seul vrai patient.</strong> Les obstacles n&rsquo;étaient pas
-scientifiques, mais humains et pratiques : qui serait <strong>responsable</strong> si la machine se
-trompait : le médecin, l&rsquo;hôpital, le programmeur ? Comment l&rsquo;<strong>intégrer</strong> au travail
-réel, à une époque sans ordinateur au chevet du malade, où il fallait tout saisir à la
-main sur un terminal ? Et quel médecin accepterait de <strong>déléguer</strong> son jugement à une
-boîte ? MYCIN réussissait tout, sauf à exister dans le monde. Premier signe, discret,
-que la fragilité des systèmes experts ne serait pas que technique.</p><p>Là où la médecine résistait, l&rsquo;industrie, elle, ouvrit grand les bras. À la fin des
-années 1970, le constructeur informatique <strong>DEC</strong> se débattait avec un casse-tête :
-chacune de ses commandes d&rsquo;ordinateurs <strong>VAX</strong> devait être configurée sur mesure : des
-centaines de composants à assortir sans erreur ni oubli. On confia la tâche à un
-système expert, <strong>XCON</strong>. Ce fut un triomphe : XCON configurait les commandes plus
-vite et plus sûrement que les humains, et fit <strong>économiser des dizaines de millions de
-dollars par an</strong> à DEC. Le message porta : les systèmes experts n&rsquo;étaient pas qu&rsquo;une
-curiosité de laboratoire : <em>ça marchait, et ça rapportait</em>. (Un détail qu&rsquo;on n&rsquo;écouta
-guère sur le moment : XCON enflait sans cesse, jusqu&rsquo;à des milliers de règles qu&rsquo;il
-fallait sans relâche réajuster les unes aux autres. Nous y reviendrons.)</p><p>Le succès de XCON déclencha une ruée. Au début des années 1980, l&rsquo;« IA » devint, pour
-la première fois, une véritable <strong>industrie</strong>. On vendit des <strong>coquilles</strong> (<em>shells</em>),
-des moteurs d&rsquo;inférence vides, prêts à recevoir la base de règles de n&rsquo;importe quel
-métier ; un nouveau métier apparut, l&rsquo;<strong>ingénieur de la connaissance</strong>, chargé
-d&rsquo;extraire le savoir des experts ; des entreprises se montèrent, des capitaux
-affluèrent. On construisit même des ordinateurs spécialisés, les <strong>machines Lisp</strong>,
-taillés pour ces programmes ; et le Japon lança un projet national pharaonique, la
-<strong>Cinquième Génération</strong>, pour prendre la tête de cette informatique du raisonnement.
-Jamais l&rsquo;IA symbolique n&rsquo;avait semblé si près de tenir ses promesses. Mais le sommet
-est aussi l&rsquo;endroit d&rsquo;où l&rsquo;on commence à redescendre, et, déjà, des fissures
-couraient sous l&rsquo;édifice.</p><label class=book-image for=book-image-toggle-5a74e4f1ecdc><input class="hidden toggle" type=checkbox id=book-image-toggle-5a74e4f1ecdc>
-<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/symbolics-3620.jpg alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." loading=lazy title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé taillé pour faire tourner les programmes d'IA symbolique." width=1400 height=933 style=--largeur-plafond:1050px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-5a74e4f1ecdc"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>Reprenons les fissures une à une. La première, et la plus profonde, tient à une
-question d&rsquo;apparence innocente : <em>d&rsquo;où viennent les règles ?</em> Quelqu&rsquo;un doit les
-écrire — l&rsquo;<strong>ingénieur de la connaissance</strong> —, en interrogeant longuement un expert
-pour traduire son savoir en <em>si… alors…</em>. Or ce travail s&rsquo;est révélé d&rsquo;une lenteur
-désespérante. Pire : une grande part de l&rsquo;expertise se laisse mal mettre en mots. Le
-médecin chevronné qui « sent » un diagnostic au premier coup d&rsquo;œil, le mécanicien qui
-devine la panne à l&rsquo;oreille, ne savent pas toujours <em>dire</em> ce qu&rsquo;ils savent : leur
-compétence est un <strong>savoir tacite</strong>, fait d&rsquo;intuition et d&rsquo;expérience, et non une
-liste de règles dormant dans un tiroir. On ne codifie pas ce qui n&rsquo;a jamais été
-formulé. Ce blocage a reçu un nom resté célèbre : le <strong>goulot d&rsquo;étranglement de
-l&rsquo;acquisition des connaissances</strong>.</p><p>Deuxième fissure, déjà rencontrée dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
-monde</a> » : la <strong>rigidité</strong>. Un système expert
-ne connaît que ses règles, et rien autour. Tant qu&rsquo;on reste pile dans son domaine, il
-brille ; qu&rsquo;on en sorte d&rsquo;un pas, et il ne <em>fléchit</em> pas : il s&rsquo;effondre, sans le
-moindre signe d&rsquo;embarras. MYCIN diagnostiquait les infections du sang ; si on lui
-avait décrit une jambe cassée, il aurait cherché un microbe, car il n&rsquo;avait aucune
-idée de ce qu&rsquo;il ignorait. Et faute du moindre <strong>bon sens</strong>, rien ne l&rsquo;empêchait
-d&rsquo;avaler une absurdité (un patient âgé de moins de zéro an, une dose mille fois trop
-forte) qu&rsquo;un étudiant de première année aurait flairée aussitôt. Le mur du sens
-commun, qu&rsquo;on croyait avoir contourné en rétrécissant le monde, était simplement
-revenu par la fenêtre.</p><p>Troisième fissure : l&rsquo;<strong>ingérabilité</strong>. Tant qu&rsquo;un système compte quelques dizaines de
-règles, tout va bien. Mais XCON en accumula des milliers, et l&rsquo;on découvrit qu&rsquo;au-delà
-d&rsquo;un certain seuil, les règles <strong>interagissent</strong> de façon imprévisible. En ajouter une
-pour corriger un cas pouvait en dérégler trois autres, ailleurs, sans qu&rsquo;on le voie
-venir. Maintenir une grosse base devenait un cauchemar : on passait plus de temps à
-rattraper les effets de bord qu&rsquo;à enrichir le savoir. La connaissance explicite,
-écrite à la main, ne <strong>passait pas à l&rsquo;échelle</strong>.</p><p>Mais la fissure la plus décisive est la plus discrète. Un système expert n&rsquo;<strong>apprend
-rien</strong>. Chaque règle a été déposée là par une main humaine ; le programme peut tourner
-mille fois sur mille cas, il n&rsquo;en tirera pas une règle nouvelle, ne corrigera pas de
-lui-même celles qui se trompent. Toute son intelligence lui vient du dehors, figée le
-jour de sa programmation. Et c&rsquo;est en butant sur cette limite-là que les chercheurs
-commencèrent, peu à peu, à retourner la question. Puisque le coûteux, l&rsquo;impossible,
-c&rsquo;est d&rsquo;<em>extraire</em> les règles des experts et de les tenir à jour à la main… <em>et si
-l&rsquo;on confiait ce travail à la machine elle-même ? Et si, au lieu de lui dicter ses
-règles, on la laissait les découvrir dans les données ?</em></p><p>Mais cette question-là devra attendre. Car les promesses des systèmes experts étaient
-devenues trop grandes pour des livraisons si minces : à la fin des années 1980, les
-capitaux fuient, les entreprises ferment, les fameuses machines Lisp finissent au
-rebut. Avant que la machine n&rsquo;apprenne, l&rsquo;IA devra d&rsquo;abord traverser un long
-<strong>hiver</strong>, celui de « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a> ».</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>recharger_batterie</span>   <span style=color:#f92672>:-</span> <span style=color:#e6db74>batterie_dechargee</span>.</span></span></code></pre></div><p>On <strong>interroge</strong> ensuite le programme en lui soumettant un but à prouver (<code>?-</code> est
+l&rsquo;invite) :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>?-</span> <span style=color:#e6db74>recharger_batterie</span>.
+</span></span><span style=display:flex><span><span style=color:#e6db74>true</span>.</span></span></code></pre></div><p>Pour répondre, Prolog effectue le chaînage arrière décrit plus haut. Pour établir
+<code>recharger_batterie</code>, il lui faut <code>batterie_dechargee</code>. Pour établir
+<code>batterie_dechargee</code>, il lui faut les deux faits <code>moteur_ne_se_lance_pas</code> et
+<code>phares_faibles</code>, qui sont connus. Le but est donc atteint, et Prolog répond
+<code>true</code>. Le programme n&rsquo;indique nulle part comment mener cette recherche, puisque le
+moteur du langage s&rsquo;en charge.</p></div></details><p>Une même base de règles peut donc être parcourue dans deux sens, <strong>vers l&rsquo;avant</strong>, à
+partir des faits, ou <strong>vers l&rsquo;arrière</strong>, à partir d&rsquo;un but. Le chaînage arrière est
+mieux adapté au diagnostic, parce qu&rsquo;il ne pose que les questions utiles à
+l&rsquo;hypothèse examinée, au lieu de demander toutes les mesures d&rsquo;avance. C&rsquo;est pour
+cette raison que le plus connu des systèmes experts, le système de diagnostic
+médical <strong>MYCIN</strong>, l&rsquo;utilisait. Il est présenté dans la section suivante.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous observez sur la voiture, puis
+faites avancer le moteur d&rsquo;inférence règle par règle. Vous le verrez examiner
+chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
+faits à la base, jusqu&rsquo;au diagnostic. Essayez plusieurs combinaisons, et trouvez
+celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=https://cjauvin.github.io/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1790527206322041525 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
+développé à Stanford à partir de 1965. Il identifiait des <strong>molécules</strong> à partir de
+données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
+est cependant <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>.
+MYCIN diagnostiquait les <strong>infections bactériennes du sang</strong> et recommandait un
+antibiotique et une dose. Il comptait environ <strong>600 règles</strong> et utilisait le
+<strong>chaînage arrière</strong> décrit plus haut. Il partait d&rsquo;une hypothèse sur le germe en
+cause et posait des questions au médecin jusqu&rsquo;à sa conclusion. Grâce à ce même
+mécanisme, il pouvait <strong>justifier</strong> sa démarche. Quand on lui demandait pourquoi il
+posait une question, il indiquait la règle qu&rsquo;il cherchait à vérifier.</p><p>En médecine, cependant, peu de choses sont certaines. Un symptôme peut suggérer un
+germe sans le confirmer. MYCIN utilisait donc des <strong>facteurs de certitude</strong> (un
+nombre associé à chaque règle, qui indique à quel point sa conclusion est fiable)
+et les combinait au cours du raisonnement. Cette méthode était approximative. Plus
+tard, une théorie plus rigoureuse de l&rsquo;incertitude, celle des <strong>réseaux
+bayésiens</strong>, l&rsquo;a remplacée (voir le <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module2/classer/#sous-les-mod%c3%a8les-des-probabilit%c3%a9s>Module
+2</a>). MYCIN montrait
+déjà qu&rsquo;un système qui raisonne doit aussi tenir compte de l&rsquo;incertitude.</p><p>MYCIN donnait de bons résultats. En 1979, une évaluation a soumis ses
+recommandations à un jury d&rsquo;experts, qui les a comparées à celles de médecins sans
+savoir lesquelles venaient du programme. Le jury a jugé les recommandations de
+MYCIN <strong>aussi bonnes, voire meilleures</strong>, que celles des spécialistes. Pourtant,
+<strong>MYCIN n&rsquo;a jamais été utilisé pour soigner un patient.</strong> Les obstacles étaient
+humains et pratiques plutôt que scientifiques. On ne savait pas qui serait
+<strong>responsable</strong> en cas d&rsquo;erreur (le médecin, l&rsquo;hôpital ou le programmeur). Il était
+difficile de l&rsquo;<strong>intégrer</strong> au travail clinique, à une époque où il n&rsquo;y avait pas
+d&rsquo;ordinateur au chevet des patients et où tout devait être saisi sur un terminal.
+Enfin, les médecins n&rsquo;étaient pas prêts à <strong>déléguer</strong> leur jugement à un
+programme. Le cas de MYCIN montre que les difficultés des systèmes experts
+n&rsquo;étaient pas seulement techniques.</p><p>L&rsquo;industrie a adopté les systèmes experts plus facilement que la médecine. À la fin
+des années 1970, le constructeur informatique <strong>DEC</strong> devait configurer sur mesure
+chaque commande de ses ordinateurs <strong>VAX</strong>, ce qui impliquait d&rsquo;assembler des
+centaines de composants sans erreur ni oubli. Cette tâche a été confiée à un
+système expert, <strong>XCON</strong>. XCON configurait les commandes plus rapidement et avec
+moins d&rsquo;erreurs que les employés, et il faisait <strong>économiser des dizaines de
+millions de dollars par an</strong> à DEC. Ce succès a montré que les systèmes experts
+pouvaient être rentables en dehors des laboratoires. Un problème est cependant
+apparu : le nombre de règles de XCON augmentait sans cesse, jusqu&rsquo;à plusieurs
+milliers, et il fallait constamment les ajuster les unes aux autres. Nous y
+reviendrons plus bas.</p><p>Après XCON, les investissements se sont multipliés. Au début des années 1980, l&rsquo;IA
+est devenue pour la première fois une <strong>industrie</strong>. On vendait des <strong>coquilles</strong>
+(<em>shells</em>), c&rsquo;est-à-dire des moteurs d&rsquo;inférence vides, prêts à recevoir la base de
+règles de n&rsquo;importe quel domaine. Un nouveau métier est apparu, celui d&rsquo;<strong>ingénieur
+de la connaissance</strong>, chargé de recueillir le savoir des experts. Des entreprises
+ont été créées et ont attiré des capitaux. On a même construit des ordinateurs
+spécialisés pour ces programmes, les <strong>machines Lisp</strong>. Le Japon a lancé un grand
+projet national, la <strong>Cinquième Génération</strong>, pour devenir le leader de ce type
+d&rsquo;informatique. Les limites des systèmes experts commençaient toutefois à
+apparaître.</p><label class=book-image for=book-image-toggle-94f7dfb67b6a><input class="hidden toggle" type=checkbox id=book-image-toggle-94f7dfb67b6a>
+<img src=https://cjauvin.github.io/inf1901-teluq-v2/images/module1/symbolics-3620.jpg alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." loading=lazy title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé conçu pour faire tourner les programmes d'IA symbolique." width=1400 height=933 style=--largeur-plafond:1050px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-94f7dfb67b6a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>La première limite, et la plus importante, concerne l&rsquo;origine des règles. Quelqu&rsquo;un
+doit les écrire. C&rsquo;est le travail de l&rsquo;<strong>ingénieur de la connaissance</strong>, qui
+interroge longuement un expert pour traduire son savoir en règles <em>si… alors…</em>. Ce
+travail s&rsquo;est révélé très lent. De plus, une grande partie de l&rsquo;expertise est
+difficile à exprimer. Le médecin expérimenté qui reconnaît un diagnostic au premier
+coup d&rsquo;œil, ou le mécanicien qui identifie une panne au bruit du moteur, ne savent
+pas toujours expliquer ce qu&rsquo;ils savent. Leur compétence est un <strong>savoir tacite</strong>,
+fondé sur l&rsquo;intuition et l&rsquo;expérience, et non une liste de règles qu&rsquo;il suffirait
+de noter. On ne peut pas codifier ce qui n&rsquo;a jamais été formulé. Ce problème est
+connu sous le nom de <strong>goulot d&rsquo;étranglement de l&rsquo;acquisition des connaissances</strong>.</p><p>La deuxième limite, déjà évoquée dans « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
+monde</a> », est la <strong>rigidité</strong>. Un système
+expert ne connaît que ses règles. Il fonctionne bien à l&rsquo;intérieur de son domaine,
+mais dès qu&rsquo;on en sort, il ne donne plus de résultats utiles, et il ne signale pas
+qu&rsquo;il est hors de son domaine. MYCIN diagnostiquait les infections du sang. Si on
+lui avait décrit une jambe cassée, il aurait cherché un microbe, parce qu&rsquo;il
+n&rsquo;avait aucun moyen de savoir ce qu&rsquo;il ignorait. Faute de <strong>sens commun</strong>, il
+pouvait aussi accepter des données absurdes (un patient âgé de moins de zéro an, une
+dose mille fois trop forte) qu&rsquo;un étudiant en médecine aurait repérées
+immédiatement. Réduire le monde à un domaine restreint ne réglait donc pas le
+problème du sens commun.</p><p>La troisième limite est la difficulté de <strong>maintenance</strong>. Un système de quelques
+dizaines de règles reste gérable. XCON en a accumulé des milliers, et on a constaté
+qu&rsquo;au-delà d&rsquo;un certain nombre, les règles <strong>interagissent</strong> de façon imprévisible.
+Ajouter une règle pour corriger un cas pouvait en perturber plusieurs autres, sans
+qu&rsquo;on s&rsquo;en aperçoive. Maintenir une grande base de règles demandait plus de temps
+pour corriger ces effets de bord que pour ajouter des connaissances. La
+connaissance explicite, écrite à la main, ne <strong>passait pas à l&rsquo;échelle</strong>.</p><p>La quatrième limite est la plus fondamentale : un système expert n&rsquo;<strong>apprend
+rien</strong>. Chacune de ses règles a été écrite par une personne. Le programme peut
+traiter mille cas sans en tirer une seule règle nouvelle, et il ne corrige pas de
+lui-même les règles erronées. Toute sa connaissance lui est fournie de l&rsquo;extérieur,
+et elle reste figée. C&rsquo;est à partir de cette limite que des chercheurs ont commencé
+à poser la question autrement. Puisqu&rsquo;il est coûteux, voire impossible, d&rsquo;extraire
+les règles des experts et de les maintenir à la main, on pourrait confier ce
+travail à la machine, en la laissant découvrir les règles à partir des données.</p><p>Cette approche ne s&rsquo;imposera que plus tard. À la fin des années 1980, les résultats
+des systèmes experts restent en deçà des promesses. Les investisseurs se retirent,
+des entreprises ferment, et les machines Lisp sont abandonnées. L&rsquo;IA entre dans une
+longue période de déclin, un <strong>hiver</strong>, décrit dans le chapitre « <a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la
+bascule</a> ».</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/representer-le-monde/ class="flex align-center"><img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
 <span>Représenter le monde</span>
 </a></span><span><a href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/hivers-et-bascule/ class="flex align-center"><span>Les hivers et la bascule</span>
 <img src=https://cjauvin.github.io/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#rétrécir-et-codifier-le-monde-pour-réussir>Rétrécir et codifier le monde pour réussir</a></li><li><a href=#lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert</a></li><li><a href=#lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom</a></li><li><a href=#le-goulot-détranglement>Le goulot d&rsquo;étranglement</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>
