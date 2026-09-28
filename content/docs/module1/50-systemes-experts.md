@@ -176,6 +176,27 @@ bayésiens**, l'a remplacée (voir le [Module
 2](docs/module2/60-classer/#sous-les-modèles-des-probabilités)). MYCIN montrait
 déjà qu'un système qui raisonne doit aussi tenir compte de l'incertitude.
 
+{{% hint info %}}
+**La logique floue.** Les règles d'un système expert emploient souvent des mots
+imprécis : une fièvre « élevée », un moteur « chaud », une vitesse « faible ». En
+logique classique, un énoncé est vrai ou faux. À partir de quel degré une fièvre
+devient-elle « élevée » ? Fixer un seuil à 38,5 °C revient à dire que 38,4 °C n'est
+pas une fièvre élevée du tout. En 1965, le mathématicien **Lotfi Zadeh** propose la
+**logique floue** (*fuzzy logic*), où un énoncé peut être vrai à un certain degré,
+entre 0 et 1. Une fièvre de 38,4 °C peut ainsi être « élevée » à 0,6, et une fièvre
+de 40 °C à 1. Les règles *si… alors…* s'appliquent alors plus ou moins fortement
+selon ce degré.
+
+{{< image src="/images/module1/logique-floue.svg" alt="Deux graphiques du degré auquel une température est une « fièvre élevée », de 0 à 1. À gauche, en logique classique, une marche d'escalier : 0 sous 38,5 °C, 1 au-dessus ; 38,4 °C vaut 0. À droite, en logique floue, une rampe de 37,5 °C à 39 °C ; 38,4 °C vaut 0,6." title="« Fièvre élevée » : un seuil en logique classique, un degré en logique floue." loading="lazy" >}}
+
+La logique floue ne traite pas le même problème que les facteurs de certitude de
+MYCIN. Ceux-ci mesurent à quel point on est sûr d'une conclusion. La logique floue
+mesure à quel point un mot s'applique à une situation. Elle a connu un grand succès
+industriel, surtout au Japon à partir de la fin des années 1980, dans des systèmes
+de commande : le métro de Sendai, des machines à laver, des autocuiseurs à riz, des
+stabilisateurs de caméras. Elle est encore utilisée aujourd'hui en automatique.
+{{% /hint %}}
+
 MYCIN donnait de bons résultats. En 1979, une évaluation a soumis ses
 recommandations à un jury d'experts, qui les a comparées à celles de médecins sans
 savoir lesquelles venaient du programme. Le jury a jugé les recommandations de
