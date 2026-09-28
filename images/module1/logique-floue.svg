@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 660 380" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Fièvre élevée : un seuil ou un degré</title>
+<desc>Deux graphiques du degré auquel une température est une « fièvre élevée », de 0 à 1, en fonction de la température, de 36,5 à 40,5 °C. À gauche, la logique classique : une marche d'escalier, 0 sous 38,5 °C et 1 à partir de 38,5 °C ; une fièvre de 38,4 °C vaut 0. À droite, la logique floue : une rampe qui monte de 0 à 37,5 °C jusqu'à 1 à 39 °C ; une fièvre de 38,4 °C vaut 0,6.</desc>
+<rect x="0" y="0" width="660" height="380" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="330" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">À quel point la fièvre est-elle « élevée » ?</text>
+<rect x="24" y="58" width="300" height="270" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="174" y="84" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">Logique classique</text>
+<text x="174" y="103" font-size="12" fill="#5b5249" text-anchor="middle">vrai ou faux, avec un seuil à 38,5 °C</text>
+<line x1="82" y1="272.0" x2="302" y2="272.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="72" y="276.0" font-size="11.5" fill="#7a6f63" text-anchor="end">0</text>
+<line x1="82" y1="201.0" x2="302" y2="201.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="72" y="205.0" font-size="11.5" fill="#7a6f63" text-anchor="end">0,5</text>
+<line x1="82" y1="130.0" x2="302" y2="130.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="72" y="134.0" font-size="11.5" fill="#7a6f63" text-anchor="end">1</text>
+<text x="109.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">37 °C</text>
+<text x="164.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">38 °C</text>
+<text x="219.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">39 °C</text>
+<text x="274.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">40 °C</text>
+<line x1="82" y1="272" x2="302" y2="272" stroke="#b8a888" stroke-width="1.5"/>
+<line x1="82" y1="272" x2="82" y2="124" stroke="#b8a888" stroke-width="1.5"/>
+<polyline points="82.0,272.0 192.0,272.0 192.0,130.0 302.0,130.0" fill="none" stroke="#9a5b33" stroke-width="3" stroke-linejoin="round"/>
+<line x1="186.5" y1="272" x2="186.5" y2="272.0" stroke="#2f6f6a" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="186.5" cy="272.0" r="6" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="2"/>
+<text x="176.5" y="260.0" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="700">38,4 °C → 0</text>
+<rect x="336" y="58" width="300" height="270" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="486" y="84" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">Logique floue</text>
+<text x="486" y="103" font-size="12" fill="#5b5249" text-anchor="middle">vrai à un certain degré, entre 0 et 1</text>
+<line x1="394" y1="272.0" x2="614" y2="272.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="384" y="276.0" font-size="11.5" fill="#7a6f63" text-anchor="end">0</text>
+<line x1="394" y1="201.0" x2="614" y2="201.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="384" y="205.0" font-size="11.5" fill="#7a6f63" text-anchor="end">0,5</text>
+<line x1="394" y1="130.0" x2="614" y2="130.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="384" y="134.0" font-size="11.5" fill="#7a6f63" text-anchor="end">1</text>
+<text x="421.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">37 °C</text>
+<text x="476.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">38 °C</text>
+<text x="531.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">39 °C</text>
+<text x="586.5" y="292" font-size="11.5" fill="#7a6f63" text-anchor="middle">40 °C</text>
+<line x1="394" y1="272" x2="614" y2="272" stroke="#b8a888" stroke-width="1.5"/>
+<line x1="394" y1="272" x2="394" y2="124" stroke="#b8a888" stroke-width="1.5"/>
+<polyline points="394.0,272.0 449.0,272.0 531.5,130.0 614.0,130.0" fill="none" stroke="#9a5b33" stroke-width="3" stroke-linejoin="round"/>
+<line x1="498.5" y1="272" x2="498.5" y2="186.8" stroke="#2f6f6a" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="498.5" cy="186.8" r="6" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="2"/>
+<text x="488.5" y="174.8" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="700">38,4 °C → 0,6</text>
+<text x="330" y="360" font-size="13" fill="#5b5249" text-anchor="middle">Un dixième de degré sépare 38,4 de 38,5 °C : la logique floue n'en fait pas un saut de 0 à 1.</text>
+</svg>
