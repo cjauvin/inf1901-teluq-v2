@@ -7,8 +7,11 @@
   {{- $destination = partial "docs/links/portable-image" . -}}
 {{- end -}}
 {{- $dimensions := "" -}}
-{{- with partial "docs/dimensions-image" .Destination -}}
+{{- /* pas de « with partial » : Hugo 0.165 le prend pour un décorateur et plante à l'indexation de la recherche */ -}}
+{{- $dim := partial "docs/dimensions-image" .Destination -}}
+{{- with $dim -}}
   {{- $dimensions = printf ` width="%d" height="%d"` .width .height -}}
 {{- end -}}
+{{- $destination = partial "docs/url-site" $destination -}}
 <img src="{{ $destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}" {{ end }}{{ $dimensions | safeHTMLAttr }}/>
 {{- /**/ -}}

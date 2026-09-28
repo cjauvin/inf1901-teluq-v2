@@ -1,0 +1,11 @@
+{{- /* Chemin « /images/… », « /html/… » relatif à la racine du site : le site est
+       publié dans un sous-dossier (/inf1901-teluq-v2/), et Hugo n'ajoute pas ce
+       préfixe à un chemin qui commence déjà par « / ». On retire la barre et on
+       passe par relURL. Auparavant, c'est canonifyURLs qui rattrapait ces
+       chemins, mais cette option casse la recherche du thème (même constat
+       qu'INF1410, août 2026). */ -}}
+{{- $u := . -}}
+{{- if and (hasPrefix $u "/") (not (hasPrefix $u "//")) -}}
+  {{- $u = $u | strings.TrimPrefix "/" | relURL -}}
+{{- end -}}
+{{- return $u -}}

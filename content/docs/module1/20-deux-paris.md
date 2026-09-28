@@ -121,7 +121,7 @@ pari, celui de l'apprentissage, et ne contiennent aucune règle de logique écri
 {{% /hint %}}
 
 {{% hint info %}}
-<img src="/images/module1/lean-logo.svg" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." class="logo-mono">
+<img src="{{< rel "/images/module1/lean-logo.svg" >}}" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." class="logo-mono">
 
 **Lean, un vérificateur de preuves.** Le langage **Lean**, dans lequel la
 démonstration de Fermat a été traduite, a été créé en 2013 par Leonardo de Moura chez

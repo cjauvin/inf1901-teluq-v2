@@ -1,7 +1,6 @@
 baseURL = 'https://cjauvin.github.io/inf1901-teluq-v2/'
 languageCode = 'fr'
 defaultContentLanguage = 'fr'
-canonifyURLs = true
 
 title = "INF1901 - Initiation à l'IA : concepts et réflexions"
 theme = 'hugo-book'
@@ -10,7 +9,7 @@ theme = 'hugo-book'
 [params]
 BookTheme = "auto"
 BookToC = true
-BookSearch = false
+BookSearch = true
 BookPortableLinks = "warning"
 BookLogo = "images/paperclip-logo.png"
 

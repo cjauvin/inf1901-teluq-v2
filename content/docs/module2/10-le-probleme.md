@@ -49,7 +49,7 @@ parce que cette compétence est perceptive et largement inconsciente. Comme nous
 ne savons pas comment nous faisons, nous ne pouvons pas l'écrire.
 
 <p style="text-align: center;">
-    <a href="https://xkcd.com/1425/"><img src="/images/xkcd1425.png" alt="XKCD 1425" style="width: 50%; height: auto;" width="265" height="447"></a>
+    <a href="https://xkcd.com/1425/"><img src="{{< rel "/images/xkcd1425.png" >}}" alt="XKCD 1425" style="width: 50%; height: auto;" width="265" height="447"></a>
 </p>
 
 {{% hint info %}}

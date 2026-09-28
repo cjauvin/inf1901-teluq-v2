@@ -32,7 +32,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    points sont disposés en diagonale, l'un par rapport à l'autre.
 
    <p style="text-align: center;">
-     <img src="/images/module3/tn3/prob1.png" alt="My image" style="width: 50%; height: auto;" width="598" height="594">
+     <img src="{{< rel "/images/module3/tn3/prob1.png" >}}" alt="My image" style="width: 50%; height: auto;" width="598" height="594">
    </p>
 
    Assurez-vous de n'avoir aucune couche cachée, et seulement les
@@ -42,7 +42,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    entraînement):
 
    <p style="text-align: center;">
-     <img src="/images/module3/tn3/refresh_button.png" alt="My image" style="width: 50%; height: auto;" width="684" height="364">
+     <img src="{{< rel "/images/module3/tn3/refresh_button.png" >}}" alt="My image" style="width: 50%; height: auto;" width="684" height="364">
    </p>
 
    Que signifient ces erreurs et ces variations (pourquoi l'erreur initiale est
@@ -60,7 +60,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
 5. Remettez le "bruit" à 0, et choisissez maintenant ce jeu de données :
 
    <p style="text-align: center;">
-     <img src="/images/module3/tn3/prob2.png" alt="My image" style="width: 50%; height: auto;" width="616" height="620">
+     <img src="{{< rel "/images/module3/tn3/prob2.png" >}}" alt="My image" style="width: 50%; height: auto;" width="616" height="620">
    </p>
 
    À priori, est-ce qu'il vous apparaît possible qu'un modèle ayant servi à
@@ -72,7 +72,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    en appuyant sur ce bouton :
 
    <p style="text-align: center;">
-     <img src="/images/module3/tn3/train_button.png" alt="My image" style="width: 50%; height: auto;" width="590" height="358">
+     <img src="{{< rel "/images/module3/tn3/train_button.png" >}}" alt="My image" style="width: 50%; height: auto;" width="590" height="358">
    </p>
 
 7. Ajoutez maintenant une deuxième couche cachée avec deux neurones cette fois.
@@ -97,7 +97,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
 11. Considérez maintenant ce troisième jeu de données :
 
     <p style="text-align: center;">
-      <img src="/images/module3/tn3/prob3.png" alt="My image" style="width: 50%; height: auto;" width="624" height="618">
+      <img src="{{< rel "/images/module3/tn3/prob3.png" >}}" alt="My image" style="width: 50%; height: auto;" width="624" height="618">
     </p>
 
     Sans aucune cachée, et seulement les caractéristiques $X_1$ et $X_2$

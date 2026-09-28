@@ -13,7 +13,9 @@
      à zéro. C'est pourquoi le plafond porte sur la largeur (règle dans
      assets/styles/custom.css), la hauteur suivant par le rapport de forme. */}}
 {{- $dimensions := "" -}}
-{{- with partial "docs/dimensions-image" $src -}}
+{{- /* pas de « with partial » : Hugo 0.165 le prend pour un décorateur et plante à l'indexation de la recherche */ -}}
+{{- $dim := partial "docs/dimensions-image" $src -}}
+{{- with $dim -}}
   {{- $dimensions = printf ` width="%d" height="%d" style="--largeur-plafond: %dpx"` .width .height .plafond -}}
 {{- end -}}
 
@@ -23,6 +25,7 @@
 ) -}}
 <label class="book-image" for="book-image-toggle-{{ $uid }}">
   <input class="hidden toggle" type="checkbox" id="book-image-toggle-{{ $uid }}" />
+  {{- $destination = partial "docs/url-site" $destination }}
   <img src="{{ $destination | safeURL }}" {{ partial "docs/html-attrs" $attributes | safeHTMLAttr }}{{ $dimensions | safeHTMLAttr }} />
 </label>
 <script>
