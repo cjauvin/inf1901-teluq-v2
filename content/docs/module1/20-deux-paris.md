@@ -110,9 +110,9 @@ raisonne, du moins en apparence.
 progressé d'une manière que Newell et Simon n'avaient pas prévue.
 En 2025, des grands modèles de langage entraînés par renforcement ont atteint
 le niveau d'une médaille d'or aux Olympiades internationales de mathématiques.
-En septembre 2026, l'un d'eux a traduit en preuve vérifiable par machine toute
-la démonstration du dernier théorème de Fermat, un travail que les spécialistes
-estimaient à plusieurs années. Un autre système a annoncé avoir résolu une
+En septembre 2026, l'un d'eux a traduit toute la démonstration du dernier théorème
+de Fermat dans **Lean**, un langage où chaque étape d'une preuve est vérifiée par la
+machine. Les spécialistes estimaient ce travail à plusieurs années. Un autre système a annoncé avoir résolu une
 version de l'un des sept problèmes du millénaire, celui des équations de
 Navier-Stokes, un résultat que les mathématiciens sont encore en train de
 vérifier. Ces machines raisonnent elles aussi, mais elles sont issues de l'autre
@@ -121,10 +121,10 @@ pari, celui de l'apprentissage, et ne contiennent aucune règle de logique écri
 {{% /hint %}}
 
 {{% hint info %}}
-<img src="/images/module1/lean-logo.svg" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." class="logo-mono">
+<img src="/images/module1/lean-logo.svg" alt="Le logo de Lean : le mot « LEAN » en capitales noires stylisées." class="logo-mono">
 
-**Lean, un vérificateur de preuves.** Une preuve « vérifiable par machine » est
-écrite dans un langage comme **Lean**, créé en 2013 par Leonardo de Moura chez
+**Lean, un vérificateur de preuves.** Le langage **Lean**, dans lequel la
+démonstration de Fermat a été traduite, a été créé en 2013 par Leonardo de Moura chez
 Microsoft Research. Dans Lean, chaque étape d'une démonstration doit être justifiée
 par une règle de logique précise. Un petit programme central, le *noyau*, vérifie
 ensuite que chaque étape respecte ces règles. Si le noyau accepte la preuve, le
