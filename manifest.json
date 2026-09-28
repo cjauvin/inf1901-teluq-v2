@@ -1,8 +1,8 @@
 {
   "name": "INF1901 - Initiation à l'IA : concepts et réflexions",
   "short_name": "INF1901 - Initiation à l'IA : concepts et réflexions",
-  "start_url": "/./",
-  "scope": "/./",
+  "start_url": "/inf1901-teluq-v2/",
+  "scope": "/inf1901-teluq-v2/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
