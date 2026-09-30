@@ -15,3 +15,18 @@
 \makeatletter
 \def\maxheight{\ifdim\Gin@nat@height>0.5\textheight 0.5\textheight\else\Gin@nat@height\fi}
 \makeatother
+% Page de titre avec l'image de couverture (\couverture est défini par generer.py)
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}\centering
+    \vspace*{0.5cm}
+    {\Huge\bfseries \@title\par}
+    \vspace{1.2cm}
+    \includegraphics[width=\textwidth]{\couverture}\par
+    \vspace{1.2cm}
+    {\Large \@author\par}
+    \vspace{0.4cm}
+    {\large \@date\par}
+    \vfill
+  \end{titlepage}}
+\makeatother

@@ -124,6 +124,9 @@ def preparer(html: str, site: Path, conv: Path) -> tuple[str, str]:
             sec.insert(0, h1)
         h1["id"] = pid
         sec.insert(0, h1.extract())                # le titre avant tout (images d'ouverture)
+        if sec["data-type"] == "accueil":         # l'image d'accueil est déjà en couverture
+            for img in sec.find_all("img", src=re.compile(r"hal_and_clippy")):
+                (img.find_parent("label", class_="book-image") or img.find_parent("p") or img).decompose()
         if sec["data-type"] == "module":
             h1["class"] = "partie"
 
@@ -248,6 +251,11 @@ def main():
     source.write_text(f"<!DOCTYPE html><html lang=\"fr\"><head><meta charset=\"utf-8\"></head>{corps}</html>",
                       encoding="utf-8")
 
+    couverture = site / "images" / "hal_and_clippy_v2.png"
+    entete = TRAVAIL / "entete.tex"
+    entete.write_text(f"\\newcommand{{\\couverture}}{{{couverture}}}\n" + (ICI / "entete.tex").read_text(encoding="utf-8"),
+                      encoding="utf-8")
+
     sortie = site / "telechargements"
     sortie.mkdir(exist_ok=True)
     commun = ["pandoc", str(source), "-f", "html", "--resource-path", f"{site}:{TRAVAIL}",
@@ -257,10 +265,10 @@ def main():
               "--lua-filter", str(ICI / "livre.lua"), "--toc", "--toc-depth=2"]
     subprocess.run(commun + ["-t", "epub3", "--mathml", "--split-level=1",
                              "--css", str(ICI / "epub.css"),
-                             "--epub-cover-image", str(site / "images" / "hal_and_clippy_v2.png"),
+                             "--epub-cover-image", str(couverture),
                              "-o", str(sortie / f"{NOM}.epub")], check=True)
     subprocess.run(commun + ["--pdf-engine=lualatex", "--top-level-division=chapter",
-                             "-H", str(ICI / "entete.tex"),
+                             "-H", str(entete),
                              "-o", str(sortie / f"{NOM}.pdf")], check=True)
     if not args.site:
         # en local : copie dans static/ (ignoré par git), pour que le serveur Hugo
