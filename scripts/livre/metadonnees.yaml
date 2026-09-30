@@ -1,0 +1,15 @@
+title: "INF1901 — Initiation à l'intelligence artificielle"
+subtitle: "Concepts et réflexions"
+author: "TELUQ"
+lang: fr-CA
+documentclass: book
+classoption: [oneside, 11pt]
+geometry: "margin=2.5cm"
+mainfont: "TeX Gyre Pagella"
+sansfont: "TeX Gyre Heros"
+mathfont: "TeX Gyre Pagella Math"
+monofont: "DejaVu Sans Mono"
+monofontoptions: "Scale=0.85"
+linkcolor: "[HTML]{2F6F6A}"
+urlcolor: "[HTML]{2F6F6A}"
+toc-title: "Table des matières"

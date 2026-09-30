@@ -5,3 +5,4 @@ resources/*
 bkp
 __pycache__/
 .hugo-serve/serveur.log
+build/

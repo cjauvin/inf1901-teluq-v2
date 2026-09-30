@@ -1,0 +1,17 @@
+% Chapitres et sections sans numéro (le cours ne numérote pas ses pages)
+\setcounter{secnumdepth}{-1}
+% Figures à leur place dans le texte
+\usepackage{float}
+\floatplacement{figure}{H}
+% Encadrés (hint, details du site)
+\usepackage[most]{tcolorbox}
+\newtcolorbox{encadre}{breakable, enhanced, colback=black!3, colframe=black!35,
+  boxrule=0.5pt, arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=10pt, after skip=10pt}
+% Liens de la couleur du cours
+\definecolor{sarcelle}{HTML}{2F6F6A}
+\AtBeginDocument{\hypersetup{colorlinks=true, linkcolor=sarcelle, urlcolor=sarcelle, filecolor=sarcelle}}
+% Figures : au plus la moitié de la hauteur de page (moins de pages à moitié vides)
+\makeatletter
+\def\maxheight{\ifdim\Gin@nat@height>0.5\textheight 0.5\textheight\else\Gin@nat@height\fi}
+\makeatother

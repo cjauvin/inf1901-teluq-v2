@@ -1,0 +1,17 @@
+{{- /* Le cours entier en une page, pour scripts/livre/generer.py (PDF, EPUB).
+       Chaque page devient une <section> qui porte son adresse et son titre ;
+       l'ordre est celui du menu (poids). Les pages non publiées (modules en
+       réfection, page des changements) ont list = never et n'apparaissent
+       donc pas dans .Pages. */ -}}
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>{{ site.Title }}</title></head>
+<body data-base="{{ site.BaseURL }}" data-rel="{{ relURL "" }}">
+{{- with site.Home }}
+<section class="page" data-type="accueil" data-url="{{ .RelPermalink }}" data-titre="Accueil">
+{{ .Content }}
+</section>
+{{- end }}
+{{- with site.GetPage "/docs" }}{{ partial "livre/pages.html" . }}{{ end }}
+</body>
+</html>

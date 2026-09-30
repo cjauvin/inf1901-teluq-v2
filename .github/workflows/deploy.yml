@@ -29,6 +29,21 @@ jobs:
       - name: Build site
         run: hugo --minify --environment production
 
+      # Le cours en PDF et en EPUB, à partir de la page /livre/ (scripts/livre/generer.py),
+      # écrits dans public/telechargements/ et offerts par la page « Télécharger le cours ».
+      - name: Install pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc librsvg2-bin fonts-dejavu-core \
+            texlive-luatex texlive-latex-recommended texlive-latex-extra texlive-pictures \
+            texlive-fonts-recommended texlive-lang-french tex-gyre lmodern
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Build PDF and EPUB
+        run: uv run scripts/livre/generer.py --site public
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
