@@ -30,7 +30,7 @@ jobs:
         run: hugo --minify --environment production
 
       # Le cours en PDF et en EPUB, à partir de la page /livre/ (scripts/livre/generer.py),
-      # écrits dans public/telechargements/ et offerts par la page « Télécharger le cours ».
+      # écrits dans public/telechargements/ et offerts par la page « Télécharger le cours en livre ».
       - name: Install pandoc and LaTeX
         run: |
           sudo apt-get update

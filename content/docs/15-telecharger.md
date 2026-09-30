@@ -1,11 +1,11 @@
 ---
-title: "Télécharger le cours"
+title: "Télécharger le cours en livre"
 weight: 15
 slug: telecharger
 livreExclude: true
 ---
 
-# Télécharger le cours
+# Télécharger le cours en livre
 
 Le contenu publié du cours est aussi offert sous forme de deux livres, pour une
 lecture hors ligne, sur papier ou sur liseuse. Ils sont produits automatiquement à

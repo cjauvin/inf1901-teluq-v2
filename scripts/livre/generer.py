@@ -9,7 +9,7 @@
 
 Le site de production ne contient que les pages publiées : le livre suit donc
 automatiquement ce qui est en ligne. Les fichiers sont écrits dans
-<site>/telechargements/, d'où la page « Télécharger le cours » les offre.
+<site>/telechargements/, d'où la page « Télécharger le cours en livre » les offre.
 
 Étapes : la page /livre/ (layouts/livre.html) enchaîne toutes les pages dans
 l'ordre du menu ; ce script la nettoie pour pandoc (figures, encadrés,
