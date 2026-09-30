@@ -36,7 +36,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends pandoc librsvg2-bin fonts-dejavu-core \
             texlive-luatex texlive-latex-recommended texlive-latex-extra texlive-pictures \
-            texlive-fonts-recommended texlive-lang-french tex-gyre lmodern
+            texlive-fonts-recommended texlive-lang-french lmodern fonts-texgyre fonts-texgyre-math
+          fc-list | grep -i -c gyre || true
+          luaotfload-tool --update || true
 
       - name: Setup uv
         uses: astral-sh/setup-uv@v6
