@@ -6,3 +6,4 @@ bkp
 __pycache__/
 .hugo-serve/serveur.log
 build/
+static/telechargements/

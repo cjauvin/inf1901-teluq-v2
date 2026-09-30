@@ -262,6 +262,14 @@ def main():
     subprocess.run(commun + ["--pdf-engine=lualatex", "--top-level-division=chapter",
                              "-H", str(ICI / "entete.tex"),
                              "-o", str(sortie / f"{NOM}.pdf")], check=True)
+    if not args.site:
+        # en local : copie dans static/ (ignoré par git), pour que le serveur Hugo
+        # serve les livres et que les liens de la page de téléchargement fonctionnent
+        local = RACINE / "static" / "telechargements"
+        local.mkdir(exist_ok=True)
+        for f in sortie.iterdir():
+            shutil.copy2(f, local / f.name)
+        sortie = local
     for f in sorted(sortie.iterdir()):
         print(f"{f}  ({f.stat().st_size / 1e6:.1f} Mo)")
 

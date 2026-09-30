@@ -1,6 +1,6 @@
 serve:
     hugo server --disableFastRender --noHTTPCache --port 1313
 
-# Le cours en PDF et en EPUB (build/livre/site/telechargements/)
+# Les livres PDF et EPUB, servis en local depuis static/telechargements/ (ignoré par git)
 livre:
     uv run scripts/livre/generer.py
