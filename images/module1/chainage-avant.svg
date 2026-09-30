@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 776 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le chaînage avant</title>
+<desc>Schéma de gauche à droite. Deux faits observés, « le moteur ne se lance pas » et « les phares sont faibles », mènent à la règle R1, qui se déclenche et produit le fait déduit « la batterie est déchargée ». Ce fait mène à la règle R2, qui se déclenche et donne la conclusion « recharger ou remplacer la batterie ». R3 et R4 sont examinées sans se déclencher.</desc>
+<defs><marker id="pointe-2f6f6a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker></defs>
+<rect x="0" y="0" width="776" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="388.0" y="38" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le chaînage avant</text>
+<text x="388.0" y="60" font-size="12.5" fill="#5b5249" text-anchor="middle">Le raisonnement va de gauche à droite : des faits vers la conclusion</text>
+<rect x="24" y="101.0" width="180" height="54" rx="9" fill="#3a6ea5" fill-opacity="0.12" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="114.0" y="132.5" font-size="12.5" fill="#3a3531" text-anchor="middle">le moteur ne se lance pas</text>
+<rect x="24" y="179.0" width="180" height="54" rx="9" fill="#3a6ea5" fill-opacity="0.12" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="114.0" y="210.5" font-size="12.5" fill="#3a3531" text-anchor="middle">les phares sont faibles</text>
+<rect x="330" y="140.0" width="150" height="54" rx="9" fill="#9a5b33" fill-opacity="0.12" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="405.0" y="163.5" font-size="12.5" fill="#3a3531" text-anchor="middle">la batterie</text>
+<text x="405.0" y="179.5" font-size="12.5" fill="#3a3531" text-anchor="middle">est déchargée</text>
+<rect x="606" y="140.0" width="150" height="54" rx="9" fill="#2f6f6a" fill-opacity="0.12" stroke="#2f6f6a" stroke-width="2.2"/>
+<text x="681.0" y="163.5" font-size="12.5" fill="#3a3531" text-anchor="middle">recharger ou</text>
+<text x="681.0" y="179.5" font-size="12.5" fill="#3a3531" text-anchor="middle">remplacer la batterie</text>
+<line x1="208" y1="128" x2="242" y2="153.35" stroke="#2f6f6a" stroke-width="2.4" marker-end="url(#pointe-2f6f6a)"/>
+<line x1="208" y1="206" x2="242" y2="180.65" stroke="#2f6f6a" stroke-width="2.4" marker-end="url(#pointe-2f6f6a)"/>
+<line x1="289" y1="167" x2="325" y2="167" stroke="#2f6f6a" stroke-width="2.4" marker-end="url(#pointe-2f6f6a)"/>
+<line x1="484" y1="167" x2="520" y2="167" stroke="#2f6f6a" stroke-width="2.4" marker-end="url(#pointe-2f6f6a)"/>
+<line x1="567" y1="167" x2="601" y2="167" stroke="#2f6f6a" stroke-width="2.4" marker-end="url(#pointe-2f6f6a)"/>
+<text x="114.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">faits observés</text>
+<text x="266" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">R1 se déclenche</text>
+<text x="405.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">fait déduit</text>
+<text x="544" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">R2 se déclenche</text>
+<text x="681.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">conclusion</text>
+<circle cx="266" cy="167" r="21" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="266" y="172" font-size="14" fill="#9a5b33" text-anchor="middle" font-weight="700">R1</text>
+<circle cx="544" cy="167" r="21" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="544" y="172" font-size="14" fill="#9a5b33" text-anchor="middle" font-weight="700">R2</text>
+<text x="388.0" y="308" font-size="12.5" fill="#5b5249" text-anchor="middle">R3 et R4 sont aussi examinées, mais leurs conditions ne sont pas remplies ; elles ne font rien.</text>
+</svg>
