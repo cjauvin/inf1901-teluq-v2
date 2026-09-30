@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 776 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le chaînage arrière</title>
+<desc>Même schéma, parcouru de droite à gauche avec des flèches en pointillé. On part de l'hypothèse « et si c'était la batterie ? ». La règle R2 conclurait à recharger la batterie si la batterie était déchargée : c'est le sous-but. La règle R1 établirait ce sous-but si le moteur ne se lançait pas et si les phares étaient faibles. Aucune règle ne produit ces deux faits : le système pose donc deux questions à l'utilisateur. R3 et R4 ne sont pas examinées.</desc>
+<defs><marker id="pointe-9a5b33" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="776" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="388.0" y="38" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le chaînage arrière</text>
+<text x="388.0" y="60" font-size="12.5" fill="#5b5249" text-anchor="middle">Le raisonnement va de droite à gauche : de l'hypothèse vers les faits à vérifier</text>
+<rect x="24" y="101.0" width="180" height="54" rx="9" fill="#3a6ea5" fill-opacity="0.12" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="114.0" y="132.5" font-size="12.5" fill="#3a3531" text-anchor="middle">le moteur se lance-t-il ?</text>
+<rect x="24" y="179.0" width="180" height="54" rx="9" fill="#3a6ea5" fill-opacity="0.12" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="114.0" y="210.5" font-size="12.5" fill="#3a3531" text-anchor="middle">les phares sont-ils faibles ?</text>
+<rect x="330" y="140.0" width="150" height="54" rx="9" fill="#9a5b33" fill-opacity="0.12" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="405.0" y="163.5" font-size="12.5" fill="#3a3531" text-anchor="middle">la batterie est-elle</text>
+<text x="405.0" y="179.5" font-size="12.5" fill="#3a3531" text-anchor="middle">déchargée ?</text>
+<rect x="606" y="140.0" width="150" height="54" rx="9" fill="#2f6f6a" fill-opacity="0.12" stroke="#2f6f6a" stroke-width="2.2"/>
+<text x="681.0" y="163.5" font-size="12.5" fill="#3a3531" text-anchor="middle">et si c'était</text>
+<text x="681.0" y="179.5" font-size="12.5" fill="#3a3531" text-anchor="middle">la batterie ?</text>
+<line x1="602" y1="167" x2="568" y2="167" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#pointe-9a5b33)" stroke-dasharray="6 4"/>
+<line x1="521" y1="167" x2="485" y2="167" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#pointe-9a5b33)" stroke-dasharray="6 4"/>
+<line x1="326" y1="167" x2="290" y2="167" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#pointe-9a5b33)" stroke-dasharray="6 4"/>
+<line x1="245" y1="153.35" x2="209" y2="128" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#pointe-9a5b33)" stroke-dasharray="6 4"/>
+<line x1="245" y1="180.65" x2="209" y2="206" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#pointe-9a5b33)" stroke-dasharray="6 4"/>
+<text x="114.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">questions à l'utilisateur</text>
+<text x="266" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">R1 l'établirait si…</text>
+<text x="405.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">sous-but</text>
+<text x="544" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">R2 conclurait si…</text>
+<text x="681.0" y="267.0" font-size="11.5" fill="#7a6f63" text-anchor="middle">hypothèse de départ</text>
+<circle cx="266" cy="167" r="21" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="266" y="172" font-size="14" fill="#9a5b33" text-anchor="middle" font-weight="700">R1</text>
+<circle cx="544" cy="167" r="21" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="544" y="172" font-size="14" fill="#9a5b33" text-anchor="middle" font-weight="700">R2</text>
+<text x="388.0" y="308" font-size="12.5" fill="#5b5249" text-anchor="middle">Aucune règle ne produit les deux faits de gauche : le système les demande. R3 et R4 ne sont pas examinées.</text>
+</svg>

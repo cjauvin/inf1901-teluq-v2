@@ -80,6 +80,8 @@ Ce mode de raisonnement, qui part des faits pour arriver à une conclusion, s'ap
 le **chaînage avant**. Il convient bien quand on dispose déjà de nombreux faits et
 qu'on veut savoir ce qui en découle.
 
+{{< image src="/images/module1/chainage-avant.svg" alt="Schéma de gauche à droite : les deux faits observés mènent à la règle R1, qui produit le fait « la batterie est déchargée » ; ce fait mène à la règle R2, qui donne la conclusion « recharger ou remplacer la batterie »." title="Le chaînage avant : des faits observés vers la conclusion, règle après règle." loading="lazy" >}}
+
 On peut aussi procéder dans l'autre sens. Supposons qu'on soupçonne la batterie et
 qu'on veuille vérifier cette hypothèse. Le moteur d'inférence part alors de
 l'**hypothèse**, traitée comme un but, et remonte les règles. Pour conclure
@@ -88,6 +90,8 @@ l'**hypothèse**, traitée comme un but, et remonte les règles. Pour conclure
 Aucune règle ne produit ces deux derniers faits, qu'il faut donc **observer**. Le
 système pose alors la question à l'utilisateur (« les phares sont-ils faibles ? »)
 et n'examine que ce qui concerne l'hypothèse étudiée. C'est le **chaînage arrière**.
+
+{{< image src="/images/module1/chainage-arriere.svg" alt="Le même schéma parcouru de droite à gauche : de l'hypothèse « et si c'était la batterie ? », la règle R2 mène au sous-but « la batterie est-elle déchargée ? », puis la règle R1 mène à deux questions posées à l'utilisateur sur le moteur et les phares." title="Le chaînage arrière : de l'hypothèse vers les faits à vérifier, en ne posant que les questions utiles." loading="lazy" >}}
 
 {{% hint info %}}
 **Prolog, un langage fondé sur le chaînage arrière.** En 1972, on a fait de ce
