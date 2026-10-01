@@ -142,7 +142,7 @@ n'est pas toujours injustifié, parce qu'un succès révèle parfois que la tâc
 plus facile qu'on ne le croyait. Mais il explique pourquoi les réussites du GOFAI
 ont cessé d'être comptées comme de l'IA.
 
-{{< image src="/images/module1/poteaux-du-but.svg" alt="Une ligne du temps avec quatre buts de soccer : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, de la prédiction de mots. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième but marqué d'un point d'interrogation." title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." loading="lazy" >}}
+{{< image src="/images/module1/poteaux-du-but.svg" alt="Une ligne du temps avec quatre paires de poteaux de but, en forme de fourche : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, de la prédiction de mots. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième but marqué d'un point d'interrogation." title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." loading="lazy" >}}
 
 De ce point de vue, le GOFAI n'a pas disparu : il s'est **intégré** à l'informatique
 courante. Ses réussites sont devenues si ordinaires et si fiables qu'on a oublié
