@@ -66,13 +66,20 @@ règles*. Pour chaque règle, cette formule vérifie que **toutes ses conditions
 vraies** dans l'onglet *Faits* et que sa conclusion n'a pas déjà été établie :
 
 ```
-=IF($F2="","",AND(
-   IF($B2="",TRUE,VLOOKUP($B2,Faits!$A:$B,2,FALSE)),
-   IF($C2="",TRUE,VLOOKUP($C2,Faits!$A:$B,2,FALSE)),
-   IF($D2="",TRUE,VLOOKUP($D2,Faits!$A:$B,2,FALSE)),
-   IF($E2="",TRUE,VLOOKUP($E2,Faits!$A:$B,2,FALSE)),
-   NOT(VLOOKUP($F2,Faits!$A:$B,2,FALSE))))
+=IF($F3="","",AND(
+   IF($B3="",TRUE,VLOOKUP($B3,Faits!$A:$B,2,FALSE)=TRUE),
+   IF($C3="",TRUE,VLOOKUP($C3,Faits!$A:$B,2,FALSE)=TRUE),
+   IF($D3="",TRUE,VLOOKUP($D3,Faits!$A:$B,2,FALSE)=TRUE),
+   IF($E3="",TRUE,VLOOKUP($E3,Faits!$A:$B,2,FALSE)=TRUE),
+   VLOOKUP($F3,Faits!$A:$B,2,FALSE)<>TRUE))
 ```
+
+Cette formule est celle de la règle R1, qui occupe la ligne 3 du tableau. Chaque
+`VLOOKUP` cherche un fait dans l'onglet *Faits* et lit sa case **Vrai ?**. La
+colonne voisine, **« Déjà conclue ? »**, indique si la conclusion de la règle est
+déjà cochée. Un **bandeau d'état**, sur la première ligne de l'onglet, résume où
+vous en êtes : il vous invite à continuer tant qu'une règle est verte, il annonce
+l'animal identifié, ou il signale que le système est bloqué.
 
 Quand une règle est activable, sa ligne est **surlignée en vert**, ce qui signifie
 qu'elle est prête à se déclencher. C'est vous qui jouez le rôle du moteur. Vous
@@ -89,7 +96,7 @@ seule. Le but est de vous faire constater à quel point ce raisonnement est
 mécanique. Il s'agit d'une simple boucle qui applique des règles, sans aucune
 compréhension de ce qu'est un guépard ou un manchot.
 
-<!-- CAPTURE À AJOUTER : onglet Base de règles avec une règle surlignée en vert -->
+{{< image src="/images/module1/tn1-regle-verte.png" alt="L'onglet Base de règles : le bandeau jaune « Continuez : déclenchez une règle surlignée en vert », puis les onze règles ; la ligne de R1 (a du poil, alors mammifère) est surlignée en vert et sa colonne Activable ? affiche TRUE." title="Le Cas 1 au départ : seule la règle R1 est activable, et sa ligne est surlignée en vert." loading="lazy" >}}
 
 ## Manipulation 1 — Tracer le raisonnement
 
@@ -113,6 +120,13 @@ Recommencez ensuite avec le **Cas 2**, le manchot (`a des plumes`,
 `incapable de voler`, `nage`, `plumage noir et blanc`), après avoir remis tous les
 faits à FAUX.
 
+{{% hint warning %}}
+**Pour remettre les faits à FAUX**, décochez les cases une à une en cliquant dessus.
+N'utilisez pas la touche Suppr (ou Retour arrière) sur les cases, parce qu'elle
+supprime la case à cocher au lieu de la décocher. Si cela vous arrive, annulez avec
+Ctrl+Z (Cmd+Z sur Mac), ou recréez les cases avec *Insertion ▸ Case à cocher*.
+{{% /hint %}}
+
 ## Manipulation 2 — Casser le système
 
 Remettez tous les faits à FAUX, puis chargez le **Cas 3** : `a du poil`,
@@ -127,15 +141,26 @@ qu'il ne sait pas identifier cet animal (il s'agit, par exemple, d'une
 
 Vous devez maintenant ajouter le savoir manquant. Sur la première ligne vide de la
 *Base de règles*, écrivez une nouvelle règle qui conclut `antilope`. Utilisez les
-**menus déroulants** pour les conditions (et ajoutez l'espèce `antilope` à l'onglet *Faits*
-si elle n'y est pas, en n'oubliant pas d'ajouter une case à cocher correspondante, ainsi que tout nouvel attribut dont vous auriez besoin).
+**menus déroulants** pour les conditions.
+
+L'espèce `antilope` n'est pas encore dans l'onglet *Faits*. Ajoutez-la sur la
+première ligne vide, en remplissant les trois colonnes :
+
+- son nom, `antilope`, dans la colonne *Fait* ;
+- une case à cocher dans la colonne *Vrai ?* (*Insertion ▸ Case à cocher*) ;
+- la mention `espèce (conclusion)` dans la colonne *Catégorie*. Sans cette mention,
+  le bandeau d'état ne reconnaît pas l'antilope comme une espèce, et il continue
+  d'afficher que le système est bloqué.
+
+Procédez de la même façon pour tout nouvel attribut dont vous auriez besoin, avec
+la mention `observable` dans la colonne *Catégorie*.
 
 Vérifiez que votre règle identifie bien le Cas 3. Ensuite, **testez sa solidité** :
 chargez un autre animal (par exemple le **zèbre** : `a du poil`, `a des sabots`,
 `rayures noires`). Votre nouvelle règle se déclenche-t-elle aussi, par erreur&nbsp;?
 Modifiez-la si nécessaire.
 
-<!-- CAPTURE À AJOUTER : la nouvelle règle ajoutée dans la Base de règles -->
+{{< image src="/images/module1/tn1-nouvelle-regle.png" alt="L'onglet Base de règles avec une douzième ligne : R12, mammifère, a des sabots, rumine, alors antilope. Cette ligne est surlignée en vert." title="Une nouvelle règle, R12, ajoutée sur la première ligne vide : elle devient activable pour le Cas 3." loading="lazy" >}}
 
 ## Questions d'interprétation
 

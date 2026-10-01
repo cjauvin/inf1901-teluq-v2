@@ -147,12 +147,14 @@ for idx in range(FIRST, MAXROW + 1):
         for k in range(4):
             br.cell(idx, 2 + k, conds[k] if k < len(conds) else None)
         br.cell(idx, 6, concl)
+    # « =TRUE » et « <>TRUE » : une cellule vide (case à cocher effacée par Suppr) compte
+    # comme fausse ; sans cela, AND() l'ignorait et toutes les règles devenaient vertes.
     g = (f'=IF($F{idx}="","",AND('
-         f'IF($B{idx}="",TRUE,VLOOKUP($B{idx},Faits!$A:$B,2,FALSE)),'
-         f'IF($C{idx}="",TRUE,VLOOKUP($C{idx},Faits!$A:$B,2,FALSE)),'
-         f'IF($D{idx}="",TRUE,VLOOKUP($D{idx},Faits!$A:$B,2,FALSE)),'
-         f'IF($E{idx}="",TRUE,VLOOKUP($E{idx},Faits!$A:$B,2,FALSE)),'
-         f'NOT(VLOOKUP($F{idx},Faits!$A:$B,2,FALSE))))')
+         f'IF($B{idx}="",TRUE,VLOOKUP($B{idx},Faits!$A:$B,2,FALSE)=TRUE),'
+         f'IF($C{idx}="",TRUE,VLOOKUP($C{idx},Faits!$A:$B,2,FALSE)=TRUE),'
+         f'IF($D{idx}="",TRUE,VLOOKUP($D{idx},Faits!$A:$B,2,FALSE)=TRUE),'
+         f'IF($E{idx}="",TRUE,VLOOKUP($E{idx},Faits!$A:$B,2,FALSE)=TRUE),'
+         f'VLOOKUP($F{idx},Faits!$A:$B,2,FALSE)<>TRUE))')
     br.cell(idx, 7, g)
     h = f'=IF($F{idx}="","",VLOOKUP($F{idx},Faits!$A:$B,2,FALSE))'
     br.cell(idx, 8, h)
