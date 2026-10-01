@@ -11,7 +11,7 @@ ETAPES = [
     ("1997", ["battre le champion", "du monde d'échecs"], f"«{FINE}ce n'est que", f"du calcul{FINE}»"),
     ("2012", ["reconnaître", "des images"], f"«{FINE}ce n'est que", f"de la statistique{FINE}»"),
     ("2016", ["battre le champion", "du monde de go"], f"«{FINE}ce n'est", f"qu'un jeu{FINE}»"),
-    ("2022", ["converser en", "langage courant"], f"«{FINE}ce n'est que de la", f"prédiction de mots{FINE}»"),
+    ("2022", ["converser en", "langage courant"], f"«{FINE}ce n'est qu'un", f"perroquet stochastique{FINE}»"),
 ]
 XS = [96, 252, 408, 564]
 X_FUTUR = 706
@@ -36,7 +36,7 @@ def but(o, x, couleur, opacite=1.0, pointille=False, texte="BUT"):
 o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>Déplacer les poteaux du but</title>",
-     f"<desc>Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot «{FINE}BUT{FINE}». 1997{NB}: battre le champion du monde d'échecs, suivi de la réaction «{FINE}ce n'est que du calcul{FINE}». 2012{NB}: reconnaître des images, «{FINE}ce n'est que de la statistique{FINE}». 2016{NB}: battre le champion du monde de go, «{FINE}ce n'est qu'un jeu{FINE}». 2022{NB}: converser en langage courant, «{FINE}ce n'est que de la prédiction de mots{FINE}». Après chaque succès, une flèche en pointillé déplace le but vers la droite{FINE}; le panneau d'un cinquième poteau, en pointillé, porte un point d'interrogation.</desc>",
+     f"<desc>Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot «{FINE}BUT{FINE}». 1997{NB}: battre le champion du monde d'échecs, suivi de la réaction «{FINE}ce n'est que du calcul{FINE}». 2012{NB}: reconnaître des images, «{FINE}ce n'est que de la statistique{FINE}». 2016{NB}: battre le champion du monde de go, «{FINE}ce n'est qu'un jeu{FINE}». 2022{NB}: converser en langage courant, «{FINE}ce n'est qu'un perroquet stochastique{FINE}». Après chaque succès, une flèche en pointillé déplace le but vers la droite{FINE}; le panneau d'un cinquième poteau, en pointillé, porte un point d'interrogation.</desc>",
      f'<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
      f'<path d="M0 0 L10 5 L0 10 z" fill="{BRUN}"/></marker></defs>',
      f'<rect x="0" y="0" width="{W}" height="{H}" rx="14" fill="{FOND}" stroke="{BORD}"/>',

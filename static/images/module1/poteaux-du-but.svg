@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 780 402" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
 <title>Déplacer les poteaux du but</title>
-<desc>Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot « BUT ». 1997 : battre le champion du monde d'échecs, suivi de la réaction « ce n'est que du calcul ». 2012 : reconnaître des images, « ce n'est que de la statistique ». 2016 : battre le champion du monde de go, « ce n'est qu'un jeu ». 2022 : converser en langage courant, « ce n'est que de la prédiction de mots ». Après chaque succès, une flèche en pointillé déplace le but vers la droite ; le panneau d'un cinquième poteau, en pointillé, porte un point d'interrogation.</desc>
+<desc>Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot « BUT ». 1997 : battre le champion du monde d'échecs, suivi de la réaction « ce n'est que du calcul ». 2012 : reconnaître des images, « ce n'est que de la statistique ». 2016 : battre le champion du monde de go, « ce n'est qu'un jeu ». 2022 : converser en langage courant, « ce n'est qu'un perroquet stochastique ». Après chaque succès, une flèche en pointillé déplace le but vers la droite ; le panneau d'un cinquième poteau, en pointillé, porte un point d'interrogation.</desc>
 <defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
 <rect x="0" y="0" width="780" height="402" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="390.0" y="38" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Déplacer les poteaux du but (<tspan font-style="italic">moving the goalposts</tspan>)</text>
@@ -57,8 +57,8 @@
 <text x="564" y="288" font-size="12.5" fill="#3a3531" text-anchor="middle">langage courant</text>
 <circle cx="586" cy="142" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
 <path d="M582 142 l3 3.4 l5.6 -6.6" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="564" y="326" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est que de la</text>
-<text x="564" y="342" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">prédiction de mots »</text>
+<text x="564" y="326" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est qu'un</text>
+<text x="564" y="342" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">perroquet stochastique »</text>
 <line x1="706" y1="226" x2="706" y2="189" stroke="#7a6f63" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
 <ellipse cx="706" cy="227" rx="11" ry="3" fill="#7a6f63" opacity="0.36000000000000004"/>
 <polygon points="730.9,174.3 716.3,188.9 695.7,188.9 681.1,174.3 681.1,153.7 695.7,139.1 716.3,139.1 730.9,153.7" fill="#fbf7ee" stroke="#7a6f63" stroke-width="3" stroke-dasharray="5 4" stroke-linejoin="round" opacity="0.9"/>
