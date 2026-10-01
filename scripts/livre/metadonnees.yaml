@@ -1,3 +1,5 @@
+# Nom des fichiers produits (sans extension), lu par generer.py
+fichier: "INF1901-initiation-IA"
 title: "INF1901 — Initiation à l'intelligence artificielle"
 subtitle: "Concepts et réflexions"
 author: "Christian Jauvin"
