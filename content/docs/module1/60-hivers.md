@@ -128,6 +128,22 @@ algorithme ». La formule la plus courte est attribuée à l'informaticien Lar
 et c'est **Hofstadter** qui l'a popularisée : *« l'IA, c'est tout ce qui n'a pas
 encore été fait. »*
 
+Les anglophones ont une expression pour ce phénomène : *moving the goalposts*,
+« déplacer les poteaux du but ». L'image vient du sport. Si l'on recule le but
+chaque fois qu'un joueur s'apprête à marquer, il ne marquera jamais, quelle que
+soit sa performance. L'histoire de l'IA suit ce schéma. Avant 1997, on tenait le
+jeu d'échecs pour un bon test de l'intelligence. Quand [Deep Blue a battu
+Kasparov](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997),
+on a conclu que les échecs ne demandaient finalement que du calcul. Le même
+raisonnement a été repris pour la reconnaissance d'images, pour le jeu de go, puis
+pour la conversation. À chaque succès, la tâche réussie est retirée de la
+définition de l'intelligence, et le but est placé un peu plus loin. Ce déplacement
+n'est pas toujours injustifié, parce qu'un succès révèle parfois que la tâche était
+plus facile qu'on ne le croyait. Mais il explique pourquoi les réussites du GOFAI
+ont cessé d'être comptées comme de l'IA.
+
+{{< image src="/images/module1/poteaux-du-but.svg" alt="Une ligne du temps avec quatre buts de soccer : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, de la prédiction de mots. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième but marqué d'un point d'interrogation." title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." loading="lazy" >}}
+
 De ce point de vue, le GOFAI n'a pas disparu : il s'est **intégré** à l'informatique
 courante. Ses réussites sont devenues si ordinaires et si fiables qu'on a oublié
 qu'elles venaient des laboratoires d'IA. Les quatre exemples suivants sont des

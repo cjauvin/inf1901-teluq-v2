@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 780 372" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Déplacer les poteaux du but</title>
+<desc>Une ligne du temps avec quatre buts de soccer. 1997 : battre le champion du monde d'échecs, suivi de la réaction « ce n'est que du calcul ». 2012 : reconnaître des images, « ce n'est que de la statistique ». 2016 : battre le champion du monde de go, « ce n'est qu'un jeu ». 2022 : converser en langage courant, « ce n'est que de la prédiction de mots ». Après chaque succès, une flèche en pointillé déplace le but vers la droite ; un cinquième but, en pointillé, porte un point d'interrogation.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="780" height="372" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="390.0" y="38" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Déplacer les poteaux du but (<tspan font-style="italic">moving the goalposts</tspan>)</text>
+<text x="390.0" y="60" font-size="12.5" fill="#5b5249" text-anchor="middle">À chaque succès, la tâche réussie cesse de compter comme de l'intelligence, et le but recule.</text>
+<line x1="30" y1="196" x2="750" y2="196" stroke="#b8a888" stroke-width="2"/>
+<path d="M102 140 Q174.0 96 244 138" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#pointe)"/>
+<path d="M258 140 Q330.0 96 400 138" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#pointe)"/>
+<path d="M414 140 Q486.0 96 556 138" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#pointe)"/>
+<path d="M570 140 Q635.0 96 698 138" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#pointe)"/>
+<line x1="76.7" y1="152" x2="76.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="86.3" y1="152" x2="86.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="96.0" y1="152" x2="96.0" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="105.7" y1="152" x2="105.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="115.3" y1="152" x2="115.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="67.0" y1="163.0" x2="125.0" y2="163.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="67.0" y1="174.0" x2="125.0" y2="174.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="67.0" y1="185.0" x2="125.0" y2="185.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<path d="M67.0 196 L67.0 152 L125.0 152 L125.0 196" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<text x="96" y="220" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">1997</text>
+<text x="96" y="242" font-size="12.5" fill="#3a3531" text-anchor="middle">battre le champion</text>
+<text x="96" y="258" font-size="12.5" fill="#3a3531" text-anchor="middle">du monde d'échecs</text>
+<circle cx="96" cy="176" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<path d="M92 176 l3 3.5 l6 -7" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="96" y="296" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est que</text>
+<text x="96" y="312" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">du calcul »</text>
+<line x1="232.7" y1="152" x2="232.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="242.3" y1="152" x2="242.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="252.0" y1="152" x2="252.0" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="261.7" y1="152" x2="261.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="271.3" y1="152" x2="271.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="223.0" y1="163.0" x2="281.0" y2="163.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="223.0" y1="174.0" x2="281.0" y2="174.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="223.0" y1="185.0" x2="281.0" y2="185.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<path d="M223.0 196 L223.0 152 L281.0 152 L281.0 196" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<text x="252" y="220" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">2012</text>
+<text x="252" y="242" font-size="12.5" fill="#3a3531" text-anchor="middle">reconnaître</text>
+<text x="252" y="258" font-size="12.5" fill="#3a3531" text-anchor="middle">des images</text>
+<circle cx="252" cy="176" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<path d="M248 176 l3 3.5 l6 -7" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="252" y="296" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est que</text>
+<text x="252" y="312" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">de la statistique »</text>
+<line x1="388.7" y1="152" x2="388.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="398.3" y1="152" x2="398.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="408.0" y1="152" x2="408.0" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="417.7" y1="152" x2="417.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="427.3" y1="152" x2="427.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="379.0" y1="163.0" x2="437.0" y2="163.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="379.0" y1="174.0" x2="437.0" y2="174.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="379.0" y1="185.0" x2="437.0" y2="185.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<path d="M379.0 196 L379.0 152 L437.0 152 L437.0 196" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<text x="408" y="220" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">2016</text>
+<text x="408" y="242" font-size="12.5" fill="#3a3531" text-anchor="middle">battre le champion</text>
+<text x="408" y="258" font-size="12.5" fill="#3a3531" text-anchor="middle">du monde de go</text>
+<circle cx="408" cy="176" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<path d="M404 176 l3 3.5 l6 -7" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="408" y="296" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est</text>
+<text x="408" y="312" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">qu'un jeu »</text>
+<line x1="544.7" y1="152" x2="544.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="554.3" y1="152" x2="554.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="564.0" y1="152" x2="564.0" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="573.7" y1="152" x2="573.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="583.3" y1="152" x2="583.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="535.0" y1="163.0" x2="593.0" y2="163.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="535.0" y1="174.0" x2="593.0" y2="174.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<line x1="535.0" y1="185.0" x2="593.0" y2="185.0" stroke="#b8a888" stroke-width="0.8" opacity="0.7"/>
+<path d="M535.0 196 L535.0 152 L593.0 152 L593.0 196" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+<text x="564" y="220" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">2022</text>
+<text x="564" y="242" font-size="12.5" fill="#3a3531" text-anchor="middle">converser en</text>
+<text x="564" y="258" font-size="12.5" fill="#3a3531" text-anchor="middle">langage courant</text>
+<circle cx="564" cy="176" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<path d="M560 176 l3 3.5 l6 -7" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="564" y="296" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">« ce n'est que de la</text>
+<text x="564" y="312" font-size="12" fill="#c4564a" text-anchor="middle" font-style="italic">prédiction de mots »</text>
+<line x1="686.7" y1="152" x2="686.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="696.3" y1="152" x2="696.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="706.0" y1="152" x2="706.0" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="715.7" y1="152" x2="715.7" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="725.3" y1="152" x2="725.3" y2="196" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="677.0" y1="163.0" x2="735.0" y2="163.0" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="677.0" y1="174.0" x2="735.0" y2="174.0" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<line x1="677.0" y1="185.0" x2="735.0" y2="185.0" stroke="#b8a888" stroke-width="0.8" opacity="0.5599999999999999"/>
+<path d="M677.0 196 L677.0 152 L735.0 152 L735.0 196" fill="none" stroke="#7a6f63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" stroke-dasharray="5 4"/>
+<text x="706" y="182" font-size="22" fill="#7a6f63" text-anchor="middle" font-weight="700">?</text>
+<text x="706" y="220" font-size="12.5" fill="#7a6f63" text-anchor="middle">le prochain but</text>
+<text x="390.0" y="352" font-size="12.5" fill="#5b5249" text-anchor="middle">En rouge : la réaction typique après chaque succès (des formules courantes, pas des citations).</text>
+</svg>
