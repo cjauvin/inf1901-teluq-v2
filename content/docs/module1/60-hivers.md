@@ -139,13 +139,15 @@ raisonnement a été repris pour la reconnaissance d'images, pour le jeu de go, 
 pour la conversation. Les grands modèles de langage ont ainsi été décrits comme des
 « perroquets stochastiques » (*stochastic parrots*), selon l'expression de la
 linguiste Emily Bender et de ses coauteures en 2021 : des systèmes qui assemblent
-des suites de mots probables sans rien comprendre de ce qu'ils disent. À chaque succès, la tâche réussie est retirée de la
+des suites de mots probables sans rien comprendre de ce qu'ils disent. On dit
+aussi qu'ils ne font que de l'« autocomplétion glorifiée » (*glorified
+autocomplete*), comme la fonction qui propose le mot suivant sur un téléphone. À chaque succès, la tâche réussie est retirée de la
 définition de l'intelligence, et le but est placé un peu plus loin. Ce déplacement
 n'est pas toujours injustifié, parce qu'un succès révèle parfois que la tâche était
 plus facile qu'on ne le croyait. Mais il explique pourquoi les réussites du GOFAI
 ont cessé d'être comptées comme de l'IA.
 
-{{< image src="/images/module1/poteaux-du-but.svg" alt="Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot « BUT » : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, un perroquet stochastique. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième poteau, dont le panneau porte un point d'interrogation." title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." loading="lazy" >}}
+{{< image src="/images/module1/poteaux-du-but.svg" alt="Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot « BUT » : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, un perroquet stochastique ou de l'autocomplétion glorifiée. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième poteau, dont le panneau porte un point d'interrogation." title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." loading="lazy" >}}
 
 De ce point de vue, le GOFAI n'a pas disparu : il s'est **intégré** à l'informatique
 courante. Ses réussites sont devenues si ordinaires et si fiables qu'on a oublié
