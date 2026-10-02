@@ -103,3 +103,57 @@ exactement la question à laquelle répond le neurone 2. La différence est que
 personne n'a besoin de trouver cette caractéristique : avec les bons poids, le
 réseau la construit lui-même. Une couche cachée est donc une **fabrique de
 caractéristiques**.
+
+## Deux droites à déplacer
+
+Dans l'applet ci-dessous, chaque droite représente un neurone caché. Vous pouvez la
+déplacer et la faire pivoter, comme dans l'applet de la
+[régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique).
+La zone délimitée par les deux droites est colorée : c'est là que le réseau répond
+« vrai ». Un point mal classé est entouré d'un cercle orange.
+
+{{< applet src="/html/applets/xor-deux-droites.html" height="667" >}}
+
+1. Placez les deux droites pour que la zone colorée contienne les deux points
+   rouges, et aucun point bleu.
+2. Cherchez une autre solution, avec des droites orientées autrement. Il en existe
+   plusieurs.
+3. Choisissez ensuite le second jeu de points, « un groupe entouré », où un groupe
+   rouge est entouré de points bleus. Constatez que deux droites ne suffisent plus.
+4. Ajoutez une troisième droite, avec le bouton « 3 », et entourez le groupe rouge.
+
+## Plus de neurones, plus de formes
+
+Deux neurones cachés donnent deux droites. Trois neurones en donnent trois, ce qui
+permet de délimiter un triangle, comme dans la dernière manipulation. Avec un grand
+nombre de neurones, on peut entourer une zone de forme quelconque, à la précision
+voulue.
+
+Ce résultat a été démontré en 1989, sous le nom de **théorème d'approximation
+universelle** : un réseau à une seule couche cachée, avec assez de neurones, peut
+approcher presque n'importe quelle fonction. Le répertoire de formes d'un réseau de
+neurones n'a donc pas la limite de celui d'un
+[modèle linéaire](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner).
+
+Un réseau peut aussi avoir plusieurs sorties. Pour reconnaître les chiffres
+manuscrits, on utilise un réseau à **dix sorties**, une par chiffre. Chaque sortie
+donne un nombre entre 0 et 1, et le réseau répond par le chiffre dont la sortie est
+la plus élevée.
+
+{{< image src="/images/module3/reseau-chiffres.svg" alt="De gauche à droite : une image de 28 pixels sur 28 qui montre un zéro ; une couche d'entrée de 784 valeurs, une par pixel ; une couche cachée de 30 neurones ; une couche de sortie de dix neurones, numérotés de 0 à 9. Chaque sortie donne un nombre entre 0 et 1. La sortie du chiffre 0 est la plus élevée, 0,96 : c'est la réponse du réseau." title="Un réseau pour les chiffres manuscrits : 784 entrées, une couche cachée de 30 neurones, dix sorties." loading="lazy" >}}
+
+## Qui règle tous ces poids ?
+
+Pour le XOR, nous avons choisi les poids à la main, parce que le réseau n'en compte
+que neuf. Le réseau des chiffres en compte des milliers. Avec une couche cachée de
+30 neurones, il y a 784 × 30 poids entre l'entrée et la couche cachée, puis 30 × 10
+entre la couche cachée et la sortie, soit près de 24 000 paramètres en comptant les
+biais. Personne ne peut les régler à la main.
+
+Le théorème d'approximation universelle dit qu'il existe de bons poids. Il ne dit
+pas comment les trouver. Ce problème a bloqué les réseaux de neurones pendant près
+de vingt ans. On savait depuis les années 1960 qu'une couche cachée dépasserait la
+[limite du perceptron](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969),
+mais on ne savait pas comment entraîner un tel réseau. La solution, la
+**rétropropagation du gradient**, s'est imposée en 1986. C'est le sujet du chapitre
+suivant, « Entraîner un réseau ».

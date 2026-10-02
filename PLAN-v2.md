@@ -272,13 +272,16 @@ Même construction que le M2 : chaque page rencontre une limite qui mène à la 
 1. **Un neurone** — le retour du perceptron ; un neurone = une régression logistique ; applet du neurone ; sa limite (une droite).
 2. **Une couche cachée** — le XOR résolu : le réseau fabrique lui-même la caractéristique (solde la dette XOR).
 3. **Entraîner un réseau** — la rétropropagation (1986) ; vidéo 3Blue1Brown intégrée (plus de page à part).
-4. **L'apprentissage profond** — pourquoi empiler ; hiérarchie, caractéristiques apprises, données, GPU ; ImageNet 2012 ; encadré « la carte n'est pas le territoire » ; **autoencodeurs en courte section** (renvoi vers le M4).
+4. **L'apprentissage profond** — pourquoi empiler ; hiérarchie, caractéristiques apprises, données, GPU ; ImageNet 2012 ; encadré « la carte n'est pas le territoire » ; **autoencodeurs en courte section** (renvoi vers le M4) ; **Sutton, « The Bitter Lesson »**, à côté des données et des GPU (décidé le 2026-10-02).
 5. **Voir : les réseaux convolutifs** — Le Cun, chèques, convolution, ImageNet.
 6. **Lire une séquence : les réseaux récurrents** — mémoire, limite sur les longues séquences.
 7. **L'attention et le Transformer** — architecture seulement ; pont vers le M4.
 8. **Apprendre à jouer : le renforcement profond** — Atari (DQN), AlphaGo (recherche du M1 + apprentissage du M2).
 9. **Tromper un réseau** — exemples adverses, boîte noire (contraste avec arbres et systèmes experts).
+- **Accueil du module** — à refaire à la fin, quand les neuf pages sont écrites (décidé le 2026-10-02).
 - **Travail noté 3** — TensorFlow Playground, à revoir et à vérifier dans le navigateur comme le TN1.
+
+Avancement (2026-10-02) : pages 1 *Un neurone* et 2 *Une couche cachée* écrites (applets `neuron.html` et `xor-deux-droites.html`). Renvois encore sans lien, à relier quand les pages existeront : « L'apprentissage profond » (page 1), « Entraîner un réseau » (page 2).
 
 Décisions : **GNN et NTM retirés** (au plus un encadré de trois lignes sur les NTM, clin d'œil à Turing) ; **exemple fil conducteur = les chiffres manuscrits** (Le Cun, 3Blue1Brown, exemples adverses). À faire en cours de route : rediriger les liens existants vers `30-architectures-avancées` et `40-aa-adverse` (M1, M2).
 

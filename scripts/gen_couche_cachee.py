@@ -1,4 +1,5 @@
 """Module 3, « Une couche cachée » : le petit réseau qui résout le XOR, et ce que fait sa couche cachée."""
+import math
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "static" / "images" / "module3"
@@ -113,6 +114,84 @@ def avant_apres():
     (OUT / "xor-couche-cachee.svg").write_text("\n".join(o) + "\n")
 
 
+# ---------------------------------------------------------------- le réseau des chiffres
+def chiffre_zero(n=28):
+    """Un zéro manuscrit stylisé, sur une grille n × n (le même que dans gen_neurone.py)."""
+    grille = []
+    for j in range(n):
+        ligne = []
+        for i in range(n):
+            x, y = (i + 0.5) / n - 0.5, (j + 0.5) / n - 0.5
+            xr, yr = x * math.cos(0.18) - y * math.sin(0.18), x * math.sin(0.18) + y * math.cos(0.18)
+            d = abs(math.hypot(xr / 0.24, yr / 0.34) - 1.0)
+            ligne.append(max(0.0, min(1.0, 1.25 - d / 0.14)))
+        grille.append(ligne)
+    return grille
+
+
+def reseau_chiffres():
+    W, H = 700, 440
+    o = entete(W, H, "Un réseau qui reconnaît les chiffres manuscrits",
+               f"De gauche à droite{NB}: une image de 28 pixels sur 28 qui montre un zéro{FINE}; une couche d'entrée de 784 valeurs, une par pixel{FINE}; "
+               f"une couche cachée de 30 neurones{FINE}; une couche de sortie de dix neurones, numérotés de 0 à 9. Chaque sortie donne un nombre entre 0 et 1. "
+               f"La sortie du chiffre 0 est la plus élevée, 0,96{NB}: c'est la réponse du réseau.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Le réseau des chiffres{NB}: 784 entrées, une couche cachée, dix sorties</text>')
+    haut, bas = 100, 370
+    cy = (haut + bas) / 2
+    # l'image
+    g, t, x0 = chiffre_zero(), 4.0, 26
+    y0 = cy - 14 * t
+    o.append(f'<rect x="{x0 - 3}" y="{y0 - 3}" width="{28 * t + 6}" height="{28 * t + 6}" rx="4" fill="{PANNEAU}" stroke="{AXE}"/>')
+    for j, ligne in enumerate(g):
+        for i, v in enumerate(ligne):
+            if v > 0.02:
+                o.append(f'<rect x="{x0 + i * t:.1f}" y="{y0 + j * t:.1f}" width="{t + 0.3:.1f}" height="{t + 0.3:.1f}" fill="{ENCRE}" fill-opacity="{v:.2f}"/>')
+    o.append(f'<text x="{x0 + 14 * t}" y="{y0 + 28 * t + 24}" font-size="12" fill="{GRIS}" text-anchor="middle">image de 28 × 28</text>')
+    xe, xc, xs = 215, 380, 545
+
+    def colonne(n, trou):
+        """Ordonnées de n ronds répartis de haut en bas ; `trou` est l'indice remplacé par des points de suspension."""
+        return [(haut + k * (bas - haut) / (n - 1), k == trou) for k in range(n)]
+
+    entrees, caches = colonne(11, 5), colonne(9, 4)
+    sorties = [haut + k * (bas - haut) / 9 for k in range(10)]
+    # connexions (dessinées d'abord, pour passer sous les ronds)
+    for y1, t1 in entrees:
+        for y2, t2 in caches:
+            if not t1 and not t2:
+                o.append(f'<line x1="{xe + 7}" y1="{y1:.1f}" x2="{xc - 11}" y2="{y2:.1f}" stroke="{AXE}" stroke-width="0.7" opacity="0.8"/>')
+    for y1, t1 in caches:
+        for y2 in sorties:
+            if not t1:
+                o.append(f'<line x1="{xc + 11}" y1="{y1:.1f}" x2="{xs - 11}" y2="{y2:.1f}" stroke="{AXE}" stroke-width="0.7" opacity="0.8"/>')
+    o.append(f'<line x1="{x0 + 28 * t + 10}" y1="{cy}" x2="{xe - 22}" y2="{cy}" stroke="{GRIS}" stroke-width="1.8" marker-end="url(#pointe)"/>')
+    for y, trou in entrees:
+        if trou:
+            o.append(f'<text x="{xe}" y="{y + 5:.1f}" font-size="16" fill="{BLEU}" text-anchor="middle" font-weight="700">⋮</text>')
+        else:
+            o.append(f'<circle cx="{xe}" cy="{y:.1f}" r="6" fill="{PANNEAU}" stroke="{BLEU}" stroke-width="1.8"/>')
+    for y, trou in caches:
+        if trou:
+            o.append(f'<text x="{xc}" y="{y + 6:.1f}" font-size="18" fill="{TEAL}" text-anchor="middle" font-weight="700">⋮</text>')
+        else:
+            o.append(f'<circle cx="{xc}" cy="{y:.1f}" r="10" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="2.2"/>')
+    valeurs = [0.96, 0.01, 0.03, 0.02, 0.01, 0.04, 0.11, 0.01, 0.07, 0.02]
+    for k, (y, v) in enumerate(zip(sorties, valeurs)):
+        gagne = k == 0
+        o.append(f'<circle cx="{xs}" cy="{y:.1f}" r="10" fill="{ROUGE if gagne else PANNEAU}" fill-opacity="{0.85 if gagne else 1}" stroke="{ROUGE}" stroke-width="2.2"/>')
+        o.append(f'<text x="{xs}" y="{y + 4:.1f}" font-size="11.5" fill="{PANNEAU if gagne else ROUGE}" text-anchor="middle" font-weight="700">{k}</text>')
+        o.append(f'<rect x="{xs + 22}" y="{y - 5:.1f}" width="60" height="10" rx="2" fill="{PANNEAU}" stroke="{AXE}" stroke-width="0.8"/>')
+        o.append(f'<rect x="{xs + 22}" y="{y - 5:.1f}" width="{60 * v:.1f}" height="10" rx="2" fill="{ROUGE}" fill-opacity="{0.9 if gagne else 0.45}"/>')
+        o.append(f'<text x="{xs + 90}" y="{y + 4:.1f}" font-size="11.5" fill="{ENCRE if gagne else GRIS}" font-weight="{700 if gagne else 400}">{f"{v:.2f}".replace(".", ",")}</text>')
+    for x, titre, sous, coul in ((xe, "couche d'entrée", "784 valeurs", BLEU), (xc, "couche cachée", "30 neurones", TEAL), (xs + 30, "couche de sortie", "10 neurones", ROUGE)):
+        o.append(f'<text x="{x}" y="66" font-size="12.5" fill="{ENCRE_PALE}" text-anchor="middle" font-weight="700">{titre}</text>')
+        o.append(f'<text x="{x}" y="82" font-size="12" fill="{coul}" text-anchor="middle">{sous}</text>')
+    o.append(f'<text x="{W / 2}" y="{H - 26}" font-size="12.5" fill="{GRIS}" text-anchor="middle">La sortie la plus élevée donne la réponse du réseau{NB}: ici, le chiffre 0.</text>')
+    o.append("</svg>")
+    (OUT / "reseau-chiffres.svg").write_text("\n".join(o) + "\n")
+
+
 reseau()
 avant_apres()
-print("reseau-xor.svg et xor-couche-cachee.svg écrits")
+reseau_chiffres()
+print("reseau-xor.svg, xor-couche-cachee.svg et reseau-chiffres.svg écrits")
