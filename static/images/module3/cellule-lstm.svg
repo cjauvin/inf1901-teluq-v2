@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une cellule LSTM, simplifiée</title>
+<desc>Une ligne horizontale, la mémoire, traverse la cellule de gauche à droite. Trois portes agissent sur elle : la porte d'oubli efface une partie de la mémoire, la porte d'entrée y écrit, la porte de sortie y lit pour produire le nouvel état. L'état précédent et l'élément courant arrivent par le bas et alimentent les trois portes.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pointe-rouge" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="700" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Une cellule LSTM : une mémoire et trois portes</text>
+<rect x="170" y="86" width="400" height="236" rx="14" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="560" y="312" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="700">cellule LSTM</text>
+<line x1="40" y1="125" x2="652" y2="125" stroke="#9a5b33" stroke-width="5" marker-end="url(#pointe)"/>
+<text x="40" y="111" font-size="12.5" fill="#9a5b33" font-weight="700">mémoire</text>
+<line x1="200" y1="282" x2="470" y2="282" stroke="#3a6ea5" stroke-width="2"/>
+<line x1="40" y1="282" x2="200" y2="282" stroke="#3a6ea5" stroke-width="2"/>
+<text x="40" y="256" font-size="12" fill="#3a6ea5" font-weight="700">état précédent</text>
+<text x="40" y="272" font-size="12" fill="#3a6ea5" font-weight="700">+ élément courant</text>
+<line x1="250" y1="282" x2="250" y2="212" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#pointe)"/>
+<rect x="206" y="168" width="88" height="44" rx="10" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2.2"/>
+<text x="250" y="187" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">porte</text>
+<text x="250" y="202" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">d'oubli</text>
+<line x1="250" y1="168" x2="250" y2="139" stroke="#2f6f6a" stroke-width="1.8"/>
+<circle cx="250" cy="125" r="13" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="250" y="131" font-size="17" fill="#2f6f6a" text-anchor="middle" font-weight="700">×</text>
+<line x1="360" y1="282" x2="360" y2="212" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#pointe)"/>
+<rect x="316" y="168" width="88" height="44" rx="10" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2.2"/>
+<text x="360" y="187" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">porte</text>
+<text x="360" y="202" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">d'entrée</text>
+<line x1="360" y1="168" x2="360" y2="139" stroke="#2f6f6a" stroke-width="1.8"/>
+<circle cx="360" cy="125" r="13" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="360" y="131" font-size="17" fill="#2f6f6a" text-anchor="middle" font-weight="700">+</text>
+<line x1="470" y1="282" x2="470" y2="212" stroke="#3a6ea5" stroke-width="1.8" marker-end="url(#pointe)"/>
+<rect x="426" y="168" width="88" height="44" rx="10" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2.2"/>
+<text x="470" y="187" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">porte</text>
+<text x="470" y="202" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">de sortie</text>
+<line x1="470" y1="128" x2="470" y2="167" stroke="#9a5b33" stroke-width="2" marker-end="url(#pointe)"/>
+<line x1="514" y1="190" x2="652" y2="190" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="618" y="180" font-size="12" fill="#c4564a" text-anchor="middle" font-weight="700">nouvel état</text>
+<text x="272" y="157" font-size="11.5" fill="#7a6f63" text-anchor="start">efface</text>
+<text x="382" y="157" font-size="11.5" fill="#7a6f63" text-anchor="start">écrit</text>
+<text x="482" y="155" font-size="11.5" fill="#7a6f63" text-anchor="start">lit</text>
+<text x="350.0" y="348" font-size="12.5" fill="#7a6f63" text-anchor="middle">Chaque porte agit comme un robinet, entre 0 (fermé) et 1 (ouvert) ; ses poids sont appris.</text>
+</svg>

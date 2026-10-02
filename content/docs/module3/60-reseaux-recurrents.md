@@ -105,3 +105,96 @@ Le langage contient beaucoup de liens de ce type. Dans « Les clés que j'avai
 posées hier soir sur la table près de la fenêtre **sont** introuvables », le verbe
 s'accorde avec « clés », placé une douzaine de mots plus tôt. Un réseau récurrent simple se
 souvient bien des derniers mots, et mal des premiers.
+
+## Le LSTM : une mémoire à portes
+
+En 1997, Sepp Hochreiter et Jürgen Schmidhuber, à Munich, proposent une cellule
+récurrente conçue pour ne pas oublier : la **mémoire à long et court terme**, ou
+**LSTM** (*long short-term memory*).
+
+La cellule LSTM contient une **mémoire** séparée de son état, une liste de nombres
+qui passe d'une étape à la suivante presque sans transformation. À chaque étape,
+trois **portes** décident de ce qui arrive à cette mémoire :
+
+- la **porte d'oubli** décide ce qu'il faut effacer ;
+- la **porte d'entrée** décide ce qu'il faut y écrire à partir de l'élément courant ;
+- la **porte de sortie** décide ce qu'il faut en lire pour produire l'état.
+
+Chaque porte est un petit groupe de neurones, dont la sortie, entre 0 et 1, agit
+comme un robinet : 0 bloque l'information, 1 la laisse passer. Les portes ont leurs
+propres poids, appris par rétropropagation comme les autres. Le réseau apprend donc
+lui-même quand retenir et quand oublier. Dans la phrase des clés, il peut apprendre
+à écrire « sujet au pluriel » dans sa mémoire en lisant « Les clés », à le garder
+pendant les mots suivants, puis à le lire au moment du verbe.
+
+{{< image src="/images/module3/cellule-lstm.svg" alt="Une ligne horizontale, la mémoire, traverse la cellule de gauche à droite. Trois portes agissent sur elle : la porte d'oubli efface une partie de la mémoire, la porte d'entrée y écrit, la porte de sortie y lit pour produire le nouvel état. L'état précédent et l'élément courant arrivent par le bas et alimentent les trois portes." title="Une cellule LSTM, simplifiée : une mémoire qui traverse la cellule, et trois portes qui décident ce qu'on y efface, écrit et lit." loading="lazy" >}}
+
+Comme la mémoire passe d'une étape à l'autre sans être recalculée, l'erreur peut
+aussi la remonter sans s'affaiblir autant. Un LSTM apprend des liens sur des
+centaines d'étapes, là où un réseau récurrent simple se limite à une dizaine.
+
+{{% hint info %}}
+**Des réseaux avec une mémoire externe**
+
+En 2014, Alex Graves et ses collègues de DeepMind vont plus loin. Ils donnent à un
+réseau récurrent une **mémoire externe**, une sorte de tableau où il peut écrire et
+lire à n'importe quelle case. Ils l'appellent **machine de Turing neuronale**, en
+référence au ruban de la
+[machine de Turing](docs/module1/10-turing/#la-pensée-comme-calcul) du Module 1.
+Le réseau apprend ainsi, à partir d'exemples, de petits algorithmes comme copier ou
+trier une liste. L'idée est restée un sujet de recherche, mais le mécanisme qui
+choisit où lire dans la mémoire annonce celui du chapitre suivant.
+{{% /hint %}}
+
+## Ce que les réseaux récurrents ont permis
+
+Entre 2009 et 2017, les réseaux récurrents, et surtout les LSTM, deviennent la
+méthode de référence pour les séquences.
+
+**L'écriture manuscrite.** En 2009, un LSTM conçu par Alex Graves remporte des
+concours de reconnaissance d'écriture manuscrite. Il lit l'écriture comme une
+séquence, sans découper les mots en lettres à l'avance. Le fil des chiffres
+manuscrits de ce module se prolonge ainsi des chiffres isolés à l'écriture
+courante.
+
+**La parole.** Un enregistrement de parole est une séquence de sons. En 2015,
+Google adopte les LSTM pour la reconnaissance vocale de ses téléphones, et son taux
+d'erreur baisse nettement.
+
+**La traduction.** En 2014, Ilya Sutskever, Oriol Vinyals et Quoc Le, chez Google,
+proposent l'architecture **encodeur-décodeur** pour la traduction. Un premier
+réseau récurrent, l'encodeur, lit la phrase à traduire et la résume dans son état
+final. Un second réseau récurrent, le décodeur, part de cet état et écrit la
+traduction mot par mot. On retrouve l'idée de
+l'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur) :
+une représentation compacte au milieu, entre un encodeur et un décodeur. En
+novembre 2016, Google Traduction adopte cette méthode. Selon le *New York Times*,
+le gain obtenu d'un seul coup équivaut à peu près à tous les progrès accumulés par
+l'ancien système depuis son lancement, une dizaine d'années plus tôt.
+
+{{< image src="/images/module3/encodeur-decodeur.svg" alt="À gauche, l'encodeur, un réseau récurrent, lit les mots « le », « chat » et « dort » un à un. Son état final, au centre, résume la phrase. À droite, le décodeur, un second réseau récurrent, part de ce résumé et écrit « the », « cat » et « sleeps » un à un." title="L'architecture encodeur-décodeur : un réseau lit la phrase, un autre écrit la traduction à partir de son résumé." loading="lazy" >}}
+
+## Les limites
+
+Les réseaux récurrents ont trois limites, qui motivent le chapitre suivant.
+
+**Le goulot.** Dans l'encodeur-décodeur, toute la phrase d'origine est résumée en
+un seul état, de taille fixe, qu'elle compte cinq mots ou cinquante. Plus la phrase
+est longue, plus la traduction se dégrade.
+
+**La lenteur.** Un réseau récurrent ne peut calculer l'étape 10 qu'après l'étape 9.
+Le calcul est séquentiel par nature, et ne profite donc pas des milliers de cœurs
+d'un [GPU](docs/module3/42-materiel-et-outils/#les-processeurs-graphiques), qui
+exigent des calculs simultanés. Cette limite devient décisive quand on veut
+entraîner sur des milliards de mots.
+
+**La mémoire lointaine.** Le LSTM a repoussé la limite de l'oubli, sans la
+supprimer.
+
+En 2014, à Montréal, Dzmitry Bahdanau, Kyunghyun Cho et Yoshua Bengio s'attaquent
+au premier problème. Ils permettent au décodeur, à chaque mot qu'il écrit, de
+regarder directement tous les mots de la phrase d'origine, et de choisir ceux qui
+comptent à ce moment. Ce mécanisme s'appelle l'**attention**. Trois ans plus tard,
+une équipe de Google montre qu'on peut garder l'attention et supprimer la
+récurrence. Le chapitre suivant, « L'attention et le Transformer », présente ce
+résultat.

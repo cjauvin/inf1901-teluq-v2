@@ -92,6 +92,76 @@ def influence():
     ecrire("influence-sequence.svg", o)
 
 
+
+def lstm():
+    W, H = 700, 360
+    o = entete(W, H, "Une cellule LSTM, simplifiée",
+               f"Une ligne horizontale, la mémoire, traverse la cellule de gauche à droite. Trois portes agissent sur elle{NB}: la porte d'oubli efface une partie "
+               f"de la mémoire, la porte d'entrée y écrit, la porte de sortie y lit pour produire le nouvel état. L'état précédent et l'élément courant arrivent par le bas "
+               "et alimentent les trois portes.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Une cellule LSTM{NB}: une mémoire et trois portes</text>')
+    o.append(f'<rect x="170" y="86" width="400" height="236" rx="14" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="2" stroke-dasharray="6 5"/>')
+    o.append(f'<text x="560" y="312" font-size="12" fill="{TEAL}" text-anchor="end" font-weight="700">cellule LSTM</text>')
+    ym, yg, yb = 125, 190, 282
+    o.append(f'<line x1="40" y1="{ym}" x2="652" y2="{ym}" stroke="{BRUN}" stroke-width="5" marker-end="url(#pointe)"/>')
+    o.append(f'<text x="40" y="{ym - 14}" font-size="12.5" fill="{BRUN}" font-weight="700">mémoire</text>')
+    portes = ((250, "porte", "d'oubli", "×"), (360, "porte", "d'entrée", "+"), (470, "porte", "de sortie", ""))
+    o.append(f'<line x1="200" y1="{yb}" x2="470" y2="{yb}" stroke="{BLEU}" stroke-width="2"/>')
+    o.append(f'<line x1="40" y1="{yb}" x2="200" y2="{yb}" stroke="{BLEU}" stroke-width="2"/>')
+    o.append(f'<text x="40" y="{yb - 26}" font-size="12" fill="{BLEU}" font-weight="700">état précédent</text>')
+    o.append(f'<text x="40" y="{yb - 10}" font-size="12" fill="{BLEU}" font-weight="700">+ élément courant</text>')
+    for x, l1, l2, op in portes:
+        o.append(f'<line x1="{x}" y1="{yb}" x2="{x}" y2="{yg + 22}" stroke="{BLEU}" stroke-width="1.8" marker-end="url(#pointe)"/>')
+        o.append(f'<rect x="{x - 44}" y="{yg - 22}" width="88" height="44" rx="10" fill="{FOND}" stroke="{TEAL}" stroke-width="2.2"/>')
+        o.append(f'<text x="{x}" y="{yg - 3}" font-size="11.5" fill="{TEAL}" text-anchor="middle" font-weight="700">{l1}</text>')
+        o.append(f'<text x="{x}" y="{yg + 12}" font-size="11.5" fill="{TEAL}" text-anchor="middle" font-weight="700">{l2}</text>')
+        if op:
+            o.append(f'<line x1="{x}" y1="{yg - 22}" x2="{x}" y2="{ym + 14}" stroke="{TEAL}" stroke-width="1.8"/>')
+            o.append(f'<circle cx="{x}" cy="{ym}" r="13" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="2"/>')
+            o.append(f'<text x="{x}" y="{ym + 6}" font-size="17" fill="{TEAL}" text-anchor="middle" font-weight="700">{op}</text>')
+        else:
+            o.append(f'<line x1="{x}" y1="{ym + 3}" x2="{x}" y2="{yg - 23}" stroke="{BRUN}" stroke-width="2" marker-end="url(#pointe)"/>')
+    o.append(f'<line x1="514" y1="{yg}" x2="652" y2="{yg}" stroke="{ROUGE}" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>')
+    o.append(f'<text x="618" y="{yg - 10}" font-size="12" fill="{ROUGE}" text-anchor="middle" font-weight="700">nouvel état</text>')
+    for x, t in ((250, "efface"), (360, "écrit"), (470, "lit")):
+        o.append(f'<text x="{x + (22 if x != 470 else 12)}" y="{ym + 32 if x != 470 else ym + 30}" font-size="11.5" fill="{GRIS}" text-anchor="start">{t}</text>')
+    o.append(f'<text x="{W / 2}" y="{H - 12}" font-size="12.5" fill="{GRIS}" text-anchor="middle">Chaque porte agit comme un robinet, entre 0 (fermé) et 1 (ouvert){NB}; ses poids sont appris.</text>')
+    ecrire("cellule-lstm.svg", o)
+
+
+def encodeur_decodeur():
+    W, H = 700, 330
+    o = entete(W, H, "L'architecture encodeur-décodeur pour la traduction",
+               f"À gauche, l'encodeur, un réseau récurrent, lit les mots «{FINE}le{FINE}», «{FINE}chat{FINE}» et «{FINE}dort{FINE}» un à un. Son état final, au centre, "
+               f"résume la phrase. À droite, le décodeur, un second réseau récurrent, part de ce résumé et écrit «{FINE}the{FINE}», «{FINE}cat{FINE}» et «{FINE}sleeps{FINE}» un à un.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Traduire avec deux réseaux récurrents</text>')
+    yc = 168
+    enc, dec, xr = [80, 160, 240], [460, 540, 620], 350
+    for xs, mots, bas in ((enc, ("le", "chat", "dort"), True), (dec, ("the", "cat", "sleeps"), False)):
+        for k, (x, m) in enumerate(zip(xs, mots)):
+            cellule(o, x, yc)
+            if bas:
+                entree(o, x, yc + 82, m)
+                o.append(f'<line x1="{x}" y1="{yc + 66}" x2="{x}" y2="{yc + 27}" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#pointe)"/>')
+            else:
+                o.append(f'<line x1="{x}" y1="{yc - 26}" x2="{x}" y2="{yc - 64}" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#pointe)"/>')
+                o.append(f'<rect x="{x - 30}" y="{yc - 94}" width="60" height="28" rx="6" fill="{PANNEAU}" stroke="{ROUGE}" stroke-width="1.8"/>')
+                o.append(f'<text x="{x}" y="{yc - 75}" font-size="12" fill="{ROUGE}" text-anchor="middle" font-weight="700">{m}</text>')
+            if k < 2:
+                o.append(f'<line x1="{x + 27}" y1="{yc}" x2="{xs[k + 1] - 29}" y2="{yc}" stroke="{ROUGE}" stroke-width="2.2" marker-end="url(#pointe-rouge)"/>')
+    o.append(f'<line x1="{enc[-1] + 27}" y1="{yc}" x2="{xr - 24}" y2="{yc}" stroke="{ROUGE}" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>')
+    o.append(f'<line x1="{xr + 22}" y1="{yc}" x2="{dec[0] - 29}" y2="{yc}" stroke="{ROUGE}" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>')
+    o.append(f'<circle cx="{xr}" cy="{yc}" r="20" fill="{ROUGE}" fill-opacity="0.2" stroke="{ROUGE}" stroke-width="2.4"/>')
+    o.append(f'<text x="{xr}" y="{yc + 44}" font-size="12" fill="{ROUGE}" text-anchor="middle" font-weight="700">le résumé</text>')
+    o.append(f'<text x="{xr}" y="{yc + 59}" font-size="12" fill="{ROUGE}" text-anchor="middle" font-weight="700">de la phrase</text>')
+    for xs, nom in ((enc, "encodeur"), (dec, "décodeur")):
+        o.append(f'<text x="{xs[1]}" y="{yc - 52 if nom == "encodeur" else yc + 56}" font-size="13" fill="{TEAL}" text-anchor="middle" font-weight="700">{nom}</text>')
+    o.append(f'<text x="{W / 2}" y="{H - 14}" font-size="12.5" fill="{GRIS}" text-anchor="middle">Toute la phrase d\'origine passe par un seul état, de taille fixe.</text>')
+    ecrire("encodeur-decodeur.svg", o)
+
+
 deroule()
 influence()
-print("reseau-recurrent-deroule.svg et influence-sequence.svg écrits")
+lstm()
+encodeur_decodeur()
+print("quatre figures écrites pour « Lire une séquence »")
