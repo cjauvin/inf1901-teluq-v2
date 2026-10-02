@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un réseau de trois neurones qui résout le XOR</title>
+<desc>Trois colonnes. À gauche, la couche d'entrée : A et B. Au centre, la couche cachée : le neurone 1, qui répond à la question « au moins une ? », et le neurone 2, qui répond à « les deux ? ». À droite, la couche de sortie : un neurone qui donne A XOR B. Chaque entrée est reliée aux deux neurones cachés, et chaque neurone caché au neurone de sortie.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="350" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le plus petit réseau qui résout le XOR</text>
+<line x1="140" y1="120" x2="292" y2="120" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="140" y1="120" x2="292" y2="230" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="140" y1="230" x2="292" y2="120" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="140" y1="230" x2="292" y2="230" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="408" y1="120" x2="540" y2="167" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="408" y1="230" x2="540" y2="183" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<circle cx="110" cy="120" r="28" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="110" y="127" font-size="20" fill="#3a6ea5" text-anchor="middle" font-weight="700">A</text>
+<circle cx="110" cy="230" r="28" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="110" y="237" font-size="20" fill="#3a6ea5" text-anchor="middle" font-weight="700">B</text>
+<rect x="294" y="88" width="112" height="64" rx="32" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.5"/>
+<text x="350" y="116" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">neurone 1</text>
+<text x="350" y="134" font-size="12.5" fill="#3a3531" text-anchor="middle">au moins une ?</text>
+<rect x="294" y="198" width="112" height="64" rx="32" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.5"/>
+<text x="350" y="226" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">neurone 2</text>
+<text x="350" y="244" font-size="12.5" fill="#3a3531" text-anchor="middle">les deux ?</text>
+<rect x="542" y="143" width="96" height="64" rx="32" fill="#fbf7ee" stroke="#c4564a" stroke-width="2.5"/>
+<text x="590" y="171" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">sortie</text>
+<text x="590" y="189" font-size="12.5" fill="#3a3531" text-anchor="middle">A XOR B</text>
+<text x="110" y="72" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">couche d'entrée</text>
+<text x="350" y="72" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">couche cachée</text>
+<text x="590" y="72" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">couche de sortie</text>
+<text x="350.0" y="320" font-size="12.5" fill="#7a6f63" text-anchor="middle">Chaque flèche porte un poids. Chaque neurone a aussi son biais.</text>
+</svg>
