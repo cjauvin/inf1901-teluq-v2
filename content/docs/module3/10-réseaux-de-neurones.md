@@ -1,6 +1,7 @@
 ---
 title: "Les réseaux de neurones"
 weight: 15
+bookHidden: true
 slug: réseaux-de-neurones
 ---
 

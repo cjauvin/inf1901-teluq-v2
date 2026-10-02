@@ -1,6 +1,6 @@
 ---
 title: "Architectures avancées"
-weight: 30
+weight: 35
 draft: false
 slug: architectures-avancées
 ---

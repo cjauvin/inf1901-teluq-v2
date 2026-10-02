@@ -156,4 +156,4 @@ de vingt ans. On savait depuis les années 1960 qu'une couche cachée dépassera
 [limite du perceptron](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969),
 mais on ne savait pas comment entraîner un tel réseau. La solution, la
 **rétropropagation du gradient**, s'est imposée en 1986. C'est le sujet du chapitre
-suivant, « Entraîner un réseau ».
+suivant, « [Entraîner un réseau](docs/module3/30-entrainer-un-reseau) ».
