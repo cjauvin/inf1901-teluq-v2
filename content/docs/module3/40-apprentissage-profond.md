@@ -148,7 +148,7 @@ sur la même tâche, estimé à 5 %. La même bascule se produit ensuite pour la
 reconnaissance de la parole, puis pour la traduction.
 
 AlexNet est un réseau d'un type particulier, un réseau convolutif, conçu pour les
-images. Le chapitre « Voir : les réseaux convolutifs » lui est consacré.
+images. Le chapitre « [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) » lui est consacré.
 
 ## La leçon amère
 

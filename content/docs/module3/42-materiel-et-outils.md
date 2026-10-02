@@ -111,5 +111,5 @@ La ligne `erreur.backward()` remplace les semaines de calcul à la main. La
 conséquence est importante pour la suite. Essayer une nouvelle forme de réseau ne
 demande plus que quelques heures. Les chercheurs ont donc pu en essayer beaucoup,
 et c'est ainsi que se sont répandues les architectures des chapitres suivants. La
-première, présentée dans « Voir : les réseaux convolutifs », est conçue pour les
+première, présentée dans « [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) », est conçue pour les
 images.

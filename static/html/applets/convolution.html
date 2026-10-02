@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un filtre de convolution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        canvas { image-rendering: pixelated; }
+        .choix { padding: 0.3rem 0.6rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.8rem; font-weight: 500; color: #334155; box-shadow: 0 1px 2px rgba(0,0,0,.05); white-space: nowrap; }
+        .choix.actif { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .poids { width: 2.6rem; height: 2.6rem; text-align: center; border: 1px solid #d9cbac; border-radius: 0.3rem; font-weight: 700; font-size: 0.95rem; -moz-appearance: textfield; }
+        .poids::-webkit-outer-spin-button, .poids::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex items-center justify-between gap-2 rounded-lg p-3" style="background:#fbf7ee;border:1px solid #d9cbac">
+        <div class="text-center" style="flex:28">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Image</div>
+            <canvas id="entree" class="w-full block rounded" style="border:1px solid #b8a888;cursor:crosshair"></canvas>
+        </div>
+        <div class="text-center px-1" style="flex:13">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Filtre</div>
+            <div id="filtre" class="grid grid-cols-3 gap-1 justify-items-center"></div>
+            <div id="somme" class="text-xs text-slate-600 mt-2 h-8 leading-tight"></div>
+        </div>
+        <div class="text-center" style="flex:26">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Résultat</div>
+            <canvas id="sortie" class="w-full block rounded" style="border:1px solid #b8a888"></canvas>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-bold text-slate-700 w-16">Filtre :</span>
+            <div id="filtres" class="flex flex-wrap gap-1"></div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-bold text-slate-700 w-16">Chiffre :</span>
+            <div id="chiffres" class="flex flex-wrap gap-1"></div>
+            <span class="text-sm font-bold text-slate-700 ml-4">Déplacer :</span>
+            <div class="flex gap-1">
+                <button class="choix" onclick="deplacer(-2,0)">←</button><button class="choix" onclick="deplacer(2,0)">→</button>
+                <button class="choix" onclick="deplacer(0,-2)">↑</button><button class="choix" onclick="deplacer(0,2)">↓</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-4 h-3 rounded-sm" style="background:linear-gradient(90deg,#fbf7ee,#2f6f6a)"></div>résultat : plus la case est foncée, plus le motif du filtre est présent à cet endroit</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 border-2" style="border-color:#c4564a"></div>passez la souris sur l'image pour voir le calcul</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Un filtre de convolution de 3 × 3. Le filtre glisse sur l'image ; à chaque
+ * position, il calcule la somme de ses neuf poids multipliés par les neuf
+ * pixels qu'il recouvre. Le résultat est une nouvelle image, qui indique où le
+ * motif du filtre a été trouvé (les sommes négatives sont ramenées à zéro).
+ */
+const N = 28, M = N - 2, ZOOM = 10;
+const FILTRES = [
+    { nom: 'traits verticaux', w: [-1, 2, -1, -1, 2, -1, -1, 2, -1] },
+    { nom: 'traits horizontaux', w: [-1, -1, -1, 2, 2, 2, -1, -1, -1] },
+    { nom: 'obliques /', w: [-1, -1, 2, -1, 2, -1, 2, -1, -1] },
+    { nom: 'obliques \\', w: [2, -1, -1, -1, 2, -1, -1, -1, 2] },
+    { nom: 'contours', w: [-1, -1, -1, -1, 8, -1, -1, -1, -1] },
+    { nom: 'flou', w: [1, 1, 1, 1, 1, 1, 1, 1, 1] },
+];
+const entree = document.getElementById('entree'), sortie = document.getElementById('sortie');
+const ce = entree.getContext('2d'), cs = sortie.getContext('2d');
+entree.width = entree.height = N * ZOOM; sortie.width = sortie.height = M * ZOOM;
+
+let chiffre = 7, dx = 0, dy = 0, poids = FILTRES[0].w.slice(), survol = null, image = [];
+
+// L'image du chiffre : un caractère dessiné puis réduit à 28 × 28 valeurs entre 0 et 1.
+function dessinerChiffre() {
+    const c = document.createElement('canvas'); c.width = c.height = N;
+    const x = c.getContext('2d');
+    x.font = '22px Arial, Helvetica, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(String(chiffre), N / 2 + dx, N / 2 + 1 + dy);
+    const d = x.getImageData(0, 0, N, N).data;
+    image = Array.from({ length: N * N }, (_, i) => d[i * 4 + 3] / 255);
+}
+const pixel = (i, j) => image[j * N + i];
+function reponse(i, j) {                       // la somme pondérée pour la fenêtre dont le coin est (i, j)
+    let s = 0;
+    for (let b = 0; b < 3; b++) for (let a = 0; a < 3; a++) s += poids[b * 3 + a] * pixel(i + a, j + b);
+    return s;
+}
+const fr = n => (Math.round(n * 10) / 10).toFixed(1).replace('.', ',').replace('-', '−');
+
+function dessiner() {
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+        const v = Math.round(251 - pixel(i, j) * 200);
+        ce.fillStyle = `rgb(${v},${v - 4},${v - 13})`; ce.fillRect(i * ZOOM, j * ZOOM, ZOOM, ZOOM);
+    }
+    // un filtre qui a des poids négatifs donne rarement sa réponse maximale : on resserre l'échelle
+    const echelle = Math.max(1, poids.reduce((s, p) => s + Math.max(p, 0), 0)) * (poids.some(p => p < 0) ? 0.45 : 1);
+    for (let j = 0; j < M; j++) for (let i = 0; i < M; i++) {
+        const t = Math.pow(Math.max(0, Math.min(1, reponse(i, j) / echelle)), 0.55);   // l'exposant renforce les réponses faibles
+        cs.fillStyle = `rgb(${Math.round(251 - t * 204)},${Math.round(247 - t * 136)},${Math.round(238 - t * 132)})`;
+        cs.fillRect(i * ZOOM, j * ZOOM, ZOOM, ZOOM);
+    }
+    const somme = document.getElementById('somme');
+    if (survol) {
+        const { i, j } = survol;
+        ce.strokeStyle = '#c4564a'; ce.lineWidth = 2.5; ce.strokeRect(i * ZOOM, j * ZOOM, 3 * ZOOM, 3 * ZOOM);
+        cs.strokeStyle = '#c4564a'; cs.lineWidth = 2.5; cs.strokeRect(i * ZOOM, j * ZOOM, ZOOM, ZOOM);
+        const r = reponse(i, j);
+        somme.innerHTML = `somme à cet endroit :<br><b style="color:#c4564a">${fr(r)}</b>${r < 0 ? ' (ramenée à 0)' : ''}`;
+    } else somme.textContent = '';
+}
+
+// Les neuf poids du filtre, modifiables.
+const grille = document.getElementById('filtre');
+for (let k = 0; k < 9; k++) {
+    const c = document.createElement('input');
+    c.type = 'number'; c.step = 1; c.min = -9; c.max = 9; c.className = 'poids'; c.id = 'p' + k;
+    c.addEventListener('input', () => { poids[k] = parseFloat(c.value) || 0; colorer(); marquerFiltre(-1); dessiner(); });
+    grille.appendChild(c);
+}
+function colorer() {
+    for (let k = 0; k < 9; k++) {
+        const c = document.getElementById('p' + k), p = poids[k];
+        c.style.background = p > 0 ? '#d7ebe6' : p < 0 ? '#f6ddd9' : '#fff';
+        c.style.color = p > 0 ? '#2f6f6a' : p < 0 ? '#a4433a' : '#7a6f63';
+    }
+}
+function marquerFiltre(n) { FILTRES.forEach((_, i) => document.getElementById('f' + i).classList.toggle('actif', i === n)); }
+function choisirFiltre(n) {
+    poids = FILTRES[n].w.slice();
+    for (let k = 0; k < 9; k++) document.getElementById('p' + k).value = poids[k];
+    colorer(); marquerFiltre(n); dessiner();
+}
+function choisirChiffre(n) {
+    chiffre = n; dx = dy = 0;
+    for (let i = 0; i < 10; i++) document.getElementById('c' + i).classList.toggle('actif', i === n);
+    dessinerChiffre(); dessiner();
+}
+function deplacer(a, b) { dx = Math.max(-6, Math.min(6, dx + a)); dy = Math.max(-4, Math.min(4, dy + b)); dessinerChiffre(); dessiner(); }
+
+FILTRES.forEach((f, i) => document.getElementById('filtres').insertAdjacentHTML('beforeend', `<button id="f${i}" class="choix" onclick="choisirFiltre(${i})">${f.nom}</button>`));
+for (let i = 0; i < 10; i++) document.getElementById('chiffres').insertAdjacentHTML('beforeend', `<button id="c${i}" class="choix" onclick="choisirChiffre(${i})">${i}</button>`);
+
+entree.addEventListener('pointermove', ev => {
+    const r = entree.getBoundingClientRect();
+    const i = Math.floor((ev.clientX - r.left) / r.width * N) - 1, j = Math.floor((ev.clientY - r.top) / r.height * N) - 1;
+    survol = { i: Math.max(0, Math.min(M - 1, i)), j: Math.max(0, Math.min(M - 1, j)) };
+    dessiner();
+});
+entree.addEventListener('pointerleave', () => { survol = null; dessiner(); });
+
+dessinerChiffre();
+choisirChiffre(7);
+choisirFiltre(0);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
