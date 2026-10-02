@@ -1,6 +1,6 @@
 ---
 title: "3Blue1Brown"
-weight: 20
+weight: 25
 slug: 3blue1brown
 ---
 

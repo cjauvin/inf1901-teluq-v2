@@ -115,4 +115,4 @@ Au Module 2, on contournait cette limite de deux façons : en changeant de mod�
 ou en fabriquant à la main une nouvelle caractéristique. Les réseaux de neurones
 apportent une troisième réponse. On relie plusieurs neurones entre eux, et le
 réseau fabrique lui-même la caractéristique qui manque. C'est le sujet du chapitre
-suivant, « Une couche cachée ».
+suivant, « [Une couche cachée](docs/module3/20-une-couche-cachee) ».
