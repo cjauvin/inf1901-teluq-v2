@@ -2,6 +2,7 @@
 <svg viewBox="0 0 700 410" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
 <title>La grille d'attention d'une traduction</title>
 <desc>Une grille de quatre colonnes et quatre lignes. Les colonnes portent les mots anglais « the European Economic Area », les lignes les mots français « la zone économique européenne ». Chaque case est d'autant plus foncée que le décodeur regarde ce mot anglais en écrivant ce mot français. « la » regarde « the », « zone » regarde « Area », « économique » regarde « Economic » et « européenne » regarde « European » : les deux dernières cases foncées se croisent.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
 <rect x="0" y="0" width="700" height="410" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Où regarde le décodeur, pour chaque mot qu'il écrit ?</text>
 <text x="331.0" y="104" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">the</text>
