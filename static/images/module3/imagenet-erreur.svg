@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le taux d'erreur du système gagnant au concours ImageNet, de 2010 à 2017</title>
+<desc>Un diagramme à barres. En 2010 et 2011, les systèmes gagnants reposent sur des caractéristiques fabriquées à la main : 28,2 % puis 25,8 % d'erreur. En 2012, le réseau profond AlexNet obtient 15,3 %. Les gagnants suivants sont tous des réseaux profonds : 11,7 % en 2013, 6,7 % en 2014, 3,6 % en 2015, 3,0 % en 2016 et 2,3 % en 2017. Une ligne horizontale marque le niveau humain, estimé à 5 %, dépassé à partir de 2015.</desc>
+<rect x="0" y="0" width="700" height="420" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Concours ImageNet : taux d'erreur du système gagnant</text>
+<line x1="76" y1="330.0" x2="656" y2="330.0" stroke="#b8a888" stroke-width="1.4"/>
+<text x="66" y="334.0" font-size="11.5" fill="#7a6f63" text-anchor="end">0 %</text>
+<line x1="76" y1="250.0" x2="656" y2="250.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="66" y="254.0" font-size="11.5" fill="#7a6f63" text-anchor="end">10 %</text>
+<line x1="76" y1="170.0" x2="656" y2="170.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="66" y="174.0" font-size="11.5" fill="#7a6f63" text-anchor="end">20 %</text>
+<line x1="76" y1="90.0" x2="656" y2="90.0" stroke="#e8dfc9" stroke-width="1"/>
+<text x="66" y="94.0" font-size="11.5" fill="#7a6f63" text-anchor="end">30 %</text>
+<rect x="90.2" y="104.4" width="44" height="225.6" rx="3" fill="#9a5b33" fill-opacity="0.85"/>
+<text x="112.2" y="96.4" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">28,2</text>
+<text x="112.2" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2010</text>
+<rect x="162.8" y="123.6" width="44" height="206.4" rx="3" fill="#9a5b33" fill-opacity="0.85"/>
+<text x="184.8" y="115.6" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">25,8</text>
+<text x="184.8" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2011</text>
+<rect x="235.2" y="207.6" width="44" height="122.4" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="257.2" y="199.6" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">15,3</text>
+<text x="257.2" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2012</text>
+<text x="257.2" y="179.6" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">AlexNet</text>
+<rect x="307.8" y="236.4" width="44" height="93.6" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="329.8" y="228.4" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">11,7</text>
+<text x="329.8" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2013</text>
+<rect x="380.2" y="276.4" width="44" height="53.6" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="402.2" y="268.4" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">6,7</text>
+<text x="402.2" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2014</text>
+<rect x="452.8" y="301.2" width="44" height="28.8" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="474.8" y="281.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">3,6</text>
+<text x="474.8" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2015</text>
+<rect x="525.2" y="306.0" width="44" height="24.0" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="547.2" y="281.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">3,0</text>
+<text x="547.2" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2016</text>
+<rect x="597.8" y="311.6" width="44" height="18.4" rx="3" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="619.8" y="281.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">2,3</text>
+<text x="619.8" y="348" font-size="12" fill="#5b5249" text-anchor="middle">2017</text>
+<line x1="229.0" y1="290.0" x2="656" y2="290.0" stroke="#c4564a" stroke-width="1.8" stroke-dasharray="6 5"/>
+<line x1="652" y1="232.4" x2="652" y2="290.0" stroke="#c4564a" stroke-width="1.2"/>
+<text x="656" y="223.6" font-size="12" fill="#c4564a" text-anchor="end" font-weight="700">niveau humain, estimé à 5 %</text>
+<rect x="150" y="383" width="16" height="12" rx="2" fill="#9a5b33" fill-opacity="0.85"/><text x="173" y="394" font-size="12.5" fill="#5b5249">caractéristiques fabriquées à la main</text>
+<rect x="430" y="383" width="16" height="12" rx="2" fill="#2f6f6a" fill-opacity="0.85"/><text x="453" y="394" font-size="12.5" fill="#5b5249">réseaux profonds</text>
+</svg>

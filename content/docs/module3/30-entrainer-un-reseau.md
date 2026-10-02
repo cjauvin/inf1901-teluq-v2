@@ -187,4 +187,4 @@ d'un réseau, et [la deuxième](https://www.youtube.com/watch?v=IHZwWFHWa-w) la
 descente de gradient. Les vidéos sont en anglais.
 
 On sait maintenant entraîner un réseau à une couche cachée. Le chapitre suivant,
-« L'apprentissage profond », examine ce qu'on gagne à empiler plusieurs couches.
+« [L'apprentissage profond](docs/module3/40-apprentissage-profond) », examine ce qu'on gagne à empiler plusieurs couches.

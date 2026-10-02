@@ -77,7 +77,7 @@ d'activation celui du corps cellulaire, et la sortie celui de l'axone.
 
 Cette analogie a guidé les premiers chercheurs, mais elle est très approximative.
 Un neurone biologique est beaucoup plus complexe qu'une somme suivie d'une
-fonction. Le chapitre « L'apprentissage profond » reviendra sur ce que cette
+fonction. Le chapitre « [L'apprentissage profond](docs/module3/40-apprentissage-profond) » reviendra sur ce que cette
 comparaison permet de dire, et sur ce qu'elle ne permet pas.
 
 ## Un neurone à manipuler
