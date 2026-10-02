@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un neurone biologique et un neurone artificiel</title>
+<desc>En haut, un neurone biologique : des dendrites ramifiées à gauche, un corps cellulaire au centre, un long axone vers la droite, terminé par des ramifications. En bas, un neurone artificiel : des entrées et leurs poids à gauche, la somme et la fonction d'activation au centre, la sortie à droite. Les mêmes couleurs relient les éléments qui se correspondent : dendrites et entrées, synapses et poids, corps cellulaire et calcul, axone et sortie.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="450" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Du neurone biologique au neurone artificiel</text>
+<defs><marker id="p-brun" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<defs><marker id="p-rouge" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<text x="670" y="76" font-size="13" fill="#5b5249" font-weight="700" text-anchor="end">Neurone biologique</text>
+<path d="M216 127 Q158.0 120 100 98" fill="none" stroke="#3a6ea5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M100 98 l-20 -8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="77" cy="89" r="3.6" fill="#9a5b33"/>
+<path d="M100 98 l-20 8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="77" cy="107" r="3.6" fill="#9a5b33"/>
+<path d="M216 142 Q150.5 143 85 132" fill="none" stroke="#3a6ea5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M85 132 l-20 -8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="62" cy="123" r="3.6" fill="#9a5b33"/>
+<path d="M85 132 l-20 8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="62" cy="141" r="3.6" fill="#9a5b33"/>
+<path d="M216 159 Q153.0 158 90 170" fill="none" stroke="#3a6ea5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M90 170 l-20 -8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="67" cy="161" r="3.6" fill="#9a5b33"/>
+<path d="M90 170 l-20 8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="67" cy="179" r="3.6" fill="#9a5b33"/>
+<path d="M216 173 Q160.5 180 105 202" fill="none" stroke="#3a6ea5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M105 202 l-20 -8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="82" cy="193" r="3.6" fill="#9a5b33"/>
+<path d="M105 202 l-20 8" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="82" cy="211" r="3.6" fill="#9a5b33"/>
+<ellipse cx="250" cy="150" rx="44" ry="36" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="3"/>
+<circle cx="246" cy="152" r="11" fill="#2f6f6a" fill-opacity="0.35"/>
+<path d="M294 150 C380 134 460 166 550 150" fill="none" stroke="#c4564a" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M550 150 l42 -22" fill="none" stroke="#c4564a" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="596" cy="128" r="4" fill="#c4564a"/>
+<path d="M550 150 l42 0" fill="none" stroke="#c4564a" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="596" cy="150" r="4" fill="#c4564a"/>
+<path d="M550 150 l42 22" fill="none" stroke="#c4564a" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="596" cy="172" r="4" fill="#c4564a"/>
+<text x="92" y="234" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">dendrites</text>
+<text x="80" y="74" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">synapses</text>
+<text x="250" y="212" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">corps cellulaire</text>
+<text x="440" y="184" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">axone</text>
+<line x1="30" y1="250" x2="670" y2="250" stroke="#b8a888" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="670" y="278" font-size="13" fill="#5b5249" font-weight="700" text-anchor="end">Neurone artificiel</text>
+<circle cx="92" cy="299" r="13" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<line x1="106" y1="299" x2="202" y2="328" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#p-brun)"/>
+<circle cx="92" cy="340" r="13" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<line x1="106" y1="340" x2="202" y2="340" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#p-brun)"/>
+<circle cx="92" cy="381" r="13" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<line x1="106" y1="381" x2="202" y2="352" stroke="#9a5b33" stroke-width="2.4" marker-end="url(#p-brun)"/>
+<ellipse cx="250" cy="340" rx="44" ry="36" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="3"/>
+<text x="250" y="348" font-size="22" fill="#2f6f6a" text-anchor="middle" font-weight="700">Σ  σ</text>
+<line x1="296" y1="340" x2="546" y2="340" stroke="#c4564a" stroke-width="3.2" marker-end="url(#p-rouge)"/>
+<text x="92" y="414" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">entrées</text>
+<text x="158" y="300" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">poids</text>
+<text x="250" y="402" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">somme et activation</text>
+<text x="440" y="366" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">sortie</text>
+</svg>

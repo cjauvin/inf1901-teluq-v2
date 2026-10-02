@@ -1,278 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Neural Network</title>
+    <title>Démonstration interactive : un neurone artificiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: white;
-            overflow: hidden;
-        }
-
-        .container {
-            width: 800px;
-            height: 420px;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        #canvas {
-            display: block;
-            cursor: default;
-        }
-
-        .info-panel {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .result {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
-            margin: 10px 0;
-        }
-
-        .formula {
-            font-size: 14px;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        input[type="number"] {
-            width: 50px;
-            padding: 4px;
-            border: 2px solid #667eea;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        input[type="number"]:focus {
-            outline: none;
-            border-color: #764ba2;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        input[type=range] { accent-color: #4f46e5; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <canvas id="canvas" width="800" height="420"></canvas>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-4 rounded-xl shadow-xl border border-slate-200">
+
+    <svg id="schema" viewBox="0 0 700 300" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"
+         font-family="system-ui, -apple-system, sans-serif"></svg>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+        <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Entrées</div>
+            <label class="grid grid-cols-[5.5rem_1fr_3rem] items-center gap-2"><span class="font-semibold" style="color:#3a6ea5">x₁</span>
+                <input type="range" id="x1" min="0" max="1" step="0.05" value="1"><span id="x1v" class="text-right tabular-nums"></span></label>
+            <label class="grid grid-cols-[5.5rem_1fr_3rem] items-center gap-2"><span class="font-semibold" style="color:#3a6ea5">x₂</span>
+                <input type="range" id="x2" min="0" max="1" step="0.05" value="1"><span id="x2v" class="text-right tabular-nums"></span></label>
+        </div>
+        <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Paramètres</div>
+            <label class="grid grid-cols-[5.5rem_1fr_3rem] items-center gap-2"><span class="font-semibold" style="color:#9a5b33">poids w₁</span>
+                <input type="range" id="w1" min="-5" max="5" step="0.1" value="2"><span id="w1v" class="text-right tabular-nums"></span></label>
+            <label class="grid grid-cols-[5.5rem_1fr_3rem] items-center gap-2"><span class="font-semibold" style="color:#9a5b33">poids w₂</span>
+                <input type="range" id="w2" min="-5" max="5" step="0.1" value="-1"><span id="w2v" class="text-right tabular-nums"></span></label>
+            <label class="grid grid-cols-[5.5rem_1fr_3rem] items-center gap-2"><span class="font-semibold" style="color:#9a5b33">biais b</span>
+                <input type="range" id="b" min="-5" max="5" step="0.1" value="0"><span id="bv" class="text-right tabular-nums"></span></label>
+        </div>
     </div>
 
-    <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#2f6f6a"></div>poids positif</div>
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#c4564a"></div>poids négatif</div>
+        <div class="text-slate-500">l'épaisseur d'une flèche suit la valeur absolue de son poids</div>
+    </div>
+</div>
+</div>
 
-        // Neural network data
-        const inputNodes = [
-            { x: 100, y: 90, value: 1.0 },
-            { x: 100, y: 170, value: 0.5 },
-            { x: 100, y: 250, value: -0.5 },
-            { x: 100, y: 330, value: 0.8 }
-        ];
+<script>
+/**
+ * Un neurone à deux entrées : somme pondérée, biais, puis sigmoïde.
+ * Les curseurs règlent les entrées et les paramètres ; le schéma montre le
+ * calcul en direct, avec la position du résultat sur la courbe sigmoïde.
+ */
+const C = { encre: '#3a3531', pale: '#5b5249', gris: '#7a6f63', teal: '#2f6f6a', brun: '#9a5b33',
+            rouge: '#c4564a', bleu: '#3a6ea5', axe: '#b8a888', panneau: '#fbf7ee', fond: '#efe7d3' };
+const ids = ['x1', 'x2', 'w1', 'w2', 'b'];
+const v = id => parseFloat(document.getElementById(id).value);
+const fr = (n, d = 2) => n.toFixed(d).replace('.', ',').replace('-', '−');
+const sigm = z => 1 / (1 + Math.exp(-z));
 
-        const outputNode = { x: 600, y: 210, value: 0 };
+function fleche(x1, y1, x2, y2, poids) {
+    const coul = poids >= 0 ? C.teal : C.rouge, ep = 1.2 + Math.abs(poids) * 1.1;
+    const ang = Math.atan2(y2 - y1, x2 - x1), L = 13;
+    const bx = x2 - L * Math.cos(ang), by = y2 - L * Math.sin(ang);
+    const p = (a) => `${x2 - L * Math.cos(ang) + a * 6 * Math.sin(ang)},${y2 - L * Math.sin(ang) - a * 6 * Math.cos(ang)}`;
+    return `<line x1="${x1}" y1="${y1}" x2="${bx}" y2="${by}" stroke="${coul}" stroke-width="${ep}" stroke-linecap="round" opacity="${Math.abs(poids) < 0.05 ? 0.25 : 0.9}"/>
+            <polygon points="${x2},${y2} ${p(1)} ${p(-1)}" fill="${coul}" opacity="${Math.abs(poids) < 0.05 ? 0.25 : 0.9}"/>`;
+}
 
-        const weights = [1.0, -0.5, 0.8, 0.3];
-
-        // Input fields
-        let inputFields = [];
-        let weightFields = [];
-
-        function sigmoid(x) {
-            return 1 / (1 + Math.exp(-x));
-        }
-
-        function calculate() {
-            let sum = 0;
-
-            for (let i = 0; i < inputNodes.length; i++) {
-                sum += inputNodes[i].value * weights[i];
-            }
-
-            const output = sigmoid(sum);
-            outputNode.value = output;
-            outputNode.sum = sum;
-
-            return output;
-        }
-
-        function createInputField(x, y, value, onChange) {
-            const input = document.createElement('input');
-            input.type = 'number';
-            input.step = '0.1';
-            input.value = value.toFixed(2);
-            input.style.position = 'absolute';
-            input.style.left = (canvas.offsetLeft + x - 25) + 'px';
-            input.style.top = (canvas.offsetTop + y - 12) + 'px';
-
-            input.addEventListener('change', (e) => {
-                onChange(parseFloat(e.target.value) || 0);
-                calculate();
-                draw();
-            });
-
-            document.body.appendChild(input);
-            return input;
-        }
-
-        function setupInputFields() {
-            // Clear existing fields
-            inputFields.forEach(field => field.remove());
-            weightFields.forEach(field => field.remove());
-
-            inputFields = [];
-            weightFields = [];
-
-            // Input node fields
-            inputNodes.forEach((node, i) => {
-                const field = createInputField(node.x, node.y, node.value, (val) => {
-                    inputNodes[i].value = val;
-                });
-                inputFields.push(field);
-            });
-
-            // Weight fields
-            inputNodes.forEach((node, i) => {
-                const midX = (node.x + outputNode.x) / 2;
-                const midY = (node.y + outputNode.y) / 2;
-                const field = createInputField(midX, midY - 20, weights[i], (val) => {
-                    weights[i] = val;
-                });
-                weightFields.push(field);
-            });
-        }
-
-        function drawNode(x, y, value, label) {
-            // Node circle
-            ctx.beginPath();
-            ctx.arc(x, y, 30, 0, Math.PI * 2);
-            ctx.fillStyle = '#f0f0f0';
-            ctx.fill();
-            ctx.strokeStyle = '#667eea';
-            ctx.lineWidth = 3;
-            ctx.stroke();
-        }
-
-        function drawOutputNode(x, y, value, sum) {
-            // Node circle - make it bigger to fit text
-            ctx.beginPath();
-            ctx.arc(x, y, 55, 0, Math.PI * 2);
-
-            // Color based on output value
-            const hue = value * 120; // 0 (red) to 120 (green)
-            ctx.fillStyle = `hsl(${hue}, 70%, 85%)`;
-            ctx.fill();
-            ctx.strokeStyle = '#667eea';
-            ctx.lineWidth = 4;
-            ctx.stroke();
-
-            // Display sum value (top half)
-            ctx.fillStyle = '#555';
-            ctx.font = '12px Arial';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('Σ = ' + sum.toFixed(2), x, y - 15);
-
-            // Display sigmoid value (bottom half)
-            ctx.fillStyle = '#333';
-            ctx.font = 'bold 18px Arial';
-            ctx.fillText('σ = ' + value.toFixed(3), x, y + 12);
-        }
-
-        function drawConnection(x1, y1, x2, y2, weight) {
-            // Line thickness based on weight magnitude
-            const thickness = Math.abs(weight) * 3 + 1;
-
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-
-            // Color based on weight sign
-            ctx.strokeStyle = weight >= 0 ? '#4CAF50' : '#F44336';
-            ctx.lineWidth = thickness;
-            ctx.stroke();
-        }
-
-        function drawArrow(x, y) {
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(x + 60, y);
-            ctx.strokeStyle = '#667eea';
-            ctx.lineWidth = 3;
-            ctx.stroke();
-
-            // Arrow head
-            ctx.beginPath();
-            ctx.moveTo(x + 60, y);
-            ctx.lineTo(x + 50, y - 8);
-            ctx.lineTo(x + 50, y + 8);
-            ctx.closePath();
-            ctx.fillStyle = '#667eea';
-            ctx.fill();
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draw connections
-            inputNodes.forEach((node, i) => {
-                drawConnection(node.x + 30, node.y, outputNode.x - 55, outputNode.y, weights[i]);
-            });
-
-            // Draw input nodes
-            inputNodes.forEach((node, i) => {
-                drawNode(node.x, node.y, node.value, `x${i+1}`);
-            });
-
-            // Draw output node
-            drawOutputNode(outputNode.x, outputNode.y, outputNode.value, outputNode.sum || 0);
-
-            // Draw output arrow
-            drawArrow(outputNode.x + 55, outputNode.y);
-
-            // Labels
-            ctx.fillStyle = '#333';
-            ctx.font = '14px Arial';
-            ctx.textAlign = 'center';
-
-            ctx.fillText('Couche d\'entrée (x)', 100, 30);
-            ctx.fillText('Couche de poids (w)', 350, 30);
-            ctx.fillText('Neurone de sortie (y)', outputNode.x, 30);
-        }
-
-        // Initialize
-        calculate();
-        draw();
-        setupInputFields();
-
-        // Redraw on window resize
-        window.addEventListener('resize', () => {
-            setupInputFields();
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+function dessiner() {
+    const x1 = v('x1'), x2 = v('x2'), w1 = v('w1'), w2 = v('w2'), b = v('b');
+    for (const id of ids) document.getElementById(id + 'v').textContent = fr(v(id), id[0] === 'x' ? 2 : 1);
+    const z = w1 * x1 + w2 * x2 + b, y = sigm(z);
+    let s = '';
+    // entrées
+    for (const [yy, nom, val, w, wn] of [[85, 'x₁', x1, w1, 'w₁'], [215, 'x₂', x2, w2, 'w₂']]) {
+        s += `<circle cx="70" cy="${yy}" r="30" fill="${C.panneau}" stroke="${C.bleu}" stroke-width="2"/>
+              <text x="70" y="${yy - 4}" font-size="13" fill="${C.bleu}" text-anchor="middle" font-weight="700">${nom}</text>
+              <text x="70" y="${yy + 14}" font-size="15" fill="${C.encre}" text-anchor="middle" font-weight="700">${fr(val)}</text>`;
+        s += fleche(102, yy, 252, 150 + (yy - 150) * 0.3, w);
+        s += `<text x="172" y="${yy < 150 ? yy - 6 : yy + 22}" font-size="13.5" fill="${C.brun}" text-anchor="middle" font-weight="700">${wn} = ${fr(w, 1)}</text>`;
+    }
+    // somme
+    s += `<rect x="256" y="92" width="150" height="116" rx="14" fill="${C.panneau}" stroke="${C.teal}" stroke-width="2.5"/>
+          <text x="331" y="118" font-size="12" fill="${C.pale}" text-anchor="middle">somme pondérée + biais</text>
+          <text x="331" y="143" font-size="11.5" fill="${C.brun}" text-anchor="middle">${fr(w1, 1)}×${fr(x1)} + ${fr(w2, 1)}×${fr(x2)} + ${fr(b, 1)}</text>
+          <text x="331" y="182" font-size="26" fill="${C.teal}" text-anchor="middle" font-weight="700">${fr(z)}</text>`;
+    s += `<line x1="406" y1="150" x2="436" y2="150" stroke="${C.gris}" stroke-width="2"/><polygon points="446,150 434,144 434,156" fill="${C.gris}"/>`;
+    // sigmoïde
+    const gx = 450, gw = 130, gy = 198, gh = 74, X = t => gx + (t + 8) / 16 * gw, Y = q => gy - q * gh;
+    s += `<rect x="${gx - 8}" y="92" width="${gw + 16}" height="116" rx="14" fill="${C.panneau}" stroke="${C.teal}" stroke-width="2.5"/>
+          <text x="${gx + gw / 2}" y="107" font-size="11" fill="${C.pale}" text-anchor="middle">activation (sigmoïde)</text>
+          <line x1="${gx}" y1="${gy}" x2="${gx + gw}" y2="${gy}" stroke="${C.axe}"/>
+          <line x1="${gx}" y1="${Y(1)}" x2="${gx + gw}" y2="${Y(1)}" stroke="${C.axe}" stroke-dasharray="3 3"/>`;
+    let pts = '';
+    for (let t = -8; t <= 8.01; t += 0.4) pts += `${X(t).toFixed(1)},${Y(sigm(t)).toFixed(1)} `;
+    const zc = Math.max(-8, Math.min(8, z));
+    s += `<polyline points="${pts}" fill="none" stroke="${C.teal}" stroke-width="2.5"/>
+          <line x1="${X(zc)}" y1="${gy}" x2="${X(zc)}" y2="${Y(sigm(zc))}" stroke="${C.rouge}" stroke-dasharray="3 3"/>
+          <circle cx="${X(zc)}" cy="${Y(sigm(zc))}" r="5.5" fill="${C.rouge}" stroke="${C.panneau}" stroke-width="1.5"/>`;
+    s += `<line x1="${gx + gw + 8}" y1="150" x2="${gx + gw + 30}" y2="150" stroke="${C.gris}" stroke-width="2"/><polygon points="${gx + gw + 40},150 ${gx + gw + 28},144 ${gx + gw + 28},156" fill="${C.gris}"/>`;
+    // sortie
+    const ox = 650;
+    s += `<circle cx="${ox}" cy="150" r="34" fill="${C.rouge}" fill-opacity="${0.12 + 0.6 * y}" stroke="${C.rouge}" stroke-width="2.5"/>
+          <text x="${ox}" y="157" font-size="19" fill="${C.encre}" text-anchor="middle" font-weight="700">${fr(y)}</text>
+          <text x="${ox}" y="206" font-size="12.5" fill="${C.gris}" text-anchor="middle">sortie</text>
+          <text x="70" y="275" font-size="12.5" fill="${C.gris}" text-anchor="middle">entrées</text>
+          <text x="${(256 + gx + gw + 8) / 2}" y="232" font-size="12.5" fill="${C.teal}" text-anchor="middle">le neurone</text>`;
+    document.getElementById('schema').innerHTML = s;
+}
+for (const id of ids) document.getElementById(id).addEventListener('input', dessiner);
+dessiner();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
 </body>
 </html>
