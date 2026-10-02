@@ -1,6 +1,6 @@
 ---
 title: "Les réseaux de neurones"
-weight: 10
+weight: 15
 slug: réseaux-de-neurones
 ---
 

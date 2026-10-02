@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le schéma d'un neurone artificiel</title>
+<desc>De gauche à droite : deux entrées, x1 et x2, reliées chacune par une flèche qui porte un poids, w1 et w2, à un neurone. Le neurone fait deux opérations : la somme pondérée des entrées, à laquelle s'ajoute le biais b, puis la fonction d'activation sigmoïde. Une flèche sort du neurone vers la sortie, un nombre entre 0 et 1.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="38" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un neurone artificiel</text>
+<circle cx="90" cy="120" r="26" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="90" y="126" font-size="18" fill="#3a6ea5" text-anchor="middle" font-weight="700">x₁</text>
+<line x1="118.0" y1="120.0" x2="268.0" y2="157.4" stroke="#7a6f63" stroke-width="2.0" marker-end="url(#pointe)"/>
+<text x="186" y="120" font-size="16" fill="#9a5b33" text-anchor="middle" font-weight="700">w₁</text>
+<circle cx="90" cy="230" r="26" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="90" y="236" font-size="18" fill="#3a6ea5" text-anchor="middle" font-weight="700">x₂</text>
+<line x1="118.0" y1="230.0" x2="268.0" y2="192.6" stroke="#7a6f63" stroke-width="2.0" marker-end="url(#pointe)"/>
+<text x="186" y="250" font-size="16" fill="#9a5b33" text-anchor="middle" font-weight="700">w₂</text>
+<text x="90" y="290" font-size="12.5" fill="#7a6f63" text-anchor="middle">entrées</text>
+<text x="186" y="290" font-size="12.5" fill="#9a5b33" text-anchor="middle">poids</text>
+<rect x="272" y="105" width="256" height="140" rx="70" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.5"/>
+<line x1="400" y1="118" x2="400" y2="232" stroke="#b8a888" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="340" y="170" font-size="30" fill="#2f6f6a" text-anchor="middle" font-weight="700">Σ</text>
+<text x="340" y="198" font-size="12.5" fill="#5b5249" text-anchor="middle">somme + biais</text>
+<text x="340" y="214" font-size="12" fill="#9a5b33" text-anchor="middle" font-weight="700">w₁x₁ + w₂x₂ + b</text>
+<polyline points="432.0,171.8 434.0,171.7 436.0,171.6 438.0,171.4 440.0,171.2 442.0,170.9 444.0,170.6 446.0,170.1 448.0,169.4 450.0,168.6 452.0,167.5 454.0,166.1 456.0,164.4 458.0,162.4 460.0,160.1 462.0,157.6 464.0,155.0 466.0,152.4 468.0,149.9 470.0,147.6 472.0,145.6 474.0,143.9 476.0,142.5 478.0,141.4 480.0,140.6 482.0,139.9 484.0,139.4 486.0,139.1 488.0,138.8 490.0,138.6 492.0,138.4 494.0,138.3 496.0,138.2" fill="none" stroke="#2f6f6a" stroke-width="3" stroke-linecap="round"/>
+<text x="464" y="198" font-size="12.5" fill="#5b5249" text-anchor="middle">activation</text>
+<text x="464" y="214" font-size="12" fill="#2f6f6a" text-anchor="middle" font-weight="700">sigmoïde σ</text>
+<text x="400" y="272" font-size="12.5" fill="#2f6f6a" text-anchor="middle">le neurone</text>
+<line x1="532.0" y1="175.0" x2="596.0" y2="175.0" stroke="#7a6f63" stroke-width="2.0" marker-end="url(#pointe)"/>
+<circle cx="628" cy="175" r="26" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<text x="628" y="180" font-size="13" fill="#c4564a" text-anchor="middle" font-weight="700">0 à 1</text>
+<text x="628" y="290" font-size="12.5" fill="#7a6f63" text-anchor="middle">sortie</text>
+</svg>
