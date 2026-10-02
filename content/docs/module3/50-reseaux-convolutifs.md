@@ -131,3 +131,94 @@ tirés au hasard au départ, puis réglés par
 comme tous les autres poids. Le réseau trouve lui-même les motifs utiles pour sa
 tâche. Entraîné sur des visages, il produit des filtres adaptés aux visages.
 Entraîné sur des radiographies, il en produit d'autres.
+
+## Yann Le Cun et les chèques
+
+L'idée du filtre qui glisse sur l'image vient de la neurophysiologie. En 1979, le
+chercheur japonais Kunihiko Fukushima s'inspire des travaux de Hubel et Wiesel sur
+le cortex visuel, décrits dans
+l'[encadré du chapitre précédent](docs/module3/40-apprentissage-profond/#une-hiérarchie-de-caractéristiques).
+Il propose le **Neocognitron**, un réseau qui alterne déjà des couches de filtres
+et des couches de réduction. Ses filtres ne sont pas réglés par rétropropagation,
+qui n'est pas encore connue.
+
+En 1988, le chercheur français Yann Le Cun entre aux Bell Labs, le laboratoire de
+recherche de l'entreprise de télécommunications AT&T, dans le New Jersey. Il y
+réunit les deux idées : un réseau convolutif, dont tous les filtres sont appris par
+rétropropagation. En 1989, ce réseau lit les codes postaux manuscrits des lettres
+du service postal américain.
+
+{{< image src="/images/module3/yann-le-cun.jpg" alt="Portrait de Yann Le Cun, un homme aux cheveux gris, souriant, en veste sombre." title="Yann Le Cun en 2018 (photo : Jérémy Barande, Wikimedia Commons, CC BY-SA 2.0)." loading="lazy" >}}
+
+La vidéo ci-dessous, publiée par Le Cun lui-même, montre ce réseau en 1989, lisant
+en direct des chiffres écrits à la main.
+
+{{< youtube id="FwFduRA_L6Q" >}}
+
+Le travail se poursuit pendant une dizaine d'années, avec Léon Bottou, Yoshua
+Bengio et Patrick Haffner. Il aboutit en 1998 à **LeNet-5**, un réseau à sept
+couches, et à un système de lecture automatique des chèques. Vers la fin des années
+1990, selon Le Cun, ce système lit entre 10 et 20 % des chèques déposés aux
+États-Unis. C'est l'une des premières applications commerciales à grande échelle
+d'un réseau de neurones.
+
+Pour entraîner et comparer ces réseaux, l'équipe constitue une base de chiffres
+manuscrits, **MNIST** : 60 000 images d'entraînement et 10 000 images de test, de
+28 pixels sur 28. C'est l'origine des chiffres qui servent d'exemple tout au long
+de ce module. MNIST est devenue la base d'essai la plus utilisée de l'apprentissage
+automatique.
+
+{{< image src="/images/module3/mnist-exemples.png" alt="Une grille de petits chiffres manuscrits, blancs sur fond noir, rangés par ligne de 0 à 9. Chaque chiffre est écrit par une personne différente, avec des formes et des inclinaisons variées." title="Des chiffres de la base MNIST, une ligne par chiffre (image : Josef Steppan, Wikimedia Commons, CC BY-SA 4.0)." loading="lazy" >}}
+
+Malgré ces succès, les réseaux convolutifs restent une méthode parmi d'autres
+pendant quinze ans. Ils fonctionnent sur de petites images de chiffres, mais les
+photos du monde réel demandent des réseaux plus grands, plus de données et plus de
+calcul. Il faut attendre que ces trois conditions, décrites dans
+« [Pourquoi seulement en 2012](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012) »,
+soient réunies.
+
+## Après 2012
+
+[AlexNet](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet) est un
+réseau convolutif. Son architecture reprend celle de LeNet, avec trois différences :
+il est beaucoup plus grand, il utilise la ReLU, et il est entraîné sur GPU. Le Cun,
+Hinton et Bengio ont reçu ensemble le prix Turing 2018, la plus haute distinction
+en informatique, pour leurs travaux sur l'apprentissage profond.
+
+Les réseaux convolutifs deviennent ensuite plus profonds : 8 couches pour AlexNet
+en 2012, 22 pour GoogLeNet en 2014, 152 pour ResNet en 2015. Ce dernier introduit
+des **raccourcis** qui laissent l'information sauter certaines couches, ce qui
+limite
+l'[évanouissement du gradient](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012)
+et permet d'entraîner des réseaux très profonds.
+
+Ils servent aujourd'hui à de nombreuses tâches :
+
+- **reconnaître et localiser des objets** dans une image, par exemple les piétons
+  et les autres véhicules pour l'aide à la conduite ;
+- **analyser des images médicales**, comme des radiographies ou des images de la
+  rétine ;
+- **reconnaître des visages**, un usage qui pose des questions de surveillance et de
+  vie privée, traitées au [Module 5](docs/module5) ;
+- **traiter des sons**, en les transformant d'abord en images de leurs fréquences.
+
+## La leçon de la convolution
+
+Ce chapitre nuance la
+[leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère) de Sutton. La
+convolution est une connaissance humaine, inscrite dans la forme du réseau : dans
+une image, ce qui compte est d'abord local, et un même motif peut apparaître
+n'importe où. Le réseau convolutif doit une grande partie de son efficacité à cette
+connaissance.
+
+Mais c'est une connaissance très générale. Elle porte sur la structure des images
+en général, et non sur les chats, les chiffres ou les visages. Le contenu des
+filtres reste entièrement appris. C'est le type de savoir humain qui a survécu à
+l'apprentissage profond : non pas des règles sur le monde, mais des hypothèses sur
+la forme des données.
+
+Le chapitre suivant applique la même démarche à un autre type de données. Une image
+a une taille fixe, et tous ses pixels sont disponibles en même temps. Une phrase ou
+un enregistrement sonore ont une longueur variable, et l'ordre de leurs éléments
+compte. Le chapitre « Lire une séquence : les réseaux récurrents » présente les
+réseaux conçus pour ces données.
