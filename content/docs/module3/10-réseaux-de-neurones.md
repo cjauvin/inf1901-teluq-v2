@@ -88,7 +88,7 @@ interactif qui pourrait vous aider à clarifier les idées. Changez les valeurs
 d'entrées, ainsi que celle des poids (paramètres) et convainquez-vous que vous
 avez une compréhension claire de ce mécanisme relativement simple :
 
-{{< applet src="/html/applets/neuron.html" height="420" >}}
+{{< applet src="/html/applets/neuron.html" height="547" >}}
 
 La somme de la multiplication des valeurs du vecteur d'entrée ($\mathbf{x}$) et
 celles du vecteur de paramètres ($\mathbf{w}$) est représentée par la lettre

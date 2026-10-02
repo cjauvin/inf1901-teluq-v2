@@ -110,3 +110,57 @@ def chiffre():
 schema()
 chiffre()
 print("neurone-schema.svg et chiffre-vers-neurone.svg écrits")
+
+
+# ---------------------------------------------------------------- neurone biologique et neurone artificiel
+def comparaison():
+    W, H = 700, 450
+    o = entete(W, H, "Un neurone biologique et un neurone artificiel",
+               f"En haut, un neurone biologique{NB}: des dendrites ramifiées à gauche, un corps cellulaire au centre, un long axone vers la droite, terminé par des ramifications. "
+               f"En bas, un neurone artificiel{NB}: des entrées et leurs poids à gauche, la somme et la fonction d'activation au centre, la sortie à droite. "
+               f"Les mêmes couleurs relient les éléments qui se correspondent{NB}: dendrites et entrées, synapses et poids, corps cellulaire et calcul, axone et sortie.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Du neurone biologique au neurone artificiel</text>')
+    # --- neurone biologique
+    yb = 150
+    for nom, coul in (("brun", BRUN), ("rouge", ROUGE)):
+        o.append(f'<defs><marker id="p-{nom}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="13" markerHeight="13" '
+                 f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="{coul}"/></marker></defs>')
+    o.append(f'<text x="{W - 30}" y="76" font-size="13" fill="{ENCRE_PALE}" font-weight="700" text-anchor="end">Neurone biologique</text>')
+    cx = 250
+    for dy, dx, branche in ((-52, -150, 16), (-18, -165, 12), (20, -160, -14), (52, -145, -16)):
+        x1, y1 = cx - 34, yb + dy * 0.45
+        x2, y2 = cx + dx, yb + dy
+        o.append(f'<path d="M{x1} {y1:.0f} Q{(x1 + x2) / 2} {(y1 + y2) / 2 + branche / 2:.0f} {x2} {y2:.0f}" fill="none" stroke="{BLEU}" stroke-width="3.2" stroke-linecap="round"/>')
+        for s in (-1, 1):
+            o.append(f'<path d="M{x2} {y2:.0f} l-20 {s * 8}" fill="none" stroke="{BLEU}" stroke-width="2.2" stroke-linecap="round"/>')
+            o.append(f'<circle cx="{x2 - 23}" cy="{y2 + s * 9:.0f}" r="3.6" fill="{BRUN}"/>')
+    o.append(f'<ellipse cx="{cx}" cy="{yb}" rx="44" ry="36" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="3"/>')
+    o.append(f'<circle cx="{cx - 4}" cy="{yb + 2}" r="11" fill="{TEAL}" fill-opacity="0.35"/>')
+    o.append(f'<path d="M{cx + 44} {yb} C{cx + 130} {yb - 16} {cx + 210} {yb + 16} {cx + 300} {yb}" fill="none" stroke="{ROUGE}" stroke-width="4.5" stroke-linecap="round"/>')
+    for dy in (-22, 0, 22):
+        o.append(f'<path d="M{cx + 300} {yb} l42 {dy}" fill="none" stroke="{ROUGE}" stroke-width="2.6" stroke-linecap="round"/>')
+        o.append(f'<circle cx="{cx + 346}" cy="{yb + dy}" r="4" fill="{ROUGE}"/>')
+    o.append(f'<text x="92" y="{yb + 84}" font-size="12.5" fill="{BLEU}" text-anchor="middle" font-weight="700">dendrites</text>')
+    o.append(f'<text x="80" y="{yb - 76}" font-size="12.5" fill="{BRUN}" text-anchor="middle" font-weight="700">synapses</text>')
+    o.append(f'<text x="{cx}" y="{yb + 62}" font-size="12.5" fill="{TEAL}" text-anchor="middle" font-weight="700">corps cellulaire</text>')
+    o.append(f'<text x="{cx + 190}" y="{yb + 34}" font-size="12.5" fill="{ROUGE}" text-anchor="middle" font-weight="700">axone</text>')
+    o.append(f'<line x1="30" y1="{yb + 100}" x2="{W - 30}" y2="{yb + 100}" stroke="{AXE}" stroke-width="1" stroke-dasharray="5 5"/>')
+    # --- neurone artificiel
+    ya = 340
+    o.append(f'<text x="{W - 30}" y="{ya - 62}" font-size="13" fill="{ENCRE_PALE}" font-weight="700" text-anchor="end">Neurone artificiel</text>')
+    for dy in (-46, 0, 46):
+        o.append(f'<circle cx="92" cy="{ya + dy * 0.9:.0f}" r="13" fill="{PANNEAU}" stroke="{BLEU}" stroke-width="2"/>')
+        o.append(f'<line x1="106" y1="{ya + dy * 0.9:.0f}" x2="{cx - 48}" y2="{ya + dy * 0.25:.0f}" stroke="{BRUN}" stroke-width="2.4" marker-end="url(#p-brun)"/>')
+    o.append(f'<ellipse cx="{cx}" cy="{ya}" rx="44" ry="36" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="3"/>')
+    o.append(f'<text x="{cx}" y="{ya + 8}" font-size="22" fill="{TEAL}" text-anchor="middle" font-weight="700">Σ  σ</text>')
+    o.append(f'<line x1="{cx + 46}" y1="{ya}" x2="{cx + 296}" y2="{ya}" stroke="{ROUGE}" stroke-width="3.2" marker-end="url(#p-rouge)"/>')
+    o.append(f'<text x="92" y="{ya + 74}" font-size="12.5" fill="{BLEU}" text-anchor="middle" font-weight="700">entrées</text>')
+    o.append(f'<text x="158" y="{ya - 40}" font-size="12.5" fill="{BRUN}" text-anchor="middle" font-weight="700">poids</text>')
+    o.append(f'<text x="{cx}" y="{ya + 62}" font-size="12.5" fill="{TEAL}" text-anchor="middle" font-weight="700">somme et activation</text>')
+    o.append(f'<text x="{cx + 190}" y="{ya + 26}" font-size="12.5" fill="{ROUGE}" text-anchor="middle" font-weight="700">sortie</text>')
+    o.append("</svg>")
+    (OUT / "neurone-biologique-artificiel.svg").write_text("\n".join(o) + "\n")
+
+
+comparaison()
+print("neurone-biologique-artificiel.svg écrit")
