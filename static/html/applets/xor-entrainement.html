@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un réseau qui apprend le XOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex gap-3">
+        <div class="relative bg-slate-50 rounded-lg overflow-hidden" style="flex:3">
+            <canvas id="plan" class="w-full block"></canvas>
+            <div class="absolute top-2 left-2 bg-white/85 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">Le plan des entrées</div>
+            <div id="etat" class="absolute bottom-2 left-2 text-xs font-bold px-3 py-1 rounded-full pointer-events-none"></div>
+            <div class="absolute bottom-2 right-2 bg-white/85 px-3 py-1 rounded-full text-xs text-slate-600 tabular-nums pointer-events-none border border-slate-200 shadow-sm">étape <span id="etape" class="font-bold">0</span> · erreur <span id="erreur" class="font-bold" style="color:#c4564a">–</span></div>
+        </div>
+        <div class="relative bg-slate-50 rounded-lg overflow-hidden" style="flex:2">
+            <canvas id="courbe" class="w-full block"></canvas>
+            <div class="absolute top-2 left-2 bg-white/85 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">L'erreur au fil de l'entraînement</div>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2 justify-center">
+            <button id="lancer" onclick="basculer()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium text-sm shadow-sm w-44 whitespace-nowrap">Lancer l'entraînement</button>
+            <button onclick="nouveauxPoids()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm whitespace-nowrap">Nouveaux poids</button>
+        </div>
+        <div class="grid grid-cols-[auto_7rem] items-center gap-x-3 text-sm">
+            <span class="font-bold text-slate-700 whitespace-nowrap">Taux d'apprentissage : <span id="tauxAff"></span></span>
+            <input type="range" id="taux" min="0" max="3" value="1" class="w-full accent-indigo-600">
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap items-center">
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#c4564a"></div>vrai</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#3a6ea5"></div>faux</div>
+        <div class="flex items-center gap-2"><div class="w-4 h-3 rounded-sm" style="background:linear-gradient(90deg,#fbf7ee,#efc9c3)"></div>réponse du réseau, de « faux » à « vrai »</div>
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#2f6f6a"></div>un neurone caché</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border-2 border-amber-500"></div>mal classé</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Le réseau du XOR (deux entrées, deux neurones cachés, une sortie) entraîné
+ * par rétropropagation sur les quatre cas. À gauche, le plan des entrées : les
+ * deux droites sont celles des neurones cachés, et le fond donne la réponse du
+ * réseau. À droite, l'erreur (écart quadratique moyen) à chaque étape.
+ */
+const PW = 420, PH = 360, CW = 280, CH = 360;
+const COUL = { fond: [251, 247, 238], zone: [239, 201, 195], grille: '#e8dfc9', axe: '#b8a888', rouge: '#c4564a', bleu: '#3a6ea5',
+               droite: '#2f6f6a', mal: '#f59e0b', encre: '#5b5249' };
+const TAUX = [{ v: 0.1, nom: 'très petit' }, { v: 1, nom: 'moyen' }, { v: 5, nom: 'grand' }, { v: 20, nom: 'trop grand' }];
+const CAS = [[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 0]];          // A, B, bonne réponse
+const plan = document.getElementById('plan'), courbe = document.getElementById('courbe');
+const cp = plan.getContext('2d'), cc = courbe.getContext('2d');
+plan.width = PW; plan.height = PH; courbe.width = CW; courbe.height = CH;
+
+const sigm = z => 1 / (1 + Math.exp(-Math.max(-60, Math.min(60, z))));
+const fr = (n, d = 3) => n.toFixed(d).replace('.', ',');
+const X = a => PW / 2 + (a - 0.5) * 170, Y = b => PH / 2 - (b - 0.5) * 170;
+const A = x => (x - PW / 2) / 170 + 0.5, B = y => (PH / 2 - y) / 170 + 0.5;
+
+let w, historique, enMarche = false;                     // w : 9 nombres, [w11, w12, b1, w21, w22, b2, v1, v2, c]
+
+function reseau(a, b) {
+    const h1 = sigm(w[0] * a + w[1] * b + w[2]), h2 = sigm(w[3] * a + w[4] * b + w[5]);
+    return { h1, h2, y: sigm(w[6] * h1 + w[7] * h2 + w[8]) };
+}
+function erreur() { return CAS.reduce((s, [a, b, t]) => s + (reseau(a, b).y - t) ** 2, 0) / 4; }
+
+// Une étape : propagation avant sur les quatre cas, rétropropagation, puis correction de tous les poids.
+function etape() {
+    const g = new Array(9).fill(0), taux = TAUX[+document.getElementById('taux').value].v;
+    for (const [a, b, t] of CAS) {
+        const { h1, h2, y } = reseau(a, b);
+        const d = y - t;                                 // l'erreur à la sortie
+        g[6] += d * h1; g[7] += d * h2; g[8] += d;
+        const d1 = d * w[6] * h1 * (1 - h1), d2 = d * w[7] * h2 * (1 - h2);   // la part de chaque neurone caché
+        g[0] += d1 * a; g[1] += d1 * b; g[2] += d1; g[3] += d2 * a; g[4] += d2 * b; g[5] += d2;
+    }
+    w = w.map((p, i) => p - taux * g[i] / 4);
+    historique.push(erreur());
+}
+
+function dessinerPlan() {
+    const img = cp.createImageData(PW, PH), pas = 3;
+    for (let y = 0; y < PH; y += pas) for (let x = 0; x < PW; x += pas) {
+        const t = Math.max(0, Math.min(1, (reseau(A(x + pas / 2), B(y + pas / 2)).y - 0.5) * 2));
+        const c = COUL.fond.map((v, i) => Math.round(v + (COUL.zone[i] - v) * t));
+        for (let dy = 0; dy < pas && y + dy < PH; dy++) for (let dx = 0; dx < pas && x + dx < PW; dx++) { const i = ((y + dy) * PW + x + dx) * 4; img.data[i] = c[0]; img.data[i + 1] = c[1]; img.data[i + 2] = c[2]; img.data[i + 3] = 255; }
+    }
+    cp.putImageData(img, 0, 0);
+    cp.strokeStyle = COUL.grille; cp.lineWidth = 1;
+    for (const v of [0, 1]) { cp.beginPath(); cp.moveTo(X(v), 0); cp.lineTo(X(v), PH); cp.stroke(); cp.beginPath(); cp.moveTo(0, Y(v)); cp.lineTo(PW, Y(v)); cp.stroke(); }
+    // les droites des deux neurones cachés : w1·A + w2·B + b = 0
+    for (const k of [0, 1]) {
+        const [p, q, r] = w.slice(3 * k, 3 * k + 3), n = Math.hypot(p, q);
+        if (n < 1e-6) continue;
+        const a0 = -r * p / (n * n), b0 = -r * q / (n * n), ux = -q / n, uy = p / n;
+        cp.strokeStyle = COUL.droite; cp.lineWidth = 3; cp.beginPath();
+        cp.moveTo(X(a0 - 9 * ux), Y(b0 - 9 * uy)); cp.lineTo(X(a0 + 9 * ux), Y(b0 + 9 * uy)); cp.stroke();
+    }
+    let mal = 0;
+    cp.font = '12px system-ui, sans-serif'; cp.textAlign = 'center';
+    for (const [a, b, t] of CAS) {
+        const faux = (reseau(a, b).y >= 0.5) !== (t === 1);
+        if (faux) mal++;
+        cp.beginPath(); cp.arc(X(a), Y(b), 10, 0, 7); cp.fillStyle = t ? COUL.rouge : COUL.bleu; cp.fill();
+        cp.strokeStyle = '#fbf7ee'; cp.lineWidth = 2; cp.stroke();
+        if (faux) { cp.beginPath(); cp.arc(X(a), Y(b), 15, 0, 7); cp.strokeStyle = COUL.mal; cp.lineWidth = 2.5; cp.stroke(); }
+        cp.fillStyle = COUL.encre; cp.fillText(`A = ${a}, B = ${b}`, X(a), Y(b) + (b ? -22 : 32));
+    }
+    const etat = document.getElementById('etat');
+    if (mal === 0) { etat.textContent = 'Les quatre cas sont bien classés'; etat.style.cssText = 'background:#d7ebe6;color:#2f6f6a'; }
+    else { etat.textContent = `${mal} cas mal classé${mal > 1 ? 's' : ''} sur 4`; etat.style.cssText = 'background:#f6ddd9;color:#a4433a'; }
+}
+
+function dessinerCourbe() {
+    const g = 40, d = 12, h = 40, b = 34;                // marges : gauche, droite, haut, bas
+    cc.fillStyle = '#fbf7ee'; cc.fillRect(0, 0, CW, CH);
+    const max = 0.5, n = Math.max(300, historique.length);
+    const x = i => g + i / n * (CW - g - d), y = e => CH - b - Math.min(e, max) / max * (CH - h - b);
+    cc.font = '11px system-ui, sans-serif'; cc.fillStyle = COUL.encre;
+    for (const e of [0, 0.1, 0.2, 0.3, 0.4, 0.5]) {
+        cc.strokeStyle = e ? COUL.grille : COUL.axe; cc.lineWidth = 1; cc.beginPath(); cc.moveTo(g, y(e)); cc.lineTo(CW - d, y(e)); cc.stroke();
+        cc.textAlign = 'right'; cc.fillText(fr(e, 1), g - 6, y(e) + 4);
+    }
+    cc.strokeStyle = COUL.axe; cc.beginPath(); cc.moveTo(g, h); cc.lineTo(g, CH - b); cc.stroke();
+    cc.textAlign = 'left'; cc.fillText('0', g, CH - b + 16);
+    cc.textAlign = 'right'; cc.fillText(n + ' étapes', CW - d, CH - b + 16);
+    if (historique.length > 1) {
+        cc.strokeStyle = COUL.rouge; cc.lineWidth = 2; cc.beginPath();
+        const saut = Math.max(1, Math.floor(historique.length / 1500));
+        for (let i = 0; i < historique.length; i += saut) i ? cc.lineTo(x(i), y(historique[i])) : cc.moveTo(x(i), y(historique[i]));
+        cc.lineTo(x(historique.length - 1), y(historique[historique.length - 1]));
+        cc.stroke();
+    }
+}
+
+function dessiner() {
+    dessinerPlan(); dessinerCourbe();
+    document.getElementById('etape').textContent = historique.length - 1;
+    document.getElementById('erreur').textContent = fr(historique[historique.length - 1]);
+}
+function boucle() {
+    if (!enMarche) return;
+    for (let k = 0; k < 4; k++) etape();
+    dessiner();
+    if (historique.length > 12000) basculer(); else requestAnimationFrame(boucle);
+}
+function basculer() {
+    enMarche = !enMarche;
+    document.getElementById('lancer').textContent = enMarche ? 'Pause' : (historique.length > 1 ? 'Reprendre' : "Lancer l'entraînement");
+    if (enMarche) requestAnimationFrame(boucle);
+}
+function nouveauxPoids() {
+    if (enMarche) basculer();
+    w = Array.from({ length: 9 }, () => Math.random() * 2 - 1);
+    historique = [erreur()];
+    document.getElementById('lancer').textContent = "Lancer l'entraînement";
+    dessiner();
+}
+function afficherTaux() { document.getElementById('tauxAff').textContent = TAUX[+document.getElementById('taux').value].nom; }
+document.getElementById('taux').addEventListener('input', afficherTaux);
+
+afficherTaux();
+nouveauxPoids();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

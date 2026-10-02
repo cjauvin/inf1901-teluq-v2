@@ -281,7 +281,7 @@ Même construction que le M2 : chaque page rencontre une limite qui mène à la 
 - **Accueil du module** — à refaire à la fin, quand les neuf pages sont écrites (décidé le 2026-10-02).
 - **Travail noté 3** — TensorFlow Playground, à revoir et à vérifier dans le navigateur comme le TN1.
 
-Avancement (2026-10-02) : pages 1 *Un neurone* et 2 *Une couche cachée* écrites (applets `neuron.html` et `xor-deux-droites.html`). Renvois encore sans lien, à relier quand les pages existeront : « L'apprentissage profond » (page 1), « Entraîner un réseau » (page 2).
+Avancement (2026-10-02) : pages 1 *Un neurone*, 2 *Une couche cachée* et 3 *Entraîner un réseau* écrites (applets `neuron.html`, `xor-deux-droites.html`, `xor-entrainement.html`). Ancienne page 3Blue1Brown supprimée (vidéo de l'épisode 3 intégrée à la page 3) ; ancienne page *Les réseaux de neurones* masquée du menu (`bookHidden`), à supprimer après la page 4. Renvois encore sans lien, à relier quand la page existera : « L'apprentissage profond » (pages 1 et 3). Règle des figures : tous les schémas de la v1 sont redessinés en SVG parchemin ; seules les photos, documents d'époque et exemples adverses restent tels quels.
 
 Décisions : **GNN et NTM retirés** (au plus un encadré de trois lignes sur les NTM, clin d'œil à Turing) ; **exemple fil conducteur = les chiffres manuscrits** (Le Cun, 3Blue1Brown, exemples adverses). À faire en cours de route : rediriger les liens existants vers `30-architectures-avancées` et `40-aa-adverse` (M1, M2).
 
