@@ -266,6 +266,22 @@ Contenu : `10-réseaux-de-neurones.md` (2872, **cœur solide** : neurone = gén�
 - **Étoffer l'apprentissage adverse** (exemples adverses, duper un classifieur d'images).
 - **Cœur du fil cerveau ↔ IA** (voir §3) : l'encadré « la carte n'est pas le territoire ».
 
+### Découpage en pages (validé par Christian le 2026-10-01)
+Même construction que le M2 : chaque page rencontre une limite qui mène à la suivante. Registre neutre (`GUIDE-STYLE.md`), liens sur tous les renvois, une page à la fois avec validation avant écriture. Module masqué en ligne jusqu'à décision de publication.
+
+1. **Un neurone** — le retour du perceptron ; un neurone = une régression logistique ; applet du neurone ; sa limite (une droite).
+2. **Une couche cachée** — le XOR résolu : le réseau fabrique lui-même la caractéristique (solde la dette XOR).
+3. **Entraîner un réseau** — la rétropropagation (1986) ; vidéo 3Blue1Brown intégrée (plus de page à part).
+4. **L'apprentissage profond** — pourquoi empiler ; hiérarchie, caractéristiques apprises, données, GPU ; ImageNet 2012 ; encadré « la carte n'est pas le territoire » ; **autoencodeurs en courte section** (renvoi vers le M4).
+5. **Voir : les réseaux convolutifs** — Le Cun, chèques, convolution, ImageNet.
+6. **Lire une séquence : les réseaux récurrents** — mémoire, limite sur les longues séquences.
+7. **L'attention et le Transformer** — architecture seulement ; pont vers le M4.
+8. **Apprendre à jouer : le renforcement profond** — Atari (DQN), AlphaGo (recherche du M1 + apprentissage du M2).
+9. **Tromper un réseau** — exemples adverses, boîte noire (contraste avec arbres et systèmes experts).
+- **Travail noté 3** — TensorFlow Playground, à revoir et à vérifier dans le navigateur comme le TN1.
+
+Décisions : **GNN et NTM retirés** (au plus un encadré de trois lignes sur les NTM, clin d'œil à Turing) ; **exemple fil conducteur = les chiffres manuscrits** (Le Cun, 3Blue1Brown, exemples adverses). À faire en cours de route : rediriger les liens existants vers `30-architectures-avancées` et `40-aa-adverse` (M1, M2).
+
 ## 8. Module 4 — IA générative et LLM
 
 ### Diagnostic v1
