@@ -39,7 +39,7 @@ Notre droite en a deux, ce qui suffit pour représenter une <em>tendance</em>, a
 direction et une hauteur. Si on change m et b, on obtient une autre droite, donc
 un autre modèle. Le problème consiste à trouver le couple (m, b) qui donne la
 droite la mieux ajustée au nuage.</p><p>Essayez vous-même. Dans l&rsquo;applet ci-dessous, déplacez la droite (vous ajustez
-ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1790983453458319446 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
+ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1790983637785212600 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
 préciser ce que « bien » veut dire. Il nous faut une mesure, que nous avons déjà
 rencontrée avec le modèle le plus bête sans encore la définir précisément :
 l&rsquo;<strong>erreur</strong>.</p><p>Pour une droite donnée, l&rsquo;erreur sur une maison est l&rsquo;écart entre le prix que la
@@ -61,7 +61,7 @@ point est relié à la droite par un petit ressort vertical. Un point éloigné 
 fort, un point proche tire à peine. La meilleure droite est celle où les forces de
 tous ces ressorts s&rsquo;équilibrent, c&rsquo;est-à-dire la position de moindre tension.
 Cette position correspond à la droite de plus petite erreur. Vous pouvez
-l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1790983453458772290 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
+l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1790983637785678038 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
 dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
 quand le modèle n&rsquo;a plus deux paramètres, mais des milliers. C&rsquo;est l&rsquo;objet de la
 <a href=#apprendre-cest-descendre-la-pente>section suivante</a>.</p><h2 id=apprendre-cest-descendre-la-pente>Apprendre, c&rsquo;est descendre la pente<a class=anchor href=#apprendre-cest-descendre-la-pente></a></h2><p>L&rsquo;idée présentée dans cette section est au cœur de tout l&rsquo;apprentissage
