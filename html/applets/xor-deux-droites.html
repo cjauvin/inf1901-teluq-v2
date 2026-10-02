@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : une couche cachée, plusieurs droites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        canvas { touch-action: none; }
+        .choix { padding: 0.4rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.875rem; font-weight: 500; color: #334155; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+        .choix.actif { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="relative bg-slate-50 rounded-lg overflow-hidden">
+        <canvas id="plan" class="w-full block"></canvas>
+        <div class="absolute top-2 left-2 bg-white/85 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">
+            Glissez le rond pour déplacer une droite, le carré pour la faire pivoter.
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 justify-center">
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-slate-700">Points :</span>
+                <button id="jeu0" class="choix" onclick="choisirJeu(0)">le XOR</button>
+                <button id="jeu1" class="choix" onclick="choisirJeu(1)">un groupe entouré</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-slate-700">Droites :</span>
+                <button id="nb2" class="choix" onclick="choisirNombre(2)">2</button>
+                <button id="nb3" class="choix" onclick="choisirNombre(3)">3</button>
+            </div>
+        </div>
+        <div id="etat" class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap"></div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#c4564a"></div>vrai</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#3a6ea5"></div>faux</div>
+        <div class="flex items-center gap-2"><div class="w-4 h-3 rounded-sm" style="background:#efc9c3"></div>zone où le réseau répond « vrai »</div>
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#2f6f6a"></div>un neurone caché</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border-2 border-amber-500"></div>mal classé</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Une couche cachée vue comme un ensemble de droites. Chaque droite est un
+ * neurone caché, qui coupe le plan en deux. Le neurone de sortie répond
+ * « vrai » dans la zone située du bon côté de toutes les droites à la fois.
+ * Le côté retenu pour chaque droite est celui qui classe le mieux les points,
+ * si bien qu'il suffit de déplacer les droites.
+ */
+const W = 620, H = 400;
+const COUL = { fond: [251, 247, 238], zone: [239, 201, 195], grille: '#e8dfc9', rouge: '#c4564a', bleu: '#3a6ea5',
+               droite: '#2f6f6a', mal: '#f59e0b', encre: '#5b5249' };
+const canvas = document.getElementById('plan'), ctx = canvas.getContext('2d');
+canvas.width = W; canvas.height = H;
+
+// Les jeux de points, en pixels ; c = 1 pour « vrai » (rouge), 0 pour « faux » (bleu).
+function jeuXor() {
+    const xs = [W / 2 - 110, W / 2 + 110], ys = [H / 2 + 110, H / 2 - 110];
+    const pts = [];
+    for (const a of [0, 1]) for (const b of [0, 1]) pts.push({ x: xs[a], y: ys[b], c: a !== b ? 1 : 0, nom: `A = ${a}, B = ${b}` });
+    return pts;
+}
+function jeuEntoure() {
+    const pts = [{ x: W / 2, y: H / 2, c: 1 }], R = 0.36 * H, r = 0.115 * H;
+    for (let k = 0; k < 4; k++) pts.push({ x: W / 2 + r * Math.cos(k * Math.PI / 2), y: H / 2 + r * Math.sin(k * Math.PI / 2), c: 1 });
+    for (let k = 0; k < 16; k++) pts.push({ x: W / 2 + R * Math.cos(k * Math.PI / 8), y: H / 2 + R * Math.sin(k * Math.PI / 8), c: 0 });
+    return pts;
+}
+const DEPART = [{ cx: W / 2 - 60, cy: H / 2 - 40, angle: 0.12 }, { cx: W / 2 + 60, cy: H / 2 + 40, angle: -0.1 }, { cx: W / 2 + 150, cy: H / 2, angle: 1.45 }];
+
+let jeu = 0, points = jeuXor(), droites = [], signes = [1, 1, 1];
+
+// De quel côté de la droite d se trouve le point (x, y) : valeur positive d'un côté, négative de l'autre.
+const cote = (d, x, y) => -(x - d.cx) * Math.sin(d.angle) + (y - d.cy) * Math.cos(d.angle);
+const dansZone = (x, y, s) => droites.every((d, i) => s[i] * cote(d, x, y) >= 0);
+const erreurs = s => points.filter(p => dansZone(p.x, p.y, s) !== (p.c === 1)).length;
+
+// Le côté retenu pour chaque droite : la combinaison qui classe le mieux les points.
+// À égalité, on garde la combinaison en cours, pour que la zone ne saute pas sans raison.
+function choisirSignes() {
+    let meilleur = signes.slice(0, droites.length), min = erreurs(meilleur);
+    for (let m = 0; m < 1 << droites.length; m++) {
+        const s = droites.map((_, i) => (m >> i) & 1 ? 1 : -1), e = erreurs(s);
+        if (e < min) { min = e; meilleur = s; }
+    }
+    signes = meilleur;
+}
+
+function dessiner() {
+    choisirSignes();
+    const img = ctx.createImageData(W, H), pas = 2;
+    for (let Y = 0; Y < H; Y += pas) for (let X = 0; X < W; X += pas) {
+        const [r, g, b] = dansZone(X + pas / 2, Y + pas / 2, signes) ? COUL.zone : COUL.fond;
+        for (let dy = 0; dy < pas; dy++) for (let dx = 0; dx < pas; dx++) { const i = ((Y + dy) * W + X + dx) * 4; img.data[i] = r; img.data[i + 1] = g; img.data[i + 2] = b; img.data[i + 3] = 255; }
+    }
+    ctx.putImageData(img, 0, 0);
+    ctx.strokeStyle = COUL.grille; ctx.lineWidth = 1;
+    for (let x = W / 2 % 55; x < W; x += 55) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+    for (let y = H / 2 % 55; y < H; y += 55) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+    droites.forEach(d => {
+        const ux = Math.cos(d.angle), uy = Math.sin(d.angle);
+        ctx.strokeStyle = COUL.droite; ctx.lineWidth = 3; ctx.beginPath();
+        ctx.moveTo(d.cx - 1000 * ux, d.cy - 1000 * uy); ctx.lineTo(d.cx + 1000 * ux, d.cy + 1000 * uy); ctx.stroke();
+    });
+
+    let mal = 0;
+    ctx.font = '12px system-ui, sans-serif'; ctx.textAlign = 'center';
+    for (const p of points) {
+        const faux = dansZone(p.x, p.y, signes) !== (p.c === 1);
+        if (faux) mal++;
+        const r = jeu === 0 ? 10 : 7;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, 7); ctx.fillStyle = p.c ? COUL.rouge : COUL.bleu; ctx.fill();
+        ctx.strokeStyle = '#fbf7ee'; ctx.lineWidth = 2; ctx.stroke();
+        if (faux) { ctx.beginPath(); ctx.arc(p.x, p.y, r + 5, 0, 7); ctx.strokeStyle = COUL.mal; ctx.lineWidth = 2.5; ctx.stroke(); }
+        if (p.nom) { ctx.fillStyle = COUL.encre; ctx.fillText(p.nom, p.x, p.y + (p.y > H / 2 ? 32 : -22)); }
+    }
+
+    droites.forEach((d, i) => {
+        const { centre, rotation } = poignees(d);
+        ctx.fillStyle = '#fff'; ctx.strokeStyle = COUL.droite; ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.arc(centre.x, centre.y, 10, 0, 7); ctx.fill(); ctx.stroke();
+        ctx.fillRect(rotation.x - 7, rotation.y - 7, 14, 14); ctx.strokeRect(rotation.x - 7, rotation.y - 7, 14, 14);
+        ctx.fillStyle = COUL.droite; ctx.font = 'bold 12px system-ui, sans-serif'; ctx.fillText(i + 1, centre.x, centre.y + 4);
+    });
+
+    const etat = document.getElementById('etat');
+    if (mal === 0) { etat.textContent = 'Tous les points sont bien classés'; etat.style.cssText = 'background:#d7ebe6;color:#2f6f6a'; }
+    else { etat.textContent = `${mal} point${mal > 1 ? 's' : ''} mal classé${mal > 1 ? 's' : ''} sur ${points.length}`; etat.style.cssText = 'background:#f6ddd9;color:#a4433a'; }
+}
+function poignees(d) {
+    return { centre: { x: d.cx, y: d.cy }, rotation: { x: d.cx + 95 * Math.cos(d.angle), y: d.cy + 95 * Math.sin(d.angle) } };
+}
+
+function choisirJeu(j) {
+    jeu = j; points = j === 0 ? jeuXor() : jeuEntoure();
+    choisirNombre(2);
+}
+function choisirNombre(n) {
+    droites = DEPART.slice(0, n).map(d => ({ ...d })); signes = [1, 1, 1];
+    for (const [id, actif] of [['jeu0', jeu === 0], ['jeu1', jeu === 1], ['nb2', n === 2], ['nb3', n === 3]])
+        document.getElementById(id).classList.toggle('actif', actif);
+    dessiner();
+}
+
+let prise = null;                                      // { i : indice de la droite, mode : 'centre' ou 'rotation' }
+function souris(ev) { const r = canvas.getBoundingClientRect(); return { x: (ev.clientX - r.left) * W / r.width, y: (ev.clientY - r.top) * H / r.height }; }
+function sous(m) {
+    for (let i = droites.length - 1; i >= 0; i--) {
+        const { centre, rotation } = poignees(droites[i]);
+        if (Math.hypot(m.x - rotation.x, m.y - rotation.y) < 15) return { i, mode: 'rotation' };
+        if (Math.hypot(m.x - centre.x, m.y - centre.y) < 15) return { i, mode: 'centre' };
+    }
+    return null;
+}
+canvas.addEventListener('pointerdown', ev => { prise = sous(souris(ev)); if (prise) canvas.setPointerCapture(ev.pointerId); });
+canvas.addEventListener('pointermove', ev => {
+    const m = souris(ev);
+    if (!prise) { canvas.style.cursor = sous(m) ? 'grab' : 'default'; return; }
+    const d = droites[prise.i];
+    if (prise.mode === 'centre') { d.cx = Math.min(W - 12, Math.max(12, m.x)); d.cy = Math.min(H - 12, Math.max(12, m.y)); }
+    else d.angle = Math.atan2(m.y - d.cy, m.x - d.cx);
+    dessiner();
+});
+canvas.addEventListener('pointerup', () => { prise = null; });
+
+choisirJeu(0);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
