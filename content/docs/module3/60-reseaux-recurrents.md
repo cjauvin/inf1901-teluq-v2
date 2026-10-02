@@ -196,5 +196,5 @@ au premier problème. Ils permettent au décodeur, à chaque mot qu'il écrit, d
 regarder directement tous les mots de la phrase d'origine, et de choisir ceux qui
 comptent à ce moment. Ce mécanisme s'appelle l'**attention**. Trois ans plus tard,
 une équipe de Google montre qu'on peut garder l'attention et supprimer la
-récurrence. Le chapitre suivant, « L'attention et le Transformer », présente ce
+récurrence. Le chapitre suivant, « [L'attention et le Transformer](docs/module3/70-attention-transformer) », présente ce
 résultat.

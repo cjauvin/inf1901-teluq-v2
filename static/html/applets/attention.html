@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : l'auto-attention</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .choix { padding: 0.4rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.85rem; font-weight: 500; color: #334155; box-shadow: 0 1px 2px rgba(0,0,0,.05); white-space: nowrap; }
+        .choix.actif { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .mot { cursor: pointer; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <svg id="vue" viewBox="0 0 780 330" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"
+         font-family="system-ui, -apple-system, sans-serif"></svg>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-slate-700">Fin de la phrase :</span>
+            <button id="v0" class="choix" onclick="choisirVariante(0)">… trop fatigué.</button>
+            <button id="v1" class="choix" onclick="choisirVariante(1)">… trop haut.</button>
+        </div>
+        <div class="text-sm text-slate-600">Cliquez sur un mot pour voir où il porte son attention.</div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#c4564a"></div>lien d'attention : plus il est épais, plus le poids est grand</div>
+        <div class="text-slate-500">Les poids sont choisis pour l'exemple. Dans un vrai Transformer, ils sont calculés par le réseau.</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * L'auto-attention sur une phrase. On choisit un mot ; des arcs le relient aux
+ * autres mots, d'autant plus épais que le poids de l'attention est grand, et
+ * les poids, qui totalisent 100 %, s'affichent sous chaque mot. Les poids sont
+ * fixés à la main pour illustrer l'exemple du pronom « il », qui renvoie au
+ * chien ou au camion selon la fin de la phrase.
+ */
+const C = { encre: '#3a3531', pale: '#5b5249', gris: '#7a6f63', teal: '#2f6f6a', rouge: '#c4564a', bleu: '#3a6ea5', axe: '#b8a888', panneau: '#fbf7ee' };
+const DEBUT = ['Le', 'chien', "n'est", 'pas', 'monté', 'dans', 'le', 'camion', 'parce', "qu'", 'il', 'était', 'trop'];
+const FIN = ['fatigué', 'haut'];
+const I = { chien: 1, monte: 4, le2: 6, camion: 7, il: 10, etait: 11, trop: 12, fin: 13, le1: 0, dans: 5, pas: 3, nest: 2 };
+// Les liens marqués : [mot qui regarde, mot regardé, importance], pour chaque variante.
+const LIENS = [
+    [[I.il, I.chien, 9], [I.il, I.camion, 1.6], [I.il, I.fin, 1.4], [I.fin, I.il, 4], [I.fin, I.chien, 4], [I.etait, I.il, 4]],
+    [[I.il, I.camion, 9], [I.il, I.chien, 1.6], [I.il, I.fin, 1.4], [I.fin, I.il, 4], [I.fin, I.camion, 4], [I.etait, I.il, 4]],
+];
+const COMMUNS = [[I.chien, I.le1, 3], [I.camion, I.le2, 3], [I.camion, I.dans, 2], [I.monte, I.chien, 4], [I.monte, I.camion, 3],
+                 [I.nest, I.pas, 3], [I.pas, I.nest, 3], [I.monte, I.nest, 1.5], [I.trop, I.fin, 4]];
+
+let variante = 0, choisi = I.il;
+const mots = () => [...DEBUT, FIN[variante]];
+
+function poids(i) {
+    const n = mots().length, w = new Array(n).fill(0.25);
+    w[i] += 2;
+    if (i > 0) w[i - 1] += 0.8;
+    if (i < n - 1) w[i + 1] += 0.8;
+    for (const [a, b, f] of [...COMMUNS, ...LIENS[variante]]) if (a === i) w[b] += f;
+    const s = w.reduce((x, y) => x + y, 0);
+    return w.map(v => v / s);
+}
+
+function dessiner() {
+    const m = mots(), n = m.length, w = poids(choisi);
+    const x = k => 40 + k * (700 / (n - 1)), y = 220;
+    let s = '';
+    // les arcs, du mot choisi vers chaque autre mot
+    for (let k = 0; k < n; k++) {
+        if (k === choisi) continue;
+        const x1 = x(choisi), x2 = x(k), h = 30 + Math.abs(x2 - x1) * 0.32;
+        s += `<path d="M${x1} ${y - 22} C${x1} ${y - 22 - h} ${x2} ${y - 22 - h} ${x2} ${y - 22}" fill="none" stroke="${C.rouge}"
+               stroke-width="${(0.5 + w[k] * 22).toFixed(1)}" stroke-opacity="${(0.25 + Math.min(0.75, w[k] * 3)).toFixed(2)}" stroke-linecap="round"/>`;
+    }
+    // les mots et leurs poids
+    for (let k = 0; k < n; k++) {
+        const actif = k === choisi;
+        s += `<g class="mot" data-k="${k}">
+                <rect x="${x(k) - 26}" y="${y - 18}" width="52" height="34" rx="7" fill="${actif ? C.rouge : C.panneau}" stroke="${actif ? C.rouge : C.axe}" stroke-width="1.6"/>
+                <text x="${x(k)}" y="${y + 5}" font-size="13" fill="${actif ? '#fff' : C.encre}" text-anchor="middle" font-weight="${actif ? 700 : 500}">${m[k]}</text></g>`;
+        const pct = Math.round(w[k] * 100), hb = w[k] * 120;
+        s += `<rect x="${x(k) - 9}" y="${y + 26}" width="18" height="${Math.max(1, hb).toFixed(1)}" rx="2" fill="${actif ? C.gris : C.rouge}" fill-opacity="${actif ? 0.35 : 0.75}"/>
+              <text x="${x(k)}" y="${y + 40 + Math.max(1, hb)}" font-size="10.5" fill="${C.pale}" text-anchor="middle">${pct} %</text>`;
+    }
+    s += `<text x="390" y="28" font-size="13.5" fill="${C.encre}" text-anchor="middle" font-weight="600">Où le mot « ${m[choisi]} » porte-t-il son attention ?</text>`;
+    const vue = document.getElementById('vue');
+    vue.innerHTML = s;
+    vue.querySelectorAll('.mot').forEach(g => g.addEventListener('click', () => { choisi = +g.dataset.k; dessiner(); }));
+}
+function choisirVariante(v) {
+    variante = v;
+    document.getElementById('v0').classList.toggle('actif', v === 0);
+    document.getElementById('v1').classList.toggle('actif', v === 1);
+    dessiner();
+}
+choisirVariante(0);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
