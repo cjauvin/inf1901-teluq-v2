@@ -87,6 +87,10 @@ def chiffre():
         for i, v in enumerate(ligne):
             if v > 0.02:
                 o.append(f'<rect x="{x0 + i * t:.1f}" y="{y0 + j * t:.1f}" width="{t + 0.3:.1f}" height="{t + 0.3:.1f}" fill="{ENCRE}" fill-opacity="{v:.2f}"/>')
+    # la grille des 28 × 28 pixels, par-dessus le chiffre
+    for k in range(29):
+        o.append(f'<line x1="{x0 + k * t:.1f}" y1="{y0}" x2="{x0 + k * t:.1f}" y2="{y0 + 28 * t:.1f}" stroke="{AXE}" stroke-width="0.6" opacity="0.75"/>')
+        o.append(f'<line x1="{x0}" y1="{y0 + k * t:.1f}" x2="{x0 + 28 * t:.1f}" y2="{y0 + k * t:.1f}" stroke="{AXE}" stroke-width="0.6" opacity="0.75"/>')
     o.append(f'<text x="{x0 + 14 * t}" y="{y0 + 28 * t + 26}" font-size="12.5" fill="{GRIS}" text-anchor="middle">784 pixels, donc 784 nombres</text>')
     # éventail de flèches vers le neurone
     cx, cy = 480, 172
