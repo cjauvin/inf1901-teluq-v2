@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un réseau récurrent, avec sa boucle puis déroulé</title>
+<desc>Deux panneaux. À gauche, une cellule reçoit un élément de la séquence par en dessous, et son état sort par la droite pour revenir dans la cellule par une boucle. À droite, la même cellule déroulée sur cinq étapes : chaque copie reçoit un élément de la séquence, de x1 à x5, et passe son état à la copie suivante. Les cinq copies ont les mêmes poids.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pointe-rouge" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="700" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un réseau récurrent, replié puis déroulé</text>
+<rect x="22" y="58" width="180" height="240" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="112.0" y="84" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">avec sa boucle</text>
+<rect x="226" y="58" width="452" height="240" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="452.0" y="84" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">déroulé sur cinq étapes</text>
+<rect x="86" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="112" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="79.0" y="248" width="66" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="112" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">élément</text>
+<line x1="112" y1="246" x2="112" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<path d="M139 178 C187 178 182 108 112 108 C42 108 37 178 83 178" fill="none" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="112" y="100" font-size="12" fill="#c4564a" text-anchor="middle" font-weight="700">état</text>
+<text x="231" y="162" font-size="10.5" fill="#7a6f63" text-anchor="start">départ</text>
+<line x1="246" y1="178" x2="263" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<rect x="266" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="292" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="268.0" y="248" width="48" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="292" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">x1</text>
+<line x1="292" y1="246" x2="292" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<line x1="319" y1="178" x2="345" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="335" y="168" font-size="11" fill="#c4564a" text-anchor="middle">état</text>
+<rect x="348" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="374" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="350.0" y="248" width="48" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="374" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">x2</text>
+<line x1="374" y1="246" x2="374" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<line x1="401" y1="178" x2="427" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="417" y="168" font-size="11" fill="#c4564a" text-anchor="middle">état</text>
+<rect x="430" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="456" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="432.0" y="248" width="48" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="456" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">x3</text>
+<line x1="456" y1="246" x2="456" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<line x1="483" y1="178" x2="509" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="499" y="168" font-size="11" fill="#c4564a" text-anchor="middle">état</text>
+<rect x="512" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="538" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="514.0" y="248" width="48" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="538" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">x4</text>
+<line x1="538" y1="246" x2="538" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<line x1="565" y1="178" x2="591" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="581" y="168" font-size="11" fill="#c4564a" text-anchor="middle">état</text>
+<rect x="594" y="154" width="52" height="48" rx="12" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4" opacity="1"/>
+<text x="620" y="182" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">cellule</text>
+<rect x="596.0" y="248" width="48" height="28" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="620" y="267" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">x5</text>
+<line x1="620" y1="246" x2="620" y2="205" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#pointe)"/>
+<line x1="647" y1="178" x2="668" y2="178" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pointe-rouge)"/>
+<text x="456.0" y="126" font-size="12" fill="#2f6f6a" text-anchor="middle">la même cellule, avec les mêmes poids, à chaque étape</text>
+<text x="350.0" y="318" font-size="12.5" fill="#7a6f63" text-anchor="middle">L'état transmet à chaque étape un résumé de ce qui a été lu.</text>
+</svg>
