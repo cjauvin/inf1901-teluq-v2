@@ -220,5 +220,5 @@ la forme des données.
 Le chapitre suivant applique la même démarche à un autre type de données. Une image
 a une taille fixe, et tous ses pixels sont disponibles en même temps. Une phrase ou
 un enregistrement sonore ont une longueur variable, et l'ordre de leurs éléments
-compte. Le chapitre « Lire une séquence : les réseaux récurrents » présente les
+compte. Le chapitre « [Lire une séquence : les réseaux récurrents](docs/module3/60-reseaux-recurrents) » présente les
 réseaux conçus pour ces données.

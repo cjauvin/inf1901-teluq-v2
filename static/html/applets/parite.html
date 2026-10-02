@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un réseau récurrent qui calcule la parité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .bouton { padding: 0.4rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.85rem; font-weight: 500; color: #334155; box-shadow: 0 1px 2px rgba(0,0,0,.05); white-space: nowrap; }
+        .bouton:hover { color: #4f46e5; }
+        .bouton.principal { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .bouton:disabled { opacity: .45; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <svg id="vue" viewBox="0 0 780 300" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"
+         font-family="system-ui, -apple-system, sans-serif"></svg>
+    <div id="detail" class="text-sm text-slate-600 text-center mt-2 h-5"></div>
+
+    <div class="mt-2 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+            <button class="bouton" onclick="ajouter(0)">ajouter 0</button>
+            <button class="bouton" onclick="ajouter(1)">ajouter 1</button>
+            <button class="bouton" onclick="auHasard()">suite au hasard</button>
+            <button class="bouton" onclick="effacer()">effacer</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+            <button id="pas" class="bouton principal" onclick="unPas()">un pas</button>
+            <button class="bouton" onclick="toutLire()">lire toute la suite</button>
+            <button class="bouton" onclick="recommencer()">recommencer</button>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#c4564a"></div>état proche de 1 : nombre impair de 1 jusqu'ici</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full" style="background:#3a6ea5"></div>état proche de 0 : nombre pair</div>
+        <div class="text-slate-500">cliquez sur un bit pour le changer ; passez la souris sur une cellule pour voir son calcul</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Un réseau récurrent réglé à la main, qui dit si une suite de bits contient
+ * un nombre impair de 1. La cellule est le petit réseau du XOR (deux neurones
+ * cachés, un neurone de sortie, avec les poids du chapitre « Une couche
+ * cachée ») : à chaque étape, elle calcule le XOR de l'état précédent et du
+ * nouveau bit. Les mêmes poids servent à toutes les étapes.
+ */
+const MAX = 10, C = { encre: '#3a3531', pale: '#5b5249', gris: '#7a6f63', teal: '#2f6f6a', rouge: '#c4564a', bleu: '#3a6ea5',
+                      axe: '#b8a888', panneau: '#fbf7ee', fond: '#efe7d3' };
+const sigm = z => 1 / (1 + Math.exp(-z));
+const fr = n => n.toFixed(2).replace('.', ',');
+function cellule(etat, bit) {
+    const n1 = sigm(10 * etat + 10 * bit - 5), n2 = sigm(10 * etat + 10 * bit - 15);
+    return { n1, n2, sortie: sigm(10 * n1 - 20 * n2 - 5) };
+}
+
+let bits = [1, 0, 1, 1, 0], lus = 0, survol = -1;
+
+function etats() {                       // l'état avant la première étape vaut 0, puis un état par bit lu
+    const e = [0];
+    for (let t = 0; t < bits.length; t++) e.push(cellule(e[t], bits[t]).sortie);
+    return e;
+}
+const couleur = v => v > 0.5 ? C.rouge : C.bleu;
+
+function dessiner() {
+    const e = etats(), pasX = 70, x0 = 70, yb = 238, yc = 150, ye = 64;
+    let s = '';
+    // l'état initial
+    s += `<circle cx="${x0 - 40}" cy="${yc}" r="17" fill="${C.panneau}" stroke="${C.bleu}" stroke-width="2"/>
+          <text x="${x0 - 40}" y="${yc + 4}" font-size="11" fill="${C.bleu}" text-anchor="middle" font-weight="700">0</text>
+          <text x="${x0 - 40}" y="${yc + 34}" font-size="10.5" fill="${C.gris}" text-anchor="middle">départ</text>`;
+    for (let t = 0; t < MAX; t++) {
+        const x = x0 + 30 + t * pasX, existe = t < bits.length, fait = t < lus;
+        if (!existe) {
+            s += `<rect x="${x - 22}" y="${yb - 18}" width="44" height="36" rx="6" fill="none" stroke="${C.axe}" stroke-dasharray="4 4"/>`;
+            continue;
+        }
+        const op = fait ? 1 : 0.35;
+        // le bit d'entrée
+        s += `<g class="bit" data-t="${t}" style="cursor:pointer">
+                <rect x="${x - 22}" y="${yb - 18}" width="44" height="36" rx="6" fill="${C.panneau}" stroke="${C.encre}" stroke-width="1.6"/>
+                <text x="${x}" y="${yb + 7}" font-size="19" fill="${C.encre}" text-anchor="middle" font-weight="700">${bits[t]}</text></g>`;
+        s += `<line x1="${x}" y1="${yb - 20}" x2="${x}" y2="${yc + 26}" stroke="${C.gris}" stroke-width="1.6" opacity="${op}"/>`;
+        // la flèche de l'état précédent vers la cellule
+        const xp = t === 0 ? x0 - 22 : x - pasX + 24;
+        s += `<line x1="${xp}" y1="${yc}" x2="${x - 26}" y2="${yc}" stroke="${fait ? couleur(e[t]) : C.axe}" stroke-width="${fait ? 3 : 1.6}" opacity="${op}"/>`;
+        // la cellule
+        s += `<g class="cel" data-t="${t}"><rect x="${x - 24}" y="${yc - 24}" width="48" height="48" rx="12" fill="${survol === t ? '#e6f0ee' : C.panneau}" stroke="${C.teal}" stroke-width="2.4" opacity="${op}"/>
+              <text x="${x}" y="${yc + 4}" font-size="10.5" fill="${C.teal}" text-anchor="middle" font-weight="700" opacity="${op}">XOR</text></g>`;
+        // le nouvel état
+        if (fait) {
+            s += `<line x1="${x}" y1="${yc - 26}" x2="${x}" y2="${ye + 18}" stroke="${couleur(e[t + 1])}" stroke-width="2"/>
+                  <circle cx="${x}" cy="${ye}" r="17" fill="${couleur(e[t + 1])}" fill-opacity="0.15" stroke="${couleur(e[t + 1])}" stroke-width="2"/>
+                  <text x="${x}" y="${ye + 4}" font-size="10.5" fill="${C.encre}" text-anchor="middle" font-weight="700">${fr(e[t + 1])}</text>`;
+        }
+    }
+    s += `<text x="12" y="${ye + 4}" font-size="11" fill="${C.pale}" font-weight="700">état</text>
+          <text x="12" y="${yb + 4}" font-size="11" fill="${C.pale}" font-weight="700">bit</text>`;
+    s += `<text x="390" y="22" font-size="13" fill="${C.encre}" text-anchor="middle" font-weight="600">`;
+    if (!bits.length) s += 'Ajoutez des bits pour commencer.';
+    else if (lus < bits.length) s += `Étape ${lus} sur ${bits.length}. Appuyez sur « un pas » pour lire le bit suivant.`;
+    else {
+        const n = bits.filter(b => b).length, impair = e[bits.length] > 0.5;
+        s += `Réponse du réseau : nombre ${impair ? 'impair' : 'pair'} de 1 (état final ${fr(e[bits.length])}). Il y a ${n} bit${n > 1 ? 's' : ''} à 1.`;
+    }
+    s += '</text>';
+    const vue = document.getElementById('vue');
+    vue.innerHTML = s;
+    vue.querySelectorAll('.bit').forEach(g => g.addEventListener('click', () => { const t = +g.dataset.t; bits[t] = 1 - bits[t]; dessiner(); }));
+    vue.querySelectorAll('.cel').forEach(g => {
+        g.addEventListener('mouseenter', () => { survol = +g.dataset.t; detail(); dessiner(); });
+        g.addEventListener('mouseleave', () => { survol = -1; detail(); dessiner(); });
+    });
+    document.getElementById('pas').disabled = lus >= bits.length;
+}
+function detail() {
+    const d = document.getElementById('detail');
+    if (survol < 0 || survol >= bits.length) { d.textContent = ''; return; }
+    const e = etats(), t = survol, c = cellule(e[t], bits[t]);
+    d.innerHTML = `Étape ${t + 1} : état ${fr(e[t])} et bit ${bits[t]} → « au moins un ? » ${fr(c.n1)}, ` +
+                  `« les deux ? » ${fr(c.n2)} → nouvel état <b>${fr(c.sortie)}</b>`;
+}
+function ajouter(b) { if (bits.length < MAX) { bits.push(b); dessiner(); } }
+function effacer() { bits = []; lus = 0; dessiner(); }
+function auHasard() { bits = Array.from({ length: MAX }, () => Math.random() < 0.5 ? 1 : 0); lus = 0; dessiner(); }
+function unPas() { if (lus < bits.length) { lus++; dessiner(); } }
+function toutLire() { lus = bits.length; dessiner(); }
+function recommencer() { lus = 0; dessiner(); }
+
+dessiner();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
