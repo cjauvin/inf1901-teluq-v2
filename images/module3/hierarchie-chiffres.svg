@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une hiérarchie de caractéristiques</title>
+<desc>Trois colonnes reliées par des traits. À gauche, la première couche détecte des traits simples : horizontal, vertical, oblique, arcs de cercle. Au centre, la deuxième couche les combine en formes : une boucle, une barre verticale, un angle. À droite, la troisième couche combine les formes en chiffres : le 8 est fait de deux boucles, le 9 d'une boucle au-dessus d'une barre.</desc>
+<rect x="0" y="0" width="700" height="430" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">De couche en couche, des caractéristiques plus complexes</text>
+<line x1="151" y1="112" x2="311" y2="142" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="151" y1="174" x2="311" y2="142" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="151" y1="236" x2="311" y2="236" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="151" y1="298" x2="311" y2="330" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="151" y1="360" x2="311" y2="330" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="389" y1="142" x2="534" y2="180" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="389" y1="142" x2="534" y2="300" stroke="#7a6f63" stroke-width="1.6"/>
+<line x1="389" y1="236" x2="534" y2="300" stroke="#7a6f63" stroke-width="1.6"/>
+<rect x="95.0" y="87.0" width="50" height="50" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(120 112)" fill="none" stroke="#3a6ea5" stroke-width="4" stroke-linecap="round"><path d="M-14 8 A14 14 0 0 1 14 8"/></g>
+<rect x="95.0" y="149.0" width="50" height="50" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(120 174)" fill="none" stroke="#3a6ea5" stroke-width="4" stroke-linecap="round"><path d="M-14 -8 A14 14 0 0 0 14 -8"/></g>
+<rect x="95.0" y="211.0" width="50" height="50" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(120 236)" fill="none" stroke="#3a6ea5" stroke-width="4" stroke-linecap="round"><line x1="0" y1="-16" x2="0" y2="16"/></g>
+<rect x="95.0" y="273.0" width="50" height="50" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(120 298)" fill="none" stroke="#3a6ea5" stroke-width="4" stroke-linecap="round"><line x1="-16" y1="0" x2="16" y2="0"/></g>
+<rect x="95.0" y="335.0" width="50" height="50" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(120 360)" fill="none" stroke="#3a6ea5" stroke-width="4" stroke-linecap="round"><line x1="-13" y1="13" x2="13" y2="-13"/></g>
+<rect x="317.0" y="109.0" width="66" height="66" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(350 142)" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round"><circle cx="0" cy="0" r="14"/></g>
+<rect x="317.0" y="203.0" width="66" height="66" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(350 236)" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round"><line x1="0" y1="-19" x2="0" y2="19"/></g>
+<rect x="317.0" y="297.0" width="66" height="66" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(350 330)" fill="none" stroke="#2f6f6a" stroke-width="4" stroke-linecap="round"><path d="M-13 -13 L13 -13 L-6 16"/></g>
+<rect x="540.0" y="140.0" width="80" height="80" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(580 180)" fill="none" stroke="#c4564a" stroke-width="4" stroke-linecap="round"><circle cx="0" cy="-10" r="9"/><circle cx="0" cy="11" r="11"/></g>
+<rect x="540.0" y="260.0" width="80" height="80" rx="7" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<g transform="translate(580 300)" fill="none" stroke="#c4564a" stroke-width="4" stroke-linecap="round"><circle cx="-1" cy="-9" r="10"/><path d="M9 -9 L9 6 Q8 20 -6 20"/></g>
+<text x="120" y="62" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">première couche</text>
+<text x="120" y="78" font-size="12" fill="#7a6f63" text-anchor="middle">des traits</text>
+<text x="350" y="62" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">deuxième couche</text>
+<text x="350" y="78" font-size="12" fill="#7a6f63" text-anchor="middle">des formes</text>
+<text x="580" y="62" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">troisième couche</text>
+<text x="580" y="78" font-size="12" fill="#7a6f63" text-anchor="middle">des chiffres</text>
+<text x="350.0" y="414" font-size="12.5" fill="#7a6f63" text-anchor="middle">Schéma simplifié : le réseau trouve lui-même ses caractéristiques pendant l'entraînement.</text>
+</svg>

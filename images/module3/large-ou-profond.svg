@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un réseau large et un réseau profond</title>
+<desc>Deux réseaux qui ont les mêmes quatre entrées et les mêmes deux sorties. À gauche, un réseau large : une seule couche cachée de douze neurones. À droite, un réseau profond : trois couches cachées de quatre neurones chacune.</desc>
+<rect x="0" y="0" width="700" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Deux façons d'agrandir un réseau</text>
+<rect x="22" y="58" width="320" height="300" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="182" y="84" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">Un réseau large</text>
+<text x="182" y="103" font-size="12" fill="#2f6f6a" text-anchor="middle">une couche cachée de 12 neurones</text>
+<line x1="68.0" y1="179.0" x2="182.0" y2="132.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="149.8" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="167.6" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="185.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="203.3" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="221.1" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="238.9" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="256.7" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="274.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="292.4" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="310.2" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="179.0" x2="182.0" y2="328.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="132.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="149.8" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="167.6" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="185.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="203.3" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="221.1" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="238.9" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="256.7" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="274.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="292.4" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="310.2" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="213.0" x2="182.0" y2="328.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="132.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="149.8" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="167.6" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="185.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="203.3" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="221.1" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="238.9" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="256.7" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="274.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="292.4" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="310.2" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="247.0" x2="182.0" y2="328.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="132.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="149.8" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="167.6" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="185.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="203.3" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="221.1" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="238.9" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="256.7" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="274.5" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="292.4" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="310.2" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="68.0" y1="281.0" x2="182.0" y2="328.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="132.0" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="132.0" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="149.8" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="149.8" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="167.6" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="167.6" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="185.5" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="185.5" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="203.3" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="203.3" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="221.1" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="221.1" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="238.9" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="238.9" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="256.7" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="256.7" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="274.5" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="274.5" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="292.4" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="292.4" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="310.2" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="310.2" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="328.0" x2="296.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="182.0" y1="328.0" x2="296.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<circle cx="68.0" cy="179.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="68.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="68.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="68.0" cy="281.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="182.0" cy="132.0" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="149.8" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="167.6" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="185.5" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="203.3" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="221.1" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="238.9" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="256.7" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="274.5" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="292.4" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="310.2" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="182.0" cy="328.0" r="6.5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="296.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<circle cx="296.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<rect x="358" y="58" width="320" height="300" rx="10" fill="#fbf7ee" stroke="#b8a888" stroke-width="1.2"/>
+<text x="518" y="84" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">Un réseau profond</text>
+<text x="518" y="103" font-size="12" fill="#2f6f6a" text-anchor="middle">trois couches cachées de 4 neurones</text>
+<line x1="404.0" y1="179.0" x2="461.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="179.0" x2="461.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="179.0" x2="461.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="179.0" x2="461.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="213.0" x2="461.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="213.0" x2="461.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="213.0" x2="461.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="213.0" x2="461.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="247.0" x2="461.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="247.0" x2="461.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="247.0" x2="461.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="247.0" x2="461.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="281.0" x2="461.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="281.0" x2="461.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="281.0" x2="461.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="404.0" y1="281.0" x2="461.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="179.0" x2="518.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="179.0" x2="518.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="179.0" x2="518.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="179.0" x2="518.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="213.0" x2="518.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="213.0" x2="518.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="213.0" x2="518.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="213.0" x2="518.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="247.0" x2="518.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="247.0" x2="518.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="247.0" x2="518.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="247.0" x2="518.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="281.0" x2="518.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="281.0" x2="518.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="281.0" x2="518.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="461.0" y1="281.0" x2="518.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="179.0" x2="575.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="179.0" x2="575.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="179.0" x2="575.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="179.0" x2="575.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="213.0" x2="575.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="213.0" x2="575.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="213.0" x2="575.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="213.0" x2="575.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="247.0" x2="575.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="247.0" x2="575.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="247.0" x2="575.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="247.0" x2="575.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="281.0" x2="575.0" y2="179.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="281.0" x2="575.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="281.0" x2="575.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="518.0" y1="281.0" x2="575.0" y2="281.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="179.0" x2="632.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="179.0" x2="632.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="213.0" x2="632.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="213.0" x2="632.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="247.0" x2="632.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="247.0" x2="632.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="281.0" x2="632.0" y2="213.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<line x1="575.0" y1="281.0" x2="632.0" y2="247.0" stroke="#b8a888" stroke-width="0.7" opacity="0.85"/>
+<circle cx="404.0" cy="179.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="404.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="404.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="404.0" cy="281.0" r="9" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="461.0" cy="179.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="461.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="461.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="461.0" cy="281.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="518.0" cy="179.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="518.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="518.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="518.0" cy="281.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="575.0" cy="179.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="575.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="575.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="575.0" cy="281.0" r="9" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="632.0" cy="213.0" r="9" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<circle cx="632.0" cy="247.0" r="9" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<text x="350.0" y="384" font-size="12.5" fill="#7a6f63" text-anchor="middle">Dans le réseau profond, chaque couche part de ce que la précédente a construit.</text>
+</svg>
