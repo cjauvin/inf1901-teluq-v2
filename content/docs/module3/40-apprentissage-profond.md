@@ -52,6 +52,28 @@ sont souvent moins nettes que dans ce schéma. Mais quand on examine les couches
 d'un réseau entraîné sur des images, on observe bien cette progression, de motifs
 simples vers des motifs complexes.
 
+{{% hint info %}}
+**La carte n'est pas le territoire**
+
+Cette hiérarchie rappelle celle du cerveau. Dans les années 1960, David Hubel et
+Torsten Wiesel ont montré que le cortex visuel traite l'image par étapes : certains
+neurones réagissent à des traits orientés, d'autres, plus loin, à des formes. Les
+réseaux profonds se sont inspirés de ce résultat.
+
+La ressemblance s'arrête là. Comme l'expliquait
+« [D'où vient le mot « neurone »](docs/module3/10-un-neurone/#doù-vient-le-mot-neurone) »,
+un neurone artificiel est une formule. Un neurone biologique émet des impulsions
+électriques dans le temps, et son comportement dépend de nombreux signaux
+chimiques. Rien n'indique que le cerveau utilise la rétropropagation. Enfin, un
+enfant reconnaît un chat après en avoir vu quelques-uns, avec un cerveau qui
+consomme environ 20 watts, alors qu'un réseau a besoin de milliers d'exemples et de
+beaucoup plus d'énergie.
+
+Un réseau de neurones est un modèle mathématique inspiré du cerveau. Ce n'est pas
+une copie du cerveau, et son fonctionnement ne nous apprend que peu de choses sur
+le nôtre.
+{{% /hint %}}
+
 ## La fin des caractéristiques fabriquées à la main
 
 Jusqu'en 2012, un système de reconnaissance d'images se construisait en deux
@@ -97,12 +119,11 @@ décrite au Module 2.
 
 **Le calcul.** Entraîner un réseau profond sur des millions d'images demande une
 quantité de calculs hors de portée des processeurs des années 2000. La solution est
-venue du jeu vidéo. Les **processeurs graphiques** (GPU) sont conçus pour exécuter
-en parallèle des milliers de calculs identiques, et les calculs d'un réseau de
-neurones sont de ce type. Un GPU entraîne un réseau des dizaines de fois plus vite
-qu'un processeur ordinaire. Des bibliothèques logicielles, comme PyTorch et
-TensorFlow, ont ensuite automatisé la rétropropagation : on décrit le réseau, et le
-calcul des corrections est fait par la bibliothèque.
+venue du jeu vidéo, avec les **processeurs graphiques** (GPU), qui entraînent un
+réseau des dizaines de fois plus vite qu'un processeur ordinaire. Des bibliothèques
+logicielles ont ensuite automatisé la rétropropagation. Le chapitre
+« [Le matériel et les outils](docs/module3/42-materiel-et-outils) » raconte ces
+deux histoires.
 
 ## 2012 : le concours ImageNet
 
@@ -127,4 +148,93 @@ sur la même tâche, estimé à 5 %. La même bascule se produit ensuite pour la
 reconnaissance de la parole, puis pour la traduction.
 
 AlexNet est un réseau d'un type particulier, un réseau convolutif, conçu pour les
-images. Le chapitre suivant lui est consacré.
+images. Le chapitre « Voir : les réseaux convolutifs » lui est consacré.
+
+## La leçon amère
+
+La [fin du Module 2](docs/module2/80-trois-facons-d-apprendre/#un-même-squelette-dun-bout-à-lautre)
+a présenté l'essai de Richard Sutton,
+« [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) »
+(2019). Sa thèse est la suivante. Dans l'histoire de l'IA, les chercheurs ont
+d'abord tenté d'inscrire leur propre savoir dans les systèmes. Cela aidait à court
+terme. À long terme, ces systèmes ont été dépassés par des méthodes générales, qui
+n'utilisent aucun savoir particulier, mais qui tirent parti de la puissance de
+calcul disponible.
+
+Le concours de 2012 en est l'exemple le plus net. Les caractéristiques d'images
+mises au point par des experts pendant vingt ans ont été dépassées par un réseau
+qui apprend les siennes. Le Module 1 en donnait un autre exemple, avec
+[Deep Blue](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997) :
+la recherche à grande échelle l'avait emporté sur les programmes qui tentaient
+d'imiter le raisonnement des grands maîtres.
+
+Sutton qualifie cette leçon d'amère parce qu'elle va contre l'intuition des
+chercheurs : le savoir qu'ils inscrivent dans un système finit par le limiter. Elle
+a aussi un coût. Un réseau profond ne donne pas ses raisons, alors qu'on pouvait
+lire les règles d'un [système expert](docs/module1/50-systemes-experts) ou les
+questions d'un [arbre de décision](docs/module2/65-arbres-de-decision). Et ses
+progrès dépendent de quantités de données et de calcul que peu d'organisations
+possèdent.
+
+La leçon ne dit pas que le savoir humain est inutile. Il reste présent, mais
+ailleurs : dans le choix des données, et dans la forme donnée au réseau. Les
+chapitres sur les réseaux convolutifs, les réseaux récurrents et l'attention en
+donnent des exemples.
+
+## Plus de paramètres que d'exemples
+
+AlexNet a 60 millions de paramètres, pour 1,2 million d'images d'entraînement.
+D'après « [Généraliser](docs/module2/70-generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance) »,
+un modèle aussi souple devrait apprendre ses exemples par cœur et échouer sur des
+images nouvelles. C'est le sur-apprentissage (*overfitting*). Or les réseaux
+profonds généralisent bien. C'est la question que le
+[Module 2](docs/module2/70-generaliser/#garder-un-modèle-riche-mais-le-tenir-en-laisse-la-régularisation)
+avait laissée ouverte.
+
+Une partie de la réponse tient à la régularisation, décrite dans
+« [Entraîner un réseau](docs/module3/30-entrainer-un-reseau/#lentraînement-en-pratique) ».
+Mais elle ne suffit pas à expliquer le phénomène. Quand on fait grossir un réseau,
+on observe d'abord la courbe en U du Module 2 : l'erreur sur les exemples nouveaux
+baisse, puis remonte. Si l'on continue au-delà du point où le réseau peut mémoriser
+tous ses exemples, l'erreur redescend, parfois plus bas qu'avant. Ce phénomène
+s'appelle la **double descente**.
+
+{{< image src="/images/module3/double-descente.svg" alt="Un graphique. À l'horizontale, la taille du modèle ; à la verticale, l'erreur sur des exemples nouveaux. La courbe descend, remonte jusqu'à un pic, puis redescend plus bas qu'avant. La partie à gauche du pic est la courbe en U du Module 2. Le pic se trouve à la taille où le modèle peut mémoriser tous ses exemples. La partie à droite est celle des grands réseaux." title="La double descente : après le pic, un modèle plus grand généralise mieux." loading="lazy" >}}
+
+Le phénomène est bien établi, mais son explication n'est pas complète. L'hypothèse
+la plus courante est la suivante. Un très grand réseau dispose de nombreuses façons
+de reproduire ses exemples, et la descente de gradient aboutit le plus souvent à
+l'une des plus simples. C'est un cas où la pratique a précédé la théorie.
+
+## Apprendre sans étiquettes : l'autoencodeur
+
+Tous les réseaux vus jusqu'ici sont entraînés avec des exemples étiquetés. Un
+réseau peut aussi apprendre des caractéristiques sans étiquettes. L'**autoencodeur**
+en est l'exemple le plus simple.
+
+Un autoencodeur est un réseau en forme de sablier. On lui donne une image en
+entrée, et on lui demande de produire la même image en sortie. L'erreur est l'écart
+entre les deux. La tâche serait sans intérêt si le réseau pouvait simplement
+recopier son entrée, mais la couche du milieu est très étroite. Les 784 pixels d'un
+chiffre doivent passer par quelques dizaines de neurones seulement.
+
+{{< image src="/images/module3/autoencodeur.svg" alt="De gauche à droite : l'image d'un zéro manuscrit ; un réseau en forme de sablier, dont les couches comptent de moins en moins de neurones jusqu'à une couche centrale très étroite, puis de plus en plus ; l'image reconstruite, presque identique à l'image de départ. La première moitié du réseau est l'encodeur, la couche centrale est la représentation latente, la seconde moitié est le décodeur." title="Un autoencodeur : l'image doit passer par une couche étroite, puis être reconstruite." loading="lazy" >}}
+
+- La première moitié, l'**encodeur**, réduit l'image à quelques nombres.
+- La seconde moitié, le **décodeur**, reconstruit l'image à partir de ces nombres.
+
+Pour réussir, le réseau doit garder l'essentiel de l'image dans la couche étroite :
+quel chiffre, quelle inclinaison, quelle épaisseur de trait. Ces quelques nombres
+forment une représentation compacte de l'image, qu'on appelle sa **représentation
+latente**. C'est un cas
+d'[auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-même-ses-réponses-lauto-supervision),
+présentée au Module 2 : les données fournissent elles-mêmes la réponse attendue.
+
+Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
+d'aucune image réelle, il produit quand même une image. C'est une première façon de
+générer du contenu, sur laquelle le [Module 4](docs/module4) reviendra.
+
+Un réseau profond peut donc apprendre ses propres caractéristiques, à condition
+d'avoir assez de données et de calcul. Le chapitre suivant,
+« [Le matériel et les outils](docs/module3/42-materiel-et-outils) », raconte
+comment ce calcul est devenu possible.

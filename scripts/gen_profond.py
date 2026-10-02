@@ -167,8 +167,107 @@ def imagenet():
     ecrire("imagenet-erreur.svg", o)
 
 
+
+# ---------------------------------------------------------------- la double descente
+def lisse(pts):
+    """Chemin SVG lisse (Catmull-Rom converti en courbes de Bézier) passant par les points donnés."""
+    d = f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"
+    for i in range(len(pts) - 1):
+        p0, p1, p2, p3 = pts[max(i - 1, 0)], pts[i], pts[i + 1], pts[min(i + 2, len(pts) - 1)]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f" C{c1[0]:.1f} {c1[1]:.1f} {c2[0]:.1f} {c2[1]:.1f} {p2[0]:.1f} {p2[1]:.1f}"
+    return d
+
+
+def double_descente():
+    W, H = 700, 400
+    o = entete(W, H, "La double descente",
+               f"Un graphique. À l'horizontale, la taille du modèle{FINE}; à la verticale, l'erreur sur des exemples nouveaux. La courbe descend, remonte "
+               f"jusqu'à un pic, puis redescend plus bas qu'avant. La partie à gauche du pic est la courbe en U du Module 2. Le pic se trouve à la taille où le "
+               "modèle peut mémoriser tous ses exemples. La partie à droite est celle des grands réseaux.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">La double descente</text>')
+    gx, gy, gw, gh = 80, 318, 570, 230
+    X = lambda t: gx + t * gw
+    Y = lambda e: gy - e * gh
+    xp = 0.48
+    o.append(f'<rect x="{gx}" y="{gy - gh}" width="{X(xp) - gx:.1f}" height="{gh}" fill="{BRUN}" fill-opacity="0.06"/>')
+    o.append(f'<rect x="{X(xp):.1f}" y="{gy - gh}" width="{gx + gw - X(xp):.1f}" height="{gh}" fill="{TEAL}" fill-opacity="0.07"/>')
+    o.append(f'<line x1="{gx}" y1="{gy}" x2="{gx + gw}" y2="{gy}" stroke="{AXE}" stroke-width="1.5"/>')
+    o.append(f'<line x1="{gx}" y1="{gy}" x2="{gx}" y2="{gy - gh}" stroke="{AXE}" stroke-width="1.5"/>')
+    o.append(f'<line x1="{X(xp):.1f}" y1="{gy}" x2="{X(xp):.1f}" y2="{gy - gh}" stroke="{GRIS}" stroke-width="1.3" stroke-dasharray="5 5"/>')
+    cles = [(0, .82), (0.08, .56), (0.17, .41), (0.26, .38), (0.35, .47), (0.43, .68), (0.48, .84), (0.53, .68), (0.60, .50), (0.70, .38), (0.83, .30), (1, .26)]
+    o.append(f'<path d="{lisse([(X(t), Y(e)) for t, e in cles])}" fill="none" stroke="{ROUGE}" stroke-width="3" stroke-linecap="round"/>')
+    o.append(f'<text x="{X(xp / 2):.1f}" y="{gy - gh + 20}" font-size="12.5" fill="{BRUN}" text-anchor="middle" font-weight="700">la courbe en U du Module 2</text>')
+    o.append(f'<text x="{X((1 + xp) / 2):.1f}" y="{gy - gh + 20}" font-size="12.5" fill="{TEAL}" text-anchor="middle" font-weight="700">les grands réseaux</text>')
+    o.append(f'<text x="{X(xp) + 10:.1f}" y="{gy - 26}" font-size="11.5" fill="{ENCRE_PALE}">le modèle peut mémoriser</text>')
+    o.append(f'<text x="{X(xp) + 10:.1f}" y="{gy - 11}" font-size="11.5" fill="{ENCRE_PALE}">tous ses exemples</text>')
+    o.append(f'<text x="{gx + gw / 2}" y="{gy + 28}" font-size="12.5" fill="{ENCRE_PALE}" text-anchor="middle">taille du modèle (nombre de paramètres) →</text>')
+    o.append(f'<text x="{gx - 22}" y="{gy - gh / 2}" font-size="12.5" fill="{ENCRE_PALE}" text-anchor="middle" transform="rotate(-90 {gx - 22} {gy - gh / 2})">erreur sur des exemples nouveaux</text>')
+    ecrire("double-descente.svg", o)
+
+
+# ---------------------------------------------------------------- l'autoencodeur
+def chiffre_zero(n=28):
+    grille = []
+    for j in range(n):
+        ligne = []
+        for i in range(n):
+            x, y = (i + 0.5) / n - 0.5, (j + 0.5) / n - 0.5
+            xr, yr = x * math.cos(0.18) - y * math.sin(0.18), x * math.sin(0.18) + y * math.cos(0.18)
+            d = abs(math.hypot(xr / 0.24, yr / 0.34) - 1.0)
+            ligne.append(max(0.0, min(1.0, 1.25 - d / 0.14)))
+        grille.append(ligne)
+    return grille
+
+
+def image_chiffre(o, x0, y0, t, flou):
+    g = chiffre_zero()
+    o.append(f'<rect x="{x0 - 3}" y="{y0 - 3}" width="{28 * t + 6:.1f}" height="{28 * t + 6:.1f}" rx="4" fill="{PANNEAU}" stroke="{AXE}"/>')
+    for j, ligne in enumerate(g):
+        for i, v in enumerate(ligne):
+            if flou:          # l'image reconstruite : la moyenne des voisins, donc un trait un peu plus flou
+                vs = [g[b][a] for a in range(max(i - 1, 0), min(i + 2, 28)) for b in range(max(j - 1, 0), min(j + 2, 28))]
+                v = sum(vs) / len(vs)
+            if v > 0.03:
+                o.append(f'<rect x="{x0 + i * t:.1f}" y="{y0 + j * t:.1f}" width="{t + 0.3:.1f}" height="{t + 0.3:.1f}" fill="{ENCRE}" fill-opacity="{v:.2f}"/>')
+
+
+def autoencodeur():
+    W, H = 700, 400
+    o = entete(W, H, "Un autoencodeur",
+               f"De gauche à droite{NB}: l'image d'un zéro manuscrit{FINE}; un réseau en forme de sablier, dont les couches comptent de moins en moins de neurones "
+               f"jusqu'à une couche centrale très étroite, puis de plus en plus{FINE}; l'image reconstruite, presque identique à l'image de départ. La première "
+               f"moitié du réseau est l'encodeur, la couche centrale est la représentation latente, la seconde moitié est le décodeur.")
+    o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Un autoencodeur{NB}: reproduire l\'entrée en passant par une couche étroite</text>')
+    cy, t = 205, 3.6
+    image_chiffre(o, 24, cy - 14 * t, t, False)
+    image_chiffre(o, W - 24 - 28 * t, cy - 14 * t, t, True)
+    o.append(f'<text x="{24 + 14 * t:.1f}" y="{cy + 14 * t + 24:.1f}" font-size="12" fill="{GRIS}" text-anchor="middle">image d\'entrée</text>')
+    o.append(f'<text x="{W - 24 - 14 * t:.1f}" y="{cy + 14 * t + 24:.1f}" font-size="12" fill="{GRIS}" text-anchor="middle">image reconstruite</text>')
+    couches, xs = [8, 5, 2, 5, 8], [190, 270, 350, 430, 510]
+    pos = [[(x, cy + (i - (m - 1) / 2) * 27) for i in range(m)] for x, m in zip(xs, couches)]
+    for a, b in zip(pos, pos[1:]):
+        for x1, y1 in a:
+            for x2, y2 in b:
+                o.append(f'<line x1="{x1}" y1="{y1:.1f}" x2="{x2}" y2="{y2:.1f}" stroke="{AXE}" stroke-width="0.7" opacity="0.85"/>')
+    for k, col in enumerate(pos):
+        coul = ROUGE if k == 2 else TEAL
+        for x, y in col:
+            o.append(f'<circle cx="{x}" cy="{y:.1f}" r="{10 if k == 2 else 8}" fill="{PANNEAU}" stroke="{coul}" stroke-width="2.2"/>')
+    yb = cy + 118
+    for x1, x2, nom, coul in ((182, 300, "encodeur", TEAL), (400, 518, "décodeur", TEAL)):
+        o.append(f'<path d="M{x1} {yb} v8 H{x2} v-8" fill="none" stroke="{coul}" stroke-width="1.6"/>')
+        o.append(f'<text x="{(x1 + x2) / 2}" y="{yb + 28}" font-size="13" fill="{coul}" text-anchor="middle" font-weight="700">{nom}</text>')
+    o.append(f'<text x="350" y="{cy - 46}" font-size="12.5" fill="{ROUGE}" text-anchor="middle" font-weight="700">représentation</text>')
+    o.append(f'<text x="350" y="{cy - 31}" font-size="12.5" fill="{ROUGE}" text-anchor="middle" font-weight="700">latente</text>')
+    ecrire("autoencodeur.svg", o)
+
+
 large_ou_profond()
 hierarchie()
 activations()
 imagenet()
-print("large-ou-profond.svg, hierarchie-chiffres.svg, sigmoide-relu.svg et imagenet-erreur.svg écrits")
+double_descente()
+autoencodeur()
+print("six figures écrites pour « L'apprentissage profond »")

@@ -268,8 +268,8 @@ Lesson »](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
 puissance de calcul finissent toujours par l'emporter sur celles où l'on avait
 inscrit à la main le savoir humain, et seules deux méthodes passent vraiment à
 l'échelle, la **recherche**, celle du [Module 1](docs/module1/30-chercher-raisonner), et l'**apprentissage**, celui
-de ce module. Le sens et le coût de cette leçon seront le point de départ du
-[**Module 3**](docs/module3). Nous y combinerons ces fonctions réglables en
+de ce module. Le sens et le coût de cette leçon sont examinés au
+[**Module 3**](docs/module3/40-apprentissage-profond/#la-leçon-amère). Nous y combinerons ces fonctions réglables en
 **réseaux de neurones** profonds, et nous verrons pourquoi ces réseaux ont
 permis de grands progrès dans le traitement de l'image et du langage. Au
 [**Module 4**](docs/module4), ces mêmes réseaux deviendront **génératifs**,

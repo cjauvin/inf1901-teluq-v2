@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le matériel et le logiciel de l'apprentissage profond, de 1970 à 2016</title>
+<desc>Une frise chronologique à deux rangées. En haut, le matériel : fondation de Nvidia en 1993, GeForce 256 en 1999, CUDA en 2007, un réseau entraîné 70 fois plus vite sur GPU en 2009, premières machines conçues pour l'apprentissage profond en 2016. En bas, le logiciel : la méthode de Linnainmaa en 1970, Torch en 2002, Theano en 2007, Caffe en 2013, TensorFlow et Keras en 2015, PyTorch en 2016. Au centre, en 2012, AlexNet, où les deux histoires se rejoignent.</desc>
+<rect x="0" y="0" width="700" height="420" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Deux histoires qui se rejoignent en 2012</text>
+<line x1="40" y1="218" x2="88" y2="218" stroke="#b8a888" stroke-width="2.5"/>
+<path d="M88 211 l8 14 M98 211 l8 14" stroke="#7a6f63" stroke-width="1.5" fill="none"/>
+<line x1="106" y1="218" x2="670" y2="218" stroke="#b8a888" stroke-width="2.5"/>
+<line x1="118.0" y1="213" x2="118.0" y2="223" stroke="#7a6f63" stroke-width="1.5"/>
+<line x1="284.0" y1="213" x2="284.0" y2="223" stroke="#7a6f63" stroke-width="1.5"/>
+<line x1="450.0" y1="213" x2="450.0" y2="223" stroke="#7a6f63" stroke-width="1.5"/>
+<line x1="616.0" y1="213" x2="616.0" y2="223" stroke="#7a6f63" stroke-width="1.5"/>
+<line x1="167.8" y1="218" x2="167.8" y2="162" stroke="#9a5b33" stroke-width="1.4"/>
+<circle cx="167.8" cy="218" r="5" fill="#9a5b33" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="167.8" y="140" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">1993</text>
+<text x="167.8" y="155" font-size="11.5" fill="#3a3531" text-anchor="middle">Nvidia</text>
+<line x1="267.4" y1="218" x2="267.4" y2="162" stroke="#9a5b33" stroke-width="1.4"/>
+<circle cx="267.4" cy="218" r="5" fill="#9a5b33" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="267.4" y="140" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">1999</text>
+<text x="267.4" y="155" font-size="11.5" fill="#3a3531" text-anchor="middle">GeForce 256</text>
+<line x1="400.2" y1="218" x2="400.2" y2="162" stroke="#9a5b33" stroke-width="1.4"/>
+<circle cx="400.2" cy="218" r="5" fill="#9a5b33" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="394.2" y="166" font-size="12.5" fill="#9a5b33" text-anchor="end" font-weight="700">2007</text>
+<text x="394.2" y="181" font-size="11.5" fill="#3a3531" text-anchor="end">CUDA</text>
+<line x1="433.4" y1="218" x2="433.4" y2="122" stroke="#9a5b33" stroke-width="1.4"/>
+<circle cx="433.4" cy="218" r="5" fill="#9a5b33" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="427.4" y="126" font-size="12.5" fill="#9a5b33" text-anchor="end" font-weight="700">2009</text>
+<text x="427.4" y="141" font-size="11.5" fill="#3a3531" text-anchor="end">70 fois plus vite</text>
+<line x1="549.6" y1="218" x2="549.6" y2="162" stroke="#9a5b33" stroke-width="1.4"/>
+<circle cx="549.6" cy="218" r="5" fill="#9a5b33" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="555.6" y="166" font-size="12.5" fill="#9a5b33" text-anchor="start" font-weight="700">2016</text>
+<text x="555.6" y="181" font-size="11.5" fill="#3a3531" text-anchor="start">machines dédiées</text>
+<line x1="64.0" y1="218" x2="64.0" y2="274" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="64.0" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="64.0" y="288" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">1970</text>
+<text x="64.0" y="303" font-size="11.5" fill="#3a3531" text-anchor="middle">Linnainmaa</text>
+<line x1="317.2" y1="218" x2="317.2" y2="274" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="317.2" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="317.2" y="288" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">2002</text>
+<text x="317.2" y="303" font-size="11.5" fill="#3a3531" text-anchor="middle">Torch</text>
+<line x1="400.2" y1="218" x2="400.2" y2="274" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="400.2" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="400.2" y="288" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">2007</text>
+<text x="400.2" y="303" font-size="11.5" fill="#3a3531" text-anchor="middle">Theano</text>
+<line x1="499.8" y1="218" x2="499.8" y2="274" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="499.8" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="493.8" y="262" font-size="12.5" fill="#2f6f6a" text-anchor="end" font-weight="700">2013</text>
+<text x="493.8" y="277" font-size="11.5" fill="#3a3531" text-anchor="end">Caffe</text>
+<line x1="533.0" y1="218" x2="533.0" y2="314" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="533.0" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="527.0" y="302" font-size="12.5" fill="#2f6f6a" text-anchor="end" font-weight="700">2015</text>
+<text x="527.0" y="317" font-size="11.5" fill="#3a3531" text-anchor="end">TensorFlow, Keras</text>
+<line x1="549.6" y1="218" x2="549.6" y2="274" stroke="#2f6f6a" stroke-width="1.4"/>
+<circle cx="549.6" cy="218" r="5" fill="#2f6f6a" stroke="#efe7d3" stroke-width="1.5"/>
+<text x="555.6" y="262" font-size="12.5" fill="#2f6f6a" text-anchor="start" font-weight="700">2016</text>
+<text x="555.6" y="277" font-size="11.5" fill="#3a3531" text-anchor="start">PyTorch</text>
+<line x1="483.2" y1="86" x2="483.2" y2="218" stroke="#c4564a" stroke-width="1.8" stroke-dasharray="5 4"/>
+<circle cx="483.2" cy="218" r="8" fill="#c4564a" stroke="#efe7d3" stroke-width="2"/>
+<text x="483.2" y="64" font-size="13" fill="#c4564a" text-anchor="middle" font-weight="700">2012</text>
+<text x="483.2" y="79" font-size="12" fill="#3a3531" text-anchor="middle">AlexNet</text>
+<text x="40" y="98" font-size="13" fill="#9a5b33" font-weight="700">Le matériel</text>
+<text x="40" y="346" font-size="13" fill="#2f6f6a" font-weight="700">Le logiciel</text>
+<text x="350.0" y="402" font-size="12.5" fill="#7a6f63" text-anchor="middle">L'axe est coupé entre 1970 et 1990.</text>
+</svg>
