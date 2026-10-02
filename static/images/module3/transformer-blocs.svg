@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un bloc de Transformer, et une pile de blocs</title>
+<desc>Deux panneaux. À gauche, un bloc : les mots entrent par le bas, passent par une couche d'auto-attention, où chaque mot regarde les autres, puis par un petit réseau appliqué à chaque mot, et ressortent enrichis par le haut. À droite, une pile de six blocs identiques : les mots entrent en bas et ressortent en haut, enrichis de leur contexte.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="420" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le Transformer : des blocs identiques, empilés</text>
+<rect x="22" y="56" width="330" height="330" rx="10" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="187.0" y="80" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">un bloc</text>
+<rect x="370" y="56" width="308" height="330" rx="10" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="524.0" y="80" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="700">une pile de blocs</text>
+<rect x="81" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="107" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">le</text>
+<rect x="161" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="187" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">chien</text>
+<rect x="241" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="267" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">dort</text>
+<line x1="107" y1="341" x2="107" y2="316" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<line x1="187" y1="341" x2="187" y2="316" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<line x1="267" y1="341" x2="267" y2="316" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<rect x="52" y="150" width="270" height="162" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<rect x="64" y="162" width="246" height="63.0" rx="8" fill="#2f6f6a" fill-opacity="0.12" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="187.0" y="191.5" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">petit réseau</text>
+<text x="187.0" y="207.5" font-size="11.5" fill="#2f6f6a" text-anchor="middle">appliqué à chaque mot</text>
+<rect x="64" y="237.0" width="246" height="63.0" rx="8" fill="#c4564a" fill-opacity="0.10" stroke="#c4564a" stroke-width="1.8"/>
+<text x="187.0" y="266.5" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">auto-attention</text>
+<text x="187.0" y="282.5" font-size="11.5" fill="#c4564a" text-anchor="middle">chaque mot regarde les autres</text>
+<line x1="107" y1="148" x2="107" y2="124" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<line x1="187" y1="148" x2="187" y2="124" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<line x1="267" y1="148" x2="267" y2="124" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<rect x="81" y="95" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="107" y="112" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">le</text>
+<rect x="161" y="95" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="187" y="112" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">chien</text>
+<rect x="241" y="95" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="267" y="112" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">dort</text>
+<rect x="390" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="416" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">le</text>
+<rect x="460" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="486" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">chien</text>
+<rect x="530" y="343" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="556" y="360" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">dort</text>
+<rect x="396" y="300" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="317" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 1</text>
+<line x1="486.0" y1="299" x2="486.0" y2="293" stroke="#7a6f63" stroke-width="1.4"/>
+<rect x="396" y="266" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="283" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 2</text>
+<line x1="486.0" y1="265" x2="486.0" y2="259" stroke="#7a6f63" stroke-width="1.4"/>
+<rect x="396" y="232" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="249" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 3</text>
+<line x1="486.0" y1="231" x2="486.0" y2="225" stroke="#7a6f63" stroke-width="1.4"/>
+<rect x="396" y="198" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="215" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 4</text>
+<line x1="486.0" y1="197" x2="486.0" y2="191" stroke="#7a6f63" stroke-width="1.4"/>
+<rect x="396" y="164" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="181" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 5</text>
+<line x1="486.0" y1="163" x2="486.0" y2="157" stroke="#7a6f63" stroke-width="1.4"/>
+<rect x="396" y="130" width="180" height="26" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.8"/>
+<text x="486.0" y="147" font-size="11.5" fill="#5b5249" text-anchor="middle">bloc 6</text>
+<line x1="486.0" y1="341" x2="486.0" y2="328" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<line x1="486.0" y1="129" x2="486.0" y2="116" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#pointe)"/>
+<rect x="390" y="87" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="416" y="104" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">le</text>
+<rect x="460" y="87" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="486" y="104" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">chien</text>
+<rect x="530" y="87" width="52" height="26" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.6"/>
+<text x="556" y="104" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">dort</text>
+<text x="586" y="170" font-size="11.5" fill="#7a6f63">6 en 2017</text>
+<text x="586" y="186" font-size="11.5" fill="#7a6f63">≈ 100</text>
+<text x="586" y="202" font-size="11.5" fill="#7a6f63">aujourd'hui</text>
+<text x="350.0" y="406" font-size="12.5" fill="#7a6f63" text-anchor="middle">En bas, les mots seuls ; en haut, les mots enrichis de leur contexte.</text>
+</svg>

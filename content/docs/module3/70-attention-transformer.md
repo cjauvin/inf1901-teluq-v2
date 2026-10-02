@@ -123,3 +123,124 @@ moins nets.
    regarde le nom qu'il qualifie.
 4. Cliquez sur « monté ». Il regarde surtout « chien » et « camion », son sujet et
    son complément.
+
+## Le Transformer
+
+En 2017, huit chercheurs de Google, dont Ashish Vaswani, publient un article
+intitulé « Attention Is All You Need » (« L'attention suffit »). L'idée tient dans
+le titre. On supprime la récurrence et on ne garde que l'attention. L'architecture
+qui en résulte s'appelle le **Transformer**.
+
+Un Transformer est fait de **blocs** identiques, empilés. Chaque bloc contient deux
+étapes :
+
+1. une couche d'**auto-attention**, où chaque mot va chercher l'information utile
+   chez les autres mots ;
+2. un petit réseau ordinaire, appliqué à chaque mot séparément, qui transforme
+   l'information recueillie.
+
+Le texte traverse les blocs l'un après l'autre. À chaque bloc, la représentation de
+chaque mot s'enrichit de son contexte. L'article de 2017 empile six blocs. Les
+grands modèles actuels en empilent une centaine.
+
+{{< image src="/images/module3/transformer-blocs.svg" alt="Deux panneaux. À gauche, un bloc : les mots entrent par le bas, passent par une couche d'auto-attention, où chaque mot regarde les autres, puis par un petit réseau appliqué à chaque mot, et ressortent enrichis par le haut. À droite, une pile de six blocs identiques : les mots entrent en bas et ressortent en haut, enrichis de leur contexte." title="Le Transformer : chaque bloc combine l'auto-attention et un petit réseau ; on empile les blocs." loading="lazy" >}}
+
+Deux précisions complètent ce schéma.
+
+**Plusieurs têtes.** Chaque couche d'auto-attention contient plusieurs mécanismes
+d'attention en parallèle, appelés **têtes**, par exemple huit. Chacune a ses
+propres requêtes, clés et valeurs, et peut apprendre un type de lien différent :
+une tête relie un verbe à son sujet, une autre un pronom au nom qu'il désigne, une
+autre un mot à son voisin.
+
+**La position.** Un réseau récurrent connaissait l'ordre des mots, puisqu'il les
+lisait un à un. L'auto-attention, elle, traite tous les mots en même temps et ne
+connaît pas leur ordre. Pour elle, « le chien mord l'homme » et « l'homme mord le
+chien » seraient identiques. On ajoute donc à chaque mot, à l'entrée du réseau, une
+indication de sa position dans la phrase.
+
+On retrouve aussi dans le Transformer les
+[raccourcis](docs/module3/50-reseaux-convolutifs/#après-2012) de ResNet, qui
+laissent l'information sauter une étape et facilitent l'entraînement d'une pile
+très profonde.
+
+## Pourquoi il a tout changé
+
+Le Transformer règle les trois limites des réseaux récurrents, et en ajoute une.
+
+**Le parallélisme.** Tous les mots d'un texte sont traités en même temps, et non
+l'un après l'autre. Les calculs de l'attention sont des multiplications répétées,
+le type de calcul pour lequel les
+[GPU](docs/module3/42-materiel-et-outils/#les-processeurs-graphiques) sont conçus.
+Un Transformer s'entraîne donc beaucoup plus vite qu'un réseau récurrent de même
+taille.
+
+**La distance.** Dans un réseau récurrent, l'information du premier mot doit
+traverser toutes les étapes pour atteindre le centième. Dans un Transformer, le
+centième mot regarde directement le premier, en une seule étape. La mémoire
+lointaine n'est plus un problème de principe.
+
+**L'échelle.** Ces deux propriétés permettent d'entraîner des réseaux beaucoup plus
+grands, sur beaucoup plus de texte. Les Transformers des années 2020 comptent des
+centaines de milliards de poids, entraînés sur une grande partie du texte
+disponible sur le Web. Ce changement d'échelle est celui que décrivait la
+[leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère).
+
+**Un coût.** Dans l'auto-attention, chaque mot regarde tous les autres. Pour un
+texte de 1 000 mots, cela fait un million de comparaisons. Pour 2 000 mots, quatre
+millions. Le calcul croît avec le carré de la longueur du texte. C'est pourquoi un
+Transformer ne peut traiter qu'un texte de longueur limitée à la fois, sa
+**fenêtre de contexte**. Le Module 4 reviendra sur cette notion.
+
+## Au-delà du texte
+
+Le Transformer a été conçu pour la traduction, mais rien dans son fonctionnement
+n'est propre au langage. Il suffit de découper les données en éléments, et de
+laisser chaque élément regarder les autres.
+
+**Les images.** En 2020, une équipe de Google découpe une image en petits carrés de
+16 pixels sur 16 et les traite comme les mots d'une phrase. Ce *Vision Transformer*
+n'a pas la connaissance inscrite dans un réseau convolutif : il ne sait pas
+d'avance que les pixels voisins sont liés, et doit l'apprendre. Avec peu d'images,
+il fait moins bien qu'un réseau convolutif. Avec des centaines de millions
+d'images, il fait mieux. C'est un nouvel exemple de la
+[leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère), et une
+nuance à la
+[leçon de la convolution](docs/module3/50-reseaux-convolutifs/#la-leçon-de-la-convolution) :
+une connaissance inscrite dans le réseau aide quand les données sont rares, et peut
+gêner quand elles sont abondantes.
+
+{{< image src="/images/module3/vision-transformer.svg" alt="En haut, une petite image de paysage, avec un ciel, un soleil et des collines, découpée par une grille en seize carrés. En bas, ces seize carrés sont alignés l'un après l'autre, numérotés de 1 à 16, comme les mots d'une phrase, et entrent dans un Transformer." title="Le Vision Transformer découpe une image en carrés et les traite comme les mots d'une phrase." loading="lazy" >}}
+
+**La biologie.** Une protéine est une chaîne d'acides aminés qui se replie dans
+l'espace, et sa forme détermine son rôle. Prédire cette forme à partir de la chaîne
+était un problème ouvert depuis cinquante ans. En 2020, le système **AlphaFold 2**,
+de DeepMind, le résout pour la plupart des protéines, avec un mécanisme d'attention
+au cœur de son architecture. Ce travail a valu à Demis Hassabis et John Jumper une
+moitié du prix Nobel de chimie 2024.
+
+**La parole, la musique, le code.** Tous les types de séquences se prêtent à la
+même méthode.
+
+## Vers le Module 4
+
+Dès 2018, deux usages du Transformer apparaissent. **BERT**, chez Google, lit un
+texte en entier pour en produire une représentation, utile par exemple aux moteurs
+de recherche. **GPT**, chez OpenAI, est entraîné à une tâche plus simple : prédire
+le mot suivant d'un texte. Agrandi de version en version, ce second type de modèle
+est à l'origine des grands modèles de langage, comme ChatGPT. Le
+[Module 4](docs/module4) leur est consacré.
+
+## Pour voir le mécanisme en détail
+
+La vidéo ci-dessous, de la série de 3Blue1Brown déjà présentée dans
+« [Entraîner un réseau](docs/module3/30-entrainer-un-reseau/#pour-voir-le-mécanisme-en-détail) »,
+explique l'attention pas à pas, avec ses requêtes, ses clés et ses valeurs. Elle
+est en anglais.
+
+{{< youtube id="eMlx5fFNoYc" >}}
+
+Le chapitre suivant, « Apprendre à jouer : le renforcement profond », quitte les
+séquences. Il revient à
+l'[apprentissage par renforcement](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement)
+du Module 2 et montre ce qu'il devient avec les réseaux profonds.
