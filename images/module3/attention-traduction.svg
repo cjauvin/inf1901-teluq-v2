@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 410" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La grille d'attention d'une traduction</title>
+<desc>Une grille de quatre colonnes et quatre lignes. Les colonnes portent les mots anglais « the European Economic Area », les lignes les mots français « la zone économique européenne ». Chaque case est d'autant plus foncée que le décodeur regarde ce mot anglais en écrivant ce mot français. « la » regarde « the », « zone » regarde « Area », « économique » regarde « Economic » et « européenne » regarde « European » : les deux dernières cases foncées se croisent.</desc>
+<rect x="0" y="0" width="700" height="410" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Où regarde le décodeur, pour chaque mot qu'il écrit ?</text>
+<text x="331.0" y="104" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">the</text>
+<text x="393.0" y="104" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">European</text>
+<text x="455.0" y="104" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">Economic</text>
+<text x="517.0" y="104" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">Area</text>
+<text x="424" y="78" font-size="12" fill="#5b5249" text-anchor="middle">phrase d'origine (anglais)</text>
+<text x="286" y="152.0" font-size="13" fill="#c4564a" text-anchor="end" font-weight="700">la</text>
+<rect x="300" y="116" width="62" height="62" fill="#3a3531" fill-opacity="0.77" stroke="#fbf7ee" stroke-width="2"/>
+<text x="331.0" y="151.0" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,85</text>
+<rect x="362" y="116" width="62" height="62" fill="#3a3531" fill-opacity="0.09" stroke="#fbf7ee" stroke-width="2"/>
+<text x="393.0" y="151.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,05</text>
+<rect x="424" y="116" width="62" height="62" fill="#3a3531" fill-opacity="0.08" stroke="#fbf7ee" stroke-width="2"/>
+<text x="455.0" y="151.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,04</text>
+<rect x="486" y="116" width="62" height="62" fill="#3a3531" fill-opacity="0.10" stroke="#fbf7ee" stroke-width="2"/>
+<text x="517.0" y="151.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,06</text>
+<text x="286" y="214.0" font-size="13" fill="#c4564a" text-anchor="end" font-weight="700">zone</text>
+<rect x="300" y="178" width="62" height="62" fill="#3a3531" fill-opacity="0.09" stroke="#fbf7ee" stroke-width="2"/>
+<text x="331.0" y="213.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,05</text>
+<rect x="362" y="178" width="62" height="62" fill="#3a3531" fill-opacity="0.09" stroke="#fbf7ee" stroke-width="2"/>
+<text x="393.0" y="213.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,05</text>
+<rect x="424" y="178" width="62" height="62" fill="#3a3531" fill-opacity="0.14" stroke="#fbf7ee" stroke-width="2"/>
+<text x="455.0" y="213.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,10</text>
+<rect x="486" y="178" width="62" height="62" fill="#3a3531" fill-opacity="0.73" stroke="#fbf7ee" stroke-width="2"/>
+<text x="517.0" y="213.0" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,80</text>
+<text x="286" y="276.0" font-size="13" fill="#c4564a" text-anchor="end" font-weight="700">économique</text>
+<rect x="300" y="240" width="62" height="62" fill="#3a3531" fill-opacity="0.07" stroke="#fbf7ee" stroke-width="2"/>
+<text x="331.0" y="275.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,02</text>
+<rect x="362" y="240" width="62" height="62" fill="#3a3531" fill-opacity="0.20" stroke="#fbf7ee" stroke-width="2"/>
+<text x="393.0" y="275.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,18</text>
+<rect x="424" y="240" width="62" height="62" fill="#3a3531" fill-opacity="0.69" stroke="#fbf7ee" stroke-width="2"/>
+<text x="455.0" y="275.0" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,75</text>
+<rect x="486" y="240" width="62" height="62" fill="#3a3531" fill-opacity="0.09" stroke="#fbf7ee" stroke-width="2"/>
+<text x="517.0" y="275.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,05</text>
+<text x="286" y="338.0" font-size="13" fill="#c4564a" text-anchor="end" font-weight="700">européenne</text>
+<rect x="300" y="302" width="62" height="62" fill="#3a3531" fill-opacity="0.07" stroke="#fbf7ee" stroke-width="2"/>
+<text x="331.0" y="337.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,02</text>
+<rect x="362" y="302" width="62" height="62" fill="#3a3531" fill-opacity="0.71" stroke="#fbf7ee" stroke-width="2"/>
+<text x="393.0" y="337.0" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,78</text>
+<rect x="424" y="302" width="62" height="62" fill="#3a3531" fill-opacity="0.18" stroke="#fbf7ee" stroke-width="2"/>
+<text x="455.0" y="337.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,15</text>
+<rect x="486" y="302" width="62" height="62" fill="#3a3531" fill-opacity="0.09" stroke="#fbf7ee" stroke-width="2"/>
+<text x="517.0" y="337.0" font-size="11.5" fill="#5b5249" text-anchor="middle">0,05</text>
+<text x="286" y="104" font-size="12" fill="#5b5249" text-anchor="end">traduction (français)</text>
+<text x="350.0" y="394" font-size="12.5" fill="#7a6f63" text-anchor="middle">Chaque ligne donne les poids de l'attention pour un mot écrit ; ils totalisent 1.</text>
+</svg>
