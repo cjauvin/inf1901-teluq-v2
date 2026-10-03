@@ -128,3 +128,96 @@ envisagé, et il joue mal pendant plusieurs coups ensuite.
 Le documentaire
 [*AlphaGo*](https://www.youtube.com/watch?v=WXuK6gekU1Y) (2017), mis en ligne
 gratuitement par DeepMind, raconte ce match.
+
+## AlphaZero : sans parties humaines
+
+En 2017, DeepMind présente **AlphaGo Zero**. Il ne voit aucune partie humaine. Il
+ne connaît que les règles du go, et apprend uniquement en jouant contre lui-même,
+en partant de coups joués au hasard. En trois jours, il joue près de cinq millions
+de parties contre lui-même, puis bat la version qui avait vaincu Lee Sedol par
+100 parties à 0. Les joueurs qui ont étudié ses parties y ont trouvé des
+ouvertures que les humains n'avaient jamais jouées en plusieurs siècles.
+
+La même année, **AlphaZero** applique la même méthode, sans modification, aux
+échecs et au shogi, les échecs japonais. Après quelques heures d'entraînement pour
+chacun, il dépasse les meilleurs programmes de ces jeux.
+
+Le contraste avec
+[Deep Blue](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997)
+est instructif. La fonction d'évaluation de Deep Blue avait été réglée pendant des
+années avec l'aide de grands maîtres, et Deep Blue examinait environ 200 millions
+de positions par seconde. AlphaZero a appris seul sa fonction d'évaluation, et il
+examine environ 80 000 positions par seconde, plus de deux mille fois moins, parce
+que son réseau de politique lui indique où chercher. C'est l'illustration la plus
+nette de la [leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère) :
+une méthode générale, l'apprentissage par auto-jeu, dépasse le savoir humain
+inscrit à la main.
+
+## Une machine qui apprend en jouant contre elle-même
+
+L'applet ci-dessous applique ce principe au morpion. La machine ne connaît que les
+règles. Elle tient une table : pour chaque position, une valeur entre −1 et +1, qui
+indique si cette position mène plutôt à la défaite ou à la victoire du joueur qui
+vient de jouer. À chaque partie d'entraînement contre elle-même, elle joue le coup
+qui mène à la meilleure valeur connue, sauf de temps en temps où elle essaie un
+coup au hasard. À la fin de la partie, elle rapproche la valeur de chaque position
+jouée du résultat obtenu.
+
+Le morpion ne compte que quelques milliers de positions. Une table suffit donc, et
+il n'est pas nécessaire d'utiliser un réseau. Mais le principe de l'auto-jeu est
+celui d'AlphaZero.
+
+{{< applet src="/html/applets/morpion.html" height="420" >}}
+
+1. Avant tout entraînement, mesurez le niveau de la machine. Elle joue au hasard,
+   et perd la plupart de ses parties contre un joueur parfait.
+2. Entraînez-la par étapes, 100 parties, puis 1 000, puis plusieurs fois 10 000, et
+   observez son niveau progresser. Le « joueur parfait » de l'applet calcule tous
+   les coups possibles jusqu'à la fin de la partie, avec la méthode
+   [minimax](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) du
+   Module 1. Contre lui, le mieux possible est la partie nulle.
+3. Jouez contre elle après chaque étape. Cochez « voir ce qu'elle pense de chacun
+   de vos coups » pour voir les valeurs de sa table.
+
+Quelques dizaines de milliers de parties suffisent pour qu'elle ne perde plus.
+Personne ne lui a montré de bon coup.
+
+## Au-delà des jeux, et les limites
+
+Les jeux sont un terrain d'essai commode : les règles sont claires, la récompense
+est nette, et l'on peut jouer des millions de parties. Le renforcement profond a
+aussi trouvé des usages hors des jeux.
+
+- En 2016, Google l'utilise pour piloter le refroidissement de ses centres de
+  données, et annonce une réduction d'environ 40 % de l'énergie consacrée au
+  refroidissement.
+- En 2022, DeepMind et l'École polytechnique fédérale de Lausanne l'utilisent pour
+  contrôler la forme du plasma dans un réacteur expérimental de fusion nucléaire.
+- En robotique, des robots apprennent à marcher ou à manipuler des objets, d'abord
+  dans une simulation, puis dans le monde réel.
+
+La méthode a aussi des limites importantes.
+
+**Elle demande énormément d'essais.** AlphaGo Zero a joué près de cinq millions de
+parties contre lui-même en trois jours. Un joueur humain de haut niveau en joue
+quelques dizaines de milliers dans toute sa vie. Dans le monde réel, où chaque
+essai prend du temps ou peut causer des dégâts, ce besoin est un obstacle.
+
+**Elle optimise exactement la récompense qu'on lui donne.** En 2016, OpenAI
+entraîne un agent sur un jeu de course de bateaux, où l'on gagne des points en
+passant sur des cibles. L'agent découvre qu'il peut tourner en rond autour de trois
+cibles qui réapparaissent, et accumuler plus de points qu'en finissant la course.
+Il fait exactement ce qu'on lui a demandé, et pas du tout ce qu'on voulait. Ce
+problème de la récompense mal définie concerne tous les systèmes qui optimisent un
+objectif. Le [Module 5](docs/module5) y reviendra, sous le nom d'**alignement**.
+
+Le renforcement a enfin une place importante dans les grands modèles de langage,
+comme l'annonçait le
+[Module 2](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement).
+Il sert à ajuster leurs réponses selon les préférences d'évaluateurs humains, et à
+les entraîner à raisonner sur des problèmes dont la réponse peut être vérifiée. Le
+[Module 4](docs/module4) présentera ces méthodes.
+
+Les réseaux profonds voient, lisent et jouent désormais mieux que nous dans
+plusieurs domaines. Le dernier chapitre, « Tromper un réseau », montre qu'ils
+peuvent pourtant être trompés de façon surprenante.
