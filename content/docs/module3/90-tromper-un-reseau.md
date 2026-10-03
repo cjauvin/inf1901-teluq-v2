@@ -102,3 +102,95 @@ sur un indice imprévu, comme la neige derrière les loups.
 
 {{< image src="/images/module3/hans-le-malin.jpg" alt="Une photographie ancienne en noir et blanc : un cheval dans une cour, entouré d'une foule d'hommes en chapeau." title="Hans le Malin et son public, à Berlin, vers 1904 (photo du domaine public, Wikimedia Commons)." loading="lazy" >}}
 {{% /hint %}}
+
+## Dans le monde réel
+
+Un exemple adverse sur une image numérique demande de modifier chaque pixel, ce qui
+suppose un accès direct à l'image. Les chercheurs ont montré que les attaques
+fonctionnent aussi dans le monde physique.
+
+- **Le panneau d'arrêt.** En 2018, une équipe universitaire colle quelques bandes
+  noires et blanches sur un vrai panneau d'arrêt. Pour un humain, ce sont des
+  autocollants sans importance. Le réseau qui lit les panneaux, photographiés sous
+  différents angles et à différentes distances, y voit le plus souvent une limite
+  de vitesse.
+- **La tortue.** En 2017, une équipe du MIT imprime en 3D une tortue dont la
+  texture a été calculée pour tromper un réseau. Sous presque tous les angles, le
+  réseau y voit un fusil.
+- **Les lunettes.** En 2016, des chercheurs montrent qu'une monture de lunettes
+  imprimée avec un motif particulier peut empêcher un système de reconnaissance
+  faciale de reconnaître une personne, ou lui faire croire qu'il s'agit de
+  quelqu'un d'autre.
+- **La voix.** Des commandes vocales peuvent être cachées dans un enregistrement de
+  musique ou de parole, sans qu'un humain les remarque, et être comprises par un
+  assistant vocal.
+
+{{< image src="/images/module3/tortue-adverse.jpg" alt="Deux photographies d'une tortue de mer imprimée en 3D, aux couleurs vives, l'une vue de dessous, l'autre posée sur de l'herbe." title="La tortue imprimée en 3D, qu'un réseau prend pour un fusil sous presque tous les angles (photo : LabSix, MIT, 2017)." loading="lazy" >}}
+
+{{< image src="/images/module3/stop-adverse.png" alt="Deux photos du même panneau d'arrêt. À gauche, le panneau intact : un humain et la machine le reconnaissent. À droite, le même panneau avec quelques bandes noires et blanches collées dessus : l'humain le reconnaît toujours, la machine ne lui accorde plus que 0,9 % de chances d'être un panneau d'arrêt." title="Illustration de l'attaque du panneau d'arrêt : quelques autocollants suffisent à tromper la machine, pas l'humain." loading="lazy" >}}
+
+## Se défendre
+
+La défense la plus utilisée s'appelle l'**entraînement adverse**. On fabrique des
+exemples adverses pendant l'entraînement, et on les ajoute aux données avec leur
+bonne réponse. Le réseau apprend à ne plus se laisser tromper par ces
+perturbations. Il devient plus robuste, mais il reste vulnérable à des attaques
+plus fortes ou d'un autre type, et sa précision sur les images normales baisse
+souvent un peu.
+
+Depuis 2014, de nombreuses autres défenses ont été proposées. La plupart ont été
+contournées, parfois quelques mois après leur publication. C'est une course entre
+attaques et défenses, sans solution complète à ce jour.
+
+Le problème ne se limite pas aux images. Les grands modèles de langage ont leurs
+propres attaques : des formulations conçues pour leur faire ignorer leurs
+consignes, ou des instructions cachées dans un document qu'on leur demande de
+lire. Le [Module 4](docs/module4) y reviendra.
+
+## Une boîte noire
+
+Les exemples adverses et l'effet Hans le Malin ont une cause commune. On ne sait
+pas exactement ce qu'un réseau a appris.
+
+Le contraste avec les systèmes des modules précédents est net. On pouvait lire les
+règles d'un
+[système expert](docs/module1/50-systemes-experts/#lanatomie-dun-système-expert)
+du Module 1 et suivre son raisonnement. On pouvait lire les questions d'un
+[arbre de décision](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait)
+du Module 2. Un réseau profond compte des millions de poids, et aucun d'eux n'a de
+signification isolée. Il donne une réponse, souvent très bonne, sans donner ses
+raisons. On dit que c'est une **boîte noire**.
+
+L'**IA explicable** cherche à retrouver ces raisons. Une de ses méthodes produit
+une **carte de saillance** : pour une image donnée, elle indique quels pixels ont
+le plus pesé sur la réponse. C'est ainsi que l'on découvre qu'un classifieur de
+loups regarde la neige, ou qu'un classifieur de radiographies s'appuie sur une
+marque propre à l'hôpital qui a pris l'image plutôt que sur les poumons du patient.
+
+{{< image src="/images/module3/saillance-7.svg" alt="Deux grilles de 28 pixels sur 28. À gauche, l'image d'un 7. À droite, sa carte de saillance : en vert, les pixels qui ont poussé le classifieur vers la réponse « 7 », surtout les extrémités de la barre horizontale et le haut du trait vertical ; en rouge, ceux qui l'ont poussé vers « 2 », sa deuxième réponse, surtout le bas du trait." title="La carte de saillance d'un 7, calculée sur le classifieur de l'applet : en vert ce qui plaide pour « 7 », en rouge ce qui plaide pour « 2 »." loading="lazy" >}}
+
+Ces méthodes donnent des indices, pas une explication complète. La question de
+savoir ce qu'un réseau a vraiment appris reste en grande partie ouverte. Le
+[Module 5](docs/module5) reviendra sur ses conséquences : peut-on confier une
+décision importante, un diagnostic ou un prêt bancaire, à un système qui ne peut
+pas expliquer sa réponse ?
+
+## Ce que ce module a montré
+
+Ce module est parti d'un neurone, qui n'est qu'une
+[régression logistique](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique).
+En reliant des neurones en couches, on obtient un réseau qui fabrique ses propres
+caractéristiques, et qui résout le XOR, le problème qui avait arrêté le perceptron
+en 1969. La rétropropagation permet d'entraîner ces réseaux. Avec des données et du
+calcul en quantité suffisante, des réseaux profonds de formes adaptées ont dépassé
+toutes les autres méthodes pour les images, les séquences et les jeux.
+
+Ce module a aussi montré leurs limites. Ces réseaux ne voient pas, ne lisent pas
+et ne jouent pas comme nous. Ils peuvent être trompés par des perturbations
+invisibles, réussir pour de mauvaises raisons, et ils n'expliquent pas leurs
+réponses.
+
+Tous les réseaux de ce module **reconnaissent** et **prédisent** : ils associent
+une réponse à une entrée. Le [Module 4](docs/module4) montre comment les mêmes
+architectures, et en particulier le Transformer, apprennent à **produire** des
+textes, des images et des sons.
