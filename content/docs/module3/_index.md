@@ -20,12 +20,24 @@ Ce second pari a connu une longue éclipse. En 1969, Minsky et Papert montrent q
 perceptron ne peut pas apprendre une fonction aussi simple que le
 [XOR](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969), et la
 recherche sur les réseaux de neurones s'arrête presque. Elle reprend en 1986, avec
-une méthode pour entraîner des réseaux à plusieurs couches. Elle reste pourtant
-secondaire jusqu'en 2012, quand un réseau profond dépasse de loin toutes les autres
-méthodes de reconnaissance d'images. En quelques années, les réseaux de neurones
-deviennent la méthode dominante de l'IA. Ils sont aujourd'hui au cœur de la
-reconnaissance d'images et de la parole, de la traduction automatique, et des
-grands modèles de langage comme ChatGPT.
+une méthode pour entraîner des réseaux à plusieurs couches. Mais pendant les
+vingt-cinq années suivantes, les progrès de l'apprentissage automatique viennent
+surtout d'autres méthodes : les [machines à vecteurs de support](docs/module2/60-classer/#la-plus-grande-marge-les-machines-à-vecteurs-de-support)
+(SVM) à partir du milieu des années 1990, le *boosting*, les
+[forêts aléatoires](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait) au début des années 2000, et
+les modèles probabilistes comme le [classifieur bayésien](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne)
+du Module 2. Ces méthodes s'appuient sur une théorie solide, s'entraînent de façon
+fiable et donnent d'excellents résultats. Les réseaux de neurones paraissent alors
+difficiles à régler et peu fiables, et beaucoup de chercheurs s'en détournent.
+
+La situation change en 2012, quand un réseau profond dépasse de loin toutes les
+autres méthodes de reconnaissance d'images. En quelques années, les réseaux de
+neurones deviennent la méthode dominante pour les images, la parole et le texte.
+Ils sont aujourd'hui au cœur de la reconnaissance d'images et de la parole, de la
+traduction automatique, et des grands modèles de langage comme ChatGPT. Les autres
+méthodes n'ont pas disparu pour autant : sur des données en tableau, comme celles
+d'une banque ou d'un hôpital, les forêts et le *gradient boosting* restent souvent
+les plus efficaces.
 
 Ce module raconte ce retour, et explique comment ces réseaux fonctionnent.
 

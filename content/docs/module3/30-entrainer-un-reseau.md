@@ -135,10 +135,21 @@ alors réglée. Le XOR, que le perceptron ne pouvait pas apprendre, est appris p
 réseau à couche cachée. Les réseaux de neurones redeviennent un sujet de recherche
 actif, sous le nom de **connexionnisme**.
 
-Ce retour reste limité pendant une vingtaine d'années. Les réseaux de l'époque sont
-petits, les données rares et les ordinateurs lents, et d'autres méthodes du
-[Module 2](docs/module2) donnent souvent d'aussi bons résultats. Le chapitre
-suivant explique ce qui a changé ensuite.
+Ce retour reste limité pendant une vingtaine d'années. Les réseaux de l'époque
+sont petits, les données rares et les ordinateurs lents. D'autres méthodes
+progressent plus vite. La plus influente est la
+[machine à vecteurs de support](docs/module2/60-classer/#la-plus-grande-marge-les-machines-à-vecteurs-de-support) (SVM),
+présentée au Module 2, dont la forme actuelle date de 1995. Grâce à
+l'[astuce du noyau](docs/module2/70-generaliser/#ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau), elle trace des
+frontières courbes sans avoir à fabriquer de caractéristiques. Son entraînement a
+un avantage décisif sur celui d'un réseau : il n'y a qu'un seul creux dans le
+paysage d'erreur, et on est donc sûr de trouver la meilleure solution, quel que
+soit le point de départ. La deuxième manipulation de l'applet ci-dessus montre que
+ce n'est pas le cas pour un réseau. Le *boosting* et les
+[forêts aléatoires](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait) complètent cette boîte à
+outils. Jusqu'au début des années 2010, ces méthodes l'emportent souvent sur les
+réseaux de neurones, et les grandes conférences du domaine publient peu de
+travaux sur ces derniers. Le chapitre suivant explique ce qui a changé ensuite.
 
 ## L'entraînement en pratique
 
