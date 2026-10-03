@@ -117,8 +117,8 @@ progressivement : chaque étape rencontre une limite qui mène à l'idée suiva
    plus proches voisins, la distance, et la première frontière de décision.
 5. [*Un modèle qui s'entraîne*](docs/module2/50-entrainer-un-modele) : la
    droite, la fonction d'erreur, la descente de gradient.
-6. [*Classer*](docs/module2/60-classer) : la régression logistique, Bayes, et
-   le filtre anti-pourriel.
+6. [*Classer*](docs/module2/60-classer) : la régression logistique, la marge
+   des SVM, Bayes, et le filtre anti-pourriel.
 7. [*Poser des questions : les arbres de décision*](docs/module2/65-arbres-de-decision) :
    un modèle qui cherche au lieu de descendre un gradient, et qui peut expliquer
    ses décisions.
@@ -144,7 +144,8 @@ Au terme de ce module, vous devriez être en mesure de :
 * expliquer le fil conducteur *données → modèle → erreur → minimisation →
   généralisation*, et le reconnaître dans n'importe quel algorithme ;
 * décrire de l'intérieur les modèles classiques rencontrés (le modèle bête, les
-  plus proches voisins, la régression linéaire et logistique, Bayes naïf,
+  plus proches voisins, la régression linéaire et logistique, les machines à
+  vecteurs de support, Bayes naïf,
   l'arbre de décision et la forêt aléatoire, k-means) et dire ce qui les
   distingue ;
 * expliquer comment un modèle s'entraîne (fonction d'erreur, descente de

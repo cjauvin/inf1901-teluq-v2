@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Trois droites sans erreur, et la droite de plus grande marge</title>
+<desc>Deux panneaux avec les mêmes points, rouges en haut à gauche et bleus en bas à droite. À gauche, trois droites les séparent toutes sans erreur : A frôle les points rouges, B frôle les points bleus, C passe au milieu. À droite, la droite C seule, entourée de la plus large bande vide possible, la marge ; les trois points qui touchent les bords de la bande, les vecteurs de support, sont entourés.</desc>
+<rect x="0" y="0" width="700" height="450" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Parmi toutes les droites sans erreur, la plus grande marge</text>
+<text x="180.0" y="58" font-size="13.5" fill="#3a3531" text-anchor="middle" font-weight="700">Trois droites sans erreur</text>
+<clipPath id="c20"><rect x="20" y="70" width="320" height="300" rx="8"/></clipPath>
+<rect x="20" y="70" width="320" height="300" rx="8" fill="#fbf7ee" stroke="#b8a888"/>
+<g clip-path="url(#c20)">
+<line x1="349.8" y1="-413.4" x2="20.4" y2="657.1" stroke="#7a6f63" stroke-width="2.2" />
+<line x1="350.8" y1="-413.1" x2="97.1" y2="677.8" stroke="#7a6f63" stroke-width="2.2" />
+<line x1="350.4" y1="-413.6" x2="58.7" y2="667.8" stroke="#9a5b33" stroke-width="3" />
+<circle cx="63.6" cy="124.8" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="108.4" cy="164.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="52.4" cy="197.6" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="100.0" cy="234.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="142.0" cy="119.2" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="153.2" cy="186.4" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="74.8" cy="270.4" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="125.2" cy="290.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="214.8" cy="220.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="259.6" cy="192.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="234.4" cy="264.8" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="287.6" cy="253.6" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="192.4" cy="304.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="270.8" cy="315.2" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="226.0" cy="343.2" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="296.0" cy="304.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+</g>
+<text x="120.8" y="362.0" font-size="13" fill="#7a6f63" font-weight="700">A</text>
+<text x="180.0" y="362.0" font-size="13" fill="#7a6f63" font-weight="700">B</text>
+<text x="150.7" y="362.0" font-size="13" fill="#9a5b33" font-weight="700">C</text>
+<text x="520.0" y="58" font-size="13.5" fill="#3a3531" text-anchor="middle" font-weight="700">La droite C et sa marge</text>
+<clipPath id="c360"><rect x="360" y="70" width="320" height="300" rx="8"/></clipPath>
+<rect x="360" y="70" width="320" height="300" rx="8" fill="#fbf7ee" stroke="#b8a888"/>
+<g clip-path="url(#c360)">
+<polygon points="723.4,-404.7 431.6,676.6 365.7,658.9 657.5,-422.5" fill="#2f6f6a" fill-opacity="0.14"/>
+<line x1="723.4" y1="-404.7" x2="431.6" y2="676.6" stroke="#2f6f6a" stroke-width="1.8" stroke-dasharray="6 5"/>
+<line x1="657.5" y1="-422.5" x2="365.7" y2="658.9" stroke="#2f6f6a" stroke-width="1.8" stroke-dasharray="6 5"/>
+<line x1="690.4" y1="-413.6" x2="398.7" y2="667.8" stroke="#9a5b33" stroke-width="3" />
+<circle cx="403.6" cy="124.8" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="448.4" cy="164.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="392.4" cy="197.6" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="440.0" cy="234.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="482.0" cy="119.2" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="493.2" cy="186.4" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="493.2" cy="186.4" r="12" fill="none" stroke="#3a3531" stroke-width="2"/>
+<circle cx="414.8" cy="270.4" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="465.2" cy="290.0" r="7.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="465.2" cy="290.0" r="12" fill="none" stroke="#3a3531" stroke-width="2"/>
+<circle cx="554.8" cy="220.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="554.8" cy="220.0" r="12" fill="none" stroke="#3a3531" stroke-width="2"/>
+<circle cx="599.6" cy="192.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="574.4" cy="264.8" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="627.6" cy="253.6" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="532.4" cy="304.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="610.8" cy="315.2" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="566.0" cy="343.2" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="636.0" cy="304.0" r="7.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+</g>
+<text x="350.0" y="416" font-size="12.5" fill="#7a6f63" text-anchor="middle">C passe le plus loin des deux groupes : sa marge, en vert, est la plus large possible.</text>
+<text x="350.0" y="434" font-size="12.5" fill="#7a6f63" text-anchor="middle">Les points entourés, les vecteurs de support, suffisent à la déterminer.</text>
+</svg>

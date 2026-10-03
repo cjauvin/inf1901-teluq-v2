@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : la frontière de plus grande marge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        canvas { touch-action: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="relative bg-slate-50 rounded-lg overflow-hidden">
+        <canvas id="plan" class="w-full block"></canvas>
+        <div class="absolute top-2 left-2 bg-white/85 px-3 py-1 rounded-full text-xs font-semibold text-slate-500 pointer-events-none border border-slate-200 shadow-sm">
+            Glissez un point pour le déplacer, cliquez dessus pour le retirer, cliquez dans le vide pour en ajouter.
+        </div>
+        <div id="info" class="absolute bottom-2 right-2 bg-white/85 px-3 py-1 rounded-full text-xs text-slate-600 pointer-events-none border border-slate-200 shadow-sm"></div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-1 w-full md:w-1/2 text-sm">
+            <span class="font-bold text-slate-700 whitespace-nowrap">Tolérance : <span id="tolAff"></span></span>
+            <input type="range" id="tolerance" min="0" max="3" value="0" class="w-full accent-indigo-600">
+        </div>
+        <div class="flex flex-wrap items-center gap-2 justify-center">
+            <div class="flex items-center gap-1 bg-white border border-slate-200 rounded shadow-sm p-1" title="Couleur des points ajoutés en cliquant">
+                <button id="btnRouge" onclick="choisir('rouge')" class="w-7 h-7 rounded-full border-2" style="background:#c4564a;border-color:#8f3a31"></button>
+                <button id="btnBleu" onclick="choisir('bleu')" class="w-7 h-7 rounded-full border-2" style="background:#3a6ea5;border-color:#264c75"></button>
+            </div>
+            <button onclick="nouveauxPoints()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Nouveaux points</button>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-6 border-t-4" style="border-color:#9a5b33"></div>frontière</div>
+        <div class="flex items-center gap-2"><div class="w-5 h-3 rounded-sm" style="background:#e3ecd9;border-top:2px dashed #2f6f6a;border-bottom:2px dashed #2f6f6a"></div>marge</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border-2" style="border-color:#3a3531"></div>vecteur de support</div>
+        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full border-2 border-amber-500"></div>du mauvais côté</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Une machine à vecteurs de support (SVM) linéaire. La frontière de plus grande
+ * marge est recalculée à chaque modification par l'algorithme SMO (Platt, 1998),
+ * qui donne la solution exacte du problème. Les vecteurs de support sont les
+ * points dont le coefficient est non nul : eux seuls déterminent la frontière.
+ * La tolérance règle la marge souple (C est l'inverse de la tolérance).
+ */
+const W = 620, H = 400, ECH = 10, AX = W / H;        // x est étiré de AX pour que la marge soit mesurée comme à l'écran ; ×ECH pour le calcul
+const COUL = { fond: '#fbf7ee', grille: '#e8dfc9', rouge: '#c4564a', bleu: '#3a6ea5', droite: '#9a5b33', marge: '#2f6f6a', bande: [227, 236, 217], mal: '#f59e0b', encre: '#3a3531' };
+const TOL = [{ C: 1000, nom: 'très faible' }, { C: 3, nom: 'faible' }, { C: 0.5, nom: 'moyenne' }, { C: 0.08, nom: 'forte' }];
+const canvas = document.getElementById('plan'), ctx = canvas.getContext('2d');
+canvas.width = W; canvas.height = H;
+const px = x => x * W, py = y => (1 - y) * H, ux = X => X / W, uy = Y => 1 - Y / H;
+const clamp = v => Math.min(0.97, Math.max(0.03, v));
+
+let points = [], couleur = 'rouge', modele = null;   // point : {x, y dans [0,1], c : +1 bleu, −1 rouge}
+
+// SMO de Platt, version complète avec heuristique simple ; noyau linéaire.
+function entrainer() {
+    const n = points.length, C = TOL[+document.getElementById('tolerance').value].C;
+    if (n < 2 || !points.some(p => p.c > 0) || !points.some(p => p.c < 0)) return null;
+    const X = points.map(p => [p.x * AX * ECH, p.y * ECH]), Y = points.map(p => p.c);
+    const K = (i, j) => X[i][0] * X[j][0] + X[i][1] * X[j][1];
+    const a = new Float64Array(n); let b = 0;
+    const f = i => { let s = b; for (let j = 0; j < n; j++) if (a[j]) s += a[j] * Y[j] * K(j, i); return s; };
+    const tol = 1e-4, eps = 1e-7;
+    function pas(i1, i2) {
+        if (i1 === i2) return false;
+        const a1 = a[i1], a2 = a[i2], y1 = Y[i1], y2 = Y[i2], E1 = f(i1) - y1, E2 = f(i2) - y2, s = y1 * y2;
+        let L, Hh;
+        if (y1 !== y2) { L = Math.max(0, a2 - a1); Hh = Math.min(C, C + a2 - a1); } else { L = Math.max(0, a1 + a2 - C); Hh = Math.min(C, a1 + a2); }
+        if (L >= Hh) return false;
+        const eta = K(i1, i1) + K(i2, i2) - 2 * K(i1, i2);
+        if (eta <= 0) return false;
+        let n2 = Math.min(Hh, Math.max(L, a2 + y2 * (E1 - E2) / eta));
+        if (Math.abs(n2 - a2) < eps * (n2 + a2 + eps)) return false;
+        const n1 = a1 + s * (a2 - n2);
+        const b1 = b - E1 - y1 * (n1 - a1) * K(i1, i1) - y2 * (n2 - a2) * K(i1, i2);
+        const b2 = b - E2 - y1 * (n1 - a1) * K(i1, i2) - y2 * (n2 - a2) * K(i2, i2);
+        b = (n1 > 0 && n1 < C) ? b1 : (n2 > 0 && n2 < C) ? b2 : (b1 + b2) / 2;
+        a[i1] = n1; a[i2] = n2;
+        return true;
+    }
+    function examiner(i2) {
+        const y2 = Y[i2], a2 = a[i2], r2 = (f(i2) - y2) * y2;
+        if ((r2 < -tol && a2 < C) || (r2 > tol && a2 > 0)) {
+            const E2 = f(i2) - y2;
+            let meilleur = -1, ecart = 0;                       // second choix : le plus grand |E1 − E2|
+            for (let i = 0; i < n; i++) if (a[i] > 0 && a[i] < C) { const d = Math.abs(f(i) - Y[i] - E2); if (d > ecart) { ecart = d; meilleur = i; } }
+            if (meilleur >= 0 && pas(meilleur, i2)) return 1;
+            const depart = Math.floor(Math.random() * n);
+            for (let k = 0; k < n; k++) { const i = (depart + k) % n; if (a[i] > 0 && a[i] < C && pas(i, i2)) return 1; }
+            for (let k = 0; k < n; k++) { const i = (depart + k) % n; if (pas(i, i2)) return 1; }
+        }
+        return 0;
+    }
+    let changes = 0, tout = true, garde = 0;
+    while ((changes > 0 || tout) && garde++ < 500) {
+        changes = 0;
+        for (let i = 0; i < n; i++) if (tout || (a[i] > 0 && a[i] < C)) changes += examiner(i);
+        if (tout) tout = false; else if (changes === 0) tout = true;
+    }
+    let w0 = 0, w1 = 0;
+    for (let i = 0; i < n; i++) { w0 += a[i] * Y[i] * X[i][0]; w1 += a[i] * Y[i] * X[i][1]; }
+    return { w0, w1, b, a: Array.from(a) };
+}
+const score = (m, x, y) => m.w0 * x * AX * ECH + m.w1 * y * ECH + m.b;
+
+function hasard(seed) { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; }
+function gauss(r) { return Math.sqrt(-2 * Math.log(r() + 1e-9)) * Math.cos(2 * Math.PI * r()); }
+function nouveauxPoints() {
+    const r = hasard(Math.floor(Math.random() * 1e9));
+    points = [];
+    for (let i = 0; i < 10; i++) points.push({ x: clamp(0.3 + 0.08 * gauss(r)), y: clamp(0.66 + 0.1 * gauss(r)), c: -1 });
+    for (let i = 0; i < 10; i++) points.push({ x: clamp(0.7 + 0.08 * gauss(r)), y: clamp(0.34 + 0.1 * gauss(r)), c: 1 });
+    dessiner();
+}
+
+// Tracer la droite w0·x + w1·y + b = niveau, en coordonnées du canevas.
+function ligne(m, niveau) {
+    const pts = [];
+    if (Math.abs(m.w1) > Math.abs(m.w0)) for (const x of [-0.5, 1.5]) pts.push([px(x), py((niveau - m.b - m.w0 * x * AX * ECH) / (m.w1 * ECH))]);
+    else for (const y of [-0.5, 1.5]) pts.push([px((niveau - m.b - m.w1 * y * ECH) / (m.w0 * AX * ECH)), py(y)]);
+    return pts;
+}
+
+function dessiner() {
+    modele = entrainer();
+    const img = ctx.createImageData(W, H), pas = 4;
+    for (let Y = 0; Y < H; Y += pas) for (let X = 0; X < W; X += pas) {
+        let c = [251, 247, 238];
+        if (modele) {
+            const s = score(modele, ux(X + pas / 2), uy(Y + pas / 2));
+            c = Math.abs(s) < 1 ? COUL.bande : s > 0 ? [234, 239, 246] : [246, 232, 228];
+        }
+        for (let dy = 0; dy < pas; dy++) for (let dx = 0; dx < pas; dx++) { const i = ((Y + dy) * W + X + dx) * 4; img.data[i] = c[0]; img.data[i + 1] = c[1]; img.data[i + 2] = c[2]; img.data[i + 3] = 255; }
+    }
+    ctx.putImageData(img, 0, 0);
+    ctx.strokeStyle = COUL.grille; ctx.lineWidth = 1;
+    for (let k = 1; k < 10; k++) { ctx.beginPath(); ctx.moveTo(px(k / 10), 0); ctx.lineTo(px(k / 10), H); ctx.stroke(); ctx.beginPath(); ctx.moveTo(0, py(k / 10)); ctx.lineTo(W, py(k / 10)); ctx.stroke(); }
+    let mal = 0, nsv = 0;
+    if (modele && (modele.w0 || modele.w1)) {
+        for (const niveau of [-1, 1]) {
+            const [[x1, y1], [x2, y2]] = ligne(modele, niveau);
+            ctx.setLineDash([7, 6]); ctx.strokeStyle = COUL.marge; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+        }
+        const [[x1, y1], [x2, y2]] = ligne(modele, 0);
+        ctx.strokeStyle = COUL.droite; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    }
+    points.forEach((p, i) => {
+        const sv = modele && modele.a[i] > 1e-6, faux = modele && p.c * score(modele, p.x, p.y) < 0;
+        if (sv) nsv++;
+        if (faux) mal++;
+        ctx.beginPath(); ctx.arc(px(p.x), py(p.y), 7, 0, 7); ctx.fillStyle = p.c > 0 ? COUL.bleu : COUL.rouge; ctx.fill();
+        ctx.strokeStyle = COUL.fond; ctx.lineWidth = 1.5; ctx.stroke();
+        if (faux) { ctx.beginPath(); ctx.arc(px(p.x), py(p.y), 15, 0, 7); ctx.strokeStyle = COUL.mal; ctx.lineWidth = 2.5; ctx.stroke(); }
+        if (sv) { ctx.beginPath(); ctx.arc(px(p.x), py(p.y), 11, 0, 7); ctx.strokeStyle = COUL.encre; ctx.lineWidth = 2.2; ctx.stroke(); }
+    });
+    const info = document.getElementById('info');
+    if (!modele) info.textContent = 'Il faut au moins un point de chaque couleur.';
+    else {
+        const largeur = 2 / Math.hypot(modele.w0, modele.w1) / ECH * H;   // en pixels du plan
+        info.textContent = `largeur de la marge : ${Math.round(largeur)} · vecteurs de support : ${nsv} · mal classés : ${mal}`;
+    }
+}
+function choisir(c) {
+    couleur = c;
+    document.getElementById('btnRouge').style.boxShadow = c === 'rouge' ? '0 0 0 2px #fff, 0 0 0 4px #94a3b8' : '';
+    document.getElementById('btnBleu').style.boxShadow = c === 'bleu' ? '0 0 0 2px #fff, 0 0 0 4px #94a3b8' : '';
+}
+
+let mode = null, indice = -1, bouge = false, depart = null;
+function souris(ev) { const r = canvas.getBoundingClientRect(); return { x: (ev.clientX - r.left) * W / r.width, y: (ev.clientY - r.top) * H / r.height }; }
+canvas.addEventListener('pointerdown', ev => {
+    const m = souris(ev); bouge = false; depart = m;
+    canvas.setPointerCapture(ev.pointerId);
+    indice = points.findIndex(p => Math.hypot(px(p.x) - m.x, py(p.y) - m.y) < 10);
+    mode = indice >= 0 ? 'point' : 'vide';
+});
+canvas.addEventListener('pointermove', ev => {
+    const m = souris(ev);
+    if (!mode) { canvas.style.cursor = points.some(p => Math.hypot(px(p.x) - m.x, py(p.y) - m.y) < 10) ? 'grab' : 'crosshair'; return; }
+    if (Math.hypot(m.x - depart.x, m.y - depart.y) > 3) bouge = true;
+    if (mode === 'point' && bouge) { points[indice].x = clamp(ux(m.x)); points[indice].y = clamp(uy(m.y)); dessiner(); }
+});
+canvas.addEventListener('pointerup', ev => {
+    const m = souris(ev);
+    if (mode === 'point' && !bouge) points.splice(indice, 1);
+    if (mode === 'vide' && !bouge) points.push({ x: clamp(ux(m.x)), y: clamp(uy(m.y)), c: couleur === 'bleu' ? 1 : -1 });
+    mode = null; indice = -1; dessiner();
+});
+function afficherTol() { document.getElementById('tolAff').textContent = TOL[+document.getElementById('tolerance').value].nom; }
+document.getElementById('tolerance').addEventListener('input', () => { afficherTol(); dessiner(); });
+
+afficherTol();
+choisir('rouge');
+nouveauxPoints();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

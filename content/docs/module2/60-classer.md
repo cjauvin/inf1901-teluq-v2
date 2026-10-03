@@ -156,6 +156,110 @@ On répète jusqu'à ce que l'erreur ne diminue plus. C'est le même mécanisme 
 
 {{% /details %}}
 
+## La plus grande marge : les machines à vecteurs de support
+
+Dans l'applet de la section précédente, quand les deux groupes ne se chevauchent
+pas, on trouve facilement une droite qui ne fait aucune erreur. On en trouve même
+une infinité : on peut la déplacer ou la faire pivoter un peu, et elle sépare
+toujours parfaitement les deux couleurs. L'erreur ne permet donc pas de choisir
+entre elles. Laquelle faut-il préférer ?
+
+{{< image src="/images/module2/trois-droites-marge.svg" alt="Deux panneaux avec les mêmes points, rouges en haut à gauche et bleus en bas à droite. À gauche, trois droites les séparent toutes sans erreur : A frôle les points rouges, B frôle les points bleus, C passe au milieu. À droite, la droite C seule, entourée de la plus large bande vide possible, la marge ; les trois points qui touchent les bords de la bande, les vecteurs de support, sont entourés." title="Plusieurs droites séparent les deux groupes sans erreur ; celle de plus grande marge passe le plus loin des deux." loading="lazy" >}}
+
+L'intuition répond : celle qui passe au milieu, le plus loin possible des deux
+groupes. Une droite qui frôle les points rouges a toutes les chances de mal
+classer le prochain point rouge, s'il tombe un peu à côté des autres. Une droite
+éloignée des deux groupes laisse de la place à ces variations.
+
+**La marge.** Autour d'une droite qui sépare les deux groupes, on peut tracer une
+bande vide, aussi large que possible, qui ne contient aucun point. Sa largeur
+s'appelle la **marge**. La **machine à vecteurs de support** (*support vector
+machine*, ou SVM) choisit, parmi toutes les droites qui séparent les deux
+groupes, celle dont la marge est la plus large. En français, on l'appelle aussi
+**séparateur à vaste marge**, un nom qui garde le sigle SVM et décrit bien la
+méthode.
+
+**Les vecteurs de support.** Quand la bande est la plus large possible, quelques
+points en touchent les bords, souvent deux ou trois. Ce sont eux qui la bloquent :
+on ne peut pas l'élargir sans les englober. On les appelle les **vecteurs de
+support**, parce que la frontière s'appuie sur eux (un point du plan est un
+vecteur, au sens du chapitre
+« [Regarder les données](docs/module2/30-les-donnees/#un-vecteur-cest-un-point-dans-un-espace) »).
+Tous les autres points n'ont aucune influence sur la frontière : on peut les
+déplacer, les retirer ou en ajouter loin de la bande, sans que rien change. C'est
+une différence importante avec la régression logistique, où chaque point tire un
+peu sur la frontière.
+
+Dans l'applet ci-dessous, la frontière est recalculée à chaque modification. La
+bande colorée montre la marge, et les vecteurs de support sont entourés.
+
+{{< applet src="/html/applets/svm.html" height="669" >}}
+
+1. Déplacez un point éloigné de la frontière. Rien ne change.
+2. Déplacez un des points entourés. La frontière et la bande bougent aussitôt.
+3. Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
+   se réorganise autour de ce nouveau point.
+4. Glissez un point rouge au milieu des bleus, puis réglez le curseur de
+   tolérance, décrit ci-dessous.
+
+**La marge souple.** Quand les groupes se chevauchent, aucune droite ne les sépare
+parfaitement, et aucune bande vide n'existe. La méthode accepte alors que certains
+points entrent dans la bande, ou même passent du mauvais côté, contre une
+pénalité. Un réglage décide de l'équilibre. Avec une faible tolérance, la méthode
+cherche à classer chaque point correctement, quitte à obtenir une marge étroite et
+une frontière qui suit de près les cas difficiles. Avec une forte tolérance, elle
+préfère une marge large et ignore les points isolés. C'est un
+**hyperparamètre**, et ce choix entre coller aux exemples et rester simple est un
+premier aperçu du compromis présenté dans
+« [Généraliser](docs/module2/70-generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance) ».
+
+**Un peu d'histoire.** L'idée de la frontière de plus grande marge est proposée
+dès 1963 par le mathématicien soviétique Vladimir Vapnik, dans le cadre d'une
+théorie de l'apprentissage qu'il développe avec Alexeï Tchervonenkis. Émigré aux
+États-Unis, Vapnik la reprend aux Bell Labs. En 1992, avec Bernhard Boser et
+Isabelle Guyon, il lui permet de tracer des frontières courbes. En 1995, avec
+Corinna Cortes, il publie la marge souple. C'est le laboratoire où Yann Le Cun
+développe au même moment ses
+[réseaux convolutifs](docs/module3/50-reseaux-convolutifs/#yann-le-cun-et-les-chèques).
+Pendant une quinzaine d'années, les SVM sont l'une des méthodes les plus
+utilisées en apprentissage automatique, par exemple pour classer des textes ou
+analyser des données biologiques. Leur entraînement a un avantage précieux : il
+n'existe qu'une seule meilleure frontière, et on est sûr de la trouver.
+
+Une frontière droite reste une frontière droite, quelle que soit sa marge. Le
+chapitre
+« [Généraliser](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner) »
+montrera comment les SVM tracent aussi des frontières courbes, grâce à une idée
+appelée l'**astuce du noyau**.
+
+{{% details "Les mathématiques des SVM (optionnel)" %}}
+
+Reprenons la notation de la régression logistique, avec cette fois des classes
+notées $y \in \{-1, +1\}$. La frontière est la droite
+$w_1 x_1 + w_2 x_2 + b = 0$. On impose que les points de chaque classe soient du
+bon côté avec une certaine avance :
+
+$$y^{(i)}\,\big(\mathbf{w} \cdot \mathbf{x}^{(i)} + b\big) \ge 1 \quad \text{pour tous les points } i$$
+
+Les bords de la bande sont alors les droites $\mathbf{w} \cdot \mathbf{x} + b = 1$
+et $\mathbf{w} \cdot \mathbf{x} + b = -1$. La largeur de la bande vaut
+$2 / \lVert \mathbf{w} \rVert$. Maximiser la marge revient donc à minimiser
+$\lVert \mathbf{w} \rVert^2$ en respectant ces contraintes. Les vecteurs de
+support sont les points pour lesquels l'inégalité devient une égalité.
+
+Pour la marge souple, on autorise chaque point à enfreindre la contrainte, et on
+pénalise l'écart. On minimise alors
+
+$$\frac{1}{2}\lVert \mathbf{w} \rVert^2 + C \sum_{i=1}^{n} \max\big(0,\; 1 - y^{(i)}(\mathbf{w} \cdot \mathbf{x}^{(i)} + b)\big)$$
+
+Le second terme, appelé *hinge loss*, ne coûte rien pour un point bien classé
+hors de la bande, et augmente à mesure que le point s'enfonce dans la bande ou
+passe du mauvais côté. Le réglage $C$ est l'inverse de la tolérance : un $C$ grand
+pénalise fortement les erreurs. Ce problème n'a qu'un seul minimum, ce qui
+garantit qu'on trouve la meilleure frontière.
+
+{{% /details %}}
+
 ## Renverser le problème : la classification bayésienne
 
 La seconde approche aborde le problème dans l'autre sens. Plutôt que de tracer
