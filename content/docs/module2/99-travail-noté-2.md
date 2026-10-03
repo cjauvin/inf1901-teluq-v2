@@ -106,22 +106,28 @@ non
 
 ![](/images/module2/tn2/sheets_cols_a_et_b.png)
 
-Calculez d'abord, dans la colonne `C`, la probabilité à priori qu'un courriel
-quelconque soit un pourriel ou non (sans tenir compte des mots pour le
-moment) :
+Calculez d'abord, dans la colonne `C`, la probabilité *a priori* qu'un courriel
+quelconque ne soit pas un pourriel (`C1`) ou qu'il en soit un (`C2`), sans tenir
+compte des mots pour le moment. Dans la cellule `C1` :
 
 ```
-=MAP(UNIQUE(B1:B10), LAMBDA(x, COUNTIF(B1:B10, x) / COUNTA(B1:B10)))
+=COUNTIF(B1:B10, "non") / COUNTA(B1:B10)
+```
+
+et dans la cellule `C2` :
+
+```
+=COUNTIF(B1:B10, "oui") / COUNTA(B1:B10)
 ```
 
 {{% hint warning %}}
 
 Si vous obtenez une erreur avec la formule à ce stade, il est très possible que
-les paramètres linguistiques de votre Google Sheets ne soient pas [correctement configurés](../50-google-sheets#parametres-linguistiques).
+les paramètres linguistiques de votre Google Sheets ne soient pas [correctement configurés](docs/50-google-sheets/#paramètres-linguistiques).
 
 {{% /hint %}}
 
-Ces probabilités à priori serviront [plus loin](#utilisation-du-modèle-inférence). Définissez ensuite la colonne `D`
+Ces probabilités *a priori* serviront [plus loin](#utilisation-du-modèle-inférence). Définissez ensuite la colonne `D`
 avec cette formule :
 
 ```
@@ -132,19 +138,23 @@ La colonne `D` devrait maintenant contenir le vocabulaire des courriels :
 
 ![](/images/module2/tn2/sheets_col_d_voc.png)
 
-La colonne `E` doit ensuite contenir le nombre de fois où les mots de la colonne
-`D` apparaissent dans les courriels valides (ceux marqués `non`, qui ne sont pas
-des pourriels) :
+La colonne `E` doit ensuite contenir le nombre de courriels valides (ceux
+marqués `non`, qui ne sont pas des pourriels) dans lesquels apparaît chaque mot
+de la colonne `D` :
 
 ```
-=SUMPRODUCT((B$1:B$10="non") * ISNUMBER(SEARCH(D1, A$1:A$10)))
+=SUMPRODUCT((B$1:B$10="non") * ISNUMBER(SEARCH(" " & D1 & " ", " " & A$1:A$10 & " ")))
 ```
 
-De la même manière, la colonne `F` contient la fréquence des mots qui
-apparaissent dans les courriels marqués `oui`, qui sont des pourriels :
+La formule entoure le mot et chaque courriel d'espaces avant de chercher l'un dans
+l'autre. Sans cette précaution, le mot « le » serait trouvé à l'intérieur de
+« spéciale », et « gratuit » à l'intérieur de « gratuite ».
+
+De la même manière, la colonne `F` contient, pour chaque mot, le nombre de
+courriels marqués `oui`, qui sont des pourriels, dans lesquels il apparaît :
 
 ```
-=SUMPRODUCT((B$1:B$10="oui") * ISNUMBER(SEARCH(D1, A$1:A$10)))
+=SUMPRODUCT((B$1:B$10="oui") * ISNUMBER(SEARCH(" " & D1 & " ", " " & A$1:A$10 & " ")))
 ```
 
 {{% hint warning %}}
@@ -152,8 +162,10 @@ apparaissent dans les courriels marqués `oui`, qui sont des pourriels :
 Notez que les colonnes `E` et `F` doivent avoir le même nombre d'éléments que la
 colonne `D`. Il faut donc utiliser la fonction de remplissage automatique. Le
 plus simple est de glisser (*drag*) la première cellule vers le bas, une fois
-qu'elle a été calculée, ou de double-cliquer sur le petit « + » noir qui apparaît
-en bas à droite de la première cellule.
+qu'elle a été calculée, ou de double-cliquer sur le petit carré bleu qui apparaît
+en bas à droite de la cellule sélectionnée. Google Sheets propose parfois de
+lui-même ce remplissage (« Remplissage automatique suggéré ») : vous pouvez
+l'accepter.
 
 {{% /hint %}}
 
@@ -236,7 +248,7 @@ Dans la colonne `N`, calculez la probabilité que le courriel soit un pourriel
 La classification finale se trouve dans la colonne `O` :
 
 ```
-=IF(M1 > N1; "non"; "oui")
+=IF(M1 > N1, "non", "oui")
 ```
 
 ![](/images/module2/tn2/sheets_toutes_les_cols.png)
@@ -260,9 +272,9 @@ La classification finale se trouve dans la colonne `O` :
 6. Quelles colonnes constituent la partie *discriminative* du modèle ? Expliquez pourquoi.
 
 7. Quelle est la signification des nombres dans les cellules `G11` et
-   `H11` ? Comment peut-on les interpréter ?
+   `H11`, associées au mot « merci » ? Comment peut-on les interpréter ?
 
-8. Quelles sont les probabilités non conditionnelles (à priori) ? À quoi servent-elles ?
+8. Quelles sont les probabilités non conditionnelles (*a priori*) ? À quoi servent-elles ?
 
 9. Est-ce qu'il serait possible d'utiliser seulement ces probabilités
    non conditionnelles pour faire un modèle de classification ? Quelles
