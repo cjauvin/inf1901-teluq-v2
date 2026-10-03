@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : une machine qui apprend le morpion en jouant contre elle-même</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .bouton { padding: 0.4rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.85rem; font-weight: 500; color: #334155; box-shadow: 0 1px 2px rgba(0,0,0,.05); white-space: nowrap; }
+        .bouton:hover { color: #4f46e5; }
+        .bouton.principal { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .case { width: 92px; height: 92px; background: #fbf7ee; border: 2px solid #b8a888; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 44px; font-weight: 800; cursor: pointer; position: relative; }
+        .case .val { position: absolute; bottom: 4px; right: 6px; font-size: 11px; font-weight: 700; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex flex-col md:flex-row gap-4 items-center md:items-stretch">
+        <div class="p-3 rounded-lg" style="background:#efe7d3;border:1px solid #d9cbac">
+            <div id="plateau" class="grid grid-cols-3 gap-2"></div>
+            <div id="etat" class="text-sm font-bold text-center mt-3 h-5" style="color:#3a3531"></div>
+        </div>
+        <div class="flex-1 flex flex-col gap-3 text-sm">
+            <div class="p-3 bg-slate-100 rounded-lg">
+                <div class="font-bold text-slate-700 mb-2">1. Entraîner la machine contre elle-même</div>
+                <div class="flex flex-wrap gap-2 items-center">
+                    <button class="bouton principal" onclick="entrainer(100)">+ 100 parties</button>
+                    <button class="bouton principal" onclick="entrainer(1000)">+ 1 000</button>
+                    <button class="bouton principal" onclick="entrainer(10000)">+ 10 000</button>
+                    <button class="bouton" onclick="oublier()">tout oublier</button>
+                </div>
+                <div class="mt-2 text-slate-600">Parties jouées contre elle-même : <b id="nb">0</b> · positions connues : <b id="connues">0</b></div>
+            </div>
+            <div class="p-3 bg-slate-100 rounded-lg">
+                <div class="font-bold text-slate-700 mb-1">2. Mesurer son niveau (200 parties de test)</div>
+                <div class="text-slate-600">contre un joueur qui joue au hasard : <span id="testHasard">–</span></div>
+                <div class="text-slate-600">contre un joueur parfait : <span id="testParfait">–</span></div>
+            </div>
+            <div class="p-3 bg-slate-100 rounded-lg">
+                <div class="font-bold text-slate-700 mb-2">3. Jouer contre elle</div>
+                <div class="flex flex-wrap gap-2 items-center">
+                    <button class="bouton" onclick="nouvellePartie('X')">je commence (X)</button>
+                    <button class="bouton" onclick="nouvellePartie('O')">elle commence</button>
+                    <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" id="voir" onchange="dessiner()" class="accent-indigo-600"> voir ce qu'elle pense de chacun de vos coups</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Une machine apprend le morpion en jouant contre elle-même. Elle tient une
+ * table : pour chaque position obtenue après un coup, une valeur entre −1
+ * (perdante pour celui qui vient de jouer) et +1 (gagnante). À chaque partie
+ * d'entraînement, elle joue le coup qui mène à la meilleure valeur connue,
+ * sauf de temps en temps où elle essaie un coup au hasard (exploration).
+ * À la fin de la partie, elle rapproche la valeur de chaque position jouée
+ * du résultat obtenu. Elle ne connaît que les règles : personne ne lui
+ * montre de bons coups.
+ */
+const LIGNES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+const C = { x: '#c4564a', o: '#3a6ea5', encre: '#3a3531' };
+let V = new Map(), parties = 0, plateau, humain = 'X', fini = false;
+
+function gagnant(s) {
+    for (const [a, b, c] of LIGNES) if (s[a] !== ' ' && s[a] === s[b] && s[a] === s[c]) return s[a];
+    return s.includes(' ') ? null : 'nul';
+}
+const jouer = (s, i, j) => s.slice(0, i) + j + s.slice(i + 1);
+const libres = s => [...s].map((c, i) => c === ' ' ? i : -1).filter(i => i >= 0);
+const autre = j => j === 'X' ? 'O' : 'X';
+const valeur = s => V.has(s) ? V.get(s) : 0;
+
+// Le coup choisi par la machine : la meilleure valeur connue, avec exploration éventuelle.
+function choisir(s, j, epsilon) {
+    const coups = libres(s);
+    if (Math.random() < epsilon) return coups[Math.floor(Math.random() * coups.length)];
+    let meilleurs = [], max = -Infinity;
+    for (const i of coups) {
+        const v = valeur(jouer(s, i, j));
+        if (v > max + 1e-9) { max = v; meilleurs = [i]; } else if (Math.abs(v - max) <= 1e-9) meilleurs.push(i);
+    }
+    return meilleurs[Math.floor(Math.random() * meilleurs.length)];
+}
+
+function partieEntrainement() {
+    let s = '         ', j = 'X', g = null;
+    const histoire = [];
+    while (!(g = gagnant(s))) {
+        s = jouer(s, choisir(s, j, 0.15), j);
+        histoire.push([s, j]);
+        j = autre(j);
+    }
+    for (const [p, qui] of histoire) {
+        const r = g === 'nul' ? 0 : (g === qui ? 1 : -1);
+        V.set(p, valeur(p) + 0.12 * (r - valeur(p)));
+    }
+}
+
+// Le joueur parfait, par une recherche complète dans l'arbre des coups (minimax, Module 1).
+const memo = new Map();
+function minimax(s, j) {               // valeur de la position pour le joueur j, qui doit jouer
+    const cle = s + j;
+    if (memo.has(cle)) return memo.get(cle);
+    const g = gagnant(s);
+    let v;
+    if (g) v = g === 'nul' ? 0 : (g === j ? 1 : -1);
+    else v = Math.max(...libres(s).map(i => -minimax(jouer(s, i, j), autre(j))));
+    memo.set(cle, v);
+    return v;
+}
+function coupParfait(s, j) {
+    const coups = libres(s), vals = coups.map(i => -minimax(jouer(s, i, j), autre(j))), m = Math.max(...vals);
+    const bons = coups.filter((_, k) => vals[k] === m);
+    return bons[Math.floor(Math.random() * bons.length)];
+}
+
+function tester(adversaire) {           // 200 parties, la machine joue X puis O à tour de rôle
+    let g = 0, n = 0, p = 0;
+    for (let k = 0; k < 200; k++) {
+        const machine = k % 2 ? 'O' : 'X';
+        let s = '         ', j = 'X', r;
+        while (!(r = gagnant(s))) {
+            const i = j === machine ? choisir(s, j, 0) : (adversaire === 'parfait' ? coupParfait(s, j) : libres(s)[Math.floor(Math.random() * libres(s).length)]);
+            s = jouer(s, i, j); j = autre(j);
+        }
+        if (r === 'nul') n++; else if (r === machine) g++; else p++;
+    }
+    return `${g} gagnées, ${n} nulles, ${p} perdues`;
+}
+
+function entrainer(n) {
+    for (let k = 0; k < n; k++) partieEntrainement();
+    parties += n;
+    majInfos();
+}
+function oublier() { V = new Map(); parties = 0; majInfos(); }
+function majInfos() {
+    document.getElementById('nb').textContent = parties.toLocaleString('fr-CA');
+    document.getElementById('connues').textContent = V.size.toLocaleString('fr-CA');
+    document.getElementById('testHasard').textContent = tester('hasard');
+    document.getElementById('testParfait').textContent = tester('parfait');
+    nouvellePartie(humain);
+}
+
+function nouvellePartie(h) {
+    humain = h; plateau = '         '; fini = false;
+    if (humain === 'O') plateau = jouer(plateau, choisir(plateau, 'X', 0), 'X');
+    dessiner();
+}
+function cliquer(i) {
+    if (fini || plateau[i] !== ' ') return;
+    plateau = jouer(plateau, i, humain);
+    if (!gagnant(plateau)) plateau = jouer(plateau, choisir(plateau, autre(humain), 0), autre(humain));
+    dessiner();
+}
+function dessiner() {
+    const g = gagnant(plateau), voir = document.getElementById('voir').checked, machine = autre(humain);
+    fini = !!g;
+    const div = document.getElementById('plateau');
+    div.innerHTML = '';
+    for (let i = 0; i < 9; i++) {
+        const c = document.createElement('div');
+        c.className = 'case';
+        c.textContent = plateau[i] === ' ' ? '' : plateau[i];
+        c.style.color = plateau[i] === 'X' ? C.x : C.o;
+        if (voir && !g && plateau[i] === ' ') {
+            const v = valeur(jouer(plateau, i, humain));      // la valeur que la machine attribue à ce coup, pour celui qui le joue
+            const t = document.createElement('span');
+            t.className = 'val'; t.textContent = (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2).replace('.', ',');
+            t.style.color = v > 0.05 ? '#2f6f6a' : v < -0.05 ? '#c4564a' : '#7a6f63';
+            c.appendChild(t);
+        }
+        c.onclick = () => cliquer(i);
+        div.appendChild(c);
+    }
+    const e = document.getElementById('etat');
+    e.textContent = !g ? `À vous de jouer (${humain}).` : g === 'nul' ? 'Partie nulle.' : g === humain ? 'Vous avez gagné.' : 'La machine a gagné.';
+}
+
+majInfos();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
