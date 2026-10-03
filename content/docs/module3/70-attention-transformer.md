@@ -240,7 +240,7 @@ est en anglais.
 
 {{< youtube id="eMlx5fFNoYc" >}}
 
-Le chapitre suivant, « Apprendre à jouer : le renforcement profond », quitte les
+Le chapitre suivant, « [Apprendre à jouer : le renforcement profond](docs/module3/80-renforcement-profond) », quitte les
 séquences. Il revient à
 l'[apprentissage par renforcement](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement)
 du Module 2 et montre ce qu'il devient avec les réseaux profonds.

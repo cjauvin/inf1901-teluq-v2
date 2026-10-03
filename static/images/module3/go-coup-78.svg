@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 560 636" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Partie 4, coup 78 de Lee Sedol</title>
+<desc>Un goban de 19 lignes sur 19, avec la position de la quatrième partie après 78 coups. Lee Sedol a les blancs. Le coup 78, une pierre blanche en L11, est entourée en rouge, au milieu d'un groupe de pierres noires au centre du goban.</desc>
+<rect x="0" y="0" width="560" height="636" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="280.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Partie 4, coup 78 de Lee Sedol</text>
+<rect x="28" y="66" width="504" height="504" rx="6" fill="#e6c98f" stroke="#9a5b33" stroke-width="1.2"/>
+<line x1="46" y1="84" x2="514" y2="84" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="46" y1="84" x2="46" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="46" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">A</text>
+<text x="20" y="88" font-size="10.5" fill="#7a6f63" text-anchor="middle">19</text>
+<line x1="46" y1="110" x2="514" y2="110" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="72" y1="84" x2="72" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="72" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">B</text>
+<text x="20" y="114" font-size="10.5" fill="#7a6f63" text-anchor="middle">18</text>
+<line x1="46" y1="136" x2="514" y2="136" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="98" y1="84" x2="98" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="98" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">C</text>
+<text x="20" y="140" font-size="10.5" fill="#7a6f63" text-anchor="middle">17</text>
+<line x1="46" y1="162" x2="514" y2="162" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="124" y1="84" x2="124" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="124" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">D</text>
+<text x="20" y="166" font-size="10.5" fill="#7a6f63" text-anchor="middle">16</text>
+<line x1="46" y1="188" x2="514" y2="188" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="150" y1="84" x2="150" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="150" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">E</text>
+<text x="20" y="192" font-size="10.5" fill="#7a6f63" text-anchor="middle">15</text>
+<line x1="46" y1="214" x2="514" y2="214" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="176" y1="84" x2="176" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="176" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">F</text>
+<text x="20" y="218" font-size="10.5" fill="#7a6f63" text-anchor="middle">14</text>
+<line x1="46" y1="240" x2="514" y2="240" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="202" y1="84" x2="202" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="202" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">G</text>
+<text x="20" y="244" font-size="10.5" fill="#7a6f63" text-anchor="middle">13</text>
+<line x1="46" y1="266" x2="514" y2="266" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="228" y1="84" x2="228" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="228" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">H</text>
+<text x="20" y="270" font-size="10.5" fill="#7a6f63" text-anchor="middle">12</text>
+<line x1="46" y1="292" x2="514" y2="292" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="254" y1="84" x2="254" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="254" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">J</text>
+<text x="20" y="296" font-size="10.5" fill="#7a6f63" text-anchor="middle">11</text>
+<line x1="46" y1="318" x2="514" y2="318" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="280" y1="84" x2="280" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="280" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">K</text>
+<text x="20" y="322" font-size="10.5" fill="#7a6f63" text-anchor="middle">10</text>
+<line x1="46" y1="344" x2="514" y2="344" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="306" y1="84" x2="306" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="306" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">L</text>
+<text x="20" y="348" font-size="10.5" fill="#7a6f63" text-anchor="middle">9</text>
+<line x1="46" y1="370" x2="514" y2="370" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="332" y1="84" x2="332" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="332" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">M</text>
+<text x="20" y="374" font-size="10.5" fill="#7a6f63" text-anchor="middle">8</text>
+<line x1="46" y1="396" x2="514" y2="396" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="358" y1="84" x2="358" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="358" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">N</text>
+<text x="20" y="400" font-size="10.5" fill="#7a6f63" text-anchor="middle">7</text>
+<line x1="46" y1="422" x2="514" y2="422" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="384" y1="84" x2="384" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="384" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">O</text>
+<text x="20" y="426" font-size="10.5" fill="#7a6f63" text-anchor="middle">6</text>
+<line x1="46" y1="448" x2="514" y2="448" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="410" y1="84" x2="410" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="410" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">P</text>
+<text x="20" y="452" font-size="10.5" fill="#7a6f63" text-anchor="middle">5</text>
+<line x1="46" y1="474" x2="514" y2="474" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="436" y1="84" x2="436" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="436" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">Q</text>
+<text x="20" y="478" font-size="10.5" fill="#7a6f63" text-anchor="middle">4</text>
+<line x1="46" y1="500" x2="514" y2="500" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="462" y1="84" x2="462" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="462" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">R</text>
+<text x="20" y="504" font-size="10.5" fill="#7a6f63" text-anchor="middle">3</text>
+<line x1="46" y1="526" x2="514" y2="526" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="488" y1="84" x2="488" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="488" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">S</text>
+<text x="20" y="530" font-size="10.5" fill="#7a6f63" text-anchor="middle">2</text>
+<line x1="46" y1="552" x2="514" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<line x1="514" y1="84" x2="514" y2="552" stroke="#5b5249" stroke-width="0.8"/>
+<text x="514" y="584" font-size="10.5" fill="#7a6f63" text-anchor="middle">T</text>
+<text x="20" y="556" font-size="10.5" fill="#7a6f63" text-anchor="middle">1</text>
+<circle cx="124" cy="162" r="2.6" fill="#5b5249"/>
+<circle cx="124" cy="318" r="2.6" fill="#5b5249"/>
+<circle cx="124" cy="474" r="2.6" fill="#5b5249"/>
+<circle cx="280" cy="162" r="2.6" fill="#5b5249"/>
+<circle cx="280" cy="318" r="2.6" fill="#5b5249"/>
+<circle cx="280" cy="474" r="2.6" fill="#5b5249"/>
+<circle cx="436" cy="162" r="2.6" fill="#5b5249"/>
+<circle cx="436" cy="318" r="2.6" fill="#5b5249"/>
+<circle cx="436" cy="474" r="2.6" fill="#5b5249"/>
+<circle cx="98" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="98" cy="344" r="12.0" fill="#3a3531"/>
+<circle cx="98" cy="422" r="12.0" fill="#3a3531"/>
+<circle cx="124" cy="136" r="12.0" fill="#3a3531"/>
+<circle cx="124" cy="344" r="12.0" fill="#3a3531"/>
+<circle cx="150" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="150" cy="318" r="12.0" fill="#3a3531"/>
+<circle cx="150" cy="474" r="12.0" fill="#3a3531"/>
+<circle cx="176" cy="136" r="12.0" fill="#3a3531"/>
+<circle cx="176" cy="266" r="12.0" fill="#3a3531"/>
+<circle cx="176" cy="292" r="12.0" fill="#3a3531"/>
+<circle cx="176" cy="344" r="12.0" fill="#3a3531"/>
+<circle cx="202" cy="214" r="12.0" fill="#3a3531"/>
+<circle cx="202" cy="240" r="12.0" fill="#3a3531"/>
+<circle cx="228" cy="136" r="12.0" fill="#3a3531"/>
+<circle cx="228" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="228" cy="188" r="12.0" fill="#3a3531"/>
+<circle cx="228" cy="318" r="12.0" fill="#3a3531"/>
+<circle cx="254" cy="500" r="12.0" fill="#3a3531"/>
+<circle cx="280" cy="292" r="12.0" fill="#3a3531"/>
+<circle cx="306" cy="344" r="12.0" fill="#3a3531"/>
+<circle cx="332" cy="214" r="12.0" fill="#3a3531"/>
+<circle cx="332" cy="266" r="12.0" fill="#3a3531"/>
+<circle cx="332" cy="292" r="12.0" fill="#3a3531"/>
+<circle cx="358" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="358" cy="188" r="12.0" fill="#3a3531"/>
+<circle cx="358" cy="240" r="12.0" fill="#3a3531"/>
+<circle cx="358" cy="266" r="12.0" fill="#3a3531"/>
+<circle cx="358" cy="474" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="110" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="136" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="292" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="318" r="12.0" fill="#3a3531"/>
+<circle cx="384" cy="500" r="12.0" fill="#3a3531"/>
+<circle cx="410" cy="318" r="12.0" fill="#3a3531"/>
+<circle cx="410" cy="474" r="12.0" fill="#3a3531"/>
+<circle cx="436" cy="162" r="12.0" fill="#3a3531"/>
+<circle cx="436" cy="318" r="12.0" fill="#3a3531"/>
+<circle cx="72" cy="318" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="72" cy="474" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="98" cy="240" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="98" cy="318" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="124" cy="318" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="124" cy="474" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="150" cy="136" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="150" cy="266" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="150" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="150" cy="448" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="176" cy="162" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="176" cy="214" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="176" cy="240" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="176" cy="474" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="176" cy="500" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="202" cy="188" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="202" cy="266" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="254" cy="162" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="254" cy="344" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="280" cy="240" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="306" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="332" cy="136" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="358" cy="136" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="358" cy="214" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="358" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="358" cy="318" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="358" cy="344" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="384" cy="188" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="384" cy="214" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="384" cy="240" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="384" cy="266" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="410" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="410" cy="500" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="436" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="436" cy="448" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="436" cy="500" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="462" cy="292" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="462" cy="318" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="462" cy="474" r="11.6" fill="#fdfbf6" stroke="#5b5249" stroke-width="1"/>
+<circle cx="306" cy="292" r="16.0" fill="none" stroke="#c4564a" stroke-width="3"/>
+<text x="306" y="296" font-size="10.5" fill="#3a3531" text-anchor="middle" font-weight="700">78</text>
+<text x="280.0" y="618" font-size="12.5" fill="#7a6f63" text-anchor="middle">Lee Sedol (blancs) vient de jouer en L11, au cœur de la zone noire du centre.</text>
+</svg>
