@@ -193,7 +193,7 @@ peu sur la frontière.
 Dans l'applet ci-dessous, la frontière est recalculée à chaque modification. La
 bande colorée montre la marge, et les vecteurs de support sont entourés.
 
-{{< applet src="/html/applets/svm.html" height="669" >}}
+{{< applet src="/html/applets/svm.html" height="709" >}}
 
 1. Déplacez un point éloigné de la frontière. Rien ne change.
 2. Déplacez un des points entourés. La frontière et la bande bougent aussitôt.
@@ -228,7 +228,7 @@ n'existe qu'une seule meilleure frontière, et on est sûr de la trouver.
 
 Une frontière droite reste une frontière droite, quelle que soit sa marge. Le
 chapitre
-« [Généraliser](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner) »
+« [Généraliser](docs/module2/70-generaliser/#ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau) »
 montrera comment les SVM tracent aussi des frontières courbes, grâce à une idée
 appelée l'**astuce du noyau**.
 

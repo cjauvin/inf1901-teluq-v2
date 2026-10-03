@@ -155,7 +155,71 @@ le XOR devient séparable par une droite dans ce nouvel espace. Cependant, c'est
 l'humain qui a dû trouver cette astuce, et il arrive que personne ne sache quelle
 caractéristique construire.
 
-Le Module 3 traitera cette question, dans « [Une couche cachée](docs/module3/20-une-couche-cachee/#ce-que-fait-la-couche-cachée-changer-de-point-de-vue) ». Les réseaux de neurones
+### Ajouter des dimensions sans les calculer : l'astuce du noyau
+
+La caractéristique $x_1 \cdot x_2$ résout le XOR, mais il a fallu la trouver. On
+peut contourner cette difficulté par la quantité : au lieu de chercher la bonne
+caractéristique, on en ajoute beaucoup, par exemple tous les produits et tous les
+carrés des entrées, $x_1 \cdot x_2$, $x_1^2$, $x_2^2$, et ainsi de suite. Dans cet
+espace agrandi, un modèle linéaire a beaucoup plus de chances de trouver une
+séparation par un plan. Et une séparation par un plan dans l'espace agrandi
+correspond à une frontière **courbe** dans le plan de départ.
+
+{{< image src="/images/module2/xor-noyau.svg" alt="Deux panneaux. À gauche, les quatre cas du XOR dans un espace à trois dimensions : les deux entrées x₁ et x₂, et une troisième, leur produit x₁·x₂. Seul le cas (1, 1) est soulevé. Un plan incliné passe entre les deux points bleus, au-dessus, et les deux points rouges, au-dessous. À droite, le plan de départ, où cette séparation devient une frontière courbe, en deux branches, qui entourent chacune un coin bleu ; les deux points rouges sont dans la zone entre les deux courbes." title="Le XOR avec la caractéristique x₁·x₂ : un plan le sépare dans l'espace agrandi, ce qui donne une frontière courbe dans le plan de départ." loading="lazy" >}}
+
+Cette méthode a un coût. Le nombre de caractéristiques ajoutées explose avec le
+nombre d'entrées. Pour une image de 784 pixels, les seuls produits de deux pixels
+donnent déjà plus de 300 000 caractéristiques. Les produits de trois pixels en
+donnent environ 80 millions.
+
+L'**astuce du noyau** évite ce calcul. Elle repose sur une propriété des
+[SVM](docs/module2/60-classer/#la-plus-grande-marge-les-machines-à-vecteurs-de-support) :
+pour trouver la frontière de plus grande marge, ils n'ont jamais besoin des
+coordonnées des points. Ils n'utilisent qu'une mesure de **ressemblance** entre
+deux points, calculée pour chaque paire. Or, pour de nombreux espaces agrandis,
+cette ressemblance peut se calculer directement à partir des coordonnées de
+départ, avec une formule simple appelée **noyau**, sans jamais construire les
+nouvelles caractéristiques. Le SVM travaille donc comme s'il disposait de
+millions de caractéristiques, sans en calculer aucune.
+
+Le noyau le plus utilisé, le **noyau gaussien**, mesure la ressemblance de deux
+points par leur proximité : elle vaut 1 pour deux points confondus, et diminue
+rapidement avec la distance. Il correspond à un espace agrandi d'une infinité de
+dimensions. Un SVM équipé de ce noyau rappelle les
+[plus proches voisins](docs/module2/40-predire-par-ressemblance/#les-k-plus-proches-voisins) :
+un nouveau point est classé selon sa ressemblance avec les vecteurs de support,
+comme kNN le classait selon ses voisins. La différence est que le SVM ne garde
+que les vecteurs de support, et qu'il pondère leur influence pour obtenir la plus
+grande marge.
+
+L'applet ci-dessous est celle de la section sur la marge, avec le jeu de points
+« XOR » et le noyau gaussien. Le curseur de portée règle la distance à laquelle
+deux points se ressemblent encore.
+
+{{< applet src="/html/applets/svm.html?jeu=xor&noyau=gaussien" height="709" >}}
+
+1. Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
+   mal classés.
+2. Revenez au noyau gaussien. La frontière se courbe et sépare les quatre groupes.
+3. Réduisez la portée. La frontière se met à entourer chaque groupe de près, et
+   presque tous les points deviennent des vecteurs de support. C'est le
+   sur-apprentissage (*overfitting*) de la
+   [section suivante](#trop-coller-ou-trop-lisser-le-compromis-biais-variance).
+
+L'idée du noyau date de 1964, avec les travaux de Mark Aizerman et de ses
+collègues à Moscou. Son union avec la marge maximale, en 1992 (Boser, Guyon et
+Vapnik), a fait le succès des SVM pendant les années 1990 et 2000.
+
+L'astuce du noyau a pourtant deux limites. D'abord, c'est encore l'humain qui
+choisit le noyau, c'est-à-dire la façon de mesurer la ressemblance entre deux
+exemples. Le problème de la bonne caractéristique est déplacé, pas supprimé.
+Ensuite, le calcul porte sur toutes les paires d'exemples. Avec 10 000 exemples,
+cela fait 50 millions de paires. Avec un million d'exemples, cela devient
+impraticable. Ces deux limites expliquent en partie pourquoi les réseaux de
+neurones, qui apprennent leurs caractéristiques et s'adaptent bien aux très
+grandes quantités de données, ont fini par prendre le relais.
+
+Le Module 3 reprend cette question, dans « [Une couche cachée](docs/module3/20-une-couche-cachee/#ce-que-fait-la-couche-cachée-changer-de-point-de-vue) ». Les réseaux de neurones
 apprennent à **construire eux-mêmes** les caractéristiques qui rendent le
 problème séparable, en empilant des couches. La limite constatée en 1969 sera
 dépassée en 1986. C'est la question que le [Module 1](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) avait laissée ouverte, et le [Module 3](docs/module3/30-entrainer-un-reseau/#1986) y répondra.
