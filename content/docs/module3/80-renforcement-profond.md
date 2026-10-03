@@ -219,5 +219,5 @@ les entraîner à raisonner sur des problèmes dont la réponse peut être véri
 [Module 4](docs/module4) présentera ces méthodes.
 
 Les réseaux profonds voient, lisent et jouent désormais mieux que nous dans
-plusieurs domaines. Le dernier chapitre, « Tromper un réseau », montre qu'ils
+plusieurs domaines. Le dernier chapitre, « [Tromper un réseau](docs/module3/90-tromper-un-reseau) », montre qu'ils
 peuvent pourtant être trompés de façon surprenante.
