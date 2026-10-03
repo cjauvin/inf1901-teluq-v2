@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : tromper un classifieur de chiffres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        canvas.img { image-rendering: pixelated; width: 100%; border: 1px solid #b8a888; border-radius: 4px; }
+        .choix { padding: 0.25rem 0.55rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.8rem; font-weight: 600; color: #334155; }
+        .choix.actif { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .choix.cible.actif { background: #c4564a; border-color: #c4564a; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex items-center gap-3 rounded-lg p-3" style="background:#fbf7ee;border:1px solid #d9cbac">
+        <div class="text-center" style="flex:1"><div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Image d'origine</div><canvas id="orig" class="img"></canvas><div id="repOrig" class="text-xs mt-1 text-slate-600 h-4"></div></div>
+        <div class="text-2xl font-bold text-slate-400">+</div>
+        <div class="text-center" style="flex:1"><div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Perturbation</div><canvas id="pert" class="img"></canvas><div class="text-xs mt-1 text-slate-600 h-4">± <b id="epsAff2"></b> au plus par pixel</div></div>
+        <div class="text-2xl font-bold text-slate-400">=</div>
+        <div class="text-center" style="flex:1"><div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Image modifiée</div><canvas id="modif" class="img"></canvas><div id="repModif" class="text-xs mt-1 font-bold h-4"></div></div>
+        <div style="flex:1.25">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1 text-center">Réponse du classifieur</div>
+            <svg id="barres" viewBox="0 0 200 190" class="w-full"></svg>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-col gap-2 text-sm">
+        <div class="flex flex-wrap items-center gap-2"><span class="font-bold text-slate-700 w-36">Chiffre d'origine :</span><div id="chiffres" class="flex flex-wrap gap-1"></div></div>
+        <div class="flex flex-wrap items-center gap-2"><span class="font-bold text-slate-700 w-36">Lui faire dire :</span><div id="cibles" class="flex flex-wrap gap-1"></div></div>
+        <div class="flex flex-wrap items-center gap-3"><span class="font-bold text-slate-700 w-36">Force : <span id="epsAff"></span></span>
+            <input type="range" id="eps" min="0" max="0.4" step="0.01" value="0" class="flex-1 accent-indigo-600" style="min-width:12rem"></div>
+    </div>
+    <div id="info" class="text-xs text-slate-500 text-center mt-2"></div>
+</div>
+</div>
+
+<script>
+/**
+ * Un classifieur simple (une régression logistique à dix sorties, sans couche
+ * cachée) est entraîné dans la page, sur des chiffres dessinés avec plusieurs
+ * polices, tailles, positions et inclinaisons. On fabrique ensuite un exemple
+ * adverse : chaque pixel est déplacé d'au plus « force », dans le sens qui
+ * augmente le plus la probabilité de la réponse cible (méthode du signe du
+ * gradient, Goodfellow et collègues, 2014).
+ */
+const N = 28, D = N * N, POLICES = ['Arial', 'Georgia', 'Courier New', 'Verdana', 'Times New Roman', 'Trebuchet MS', 'Helvetica'];
+let W = [], B = [], chiffre = 3, cible = 8;
+
+function hasard(seed) { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; }
+function dessiner(c, police, taille, dx, dy, angle, gras) {
+    const cv = document.createElement('canvas'); cv.width = cv.height = N;
+    const x = cv.getContext('2d');
+    x.translate(N / 2 + dx, N / 2 + dy); x.rotate(angle);
+    x.font = `${gras ? 'bold ' : ''}${taille}px "${police}"`; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(String(c), 0, 1);
+    const d = x.getImageData(0, 0, N, N).data;
+    return Float32Array.from({ length: D }, (_, i) => d[i * 4 + 3] / 255);
+}
+function exemples(n, r) {
+    const X = [], Y = [];
+    for (let k = 0; k < n; k++) {
+        const c = k % 10;
+        X.push(dessiner(c, POLICES[Math.floor(r() * POLICES.length)], 19 + r() * 5, (r() - 0.5) * 3, (r() - 0.5) * 2, (r() - 0.5) * 0.2, r() < 0.4));
+        Y.push(c);
+    }
+    return [X, Y];
+}
+function probas(x) {
+    const z = W.map((w, k) => { let s = B[k]; for (let i = 0; i < D; i++) s += w[i] * x[i]; return s; });
+    const m = Math.max(...z), e = z.map(v => Math.exp(v - m)), t = e.reduce((a, b) => a + b, 0);
+    return e.map(v => v / t);
+}
+function entrainer() {
+    const r = hasard(12345), [X, Y] = exemples(6000, r);
+    W = Array.from({ length: 10 }, () => new Float32Array(D)); B = new Float32Array(10);
+    for (let ep = 0; ep < 15; ep++) {
+        const taux = 0.5 / (1 + ep);
+        for (let n = 0; n < X.length; n++) {
+            const p = probas(X[n]);
+            for (let k = 0; k < 10; k++) {
+                const g = p[k] - (Y[n] === k ? 1 : 0);
+                if (Math.abs(g) < 1e-4) continue;
+                const w = W[k], x = X[n];
+                for (let i = 0; i < D; i++) w[i] -= taux * (g * x[i] + 1e-4 * w[i]);
+                B[k] -= taux * g;
+            }
+        }
+    }
+    const [Xt, Yt] = exemples(1000, hasard(999));
+    const juste = Xt.filter((x, n) => { const p = probas(x); return p.indexOf(Math.max(...p)) === Yt[n]; }).length;
+    document.getElementById('info').textContent = `Ce classifieur, entraîné dans la page sur 6 000 chiffres dessinés par l'ordinateur, reconnaît ${Math.round(juste / 10)} % de 1 000 chiffres de test.`;
+}
+
+function peindre(id, x, signe) {
+    const cv = document.getElementById(id); cv.width = cv.height = N;
+    const ctx = cv.getContext('2d'), img = ctx.createImageData(N, N);
+    for (let i = 0; i < D; i++) {
+        let r, g, b;
+        if (signe) {                    // la perturbation : rouge si le pixel fonce, bleu s'il pâlit
+            const v = x[i], t = Math.min(1, Math.abs(v) / 0.4);
+            [r, g, b] = v > 0 ? [251 - t * 55, 247 - t * 160, 238 - t * 164] : [251 - t * 193, 247 - t * 137, 238 - t * 73];
+        } else { const v = 1 - x[i]; r = 58 + v * 193; g = 53 + v * 194; b = 49 + v * 189; }
+        img.data.set([r, g, b, 255], i * 4);
+    }
+    ctx.putImageData(img, 0, 0);
+}
+function maj() {
+    const eps = +document.getElementById('eps').value;
+    const fr = v => v.toFixed(2).replace('.', ',');
+    document.getElementById('epsAff').textContent = fr(eps);
+    document.getElementById('epsAff2').textContent = fr(eps);
+    const x = dessiner(chiffre, 'Arial', 22, 0, 0, 0, false), p0 = probas(x);
+    // la direction : le gradient de log p(cible) par rapport aux pixels
+    const dir = new Float32Array(D);
+    for (let i = 0; i < D; i++) { let s = W[cible][i]; for (let k = 0; k < 10; k++) s -= p0[k] * W[k][i]; dir[i] = s; }
+    const xm = new Float32Array(D), pert = new Float32Array(D);
+    for (let i = 0; i < D; i++) { xm[i] = Math.min(1, Math.max(0, x[i] + eps * Math.sign(dir[i]))); pert[i] = xm[i] - x[i]; }
+    const p = probas(xm), rep = p.indexOf(Math.max(...p)), rep0 = p0.indexOf(Math.max(...p0));
+    peindre('orig', x); peindre('pert', pert, true); peindre('modif', xm);
+    document.getElementById('repOrig').textContent = `réponse : ${rep0} (${Math.round(p0[rep0] * 100)} %)`;
+    const rm = document.getElementById('repModif');
+    rm.textContent = `réponse : ${rep} (${Math.round(p[rep] * 100)} %)`;
+    rm.style.color = rep === chiffre ? '#2f6f6a' : '#c4564a';
+    let s = '';
+    for (let k = 0; k < 10; k++) {
+        const y = 4 + k * 18.4, l = p[k] * 128;
+        const coul = k === rep ? (k === chiffre ? '#2f6f6a' : '#c4564a') : '#b8a888';
+        s += `<text x="10" y="${y + 11}" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="${k === rep ? 700 : 400}">${k}</text>
+              <rect x="22" y="${y + 2}" width="${Math.max(0.5, l).toFixed(1)}" height="12" rx="2" fill="${coul}"/>
+              <text x="${Math.min(158, 26 + l).toFixed(1)}" y="${y + 12}" font-size="10" fill="#5b5249">${p[k] >= 0.005 ? Math.round(p[k] * 100) + ' %' : ''}</text>`;
+    }
+    document.getElementById('barres').innerHTML = s;
+    for (let k = 0; k < 10; k++) {
+        document.getElementById('c' + k).classList.toggle('actif', k === chiffre);
+        document.getElementById('t' + k).classList.toggle('actif', k === cible);
+    }
+}
+for (let k = 0; k < 10; k++) {
+    document.getElementById('chiffres').insertAdjacentHTML('beforeend', `<button id="c${k}" class="choix" onclick="chiffre=${k};maj()">${k}</button>`);
+    document.getElementById('cibles').insertAdjacentHTML('beforeend', `<button id="t${k}" class="choix cible" onclick="cible=${k};maj()">${k}</button>`);
+}
+document.getElementById('eps').addEventListener('input', maj);
+entrainer();
+maj();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
