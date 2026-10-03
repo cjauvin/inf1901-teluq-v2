@@ -155,10 +155,10 @@ le XOR devient séparable par une droite dans ce nouvel espace. Cependant, c'est
 l'humain qui a dû trouver cette astuce, et il arrive que personne ne sache quelle
 caractéristique construire.
 
-Le [Module 3](docs/module3) traitera cette question. Les réseaux de neurones
+Le Module 3 traitera cette question, dans « [Une couche cachée](docs/module3/20-une-couche-cachee/#ce-que-fait-la-couche-cachée-changer-de-point-de-vue) ». Les réseaux de neurones
 apprennent à **construire eux-mêmes** les caractéristiques qui rendent le
 problème séparable, en empilant des couches. La limite constatée en 1969 sera
-dépassée en 1986. C'est la question que le [Module 1](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) avait laissée ouverte, et le [Module 3](docs/module3) y répondra.
+dépassée en 1986. C'est la question que le [Module 1](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) avait laissée ouverte, et le [Module 3](docs/module3/30-entrainer-un-reseau/#1986) y répondra.
 
 Cependant, la capacité de produire des frontières courbes n'est pas un avantage
 en soi. Un modèle capable de suivre n'importe quelle forme peut aussi suivre des
@@ -308,7 +308,7 @@ peut arrêter l'entraînement avant que le modèle s'ajuste trop aux données
 (l'*arrêt précoce*) ou désactiver au hasard une partie des neurones à chaque
 étape (le *dropout*). Pour l'arbre, l'**élagage** consiste à le laisser croître,
 puis à couper les branches qui n'apportent que du détail. Le
-[Module 3](docs/module3) reviendra sur ces méthodes. Elles reposent toutes sur
+[Module 3](docs/module3/30-entrainer-un-reseau/#lentraînement-en-pratique) reviendra sur ces méthodes. Elles reposent toutes sur
 la même idée : la souplesse est une ressource, et un bon modèle est un modèle
 riche dont on contrôle la souplesse.
 
@@ -318,7 +318,7 @@ Une question reste ouverte pour plus tard. Si trop de souplesse nuit, comment
 les très grands réseaux de neurones actuels, qui ont des centaines de milliards
 de paramètres et donc une souplesse considérable, parviennent-ils à généraliser ?
 La réponse, qui remet en question la courbe en U, sera présentée au
-[Module 3](docs/module3).
+[Module 3](docs/module3/40-apprentissage-profond/#plus-de-paramètres-que-dexemples).
 
 {{% /hint %}}
 

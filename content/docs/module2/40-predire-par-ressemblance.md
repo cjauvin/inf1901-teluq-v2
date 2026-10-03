@@ -87,7 +87,8 @@ dimensionality*). Chaque caractéristique ajoutée multiplie la taille de l'espa
 et le nombre d'exemples nécessaire pour le remplir croît très rapidement. Ce
 problème touche directement kNN. C'est l'une des raisons pour lesquelles, sur des
 images ou du texte, on cherche d'abord à réduire le nombre de dimensions à
-quelques-unes qui comptent, une idée que les [Modules 3](docs/module3) et
+quelques-unes qui comptent, une idée que les Modules 3 (avec
+l'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et
 [4](docs/module4) développeront. Vous avez déjà rencontré ce phénomène sous un
 autre nom, l'[explosion
 combinatoire](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) du

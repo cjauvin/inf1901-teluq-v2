@@ -82,7 +82,7 @@ ce seuil.
 Matière à réflexion : pourquoi n'est-il pas toujours possible de séparer
 parfaitement les deux groupes par une droite ? Dans quelles conditions y
 arrive-t-on ? Et qu'est-ce qui pourrait rendre la chose possible quand elle ne
-l'est pas ? (Nous y reviendrons : c'est l'une des questions centrales du [Module 3](docs/module3).)
+l'est pas ? (Nous y reviendrons : c'est l'une des questions centrales du Module 3, dans « [Une couche cachée](docs/module3/20-une-couche-cachee) ».)
 
 {{% /hint %}}
 

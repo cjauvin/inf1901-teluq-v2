@@ -292,7 +292,7 @@ Aucun autre modèle de ce module n'offre cette propriété au même degré. La d
 donne une pente, qui se comprend facilement. La régression logistique donne des
 poids associés à chaque caractéristique, qu'il faut interpréter. kNN donne une
 liste de voisins, qui décrit la décision sans la justifier. Les grands réseaux de
-neurones du [Module 3](docs/module3) n'offriront rien de comparable : ils
+neurones du [Module 3](docs/module3/90-tromper-un-reseau/#une-boîte-noire) n'offriront rien de comparable : ils
 comptent des milliards de paramètres, dont aucun n'a de sens pris isolément. On
 parle alors de **boîte noire** : le modèle répond, souvent très bien, mais
 personne ne peut dire pourquoi. Tout un domaine de recherche, l'*IA explicable*

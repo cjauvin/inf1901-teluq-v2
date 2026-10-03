@@ -203,7 +203,7 @@ que nous étudierons aux [modules 2](docs/module2), [3](docs/module3) et [4](doc
 Le perceptron est l'**ancêtre direct des réseaux de neurones** actuels.
 L'apprentissage profond d'aujourd'hui est, pour l'essentiel, un empilement de
 perceptrons perfectionnés, en très grand nombre et sur de nombreuses couches.
-Nous étudierons cette filiation au [**Module 3**](docs/module3).
+Nous étudierons cette filiation au [**Module 3**](docs/module3/10-un-neurone).
 
 ## Deux univers parallèles
 
@@ -225,13 +225,13 @@ tour**. Dès la fin des années 1960, comme nous le verrons dans « [Les hiver
 bascule](docs/module1/60-hivers) », le camp symbolique met presque fin aux
 recherches sur le perceptron, et
 l'approche symbolique domine presque seule les vingt années suivantes. Il faut
-attendre les années 2010, étudiées au [Module 3](docs/module3) de ce cours, pour que la tradition
+attendre les années 2010, étudiées au [Module 3](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet) de ce cours, pour que la tradition
 connexionniste revienne au premier plan, sous le nom d'*apprentissage profond*.
 
 {{% hint info %}}
 La comparaison avec le cerveau est utile, mais il faut s'en méfier pour cette
 raison même. Le « neurone » de McCulloch, Pitts et Rosenblatt est une version
-extrêmement simplifiée du vrai neurone biologique. Nous y reviendrons en détail au [Module 3](docs/module3), au
+extrêmement simplifiée du vrai neurone biologique. Nous y reviendrons en détail au [Module 3](docs/module3/10-un-neurone/#doù-vient-le-mot-neurone), au
 moment où la tentation de confondre les deux sera la plus forte.
 {{% /hint %}}
 

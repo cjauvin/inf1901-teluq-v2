@@ -120,7 +120,7 @@ perdant le moins d'information possible) et l'**apprentissage de
 représentations**, qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l'IA
-moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3)) et les **plongements** de mots ([Module 4](docs/module4)).
+moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** de mots ([Module 4](docs/module4)).
 
 {{% details "Les mathématiques de k-means (optionnel)" %}}
 
@@ -215,7 +215,7 @@ les meilleurs joueurs de go humains, alors que la force brute seule n'y
 parvenait pas.
 
 Le renforcement est aussi la famille qui demande le plus de calcul, et il s'est
-surtout développé lorsqu'on l'a combiné aux **réseaux de neurones** (le *deep reinforcement learning*, [Module 3](docs/module3)).
+surtout développé lorsqu'on l'a combiné aux **réseaux de neurones** (le *deep reinforcement learning*, [Module 3](docs/module3/80-renforcement-profond)).
 On le retrouve aussi dans les assistants modernes. Le comportement de ChatGPT
 est en partie ajusté par renforcement, à partir des préférences d'évaluateurs
 humains (le **RLHF**). Le renforcement sert également, avec des récompenses

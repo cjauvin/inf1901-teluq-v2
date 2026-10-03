@@ -175,7 +175,7 @@ Modifiez-la si nécessaire.
 
 3. Le système peut **expliquer** sa conclusion (le tableau de trace que vous avez
    rempli le montre). En quoi est-ce une force&nbsp;? Comparez avec ce que vous
-   anticipez d'un réseau de neurones ([Module 3](docs/module3)).
+   anticipez d'un réseau de neurones ([Module 3](docs/module3/90-tromper-un-reseau/#une-boîte-noire)).
 
 4. Vous avez fait fonctionner le moteur « vers l'avant » (des faits vers la
    conclusion), ce qu'on appelle le **chaînage avant**. Comment auriez-vous procédé
