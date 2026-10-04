@@ -252,7 +252,7 @@ posée. La réponse dépend entièrement de ce qu&rsquo;on accepte d&rsquo;appel
 on ne sait pas définir clairement ce mot, même pour les humains. Plutôt que
 d&rsquo;entrer dans ce débat, Turing <strong>remplace la question par une autre</strong>, à laquelle
 on peut réellement répondre.</p><p>Au lieu de demander si une machine peut penser, il propose une épreuve concrète,
-le <strong>jeu de l&rsquo;imitation</strong>, qu&rsquo;on appelle aujourd&rsquo;hui le <strong>test de Turing</strong>. Un
+le <strong>jeu de l&rsquo;imitation</strong> (<em>imitation game</em>), qu&rsquo;on appelle aujourd&rsquo;hui le <strong>test de Turing</strong>. Un
 juge humain dialogue par écrit avec deux interlocuteurs cachés, un être humain et
 une machine. Les messages passent par clavier, pour que ni la voix ni le visage
 ne permettent de savoir qui est qui. Le juge peut poser n&rsquo;importe quelle question,
@@ -289,7 +289,7 @@ matériel qui réalise lui aussi une certaine organisation. Si l&rsquo;esprit es
 <em>organisation</em> et non une <em>substance</em>, rien n&rsquo;empêche qu&rsquo;il soit réalisé sur du
 silicium aussi bien que sur des neurones. C&rsquo;est ce qui permet de considérer l&rsquo;IA
 comme un projet sérieux. Nous reviendrons sur cette idée, et sur sa critique la
-plus célèbre, la <em>Chambre chinoise</em> du philosophe John Searle, au
+plus célèbre, la <em>Chambre chinoise</em> (<em>Chinese room</em>) du philosophe John Searle, au
 <span title="Ce module sera publié plus tard">Module 5</span>.</p></div></details><blockquote class="book-hint warning"><p>Le test de Turing est souvent mal compris. Ce n&rsquo;est <strong>pas</strong> un test de
 conscience, ni une définition de l&rsquo;intelligence au sens large. C&rsquo;est une
 proposition <em>pragmatique</em> : <em>si</em> on ne peut plus distinguer la machine de
@@ -353,7 +353,7 @@ Challenge</em></a>. Ce groupe a dû examiner une à une des
 dizaines de millions de machines et faire vérifier sa preuve par ordinateur. Pour
 six états, on sait seulement que le nombre dépasse tout ce qu&rsquo;on peut
 raisonnablement écrire. Au-delà, la difficulté devient une impossibilité, car
-cette fonction est <strong>non calculable</strong>. Aucun algorithme ne peut la donner pour
+cette fonction est <strong>non calculable</strong> (<em>uncomputable</em>). Aucun algorithme ne peut la donner pour
 tout <em>n</em>, parce que la connaître permettrait de savoir, pour n&rsquo;importe quelle
 machine, si elle s&rsquo;arrêtera un jour. Il suffirait de laisser tourner la machine
 pendant le nombre de pas du castor affairé. Si elle tourne encore après ce nombre
@@ -368,14 +368,14 @@ de Church-Turing</strong>.</p></div></details><h2 id=lombre-de-gödel>L&rsquo;om
 presque au même moment. En <strong>1931</strong>, cinq ans avant la machine de Turing, un jeune
 logicien autrichien, <strong>Kurt Gödel</strong>, avait démontré un résultat qui a profondément
 remis en question les fondements des mathématiques, son <strong>théorème
-d&rsquo;incomplétude</strong>.</p><label class=book-image for=book-image-toggle-18b6abe8bf18><input class="hidden toggle" type=checkbox id=book-image-toggle-18b6abe8bf18>
+d&rsquo;incomplétude</strong> (<em>incompleteness theorem</em>).</p><label class=book-image for=book-image-toggle-18b6abe8bf18><input class="hidden toggle" type=checkbox id=book-image-toggle-18b6abe8bf18>
 <img src=/inf1901-teluq-v2/images/module1/godel-1925.jpg alt="Portrait de Kurt Gödel jeune, étudiant." loading=lazy title="Kurt Gödel étudiant, vers 1925." width=674 height=893 style=--largeur-plafond:528px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-18b6abe8bf18"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Kurt Gödel étudiant, vers 1925. Domaine public — Wikimedia Commons.</p><p>Le résultat est simple à énoncer. Tout système de règles formelles assez puissant
 pour faire de l&rsquo;arithmétique contient des énoncés qui sont <strong>vrais</strong>, mais que le
 système est <strong>incapable de prouver</strong>. La vérité dépasse donc toujours la
 démonstration, et aucun ensemble de règles, aussi complet soit-il, ne peut tout
 capturer. La preuve repose sur une idée qui sera importante pour nous,
-l&rsquo;<strong>auto-référence</strong>. Gödel construit, à l&rsquo;intérieur du système, un énoncé qui
+l&rsquo;<strong>auto-référence</strong> (<em>self-reference</em>). Gödel construit, à l&rsquo;intérieur du système, un énoncé qui
 parle de lui-même et qui affirme en substance : <em>« Cet énoncé n&rsquo;est pas
 démontrable. »</em> Si le système démontrait cet énoncé, il prouverait quelque chose
 de faux. Il ne peut donc pas le démontrer, et c&rsquo;est précisément pour cette raison
@@ -399,7 +399,7 @@ philosophe John Searle.</p><p><strong>Seconde lecture : le théorème est une s
 <strong>Douglas Hofstadter</strong> (auteur du livre <em>Gödel, Escher, Bach</em> (1979), où il
 développe précisément cette idée), la boucle auto-référentielle de Gödel n&rsquo;est pas
 un défaut, mais le fondement même de l&rsquo;esprit. Un système assez riche pour se
-<strong>représenter lui-même</strong> produit une « <strong>boucle étrange</strong> ». Selon Hofstadter,
+<strong>représenter lui-même</strong> produit une « <strong>boucle étrange</strong> » (<em>strange loop</em>). Selon Hofstadter,
 c&rsquo;est de ce retour sur soi que naîtraient le sentiment d&rsquo;un « je », le sens et la
 conscience. L&rsquo;auto-référence n&rsquo;empêcherait donc pas la machine de penser, elle en
 serait la <strong>source</strong>. Nous retrouverons Hofstadter et ses idées à plusieurs
@@ -410,10 +410,10 @@ projet d&rsquo;une pensée mécanique s&rsquo;accompagne de questions sur ses li
 assez riche pour exprimer l&rsquo;arithmétique. Gödel établit en fait deux résultats. Un
 tel système ne peut pas prouver tous les énoncés arithmétiques vrais (<strong>premier
 théorème</strong>), et il ne peut pas non plus prouver sa <strong>propre cohérence</strong> (<strong>second
-théorème</strong>). L&rsquo;outil technique central est le <em>codage de Gödel</em>, qui consiste à
+théorème</strong>). L&rsquo;outil technique central est le <em>codage de Gödel</em> (<em>Gödel numbering</em>), qui consiste à
 numéroter chaque énoncé pour que le système puisse, en parlant de nombres,
 <strong>parler de lui-même</strong>. Gödel peut ainsi construire la phrase « je ne suis pas
-démontrable ».</p><p>Cette phrase est une variante du <strong>paradoxe du menteur</strong> (« cette phrase est
+démontrable ».</p><p>Cette phrase est une variante du <strong>paradoxe du menteur</strong> (<em>liar paradox</em> : « cette phrase est
 fausse »), dont Gödel s&rsquo;est explicitement inspiré. Le paradoxe du menteur aboutit
 à une contradiction. Gödel remplace « faux » par « indémontrable », si bien que sa
 phrase ne se contredit pas. Elle est simplement <strong>vraie sans être démontrable</strong>.
@@ -484,14 +484,14 @@ aujourd&rsquo;hui dans la conversation courante. Pour eux, l&rsquo;IA consistait
 logique, explorer méthodiquement des possibilités, comme on le fait pour
 démontrer un théorème ou jouer aux échecs. Aucune partie de ce programme
 n&rsquo;apprenait à partir de grandes quantités de données. Aujourd&rsquo;hui, le mot « IA »
-désigne presque toujours les <strong>grands modèles de langage</strong> et les modèles
-apparentés qui génèrent des images. Ce sont d&rsquo;immenses réseaux de neurones,
+désigne presque toujours les <strong>grands modèles de langage</strong> (<em>large language models</em>) et les modèles
+apparentés qui génèrent des images. Ce sont d&rsquo;immenses réseaux de neurones (<em>neural networks</em>),
 entraînés sur une bonne partie de ce que l&rsquo;humanité a écrit, qui ne contiennent
 aucune règle écrite à la main.</p><p>Ce module raconte ce renversement. L&rsquo;expression a été créée par les partisans du
 premier pari, celui de la logique. Elle est aujourd&rsquo;hui associée aux héritiers du
 second, celui du cerveau et de l&rsquo;apprentissage, que les premiers ont longtemps
 considéré comme une impasse. Entre les deux, il y a soixante-dix ans, deux
-<a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>« hivers »</a> et un renversement que rien ne laissait prévoir. Gardez
+<a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>« hivers »</a> (<em>AI winters</em>) et un renversement que rien ne laissait prévoir. Gardez
 donc les deux sens à l&rsquo;esprit. Dans les pages qui suivent, « IA » a d&rsquo;abord le
 sens qu&rsquo;il avait à Dartmouth.</p></blockquote><h2 id=le-premier-pari-lesprit-comme-logique>Le premier pari : l&rsquo;esprit comme logique<a class=anchor href=#le-premier-pari-lesprit-comme-logique></a></h2><p>La première famille d&rsquo;idées prolonge directement l&rsquo;intuition de Turing. Si
 penser consiste à calculer, alors <strong>l&rsquo;intelligence consiste à manipuler des
@@ -508,7 +508,7 @@ ouvrage de référence, les <em>Principia Mathematica</em> de Russell et Whitehe
 l&rsquo;une de ces démonstrations, il trouve même une solution plus élégante que celle
 des auteurs. On le considère souvent comme le <strong>premier programme d&rsquo;intelligence
 artificielle</strong>, c&rsquo;est-à-dire une machine qui ne calcule pas des nombres, mais qui
-raisonne, du moins en apparence.</p><blockquote class="book-hint info"><p><strong>Soixante-dix ans plus tard.</strong> La démonstration de théorèmes par machine a
+raisonne, du moins en apparence.</p><blockquote class="book-hint info"><p><strong>Soixante-dix ans plus tard.</strong> La démonstration de théorèmes par machine (<em>automated theorem proving</em>) a
 progressé d&rsquo;une manière que Newell et Simon n&rsquo;avaient pas prévue.
 En 2025, des grands modèles de langage entraînés par renforcement ont atteint
 le niveau d&rsquo;une médaille d&rsquo;or aux Olympiades internationales de mathématiques.
@@ -540,8 +540,8 @@ posséderait tout ce qu&rsquo;il faut pour être intelligent. Pendant les décen
 suivantes, cette voie <strong>symbolique</strong> domine la recherche et obtient l&rsquo;essentiel
 des financements. Elle fait l&rsquo;objet des chapitres suivants :
 la <a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>recherche</a>, la <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>représentation des
-connaissances</a>, les <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>systèmes
-experts</a>.</p><h2 id=le-second-pari-lesprit-comme-cerveau>Le second pari : l&rsquo;esprit comme cerveau<a class=anchor href=#le-second-pari-lesprit-comme-cerveau></a></h2><p>À la même époque, une idée très différente apparaît. Au lieu de programmer le
+connaissances</a> (<em>knowledge representation</em>), les <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>systèmes
+experts</a> (<em>expert systems</em>).</p><h2 id=le-second-pari-lesprit-comme-cerveau>Le second pari : l&rsquo;esprit comme cerveau<a class=anchor href=#le-second-pari-lesprit-comme-cerveau></a></h2><p>À la même époque, une idée très différente apparaît. Au lieu de programmer le
 raisonnement explicitement, on pourrait construire une machine qui <strong>apprend
 seule, à partir d&rsquo;exemples</strong>, en s&rsquo;inspirant de l&rsquo;organe qui est déjà
 intelligent, le <strong>cerveau</strong>.</p><p>Cette idée a une origine précise. En 1943, deux chercheurs, <strong>Warren McCulloch</strong>
@@ -572,7 +572,7 @@ l&rsquo;embryon d&rsquo;une machine électronique qui « sera capable de march
 très loin de ces capacités. L&rsquo;idée centrale, celle d&rsquo;une machine qui apprend de
 ses erreurs, s&rsquo;est cependant révélée très féconde. Elle est à la base de tout ce
 que nous étudierons aux <a href=/inf1901-teluq-v2/docs/module2/>modules 2</a>, <span title="Ce module sera publié plus tard">3</span> et <span title="Ce module sera publié plus tard">4</span>.</p><p>Le perceptron est l&rsquo;<strong>ancêtre direct des réseaux de neurones</strong> actuels.
-L&rsquo;apprentissage profond d&rsquo;aujourd&rsquo;hui est, pour l&rsquo;essentiel, un empilement de
+L&rsquo;apprentissage profond (<em>deep learning</em>) d&rsquo;aujourd&rsquo;hui est, pour l&rsquo;essentiel, un empilement de
 perceptrons perfectionnés, en très grand nombre et sur de nombreuses couches.
 Nous étudierons cette filiation au <span title="Ce module sera publié plus tard"><strong>Module 3</strong></span>.</p><h2 id=deux-univers-parallèles>Deux univers parallèles<a class=anchor href=#deux-univers-parall%c3%a8les></a></h2><p>On pourrait croire que ces deux paris se sont succédé, d&rsquo;abord l&rsquo;un, puis
 l&rsquo;autre. Ce n&rsquo;est pas le cas, et c&rsquo;est l&rsquo;une des idées les plus importantes de ce
@@ -602,7 +602,7 @@ peut se reformuler comme l&rsquo;<strong>exploration d&rsquo;un espace de possib
 position, qu&rsquo;on appelle un <strong>état</strong>. À partir de cet état, quelques actions sont
 possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un
 nouvel état. L&rsquo;ensemble de tous les états atteignables forme une grande
-arborescence, l&rsquo;<strong>espace d&rsquo;états</strong>. Résoudre le labyrinthe revient alors à
+arborescence, l&rsquo;<strong>espace d&rsquo;états</strong> (<em>state space</em>). Résoudre le labyrinthe revient alors à
 <strong>trouver un chemin</strong> dans cette arborescence, depuis l&rsquo;état de départ jusqu&rsquo;à
 l&rsquo;état-but (la sortie).</p><label class=book-image for=book-image-toggle-498e1279e379><input class="hidden toggle" type=checkbox id=book-image-toggle-498e1279e379>
 <img src=/inf1901-teluq-v2/images/module1/espace-etats.svg alt="À gauche, un labyrinthe dessiné comme un arbre de couloirs dont les états sont étiquetés S, A, B, C, D, E, G ; à droite, exactement le même arbre dessiné avec des nœuds et des arêtes portant les mêmes étiquettes. Le chemin S→A→D→G vers le but est surligné à l'identique des deux côtés ; C et E sont des impasses." loading=lazy title="Un labyrinthe est un arbre d'états : résoudre, c'est trouver un chemin de S (départ) à G (but)." width=720 height=344 style=--largeur-plafond:720px>
@@ -615,7 +615,7 @@ le problème revient à <strong>chercher un chemin</strong> vers ce but. Newell 
 auteurs du Logic Theorist, poussent l&rsquo;idée jusqu&rsquo;à construire un programme appelé
 <em>General Problem Solver</em> (« solutionneur général de problèmes »), conçu pour
 traiter n&rsquo;importe quel problème exprimé sous cette forme.</p><p>La recherche n&rsquo;est pas une technique parmi d&rsquo;autres. C&rsquo;est le mécanisme
-central de l&rsquo;IA symbolique. Pour démontrer un théorème, planifier un trajet,
+central de l&rsquo;IA symbolique (<em>symbolic AI</em>). Pour démontrer un théorème, planifier un trajet,
 diagnostiquer une panne ou lever l&rsquo;ambiguïté d&rsquo;une phrase, le GOFAI ramène le
 problème à l&rsquo;exploration d&rsquo;un espace de possibilités, jusqu&rsquo;à y trouver une
 solution. Nous la retrouverons dans « <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
@@ -624,7 +624,7 @@ l&rsquo;expertise</a> ».
 À la fin du module, dans <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#la-bascule><em>Les hivers et la
 bascule</em></a>, c&rsquo;est aussi elle qui marquera la
 différence avec l&rsquo;autre tradition : l&rsquo;IA symbolique cherche une solution, alors
-que l&rsquo;apprentissage automatique apprend à partir d&rsquo;exemples.</p><h2 id=lexplosion-combinatoire>L&rsquo;explosion combinatoire<a class=anchor href=#lexplosion-combinatoire></a></h2><p>L&rsquo;exploration d&rsquo;un arbre de possibilités a cependant une limite importante. Pour
+que l&rsquo;apprentissage automatique (<em>machine learning</em>) apprend à partir d&rsquo;exemples.</p><h2 id=lexplosion-combinatoire>L&rsquo;explosion combinatoire<a class=anchor href=#lexplosion-combinatoire></a></h2><p>L&rsquo;exploration d&rsquo;un arbre de possibilités a cependant une limite importante. Pour
 la plupart des problèmes intéressants, cet arbre est <strong>extrêmement grand</strong>.</p><p>Les échecs en sont l&rsquo;exemple le plus connu. À chaque tour, un joueur dispose en
 moyenne d&rsquo;une trentaine de coups possibles. Chacun de ces coups permet une
 trentaine de réponses de l&rsquo;adversaire, et ainsi de suite. Regarder seulement
@@ -644,7 +644,7 @@ lui garantit le meilleur résultat dans le pire des cas.</p><p>Comme l&rsquo;arb
 une certaine profondeur et estime la qualité d&rsquo;une position à l&rsquo;aide d&rsquo;une
 <strong>règle empirique</strong> (une « heuristique »), par exemple en comptant les pièces ou
 en évaluant le contrôle du centre. D&rsquo;autres techniques, comme l&rsquo;<strong>élagage</strong>
-(ignorer dès le départ les branches qui ne peuvent pas changer la décision),
+(<em>pruning</em> : ignorer dès le départ les branches qui ne peuvent pas changer la décision),
 évitent des explorations inutiles.</p><label class=book-image for=book-image-toggle-86bef86e16d6><input class="hidden toggle" type=checkbox id=book-image-toggle-86bef86e16d6>
 <img src=/inf1901-teluq-v2/images/module1/minimax-elagage.svg alt="Un arbre de jeu à trois niveaux. À la racine, c'est à la machine (MAX) de jouer ; au niveau suivant, trois coups de l'adversaire (MIN) ; en bas, neuf positions estimées par une heuristique. Chaque nœud MIN prend le minimum de ses feuilles : 3, au plus 2, et 2. La racine prend le maximum : 3, et une flèche épaisse montre le coup choisi. Au deuxième nœud MIN, dès que la feuille 2 est vue, les deux autres feuilles sont barrées : c'est l'élagage, car ce coup ne peut plus battre le 3 déjà garanti." loading=lazy title="Minimax sur un petit arbre : les estimations remontent, en alternant le plus petit (l'adversaire) et le plus grand (la machine) ; au milieu, l'élagage évite d'examiner deux positions inutiles." width=660 height=430 style=--largeur-plafond:660px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-86bef86e16d6"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le même principe s&rsquo;applique en dehors des jeux, lorsqu&rsquo;il faut <strong>trouver un
@@ -654,20 +654,20 @@ nommé <strong>A*</strong> (prononcé « A étoile ») se laisse guider par 
 chaque embranchement, il privilégie la direction qui semble le rapprocher le plus
 du but (par exemple, selon la distance à vol d&rsquo;oiseau jusqu&rsquo;à la destination). Le
 GPS qui calcule une route utilise ce genre de stratégie. C&rsquo;est aussi le cas de
-l&rsquo;<strong>IA des jeux vidéo</strong> : les personnages non joueurs qui trouvent leur route sur
+l&rsquo;<strong>IA des jeux vidéo</strong> : les personnages non joueurs (<em>non-player characters</em>) qui trouvent leur route sur
 la carte, ou les ennemis qui poursuivent ou contournent le joueur, s&rsquo;appuient le
-plus souvent sur ces mêmes algorithmes de recherche de chemin, en particulier A*.
+plus souvent sur ces mêmes algorithmes de recherche de chemin (<em>pathfinding</em>), en particulier A*.
 La principale leçon de cette période est donc la suivante : un système efficace
 n&rsquo;explore pas tout, il explore <strong>au bon endroit</strong>. La qualité des heuristiques
 est déterminante.</p><p>L&rsquo;applet ci-dessous compare les deux stratégies sur le même labyrinthe. À gauche,
-une recherche aveugle s&rsquo;étend dans toutes les directions à la fois. À droite, A*
+une recherche aveugle (<em>blind search</em>) s&rsquo;étend dans toutes les directions à la fois. À droite, A*
 est guidé par la distance qui le sépare du but. Lancez les deux recherches, puis
 comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
 avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
 observez dans quels cas l&rsquo;heuristique aide beaucoup et dans quels cas elle mène
-la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1791081730053241017 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
+la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1791082601345336571 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
 partir de données décrites par des milliers de caractéristiques. Ce sera la
-<a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a>, au
+<a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a> (<em>curse of dimensionality</em>), au
 <a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>.</p><h2 id=lapogée-deep-blue-bat-kasparov-1997>L&rsquo;apogée : Deep Blue bat Kasparov (1997)<a class=anchor href=#lapog%c3%a9e-deep-blue-bat-kasparov-1997></a></h2><p>En mai 1997, à New York, se joue un match devenu célèbre. D&rsquo;un côté, <strong>Garry
 Kasparov</strong>, champion du monde d&rsquo;échecs en titre, considéré par beaucoup comme le
 plus grand joueur de l&rsquo;histoire. De l&rsquo;autre, <strong>Deep Blue</strong>, un superordinateur
@@ -794,9 +794,9 @@ machines et sur leur échec. La question de départ est la suivante : comment
 mettre dans une machine ce que tout le monde sait ?</p><h2 id=donner-un-savoir-à-la-machine>Donner un savoir à la machine<a class=anchor href=#donner-un-savoir-%c3%a0-la-machine></a></h2><p>Si l&rsquo;intelligence exige des connaissances, il faut trouver un moyen de les
 <strong>inscrire dans la machine</strong> sous une forme qu&rsquo;elle puisse exploiter. Entre la fin
 des années 1960 et les années 1970, trois grandes façons de structurer le savoir
-sont proposées.</p><p><strong>Les réseaux sémantiques</strong> (Ross Quillian). On représente les connaissances comme
+sont proposées.</p><p><strong>Les réseaux sémantiques</strong> (<em>semantic networks</em>, Ross Quillian). On représente les connaissances comme
 un <strong>réseau de concepts reliés</strong> par des relations. « Canari » est relié à
-« oiseau » par un lien <em>est-un</em>, et « oiseau » est relié à « animal » de la même
+« oiseau » par un lien <em>est-un</em> (<em>is-a</em>), et « oiseau » est relié à « animal » de la même
 façon. « Oiseau » est relié à « ailes » par un lien <em>possède</em>. La machine peut
 alors <strong>déduire</strong> des faits qu&rsquo;on ne lui a pas donnés explicitement. Par exemple,
 pour savoir si un canari a des ailes, il suffit de suivre les liens (<em>canari est-un
@@ -886,7 +886,7 @@ les approches de ce chapitre ont la même limite. Elles fonctionnent tant qu&rsq
 reste dans un domaine assez petit pour être entièrement décrit, et elles échouent
 dès qu&rsquo;il faut tenir compte de la très grande quantité de choses que les humains
 considèrent comme évidentes. Cette quantité de savoir évident a un nom, et elle
-constitue la principale limite du GOFAI.</p><h2 id=le-mur-du-sens-commun>Le mur du sens commun<a class=anchor href=#le-mur-du-sens-commun></a></h2><p>Cette limite s&rsquo;appelle le <strong>sens commun</strong>. Il s&rsquo;agit de l&rsquo;ensemble très vaste des
+constitue la principale limite du GOFAI.</p><h2 id=le-mur-du-sens-commun>Le mur du sens commun<a class=anchor href=#le-mur-du-sens-commun></a></h2><p>Cette limite s&rsquo;appelle le <strong>sens commun</strong> (<em>common sense</em>). Il s&rsquo;agit de l&rsquo;ensemble très vaste des
 choses si évidentes que personne ne prend la peine de les dire. Par exemple, l&rsquo;eau
 mouille, un objet qu&rsquo;on lâche tombe, on ne peut pas pousser une corde, votre mère
 est plus âgée que vous, et si Jean entre dans un restaurant, il y entre par la
@@ -919,15 +919,15 @@ sur l&rsquo;âge d&rsquo;or symbolique, il faut présenter ce point de vue dissi
 déjà présenté dans « <a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question
 fondatrice</a> » à propos de Gödel.
 Pendant que ses collègues construisaient des moteurs d&rsquo;échecs et des bases de
-règles, il répétait que l&rsquo;IA dominante ne s&rsquo;attaquait pas au bon problème. Selon
+règles (<em>rule bases</em>), il répétait que l&rsquo;IA dominante ne s&rsquo;attaquait pas au bon problème. Selon
 Hofstadter, battre Kasparov par force brute ou accumuler des millions d&rsquo;assertions
 comme CYC ne concerne pas l&rsquo;essentiel de la pensée.</p><p>Pour lui, l&rsquo;essentiel de la pensée est l&rsquo;<strong>analogie</strong>. Penser ne consiste pas à
 appliquer des règles, mais à <em>percevoir des ressemblances</em>, à adapter des
-<strong>concepts fluides</strong> à des situations nouvelles et à comprendre l&rsquo;inconnu à partir
+<strong>concepts fluides</strong> (<em>fluid concepts</em>) à des situations nouvelles et à comprendre l&rsquo;inconnu à partir
 de ce qu&rsquo;on connaît déjà. Quand vous parlez du <em>pied</em> d&rsquo;une montagne, des <em>jambes</em>
 d&rsquo;une table ou de la <em>bouche</em> d&rsquo;un fleuve, vous faites de l&rsquo;analogie sans y penser.
 C&rsquo;est l&rsquo;opération de l&rsquo;esprit la plus courante et aussi la plus fondamentale. Or
-une analogie ne peut pas être inscrite d&rsquo;avance dans une base de connaissances.
+une analogie ne peut pas être inscrite d&rsquo;avance dans une base de connaissances (<em>knowledge base</em>).
 Elle se construit au moment où on en a besoin, selon le contexte. C&rsquo;est
 précisément ce qu&rsquo;un projet comme CYC ne pouvait pas représenter.</p><p>Pour le démontrer, Hofstadter et sa collaboratrice <strong>Melanie Mitchell</strong> ont conçu
 un programme, <strong>Copycat</strong>, qui fonctionne lui aussi dans un micro-monde, mais d&rsquo;un
@@ -1001,9 +1001,9 @@ que l&rsquo;intelligence artificielle est utilisable. La <a href=/inf1901-teluq-
 suivante</a> explique
 comment une machine peut raisonner avec des règles.</p><h2 id=lanatomie-dun-système-expert>L&rsquo;anatomie d&rsquo;un système expert<a class=anchor href=#lanatomie-dun-syst%c3%a8me-expert></a></h2><p>Un système expert comporte <strong>trois composantes</strong>. La première est une <strong>base de
 règles</strong>, qui contient la connaissance du domaine sous forme d&rsquo;énoncés <em>si… alors…</em>.
-La deuxième est une <strong>base de faits</strong> (ou « mémoire de travail »), qui rassemble ce
+La deuxième est une <strong>base de faits</strong> (ou « mémoire de travail », <em>working memory</em>), qui rassemble ce
 qu&rsquo;on sait du cas traité, par exemple les symptômes d&rsquo;un patient ou l&rsquo;état d&rsquo;une
-voiture. La troisième est un <strong>moteur d&rsquo;inférence</strong>, un mécanisme général qui
+voiture. La troisième est un <strong>moteur d&rsquo;inférence</strong> (<em>inference engine</em>), un mécanisme général qui
 compare les faits aux règles, applique celles dont les conditions sont remplies et
 en tire de nouveaux faits, jusqu&rsquo;à une conclusion.</p><p>L&rsquo;intérêt de cette architecture tient à la <strong>séparation</strong> entre ces composantes. Le
 moteur d&rsquo;inférence ne contient aucune connaissance de médecine, d&rsquo;automobile ou de
@@ -1024,7 +1024,7 @@ conditions de R3 et de R4 ne sont pas remplies, et ces règles ne font rien. En 
 étapes, le système a établi un diagnostic à partir des symptômes. Il peut aussi
 <strong>retracer son raisonnement</strong> : il conclut à la batterie à cause de R1, donc à cause
 des phares faibles.</p><p>Ce mode de raisonnement, qui part des faits pour arriver à une conclusion, s&rsquo;appelle
-le <strong>chaînage avant</strong>. Il convient bien quand on dispose déjà de nombreux faits et
+le <strong>chaînage avant</strong> (<em>forward chaining</em>). Il convient bien quand on dispose déjà de nombreux faits et
 qu&rsquo;on veut savoir ce qui en découle.</p><label class=book-image for=book-image-toggle-79adeebd4c9d><input class="hidden toggle" type=checkbox id=book-image-toggle-79adeebd4c9d>
 <img src=/inf1901-teluq-v2/images/module1/chainage-avant.svg alt="Schéma de gauche à droite : les deux faits observés mènent à la règle R1, qui produit le fait « la batterie est déchargée » ; ce fait mène à la règle R2, qui donne la conclusion « recharger ou remplacer la batterie »." loading=lazy title="Le chaînage avant : des faits observés vers la conclusion, règle après règle." width=776 height=330 style=--largeur-plafond:776px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-79adeebd4c9d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>On peut aussi procéder dans l&rsquo;autre sens. Supposons qu&rsquo;on soupçonne la batterie et
@@ -1034,7 +1034,7 @@ l&rsquo;<strong>hypothèse</strong>, traitée comme un but, et remonte les règl
 (R1), il faut que le moteur ne se lance pas <strong>et</strong> que les phares soient faibles.
 Aucune règle ne produit ces deux derniers faits, qu&rsquo;il faut donc <strong>observer</strong>. Le
 système pose alors la question à l&rsquo;utilisateur (« les phares sont-ils faibles ? »)
-et n&rsquo;examine que ce qui concerne l&rsquo;hypothèse étudiée. C&rsquo;est le <strong>chaînage arrière</strong>.</p><label class=book-image for=book-image-toggle-40bfa7136942><input class="hidden toggle" type=checkbox id=book-image-toggle-40bfa7136942>
+et n&rsquo;examine que ce qui concerne l&rsquo;hypothèse étudiée. C&rsquo;est le <strong>chaînage arrière</strong> (<em>backward chaining</em>).</p><label class=book-image for=book-image-toggle-40bfa7136942><input class="hidden toggle" type=checkbox id=book-image-toggle-40bfa7136942>
 <img src=/inf1901-teluq-v2/images/module1/chainage-arriere.svg alt="Le même schéma parcouru de droite à gauche : de l'hypothèse « et si c'était la batterie ? », la règle R2 mène au sous-but « la batterie est-elle déchargée ? », puis la règle R1 mène à deux questions posées à l'utilisateur sur le moteur et les phares." loading=lazy title="Le chaînage arrière : de l'hypothèse vers les faits à vérifier, en ne posant que les questions utiles." width=776 height=330 style=--largeur-plafond:776px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-40bfa7136942"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><blockquote class="book-hint info"><p><strong>Prolog, un langage fondé sur le chaînage arrière.</strong> En 1972, on a fait de ce
 principe (déclarer des faits et des règles <em>si… alors…</em>, puis laisser un moteur
@@ -1042,13 +1042,14 @@ général les enchaîner) un <strong>langage de programmation</strong>, <strong>
 n&rsquo;y écrit que des faits et des règles, et le langage fournit lui-même le moteur
 d&rsquo;inférence, un chaînage arrière comme celui qu&rsquo;on vient de décrire. On n&rsquo;indique
 pas au programme comment calculer, mais ce qui est vrai. Cette approche s&rsquo;appelle la
-<strong>programmation logique</strong>. Elle est différente de la programmation fonctionnelle du
+<strong>programmation logique</strong> (<em>logic programming</em>). Elle est différente de la programmation
+fonctionnelle (<em>functional programming</em>) du
 langage Lisp (celui des machines de la photo <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/#l%c3%a2ge-dor-mycin-xcon-et-le-boom>plus
 bas</a>). Prolog a longtemps été le
 langage de référence de l&rsquo;IA symbolique en Europe. Le projet japonais de
 <strong>Cinquième Génération</strong>, <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/#l%c3%a2ge-dor-mycin-xcon-et-le-boom>présenté plus
 bas</a>, l&rsquo;a choisi comme langage principal, et
-ses principes se retrouvent aujourd&rsquo;hui dans Datalog et dans les moteurs de règles.</p></blockquote><details><summary>Pour aller plus loin : à quoi ressemble du Prolog ?</summary><div class=markdown-inner><p>Reprenons l&rsquo;exemple de la voiture. En Prolog, on écrit d&rsquo;abord les <strong>faits</strong>
+ses principes se retrouvent aujourd&rsquo;hui dans Datalog et dans les moteurs de règles (<em>rule engines</em>).</p></blockquote><details><summary>Pour aller plus loin : à quoi ressemble du Prolog ?</summary><div class=markdown-inner><p>Reprenons l&rsquo;exemple de la voiture. En Prolog, on écrit d&rsquo;abord les <strong>faits</strong>
 observés, puis les <strong>règles</strong>. Dans une règle, la conclusion est placée avant le
 symbole <code>:-</code>, qui se lit « <em>si</em> », et les conditions sont séparées par des virgules,
 qui se lisent « <em>et</em> » :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#75715e>% Les faits observés :</span>
@@ -1074,7 +1075,7 @@ suivante</a>.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous obser
 faites avancer le moteur d&rsquo;inférence règle par règle. Vous le verrez examiner
 chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
 faits à la base, jusqu&rsquo;au diagnostic. Essayez plusieurs combinaisons, et trouvez
-celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1791081730083290814 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
+celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1791082601372527373 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
 développé à Stanford à partir de 1965. Il identifiait des <strong>molécules</strong> à partir de
 données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
 est cependant <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>.
@@ -1085,7 +1086,7 @@ haut</a>. Il partait d&rsquo;une hypothèse sur le germe en
 cause et posait des questions au médecin jusqu&rsquo;à sa conclusion. Grâce à ce même
 mécanisme, il pouvait <strong>justifier</strong> sa démarche. Quand on lui demandait pourquoi il
 posait une question, il indiquait la règle qu&rsquo;il cherchait à vérifier.</p><p>En médecine, cependant, peu de choses sont certaines. Un symptôme peut suggérer un
-germe sans le confirmer. MYCIN utilisait donc des <strong>facteurs de certitude</strong> (un
+germe sans le confirmer. MYCIN utilisait donc des <strong>facteurs de certitude</strong> (<em>certainty factors</em> : un
 nombre associé à chaque règle, qui indique à quel point sa conclusion est fiable)
 et les combinait au cours du raisonnement. Cette méthode était approximative. Plus
 tard, une théorie plus rigoureuse de l&rsquo;incertitude, celle des <strong>réseaux
@@ -1131,23 +1132,24 @@ reviendrons <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/#le-goulot-d
 est devenue pour la première fois une <strong>industrie</strong>. On vendait des <strong>coquilles</strong>
 (<em>shells</em>), c&rsquo;est-à-dire des moteurs d&rsquo;inférence vides, prêts à recevoir la base de
 règles de n&rsquo;importe quel domaine. Un nouveau métier est apparu, celui d&rsquo;<strong>ingénieur
-de la connaissance</strong>, chargé de recueillir le savoir des experts. Des entreprises
+de la connaissance</strong> (<em>knowledge engineer</em>), chargé de recueillir le savoir des experts. Des entreprises
 ont été créées et ont attiré des capitaux. On a même construit des ordinateurs
 spécialisés pour ces programmes, les <strong>machines Lisp</strong>. Le Japon a lancé un grand
 projet national, la <strong>Cinquième Génération</strong>, pour devenir le leader de ce type
 d&rsquo;informatique. Les limites des systèmes experts commençaient toutefois à
-apparaître.</p><label class=book-image for=book-image-toggle-121d0e8f5d40><input class="hidden toggle" type=checkbox id=book-image-toggle-121d0e8f5d40>
+apparaître.</p><label class=book-image for=book-image-toggle-1860b4354547><input class="hidden toggle" type=checkbox id=book-image-toggle-1860b4354547>
 <img src=/inf1901-teluq-v2/images/module1/symbolics-3620.jpg alt="Un poste de travail Lisp Symbolics 3620 : un moniteur beige marqué « symbolics », un clavier et une souris posés sur une tablette, et une haute unité centrale nervurée à droite. Un cartel de musée indique « 3620 LISP Workstation CPU, Symbolics, US, 1983 »." loading=lazy title="Une « machine Lisp » : le poste de travail Symbolics 3620 (1983), un ordinateur spécialisé conçu pour faire tourner les programmes d'IA symbolique." width=1400 height=933 style=--largeur-plafond:1050px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-121d0e8f5d40"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>La première limite, et la plus importante, concerne l&rsquo;origine des règles. Quelqu&rsquo;un
+</label><script>(function(){const e=document.getElementById("book-image-toggle-1860b4354547"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Une machine Lisp Symbolics 3620 (1983), Computer History Museum. Photo : leighklotz, <a href=https://creativecommons.org/licenses/by/2.0/>CC BY 2.0</a>, via Wikimedia Commons.</p><h2 id=le-goulot-détranglement>Le goulot d&rsquo;étranglement<a class=anchor href=#le-goulot-d%c3%a9tranglement></a></h2><p>La première limite, et la plus importante, concerne l&rsquo;origine des règles. Quelqu&rsquo;un
 doit les écrire. C&rsquo;est le travail de l&rsquo;<strong>ingénieur de la connaissance</strong>, qui
 interroge longuement un expert pour traduire son savoir en règles <em>si… alors…</em>. Ce
 travail s&rsquo;est révélé très lent. De plus, une grande partie de l&rsquo;expertise est
 difficile à exprimer. Le médecin expérimenté qui reconnaît un diagnostic au premier
 coup d&rsquo;œil, ou le mécanicien qui identifie une panne au bruit du moteur, ne savent
-pas toujours expliquer ce qu&rsquo;ils savent. Leur compétence est un <strong>savoir tacite</strong>,
+pas toujours expliquer ce qu&rsquo;ils savent. Leur compétence est un <strong>savoir tacite</strong> (<em>tacit knowledge</em>),
 fondé sur l&rsquo;intuition et l&rsquo;expérience, et non une liste de règles qu&rsquo;il suffirait
 de noter. On ne peut pas codifier ce qui n&rsquo;a jamais été formulé. Ce problème est
-connu sous le nom de <strong>goulot d&rsquo;étranglement de l&rsquo;acquisition des connaissances</strong>.</p><p>La deuxième limite, déjà évoquée dans « <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
+connu sous le nom de <strong>goulot d&rsquo;étranglement de l&rsquo;acquisition des connaissances</strong>
+(<em>knowledge acquisition bottleneck</em>).</p><p>La deuxième limite, déjà évoquée dans « <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
 monde</a> », est la <strong>rigidité</strong>. Un système
 expert ne connaît que ses règles. Il fonctionne bien à l&rsquo;intérieur de son domaine,
 mais dès qu&rsquo;on en sort, il ne donne plus de résultats utiles, et il ne signale pas
@@ -1162,7 +1164,7 @@ dizaines de règles reste gérable. XCON en a accumulé des milliers, et on a co
 qu&rsquo;au-delà d&rsquo;un certain nombre, les règles <strong>interagissent</strong> de façon imprévisible.
 Ajouter une règle pour corriger un cas pouvait en perturber plusieurs autres, sans
 qu&rsquo;on s&rsquo;en aperçoive. Maintenir une grande base de règles demandait plus de temps
-pour corriger ces effets de bord que pour ajouter des connaissances. La
+pour corriger ces effets de bord (<em>side effects</em>) que pour ajouter des connaissances. La
 connaissance explicite, écrite à la main, ne <strong>passait pas à l&rsquo;échelle</strong>.</p><p>La quatrième limite est la plus fondamentale : un système expert n&rsquo;<strong>apprend
 rien</strong>. Chacune de ses règles a été écrite par une personne. Le programme peut
 traiter mille cas sans en tirer une seule règle nouvelle, et il ne corrige pas de
@@ -1190,7 +1192,7 @@ C&rsquo;est par exemple le principe du <strong>va-et-vient</strong>, où deux in
 une même lampe, souvent aux deux bouts d&rsquo;un couloir. Quand on bascule l&rsquo;un ou l&rsquo;autre
 interrupteur, la lumière change d&rsquo;état. Si les deux interrupteurs sont dans la même
 position, la lampe est éteinte ; s&rsquo;ils sont dans des positions opposées, elle est
-allumée. La réponse dépend donc du désaccord entre les deux entrées.</p><p>On peut résumer le XOR dans une <strong>table de vérité</strong>, qui donne la réponse pour
+allumée. La réponse dépend donc du désaccord entre les deux entrées.</p><p>On peut résumer le XOR dans une <strong>table de vérité</strong> (<em>truth table</em>), qui donne la réponse pour
 chaque combinaison possible des deux entrées. On note 0 pour « bas » (ou « faux »)
 et 1 pour « haut » (ou « vrai ») :</p><table><thead><tr><th style=text-align:center>Interrupteur A</th><th style=text-align:center>Interrupteur B</th><th style=text-align:center>Lampe (A XOR B)</th></tr></thead><tbody><tr><td style=text-align:center>0</td><td style=text-align:center>0</td><td style=text-align:center>0 (éteinte)</td></tr><tr><td style=text-align:center>0</td><td style=text-align:center>1</td><td style=text-align:center>1 (allumée)</td></tr><tr><td style=text-align:center>1</td><td style=text-align:center>0</td><td style=text-align:center>1 (allumée)</td></tr><tr><td style=text-align:center>1</td><td style=text-align:center>1</td><td style=text-align:center>0 (éteinte)</td></tr></tbody></table><p>La sortie vaut 1 seulement quand les deux entrées diffèrent. Si l&rsquo;on place ces
 quatre cas sur un plan, avec A à l&rsquo;horizontale et B à la verticale, les deux cas
@@ -1211,7 +1213,8 @@ accident de bateau.</p><p>Le premier hiver de l&rsquo;IA ne toucha donc pas la t
 <strong>rivale</strong>, et c&rsquo;est un chercheur du camp symbolique qui en fut en partie la cause.
 Comme le connexionnisme était mis de côté, les vingt années suivantes furent celles
 d&rsquo;une <strong>domination symbolique</strong> presque complète : la recherche dans un espace
-d&rsquo;états, les systèmes experts et l&rsquo;ensemble des travaux présentés dans les chapitres
+d&rsquo;états, les systèmes experts et l&rsquo;ensemble des
+travaux présentés dans les chapitres
 « <a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>Chercher et raisonner</a> », « <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
 monde</a> » et « <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
 l&rsquo;expertise</a> ». Le déclin d&rsquo;une tradition a ainsi favorisé le développement de l&rsquo;autre.</p><p>La démonstration de Minsky et Papert avait cependant une limite. Elle ne valait que
@@ -1243,7 +1246,7 @@ l&rsquo;expertise</a> » : le monde réel se laisse
 difficilement décrire par des règles écrites à la main.</p><p>Pendant que le camp symbolique déclinait, le camp connexionniste, qu&rsquo;on croyait
 abandonné depuis 1969, <strong>reprenait de l&rsquo;activité</strong>. En 1986, un petit groupe de
 chercheurs, dont <strong>Geoffrey Hinton</strong>, avait publié une méthode appelée
-<strong>rétropropagation</strong>. Elle permettait de faire apprendre les réseaux à <strong>plusieurs
+<strong>rétropropagation</strong> (<em>backpropagation</em>). Elle permettait de faire apprendre les réseaux à <strong>plusieurs
 couches</strong>, c&rsquo;est-à-dire justement ceux qui, selon les intuitions de l&rsquo;époque,
 pouvaient traiter le XOR. L&rsquo;obstacle signalé dans <em>Perceptrons</em> était donc levé. Ce
 retour resta toutefois discret au début : il fallut attendre les <strong>données</strong> et la
@@ -1251,7 +1254,7 @@ retour resta toutefois discret au début : il fallut attendre les <strong>donn�
 deux traditions échangeaient de nouveau leurs rôles : le déclin de l&rsquo;une coïncidait
 avec la reprise de l&rsquo;autre.</p><h2 id=lhéritage-invisible>L&rsquo;héritage invisible<a class=anchor href=#lh%c3%a9ritage-invisible></a></h2><p>Après deux hivers successifs, on pourrait conclure que le GOFAI a échoué. Cette
 conclusion serait cependant incomplète, à cause d&rsquo;un phénomène que les chercheurs
-appellent l&rsquo;<strong>« effet IA »</strong> : dès qu&rsquo;une technique fonctionne bien, on cesse de
+appellent l&rsquo;<strong>« effet IA »</strong> (<em>AI effect</em>) : dès qu&rsquo;une technique fonctionne bien, on cesse de
 l&rsquo;appeler « intelligence artificielle » et on la considère comme « juste un
 algorithme ». La formule la plus courte est attribuée à l&rsquo;informaticien Larry Tesler,
 et c&rsquo;est <strong>Hofstadter</strong> qui l&rsquo;a popularisée : <em>« l&rsquo;IA, c&rsquo;est tout ce qui n&rsquo;a pas
@@ -1272,9 +1275,9 @@ autocomplete</em>), comme la fonction qui propose le mot suivant sur un téléph
 définition de l&rsquo;intelligence, et le but est placé un peu plus loin. Ce déplacement
 n&rsquo;est pas toujours injustifié, parce qu&rsquo;un succès révèle parfois que la tâche était
 plus facile qu&rsquo;on ne le croyait. Mais il explique pourquoi les réussites du GOFAI
-ont cessé d&rsquo;être comptées comme de l&rsquo;IA.</p><label class=book-image for=book-image-toggle-5af9e2497496><input class="hidden toggle" type=checkbox id=book-image-toggle-5af9e2497496>
+ont cessé d&rsquo;être comptées comme de l&rsquo;IA.</p><label class=book-image for=book-image-toggle-63aadb94c5de><input class="hidden toggle" type=checkbox id=book-image-toggle-63aadb94c5de>
 <img src=/inf1901-teluq-v2/images/module1/poteaux-du-but.svg alt="Une ligne du temps avec quatre poteaux de signalisation, dont le panneau octogonal porte le mot « BUT » : 1997, battre le champion du monde d'échecs ; 2012, reconnaître des images ; 2016, battre le champion du monde de go ; 2022, converser en langage courant. Sous chaque succès, la réaction typique : ce n'est que du calcul, de la statistique, un jeu, un perroquet stochastique ou de l'autocomplétion glorifiée. Des flèches en pointillé déplacent le but vers la droite, jusqu'à un cinquième poteau, dont le panneau porte un point d'interrogation." loading=lazy title="Déplacer les poteaux du but : à chaque succès de l'IA, la tâche réussie cesse de compter comme de l'intelligence." width=780 height=402 style=--largeur-plafond:780px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-5af9e2497496"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>De ce point de vue, le GOFAI n&rsquo;a pas disparu : il s&rsquo;est <strong>intégré</strong> à l&rsquo;informatique
+</label><script>(function(){const e=document.getElementById("book-image-toggle-63aadb94c5de"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>De ce point de vue, le GOFAI n&rsquo;a pas disparu : il s&rsquo;est <strong>intégré</strong> à l&rsquo;informatique
 courante. Ses réussites sont devenues si ordinaires et si fiables qu&rsquo;on a oublié
 qu&rsquo;elles venaient des laboratoires d&rsquo;IA. Les quatre exemples suivants sont des
 techniques que vous utilisez probablement chaque jour.</p><p><strong><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>La recherche dans un arbre</a></strong>. Les algorithmes d&rsquo;exploration (minimax,
@@ -1283,8 +1286,9 @@ Ce sont eux qui calculent votre itinéraire <strong>GPS</strong> en une fraction
 dirigent les personnages des jeux vidéo et qui optimisent les tournées d&rsquo;un
 transporteur ou les mouvements d&rsquo;un robot. Les personnes qui suivent un itinéraire
 sur leur téléphone ne pensent généralement pas qu&rsquo;elles utilisent une technique
-d&rsquo;« intelligence artificielle » des années 1960.</p><p><strong><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Les moteurs de règles</a></strong>. Les systèmes experts n&rsquo;ont pas disparu, mais ils
-ont changé de nom. On parle aujourd&rsquo;hui de « règles métier », et ces systèmes
+d&rsquo;« intelligence artificielle » des années 1960.</p><p><strong><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Les moteurs de règles</a></strong>. Les
+systèmes experts n&rsquo;ont pas disparu, mais ils
+ont changé de nom. On parle aujourd&rsquo;hui de « règles métier » (<em>business rules</em>), et ces systèmes
 décident automatiquement de l&rsquo;octroi d&rsquo;un prêt, du repérage d&rsquo;une transaction
 frauduleuse ou du calcul d&rsquo;une prime d&rsquo;assurance. Les <strong>configurateurs</strong> qui, sur un
 site marchand, vérifient que les options d&rsquo;une voiture ou d&rsquo;un ordinateur sont
@@ -1297,13 +1301,13 @@ comme des valeurs (les <em>lambdas</em>), enchaîner des opérations comme <code
 <code>reduce</code>, utiliser des <em>closures</em>. Ces constructions, courantes aujourd&rsquo;hui en
 Python, en JavaScript ou en Java, viennent des laboratoires d&rsquo;IA. Lisp a aussi
 introduit des outils qu&rsquo;on considère maintenant comme normaux : le
-<strong>ramasse-miettes</strong> (la gestion automatique de la mémoire) et le <strong>REPL</strong>, la console
+<strong>ramasse-miettes</strong> (<em>garbage collection</em> : la gestion automatique de la mémoire) et le <strong>REPL</strong>, la console
 qui permet d&rsquo;essayer du code au fur et à mesure. L&rsquo;autre grande tradition
 fonctionnelle, celle des langages typés comme Haskell, descend du langage <strong>ML</strong>, que
 Robin Milner avait créé pour programmer un <strong>assistant de démonstration de
-théorèmes</strong>. Les deux sources de la programmation fonctionnelle moderne viennent donc
+théorèmes</strong> (<em>proof assistant</em>). Les deux sources de la programmation fonctionnelle moderne viennent donc
 du raisonnement symbolique.</p><p><strong><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>La représentation des connaissances</a></strong>. Les
-réseaux sémantiques et les frames, <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/#donner-un-savoir-%c3%a0-la-machine>présentés plus
+réseaux sémantiques (<em>semantic networks</em>) et les frames, <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/#donner-un-savoir-%c3%a0-la-machine>présentés plus
 tôt</a>, ont eu des successeurs. Les
 <strong>ontologies</strong> et les <strong>knowledge graphs</strong> qui structurent le savoir du web en sont
 les héritiers directs. Quand Google affiche une fiche résumée à côté des résultats,
@@ -1337,7 +1341,7 @@ l&rsquo;informatique courante, mais qu&rsquo;il est aussi réapparu, combiné à
 En février <strong>2011</strong>, un système d&rsquo;IBM nommé <strong>Watson</strong> affronte, au jeu télévisé
 américain <em>Jeopardy!</em>, les deux meilleurs champions de l&rsquo;histoire de l&rsquo;émission, Ken
 Jennings et Brad Rutter, et les bat nettement.</p><p>Cette réussite est d&rsquo;une autre nature que celle de Deep Blue. Les échecs ont des
-règles précises et un espace de recherche bien défini. <em>Jeopardy!</em>, au contraire,
+règles précises et un espace de recherche (<em>search space</em>) bien défini. <em>Jeopardy!</em>, au contraire,
 repose sur un <strong>langage</strong> difficile, fait de calembours, d&rsquo;allusions, de jeux de mots
 et d&rsquo;indices indirects. Comprendre ce que la question demande est déjà un problème
 difficile. Watson y répond en quelques secondes, en utilisant une très grande base de
@@ -1369,7 +1373,8 @@ l&rsquo;informatique du raisonnement, qui est encore utilisée aujourd&rsquo;hui
 monde</a> », il s&rsquo;agissait du <strong>sens commun</strong>,
 l&rsquo;ensemble des évidences que personne ne pense à formuler et qu&rsquo;on ne peut donc pas
 écrire. Dans « <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l&rsquo;expertise</a> », il
-s&rsquo;agissait du <strong>goulot d&rsquo;étranglement</strong> : l&rsquo;expertise est difficile à mettre en
+s&rsquo;agissait du <strong>goulot d&rsquo;étranglement</strong> :
+l&rsquo;expertise est difficile à mettre en
 règles, parce qu&rsquo;une grande partie du savoir humain n&rsquo;est pas exprimée. Ces deux
 difficultés relèvent d&rsquo;une même leçon, que Hofstadter avait peut-être formulée le
 premier : on ne peut pas inscrire l&rsquo;intelligence de l&rsquo;extérieur, fait après fait,
@@ -1647,9 +1652,9 @@ apprend à en construire une à partir des données.</p><p>Pour comprendre comme
 partir d&rsquo;un exemple modeste, qu&rsquo;on pourra suivre du début à la fin et examiner
 sous plusieurs angles.</p><h2 id=notre-fil-rouge-des-maisons-à-vendre>Notre fil rouge : des maisons à vendre<a class=anchor href=#notre-fil-rouge-des-maisons-%c3%a0-vendre></a></h2><label class=book-image for=book-image-toggle-db8f75ce2f3b><input class="hidden toggle" type=checkbox id=book-image-toggle-db8f75ce2f3b>
 <img src=/inf1901-teluq-v2/images/module2/maison-a-vendre.jpg alt="Une pancarte « FOR SALE » plantée sur la pelouse d'une maison résidentielle, devant un jardin fleuri et l'entrée du garage." loading=lazy title="Combien vaut cette maison, et se vendra-t-elle vite ? Ce module montre comment une machine peut apprendre à répondre à ces deux questions." width=1500 height=845 style=--largeur-plafond:1243px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-db8f75ce2f3b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Photo : Kindel Media, <a href=https://www.pexels.com/photo/for-sale-sign-on-green-grass-lawn-7578849/>Pexels</a>.</p><p>Tout au long de ce module, nous suivrons un seul exemple, volontairement simple
-pour qu&rsquo;on puisse en comprendre tous les détails : <strong>un registre de ventes
-immobilières</strong>. Nous poserons plus d&rsquo;une question à ce même jeu de données.</p><p>Supposons qu&rsquo;on dispose d&rsquo;une liste de maisons récemment vendues, avec pour
+</label><script>(function(){const e=document.getElementById("book-image-toggle-db8f75ce2f3b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Photo : Kindel Media, <a href=https://www.pexels.com/photo/for-sale-sign-on-green-grass-lawn-7578849/>Pexels</a>.</p><p>Tout au long de ce module, nous suivrons un seul exemple, volontairement simple pour
+qu&rsquo;on puisse en comprendre tous les détails : <strong>un registre de ventes immobilières</strong>.
+Nous poserons plus d&rsquo;une question à ce même jeu de données (<em>dataset</em>).</p><p>Supposons qu&rsquo;on dispose d&rsquo;une liste de maisons récemment vendues, avec pour
 chacune quelques renseignements (sa superficie, son année de construction, son
 nombre de chambres) et surtout son <strong>prix de vente</strong> :</p><table><thead><tr><th>Superficie (m²)</th><th>Année</th><th>Chambres</th><th>Prix</th></tr></thead><tbody><tr><td>180</td><td>1995</td><td>4</td><td>420 000 \$</td></tr><tr><td>150</td><td>1980</td><td>3</td><td>350 000 \$</td></tr><tr><td>220</td><td>2010</td><td>5</td><td>580 000 \$</td></tr><tr><td>130</td><td>1972</td><td>3</td><td>310 000 \$</td></tr><tr><td>…</td><td>…</td><td>…</td><td>…</td></tr></tbody></table><p>La première question est la plus naturelle : <strong>combien vaut une maison ?</strong> Elle
 s&rsquo;énonce simplement. Une nouvelle maison se présente, dont on connaît la
@@ -1743,13 +1748,14 @@ quelle maison, on ignore toutes ses caractéristiques (sa superficie, son âge, 
 nombre de chambres) et on annonce toujours le <strong>même</strong> prix, le <strong>prix moyen</strong> de
 toutes les maisons de notre liste.</p><p>Dans notre exemple, ce prix moyen est d&rsquo;environ <strong>500 000 \$</strong>. La prédiction ne
 dépend donc plus de rien. Elle est de 500 000 \$ pour un très petit studio, et
-de 500 000 \$ aussi pour un grand manoir. C&rsquo;est évidemment absurde.</p><p>Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et
-il donne toujours une réponse. Sur le nuage de points de la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#notre-fil-rouge-des-maisons-%c3%a0-vendre>page précédente</a>, il
-correspond à une simple <strong>ligne horizontale</strong>, à la même hauteur (500 000 \$)
-quelle que soit la superficie. Cette ligne traverse le nuage en son milieu,
-au-dessus des maisons bon marché et en dessous des plus chères.</p><label class=book-image for=book-image-toggle-c54fa851e354><input class="hidden toggle" type=checkbox id=book-image-toggle-c54fa851e354>
+de 500 000 \$ aussi pour un grand manoir. C&rsquo;est évidemment absurde.</p><p>Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et il
+donne toujours une réponse. Sur le nuage de points (<em>scatter plot</em>) de la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#notre-fil-rouge-des-maisons-%c3%a0-vendre>page
+précédente</a>, il
+correspond à une simple <strong>ligne horizontale</strong>, à la même hauteur (500 000 \$) quelle
+que soit la superficie. Cette ligne traverse le nuage en son milieu, au-dessus des
+maisons bon marché et en dessous des plus chères.</p><label class=book-image for=book-image-toggle-a696a7b18f6f><input class="hidden toggle" type=checkbox id=book-image-toggle-a696a7b18f6f>
 <img src=/inf1901-teluq-v2/images/module2/maisons-baseline.svg alt="Le nuage de maisons traversé par une droite horizontale à 500 000 $ : un modèle qui prédit toujours le prix moyen, sans tenir compte de la superficie." loading=lazy title="Le modèle le plus bête : une droite plate à 500 000 $, qui ignore complètement la superficie." width=660 height=460 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-c54fa851e354"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=la-même-bêtise-pour-lautre-question>La même bêtise, pour l&rsquo;autre question<a class=anchor href=#la-m%c3%aame-b%c3%aatise-pour-lautre-question></a></h2><p>Le prédicteur le plus bête existe aussi pour la <strong>seconde question</strong> du chapitre
+</label><script>(function(){const e=document.getElementById("book-image-toggle-a696a7b18f6f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=la-même-bêtise-pour-lautre-question>La même bêtise, pour l&rsquo;autre question<a class=anchor href=#la-m%c3%aame-b%c3%aatise-pour-lautre-question></a></h2><p>Le prédicteur le plus bête existe aussi pour la <strong>seconde question</strong> du chapitre
 « <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#une-seconde-question-dune-tout-autre-nature>Le problème</a> », <em>cette maison partira-t-elle vite ?</em> Il suit la même logique : il
 ignore la maison qu&rsquo;on lui présente et répond toujours la même chose.</p><p>Il ne peut cependant pas répondre la moyenne, parce qu&rsquo;on ne peut pas faire la
 moyenne de « oui » et de « non ». L&rsquo;équivalent consiste à donner <strong>la réponse la
@@ -1781,29 +1787,31 @@ auront davantage de paramètres : un, puis deux, puis des milliers, puis des
 milliards. La principale difficulté consistera à trouver les bonnes valeurs pour
 ces paramètres, celles qui correspondent le mieux aux données. La structure
 restera cependant toujours la même : une entrée, une recette réglée par des
-paramètres, une sortie.</p><h2 id=pourquoi-un-modèle-aussi-bête-est-utile>Pourquoi un modèle aussi bête est utile<a class=anchor href=#pourquoi-un-mod%c3%a8le-aussi-b%c3%aate-est-utile></a></h2><p>Ce modèle est très mauvais, mais il est utile parce qu&rsquo;il fournit un <strong>étalon</strong>,
-c&rsquo;est-à-dire un point de comparaison pour juger tous les modèles suivants.</p><p>Les mots « bon » et « mauvais » n&rsquo;ont pas de sens dans l&rsquo;absolu. Pour savoir si
+paramètres, une sortie.</p><h2 id=pourquoi-un-modèle-aussi-bête-est-utile>Pourquoi un modèle aussi bête est utile<a class=anchor href=#pourquoi-un-mod%c3%a8le-aussi-b%c3%aate-est-utile></a></h2><p>Ce modèle est très mauvais, mais il est utile parce qu&rsquo;il fournit un <strong>étalon</strong>
+(<em>baseline</em>), c&rsquo;est-à-dire un point de comparaison pour juger tous les modèles
+suivants.</p><p>Les mots « bon » et « mauvais » n&rsquo;ont pas de sens dans l&rsquo;absolu. Pour savoir si
 un modèle a de la valeur, il faut une référence. La référence la plus élémentaire
 consiste à vérifier s&rsquo;il fait mieux qu&rsquo;un modèle qui ne regarde rien du tout. Un
 modèle, même sophistiqué, qui ne fait pas mieux que « toujours 500 000 \$ » n&rsquo;a
-rien appris d&rsquo;utile.</p><p>On peut faire cette comparaison concrètement, sans formule, en mesurant <strong>de
-combien un modèle se trompe, en moyenne</strong>. Pour le prédicteur bête, l&rsquo;écart entre
-le prix annoncé (toujours 500 000 \$) et le vrai prix dépasse 250 000 \$ pour
-les maisons situées aux extrêmes. C&rsquo;est cette « distance à la vérité » qu&rsquo;un
-meilleur modèle cherchera à réduire. Nous lui donnerons au chapitre « <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#mesurer-lerreur>Un modèle qui s&rsquo;entraîne</a> » un nom et une
-définition précise, la <em>fonction d&rsquo;erreur</em>, mais l&rsquo;idée suffit pour l&rsquo;instant :
-un bon modèle est un modèle qui se trompe moins.</p><label class=book-image for=book-image-toggle-fb71573b3210><input class="hidden toggle" type=checkbox id=book-image-toggle-fb71573b3210>
+rien appris d&rsquo;utile.</p><p>On peut faire cette comparaison concrètement, sans formule, en mesurant <strong>de combien
+un modèle se trompe, en moyenne</strong>. Pour le prédicteur bête, l&rsquo;écart entre le prix
+annoncé (toujours 500 000 \$) et le vrai prix dépasse 250 000 \$ pour les maisons
+situées aux extrêmes. C&rsquo;est cette « distance à la vérité » qu&rsquo;un meilleur modèle
+cherchera à réduire. Nous lui donnerons au chapitre « <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#mesurer-lerreur>Un modèle qui
+s&rsquo;entraîne</a> » un nom et une
+définition précise, la <em>fonction d&rsquo;erreur</em> (<em>loss function</em>), mais l&rsquo;idée suffit pour
+l&rsquo;instant : un bon modèle est un modèle qui se trompe moins.</p><label class=book-image for=book-image-toggle-9f35e18bead8><input class="hidden toggle" type=checkbox id=book-image-toggle-9f35e18bead8>
 <img src=/inf1901-teluq-v2/images/module2/maisons-erreurs.svg alt="Le nuage de maisons et la droite plate à 500 000 $, avec un segment vertical rouge reliant chaque maison à la droite : c'est l'erreur du modèle sur cette maison, longue aux extrêmes et courte près du centre." loading=lazy title="L'erreur du modèle, maison par maison : l'écart vertical entre le vrai prix et la prédiction." width=660 height=460 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-fb71573b3210"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En pratique, ce rôle d&rsquo;étalon évite bien des erreurs d&rsquo;interprétation. Un chiffre
+</label><script>(function(){const e=document.getElementById("book-image-toggle-9f35e18bead8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En pratique, ce rôle d&rsquo;étalon évite bien des erreurs d&rsquo;interprétation. Un chiffre
 de performance ne signifie rien à lui seul. Devant un modèle, la première
 question à poser est toujours de savoir s&rsquo;il fait vraiment mieux que de prédire
 bêtement la moyenne. La réponse est assez souvent non, et c&rsquo;est l&rsquo;étalon qui
 permet de le constater.</p><p>Pour la question en oui/non, le principe est le même, mais on compte autrement.
 Au lieu d&rsquo;un écart en dollars, on regarde <strong>quelle proportion des réponses le
 modèle obtient justes</strong>. Le prédicteur jumeau, qui répond « oui » à tout, a donc
-raison dans 60 % des cas. C&rsquo;est l&rsquo;étalon à battre.</p><label class=book-image for=book-image-toggle-33af08e13238><input class="hidden toggle" type=checkbox id=book-image-toggle-33af08e13238>
+raison dans 60 % des cas. C&rsquo;est l&rsquo;étalon à battre.</p><label class=book-image for=book-image-toggle-ed4f01ce9a34><input class="hidden toggle" type=checkbox id=book-image-toggle-ed4f01ce9a34>
 <img src=/inf1901-teluq-v2/images/module2/maisons-erreurs-oui-non.svg alt="Le nuage coloré de la page précédente : les mêmes maisons, aux mêmes places, la distance du centre-ville en abscisse et l'année de construction en ordonnée. Toutes sont maintenant bleues, parce que le modèle répond « oui » (vendue en moins de 30 jours) pour chacune, sans tenir compte de leurs caractéristiques. Un ✗ rouge marque celles qui s'étaient en réalité vendues lentement, c'est-à-dire celles qui étaient rouges sur la figure d'origine. Ce sont ses erreurs, et elles occupent presque tout l'amas du bas à droite, celui des maisons éloignées et anciennes." loading=lazy title="Le prédicteur jumeau colore toutes les maisons en « oui », et les ✗ marquent celles où il se trompe. On ne mesure plus un écart en dollars, on compte les réponses justes." width=660 height=505 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-33af08e13238"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il s&rsquo;agit du nuage coloré de la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#une-seconde-question-dune-tout-autre-nature>page précédente</a>, sans modification : les <strong>mêmes
+</label><script>(function(){const e=document.getElementById("book-image-toggle-ed4f01ce9a34"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il s&rsquo;agit du nuage coloré de la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#une-seconde-question-dune-tout-autre-nature>page précédente</a>, sans modification : les <strong>mêmes
 maisons</strong>, aux mêmes places. Seule leur couleur a changé. Comme le modèle répond
 « oui » partout, il les colore toutes en bleu, et les ✗ indiquent celles qui
 étaient rouges. Presque tous les ✗ se trouvent dans l&rsquo;amas du bas à droite,
@@ -1857,8 +1865,8 @@ peut être une maison, un client, un patient ou un courriel. Dès qu&rsquo;on sa
 décrire par quelques grandeurs, il devient un vecteur de nombres, et c&rsquo;est ce
 vecteur qu&rsquo;un modèle reçoit en entrée.</p><p>Une précision de vocabulaire servira dans toute la suite. Le <strong>prix</strong> ne fait pas
 partie de cette description, parce que c&rsquo;est justement la valeur qu&rsquo;on cherche à
-prédire. On l&rsquo;appelle la <strong>cible</strong>. On a donc, d&rsquo;un côté, les caractéristiques
-(l&rsquo;entrée du modèle) et, de l&rsquo;autre, la cible (sa sortie attendue).</p><label class=book-image for=book-image-toggle-ba8692da017f><input class="hidden toggle" type=checkbox id=book-image-toggle-ba8692da017f>
+prédire. On l&rsquo;appelle la <strong>cible</strong> (<em>target</em>). On a donc, d&rsquo;un côté, les
+caractéristiques (l&rsquo;entrée du modèle) et, de l&rsquo;autre, la cible (sa sortie attendue).</p><label class=book-image for=book-image-toggle-ba8692da017f><input class="hidden toggle" type=checkbox id=book-image-toggle-ba8692da017f>
 <img src=/inf1901-teluq-v2/images/module2/modele-entree-sortie.svg alt="Schéma : à gauche les caractéristiques d'une maison (superficie, année, chambres, salles de bain) ; une flèche vers une boîte « modèle » ; une flèche en sortie vers le prix (420 000 $)." loading=lazy title="Un modèle : les caractéristiques entrent, le prix sort." width=680 height=250 style=--largeur-plafond:680px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-ba8692da017f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h3 id=et-quand-la-cible-est-une-catégorie>Et quand la cible est une catégorie ?<a class=anchor href=#et-quand-la-cible-est-une-cat%c3%a9gorie></a></h3><p>Le prix est un nombre, donc il se prête sans difficulté à cette mise en forme.
 Notre seconde question était cependant différente : cette maison va-t-elle partir
@@ -1883,11 +1891,11 @@ s&rsquo;agira toujours de ses caractéristiques.</p><p>Nous pouvons maintenant n
 rencontrerez les noms partout :</p><ul><li>prédire un <strong>nombre</strong> (un prix, une température, une durée) s&rsquo;appelle une
 <strong>régression</strong> ;</li><li>prédire une <strong>catégorie</strong> (vendue vite ou non, pourriel ou courriel, chat ou
 chien, ou encore lequel des dix chiffres est écrit sur une enveloppe)
-s&rsquo;appelle une <strong>classification</strong>.</li></ul><p>La seule chose qui distingue ces deux familles est la <strong>nature de la cible</strong>.
-Cette distinction est pourtant l&rsquo;une des plus utiles du domaine, parce que presque
-tout problème d&rsquo;apprentissage à partir d&rsquo;exemples étiquetés appartient à l&rsquo;une ou
-à l&rsquo;autre. Nous les retrouverons souvent, et nous verrons que certains algorithmes
-savent faire les deux, alors que d&rsquo;autres se spécialisent.</p><h2 id=un-vecteur-cest-un-point-dans-un-espace>Un vecteur, c&rsquo;est un point dans un espace<a class=anchor href=#un-vecteur-cest-un-point-dans-un-espace></a></h2><p>Représenter une maison par un vecteur de nombres ne fait pas que ranger ses
+s&rsquo;appelle une <strong>classification</strong>.</li></ul><p>La seule chose qui distingue ces deux familles est la <strong>nature de la cible</strong>. Cette
+distinction est pourtant l&rsquo;une des plus utiles du domaine, parce que presque tout
+problème d&rsquo;apprentissage à partir d&rsquo;exemples étiquetés (<em>labeled examples</em>)
+appartient à l&rsquo;une ou à l&rsquo;autre. Nous les retrouverons souvent, et nous verrons que
+certains algorithmes savent faire les deux, alors que d&rsquo;autres se spécialisent.</p><h2 id=un-vecteur-cest-un-point-dans-un-espace>Un vecteur, c&rsquo;est un point dans un espace<a class=anchor href=#un-vecteur-cest-un-point-dans-un-espace></a></h2><p>Représenter une maison par un vecteur de nombres ne fait pas que ranger ses
 caractéristiques. Cela lui donne aussi une <strong>place dans l&rsquo;espace</strong>.</p><p>Prenons deux caractéristiques, la superficie et le nombre de chambres. On peut
 placer chaque maison comme un <strong>point</strong> sur un graphe, avec la superficie à
 l&rsquo;horizontale et le nombre de chambres à la verticale. Une maison correspond alors
@@ -1976,13 +1984,13 @@ impaires pour les valeurs ; la réalité est un peu plus complexe, mais le pri
 est celui-là). Pour réaliser une instruction, le CPU exécute un petit programme
 câblé directement dans ses circuits. C&rsquo;est à cet endroit que la logique rejoint la
 matière.</p><p>Vous pouvez exécuter vous-même, pas à pas, une version interactive de ce petit
-programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1791081730054003507 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
-façon qu&rsquo;on peut écrire un jeu ou un système d&rsquo;exploitation en langage machine, on
-peut y écrire un autre langage. Ce langage est plus <em>abstrait</em>, plus éloigné de la
-réalité physique, et il permet d&rsquo;exprimer des idées plus complexes de façon plus
-naturelle (C++, Python, JavaScript). On peut le voir comme un « ordinateur
-virtuel » implémenté au moyen d&rsquo;un langage moins abstrait. À ce niveau
-apparaissent des représentations beaucoup plus riches :</p><ul><li>des nombres entiers ;</li><li>des nombres réels (beaucoup plus complexes à représenter) ;</li><li>des chaînes de caractères ;</li><li>des listes de nombres, de mots, de listes… ;</li><li>des images, des sons ;</li><li>etc.</li></ul><p>C&rsquo;est à ce niveau que sont écrits les algorithmes d&rsquo;apprentissage automatique, et
+programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1791082601346231145 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
+façon qu&rsquo;on peut écrire un jeu ou un système d&rsquo;exploitation (<em>operating system</em>) en
+langage machine, on peut y écrire un autre langage. Ce langage est plus <em>abstrait</em>,
+plus éloigné de la réalité physique, et il permet d&rsquo;exprimer des idées plus complexes
+de façon plus naturelle (C++, Python, JavaScript). On peut le voir comme un
+« ordinateur virtuel » implémenté au moyen d&rsquo;un langage moins abstrait. À ce niveau
+apparaissent des représentations beaucoup plus riches :</p><ul><li>des nombres entiers ;</li><li>des nombres réels (beaucoup plus complexes à représenter) ;</li><li>des chaînes de caractères (<em>strings</em>) ;</li><li>des listes de nombres, de mots, de listes… ;</li><li>des images, des sons ;</li><li>etc.</li></ul><p>C&rsquo;est à ce niveau que sont écrits les algorithmes d&rsquo;apprentissage automatique, et
 que se trouvent les <em>vecteurs</em> dont parle cette page.</p><p><strong>Retour vers les symboles</strong></p><p>Ces niveaux permettent de mieux comprendre la distinction souvent faite entre
 l&rsquo;IA classique, qui manipule des <strong>symboles</strong>, et l&rsquo;apprentissage automatique, qui
 manipule des <strong>valeurs numériques</strong> et qu&rsquo;on qualifie parfois de <em>sub-symbolique</em>.
@@ -2024,15 +2032,15 @@ millions.</p><label class=book-image for=book-image-toggle-8a7f352c5e71><input c
 <img src=/inf1901-teluq-v2/images/module2/distance_high_dim.png alt="La même idée de distance, transposée à un espace de haute dimension." loading=lazy title="La même distance se calcule, quel que soit le nombre de dimensions." width=1129 height=831 style=--largeur-plafond:951px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-8a7f352c5e71"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><blockquote class="book-hint warning"><p><strong>Une nuance importante.</strong> Le fait que la distance se calcule sur des pixels ne
 signifie pas qu&rsquo;elle mesure bien la ressemblance entre images. Sur des
-caractéristiques choisies par un humain (superficie, nombre de pièces…), la
-proximité a un sens clair. Sur des pixels bruts, elle en a beaucoup moins. Deux
-photos du même chat, dans deux poses différentes, peuvent être très éloignées
-pixel à pixel. Une photo et sa version simplement assombrie, presque identiques
-pour notre œil, peuvent l&rsquo;être tout autant. Obtenir une distance qui reflète la
-ressemblance réelle d&rsquo;objets complexes est un problème à part entière, celui des
-<strong>bonnes représentations</strong>, que nous retrouverons avec les réseaux de neurones
-(Module 3) et les plongements (Module 4). Pour des données tabulaires
-comme nos maisons, en revanche, la distance brute convient déjà très bien.</p></blockquote><blockquote class="book-hint warning"><p><strong>La malédiction de la dimension.</strong> Une autre raison, plus mathématique, explique
+caractéristiques choisies par un humain (superficie, nombre de pièces…), la proximité
+a un sens clair. Sur des pixels bruts, elle en a beaucoup moins. Deux photos du même
+chat, dans deux poses différentes, peuvent être très éloignées pixel à pixel. Une
+photo et sa version simplement assombrie, presque identiques pour notre œil, peuvent
+l&rsquo;être tout autant. Obtenir une distance qui reflète la ressemblance réelle d&rsquo;objets
+complexes est un problème à part entière, celui des <strong>bonnes représentations</strong>, que
+nous retrouverons avec les réseaux de neurones (Module 3) et les plongements
+(<em>embeddings</em>, Module 4). Pour des données tabulaires comme nos maisons, en
+revanche, la distance brute convient déjà très bien.</p></blockquote><blockquote class="book-hint warning"><p><strong>La malédiction de la dimension.</strong> Une autre raison, plus mathématique, explique
 pourquoi la distance perd de son sens quand le nombre de dimensions augmente. Dans
 un plan, vingt maisons suffisent à occuper l&rsquo;espace, et chacune a des voisines
 proches. Dans un espace à un million de dimensions, comme celui des pixels, vingt
@@ -2080,14 +2088,15 @@ carte : bleu pâle si les <em>k</em> voisins votent « vendue vite », roug
 votent « a traîné ». Voici le résultat pour <em>k</em> = 3 :</p><label class=book-image for=book-image-toggle-5febc29aa9c1><input class="hidden toggle" type=checkbox id=book-image-toggle-5febc29aa9c1>
 <img src=/inf1901-teluq-v2/images/module2/maisons-frontiere-k3.svg alt="Le nuage coloré des maisons, dans le plan distance du centre × année de construction, avec le fond teinté : bleu pâle là où kNN (k = 3) répondrait « vendue vite » à une maison qui s'y trouverait, rouge pâle là où il répondrait « a traîné ». La ligne où la teinte change passe dans la bande vide entre les deux amas : c'est la frontière de décision. Les deux exceptions se trouvent dans la zone de la couleur opposée." loading=lazy title="La frontière de décision de kNN (k = 3) sur nos maisons : le fond donne la réponse du modèle en chaque point du plan, et la ligne où la couleur change est la frontière." width=660 height=500 style=--largeur-plafond:660px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-5febc29aa9c1"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le plan est ainsi divisé en deux <strong>régions</strong>. La ligne où la couleur change, qui
-passe dans la bande vide entre les deux amas, s&rsquo;appelle la <strong>frontière de
-décision</strong>. Personne ne l&rsquo;a tracée : elle résulte de l&rsquo;application de la règle en
-chaque point. C&rsquo;est elle qui détermine la prédiction. Une maison située d&rsquo;un côté
-sera classée « vendue vite », et une maison située de l&rsquo;autre côté sera classée
+passe dans la bande vide entre les deux amas, s&rsquo;appelle la <strong>frontière de décision</strong>
+(<em>decision boundary</em>). Personne ne l&rsquo;a tracée : elle résulte de l&rsquo;application de la
+règle en chaque point. C&rsquo;est elle qui détermine la prédiction. Une maison située d&rsquo;un
+côté sera classée « vendue vite », et une maison située de l&rsquo;autre côté sera classée
 « a traîné », sans autre nuance. On peut aussi observer ce qui arrive aux deux
-exceptions du <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#une-seconde-question-dune-tout-autre-nature>premier chapitre</a>. Avec <em>k</em> = 3, chacune se trouve dans la région de
-la couleur opposée, puisque ses trois voisins les plus proches votent pour l&rsquo;autre
-catégorie.</p><p>Cette observation vaut pour tout classificateur, et pas seulement pour kNN :
+exceptions du <a href=/inf1901-teluq-v2/docs/module2/le-probleme/#une-seconde-question-dune-tout-autre-nature>premier
+chapitre</a>.
+Avec <em>k</em> = 3, chacune se trouve dans la région de la couleur opposée, puisque ses
+trois voisins les plus proches votent pour l&rsquo;autre catégorie.</p><p>Cette observation vaut pour tout classificateur, et pas seulement pour kNN :
 <strong>classer revient à diviser l&rsquo;espace en régions, et un modèle de classification
 est entièrement décrit par la frontière qu&rsquo;il trace.</strong> C&rsquo;est pour cette raison que
 la classification est plus facile à visualiser que la régression : en deux
@@ -2097,18 +2106,18 @@ peut prendre n&rsquo;importe quelle forme.</p><p>L&rsquo;applet ci-dessous perme
 des points rouges et des points bleus. Chaque point coloré est un exemple connu,
 et le fond montre, comme plus haut, la prédiction de kNN pour tout nouveau point.
 Ajoutez des points, déplacez-les, faites varier <em>k</em> et observez comment la
-frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081730070651342 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie
-que sur le voisin le plus proche. La frontière suit alors le moindre détail, fait
-le tour de chaque point individuel et devient très irrégulière. Le modèle suit les
-exemples connus de si près qu&rsquo;il réagit au moindre point aberrant. Ce défaut porte
+frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791082601359267294 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie que
+sur le voisin le plus proche. La frontière suit alors le moindre détail, fait le tour
+de chaque point individuel et devient très irrégulière. Le modèle suit les exemples
+connus de si près qu&rsquo;il réagit au moindre point aberrant (<em>outlier</em>). Ce défaut porte
 un nom, et il est central dans tout ce qui suit : le <strong>sur-apprentissage</strong>
-(<em>overfitting</em>), qui consiste à apprendre les exemples eux-mêmes au lieu
-d&rsquo;apprendre à partir d&rsquo;eux. Nous y reviendrons en détail dans
-<a href=/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a>. Nos maisons le montrent : avec
-<em>k</em> = 1, chacune des deux exceptions crée autour d&rsquo;elle une petite zone de sa
-couleur dans la région opposée, et la frontière se découpe en cellules anguleuses.</p><label class=book-image for=book-image-toggle-8ea04a64540b><input class="hidden toggle" type=checkbox id=book-image-toggle-8ea04a64540b>
+(<em>overfitting</em>), qui consiste à apprendre les exemples eux-mêmes au lieu d&rsquo;apprendre
+à partir d&rsquo;eux. Nous y reviendrons en détail dans
+<a href=/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a>. Nos maisons le montrent : avec <em>k</em> = 1,
+chacune des deux exceptions crée autour d&rsquo;elle une petite zone de sa couleur dans la
+région opposée, et la frontière se découpe en cellules anguleuses.</p><label class=book-image for=book-image-toggle-20aaf29ef086><input class="hidden toggle" type=checkbox id=book-image-toggle-20aaf29ef086>
 <img src=/inf1901-teluq-v2/images/module2/maisons-frontiere-k1.svg alt="Même plan, même fond teinté, mais avec k = 1 : chaque maison impose sa couleur à tout ce qui l'entoure. Les deux exceptions créent chacune une petite zone de leur couleur dans la région opposée, et la frontière se découpe en cellules anguleuses." loading=lazy title="La même frontière avec k = 1 : chaque exception crée sa propre petite zone, et la frontière suit chaque point." width=660 height=500 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-8ea04a64540b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>À l&rsquo;autre extrême, avec un <strong>k très grand</strong>, chaque prédiction fait la moyenne de
+</label><script>(function(){const e=document.getElementById("book-image-toggle-20aaf29ef086"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>À l&rsquo;autre extrême, avec un <strong>k très grand</strong>, chaque prédiction fait la moyenne de
 tant de voisins que les particularités locales disparaissent. La frontière devient
 lisse, parfois au point d&rsquo;ignorer des structures qui existent réellement dans les
 données.</p><p>Une « bonne » valeur se trouve entre les deux, ni trop petite ni trop grande. La
@@ -2144,24 +2153,24 @@ toutes les données.</p><p>Nous allons construire ce modèle. Comme nous chercho
 faire l&rsquo;opération la plus élémentaire qu&rsquo;on puisse faire sur un nuage de points :
 <strong>y faire passer une droite.</strong></p><h2 id=un-modèle-qui-tient-en-deux-nombres>Un modèle qui tient en deux nombres<a class=anchor href=#un-mod%c3%a8le-qui-tient-en-deux-nombres></a></h2><p>Reprenons notre nuage de maisons (la superficie à l&rsquo;horizontale, le prix à la
 verticale). Faire passer une droite à travers ce nuage revient à supposer qu&rsquo;il
-existe une relation simple et régulière entre la taille d&rsquo;une maison et son prix,
-du type « chaque mètre carré supplémentaire ajoute environ tant de dollars ».
-Cette droite est notre modèle. C&rsquo;est aussi le plus ancien modèle de ce module.
-Legendre et Gauss ajustaient déjà des droites par la méthode des moindres carrés
-vers 1805 pour prédire la trajectoire des comètes, et c&rsquo;est Francis Galton qui, en
-1886, lui a donné le nom de <em>régression</em>, en étudiant la taille des enfants par
-rapport à celle de leurs parents.</p><label class=book-image for=book-image-toggle-5f90756a3f4f><input class="hidden toggle" type=checkbox id=book-image-toggle-5f90756a3f4f>
+existe une relation simple et régulière entre la taille d&rsquo;une maison et son prix, du
+type « chaque mètre carré supplémentaire ajoute environ tant de dollars ». Cette
+droite est notre modèle. C&rsquo;est aussi le plus ancien modèle de ce module. Legendre et
+Gauss ajustaient déjà des droites par la méthode des moindres carrés (<em>least
+squares</em>) vers 1805 pour prédire la trajectoire des comètes, et c&rsquo;est Francis Galton
+qui, en 1886, lui a donné le nom de <em>régression</em>, en étudiant la taille des enfants
+par rapport à celle de leurs parents.</p><label class=book-image for=book-image-toggle-5f90756a3f4f><input class="hidden toggle" type=checkbox id=book-image-toggle-5f90756a3f4f>
 <img src=/inf1901-teluq-v2/images/module2/maisons-droite.svg alt="Le nuage de maisons traversé par une droite inclinée qui suit sa tendance : le modèle de régression linéaire." loading=lazy title="La droite qui suit la tendance du nuage : c'est notre modèle." width=660 height=460 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-5f90756a3f4f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En mathématiques, une droite se résume à deux nombres :</p>$$\text{prix} = m \times \text{superficie} + b$$<ul><li><strong>m</strong>, la <em>pente</em> : de combien le prix monte quand la superficie augmente d&rsquo;une
-unité ;</li><li><strong>b</strong>, l&rsquo;<em>ordonnée à l&rsquo;origine</em> : le point de départ, là où la droite croise
-l&rsquo;axe vertical.</li></ul><p>Ces deux nombres, m et b, sont les <strong>paramètres</strong> du modèle, et ils ont ici une
+</label><script>(function(){const e=document.getElementById("book-image-toggle-5f90756a3f4f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>En mathématiques, une droite se résume à deux nombres :</p>$$\text{prix} = m \times \text{superficie} + b$$<ul><li><strong>m</strong>, la <em>pente</em> (<em>slope</em>) : de combien le prix monte quand la superficie augmente
+d&rsquo;une unité ;</li><li><strong>b</strong>, l&rsquo;<em>ordonnée à l&rsquo;origine</em> (<em>intercept</em>) : le point de départ, là où la droite
+croise l&rsquo;axe vertical.</li></ul><p>Ces deux nombres, m et b, sont les <strong>paramètres</strong> du modèle, et ils ont ici une
 signification. <a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a>
 résumait tout en un seul nombre (la moyenne), et kNN n&rsquo;avait aucun paramètre.
 Notre droite en a deux, ce qui suffit pour représenter une <em>tendance</em>, avec une
 direction et une hauteur. Si on change m et b, on obtient une autre droite, donc
 un autre modèle. Le problème consiste à trouver le couple (m, b) qui donne la
 droite la mieux ajustée au nuage.</p><p>Essayez vous-même. Dans l&rsquo;applet ci-dessous, déplacez la droite (vous ajustez
-ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1791081730095393808 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
+ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1791082601377763772 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
 préciser ce que « bien » veut dire. Il nous faut une mesure, que nous avons déjà
 rencontrée avec le modèle le plus bête sans encore la définir précisément :
 l&rsquo;<strong>erreur</strong>.</p><p>Pour une droite donnée, l&rsquo;erreur sur une maison est l&rsquo;écart entre le prix que la
@@ -2170,20 +2179,20 @@ droite <em>prédit</em> (le point de la droite à la verticale de cette maison) 
 différence est qu&rsquo;ici la droite est inclinée, et qu&rsquo;elle peut donc passer beaucoup
 plus près des points qu&rsquo;une droite horizontale.</p><label class=book-image for=book-image-toggle-d907cb1b479f><input class="hidden toggle" type=checkbox id=book-image-toggle-d907cb1b479f>
 <img src=/inf1901-teluq-v2/images/module2/maisons-erreurs-droite.svg alt="Le nuage de maisons et la droite de régression inclinée, avec un court segment rouge reliant chaque maison à la droite : l'erreur, bien plus courte qu'avec la droite plate du modèle le plus bête." loading=lazy title="Les mêmes erreurs qu'avec le modèle le plus bête, mais par rapport à une droite inclinée : elles sont beaucoup plus courtes." width=660 height=460 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-d907cb1b479f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;erreur totale du modèle combine tous ces écarts. On les met au carré, pour que
-les écarts au-dessus et en dessous de la droite ne s&rsquo;annulent pas et pour pénaliser
+</label><script>(function(){const e=document.getElementById("book-image-toggle-d907cb1b479f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;erreur totale du modèle combine tous ces écarts. On les met au carré, pour que les
+écarts au-dessus et en dessous de la droite ne s&rsquo;annulent pas et pour pénaliser
 davantage les grands écarts, puis on en fait la moyenne. Ce nombre, la moyenne des
-carrés des écarts, porte un nom technique, l&rsquo;<em>erreur quadratique moyenne</em>, mais
-l&rsquo;idée est simple : <strong>plus il est petit, mieux la droite s&rsquo;ajuste au nuage.</strong>
-(Considérez le cas limite. Si la droite passait exactement par tous les points,
-chaque écart serait nul, chaque carré aussi, et l&rsquo;erreur vaudrait zéro. C&rsquo;est la
-valeur minimale possible. Avec un nuage comme le nôtre, aucune droite ne
-l&rsquo;atteint, et l&rsquo;objectif est de s&rsquo;en approcher le plus possible.)</p><p>On peut se représenter cette erreur de la façon suivante. Imaginez que chaque
+carrés des écarts, porte un nom technique, l&rsquo;<em>erreur quadratique moyenne</em> (<em>mean
+squared error</em>), mais l&rsquo;idée est simple : <strong>plus il est petit, mieux la droite
+s&rsquo;ajuste au nuage.</strong> (Considérez le cas limite. Si la droite passait exactement par
+tous les points, chaque écart serait nul, chaque carré aussi, et l&rsquo;erreur vaudrait
+zéro. C&rsquo;est la valeur minimale possible. Avec un nuage comme le nôtre, aucune droite
+ne l&rsquo;atteint, et l&rsquo;objectif est de s&rsquo;en approcher le plus possible.)</p><p>On peut se représenter cette erreur de la façon suivante. Imaginez que chaque
 point est relié à la droite par un petit ressort vertical. Un point éloigné tire
 fort, un point proche tire à peine. La meilleure droite est celle où les forces de
 tous ces ressorts s&rsquo;équilibrent, c&rsquo;est-à-dire la position de moindre tension.
 Cette position correspond à la droite de plus petite erreur. Vous pouvez
-l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1791081730096745502 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
+l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1791082601378371480 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
 dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
 quand le modèle n&rsquo;a plus deux paramètres, mais des milliers. C&rsquo;est l&rsquo;objet de la
 <a href=#apprendre-cest-descendre-la-pente>section suivante</a>.</p><h2 id=apprendre-cest-descendre-la-pente>Apprendre, c&rsquo;est descendre la pente<a class=anchor href=#apprendre-cest-descendre-la-pente></a></h2><p>L&rsquo;idée présentée dans cette section est au cœur de tout l&rsquo;apprentissage
@@ -2201,15 +2210,15 @@ paysage.</p><label class=book-image for=book-image-toggle-ef2b05ee9039><input cl
 </label><script>(function(){const e=document.getElementById("book-image-toggle-ef2b05ee9039"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La machine ne connaît pas la forme complète de ce paysage. Elle procède comme un
 randonneur dans le brouillard : elle mesure la <strong>pente</strong> à l&rsquo;endroit où elle se
 trouve et fait un pas dans la direction qui descend le plus. Puis elle recommence.
-Pas après pas, elle descend vers le creux, comme une bille posée sur le flanc
-d&rsquo;une vallée roule vers le fond. Quand la pente devient nulle, le fond est
-atteint, et les meilleurs paramètres sont trouvés. Cette méthode s&rsquo;appelle la
-<strong>descente de gradient</strong> (le « gradient » désigne la direction de plus forte
+Pas après pas, elle descend vers le creux, comme une bille posée sur le flanc d&rsquo;une
+vallée roule vers le fond. Quand la pente devient nulle, le fond est atteint, et les
+meilleurs paramètres sont trouvés. Cette méthode s&rsquo;appelle la <strong>descente de
+gradient</strong> (<em>gradient descent</em> ; le « gradient » désigne la direction de plus forte
 pente). C&rsquo;est le mécanisme central de l&rsquo;apprentissage.</p><p>La taille des pas a de l&rsquo;importance. Si les pas sont trop grands, on risque de
-dépasser le creux et d&rsquo;osciller autour sans l&rsquo;atteindre. S&rsquo;ils sont trop petits,
-la descente est très longue. Ce réglage, le <em>taux d&rsquo;apprentissage</em>, n&rsquo;est pas un
-paramètre du modèle, mais un réglage de la <em>procédure</em>. On l&rsquo;appelle un
-<strong>hyper-paramètre</strong>.</p><p>Cette idée rejoint la fin du <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#la-bascule>Module 1</a>, où
+dépasser le creux et d&rsquo;osciller autour sans l&rsquo;atteindre. S&rsquo;ils sont trop petits, la
+descente est très longue. Ce réglage, le <em>taux d&rsquo;apprentissage</em> (<em>learning rate</em>),
+n&rsquo;est pas un paramètre du modèle, mais un réglage de la <em>procédure</em>. On l&rsquo;appelle un
+<strong>hyper-paramètre</strong> (<em>hyperparameter</em>).</p><p>Cette idée rejoint la fin du <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#la-bascule>Module 1</a>, où
 nous annoncions qu&rsquo;<em>« apprendre, c&rsquo;est encore chercher, mais dans un autre
 espace »</em>. Il ne s&rsquo;agit plus d&rsquo;explorer les coups d&rsquo;une partie d&rsquo;échecs, mais
 l&rsquo;ensemble très vaste des réglages possibles d&rsquo;un modèle. La descente de gradient
@@ -2232,12 +2241,13 @@ qu&rsquo;un nombre. Par exemple, ce courriel est-il un pourriel ou non ? Cette
 montre-t-elle un chat ou un chien ? Nous avons rencontré ce type de tâche au
 <a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/#les-k-plus-proches-voisins>chapitre sur kNN</a> : la <strong>classification</strong>. Cependant, kNN n&rsquo;apprenait rien. Nous
 voulons maintenant un modèle qui s&rsquo;entraîne comme notre droite, mais dont la
-sortie est une catégorie plutôt qu&rsquo;une valeur.</p><p>Presque tous les éléments que nous venons de construire vont servir de nouveau.
-Un modèle réglé par des paramètres, une fonction d&rsquo;erreur et une descente de
-gradient pour la minimiser forment un ensemble assez général pour s&rsquo;appliquer à
-la classification comme à la régression. Il suffira de modifier la <em>forme</em> du
-modèle (une droite qui <em>sépare</em> les points, plutôt qu&rsquo;une droite qui <em>suit</em> leur
-tendance) et la <em>façon de calculer l&rsquo;erreur</em>. C&rsquo;est l&rsquo;objet du prochain chapitre, « <a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a> ».</p></section><section class=page data-type=page data-url=/inf1901-teluq-v2/docs/module2/classer/ data-titre=Classer><h1 id=classer>Classer<a class=anchor href=#classer></a></h1><p>Le chapitre « <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s&rsquo;entraîne</a> » a présenté un modèle qui apprend vraiment : une droite, deux
+sortie est une catégorie plutôt qu&rsquo;une valeur.</p><p>Presque tous les éléments que nous venons de construire vont servir de nouveau. Un
+modèle réglé par des paramètres, une fonction d&rsquo;erreur et une
+descente de gradient pour la minimiser forment un ensemble assez général pour
+s&rsquo;appliquer à la classification comme à la régression. Il suffira de modifier la
+<em>forme</em> du modèle (une droite qui <em>sépare</em> les points, plutôt qu&rsquo;une droite qui
+<em>suit</em> leur tendance) et la <em>façon de calculer l&rsquo;erreur</em>. C&rsquo;est l&rsquo;objet du prochain
+chapitre, « <a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a> ».</p></section><section class=page data-type=page data-url=/inf1901-teluq-v2/docs/module2/classer/ data-titre=Classer><h1 id=classer>Classer<a class=anchor href=#classer></a></h1><p>Le chapitre « <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s&rsquo;entraîne</a> » a présenté un modèle qui apprend vraiment : une droite, deux
 paramètres, une erreur à minimiser et une descente vers le creux. Ce modèle
 répond cependant toujours par un <strong>nombre</strong>, ici un prix. Or beaucoup de questions
 n&rsquo;appellent pas un nombre, mais une <strong>catégorie</strong>. Par exemple, on peut se
@@ -2269,13 +2279,13 @@ toutefois changé. En régression, on lisait la droite verticalement : à telle
 superficie correspond tel prix. Ici, on regarde de quel <strong>côté</strong> de la ligne
 tombe le point. D&rsquo;un côté, on répond <code>bleu</code>, de l&rsquo;autre, <code>rouge</code>. La même
 équation, $m x_1 + b$, ne sert plus à calculer une valeur mais à partager le plan
-en deux.</p><p>Cet algorithme s&rsquo;appelle la <strong>régression logistique</strong>. Il a été mis au point par
+en deux.</p><p>Cet algorithme s&rsquo;appelle la <strong>régression logistique</strong> (<em>logistic regression</em>). Il a été mis au point par
 des statisticiens dans les années 1950 et, malgré son nom (il contient
 « régression » alors qu&rsquo;il classe), c&rsquo;est l&rsquo;un des classificateurs les plus
 utilisés. Dans l&rsquo;applet ci-dessous, déplacez la ligne de décision pour séparer
 au mieux les deux groupes. Vous ajustez ainsi ses deux paramètres à la main,
 comme vous déplaciez la droite de régression au <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#un-mod%c3%a8le-qui-tient-en-deux-nombres>chapitre précédent</a>. Vous pouvez
-aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1791081730106842713 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
+aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1791082601387815121 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
 verticale au point, puisqu&rsquo;on ne prédit plus une valeur. On compte plutôt les
 cas où le modèle se <strong>trompe de côté</strong> : un point bien placé ne coûte rien, un
 point du mauvais côté coûte cher. La barre à droite de l&rsquo;applet affiche cette
@@ -2308,7 +2318,7 @@ $\mathbf{w} = [w_1, w_2]$ accompagné de $b$. On calcule d&rsquo;abord un <stron
 qui indique de combien et de quel côté le point s&rsquo;écarte de la frontière :</p>$$z = w_1 x_1 + w_2 x_2 + b$$<p>On le passe ensuite dans la sigmoïde pour obtenir la probabilité estimée :</p>$$\hat{y} = \frac{1}{1 + e^{-z}}$$<p>Ici, $\hat{y} \in [0, 1]$ est une probabilité, à distinguer de $y \in {0, 1}$,
 la vraie classe. La décision finale est la suivante : bleu si $\hat{y} \ge 0{,}5$,
 rouge sinon.</p><p>L&rsquo;erreur sur un point compare la probabilité prédite $\hat{y}$ à la vraie
-classe $y$. On utilise l&rsquo;<strong>entropie croisée</strong> :</p>$$E(y, \hat{y}) = -\big[\,y \log(\hat{y}) + (1 - y)\log(1 - \hat{y})\,\big]$$<p>Cette fonction se comporte comme on le souhaite. Si le point est bleu ($y = 1$)
+classe $y$. On utilise l&rsquo;<strong>entropie croisée</strong> (<em>cross-entropy</em>) :</p>$$E(y, \hat{y}) = -\big[\,y \log(\hat{y}) + (1 - y)\log(1 - \hat{y})\,\big]$$<p>Cette fonction se comporte comme on le souhaite. Si le point est bleu ($y = 1$)
 et que le modèle en est sûr ($\hat{y} = 0{,}9$), l&rsquo;erreur est faible
 ($-\log 0{,}9 \approx 0{,}1$). S&rsquo;il se trompe avec assurance
 ($\hat{y} = 0{,}1$ pour un vrai bleu), l&rsquo;erreur devient grande
@@ -2342,7 +2352,7 @@ Tous les autres points n&rsquo;ont aucune influence sur la frontière : on peut
 déplacer, les retirer ou en ajouter loin de la bande, sans que rien change. C&rsquo;est
 une différence importante avec la régression logistique, où chaque point tire un
 peu sur la frontière.</p><p>Dans l&rsquo;applet ci-dessous, la frontière est recalculée à chaque modification. La
-bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1791081730107541844 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
+bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1791082601388456772 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
 se réorganise autour de ce nouveau point.</li><li>Glissez un point rouge au milieu des bleus, puis réglez le curseur de
 tolérance, décrit ci-dessous.</li></ol><p><strong>La marge souple.</strong> Quand les groupes se chevauchent, aucune droite ne les sépare
 parfaitement, et aucune bande vide n&rsquo;existe. La méthode accepte alors que certains
@@ -2358,7 +2368,7 @@ dès 1963 par le mathématicien soviétique Vladimir Vapnik, dans le cadre d&rsq
 théorie de l&rsquo;apprentissage qu&rsquo;il développe avec Alexeï Tchervonenkis. Émigré aux
 États-Unis, Vapnik la reprend aux Bell Labs. En 1992, avec Bernhard Boser et
 Isabelle Guyon, il lui permet de tracer des frontières courbes. En 1995, avec
-Corinna Cortes, il publie la marge souple. C&rsquo;est le laboratoire où Yann Le Cun
+Corinna Cortes, il publie la marge souple (<em>soft margin</em>). C&rsquo;est le laboratoire où Yann Le Cun
 développe au même moment ses
 <span title="Ce module sera publié plus tard">réseaux convolutifs</span>.
 Pendant une quinzaine d&rsquo;années, les SVM sont l&rsquo;une des méthodes les plus
@@ -2368,7 +2378,7 @@ n&rsquo;existe qu&rsquo;une seule meilleure frontière, et on est sûr de la tro
 chapitre
 « <a href=/inf1901-teluq-v2/docs/module2/generaliser/#ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau>Généraliser</a> »
 montrera comment les SVM tracent aussi des frontières courbes, grâce à une idée
-appelée l&rsquo;<strong>astuce du noyau</strong>.</p><details><summary>Les mathématiques des SVM (optionnel)</summary><div class=markdown-inner><p>Reprenons la notation de la régression logistique, avec cette fois des classes
+appelée l&rsquo;<strong>astuce du noyau</strong> (<em>kernel trick</em>).</p><details><summary>Les mathématiques des SVM (optionnel)</summary><div class=markdown-inner><p>Reprenons la notation de la régression logistique, avec cette fois des classes
 notées $y \in {-1, +1}$. La frontière est la droite
 $w_1 x_1 + w_2 x_2 + b = 0$. On impose que les points de chaque classe soient du
 bon côté avec une certaine avance :</p>$$y^{(i)}\,\big(\mathbf{w} \cdot \mathbf{x}^{(i)} + b\big) \ge 1 \quad \text{pour tous les points } i$$<p>Les bords de la bande sont alors les droites $\mathbf{w} \cdot \mathbf{x} + b = 1$
@@ -2415,7 +2425,7 @@ soit bleu, étant donné ce point. Passer de la <em>probabilité du point sachan
 classe</em> à la <em>probabilité de la classe sachant le point</em> est précisément ce que
 permet un résultat fondamental des probabilités, le <strong>théorème de Bayes</strong>, publié
 en 1763. C&rsquo;est lui qui donne son nom à la méthode, la <strong>classification bayésienne
-naïve</strong>.</p><p>On dispose donc de deux approches pour le même objectif :</p><table><thead><tr><th></th><th><strong>Régression logistique</strong></th><th><strong>Bayes naïf</strong></th></tr></thead><tbody><tr><td>Philosophie</td><td><strong>discriminative</strong></td><td><strong>générative</strong></td></tr><tr><td>Stratégie</td><td>tracer la frontière</td><td>décrire chaque classe</td></tr><tr><td>Question posée</td><td>de quel côté ?</td><td>à quel portrait ressemble-t-il le plus ?</td></tr><tr><td>Bonus</td><td>—</td><td>pourrait générer de nouveaux exemples</td></tr></tbody></table><p>Sur nos données en deux dimensions, ces deux approches très différentes
+naïve</strong> (<em>naive Bayes</em>).</p><p>On dispose donc de deux approches pour le même objectif :</p><table><thead><tr><th></th><th><strong>Régression logistique</strong></th><th><strong>Bayes naïf</strong></th></tr></thead><tbody><tr><td>Philosophie</td><td><strong>discriminative</strong></td><td><strong>générative</strong></td></tr><tr><td>Stratégie</td><td>tracer la frontière</td><td>décrire chaque classe</td></tr><tr><td>Question posée</td><td>de quel côté ?</td><td>à quel portrait ressemble-t-il le plus ?</td></tr><tr><td>Bonus</td><td>—</td><td>pourrait générer de nouveaux exemples</td></tr></tbody></table><p>Sur nos données en deux dimensions, ces deux approches très différentes
 aboutissent à la <strong>même forme de frontière</strong>, une droite. La distinction entre
 apprendre à séparer et apprendre à décrire reste cependant l&rsquo;une des plus
 importantes du domaine. Nous la retrouverons au <span title="Ce module sera publié plus tard">Module 4</span>, qui
@@ -2428,7 +2438,7 @@ la courbe est continue, une probabilité correspond à une <strong>aire</strong>
 donc 0,5.</p><p>Concrètement, on projette d&rsquo;abord les points sur l&rsquo;axe $x_1$, ce qui les rend
 unidimensionnels…</p><p><img src=/inf1901-teluq-v2/images/module2/nb_x1_proj.png alt width=934 height=607></p><p>…puis on ajuste une cloche par classe, dont la largeur correspond à la
 dispersion des points projetés :</p><p><img src=/inf1901-teluq-v2/images/module2/nb_x1_gauss.png alt width=743 height=498></p><p>On fait ensuite la même chose sur l&rsquo;axe $x_2$ :</p><p><img src=/inf1901-teluq-v2/images/module2/nb_x2_proj.png alt width=847 height=553></p><p><img src=/inf1901-teluq-v2/images/module2/nb_x2_gauss.png alt width=760 height=543></p><p>On dispose alors de quatre modèles $p(x_j \mid \text{classe})$. La moyenne $\mu$
-et l&rsquo;écart-type $\sigma$ de chaque cloche s&rsquo;obtiennent <strong>directement</strong> par un
+et l&rsquo;écart-type (<em>standard deviation</em>) $\sigma$ de chaque cloche s&rsquo;obtiennent <strong>directement</strong> par un
 calcul de moyenne et de dispersion sur les points concernés. Aucune descente de
 gradient itérative n&rsquo;est nécessaire ici :</p>$$\hat\mu_{j,c} = \frac{1}{N_c}\sum_{i \in c} x_{ij}, \qquad \hat\sigma^2_{j,c} = \frac{1}{N_c}\sum_{i \in c} \big(x_{ij} - \hat\mu_{j,c}\big)^2$$<p>L&rsquo;hypothèse naïve d&rsquo;indépendance permet de combiner les caractéristiques par
 simple multiplication :</p>$$p(\mathbf{x} \mid c) = p(x_1 \mid c)\,\cdot\,p(x_2 \mid c)$$<p>Ce modèle est génératif : il décrit la probabilité d&rsquo;un point $\mathbf{x}$
@@ -2446,7 +2456,7 @@ texte. Il faut donc trouver comment transformer un texte comme « <em>Félicit
 Vous avez gagné un prix…</em> » en coordonnées.</p><p>La solution reprend la démarche de <a href=/inf1901-teluq-v2/docs/module2/les-donnees/><em>Regarder les
 données</em></a> : une chose se décrit par une <strong>liste de
 nombres</strong> et devient ainsi un point dans un espace. Pour un texte, le procédé le
-plus simple s&rsquo;appelle le <strong>sac de mots</strong>. On établit la liste de tous les mots
+plus simple s&rsquo;appelle le <strong>sac de mots</strong> (<em>bag of words</em>). On établit la liste de tous les mots
 possibles (le <em>vocabulaire</em>), puis on décrit un courriel en comptant combien de
 fois chaque mot y apparaît. Chaque mot du vocabulaire correspond à une
 dimension, et la valeur est le nombre d&rsquo;occurrences. Par exemple, le mot
@@ -2467,7 +2477,7 @@ appelle souvent « bancaire »), mais c&rsquo;est commode et étonnamment ef
 caractéristiques y étaient des valeurs continues, décrites par une courbe en
 cloche. Ici, ce sont des comptes, des nombres entiers : zéro, une ou deux
 occurrences, par exemple. On remplace donc la cloche par une loi adaptée aux
-comptes, la <strong>loi multinomiale</strong>, mais le principe est le même. Le portrait
+comptes, la <strong>loi multinomiale</strong> (<em>multinomial distribution</em>), mais le principe est le même. Le portrait
 d&rsquo;une classe n&rsquo;est plus une moyenne et une dispersion, mais la liste des mots
 qu&rsquo;elle emploie souvent. Des mots comme « gratuit », « urgent » ou
 « félicitations » sont fréquents dans les pourriels et beaucoup moins dans les
@@ -2500,7 +2510,7 @@ renvoyait un linguiste, son système s&rsquo;améliorait.</li><li><strong>La tra
 probabilités apprises sur des textes déjà traduits, au lieu d&rsquo;écrire des règles
 de grammaire.</li><li><strong>Les filtres anti-pourriel.</strong> En 2002, l&rsquo;essai de Paul Graham, « A Plan for
 Spam », popularise le classifieur bayésien de la section précédente, que la
-plupart des messageries adoptent ensuite.</li><li><strong>Le raisonnement en général</strong>, avec les <strong>réseaux bayésiens</strong> de Judea Pearl,
+plupart des messageries adoptent ensuite.</li><li><strong>Le raisonnement en général</strong>, avec les <strong>réseaux bayésiens</strong> (<em>Bayesian networks</em>) de Judea Pearl,
 présentés ci-dessous.</li></ul><p><strong>Du classifieur naïf au réseau.</strong> On peut dessiner le classifieur bayésien naïf
 comme un graphe. Un nœud représente la classe, « pourriel ou non », et une flèche
 part de ce nœud vers chaque mot, parce que la classe influence les mots employés.
@@ -2518,7 +2528,7 @@ mais il appelle aussi parfois quand il confond l&rsquo;alarme avec la sonnerie d
 téléphone. Marie entend moins bien, mais se trompe rarement.</p><label class=book-image for=book-image-toggle-1836709f5a96><input class="hidden toggle" type=checkbox id=book-image-toggle-1836709f5a96>
 <img src=/inf1901-teluq-v2/images/module2/reseau-alarme.svg alt="Cinq nœuds. Cambriolage et Séisme pointent vers Alarme, qui pointe vers Jean appelle et Marie appelle. Chaque nœud porte sa table : cambriolage 0,1 % ; séisme 0,2 % ; l'alarme sonne à 95 % s'il y a cambriolage et séisme, 94 % s'il y a seulement cambriolage, 29 % s'il y a seulement séisme, 0,1 % sinon ; Jean appelle à 90 % si l'alarme sonne et 5 % sinon ; Marie appelle à 70 % si l'alarme sonne et 1 % sinon." loading=lazy title="Le réseau de l'alarme : cinq variables, et une petite table de probabilités par variable." width=700 height=470 style=--largeur-plafond:700px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-1836709f5a96"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Dans l&rsquo;applet ci-dessous, cliquez sur un nœud pour indiquer ce que vous savez :
-vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1791081730109900940 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
+vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1791082601390307518 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
 Indiquez que l&rsquo;alarme sonne. Elle passe à environ 37 %.</li><li>Indiquez ensuite qu&rsquo;il y a eu un tremblement de terre. La probabilité du
 cambriolage retombe à 0,3 %. Le séisme explique l&rsquo;alarme, et le cambriolage
 n&rsquo;est plus nécessaire pour l&rsquo;expliquer. Ce raisonnement s&rsquo;appelle
@@ -2534,7 +2544,7 @@ en analyse de risques ou dans des filtres comme celui des pourriels. Pearl a
 ensuite cherché à distinguer, dans ces graphes, les influences causales des
 simples corrélations. Ces travaux sur la <strong>causalité</strong> lui ont valu le prix Turing
 en 2011. La distinction entre corrélation et causalité sera reprise au
-<span title="Ce module sera publié plus tard">Module 5</span>.</p><details><summary>Les mathématiques des réseaux bayésiens (optionnel)</summary><div class=markdown-inner><p>Un réseau bayésien décrit la probabilité conjointe de toutes ses variables comme
+<span title="Ce module sera publié plus tard">Module 5</span>.</p><details><summary>Les mathématiques des réseaux bayésiens (optionnel)</summary><div class=markdown-inner><p>Un réseau bayésien décrit la probabilité conjointe (<em>joint probability</em>) de toutes ses variables comme
 un produit de petites tables. Pour l&rsquo;alarme, avec $C$ (cambriolage), $S$
 (séisme), $A$ (alarme), $J$ et $M$ (les appels) :</p>$$P(C, S, A, J, M) = P(C)\,P(S)\,P(A \mid C, S)\,P(J \mid A)\,P(M \mid A)$$<p>Avec cinq variables vrai ou faux, la table complète compterait 32 cases. Le réseau
 n&rsquo;a besoin que de 10 nombres. Pour obtenir une probabilité comme $P(C \mid A)$, on
@@ -2556,7 +2566,7 @@ s&rsquo;appelle la <strong>calibration</strong>, et on peut la vérifier.</p><p>
 moyenne des carrés des écarts, et celle de la régression logistique, qui
 pénalise d&rsquo;autant plus le modèle qu&rsquo;il se trompe avec assurance. Ces deux
 fonctions semblent sans rapport, mais elles découlent d&rsquo;un même principe, l&rsquo;un
-des plus importants de la statistique : le <strong>maximum de vraisemblance</strong>. Au lieu
+des plus importants de la statistique : le <strong>maximum de vraisemblance</strong> (<em>maximum likelihood</em>). Au lieu
 de chercher les paramètres qui réduisent l&rsquo;erreur, on cherche les paramètres
 sous lesquels les données observées étaient les plus probables. Si l&rsquo;on suppose
 que les prix des maisons s&rsquo;écartent de la droite selon une courbe en cloche,
@@ -2595,7 +2605,7 @@ Chaque réponse réduit l&rsquo;ensemble des possibilités. Le guide de dépanna
 fin d&rsquo;un manuel suit le même principe : « l&rsquo;appareil s&rsquo;allume-t-il ? si non,
 est-il branché ? ». Il s&rsquo;agit chaque fois d&rsquo;une suite de questions à réponse oui
 ou non, qui se ramifie et aboutit à une conclusion.</p><p>Cette façon de décider correspond à l&rsquo;un des modèles les plus anciens et les plus
-intuitifs de l&rsquo;apprentissage automatique, l&rsquo;<strong>arbre de décision</strong>. Comme kNN, il
+intuitifs de l&rsquo;apprentissage automatique, l&rsquo;<strong>arbre de décision</strong> (<em>decision tree</em>). Comme kNN, il
 traite aussi bien la régression que la classification, et son principe peut se
 dessiner. Il apporte cependant deux choses qu&rsquo;aucun modèle du module n&rsquo;offrait
 encore : une frontière qui n&rsquo;est pas une droite, et une décision qu&rsquo;on peut
@@ -2674,7 +2684,7 @@ semblable à la recherche dans un arbre de coups du <a href=/inf1901-teluq-v2/do
 la troisième façon d&rsquo;apprendre présentée dans ce module, et elle a la même
 structure que les deux autres : des données, une mesure de ce qui est bon (la
 pureté) et une procédure qui maximise cette mesure.</p><blockquote class="book-hint info"><p><strong>Pour aller plus loin : mesurer le mélange.</strong> La mesure la plus courante est
-l&rsquo;<em>indice de Gini</em>. Dans une feuille où une proportion $p$ des maisons est bleue,
+l&rsquo;<em>indice de Gini</em> (<em>Gini impurity</em>). Dans une feuille où une proportion $p$ des maisons est bleue,
 il vaut $2p(1-p)$, soit 0 pour une feuille pure et 0,5 pour une feuille
 moitié-moitié. Le score d&rsquo;une question est la moyenne des indices de ses deux
 côtés, pondérée par leur taille. Sur nos maisons, l&rsquo;indice de départ vaut 0,48,
@@ -2745,14 +2755,14 @@ n&rsquo;indique quelle est cette profondeur. Nous avons rencontré ce problème 
 et nous le retrouverons pour tous les modèles dans
 <a href=/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a>, où l&rsquo;arbre servira d&rsquo;exemple
 principal. Pour l&rsquo;instant, retenez les deux façons de limiter un arbre : fixer
-une profondeur maximale, ou le laisser pousser puis <strong>l&rsquo;élaguer</strong>, c&rsquo;est-à-dire
+une profondeur maximale, ou le laisser pousser puis <strong>l&rsquo;élaguer</strong> (<em>pruning</em>), c&rsquo;est-à-dire
 supprimer après coup les branches qui n&rsquo;apportent que du détail.</p><p>L&rsquo;applet ci-dessous vous permet d&rsquo;en faire l&rsquo;expérience. Elle présente des points
 rouges et bleus, un arbre appris en direct et le fond correspondant dans le plan.
 À droite, l&rsquo;arbre lui-même se redessine à chaque changement. Faites varier la
 profondeur maximale de 1 à 8 et observez les rectangles se multiplier autour des
 points isolés. Ajoutez un point d&rsquo;une couleur au milieu de l&rsquo;autre couleur et
 observez comment l&rsquo;arbre s&rsquo;adapte. Survolez une zone du plan pour voir son chemin
-s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1791081730121927910 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
+s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1791082601403562790 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
 utiliserons à propos des fuites dans <a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
 modèle</em></a> : la liste des 1309 passagers du
 <em>Titanic</em>, avec pour chacun la classe, le sexe, l&rsquo;âge et l&rsquo;indication de sa
@@ -2796,7 +2806,7 @@ poids associés à chaque caractéristique, qu&rsquo;il faut interpréter. kNN d
 liste de voisins, qui décrit la décision sans la justifier. Les grands réseaux de
 neurones du <span title="Ce module sera publié plus tard">Module 3</span> n&rsquo;offriront rien de comparable : ils
 comptent des milliards de paramètres, dont aucun n&rsquo;a de sens pris isolément. On
-parle alors de <strong>boîte noire</strong> : le modèle répond, souvent très bien, mais
+parle alors de <strong>boîte noire</strong> (<em>black box</em>) : le modèle répond, souvent très bien, mais
 personne ne peut dire pourquoi. Tout un domaine de recherche, l&rsquo;<em>IA explicable</em>
 (<em>XAI</em>, pour <em>explainable AI</em>), cherche aujourd&rsquo;hui à analyser ces modèles après
 coup, en déterminant quelles caractéristiques ont compté dans une décision.
@@ -2826,7 +2836,7 @@ sont différentes, elles se compensent, et la réponse collective est plus stabl
 et plus juste que celle d&rsquo;un arbre seul. C&rsquo;est la <strong>forêt aléatoire</strong> (<em>random
 forest</em>), proposée par Leo Breiman en 2001. Une méthode apparentée et plus
 élaborée, le <em>gradient boosting</em>, construit chaque arbre de façon à corriger les
-erreurs des précédents. Sur des données en tableau, comme nos maisons ou les
+erreurs des précédents. Sur des données en tableau (<em>tabular data</em>), comme nos maisons ou les
 passagers du <em>Titanic</em>, ces méthodes restent aujourd&rsquo;hui parmi les plus
 performantes, et elles remportent la plupart des compétitions Kaggle dont parle
 <a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un modèle</em></a>. Elles perdent
@@ -2909,16 +2919,16 @@ uniquement sur les questions distribuées d&rsquo;avance pour la révision ne me
 pas grand-chose, parce qu&rsquo;on peut apprendre ces réponses par cœur sans
 comprendre. C&rsquo;est le sur-apprentissage (<em>overfitting</em>) de l&rsquo;étudiant, et le jeu
 de test permet de le détecter. Pour évaluer la compréhension, il faut des
-questions nouvelles. On procède de la même façon avec un modèle.</p><p>Ces deux parties des données ont un nom. L&rsquo;<strong>ensemble d&rsquo;entraînement</strong> sert à
+questions nouvelles. On procède de la même façon avec un modèle.</p><p>Ces deux parties des données ont un nom. L&rsquo;<strong>ensemble d&rsquo;entraînement</strong> (<em>training set</em>) sert à
 l&rsquo;apprentissage du modèle, et on y mesure l&rsquo;<strong>erreur d&rsquo;entraînement</strong>.
-L&rsquo;<strong>ensemble de test</strong> reste à l&rsquo;écart jusqu&rsquo;à la fin et sert à mesurer
+L&rsquo;<strong>ensemble de test</strong> (<em>test set</em>) reste à l&rsquo;écart jusqu&rsquo;à la fin et sert à mesurer
 l&rsquo;<strong>erreur de test</strong>, la seule qui estime la généralisation. La règle d&rsquo;or est
 qu&rsquo;<em>on ne touche jamais au jeu de test pendant l&rsquo;entraînement.</em> Si le modèle
 apprend, même indirectement, sur ses propres données d&rsquo;examen, le test ne veut
 plus rien dire.</p><blockquote class="book-hint info"><p>Lorsqu&rsquo;il faut <em>régler</em> quelque chose (la valeur de $k$ pour kNN, ou le taux
 d&rsquo;apprentissage vu dans <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle qui s&rsquo;entraîne</em></a>), on ne peut pas non plus utiliser le
 jeu de test pour choisir, car il ne serait alors plus neuf. On réserve donc un
-troisième ensemble, l&rsquo;<strong>ensemble de validation</strong>, consacré à ces réglages. Le jeu
+troisième ensemble, l&rsquo;<strong>ensemble de validation</strong> (<em>validation set</em>), consacré à ces réglages. Le jeu
 de test reste intact pour l&rsquo;évaluation finale.</p></blockquote><blockquote class="book-hint warning"><p><strong>La règle d&rsquo;or, à l&rsquo;échelle d&rsquo;aujourd&rsquo;hui : les grands modèles de langage.</strong>
 Toute cette section suppose qu&rsquo;on sait ce que le modèle a vu pendant
 l&rsquo;entraînement. Pour un LLM, ce n&rsquo;est plus vraiment possible. Ses données
@@ -2942,7 +2952,7 @@ partie de ce que l&rsquo;humanité a écrit.</p></blockquote><h2 id=linéaire-ou
 d&rsquo;<a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle qui s&rsquo;entraîne</em></a> produit une droite. La frontière de la régression
 logistique est une droite. Celle de Bayes naïf est aussi une droite, comme nous
 l&rsquo;avions remarqué. Même notre filtre anti-pourriel, malgré son grand nombre de
-mots, prenait une décision linéaire. Ces modèles ont donc un point commun.</p><p>Ils tirent tous leur décision d&rsquo;une <strong>somme pondérée</strong> des caractéristiques.
+mots, prenait une décision linéaire. Ces modèles ont donc un point commun.</p><p>Ils tirent tous leur décision d&rsquo;une <strong>somme pondérée</strong> (<em>weighted sum</em>) des caractéristiques.
 Chaque attribut pousse d&rsquo;un côté ou de l&rsquo;autre, proportionnellement à son poids,
 et la décision dépend du total. Sur le plan géométrique, le résultat est
 toujours une droite (un plan en trois dimensions, un <em>hyperplan</em> au-delà). On
@@ -2979,7 +2989,7 @@ répertoire de mon modèle ?</em> Si elle n&rsquo;y est pas, aucun réglage et
 supplémentaire ne l&rsquo;y mettront.</p><p>L&rsquo;apprentissage automatique classique offre deux moyens de contourner cette
 limite. Le premier vient d&rsquo;être présenté, il consiste à prendre un modèle
 non-linéaire comme kNN. Le second consiste à <strong>construire soi-même la bonne
-caractéristique</strong>. Si on ajoute aux deux entrées leur produit $x_1 \cdot x_2$,
+caractéristique</strong> (<em>feature engineering</em>). Si on ajoute aux deux entrées leur produit $x_1 \cdot x_2$,
 le XOR devient séparable par une droite dans ce nouvel espace. Cependant, c&rsquo;est
 l&rsquo;humain qui a dû trouver cette astuce, et il arrive que personne ne sache quelle
 caractéristique construire.</p><h3 id=ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau>Ajouter des dimensions sans les calculer : l&rsquo;astuce du noyau<a class=anchor href=#ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau></a></h3><p>La caractéristique $x_1 \cdot x_2$ résout le XOR, mais il a fallu la trouver. On
@@ -3011,7 +3021,7 @@ comme kNN le classait selon ses voisins. La différence est que le SVM ne garde
 que les vecteurs de support, et qu&rsquo;il pondère leur influence pour obtenir la plus
 grande marge.</p><p>L&rsquo;applet ci-dessous est celle de la section sur la marge, avec le jeu de points
 « XOR » et le noyau gaussien. Le curseur de portée règle la distance à laquelle
-deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791081730127434229 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
+deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791082601408429277 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
 mal classés.</li><li>Revenez au noyau gaussien. La frontière se courbe et sépare les quatre groupes.</li><li>Réduisez la portée. La frontière se met à entourer chaque groupe de près, et
 presque tous les points deviennent des vecteurs de support. C&rsquo;est le
 sur-apprentissage (<em>overfitting</em>) de la
@@ -3035,7 +3045,7 @@ trop souple finit par suivre le hasard autant que le signal. Pour observer ce
 compromis (et le mesurer, puisque nous savons maintenant le faire), revenons à
 kNN. Son seul réglage, le nombre de voisins $k$, contrôle directement la
 souplesse du modèle. Dans l&rsquo;applet ci-dessous, faites glisser lentement $k$
-d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081730127542272 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
+d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791082601408487616 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
 frontière se déforme pour entourer chaque exemple, forme des îlots autour des
 points isolés et suit tous les détails. L&rsquo;erreur d&rsquo;entraînement est nulle,
 puisque chaque exemple est son propre plus proche voisin. Cependant, cette
@@ -3074,7 +3084,7 @@ souplesse : le nombre de termes d&rsquo;une courbe plus souple qu&rsquo;une dro
 verrons plus bas</a>), la profondeur d&rsquo;un arbre de décision ou le nombre de
 paramètres d&rsquo;un réseau de neurones. Chacun présente la même courbe en U et le
 même arbitrage entre s&rsquo;ajuster aux données et lisser. C&rsquo;est le <strong>compromis
-biais-variance</strong>, et savoir le régler est une compétence essentielle en
+biais-variance</strong> (<em>bias-variance tradeoff</em>), et savoir le régler est une compétence essentielle en
 apprentissage automatique.</p><h2 id=garder-un-modèle-riche-mais-le-tenir-en-laisse-la-régularisation>Garder un modèle riche, mais le tenir en laisse : la régularisation<a class=anchor href=#garder-un-mod%c3%a8le-riche-mais-le-tenir-en-laisse-la-r%c3%a9gularisation></a></h2><p>Le compromis biais-variance semble ne laisser qu&rsquo;un seul moyen d&rsquo;action,
 diminuer la souplesse du modèle, comme nous l&rsquo;avons fait avec kNN en augmentant
 $k$ ou avec l&rsquo;arbre en limitant sa profondeur. Cette solution a cependant des
@@ -3128,7 +3138,7 @@ caractéristiques). Pour les réseaux de neurones, on parle de <em>weight decay<
 désigne le même terme. D&rsquo;autres méthodes ne passent pas par la fonction
 d&rsquo;erreur, mais visent le même but, empêcher le modèle de suivre le bruit. On
 peut arrêter l&rsquo;entraînement avant que le modèle s&rsquo;ajuste trop aux données
-(l&rsquo;<em>arrêt précoce</em>) ou désactiver au hasard une partie des neurones à chaque
+(l&rsquo;<em>arrêt précoce</em>, en anglais <em>early stopping</em>) ou désactiver au hasard une partie des neurones à chaque
 étape (le <em>dropout</em>). Pour l&rsquo;arbre, l&rsquo;<strong>élagage</strong> consiste à le laisser croître,
 puis à couper les branches qui n&rsquo;apportent que du détail. Le
 <span title="Ce module sera publié plus tard">Module 3</span> reviendra sur ces méthodes. Elles reposent toutes sur
@@ -3183,7 +3193,7 @@ et c&rsquo;est surtout la méthode, bien plus que le choix d&rsquo;un algorithme
 distingue un modèle qui fonctionne d&rsquo;un modèle qui semble fonctionner.</p><h2 id=le-score-trop-beau-pour-être-vrai-la-fuite-de-données>Le score trop beau pour être vrai : la fuite de données<a class=anchor href=#le-score-trop-beau-pour-%c3%aatre-vrai-la-fuite-de-donn%c3%a9es></a></h2><p>Le premier piège est le plus courant et le plus difficile à repérer. Un modèle
 obtient 99 % de bonnes réponses sur le jeu de test, on le met en service, et ses
 résultats deviennent très mauvais. La cause est le plus souvent une <strong>fuite de
-données</strong> : une information qui n&rsquo;aurait pas dû être disponible a été utilisée
+données</strong> (<em>data leakage</em>) : une information qui n&rsquo;aurait pas dû être disponible a été utilisée
 pendant l&rsquo;entraînement, et le test n&rsquo;était plus vraiment nouveau.</p><p>La fuite prend deux formes. La première est la <strong>contamination</strong> : le jeu de
 test contient, sous une autre forme, des exemples que le modèle a déjà vus. Par
 exemple, la même maison vendue deux fois en trois ans, une fois dans chaque
@@ -3234,7 +3244,7 @@ kilomètres et une différence d&rsquo;années. Or rien n&rsquo;indique qu&rsquo
 « vaut » une année. Si on avait placé la superficie en mètres carrés à côté du
 nombre de chambres, un écart de 50 m² aurait été beaucoup plus important qu&rsquo;un
 écart d&rsquo;une chambre, et la distance n&rsquo;aurait plus eu beaucoup de sens. On
-corrige ce problème en <strong>mettant à l&rsquo;échelle</strong> chaque caractéristique, par
+corrige ce problème en <strong>mettant à l&rsquo;échelle</strong> (<em>feature scaling</em>) chaque caractéristique, par
 exemple en la ramenant entre 0 et 1, ou en soustrayant sa moyenne et en
 divisant par son écart-type. La descente de gradient en profite aussi, car elle
 fonctionne mal dans une cuvette très étirée dans une direction. La règle
@@ -3253,7 +3263,7 @@ groupe sert de test et les seize autres maisons servent à l&rsquo;apprentissage
 deuxième tour, c&rsquo;est le deuxième groupe qui sert de test, et ainsi de suite. On
 obtient cinq tours et cinq scores, dont on calcule la moyenne. Chaque maison a
 servi de test exactement une fois, et chacune a servi à l&rsquo;entraînement quatre
-fois sur cinq. C&rsquo;est la <strong>validation croisée</strong>, et le nombre de groupes se
+fois sur cinq. C&rsquo;est la <strong>validation croisée</strong> (<em>cross-validation</em>), et le nombre de groupes se
 choisit librement. On en utilise le plus souvent cinq ou dix, et jusqu&rsquo;à <em>n</em>
 groupes d&rsquo;un seul exemple quand les données sont très rares.</p><label class=book-image for=book-image-toggle-fb7562f6877b><input class="hidden toggle" type=checkbox id=book-image-toggle-fb7562f6877b>
 <img src=/inf1901-teluq-v2/images/module2/validation-croisee.svg alt="Cinq rangées de vingt points, une par tour. Dans chaque rangée, seize points en vert-bleu forment l'ensemble d'entraînement et quatre points en brun, encadrés, l'ensemble de test ; le bloc de test se déplace de quatre places d'une rangée à l'autre, si bien que chaque maison sert de test exactement une fois. À droite de chaque rangée, un score ; en bas, leur moyenne." loading=lazy title="La validation croisée sur nos vingt maisons : cinq tours, chaque maison testée une fois, et le score final est la moyenne des cinq." width=660 height=380 style=--largeur-plafond:660px>
@@ -3272,14 +3282,14 @@ celle qui donne le meilleur score de validation croisée. Ensuite seulement, on
 utilise le jeu de test pour l&rsquo;évaluation finale. C&rsquo;est le rôle de l&rsquo;ensemble de
 validation de la <a href=/inf1901-teluq-v2/docs/module2/generaliser/#un-mod%c3%a8le-se-juge-sur-ce-quil-na-jamais-vu>page précédente</a>, appliqué en rotation.</p><h2 id=compter-juste-les-métriques>Compter juste : les métriques<a class=anchor href=#compter-juste-les-m%c3%a9triques></a></h2><p>La troisième question est de savoir si le score mesure ce qui coûte vraiment.
 Jusqu&rsquo;ici, pour une catégorie, nous avons compté le <strong>taux de bonnes
-réponses</strong>. Nous connaissons déjà son défaut. Dans <a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/><em>Le modèle le plus
+réponses</strong> (<em>accuracy</em>). Nous connaissons déjà son défaut. Dans <a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/><em>Le modèle le plus
 bête</em></a>, un filtre qui ne signalait
 <em>jamais</em> de pourriel obtenait 99 % de bonnes réponses, parce que les pourriels
 étaient rares. Un seul nombre ne peut pas indiquer à la fois combien de
 pourriels on intercepte et combien de vrais courriels on élimine. Il faut
 compter ces deux quantités séparément.</p><p>Prenons 1000 courriels, dont 50 pourriels, et un filtre qui en élimine une
 partie. Quatre cas sont possibles pour chaque courriel, et on les range dans un
-tableau appelé la <strong>matrice de confusion</strong> : un pourriel éliminé (<strong>vrai
+tableau appelé la <strong>matrice de confusion</strong> (<em>confusion matrix</em>) : un pourriel éliminé (<strong>vrai
 positif</strong>), un pourriel qui passe (<strong>faux négatif</strong>), un vrai courriel éliminé
 (<strong>faux positif</strong>) et un vrai courriel conservé (<strong>vrai négatif</strong>). Ici,
 « positif » signifie « signalé par le filtre » et n&rsquo;indique pas un résultat
@@ -3299,13 +3309,13 @@ jamais de pourriel en obtiendrait 95 %. Le taux global cache donc presque tout.
 Le tableau permet de répondre à deux questions plus précises, qui ont chacune un
 nom. La <strong>précision</strong> est la part de vrais pourriels parmi les courriels que le
 filtre a éliminés. Ici, elle est de 40 sur 60, soit 67 %, et le reste
-correspond à des courriels légitimes perdus. Le <strong>rappel</strong> est la part des vrais
+correspond à des courriels légitimes perdus. Le <strong>rappel</strong> (<em>recall</em>) est la part des vrais
 pourriels que le filtre a interceptés. Ici, il est de 40 sur 50, soit 80 %, et
 le reste est passé. On obtient ainsi deux nombres au lieu d&rsquo;un, et ils varient
 en sens contraire.</p><label class=book-image for=book-image-toggle-1a8742792d93><input class="hidden toggle" type=checkbox id=book-image-toggle-1a8742792d93>
 <img src=/inf1901-teluq-v2/images/module2/precision-rappel.svg alt="À gauche, des courriels figurés par des points, rouges pour les pourriels, bleus pour les légitimes, et un lasso pointillé autour de ce que le filtre a jeté : 40 rouges et 20 bleus à l'intérieur, 10 rouges restés dehors. À droite, deux barres. La barre de la précision représente les 60 courriels jetés, dont 40 rouges : 67 %. La barre du rappel représente les 50 vrais pourriels, dont 40 attrapés : 80 %." loading=lazy title="Précision et rappel, avec les nombres de la matrice : deux questions, deux dénominateurs. La précision se lit à l'intérieur du lasso ; le rappel, parmi les points rouges." width=660 height=440 style=--largeur-plafond:660px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-1a8742792d93"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces deux termes ne viennent pas non plus de l&rsquo;IA, mais de la <strong>recherche
-d&rsquo;information</strong>, la discipline des catalogues de bibliothèque puis des moteurs
+d&rsquo;information</strong> (<em>information retrieval</em>), la discipline des catalogues de bibliothèque puis des moteurs
 de recherche. Pour une requête, un bon système retourne des documents
 <em>pertinents</em> sans y mêler de documents inutiles (la précision), et n&rsquo;en oublie
 pas (le rappel). Dès les années 1960, on a fait de ces deux mesures la
@@ -3350,7 +3360,7 @@ garde un sens.</p><label class=book-image for=book-image-toggle-bad99e46e48c><in
 L&rsquo;erreur quadratique moyenne d&rsquo;<a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/><em>Un modèle qui s&rsquo;entraîne</em></a>
 est conçue pour être <em>minimisée</em>. Ses carrés sont pratiques pour la descente de
 gradient, mais difficiles à interpréter (ils sont exprimés en dollars au carré).
-Pour présenter les résultats, on préfère l&rsquo;<strong>erreur absolue moyenne</strong>. Sur nos
+Pour présenter les résultats, on préfère l&rsquo;<strong>erreur absolue moyenne</strong> (<em>mean absolute error</em>). Sur nos
 vingt maisons, la droite se trompe de 41 000 \$ en moyenne, et de 59 000 \$ au
 maximum. Ces valeurs sont faciles à comprendre et permettent de juger si le
 modèle convient <em>à l&rsquo;usage prévu</em>. Il est excellent pour obtenir un ordre de
@@ -3377,7 +3387,7 @@ la méthode de ce chapitre repose sur une hypothèse implicite : les deux
 proviennent de la même distribution, et les données futures aussi. On dit alors
 que le test est <strong>en distribution</strong>. Un modèle généralise toujours à cette
 distribution, jamais au monde entier.</p><p>Quand cette hypothèse n&rsquo;est plus vraie, c&rsquo;est-à-dire quand une donnée est <strong>hors
-distribution</strong>, le problème peut prendre trois formes.</p><ul><li><strong>L&rsquo;extrapolation.</strong> Nos maisons vont de 112 à 280 m². Si on demande à la
+distribution</strong> (<em>out of distribution</em>), le problème peut prendre trois formes.</p><ul><li><strong>L&rsquo;extrapolation.</strong> Nos maisons vont de 112 à 280 m². Si on demande à la
 droite le prix d&rsquo;un manoir de 600 m², elle répond 1 696 000 \$, avec la même
 assurance que pour une maison de 180 m². Cependant, aucune donnée ne justifie
 cette réponse. La droite est prolongée hors de la zone couverte par les
@@ -3413,7 +3423,7 @@ leurs particularités. De même, si des décisions humaines passées ont laissé
 traces dans les exemples (des prêts refusés plus souvent à certains groupes, des
 dossiers triés selon des habitudes que personne n&rsquo;a jamais écrites), le modèle
 apprendra ces habitudes avec le reste, sans que cela soit visible, et les
-appliquera de façon systématique. C&rsquo;est le <strong>biais des données</strong>. Il ne se
+appliquera de façon systématique. C&rsquo;est le <strong>biais des données</strong> (<em>data bias</em>). Il ne se
 mesure sur aucun jeu de test, puisque le test provient des mêmes données. Un
 score honnête, fiable, pertinent et valable peut donc correspondre à un modèle
 injuste. C&rsquo;est une raison de plus d&rsquo;examiner la provenance des données, et pas
@@ -3475,14 +3485,14 @@ l&rsquo;avons à peine remarqué : <strong>la bonne réponse était toujours fo
 maison avait son prix, chaque courriel son étiquette (pourriel ou non) et chaque
 point sa couleur. Le modèle devait seulement apprendre à passer de la question
 à une réponse <em>fournie d&rsquo;avance</em>.</p><p>Cette situation porte un nom, que nous pouvons maintenant introduire après
-l&rsquo;avoir étudiée en détail : l&rsquo;<strong>apprentissage supervisé</strong>. Le terme
+l&rsquo;avoir étudiée en détail : l&rsquo;<strong>apprentissage supervisé</strong> (<em>supervised learning</em>). Le terme
 « supervisé » renvoie à un élève corrigé par un professeur qui connaît la
 réponse attendue. Régression ou classification, droite ou Bayes, paramétrique
 ou non, tout ce que nous avons construit appartient à cette grande famille,
 celle de l&rsquo;apprentissage à partir d&rsquo;exemples <strong>étiquetés</strong>.</p><p>Il reste à savoir d&rsquo;où vient cette réponse fournie d&rsquo;avance. Quelqu&rsquo;un a dû
 étiqueter ces milliers d&rsquo;exemples un à un, un travail souvent long et coûteux,
 et parfois impossible. Ce travail est si important qu&rsquo;il est devenu une
-<strong>industrie à part entière</strong>, celle de l&rsquo;<em>étiquetage de données</em>. Des
+<strong>industrie à part entière</strong>, celle de l&rsquo;<em>étiquetage de données</em> (<em>data labeling</em>). Des
 entreprises comme Scale AI (dans laquelle Meta a investi une quinzaine de
 milliards de dollars en 2025), Appen, Sama ou Labelbox, ou des plateformes comme
 le Mechanical Turk d&rsquo;Amazon, emploient ou mobilisent des centaines de milliers
@@ -3511,9 +3521,9 @@ n&rsquo;est pas la seule façon d&rsquo;apprendre.</p><p>Les grandes familles de
 nature du <strong>signal</strong> que le modèle utilise, c&rsquo;est-à-dire ce qui, dans les
 données, lui sert de guide. Il en existe trois grands types :</p><ul><li>une <strong>réponse fournie</strong> pour chaque exemple, ce qui correspond à
 l&rsquo;apprentissage <strong>supervisé</strong>, étudié depuis le début du module ;</li><li><strong>aucune réponse</strong>, seulement des données brutes dans lesquelles il faut
-trouver une structure, ce qui correspond à l&rsquo;apprentissage <strong>non supervisé</strong> ;</li><li>ni réponse ni structure donnée, mais une <strong>récompense</strong> qui arrive après
+trouver une structure, ce qui correspond à l&rsquo;apprentissage <strong>non supervisé</strong> (<em>unsupervised learning</em>) ;</li><li>ni réponse ni structure donnée, mais une <strong>récompense</strong> qui arrive après
 coup, au fil des actions, ce qui correspond à l&rsquo;apprentissage par
-<strong>renforcement</strong>.</li></ul><label class=book-image for=book-image-toggle-03423c513c90><input class="hidden toggle" type=checkbox id=book-image-toggle-03423c513c90>
+<strong>renforcement</strong> (<em>reinforcement learning</em>).</li></ul><label class=book-image for=book-image-toggle-03423c513c90><input class="hidden toggle" type=checkbox id=book-image-toggle-03423c513c90>
 <img src=/inf1901-teluq-v2/images/module2/trois-paradigmes.svg alt="Trois panneaux. « Supervisé » : des points étiquetés en bleu et rouge, la réponse étant donnée. « Non supervisé » : les mêmes points, tous gris et sans étiquette, que l'algorithme regroupe en cercles pointillés pour former des groupes. « Renforcement » : une boucle entre un agent et son environnement, reliés par une flèche « action » et une flèche « récompense »." loading=lazy title="Les trois grandes familles, par la nature de leur signal : réponse donnée (supervisé), structure à découvrir (non supervisé), récompense au fil de l'action (renforcement)." width=680 height=270 style=--largeur-plafond:680px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-03423c513c90"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Nous avons passé tout le module dans la première famille. Ce dernier chapitre
 présente les deux autres. Le but n&rsquo;est pas de les maîtriser, mais de situer ce
@@ -3556,7 +3566,7 @@ l&rsquo;expliquer par une comparaison. Pour organiser une fête, on veut répart
 invités autour de $k$ tables, en plaçant chaque table au centre de son groupe,
 pour que chacun soit le plus près possible de la sienne. k-means procède de
 cette façon, par ajustements successifs :</p><ol><li>placer $k$ « centres » au hasard ;</li><li>rattacher chaque point au centre le plus proche (ce qui donne des groupes provisoires) ;</li><li>déplacer chaque centre au milieu de son groupe ;</li><li>répéter les étapes 2 et 3 jusqu&rsquo;à ce que plus rien ne change.</li></ol><p>Dans l&rsquo;applet ci-dessous, choisissez le nombre de groupes et observez les
-centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1791081730137192784 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
+centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1791082601417749398 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
 en groupes de couleurs. La différence est cependant importante : ici, <strong>les
 points n&rsquo;avaient aucune étiquette au départ.</strong> Vous n&rsquo;avez pas indiqué à
 l&rsquo;algorithme ce que représente chaque groupe. Vous lui avez seulement donné le
@@ -3567,10 +3577,10 @@ des millions d&rsquo;autres (détection de fraude) ou pour compresser des donné
 les résumant par leurs groupes.</p><p>Le regroupement n&rsquo;est qu&rsquo;une partie du non-supervisé. Celui-ci comprend aussi
 la <strong>réduction de dimension</strong> (simplifier des données à mille variables en
 perdant le moins d&rsquo;information possible) et l&rsquo;<strong>apprentissage de
-représentations</strong>, qui consiste à découvrir sans étiquettes de bonnes
+représentations</strong> (<em>representation learning</em>), qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l&rsquo;IA
-moderne. Nous la retrouverons avec les <strong>autoencodeurs</strong> (<span title="Ce module sera publié plus tard">Module 3</span>) et les <strong>plongements</strong> de mots (<span title="Ce module sera publié plus tard">Module 4</span>).</p><details><summary>Les mathématiques de k-means (optionnel)</summary><div class=markdown-inner><p>k-means cherche à minimiser une fonction d&rsquo;erreur, l&rsquo;<strong>inertie</strong>, qui est la
+moderne. Nous la retrouverons avec les <strong>autoencodeurs</strong> (<span title="Ce module sera publié plus tard">Module 3</span>) et les <strong>plongements</strong> (<em>embeddings</em>) de mots (<span title="Ce module sera publié plus tard">Module 4</span>).</p><details><summary>Les mathématiques de k-means (optionnel)</summary><div class=markdown-inner><p>k-means cherche à minimiser une fonction d&rsquo;erreur, l&rsquo;<strong>inertie</strong>, qui est la
 somme des carrés des distances de chaque point à son centre :</p>$$J = \sum_{i=1}^{n} \min_{j=1}^{k} \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$$<p>où $\mathbf{x}_i$ est le $i$-ème point et $\boldsymbol{\mu}_j$ le centre du groupe
 $j$. L&rsquo;algorithme alterne deux étapes :</p><ul><li><strong>assignation</strong> : chaque point est rattaché au centre le plus proche,
 $c_i = \arg\min_j \lVert \mathbf{x}_i - \boldsymbol{\mu}_j \rVert^2$ ;</li><li><strong>mise à jour</strong> : chaque centre est placé à la moyenne de ses points,
@@ -3603,7 +3613,7 @@ structurer. Le modèle, qu&rsquo;on appelle ici un <strong>agent</strong>, doit 
 à partir des <strong>conséquences</strong> de ses actions. On peut penser à un enfant qui
 apprend à faire du vélo, à un robot qui apprend à marcher ou à un joueur qui
 découvre un jeu. Personne ne leur indique le bon mouvement à chaque instant.
-Ils essaient, échouent, recommencent et retiennent ce qui fonctionne.</p><p>Le signal est ici une <strong>récompense</strong>, par exemple un point gagné, une partie
+Ils essaient, échouent, recommencent et retiennent ce qui fonctionne.</p><p>Le signal est ici une <strong>récompense</strong> (<em>reward</em>), par exemple un point gagné, une partie
 remportée ou une chute évitée. Cette récompense arrive souvent <strong>bien après</strong>
 les actions qui l&rsquo;ont produite. Quand on gagne une partie d&rsquo;échecs, il est
 difficile de savoir quel coup a été décisif. Ce décalage est la principale
@@ -3613,14 +3623,14 @@ des récompenses et des punitions, et <strong>renforce</strong> peu à peu les a
 mènent au succès, d&rsquo;où le nom de cette famille. Dans l&rsquo;applet ci-dessous, un
 agent (le point jaune) cherche la sortie (<strong>+1</strong>) d&rsquo;une petite grille en
 évitant un piège (<strong>−1</strong>), sans aucune connaissance au départ. Lancez
-l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1791081730137274979 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
+l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1791082601417879612 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
 <strong>carte de valeur</strong> se forme (les cases se colorent selon leur valeur estimée)
-et une <strong>politique</strong> apparaît. Les flèches, qui indiquent pour chaque case le
+et une <strong>politique</strong> (<em>policy</em>) apparaît. Les flèches, qui indiquent pour chaque case le
 meilleur mouvement, finissent par former un chemin sûr vers le but. Le curseur
 d&rsquo;<strong>exploration</strong> (ε) est instructif. À zéro, l&rsquo;agent ne fait qu&rsquo;exploiter ce
 qu&rsquo;il croit déjà savoir, et il peut rester dans un chemin médiocre. Un peu de
 hasard l&rsquo;amène à explorer d&rsquo;autres chemins, et parfois à en trouver de
-meilleurs. Ce compromis entre <strong>explorer et exploiter</strong> est au centre du
+meilleurs. Ce compromis entre <strong>explorer et exploiter</strong> (<em>exploration vs. exploitation</em>) est au centre du
 renforcement.</p><p>Cette approche rappelle une notion déjà vue. Au <a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lapog%c3%a9e-deep-blue-bat-kasparov-1997>Module 1</a>, nous avons étudié les machines qui
 jouent aux échecs en cherchant dans l&rsquo;arbre des coups possibles. Le
 renforcement reprend cette recherche, mais la machine apprend elle-même à
@@ -3680,7 +3690,7 @@ grande.</p></section><section class=page data-type=page data-url=/inf1901-teluq-
 qui repose sur les probabilités. Nous avons vu deux variantes de cet
 algorithme :</p><ol><li><a href=/inf1901-teluq-v2/docs/module2/classer/#renverser-le-probl%c3%a8me-la-classification-bay%c3%a9sienne>La classification de simples points en 2d avec un modèle gaussien</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/#le-cas-des-pourriels>La classification de vecteurs en haute dimension avec un modèle multinomial</a></li></ol><p>La classification de courriels est un problème classique qu&rsquo;on peut traiter avec
 cet algorithme. On cherche à estimer la probabilité qu&rsquo;un courriel soit un
-pourriel à partir des mots qu&rsquo;il contient, parce que certains mots sont plus
+pourriel (<em>spam</em>) à partir des mots qu&rsquo;il contient, parce que certains mots sont plus
 souvent utilisés dans les pourriels et d&rsquo;autres dans les courriels.</p><p>Comme nous l&rsquo;avons vu au chapitre « <a href=/inf1901-teluq-v2/docs/module2/classer/#renverser-le-probl%c3%a8me-la-classification-bay%c3%a9sienne>Classer</a> », la classification naïve bayésienne est un algorithme
 d&rsquo;apprentissage <em>génératif</em>. On considère donc d&rsquo;abord deux modèles (un pour
 chaque classe, <code>pourriel</code> ou <code>courriel</code>), dont le rôle est de générer les données
