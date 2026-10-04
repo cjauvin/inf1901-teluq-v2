@@ -64,9 +64,31 @@ entraîné sur ImageNet.
 {{< image src="/images/module3/visualisation-neurones.jpg" alt="Cinq colonnes de trois images chacune, de la première couche à la dernière. Traits : des rayures fines, orientées. Textures : des surfaces répétitives, alvéoles et écailles. Motifs : des entrelacs, des pompons colorés. Parties d'objets : des fleurs, des morceaux de vêtements, des formes de boutons. Objets : des façades de bâtiments, des jambes en short, des assiettes de nourriture." title="Ce que cherchent des neurones de couches de plus en plus profondes d'un réseau entraîné sur ImageNet (d'après Olah, Mordvintsev et Schubert, Distill, 2017, CC BY 4.0)." loading="lazy" >}}
 
 La progression décrite plus haut apparaît bien, sans que personne l'ait programmée.
-La même méthode, appliquée à une photo plutôt qu'à du bruit, avait donné en 2015
-DeepDream, dont les images hallucinées, pleines d'yeux et de têtes de chiens, ont
-beaucoup circulé.
+
+{{% hint info %}}
+**DeepDream**
+
+En juin 2015, Alexander Mordvintsev, Christopher Olah et Mike Tyka, ingénieurs chez
+Google, publient des images produites par un réseau convolutif entraîné sur
+ImageNet. Ils partent d'une photo ordinaire et la modifient pas à pas, par
+rétropropagation, pour **renforcer** ce que le réseau croit y voir. Si une tache
+rappelle vaguement un œil à une couche du réseau, l'image est modifiée pour
+ressembler davantage à un œil. On recommence, encore et encore. Comme ImageNet
+contient beaucoup de photos de chiens, des têtes de chiens, des yeux et des pattes
+finissent par apparaître partout : dans les nuages, sur les visages, dans les
+feuillages.
+
+{{< image src="/images/module3/deepdream-meduses.jpg" alt="Quatre images côte à côte. La première est une photo de méduses dans un aquarium bleu. Les trois suivantes sont la même photo transformée par DeepDream après 10, 50 puis 100 itérations : des créatures à plusieurs yeux, puis des chiens et d'autres animaux envahissent l'image, de plus en plus nets et colorés." title="Une photo de méduses transformée par DeepDream : à chaque itération, le réseau renforce les formes animales qu'il croit voir (images de Martin Thoma, Wikimedia Commons, CC0)." loading="lazy" >}}
+
+Les chercheurs publient leur programme, et des milliers de personnes l'appliquent à
+leurs propres photos. Les images circulent dans le monde entier, et beaucoup y
+voient pour la première fois ce qui se passe à l'intérieur d'un réseau de neurones.
+Le phénomène rappelle la **paréidolie**, notre tendance à voir des visages dans les
+nuages ou les prises électriques. Le réseau fait de même avec ce qu'il a appris à
+reconnaître, mais en l'exagérant à chaque itération. DeepDream a aussi ouvert la
+voie à des usages artistiques des réseaux de neurones, qui annoncent l'IA
+générative du [Module 4](docs/module4).
+{{% /hint %}}
 
 {{% hint info %}}
 **La carte n'est pas le territoire**
