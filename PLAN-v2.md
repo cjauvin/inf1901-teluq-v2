@@ -301,6 +301,7 @@ Décisions : **GNN et NTM retirés** (au plus un encadré de trois lignes sur le
 - **Bloc 2 — Les LLM** : (4) *Des mots aux nombres* (jetons, plongements, word2vec) ; (5) *Prédire le mot suivant* (Shannon → Bengio 2003 → GPT ; TN4 rattaché) ; (6) *Passer à l'échelle* ; (7) *Du modèle à l'assistant* (instructions, RLHF, étiquetage humain, RLVR/raisonnement) ; (8) *Des outils et des agents*.
 - **Bloc 3 — Convergence et bilan** : (9) *Quand le texte pilote tout : les modèles multimodaux* (CLIP, texte→image, modèles qui voient et parlent) ; (10) *Ce que les LLM comprennent, et ce qu'ils ratent* (pont M5).
 - Accueil rédigé à la fin ; durée visée : quatre semaines.
+- Avancement (2026-10-04) : page 1 *Générer : imiter une distribution* écrite (`10-generer.md`) : visages StyleGAN (`gen_visages.py`), portrait des maisons par noyaux (`gen_portrait_maisons.py`, jeu canonique), température des lettres (`gen_temperature.py`), bruit ou chiffre (`gen_bruit_chiffre.py`), **applet `espace-latent.html`** (hauteur 544) : décodeur d'un VAE à espace latent 2D entraîné sur MNIST par `gen_espace_latent.py`, poids float16 dans `static/html/applets/data/espace-latent.json`. Ancienne page v1 `10-IA-générative.md` masquée (`bookHidden`), à supprimer au ménage. Liens « chapitre suivant » pointent vers `docs/module4` en attendant la page 2.
 
 ### Ossature cible
 1. `_index` — contexte.

@@ -1,6 +1,7 @@
 ---
 title: "IA générative"
 weight: 10
+bookHidden: true
 slug: ia-générative
 ---
 

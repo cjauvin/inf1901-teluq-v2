@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : l'espace latent des chiffres manuscrits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        #carte { cursor: crosshair; touch-action: none; }
+        canvas.pixel { image-rendering: pixelated; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex flex-col md:flex-row gap-4 items-center md:items-start">
+        <div class="w-full md:w-1/2">
+            <div class="text-sm font-semibold text-slate-700 mb-1">L'espace latent (deux nombres)</div>
+            <canvas id="carte" width="760" height="760" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"></canvas>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col items-center">
+            <div class="text-sm font-semibold text-slate-700 mb-1 self-start">Ce que le décodeur dessine</div>
+            <canvas id="chiffre" width="28" height="28" class="pixel rounded-lg" style="width:224px;height:224px;border:1px solid #d9cbac"></canvas>
+            <div id="coords" class="mt-2 text-sm text-slate-600 font-mono">—</div>
+            <div class="mt-3 flex flex-wrap justify-center gap-2">
+                <button onclick="tirer()" class="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium text-sm shadow-sm">Tirer un point au hasard</button>
+                <button onclick="effacerChemin()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Effacer le chemin</button>
+            </div>
+            <div class="mt-4 text-sm font-semibold text-slate-700 self-start">Le chemin entre les deux derniers points cliqués</div>
+            <canvas id="chemin" width="252" height="28" class="pixel w-full mt-1 rounded" style="border:1px solid #d9cbac;background:#fbf7ee"></canvas>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg text-sm text-slate-600">
+        Promenez la souris (ou le doigt) sur la carte : le décodeur transforme chaque point en image. Les petits points colorés sont
+        de vrais chiffres manuscrits, placés là où l'encodeur les range. Cliquez deux points pour voir le chemin qui les relie.
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Le décodeur d'un autoencodeur variationnel entraîné sur MNIST (scripts/gen_espace_latent.py) :
+ * 2 nombres → 128 → 256 → 784 pixels. Les poids sont stockés en float16 (base64) dans
+ * data/espace-latent.json, avec la position latente de 2 000 chiffres du jeu de test.
+ */
+const COUL = ['#c4564a', '#3a6ea5', '#2f6f6a', '#9a5b33', '#7b5ea7', '#d18f2f', '#4f8f3a', '#b5487f', '#5b7d8a', '#8a7a2e'];
+const MIN = -4.0, MAX = 4.3;                          // étendue de la carte, dans les deux directions
+let couches = [], points = [], courant = [0, 0], clics = [];
+
+function demi(h) {                                    // float16 → nombre
+    const s = h & 0x8000 ? -1 : 1, e = (h >> 10) & 0x1f, f = h & 0x3ff;
+    if (e === 0) return s * Math.pow(2, -14) * (f / 1024);
+    if (e === 31) return f ? NaN : s * Infinity;
+    return s * Math.pow(2, e - 15) * (1 + f / 1024);
+}
+function lire(b64) {
+    const o = atob(b64), u = new Uint16Array(o.length / 2), r = new Float32Array(o.length / 2);
+    for (let i = 0; i < u.length; i++) u[i] = o.charCodeAt(2 * i) | (o.charCodeAt(2 * i + 1) << 8);
+    for (let i = 0; i < u.length; i++) r[i] = demi(u[i]);
+    return r;
+}
+function decoder(z) {
+    let h = Float32Array.from(z);
+    couches.forEach((c, k) => {
+        const s = new Float32Array(c.sorties);
+        for (let j = 0; j < c.sorties; j++) s[j] = c.b[j];
+        for (let i = 0; i < c.entrees; i++) {
+            const v = h[i];
+            if (v === 0) continue;
+            const ligne = i * c.sorties;
+            for (let j = 0; j < c.sorties; j++) s[j] += v * c.w[ligne + j];
+        }
+        if (k < couches.length - 1) for (let j = 0; j < s.length; j++) s[j] = Math.max(0, s[j]);
+        else for (let j = 0; j < s.length; j++) s[j] = 1 / (1 + Math.exp(-s[j]));
+        h = s;
+    });
+    return h;
+}
+function peindre(ctx, px, x0) {
+    const img = ctx.createImageData(28, 28);
+    for (let i = 0; i < 784; i++) {
+        const v = 255 - Math.round(255 * px[i]);
+        img.data[4 * i] = v * 0.98; img.data[4 * i + 1] = v * 0.97; img.data[4 * i + 2] = v * 0.93; img.data[4 * i + 3] = 255;
+    }
+    ctx.putImageData(img, x0, 0);
+}
+
+const carte = document.getElementById('carte'), cc = carte.getContext('2d');
+const versPx = v => (v - MIN) / (MAX - MIN) * carte.width;
+const versZ = (x, y) => [MIN + x / carte.width * (MAX - MIN), MAX - y / carte.height * (MAX - MIN)];
+function dessinerCarte() {
+    const W = carte.width;
+    cc.clearRect(0, 0, W, W);
+    cc.strokeStyle = '#e4d9bf'; cc.lineWidth = 1;
+    for (let v = Math.ceil(MIN); v <= MAX; v++) {
+        cc.beginPath(); cc.moveTo(versPx(v), 0); cc.lineTo(versPx(v), W); cc.stroke();
+        cc.beginPath(); cc.moveTo(0, W - versPx(v)); cc.lineTo(W, W - versPx(v)); cc.stroke();
+    }
+    cc.globalAlpha = 0.55;
+    for (const [a, b, e] of points) {
+        cc.fillStyle = COUL[e];
+        cc.beginPath(); cc.arc(versPx(a), W - versPx(b), 4.5, 0, 2 * Math.PI); cc.fill();
+    }
+    cc.globalAlpha = 1;
+    for (let e = 0; e < 10; e++) {                    // chaque chiffre écrit au centre de son groupe
+        const g = points.filter(p => p[2] === e);
+        const xs = g.map(p => p[0]).sort((u, v) => u - v), ys = g.map(p => p[1]).sort((u, v) => u - v);
+        const x = versPx(xs[xs.length >> 1]), y = W - versPx(ys[ys.length >> 1]);
+        cc.font = 'bold 44px system-ui, sans-serif'; cc.textAlign = 'center'; cc.textBaseline = 'middle';
+        cc.lineWidth = 7; cc.strokeStyle = '#fbf7ee'; cc.strokeText(e, x, y);
+        cc.fillStyle = COUL[e]; cc.fillText(e, x, y);
+    }
+    if (clics.length === 2) {
+        cc.strokeStyle = '#3a3531'; cc.lineWidth = 3; cc.setLineDash([10, 8]);
+        cc.beginPath(); cc.moveTo(versPx(clics[0][0]), W - versPx(clics[0][1]));
+        cc.lineTo(versPx(clics[1][0]), W - versPx(clics[1][1])); cc.stroke(); cc.setLineDash([]);
+    }
+    for (const z of clics) {
+        cc.fillStyle = '#fbf7ee'; cc.strokeStyle = '#3a3531'; cc.lineWidth = 3;
+        cc.beginPath(); cc.arc(versPx(z[0]), W - versPx(z[1]), 11, 0, 2 * Math.PI); cc.fill(); cc.stroke();
+    }
+    const [x, y] = [versPx(courant[0]), W - versPx(courant[1])];
+    cc.strokeStyle = '#3a3531'; cc.lineWidth = 3;
+    cc.beginPath(); cc.moveTo(x - 18, y); cc.lineTo(x + 18, y); cc.moveTo(x, y - 18); cc.lineTo(x, y + 18); cc.stroke();
+}
+function montrer(z) {
+    courant = z;
+    peindre(document.getElementById('chiffre').getContext('2d'), decoder(z), 0);
+    document.getElementById('coords').textContent =
+        `point : (${z[0].toFixed(2).replace('.', ',')} ; ${z[1].toFixed(2).replace('.', ',')})`;
+    dessinerCarte();
+}
+function dessinerChemin() {
+    const ctx = document.getElementById('chemin').getContext('2d');
+    ctx.fillStyle = '#fbf7ee'; ctx.fillRect(0, 0, 252, 28);
+    if (clics.length < 2) return;
+    for (let k = 0; k < 9; k++) {
+        const t = k / 8, z = [0, 1].map(i => clics[0][i] + t * (clics[1][i] - clics[0][i]));
+        peindre(ctx, decoder(z), 28 * k);
+    }
+}
+function position(ev) {
+    const r = carte.getBoundingClientRect();
+    return versZ((ev.clientX - r.left) / r.width * carte.width, (ev.clientY - r.top) / r.height * carte.height);
+}
+carte.addEventListener('pointermove', ev => montrer(position(ev)));
+carte.addEventListener('pointerdown', ev => {
+    const z = position(ev);
+    clics = clics.length >= 2 ? [clics[1], z] : [...clics, z];
+    montrer(z); dessinerChemin();
+});
+function tirer() {                                    // un point tiré selon la loi normale, celle de l'espace latent du VAE
+    const n = () => Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random());
+    montrer([n(), n()]);
+}
+function effacerChemin() { clics = []; dessinerChemin(); dessinerCarte(); }
+
+fetch('data/espace-latent.json').then(r => r.json()).then(d => {
+    couches = d.couches.map(c => ({ entrees: c.entrees, sorties: c.sorties, w: lire(c.w), b: lire(c.b) }));
+    points = d.points;
+    montrer([0, 0]); dessinerChemin();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
