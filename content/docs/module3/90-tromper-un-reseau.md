@@ -86,7 +86,9 @@ biaisé, qui distingue les loups des huskies : dans ses photos d'entraînement,
 loups sont presque toujours sur de la neige. Le classifieur atteint une bonne
 précision, et leur méthode révèle qu'il regarde surtout l'arrière-plan. Il est
 devenu un détecteur de neige. Avant de voir cette explication, une partie des
-personnes interrogées faisaient confiance au classifieur. Après, presque aucune.
+personnes interrogées faisaient confiance au classifieur. Après, presque aucune. La neige est **corrélée** aux loups dans ces photos, mais
+elle n'en est pas la cause, une distinction présentée au Module 2 dans
+« [Corrélation n'est pas causalité](docs/module2/75-bien-evaluer/#corrélation-nest-pas-causalité) ».
 
 {{% hint info %}}
 **Hans le Malin**

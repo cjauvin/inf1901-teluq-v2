@@ -125,7 +125,7 @@ progressivement : chaque étape rencontre une limite qui mène à l'idée suiva
 8. [*Généraliser*](docs/module2/70-generaliser) : le jeu de test, ce qu'un
    modèle peut dessiner, le compromis biais-variance, la régularisation.
 9. [*Bien évaluer un modèle*](docs/module2/75-bien-evaluer) : les fuites, la
-   validation croisée, les métriques, la distribution.
+   validation croisée, les métriques, la distribution, la causalité.
 10. [*Trois façons d'apprendre*](docs/module2/80-trois-facons-d-apprendre) :
     supervisé, non supervisé, par renforcement.
 
@@ -156,6 +156,8 @@ Au terme de ce module, vous devriez être en mesure de :
 * évaluer correctement un modèle : jeu de test, fuites de données, validation
   croisée, matrice de confusion, précision et rappel, et la question de la
   distribution ;
+* distinguer une corrélation d'une cause, et dire pourquoi un modèle prédictif ne
+  suffit pas pour décider d'une intervention ;
 * distinguer les trois grandes façons d'apprendre (supervisé, non supervisé,
   par renforcement) par la nature du signal dont le modèle apprend ;
 * expliquer pourquoi l'explicabilité d'un modèle compte, et quels modèles

@@ -323,6 +323,84 @@ injuste. C'est une raison de plus d'examiner la provenance des données, et pas
 seulement leur quantité. Le [Module 5](docs/module5) reviendra sur cette
 question.
 
+## Corrélation n'est pas causalité
+
+Les modèles de ce module apprennent des **associations** : quand telle
+caractéristique est présente, telle réponse est plus probable. Ils ne disent pas
+**pourquoi**. Cette différence semble théorique. Elle a pourtant des conséquences
+très concrètes.
+
+L'exemple classique est celui de la crème glacée. Dans une ville, les jours où l'on
+vend beaucoup de crème glacée sont aussi des jours où il y a plus de noyades. Un
+modèle entraîné sur ces données prédirait très bien les noyades à partir des ventes
+de crème glacée. Pourtant, interdire la crème glacée ne sauverait personne. Les
+deux augmentent ensemble parce qu'elles ont une **cause commune**, la chaleur, qui
+pousse à la fois à acheter de la crème glacée et à se baigner. Une telle variable,
+qui influence à la fois ce qu'on observe et ce qu'on veut prédire, s'appelle un
+**facteur de confusion** (*confounder*).
+
+{{< image src="/images/module2/cause-commune.svg" alt="Un petit graphe. En haut, un nœud « chaleur » pointe par deux flèches vers deux nœuds placés en bas : « ventes de crème glacée » à gauche et « noyades » à droite. Une ligne pointillée relie ces deux nœuds, avec la mention « corrélation, sans cause »." title="La chaleur fait monter à la fois les ventes de crème glacée et les noyades : les deux sont corrélées, sans que l'une cause l'autre." loading="lazy" >}}
+
+On reconnaît le dessin des
+[réseaux bayésiens](docs/module2/60-classer/#raisonner-sous-incertitude-les-réseaux-bayésiens)
+de *Classer* : une flèche pour chaque influence directe. Judea Pearl s'est servi de
+ces graphes pour distinguer une corrélation d'une cause.
+
+**Prédire n'est pas décider.** Dans les années 1990, des chercheurs entraînent un
+modèle à prédire le risque de décès des patients atteints de pneumonie, pour
+décider lesquels hospitaliser. Le modèle découvre une règle surprenante : les
+patients asthmatiques auraient **moins** de risque de mourir. La corrélation est
+réelle. Mais elle vient de ce que les médecins envoyaient systématiquement les
+asthmatiques aux soins intensifs, où ils étaient mieux soignés. Le modèle prédisait
+bien. Utilisé pour décider qui hospitaliser, il aurait renvoyé chez eux les
+patients les plus fragiles. Ce cas a été rendu public en 2015 par Rich Caruana et
+ses collègues, qui plaidaient pour des modèles dont on peut lire les règles.
+
+**Une corrélation peut disparaître.** Une relation causale reste vraie quand le
+contexte change. Une simple corrélation peut disparaître. C'est l'une des raisons
+pour lesquelles les modèles échouent
+[hors distribution](#jamais-vu-mais-du-même-monde-la-question-de-la-distribution).
+Le Module 3 en donne un exemple : un classifieur qui distinguait les loups des
+huskies en regardant la
+[neige à l'arrière-plan](docs/module3/90-tromper-un-reseau/#pourquoi-cest-possible).
+La neige était associée aux loups dans les photos d'entraînement, mais elle n'en
+est pas la cause. Ailleurs, la règle ne tient plus.
+
+**Établir une cause.** La méthode de référence est l'**essai contrôlé à
+répartition aléatoire** (*randomized controlled trial*). On tire au sort les
+personnes qui reçoivent un traitement et celles qui n'en reçoivent pas. Le tirage
+au sort répartit les facteurs de confusion de la même façon dans les deux groupes,
+si bien qu'une différence entre eux ne peut venir que du traitement. La médecine
+l'emploie depuis un essai sur la streptomycine contre la tuberculose, publié en
+1948. Les **tests A/B** (*A/B testing*) des sites Web, qui montrent deux versions
+d'une page à deux groupes d'internautes tirés au sort, reposent sur la même idée.
+Quand une expérience est impossible ou contraire à l'éthique, on peut parfois
+établir une cause à partir de simples observations, avec des précautions. Les
+économistes David Card, Joshua Angrist et Guido Imbens ont reçu le prix Nobel
+d'économie en 2021 pour leurs méthodes en ce sens.
+
+**L'échelle de la causalité.** Dans *The Book of Why* (2018), écrit avec Dana
+Mackenzie, Pearl distingue trois niveaux de raisonnement, qu'il appelle l'échelle
+de la causalité (*ladder of causation*).
+
+| Niveau | Question | Exemple |
+|---|---|---|
+| 1. Voir | Que puis-je prédire en observant ? | Les jours de grande vente de crème glacée, y a-t-il plus de noyades ? |
+| 2. Agir | Que se passe-t-il si j'interviens ? | Si j'interdis la crème glacée, y aura-t-il moins de noyades ? |
+| 3. Imaginer | Que se serait-il passé autrement ? | Ce patient aurait-il survécu s'il avait été hospitalisé ? |
+
+Les modèles de ce module restent en général au premier niveau : ils apprennent des
+associations dans des données observées. Pour Pearl, une intelligence comparable à
+la nôtre doit monter les deux autres barreaux.
+
+Cette question a pris de l'importance ces dernières années. Le prix Turing de Pearl
+en 2011, son livre de 2018 et le Nobel de 2021 l'ont fait connaître bien au-delà de
+la statistique. Des chercheurs en apprentissage profond, comme Yoshua Bengio et
+Bernhard Schölkopf, y voient une piste pour obtenir des modèles plus robustes. Et
+l'on se demande aujourd'hui si les grands modèles de langage raisonnent sur des
+causes, ou s'ils reproduisent des associations présentes dans leurs textes
+d'entraînement. Le [Module 5](docs/module5) reviendra sur ces questions.
+
 ## Tout cela portait un nom : l'apprentissage supervisé
 
 Depuis la [première page de ce module](docs/module2/10-le-probleme), un élément n'a jamais changé, et nous
