@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le réseau bayésien de l'alarme</title>
+<desc>Cinq nœuds. Cambriolage et Séisme pointent vers Alarme, qui pointe vers Jean appelle et Marie appelle. Chaque nœud porte sa table : cambriolage 0,1 % ; séisme 0,2 % ; l'alarme sonne à 95 % s'il y a cambriolage et séisme, 94 % s'il y a seulement cambriolage, 29 % s'il y a seulement séisme, 0,1 % sinon ; Jean appelle à 90 % si l'alarme sonne et 5 % sinon ; Marie appelle à 70 % si l'alarme sonne et 1 % sinon.</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="34" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le réseau de l'alarme et ses tables</text>
+<line x1="254.2" y1="117.5" x2="335.8" y2="217.5" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="445.8" y1="117.5" x2="364.2" y2="217.5" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="335.8" y1="252.5" x2="254.2" y2="352.5" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<line x1="364.2" y1="252.5" x2="445.8" y2="352.5" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#pointe)"/>
+<rect x="180.0" y="82" width="120" height="36" rx="18" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<text x="240" y="104.5" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Cambriolage</text>
+<rect x="400.0" y="82" width="120" height="36" rx="18" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<text x="460" y="104.5" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Séisme</text>
+<rect x="290.0" y="217" width="120" height="36" rx="18" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="350" y="239.5" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Alarme</text>
+<rect x="180.0" y="352" width="120" height="36" rx="18" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="240" y="374.5" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Jean appelle</text>
+<rect x="400.0" y="352" width="120" height="36" rx="18" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="460" y="374.5" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">Marie appelle</text>
+<rect x="32" y="76" width="140" height="24" rx="5" fill="#efe7d3" stroke="#b8a888"/>
+<text x="40" y="93" font-size="11" fill="#5b5249">P(cambriolage)</text>
+<text x="164" y="93" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">0,1 %</text>
+<rect x="548" y="76" width="120" height="24" rx="5" fill="#efe7d3" stroke="#b8a888"/>
+<text x="556" y="93" font-size="11" fill="#5b5249">P(séisme)</text>
+<text x="660" y="93" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">0,2 %</text>
+<rect x="446" y="184" width="206" height="72" rx="5" fill="#efe7d3" stroke="#b8a888"/>
+<text x="454" y="201" font-size="11" fill="#5b5249">cambriolage et séisme</text>
+<text x="644" y="201" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">95 %</text>
+<text x="454" y="217" font-size="11" fill="#5b5249">cambriolage seul</text>
+<text x="644" y="217" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">94 %</text>
+<text x="454" y="233" font-size="11" fill="#5b5249">séisme seul</text>
+<text x="644" y="233" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">29 %</text>
+<text x="454" y="249" font-size="11" fill="#5b5249">ni l'un ni l'autre</text>
+<text x="644" y="249" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">0,1 %</text>
+<text x="549" y="176" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">P(alarme sonne)</text>
+<rect x="32" y="400" width="124" height="40" rx="5" fill="#efe7d3" stroke="#b8a888"/>
+<text x="40" y="417" font-size="11" fill="#5b5249">si alarme</text>
+<text x="148" y="417" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">90 %</text>
+<text x="40" y="433" font-size="11" fill="#5b5249">sinon</text>
+<text x="148" y="433" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">5 %</text>
+<text x="94" y="394" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">P(Jean appelle)</text>
+<rect x="544" y="400" width="124" height="40" rx="5" fill="#efe7d3" stroke="#b8a888"/>
+<text x="552" y="417" font-size="11" fill="#5b5249">si alarme</text>
+<text x="660" y="417" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">70 %</text>
+<text x="552" y="433" font-size="11" fill="#5b5249">sinon</text>
+<text x="660" y="433" font-size="11" fill="#3a3531" text-anchor="end" font-weight="700">1 %</text>
+<text x="606" y="394" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">P(Marie appelle)</text>
+</svg>
