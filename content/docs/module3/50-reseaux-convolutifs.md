@@ -181,9 +181,10 @@ soient réunies.
 
 [AlexNet](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet) est un
 réseau convolutif. Son architecture reprend celle de LeNet, avec trois différences :
-il est beaucoup plus grand, il utilise la ReLU, et il est entraîné sur GPU. Le Cun,
-Hinton et Bengio ont reçu ensemble le prix Turing 2018, la plus haute distinction
-en informatique, pour leurs travaux sur l'apprentissage profond.
+il est beaucoup plus grand, il utilise la ReLU, et il est entraîné sur GPU. Le Cun
+partage cette réussite avec Hinton et Bengio, les deux autres membres de
+l'[école canadienne](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet)
+de l'apprentissage profond.
 
 Les réseaux convolutifs deviennent ensuite plus profonds : 8 couches pour AlexNet
 en 2012, 22 pour GoogLeNet en 2014, 152 pour ResNet en 2015. Ce dernier introduit
@@ -191,10 +192,22 @@ des **raccourcis** (*skip connections*) qui laissent l'information sauter certai
 couches, ce qui limite
 l'[évanouissement du gradient](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012) et permet d'entraîner des réseaux très profonds.
 
-Ils servent aujourd'hui à de nombreuses tâches :
+Nommer ce que contient une image ne suffit pas toujours. Une voiture qui doit
+freiner devant un piéton doit aussi savoir où il se trouve. Deux tâches prolongent
+donc la classification. La **détection d'objets** (*object detection*) entoure
+chaque objet d'un rectangle et lui donne une étiquette. En 2015, le réseau YOLO
+(*You Only Look Once*, « on ne regarde qu'une fois ») le fait en une seule passe,
+assez vite pour traiter une vidéo en temps réel. La **segmentation** (*image
+segmentation*) va plus loin : elle classe chaque pixel, ce qui dessine le contour
+exact de chaque objet. La même année, le réseau U-Net, conçu pour des images de
+microscopie, devient la référence en imagerie médicale, par exemple pour délimiter
+une tumeur. On le retrouvera au [Module 4](docs/module4) : il sert de squelette aux
+premiers générateurs d'images par diffusion.
 
-- **reconnaître et localiser des objets** (*object detection*) dans une image, par
-  exemple les piétons et les autres véhicules pour l'aide à la conduite ;
+{{< image src="/images/module3/classer-detecter-segmenter.jpg" alt="Trois fois la même photo d'une rue de Vancouver, avec des piétons au premier plan, des voitures, un autobus et des feux de circulation. À gauche, une seule étiquette pour toute l'image, « taxi ». Au centre, des rectangles de couleur entourent les personnes, les voitures, l'autobus et les feux, chacun avec son étiquette. À droite, chaque objet est recouvert d'une silhouette colorée qui suit exactement sa forme : rouge pour les personnes, bleu pour les voitures, jaune pour les feux." title="Classer, détecter, segmenter. Les étiquettes, les rectangles et les silhouettes ont été produits par deux réseaux préentraînés : un classifieur entraîné sur ImageNet, qui ne donne qu'une réponse pour toute l'image, et Mask R-CNN, qui détecte et segmente chaque objet (photo de Gabriel Santiago, Unsplash, CC0)." loading="lazy" >}}
+
+Les réseaux convolutifs servent aussi à bien d'autres tâches :
+
 - **analyser des images médicales**, comme des radiographies ou des images de la
   rétine ;
 - **reconnaître des visages** (*face recognition*), un usage qui pose des questions

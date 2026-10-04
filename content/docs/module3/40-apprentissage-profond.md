@@ -163,6 +163,20 @@ rétropropagation. Le chapitre
 « [Le matériel et les outils](docs/module3/42-materiel-et-outils) » raconte ces
 deux histoires.
 
+**Un premier contournement, en 2006.** Avant que ces trois obstacles soient levés,
+Hinton propose un détour. Au lieu d'entraîner toutes les couches d'un coup, on les
+entraîne une à une, sans étiquettes : chaque couche apprend à résumer ce que lui
+transmet la précédente, un peu comme un
+[autoencodeur](#apprendre-sans-étiquettes-lautoencodeur). Une fois toutes les
+couches en place, la rétropropagation ajuste l'ensemble. Ce **préentraînement
+couche par couche** (*greedy layer-wise pre-training*), publié par Hinton et ses
+collègues en 2006 et repris aussitôt par l'équipe de Bengio, montre qu'on peut
+enfin entraîner des réseaux à plusieurs couches cachées, et qu'ils font mieux que
+les réseaux peu profonds sur plusieurs tâches. C'est à cette époque que le nom
+*deep learning* s'impose. Quelques années plus tard, avec la ReLU, de grandes bases
+de données et les GPU, le détour devient inutile : AlexNet s'en passe. Mais il
+avait ramené l'attention sur les réseaux profonds.
+
 ## 2012 : le concours ImageNet
 
 À partir de 2010, ImageNet sert de base à un concours annuel. Il faut classer des
@@ -205,7 +219,16 @@ Montréal, et Yann Le Cun, à l'Université de New York. Ils continuent à trava
 sur les réseaux profonds quand presque personne d'autre ne le fait.
 
 Le pari réussit en 2012. Hinton, Bengio et Le Cun reçoivent ensemble le prix Turing
-2018. Le laboratoire fondé par Bengio en 1993 devient en 2017 **Mila**, l'Institut
+2018. En 2024, Hinton reçoit le prix Nobel de physique avec l'Américain John
+Hopfield, « pour des découvertes et des inventions fondamentales qui permettent
+l'apprentissage automatique avec des réseaux de neurones artificiels ». Le comité
+récompense deux réseaux des années 1980 qui empruntent leurs outils à la physique
+statistique : le réseau de Hopfield (1982), une mémoire qui retrouve une image
+complète à partir d'un fragment, et la machine de Boltzmann de Hinton, qui tire son
+nom du physicien Ludwig Boltzmann. Le choix a surpris, et plusieurs physiciens se
+sont demandé si l'on récompensait encore de la physique. Hinton, qui avait quitté
+Google en 2023 pour parler librement des risques de l'IA, a profité de la tribune
+pour les rappeler. Le [Module 5](docs/module5) revient sur ces risques. Le laboratoire fondé par Bengio en 1993 devient en 2017 **Mila**, l'Institut
 québécois d'intelligence artificielle, l'un des plus grands centres de recherche
 universitaire en apprentissage profond au monde. La même année, le gouvernement du
 Canada confie au CIFAR la Stratégie pancanadienne en matière d'intelligence
