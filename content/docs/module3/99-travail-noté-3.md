@@ -11,6 +11,8 @@ Voici l'application [Tensorflow Playground](https://playground.tensorflow.org),
 offerte en [logiciel libre](https://github.com/tensorflow/playground), que nous
 avons quelque peu adaptée pour les besoins de ce cours. Elle permet d'explorer
 de manière interactive et intuitive le fonctionnement des réseaux de neurones.
+Si l'application est coupée sur votre écran, ouvrez-la
+[en pleine page]({{< rel "/html/playground/index.html#dataset=gauss&networkShape=&showTestData_hide=true&percTrainData_hide=true&batchSize_hide=true&dataset_hide=false&activation_hide=true&problem=classification&problem_hide=true&regularization_hide=true&regularizationRate_hide=true&learningRate_hide=true&discretize_hide=true" >}}).
 
 ## Consignes
 
@@ -23,7 +25,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
 
 ## Instructions et questions d'interprétation
 
-1. Des 4 jeux de données proposés, lequel vous apparaît ensuite le plus facile à
+1. Des 4 jeux de données proposés, lequel vous apparaît le plus facile à
    classifier (en deux classes distinctes, `orange` et `bleue`), pour un
    algorithme d'apprentissage automatique (pas seulement un réseau de neurones)?
    Expliquez pourquoi.
@@ -32,17 +34,17 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    points sont disposés en diagonale, l'un par rapport à l'autre.
 
    <p style="text-align: center;">
-     <img src="{{< rel "/images/module3/tn3/prob1.png" >}}" alt="My image" style="width: 50%; height: auto;" width="598" height="594">
+     <img src="{{< rel "/images/module3/tn3/prob1.png" >}}" alt="Le jeu de données des deux groupes : des points orange en bas à gauche, des points bleus en haut à droite." style="width: 50%; height: auto;" width="598" height="594">
    </p>
 
    Assurez-vous de n'avoir aucune couche cachée, et seulement les
    caractéristiques $X_1$ et $X_2$ activées. Quelle est l'erreur (ou perte)
    d’entraînement? Appuyez plusieurs fois sur le bouton de rafraîchissement, et
-   constatez les variations au niveau de cette initiale (avant tout
+   constatez les variations de cette erreur initiale (avant tout
    entraînement):
 
    <p style="text-align: center;">
-     <img src="{{< rel "/images/module3/tn3/refresh_button.png" >}}" alt="My image" style="width: 50%; height: auto;" width="684" height="364">
+     <img src="{{< rel "/images/module3/tn3/refresh_button.png" >}}" alt="Le bouton de réinitialisation, une flèche circulaire, à gauche du bouton de lecture." style="width: 50%; height: auto;" width="684" height="364">
    </p>
 
    Que signifient ces erreurs et ces variations (pourquoi l'erreur initiale est
@@ -50,7 +52,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    constater visuellement?
 
 3. Quelle est la différence entre ce problème de classification et celui que
-   nous avons vu dans le deuxième module avec la [régression logistique](docs/module2/60-classer/#tracer-une-frontière--la-régression-logistique)?
+   nous avons vu dans le deuxième module avec la [régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique)?
 
 4. Ajustez maintenant la valeur de "bruit" à 25, et appuyez sur le bouton
    "régénérez" à quelques reprises. Est-ce que ceci rend la tâche de
@@ -60,10 +62,10 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
 5. Remettez le "bruit" à 0, et choisissez maintenant ce jeu de données :
 
    <p style="text-align: center;">
-     <img src="{{< rel "/images/module3/tn3/prob2.png" >}}" alt="My image" style="width: 50%; height: auto;" width="616" height="620">
+     <img src="{{< rel "/images/module3/tn3/prob2.png" >}}" alt="Le jeu de données du XOR : quatre groupes de points aux coins, orange en haut à gauche et en bas à droite, bleus sur l'autre diagonale." style="width: 50%; height: auto;" width="616" height="620">
    </p>
 
-   À priori, est-ce qu'il vous apparaît possible qu'un modèle ayant servi à
+   *A priori*, est-ce qu'il vous apparaît possible qu'un modèle ayant servi à
    classifier le précédent jeu de données puisse servir à classifier celui-ci?
    Expliquez pourquoi. Tentez l'expérience, que se passe-t-il?
 
@@ -72,7 +74,7 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
    en appuyant sur ce bouton :
 
    <p style="text-align: center;">
-     <img src="{{< rel "/images/module3/tn3/train_button.png" >}}" alt="My image" style="width: 50%; height: auto;" width="590" height="358">
+     <img src="{{< rel "/images/module3/tn3/train_button.png" >}}" alt="Le bouton de lecture, rond, qui lance l'entraînement." style="width: 50%; height: auto;" width="590" height="358">
    </p>
 
 7. Ajoutez maintenant une deuxième couche cachée avec deux neurones cette fois.
@@ -97,10 +99,10 @@ de manière interactive et intuitive le fonctionnement des réseaux de neurones.
 11. Considérez maintenant ce troisième jeu de données :
 
     <p style="text-align: center;">
-      <img src="{{< rel "/images/module3/tn3/prob3.png" >}}" alt="My image" style="width: 50%; height: auto;" width="624" height="618">
+      <img src="{{< rel "/images/module3/tn3/prob3.png" >}}" alt="Le jeu de données du cercle : des points bleus au centre, entourés d'un anneau de points orange." style="width: 50%; height: auto;" width="624" height="618">
     </p>
 
-    Sans aucune cachée, et seulement les caractéristiques $X_1$ et $X_2$
+    Sans aucune couche cachée, et seulement les caractéristiques $X_1$ et $X_2$
     activées, est-ce qu'il est possible de résoudre ce problème?
 
 12. Est-ce que la situation change en remplaçant les caractéristiques $X_1$ et

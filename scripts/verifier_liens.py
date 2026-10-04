@@ -1,7 +1,7 @@
 """Vérifie les liens internes du cours : fichier cible existant et ancre présente.
 
 Les ancres sont lues dans les pages servies par le serveur local (port 1313),
-qui doit tourner. Sans argument, vérifie tous les .md des modules 1 et 2.
+qui doit tourner. Sans argument, vérifie tous les .md des modules 1 à 3.
 
     uv run scripts/verifier_liens.py [fichiers…]
 """
@@ -49,7 +49,7 @@ def resoudre(chemin: str):
     return None
 
 
-fichiers = [Path(a) for a in sys.argv[1:]] or sorted((RACINE / "content/docs").glob("module[12]/*.md"))
+fichiers = [Path(a) for a in sys.argv[1:]] or sorted((RACINE / "content/docs").glob("module[123]/*.md"))
 erreurs = 0
 for f in fichiers:
     source = Path(f).resolve()
