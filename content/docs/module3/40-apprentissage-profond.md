@@ -83,7 +83,7 @@ feuillages.
 Les chercheurs publient leur programme, et des milliers de personnes l'appliquent à
 leurs propres photos. Les images circulent dans le monde entier, et beaucoup y
 voient pour la première fois ce qui se passe à l'intérieur d'un réseau de neurones.
-Le phénomène rappelle la **paréidolie**, notre tendance à voir des visages dans les
+Le phénomène rappelle la **paréidolie** (*pareidolia*), notre tendance à voir des visages dans les
 nuages ou les prises électriques. Le réseau fait de même avec ce qu'il a appris à
 reconnaître, mais en l'exagérant à chaque itération. DeepDream a aussi ouvert la
 voie à des usages artistiques des réseaux de neurones, qui annoncent l'IA
