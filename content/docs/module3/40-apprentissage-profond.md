@@ -197,8 +197,16 @@ système est à 26 %.
 L'écart est si grand que le domaine change de méthode en deux ans. Dès 2014, tous
 les systèmes en compétition sont des réseaux profonds. En 2015, le réseau gagnant
 compte 152 couches et son taux d'erreur, 3,6 %, est inférieur à celui d'un humain
-sur la même tâche, estimé à 5 %. La même bascule se produit ensuite pour la
-reconnaissance de la parole, puis pour la traduction.
+sur la même tâche, estimé à 5 %. La même bascule se produit quelques années plus tard pour la
+traduction. Pour la reconnaissance de la parole, elle avait même commencé un peu
+plus tôt. Entre 2009 et 2012, des étudiants de Hinton, avec des équipes de
+Microsoft, de Google et d'IBM, remplacent une partie des systèmes de reconnaissance
+vocale par des réseaux profonds,
+[préentraînés couche par couche](#pourquoi-seulement-en-2012). En 2012, la
+recherche vocale des téléphones Android en profite. C'est le premier grand succès
+industriel de l'apprentissage profond. ImageNet a pourtant davantage frappé les
+esprits, parce que l'écart y était spectaculaire et mesuré lors d'un concours
+public.
 
 AlexNet est un réseau d'un type particulier, un réseau convolutif (*convolutional
 neural network*, CNN), conçu pour les images. Le chapitre
