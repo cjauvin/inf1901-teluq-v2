@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : le réseau bayésien de l'alarme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .noeud { cursor: pointer; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <svg id="vue" viewBox="0 0 700 400" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"
+         font-family="system-ui, -apple-system, sans-serif"></svg>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center justify-between gap-2 text-sm">
+        <div class="text-slate-600">Cliquez sur un nœud pour indiquer ce que vous savez : <b>inconnu</b>, puis <b>vrai</b>, puis <b>faux</b>.</div>
+        <button onclick="toutEffacer()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium text-sm shadow-sm">Tout effacer</button>
+    </div>
+
+    <div class="flex justify-center gap-5 mt-3 pb-1 text-xs text-slate-600 flex-wrap">
+        <div class="flex items-center gap-2"><div class="w-6 h-3 rounded-sm" style="background:#c4564a"></div>probabilité que la variable soit vraie, compte tenu de ce que vous savez</div>
+        <div class="flex items-center gap-2"><div class="w-4 h-4 rounded" style="border:3px solid #3a3531"></div>variable observée</div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Le réseau bayésien de l'alarme (exemple de Judea Pearl, repris par Russell et
+ * Norvig). Chaque variable est vraie ou fausse. Les probabilités de chaque nœud,
+ * compte tenu des observations, sont calculées exactement, en énumérant les
+ * 32 combinaisons possibles des cinq variables.
+ */
+const C = { encre: '#3a3531', pale: '#5b5249', gris: '#7a6f63', teal: '#2f6f6a', rouge: '#c4564a', bleu: '#3a6ea5', axe: '#b8a888', panneau: '#fbf7ee', fond: '#efe7d3' };
+const NOEUDS = [
+    { id: 'c', nom: 'Cambriolage', x: 210, y: 80, coul: C.rouge },
+    { id: 's', nom: 'Séisme', x: 490, y: 80, coul: C.rouge },
+    { id: 'a', nom: 'Alarme', x: 350, y: 200, coul: C.teal },
+    { id: 'j', nom: 'Jean appelle', x: 210, y: 320, coul: C.bleu },
+    { id: 'm', nom: 'Marie appelle', x: 490, y: 320, coul: C.bleu },
+];
+const FLECHES = [['c', 'a'], ['s', 'a'], ['a', 'j'], ['a', 'm']];
+const PA = { '11': 0.95, '10': 0.94, '01': 0.29, '00': 0.001 };
+let obs = {};                                           // id → true / false ; absent si inconnu
+
+function conjointe(v) {
+    let p = (v.c ? 0.001 : 0.999) * (v.s ? 0.002 : 0.998);
+    const pa = PA[`${+v.c}${+v.s}`];
+    p *= v.a ? pa : 1 - pa;
+    p *= v.j ? (v.a ? 0.9 : 0.05) : (v.a ? 0.1 : 0.95);
+    p *= v.m ? (v.a ? 0.7 : 0.01) : (v.a ? 0.3 : 0.99);
+    return p;
+}
+function probas() {                                     // P(variable vraie | observations), pour chaque variable
+    const tot = { c: 0, s: 0, a: 0, j: 0, m: 0 };
+    let z = 0;
+    for (let k = 0; k < 32; k++) {
+        const v = { c: !!(k & 1), s: !!(k & 2), a: !!(k & 4), j: !!(k & 8), m: !!(k & 16) };
+        if (Object.entries(obs).some(([id, val]) => v[id] !== val)) continue;
+        const p = conjointe(v);
+        z += p;
+        for (const id in tot) if (v[id]) tot[id] += p;
+    }
+    for (const id in tot) tot[id] /= z;
+    return tot;
+}
+function pourcent(p) {
+    const x = p * 100;
+    const t = x >= 10 ? x.toFixed(0) : x >= 1 ? x.toFixed(1) : x.toFixed(2);
+    return t.replace('.', ',') + ' %';
+}
+
+function dessiner() {
+    const p = probas(), pos = Object.fromEntries(NOEUDS.map(n => [n.id, n]));
+    let s = `<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${C.gris}"/></marker></defs>`;
+    for (const [a, b] of FLECHES) {
+        const A = pos[a], B = pos[b], dy = B.y > A.y ? 1 : -1;
+        s += `<line x1="${A.x + (B.x - A.x) * 0.22}" y1="${A.y + 34 * dy}" x2="${B.x - (B.x - A.x) * 0.22}" y2="${B.y - 36 * dy}" stroke="${C.gris}" stroke-width="2" marker-end="url(#pointe)"/>`;
+    }
+    for (const n of NOEUDS) {
+        const o = obs[n.id], etat = o === undefined ? 'inconnu' : o ? 'vrai' : 'faux', l = 150;
+        s += `<g class="noeud" data-id="${n.id}">
+            <rect x="${n.x - l / 2}" y="${n.y - 32}" width="${l}" height="64" rx="14" fill="${C.panneau}" stroke="${o === undefined ? n.coul : C.encre}" stroke-width="${o === undefined ? 2 : 3.5}"/>
+            <text x="${n.x}" y="${n.y - 12}" font-size="13" fill="${C.encre}" text-anchor="middle" font-weight="700">${n.nom}</text>
+            <rect x="${n.x - 60}" y="${n.y - 2}" width="120" height="12" rx="3" fill="${C.fond}" stroke="${C.axe}" stroke-width="0.8"/>
+            <rect x="${n.x - 60}" y="${n.y - 2}" width="${(120 * p[n.id]).toFixed(1)}" height="12" rx="3" fill="${C.rouge}"/>
+            <text x="${n.x}" y="${n.y + 25}" font-size="11.5" fill="${o === undefined ? C.pale : C.encre}" text-anchor="middle" font-weight="${o === undefined ? 400 : 700}">${o === undefined ? pourcent(p[n.id]) : 'observé : ' + etat}</text>
+        </g>`;
+    }
+    const vue = document.getElementById('vue');
+    vue.innerHTML = s;
+    vue.querySelectorAll('.noeud').forEach(g => g.addEventListener('click', () => {
+        const id = g.dataset.id, o = obs[id];
+        if (o === undefined) obs[id] = true; else if (o) obs[id] = false; else delete obs[id];
+        dessiner();
+    }));
+}
+function toutEffacer() { obs = {}; dessiner(); }
+dessiner();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

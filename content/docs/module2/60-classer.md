@@ -468,6 +468,104 @@ discriminative et générative, aboutissent donc de nouveau au même résultat.
 
 {{% /details %}}
 
+## Raisonner sous incertitude : les réseaux bayésiens
+
+Le classifieur de la section précédente appartient à un courant plus large, qui a
+transformé l'IA à la fin des années 1980. Les
+[systèmes experts](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom)
+du Module 1 raisonnaient avec des règles. Pour tenir compte de l'incertitude,
+MYCIN leur ajoutait des facteurs de certitude, une méthode commode mais
+approximative. Au cours des années 1980, une autre idée s'impose : raisonner
+directement avec des **probabilités**, selon les règles du calcul des
+probabilités et le théorème de Bayes. On a appelé ce tournant la **révolution
+probabiliste**.
+
+Il touche plusieurs domaines en même temps.
+
+- **La reconnaissance de la parole.** Chez IBM, l'équipe de Frederick Jelinek
+  remplace les règles de linguistes par des modèles statistiques appris sur des
+  enregistrements. On lui attribue une phrase restée célèbre : chaque fois qu'il
+  renvoyait un linguiste, son système s'améliorait.
+- **La traduction automatique.** Vers 1990, une autre équipe d'IBM traduit par des
+  probabilités apprises sur des textes déjà traduits, au lieu d'écrire des règles
+  de grammaire.
+- **Les filtres anti-pourriel.** En 2002, l'essai de Paul Graham, « A Plan for
+  Spam », popularise le classifieur bayésien de la section précédente, que la
+  plupart des messageries adoptent ensuite.
+- **Le raisonnement en général**, avec les **réseaux bayésiens** de Judea Pearl,
+  présentés ci-dessous.
+
+**Du classifieur naïf au réseau.** On peut dessiner le classifieur bayésien naïf
+comme un graphe. Un nœud représente la classe, « pourriel ou non », et une flèche
+part de ce nœud vers chaque mot, parce que la classe influence les mots employés.
+Il n'y a aucune flèche entre les mots : c'est l'hypothèse naïve.
+
+{{< image src="/images/module2/bayes-naif-et-reseau.svg" alt="Deux panneaux. À gauche, le classifieur bayésien naïf dessiné comme un graphe : un nœud « pourriel ? » relié par des flèches à trois nœuds de mots, « gratuit », « carte » et « réunion », sans flèche entre les mots. À droite, un réseau bayésien plus riche : « grippe » pointe vers « fièvre » et « toux », « rhume » pointe aussi vers « toux », et « fièvre » pointe vers « fatigue »." title="Le classifieur naïf est le plus simple des réseaux bayésiens ; un réseau plus riche dessine les dépendances réelles entre les variables." loading="lazy" >}}
+
+Un **réseau bayésien**, proposé par Judea Pearl en 1985, généralise ce dessin.
+Chaque nœud est une variable incertaine. Chaque flèche indique une influence
+directe, en général d'une cause vers un effet. Chaque nœud porte une petite table,
+qui donne sa probabilité selon les valeurs de ses parents. Ces tables suffisent à
+calculer la probabilité de n'importe quel nœud, à partir de n'importe quelle
+observation.
+
+**Un exemple : l'alarme.** Une maison a une alarme contre les cambriolages. Elle se
+déclenche aussi, parfois, lors d'un tremblement de terre. Si elle sonne, vos
+voisins Jean et Marie vous appellent peut-être. Jean appelle presque toujours,
+mais il appelle aussi parfois quand il confond l'alarme avec la sonnerie de son
+téléphone. Marie entend moins bien, mais se trompe rarement.
+
+{{< image src="/images/module2/reseau-alarme.svg" alt="Cinq nœuds. Cambriolage et Séisme pointent vers Alarme, qui pointe vers Jean appelle et Marie appelle. Chaque nœud porte sa table : cambriolage 0,1 % ; séisme 0,2 % ; l'alarme sonne à 95 % s'il y a cambriolage et séisme, 94 % s'il y a seulement cambriolage, 29 % s'il y a seulement séisme, 0,1 % sinon ; Jean appelle à 90 % si l'alarme sonne et 5 % sinon ; Marie appelle à 70 % si l'alarme sonne et 1 % sinon." title="Le réseau de l'alarme : cinq variables, et une petite table de probabilités par variable." loading="lazy" >}}
+
+Dans l'applet ci-dessous, cliquez sur un nœud pour indiquer ce que vous savez :
+vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.
+
+{{< applet src="/html/applets/bayes-alarme.html" height="612" >}}
+
+1. Sans aucune observation, la probabilité d'un cambriolage est de 0,1 %.
+   Indiquez que l'alarme sonne. Elle passe à environ 37 %.
+2. Indiquez ensuite qu'il y a eu un tremblement de terre. La probabilité du
+   cambriolage retombe à 0,3 %. Le séisme explique l'alarme, et le cambriolage
+   n'est plus nécessaire pour l'expliquer. Ce raisonnement s'appelle
+   l'**explication concurrente** (*explaining away*). Pourtant, dans le réseau,
+   cambriolage et séisme sont indépendants l'un de l'autre.
+3. Effacez ces observations, puis indiquez seulement que Jean appelle : le
+   cambriolage passe à 1,6 %. Avec Marie seule : 5,6 %. Avec les deux : 28 %.
+   Deux indices faibles et indépendants, réunis, deviennent un indice fort.
+
+Les flèches vont des causes vers les effets, mais le calcul va dans les deux
+sens. On part des effets observés, les appels, pour remonter vers les causes
+probables, le cambriolage ou le séisme. C'est le raisonnement d'un diagnostic,
+celui que MYCIN cherchait à mener avec ses règles. Le réseau le fait selon les
+règles exactes du calcul des probabilités.
+
+Les réseaux bayésiens sont utilisés en diagnostic médical, en détection de pannes,
+en analyse de risques ou dans des filtres comme celui des pourriels. Pearl a
+ensuite cherché à distinguer, dans ces graphes, les influences causales des
+simples corrélations. Ces travaux sur la **causalité** lui ont valu le prix Turing
+en 2011. La distinction entre corrélation et causalité sera reprise au
+[Module 5](docs/module5).
+
+{{% details "Les mathématiques des réseaux bayésiens (optionnel)" %}}
+
+Un réseau bayésien décrit la probabilité conjointe de toutes ses variables comme
+un produit de petites tables. Pour l'alarme, avec $C$ (cambriolage), $S$
+(séisme), $A$ (alarme), $J$ et $M$ (les appels) :
+
+$$P(C, S, A, J, M) = P(C)\,P(S)\,P(A \mid C, S)\,P(J \mid A)\,P(M \mid A)$$
+
+Avec cinq variables vrai ou faux, la table complète compterait 32 cases. Le réseau
+n'a besoin que de 10 nombres. Pour obtenir une probabilité comme $P(C \mid A)$, on
+additionne les cases compatibles avec l'observation, puis on divise :
+
+$$P(C \mid A) = \frac{P(C, A)}{P(A)}$$
+
+Ce calcul par énumération est exact, mais son coût double avec chaque variable
+ajoutée. Pour les grands réseaux, on utilise des algorithmes qui exploitent la
+forme du graphe, ou des méthodes d'approximation.
+
+{{% /details %}}
+
 ## Sous les modèles, des probabilités
 
 Avant de quitter la classification, il faut revenir sur une notion présente dans
@@ -515,7 +613,7 @@ est la règle exacte de cette mise à jour. L'approche bayésienne est présente
 dans tout le domaine, y compris dans les méthodes qui cherchent aujourd'hui à
 faire indiquer aux grands modèles leur degré de certitude.
 
-Nous avons donc vu trois modèles qui s'entraînent, tous avec le même mécanisme :
-une fonction d'erreur qu'on fait diminuer. Avant d'examiner la qualité de leurs
+Tous les modèles de cette page apprennent leurs paramètres à partir des exemples,
+en optimisant un critère : une fonction d'erreur, une marge ou une vraisemblance. Avant d'examiner la qualité de leurs
 prédictions sur des données nouvelles, la page suivante, « [Poser des questions : les arbres de décision](docs/module2/65-arbres-de-decision) », présente un dernier
 modèle, d'un autre type, qui ne calcule pas mais pose des questions.

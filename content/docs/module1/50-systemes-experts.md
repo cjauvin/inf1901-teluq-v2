@@ -177,7 +177,7 @@ nombre associé à chaque règle, qui indique à quel point sa conclusion est fi
 et les combinait au cours du raisonnement. Cette méthode était approximative. Plus
 tard, une théorie plus rigoureuse de l'incertitude, celle des **réseaux
 bayésiens**, l'a remplacée (voir le [Module
-2](docs/module2/60-classer/#sous-les-modèles-des-probabilités)). MYCIN montrait
+2](docs/module2/60-classer/#raisonner-sous-incertitude-les-réseaux-bayésiens)). MYCIN montrait
 déjà qu'un système qui raisonne doit aussi tenir compte de l'incertitude.
 
 {{% hint info %}}
