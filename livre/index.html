@@ -665,7 +665,7 @@ est guidé par la distance qui le sépare du but. Lancez les deux recherches, pu
 comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
 avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
 observez dans quels cas l&rsquo;heuristique aide beaucoup et dans quels cas elle mène
-la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1791081221827043496 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
+la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1791081730053241017 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
 partir de données décrites par des milliers de caractéristiques. Ce sera la
 <a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a>, au
 <a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>.</p><h2 id=lapogée-deep-blue-bat-kasparov-1997>L&rsquo;apogée : Deep Blue bat Kasparov (1997)<a class=anchor href=#lapog%c3%a9e-deep-blue-bat-kasparov-1997></a></h2><p>En mai 1997, à New York, se joue un match devenu célèbre. D&rsquo;un côté, <strong>Garry
@@ -1074,7 +1074,7 @@ suivante</a>.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous obser
 faites avancer le moteur d&rsquo;inférence règle par règle. Vous le verrez examiner
 chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
 faits à la base, jusqu&rsquo;au diagnostic. Essayez plusieurs combinaisons, et trouvez
-celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1791081221847538534 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
+celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1791081730083290814 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
 développé à Stanford à partir de 1965. Il identifiait des <strong>molécules</strong> à partir de
 données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
 est cependant <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>.
@@ -1578,7 +1578,7 @@ des SVM, Bayes, le filtre anti-pourriel et les réseaux bayésiens.</li><li><a h
 un modèle qui cherche au lieu de descendre un gradient, et qui peut expliquer
 ses décisions.</li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/><em>Généraliser</em></a> : le jeu de test, ce qu&rsquo;un
 modèle peut dessiner, le compromis biais-variance, la régularisation.</li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un modèle</em></a> : les fuites, la
-validation croisée, les métriques, la distribution.</li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/><em>Trois façons d&rsquo;apprendre</em></a> :
+validation croisée, les métriques, la distribution, la causalité.</li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/><em>Trois façons d&rsquo;apprendre</em></a> :
 supervisé, non supervisé, par renforcement.</li></ol><p>Pour situer ce module dans l&rsquo;ensemble du cours : l&rsquo;apprentissage automatique n&rsquo;est
 qu&rsquo;une partie d&rsquo;un domaine plus vaste, celui de l&rsquo;intelligence artificielle, que le
 cours parcourt module par module.</p><label class=book-image for=book-image-toggle-55ae5b3425e9><input class="hidden toggle" type=checkbox id=book-image-toggle-55ae5b3425e9>
@@ -1594,7 +1594,8 @@ gradient) et ce qu&rsquo;est un hyperparamètre ;</li><li>définir le sur-appr
 relier au compromis biais-variance, à la capacité d&rsquo;un modèle (linéaire ou
 non) et à la régularisation ;</li><li>évaluer correctement un modèle : jeu de test, fuites de données, validation
 croisée, matrice de confusion, précision et rappel, et la question de la
-distribution ;</li><li>distinguer les trois grandes façons d&rsquo;apprendre (supervisé, non supervisé,
+distribution ;</li><li>distinguer une corrélation d&rsquo;une cause, et dire pourquoi un modèle prédictif ne
+suffit pas pour décider d&rsquo;une intervention ;</li><li>distinguer les trois grandes façons d&rsquo;apprendre (supervisé, non supervisé,
 par renforcement) par la nature du signal dont le modèle apprend ;</li><li>expliquer pourquoi l&rsquo;explicabilité d&rsquo;un modèle compte, et quels modèles
 l&rsquo;offrent.</li></ul><h2 id=durée>Durée<a class=anchor href=#dur%c3%a9e></a></h2><p>Quatre semaines, soit environ 36 heures.</p><h2 id=évaluation>Évaluation<a class=anchor href=#%c3%a9valuation></a></h2><p>Un <a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>travail noté</a> (20 % de la note finale) où vous construirez, pas à pas, un
 filtre anti-pourriel par classification bayésienne naïve, avec des questions
@@ -1975,7 +1976,7 @@ impaires pour les valeurs ; la réalité est un peu plus complexe, mais le pri
 est celui-là). Pour réaliser une instruction, le CPU exécute un petit programme
 câblé directement dans ses circuits. C&rsquo;est à cet endroit que la logique rejoint la
 matière.</p><p>Vous pouvez exécuter vous-même, pas à pas, une version interactive de ce petit
-programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1791081221827646628 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
+programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1791081730054003507 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
 façon qu&rsquo;on peut écrire un jeu ou un système d&rsquo;exploitation en langage machine, on
 peut y écrire un autre langage. Ce langage est plus <em>abstrait</em>, plus éloigné de la
 réalité physique, et il permet d&rsquo;exprimer des idées plus complexes de façon plus
@@ -2096,7 +2097,7 @@ peut prendre n&rsquo;importe quelle forme.</p><p>L&rsquo;applet ci-dessous perme
 des points rouges et des points bleus. Chaque point coloré est un exemple connu,
 et le fond montre, comme plus haut, la prédiction de kNN pour tout nouveau point.
 Ajoutez des points, déplacez-les, faites varier <em>k</em> et observez comment la
-frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081221834198378 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie
+frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081730070651342 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie
 que sur le voisin le plus proche. La frontière suit alors le moindre détail, fait
 le tour de chaque point individuel et devient très irrégulière. Le modèle suit les
 exemples connus de si près qu&rsquo;il réagit au moindre point aberrant. Ce défaut porte
@@ -2160,7 +2161,7 @@ Notre droite en a deux, ce qui suffit pour représenter une <em>tendance</em>, a
 direction et une hauteur. Si on change m et b, on obtient une autre droite, donc
 un autre modèle. Le problème consiste à trouver le couple (m, b) qui donne la
 droite la mieux ajustée au nuage.</p><p>Essayez vous-même. Dans l&rsquo;applet ci-dessous, déplacez la droite (vous ajustez
-ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1791081221851585878 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
+ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1791081730095393808 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
 préciser ce que « bien » veut dire. Il nous faut une mesure, que nous avons déjà
 rencontrée avec le modèle le plus bête sans encore la définir précisément :
 l&rsquo;<strong>erreur</strong>.</p><p>Pour une droite donnée, l&rsquo;erreur sur une maison est l&rsquo;écart entre le prix que la
@@ -2182,7 +2183,7 @@ point est relié à la droite par un petit ressort vertical. Un point éloigné 
 fort, un point proche tire à peine. La meilleure droite est celle où les forces de
 tous ces ressorts s&rsquo;équilibrent, c&rsquo;est-à-dire la position de moindre tension.
 Cette position correspond à la droite de plus petite erreur. Vous pouvez
-l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1791081221852058254 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
+l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1791081730096745502 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
 dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
 quand le modèle n&rsquo;a plus deux paramètres, mais des milliers. C&rsquo;est l&rsquo;objet de la
 <a href=#apprendre-cest-descendre-la-pente>section suivante</a>.</p><h2 id=apprendre-cest-descendre-la-pente>Apprendre, c&rsquo;est descendre la pente<a class=anchor href=#apprendre-cest-descendre-la-pente></a></h2><p>L&rsquo;idée présentée dans cette section est au cœur de tout l&rsquo;apprentissage
@@ -2274,7 +2275,7 @@ des statisticiens dans les années 1950 et, malgré son nom (il contient
 utilisés. Dans l&rsquo;applet ci-dessous, déplacez la ligne de décision pour séparer
 au mieux les deux groupes. Vous ajustez ainsi ses deux paramètres à la main,
 comme vous déplaciez la droite de régression au <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#un-mod%c3%a8le-qui-tient-en-deux-nombres>chapitre précédent</a>. Vous pouvez
-aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1791081221857700904 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
+aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1791081730106842713 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
 verticale au point, puisqu&rsquo;on ne prédit plus une valeur. On compte plutôt les
 cas où le modèle se <strong>trompe de côté</strong> : un point bien placé ne coûte rien, un
 point du mauvais côté coûte cher. La barre à droite de l&rsquo;applet affiche cette
@@ -2341,7 +2342,7 @@ Tous les autres points n&rsquo;ont aucune influence sur la frontière : on peut
 déplacer, les retirer ou en ajouter loin de la bande, sans que rien change. C&rsquo;est
 une différence importante avec la régression logistique, où chaque point tire un
 peu sur la frontière.</p><p>Dans l&rsquo;applet ci-dessous, la frontière est recalculée à chaque modification. La
-bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1791081221858103556 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
+bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1791081730107541844 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
 se réorganise autour de ce nouveau point.</li><li>Glissez un point rouge au milieu des bleus, puis réglez le curseur de
 tolérance, décrit ci-dessous.</li></ol><p><strong>La marge souple.</strong> Quand les groupes se chevauchent, aucune droite ne les sépare
 parfaitement, et aucune bande vide n&rsquo;existe. La méthode accepte alors que certains
@@ -2517,7 +2518,7 @@ mais il appelle aussi parfois quand il confond l&rsquo;alarme avec la sonnerie d
 téléphone. Marie entend moins bien, mais se trompe rarement.</p><label class=book-image for=book-image-toggle-1836709f5a96><input class="hidden toggle" type=checkbox id=book-image-toggle-1836709f5a96>
 <img src=/inf1901-teluq-v2/images/module2/reseau-alarme.svg alt="Cinq nœuds. Cambriolage et Séisme pointent vers Alarme, qui pointe vers Jean appelle et Marie appelle. Chaque nœud porte sa table : cambriolage 0,1 % ; séisme 0,2 % ; l'alarme sonne à 95 % s'il y a cambriolage et séisme, 94 % s'il y a seulement cambriolage, 29 % s'il y a seulement séisme, 0,1 % sinon ; Jean appelle à 90 % si l'alarme sonne et 5 % sinon ; Marie appelle à 70 % si l'alarme sonne et 1 % sinon." loading=lazy title="Le réseau de l'alarme : cinq variables, et une petite table de probabilités par variable." width=700 height=470 style=--largeur-plafond:700px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-1836709f5a96"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Dans l&rsquo;applet ci-dessous, cliquez sur un nœud pour indiquer ce que vous savez :
-vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1791081221859275208 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
+vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1791081730109900940 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
 Indiquez que l&rsquo;alarme sonne. Elle passe à environ 37 %.</li><li>Indiquez ensuite qu&rsquo;il y a eu un tremblement de terre. La probabilité du
 cambriolage retombe à 0,3 %. Le séisme explique l&rsquo;alarme, et le cambriolage
 n&rsquo;est plus nécessaire pour l&rsquo;expliquer. Ce raisonnement s&rsquo;appelle
@@ -2751,7 +2752,7 @@ rouges et bleus, un arbre appris en direct et le fond correspondant dans le plan
 profondeur maximale de 1 à 8 et observez les rectangles se multiplier autour des
 points isolés. Ajoutez un point d&rsquo;une couleur au milieu de l&rsquo;autre couleur et
 observez comment l&rsquo;arbre s&rsquo;adapte. Survolez une zone du plan pour voir son chemin
-s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1791081221865696632 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
+s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1791081730121927910 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
 utiliserons à propos des fuites dans <a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
 modèle</em></a> : la liste des 1309 passagers du
 <em>Titanic</em>, avec pour chacun la classe, le sexe, l&rsquo;âge et l&rsquo;indication de sa
@@ -3010,7 +3011,7 @@ comme kNN le classait selon ses voisins. La différence est que le SVM ne garde
 que les vecteurs de support, et qu&rsquo;il pondère leur influence pour obtenir la plus
 grande marge.</p><p>L&rsquo;applet ci-dessous est celle de la section sur la marge, avec le jeu de points
 « XOR » et le noyau gaussien. Le curseur de portée règle la distance à laquelle
-deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791081221873012154 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
+deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791081730127434229 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
 mal classés.</li><li>Revenez au noyau gaussien. La frontière se courbe et sépare les quatre groupes.</li><li>Réduisez la portée. La frontière se met à entourer chaque groupe de près, et
 presque tous les points deviennent des vecteurs de support. C&rsquo;est le
 sur-apprentissage (<em>overfitting</em>) de la
@@ -3034,7 +3035,7 @@ trop souple finit par suivre le hasard autant que le signal. Pour observer ce
 compromis (et le mesurer, puisque nous savons maintenant le faire), revenons à
 kNN. Son seul réglage, le nombre de voisins $k$, contrôle directement la
 souplesse du modèle. Dans l&rsquo;applet ci-dessous, faites glisser lentement $k$
-d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081221873089239 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
+d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791081730127542272 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
 frontière se déforme pour entourer chaque exemple, forme des îlots autour des
 points isolés et suit tous les détails. L&rsquo;erreur d&rsquo;entraînement est nulle,
 puisque chaque exemple est son propre plus proche voisin. Cependant, cette
@@ -3417,7 +3418,59 @@ mesure sur aucun jeu de test, puisque le test provient des mêmes données. Un
 score honnête, fiable, pertinent et valable peut donc correspondre à un modèle
 injuste. C&rsquo;est une raison de plus d&rsquo;examiner la provenance des données, et pas
 seulement leur quantité. Le <span title="Ce module sera publié plus tard">Module 5</span> reviendra sur cette
-question.</p><h2 id=tout-cela-portait-un-nom-lapprentissage-supervisé>Tout cela portait un nom : l&rsquo;apprentissage supervisé<a class=anchor href=#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9></a></h2><p>Depuis la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/>première page de ce module</a>, un élément n&rsquo;a jamais changé, et nous
+question.</p><h2 id=corrélation-nest-pas-causalité>Corrélation n&rsquo;est pas causalité<a class=anchor href=#corr%c3%a9lation-nest-pas-causalit%c3%a9></a></h2><p>Les modèles de ce module apprennent des <strong>associations</strong> : quand telle
+caractéristique est présente, telle réponse est plus probable. Ils ne disent pas
+<strong>pourquoi</strong>. Cette différence semble théorique. Elle a pourtant des conséquences
+très concrètes.</p><p>L&rsquo;exemple classique est celui de la crème glacée. Dans une ville, les jours où l&rsquo;on
+vend beaucoup de crème glacée sont aussi des jours où il y a plus de noyades. Un
+modèle entraîné sur ces données prédirait très bien les noyades à partir des ventes
+de crème glacée. Pourtant, interdire la crème glacée ne sauverait personne. Les
+deux augmentent ensemble parce qu&rsquo;elles ont une <strong>cause commune</strong>, la chaleur, qui
+pousse à la fois à acheter de la crème glacée et à se baigner. Une telle variable,
+qui influence à la fois ce qu&rsquo;on observe et ce qu&rsquo;on veut prédire, s&rsquo;appelle un
+<strong>facteur de confusion</strong> (<em>confounder</em>).</p><label class=book-image for=book-image-toggle-c9adaa4c75b3><input class="hidden toggle" type=checkbox id=book-image-toggle-c9adaa4c75b3>
+<img src=/inf1901-teluq-v2/images/module2/cause-commune.svg alt="Un petit graphe. En haut, un nœud « chaleur » pointe par deux flèches vers deux nœuds placés en bas : « ventes de crème glacée » à gauche et « noyades » à droite. Une ligne pointillée relie ces deux nœuds, avec la mention « corrélation, sans cause »." loading=lazy title="La chaleur fait monter à la fois les ventes de crème glacée et les noyades : les deux sont corrélées, sans que l'une cause l'autre." width=700 height=330 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-c9adaa4c75b3"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>On reconnaît le dessin des
+<a href=/inf1901-teluq-v2/docs/module2/classer/#raisonner-sous-incertitude-les-r%c3%a9seaux-bay%c3%a9siens>réseaux bayésiens</a>
+de <em>Classer</em> : une flèche pour chaque influence directe. Judea Pearl s&rsquo;est servi de
+ces graphes pour distinguer une corrélation d&rsquo;une cause.</p><p><strong>Prédire n&rsquo;est pas décider.</strong> Dans les années 1990, des chercheurs entraînent un
+modèle à prédire le risque de décès des patients atteints de pneumonie, pour
+décider lesquels hospitaliser. Le modèle découvre une règle surprenante : les
+patients asthmatiques auraient <strong>moins</strong> de risque de mourir. La corrélation est
+réelle. Mais elle vient de ce que les médecins envoyaient systématiquement les
+asthmatiques aux soins intensifs, où ils étaient mieux soignés. Le modèle prédisait
+bien. Utilisé pour décider qui hospitaliser, il aurait renvoyé chez eux les
+patients les plus fragiles. Ce cas a été rendu public en 2015 par Rich Caruana et
+ses collègues, qui plaidaient pour des modèles dont on peut lire les règles.</p><p><strong>Une corrélation peut disparaître.</strong> Une relation causale reste vraie quand le
+contexte change. Une simple corrélation peut disparaître. C&rsquo;est l&rsquo;une des raisons
+pour lesquelles les modèles échouent
+<a href=#jamais-vu-mais-du-m%c3%aame-monde-la-question-de-la-distribution>hors distribution</a>.
+Le Module 3 en donne un exemple : un classifieur qui distinguait les loups des
+huskies en regardant la
+<span title="Ce module sera publié plus tard">neige à l&rsquo;arrière-plan</span>.
+La neige était associée aux loups dans les photos d&rsquo;entraînement, mais elle n&rsquo;en
+est pas la cause. Ailleurs, la règle ne tient plus.</p><p><strong>Établir une cause.</strong> La méthode de référence est l&rsquo;<strong>essai contrôlé à
+répartition aléatoire</strong> (<em>randomized controlled trial</em>). On tire au sort les
+personnes qui reçoivent un traitement et celles qui n&rsquo;en reçoivent pas. Le tirage
+au sort répartit les facteurs de confusion de la même façon dans les deux groupes,
+si bien qu&rsquo;une différence entre eux ne peut venir que du traitement. La médecine
+l&rsquo;emploie depuis un essai sur la streptomycine contre la tuberculose, publié en
+1948. Les <strong>tests A/B</strong> (<em>A/B testing</em>) des sites Web, qui montrent deux versions
+d&rsquo;une page à deux groupes d&rsquo;internautes tirés au sort, reposent sur la même idée.
+Quand une expérience est impossible ou contraire à l&rsquo;éthique, on peut parfois
+établir une cause à partir de simples observations, avec des précautions. Les
+économistes David Card, Joshua Angrist et Guido Imbens ont reçu le prix Nobel
+d&rsquo;économie en 2021 pour leurs méthodes en ce sens.</p><p><strong>L&rsquo;échelle de la causalité.</strong> Dans <em>The Book of Why</em> (2018), écrit avec Dana
+Mackenzie, Pearl distingue trois niveaux de raisonnement, qu&rsquo;il appelle l&rsquo;échelle
+de la causalité (<em>ladder of causation</em>).</p><table><thead><tr><th>Niveau</th><th>Question</th><th>Exemple</th></tr></thead><tbody><tr><td>1. Voir</td><td>Que puis-je prédire en observant ?</td><td>Les jours de grande vente de crème glacée, y a-t-il plus de noyades ?</td></tr><tr><td>2. Agir</td><td>Que se passe-t-il si j&rsquo;interviens ?</td><td>Si j&rsquo;interdis la crème glacée, y aura-t-il moins de noyades ?</td></tr><tr><td>3. Imaginer</td><td>Que se serait-il passé autrement ?</td><td>Ce patient aurait-il survécu s&rsquo;il avait été hospitalisé ?</td></tr></tbody></table><p>Les modèles de ce module restent en général au premier niveau : ils apprennent des
+associations dans des données observées. Pour Pearl, une intelligence comparable à
+la nôtre doit monter les deux autres barreaux.</p><p>Cette question a pris de l&rsquo;importance ces dernières années. Le prix Turing de Pearl
+en 2011, son livre de 2018 et le Nobel de 2021 l&rsquo;ont fait connaître bien au-delà de
+la statistique. Des chercheurs en apprentissage profond, comme Yoshua Bengio et
+Bernhard Schölkopf, y voient une piste pour obtenir des modèles plus robustes. Et
+l&rsquo;on se demande aujourd&rsquo;hui si les grands modèles de langage raisonnent sur des
+causes, ou s&rsquo;ils reproduisent des associations présentes dans leurs textes
+d&rsquo;entraînement. Le <span title="Ce module sera publié plus tard">Module 5</span> reviendra sur ces questions.</p><h2 id=tout-cela-portait-un-nom-lapprentissage-supervisé>Tout cela portait un nom : l&rsquo;apprentissage supervisé<a class=anchor href=#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9></a></h2><p>Depuis la <a href=/inf1901-teluq-v2/docs/module2/le-probleme/>première page de ce module</a>, un élément n&rsquo;a jamais changé, et nous
 l&rsquo;avons à peine remarqué : <strong>la bonne réponse était toujours fournie.</strong> Chaque
 maison avait son prix, chaque courriel son étiquette (pourriel ou non) et chaque
 point sa couleur. Le modèle devait seulement apprendre à passer de la question
@@ -3503,7 +3556,7 @@ l&rsquo;expliquer par une comparaison. Pour organiser une fête, on veut répart
 invités autour de $k$ tables, en plaçant chaque table au centre de son groupe,
 pour que chacun soit le plus près possible de la sienne. k-means procède de
 cette façon, par ajustements successifs :</p><ol><li>placer $k$ « centres » au hasard ;</li><li>rattacher chaque point au centre le plus proche (ce qui donne des groupes provisoires) ;</li><li>déplacer chaque centre au milieu de son groupe ;</li><li>répéter les étapes 2 et 3 jusqu&rsquo;à ce que plus rien ne change.</li></ol><p>Dans l&rsquo;applet ci-dessous, choisissez le nombre de groupes et observez les
-centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1791081221879262733 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
+centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1791081730137192784 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
 en groupes de couleurs. La différence est cependant importante : ici, <strong>les
 points n&rsquo;avaient aucune étiquette au départ.</strong> Vous n&rsquo;avez pas indiqué à
 l&rsquo;algorithme ce que représente chaque groupe. Vous lui avez seulement donné le
@@ -3560,7 +3613,7 @@ des récompenses et des punitions, et <strong>renforce</strong> peu à peu les a
 mènent au succès, d&rsquo;où le nom de cette famille. Dans l&rsquo;applet ci-dessous, un
 agent (le point jaune) cherche la sortie (<strong>+1</strong>) d&rsquo;une petite grille en
 évitant un piège (<strong>−1</strong>), sans aucune connaissance au départ. Lancez
-l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1791081221879310284 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
+l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1791081730137274979 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
 <strong>carte de valeur</strong> se forme (les cases se colorent selon leur valeur estimée)
 et une <strong>politique</strong> apparaît. Les flèches, qui indiquent pour chaque case le
 meilleur mouvement, finissent par former un chemin sûr vers le but. Le curseur

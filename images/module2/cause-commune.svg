@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une cause commune : la chaleur</title>
+<desc>Un petit graphe. En haut, un nœud « chaleur » pointe par deux flèches vers deux nœuds placés en bas : « ventes de crème glacée » à gauche et « noyades » à droite. Une ligne pointillée relie ces deux nœuds, avec la mention « corrélation, sans cause ».</desc>
+<defs><marker id="pointe" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="34" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Une cause commune : la chaleur</text>
+<line x1="330" y1="112" x2="212" y2="216" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#pointe)"/>
+<line x1="370" y1="112" x2="488" y2="216" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#pointe)"/>
+<line x1="268" y1="240" x2="467" y2="240" stroke="#9a5b33" stroke-width="2.2" stroke-dasharray="6 5"/>
+<text x="367" y="272" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">corrélation, sans cause</text>
+<rect x="285.0" y="68" width="130" height="44" rx="22" fill="#fbf7ee" stroke="#c4564a" stroke-width="2.2"/>
+<text x="350" y="95" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="600">chaleur</text>
+<rect x="65.0" y="218" width="200" height="44" rx="22" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2.2"/>
+<text x="165" y="245" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="600">ventes de crème glacée</text>
+<rect x="470.0" y="218" width="130" height="44" rx="22" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2.2"/>
+<text x="535" y="245" font-size="14" fill="#3a3531" text-anchor="middle" font-weight="600">noyades</text>
+<text x="350.0" y="312" font-size="12.5" fill="#7a6f63" text-anchor="middle">Les flèches indiquent une influence directe, comme dans un réseau bayésien.</text>
+</svg>
