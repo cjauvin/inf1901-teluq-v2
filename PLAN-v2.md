@@ -295,6 +295,13 @@ Décisions : **GNN et NTM retirés** (au plus un encadré de trois lignes sur le
 - **Cœur = les LLM**, développés au maximum (dominent l'actualité, enchaînent vers le M5).
 - **Profondeur LLM = trois aspects équilibrés** : (a) **mécanisme interne** (tokens, embeddings, attention, prédiction du mot suivant ; 3b1b en appui), (b) **du modèle à l'assistant** (pré-entraînement, fine-tuning, RLHF, alignement → pont M5), (c) **usages et phénomènes** (prompting, hallucinations, capacités émergentes, fenêtre de contexte, multimodal, agents — la face « vécue » en 2026).
 
+### Découpage retenu (validé par Christian le 2026-10-04) — remplace l'ossature ci-dessous
+**Révision de l'orientation** : le M4 est d'abord consacré à l'**IA générative au sens large**, puis se resserre sur les LLM, puis revient au général. Les images ne sont plus une simple illustration : elles portent le premier bloc (plus visuelles, elles rendent palpables espace latent et diffusion, comme la vision précédait les séquences au M3). Les LLM restent le cœur (7 pages sur 10).
+- **Bloc 1 — L'IA générative** : (1) *Générer : imiter une distribution* (discriminer/générer d'après Bayes naïf M2, échantillonner, température, espace latent d'après l'autoencodeur M3) ; (2) *Quatre façons de générer* (GAN, VAE, diffusion/U-Net, autorégressif → LLM) ; (3) *Des images, des voix, des vidéos* (chronologie, modalités ; hypertrucages et droits d'auteur → M5).
+- **Bloc 2 — Les LLM** : (4) *Des mots aux nombres* (jetons, plongements, word2vec) ; (5) *Prédire le mot suivant* (Shannon → Bengio 2003 → GPT ; TN4 rattaché) ; (6) *Passer à l'échelle* ; (7) *Du modèle à l'assistant* (instructions, RLHF, étiquetage humain, RLVR/raisonnement) ; (8) *Des outils et des agents*.
+- **Bloc 3 — Convergence et bilan** : (9) *Quand le texte pilote tout : les modèles multimodaux* (CLIP, texte→image, modèles qui voient et parlent) ; (10) *Ce que les LLM comprennent, et ce qu'ils ratent* (pont M5).
+- Accueil rédigé à la fin ; durée visée : quatre semaines.
+
 ### Ossature cible
 1. `_index` — contexte.
 2. **Page 10 — « L'IA générative, un paradigme »** : modéliser/échantillonner une distribution ; tour d'horizon des modalités (texte, image/diffusion, vidéo).
