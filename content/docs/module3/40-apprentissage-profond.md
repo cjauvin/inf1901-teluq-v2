@@ -52,6 +52,22 @@ sont souvent moins nettes que dans ce schéma. Mais quand on examine les couches
 d'un réseau entraîné sur des images, on observe bien cette progression, de motifs
 simples vers des motifs complexes.
 
+On peut voir ce que cherche un neurone d'un réseau entraîné. Le principe ressemble à
+celui des
+[exemples adverses](docs/module3/90-tromper-un-reseau/#comment-on-le-fabrique) :
+on part d'une image de bruit, et on la modifie pas à pas, par rétropropagation, pour
+activer le plus possible un neurone choisi. L'image obtenue montre ce à quoi ce
+neurone réagit. En 2017, Chris Olah, Alexander Mordvintsev et Ludwig Schubert, chez
+Google, ont appliqué cette méthode à toutes les couches d'un réseau convolutif
+entraîné sur ImageNet.
+
+{{< image src="/images/module3/visualisation-neurones.jpg" alt="Cinq colonnes de trois images chacune, de la première couche à la dernière. Traits : des rayures fines, orientées. Textures : des surfaces répétitives, alvéoles et écailles. Motifs : des entrelacs, des pompons colorés. Parties d'objets : des fleurs, des morceaux de vêtements, des formes de boutons. Objets : des façades de bâtiments, des jambes en short, des assiettes de nourriture." title="Ce que cherchent des neurones de couches de plus en plus profondes d'un réseau entraîné sur ImageNet (d'après Olah, Mordvintsev et Schubert, Distill, 2017, CC BY 4.0)." loading="lazy" >}}
+
+La progression décrite plus haut apparaît bien, sans que personne l'ait programmée.
+La même méthode, appliquée à une photo plutôt qu'à du bruit, avait donné en 2015
+DeepDream, dont les images hallucinées, pleines d'yeux et de têtes de chiens, ont
+beaucoup circulé.
+
 {{% hint info %}}
 **La carte n'est pas le territoire**
 
@@ -152,6 +168,30 @@ AlexNet est un réseau d'un type particulier, un réseau convolutif (*convolutio
 neural network*, CNN), conçu pour les images. Le chapitre
 « [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) » lui est
 consacré.
+
+{{% hint info %}}
+**Une école canadienne**
+
+AlexNet est sorti du laboratoire de Geoffrey Hinton, à l'Université de Toronto. Ce
+n'est pas un hasard. Pendant les années 1990 et 2000, les réseaux de neurones
+intéressaient peu, et les organismes qui finançaient la recherche s'en
+détournaient. En 2004, l'Institut canadien de recherches avancées (CIFAR) lance un
+programme intitulé « Calcul neuronal et perception adaptative » (*Neural
+Computation and Adaptive Perception*), dirigé par Hinton. Le programme réunit un
+petit groupe de chercheurs convaincus, dont Yoshua Bengio, à l'Université de
+Montréal, et Yann Le Cun, à l'Université de New York. Ils continuent à travailler
+sur les réseaux profonds quand presque personne d'autre ne le fait.
+
+Le pari réussit en 2012. Hinton, Bengio et Le Cun reçoivent ensemble le prix Turing
+2018. Le laboratoire fondé par Bengio en 1993 devient en 2017 **Mila**, l'Institut
+québécois d'intelligence artificielle, l'un des plus grands centres de recherche
+universitaire en apprentissage profond au monde. La même année, le gouvernement du
+Canada confie au CIFAR la Stratégie pancanadienne en matière d'intelligence
+artificielle, l'une des premières stratégies nationales consacrées à l'IA. Elle
+s'appuie sur trois instituts : Mila à Montréal, l'Institut Vecteur à Toronto et
+l'Amii à Edmonton, où travaille Richard Sutton, l'auteur de la
+[leçon amère](#la-leçon-amère).
+{{% /hint %}}
 
 ## La leçon amère
 

@@ -201,6 +201,42 @@ Ils servent aujourd'hui à de nombreuses tâches :
   de surveillance et de vie privée, traitées au [Module 5](docs/module5) ;
 - **traiter des sons**, en les transformant d'abord en images de leurs fréquences.
 
+## Réutiliser un réseau : l'apprentissage par transfert
+
+Entraîner un grand réseau convolutif demande des millions d'images étiquetées et
+des jours de calcul sur des GPU. Peu d'équipes disposent de ces moyens, et pour
+beaucoup de tâches, il n'existe que quelques milliers d'exemples. Un dermatologue
+ne dispose pas d'un ImageNet de grains de beauté.
+
+Une observation change la situation. Les premières couches d'un réseau entraîné sur
+ImageNet ont appris à détecter des traits, des textures et des formes simples. Ces
+caractéristiques ne sont pas propres aux chiens, aux voitures ou aux autres
+catégories d'ImageNet. Elles servent pour presque n'importe quelle image. Seules
+les dernières couches sont spécialisées dans les mille catégories du concours.
+
+D'où la méthode de l'**apprentissage par transfert** (*transfer learning*) :
+
+1. on part d'un réseau déjà entraîné sur un grand jeu de données, un réseau dit
+   **pré-entraîné** (*pre-trained*) ;
+2. on remplace ses dernières couches par de nouvelles, adaptées à la tâche visée ;
+3. on entraîne le réseau sur les exemples de cette tâche, peu nombreux. On règle
+   surtout les nouvelles couches, et on modifie peu, ou pas du tout, les premières.
+   On parle d'**ajustement** (*fine-tuning*).
+
+{{< image src="/images/module3/apprentissage-transfert.svg" alt="Deux rangées. En haut, un réseau pré-entraîné sur ImageNet : quatre couches en bleu, puis une dernière couche en gris qui répond « chien, voiture, chat… ». En bas, le même réseau ajusté pour une nouvelle tâche : les quatre couches bleues sont conservées, et la dernière couche est remplacée par une nouvelle, en rouge, qui répond « lésion bénigne ou mélanome »." title="L'apprentissage par transfert : on garde les premières couches d'un réseau pré-entraîné, et on remplace la dernière." loading="lazy" >}}
+
+Un exemple a marqué les esprits. En 2017, une équipe de l'Université Stanford part
+d'un réseau pré-entraîné sur ImageNet et l'ajuste sur environ 130 000 images de
+lésions de la peau. Sur les cas testés, le réseau distingue les mélanomes des
+lésions bénignes aussi bien que des dermatologues. Le réseau n'avait jamais vu de
+lésion de la peau avant cet ajustement, mais il savait déjà voir.
+
+L'apprentissage par transfert est devenu la manière normale d'utiliser
+l'apprentissage profond. C'est aussi l'idée qui fonde les grands modèles de langage
+du [Module 4](docs/module4) : un modèle est d'abord pré-entraîné sur une immense
+quantité de texte, puis ajusté pour une tâche ou pour la conversation. Le *P* de
+GPT signifie d'ailleurs *pre-trained*.
+
 ## La leçon de la convolution
 
 Ce chapitre nuance la

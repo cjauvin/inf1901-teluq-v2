@@ -102,7 +102,8 @@ Comme au Module 2, chaque page rencontre une limite qui mène à la suivante.
 5. [*Le matériel et les outils*](docs/module3/42-materiel-et-outils) : l'histoire
    des processeurs graphiques et de la différentiation automatique.
 6. [*Voir : les réseaux convolutifs*](docs/module3/50-reseaux-convolutifs) : le
-   filtre qui glisse sur l'image, Yann Le Cun et les chèques.
+   filtre qui glisse sur l'image, Yann Le Cun et les chèques, l'apprentissage par
+   transfert.
 7. [*Lire une séquence : les réseaux récurrents*](docs/module3/60-reseaux-recurrents) :
    un réseau avec une mémoire, le LSTM, la traduction.
 8. [*L'attention et le Transformer*](docs/module3/70-attention-transformer) :
@@ -137,6 +138,8 @@ Au terme de ce module, vous devriez être en mesure de :
   2012 : les données, le calcul et de meilleures méthodes d'entraînement ;
 * décrire l'idée principale des réseaux convolutifs, des réseaux récurrents et du
   Transformer, et le type de données auquel chacun est adapté ;
+* expliquer comment on réutilise un réseau déjà entraîné pour une nouvelle tâche
+  (apprentissage par transfert) ;
 * expliquer comment le renforcement profond combine la recherche du Module 1 et
   l'apprentissage ;
 * expliquer ce qu'est un exemple adverse, et pourquoi un réseau profond est une
