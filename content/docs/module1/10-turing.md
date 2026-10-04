@@ -50,7 +50,7 @@ d'entrer dans ce débat, Turing **remplace la question par une autre**, à laque
 on peut réellement répondre.
 
 Au lieu de demander si une machine peut penser, il propose une épreuve concrète,
-le **jeu de l'imitation**, qu'on appelle aujourd'hui le **test de Turing**. Un
+le **jeu de l'imitation** (*imitation game*), qu'on appelle aujourd'hui le **test de Turing**. Un
 juge humain dialogue par écrit avec deux interlocuteurs cachés, un être humain et
 une machine. Les messages passent par clavier, pour que ni la voix ni le visage
 ne permettent de savoir qui est qui. Le juge peut poser n'importe quelle question,
@@ -94,7 +94,7 @@ matériel qui réalise lui aussi une certaine organisation. Si l'esprit est une
 *organisation* et non une *substance*, rien n'empêche qu'il soit réalisé sur du
 silicium aussi bien que sur des neurones. C'est ce qui permet de considérer l'IA
 comme un projet sérieux. Nous reviendrons sur cette idée, et sur sa critique la
-plus célèbre, la *Chambre chinoise* du philosophe John Searle, au
+plus célèbre, la *Chambre chinoise* (*Chinese room*) du philosophe John Searle, au
 [Module 5](docs/module5).
 {{% /details %}}
 
@@ -178,7 +178,7 @@ Challenge*](https://bbchallenge.org/). Ce groupe a dû examiner une à une des
 dizaines de millions de machines et faire vérifier sa preuve par ordinateur. Pour
 six états, on sait seulement que le nombre dépasse tout ce qu'on peut
 raisonnablement écrire. Au-delà, la difficulté devient une impossibilité, car
-cette fonction est **non calculable**. Aucun algorithme ne peut la donner pour
+cette fonction est **non calculable** (*uncomputable*). Aucun algorithme ne peut la donner pour
 tout *n*, parce que la connaître permettrait de savoir, pour n'importe quelle
 machine, si elle s'arrêtera un jour. Il suffirait de laisser tourner la machine
 pendant le nombre de pas du castor affairé. Si elle tourne encore après ce nombre
@@ -200,7 +200,7 @@ L'idée que penser revient à calculer comportait pourtant une **limite**, étab
 presque au même moment. En **1931**, cinq ans avant la machine de Turing, un jeune
 logicien autrichien, **Kurt Gödel**, avait démontré un résultat qui a profondément
 remis en question les fondements des mathématiques, son **théorème
-d'incomplétude**.
+d'incomplétude** (*incompleteness theorem*).
 
 {{< image src="/images/module1/godel-1925.jpg" alt="Portrait de Kurt Gödel jeune, étudiant." title="Kurt Gödel étudiant, vers 1925." loading="lazy" >}}
 
@@ -211,7 +211,7 @@ pour faire de l'arithmétique contient des énoncés qui sont **vrais**, mais qu
 système est **incapable de prouver**. La vérité dépasse donc toujours la
 démonstration, et aucun ensemble de règles, aussi complet soit-il, ne peut tout
 capturer. La preuve repose sur une idée qui sera importante pour nous,
-l'**auto-référence**. Gödel construit, à l'intérieur du système, un énoncé qui
+l'**auto-référence** (*self-reference*). Gödel construit, à l'intérieur du système, un énoncé qui
 parle de lui-même et qui affirme en substance : *« Cet énoncé n'est pas
 démontrable. »* Si le système démontrait cet énoncé, il prouverait quelque chose
 de faux. Il ne peut donc pas le démontrer, et c'est précisément pour cette raison
@@ -243,7 +243,7 @@ philosophe John Searle.
 **Douglas Hofstadter** (auteur du livre *Gödel, Escher, Bach* (1979), où il
 développe précisément cette idée), la boucle auto-référentielle de Gödel n'est pas
 un défaut, mais le fondement même de l'esprit. Un système assez riche pour se
-**représenter lui-même** produit une « **boucle étrange** ». Selon Hofstadter,
+**représenter lui-même** produit une « **boucle étrange** » (*strange loop*). Selon Hofstadter,
 c'est de ce retour sur soi que naîtraient le sentiment d'un « je », le sens et la
 conscience. L'auto-référence n'empêcherait donc pas la machine de penser, elle en
 serait la **source**. Nous retrouverons Hofstadter et ses idées à plusieurs
@@ -259,12 +259,12 @@ Le théorème s'applique à tout système formel **cohérent** (sans contradicti
 assez riche pour exprimer l'arithmétique. Gödel établit en fait deux résultats. Un
 tel système ne peut pas prouver tous les énoncés arithmétiques vrais (**premier
 théorème**), et il ne peut pas non plus prouver sa **propre cohérence** (**second
-théorème**). L'outil technique central est le *codage de Gödel*, qui consiste à
+théorème**). L'outil technique central est le *codage de Gödel* (*Gödel numbering*), qui consiste à
 numéroter chaque énoncé pour que le système puisse, en parlant de nombres,
 **parler de lui-même**. Gödel peut ainsi construire la phrase « je ne suis pas
 démontrable ».
 
-Cette phrase est une variante du **paradoxe du menteur** (« cette phrase est
+Cette phrase est une variante du **paradoxe du menteur** (*liar paradox* : « cette phrase est
 fausse »), dont Gödel s'est explicitement inspiré. Le paradoxe du menteur aboutit
 à une contradiction. Gödel remplace « faux » par « indémontrable », si bien que sa
 phrase ne se contredit pas. Elle est simplement **vraie sans être démontrable**.

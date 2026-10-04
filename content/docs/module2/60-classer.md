@@ -52,7 +52,7 @@ tombe le point. D'un côté, on répond `bleu`, de l'autre, `rouge`. La même
 équation, $m x_1 + b$, ne sert plus à calculer une valeur mais à partager le plan
 en deux.
 
-Cet algorithme s'appelle la **régression logistique**. Il a été mis au point par
+Cet algorithme s'appelle la **régression logistique** (*logistic regression*). Il a été mis au point par
 des statisticiens dans les années 1950 et, malgré son nom (il contient
 « régression » alors qu'il classe), c'est l'un des classificateurs les plus
 utilisés. Dans l'applet ci-dessous, déplacez la ligne de décision pour séparer
@@ -125,7 +125,7 @@ la vraie classe. La décision finale est la suivante : bleu si $\hat{y} \ge 0{,
 rouge sinon.
 
 L'erreur sur un point compare la probabilité prédite $\hat{y}$ à la vraie
-classe $y$. On utilise l'**entropie croisée** :
+classe $y$. On utilise l'**entropie croisée** (*cross-entropy*) :
 
 $$E(y, \hat{y}) = -\big[\,y \log(\hat{y}) + (1 - y)\log(1 - \hat{y})\,\big]$$
 
@@ -218,7 +218,7 @@ dès 1963 par le mathématicien soviétique Vladimir Vapnik, dans le cadre d'une
 théorie de l'apprentissage qu'il développe avec Alexeï Tchervonenkis. Émigré aux
 États-Unis, Vapnik la reprend aux Bell Labs. En 1992, avec Bernhard Boser et
 Isabelle Guyon, il lui permet de tracer des frontières courbes. En 1995, avec
-Corinna Cortes, il publie la marge souple. C'est le laboratoire où Yann Le Cun
+Corinna Cortes, il publie la marge souple (*soft margin*). C'est le laboratoire où Yann Le Cun
 développe au même moment ses
 [réseaux convolutifs](docs/module3/50-reseaux-convolutifs/#yann-le-cun-et-les-chèques).
 Pendant une quinzaine d'années, les SVM sont l'une des méthodes les plus
@@ -230,7 +230,7 @@ Une frontière droite reste une frontière droite, quelle que soit sa marge. Le
 chapitre
 « [Généraliser](docs/module2/70-generaliser/#ajouter-des-dimensions-sans-les-calculer-lastuce-du-noyau) »
 montrera comment les SVM tracent aussi des frontières courbes, grâce à une idée
-appelée l'**astuce du noyau**.
+appelée l'**astuce du noyau** (*kernel trick*).
 
 {{% details "Les mathématiques des SVM (optionnel)" %}}
 
@@ -305,7 +305,7 @@ soit bleu, étant donné ce point. Passer de la *probabilité du point sachant l
 classe* à la *probabilité de la classe sachant le point* est précisément ce que
 permet un résultat fondamental des probabilités, le **théorème de Bayes**, publié
 en 1763. C'est lui qui donne son nom à la méthode, la **classification bayésienne
-naïve**.
+naïve** (*naive Bayes*).
 
 On dispose donc de deux approches pour le même objectif :
 
@@ -353,7 +353,7 @@ On fait ensuite la même chose sur l'axe $x_2$ :
 ![](/images/module2/nb_x2_gauss.png)
 
 On dispose alors de quatre modèles $p(x_j \mid \text{classe})$. La moyenne $\mu$
-et l'écart-type $\sigma$ de chaque cloche s'obtiennent **directement** par un
+et l'écart-type (*standard deviation*) $\sigma$ de chaque cloche s'obtiennent **directement** par un
 calcul de moyenne et de dispersion sur les points concernés. Aucune descente de
 gradient itérative n'est nécessaire ici :
 
@@ -397,7 +397,7 @@ Vous avez gagné un prix…* » en coordonnées.
 La solution reprend la démarche de [*Regarder les
 données*](docs/module2/30-les-donnees) : une chose se décrit par une **liste de
 nombres** et devient ainsi un point dans un espace. Pour un texte, le procédé le
-plus simple s'appelle le **sac de mots**. On établit la liste de tous les mots
+plus simple s'appelle le **sac de mots** (*bag of words*). On établit la liste de tous les mots
 possibles (le *vocabulaire*), puis on décrit un courriel en comptant combien de
 fois chaque mot y apparaît. Chaque mot du vocabulaire correspond à une
 dimension, et la valeur est le nombre d'occurrences. Par exemple, le mot
@@ -426,7 +426,7 @@ Un seul détail technique change par rapport à la [section précédente](#renve
 caractéristiques y étaient des valeurs continues, décrites par une courbe en
 cloche. Ici, ce sont des comptes, des nombres entiers : zéro, une ou deux
 occurrences, par exemple. On remplace donc la cloche par une loi adaptée aux
-comptes, la **loi multinomiale**, mais le principe est le même. Le portrait
+comptes, la **loi multinomiale** (*multinomial distribution*), mais le principe est le même. Le portrait
 d'une classe n'est plus une moyenne et une dispersion, mais la liste des mots
 qu'elle emploie souvent. Des mots comme « gratuit », « urgent » ou
 « félicitations » sont fréquents dans les pourriels et beaucoup moins dans les
@@ -492,7 +492,7 @@ Il touche plusieurs domaines en même temps.
 - **Les filtres anti-pourriel.** En 2002, l'essai de Paul Graham, « A Plan for
   Spam », popularise le classifieur bayésien de la section précédente, que la
   plupart des messageries adoptent ensuite.
-- **Le raisonnement en général**, avec les **réseaux bayésiens** de Judea Pearl,
+- **Le raisonnement en général**, avec les **réseaux bayésiens** (*Bayesian networks*) de Judea Pearl,
   présentés ci-dessous.
 
 **Du classifieur naïf au réseau.** On peut dessiner le classifieur bayésien naïf
@@ -548,7 +548,7 @@ en 2011. La distinction entre corrélation et causalité sera reprise au
 
 {{% details "Les mathématiques des réseaux bayésiens (optionnel)" %}}
 
-Un réseau bayésien décrit la probabilité conjointe de toutes ses variables comme
+Un réseau bayésien décrit la probabilité conjointe (*joint probability*) de toutes ses variables comme
 un produit de petites tables. Pour l'alarme, avec $C$ (cambriolage), $S$
 (séisme), $A$ (alarme), $J$ et $M$ (les appels) :
 
@@ -586,7 +586,7 @@ Cette notion va plus loin. Rappelez-vous la fonction d'erreur de la droite, la
 moyenne des carrés des écarts, et celle de la régression logistique, qui
 pénalise d'autant plus le modèle qu'il se trompe avec assurance. Ces deux
 fonctions semblent sans rapport, mais elles découlent d'un même principe, l'un
-des plus importants de la statistique : le **maximum de vraisemblance**. Au lieu
+des plus importants de la statistique : le **maximum de vraisemblance** (*maximum likelihood*). Au lieu
 de chercher les paramètres qui réduisent l'erreur, on cherche les paramètres
 sous lesquels les données observées étaient les plus probables. Si l'on suppose
 que les prix des maisons s'écartent de la droite selon une courbe en cloche,

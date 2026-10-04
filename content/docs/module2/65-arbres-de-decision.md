@@ -21,7 +21,7 @@ est-il branché ? ». Il s'agit chaque fois d'une suite de questions à rép
 ou non, qui se ramifie et aboutit à une conclusion.
 
 Cette façon de décider correspond à l'un des modèles les plus anciens et les plus
-intuitifs de l'apprentissage automatique, l'**arbre de décision**. Comme kNN, il
+intuitifs de l'apprentissage automatique, l'**arbre de décision** (*decision tree*). Comme kNN, il
 traite aussi bien la régression que la classification, et son principe peut se
 dessiner. Il apporte cependant deux choses qu'aucun modèle du module n'offrait
 encore : une frontière qui n'est pas une droite, et une décision qu'on peut
@@ -129,7 +129,7 @@ pureté) et une procédure qui maximise cette mesure.
 
 {{% hint info %}}
 **Pour aller plus loin : mesurer le mélange.** La mesure la plus courante est
-l'*indice de Gini*. Dans une feuille où une proportion $p$ des maisons est bleue,
+l'*indice de Gini* (*Gini impurity*). Dans une feuille où une proportion $p$ des maisons est bleue,
 il vaut $2p(1-p)$, soit 0 pour une feuille pure et 0,5 pour une feuille
 moitié-moitié. Le score d'une question est la moyenne des indices de ses deux
 côtés, pondérée par leur taille. Sur nos maisons, l'indice de départ vaut 0,48,
@@ -223,7 +223,7 @@ n'indique quelle est cette profondeur. Nous avons rencontré ce problème avec *
 et nous le retrouverons pour tous les modèles dans
 [*Généraliser*](docs/module2/70-generaliser), où l'arbre servira d'exemple
 principal. Pour l'instant, retenez les deux façons de limiter un arbre : fixer
-une profondeur maximale, ou le laisser pousser puis **l'élaguer**, c'est-à-dire
+une profondeur maximale, ou le laisser pousser puis **l'élaguer** (*pruning*), c'est-à-dire
 supprimer après coup les branches qui n'apportent que du détail.
 
 L'applet ci-dessous vous permet d'en faire l'expérience. Elle présente des points
@@ -294,7 +294,7 @@ poids associés à chaque caractéristique, qu'il faut interpréter. kNN donne u
 liste de voisins, qui décrit la décision sans la justifier. Les grands réseaux de
 neurones du [Module 3](docs/module3/90-tromper-un-reseau/#une-boîte-noire) n'offriront rien de comparable : ils
 comptent des milliards de paramètres, dont aucun n'a de sens pris isolément. On
-parle alors de **boîte noire** : le modèle répond, souvent très bien, mais
+parle alors de **boîte noire** (*black box*) : le modèle répond, souvent très bien, mais
 personne ne peut dire pourquoi. Tout un domaine de recherche, l'*IA explicable*
 (*XAI*, pour *explainable AI*), cherche aujourd'hui à analyser ces modèles après
 coup, en déterminant quelles caractéristiques ont compté dans une décision.
@@ -330,7 +330,7 @@ sont différentes, elles se compensent, et la réponse collective est plus stabl
 et plus juste que celle d'un arbre seul. C'est la **forêt aléatoire** (*random
 forest*), proposée par Leo Breiman en 2001. Une méthode apparentée et plus
 élaborée, le *gradient boosting*, construit chaque arbre de façon à corriger les
-erreurs des précédents. Sur des données en tableau, comme nos maisons ou les
+erreurs des précédents. Sur des données en tableau (*tabular data*), comme nos maisons ou les
 passagers du *Titanic*, ces méthodes restent aujourd'hui parmi les plus
 performantes, et elles remportent la plupart des compétitions Kaggle dont parle
 [*Bien évaluer un modèle*](docs/module2/75-bien-evaluer). Elles perdent

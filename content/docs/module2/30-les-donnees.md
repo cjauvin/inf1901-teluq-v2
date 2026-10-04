@@ -42,8 +42,8 @@ vecteur qu'un modèle reçoit en entrée.
 
 Une précision de vocabulaire servira dans toute la suite. Le **prix** ne fait pas
 partie de cette description, parce que c'est justement la valeur qu'on cherche à
-prédire. On l'appelle la **cible**. On a donc, d'un côté, les caractéristiques
-(l'entrée du modèle) et, de l'autre, la cible (sa sortie attendue).
+prédire. On l'appelle la **cible** (*target*). On a donc, d'un côté, les
+caractéristiques (l'entrée du modèle) et, de l'autre, la cible (sa sortie attendue).
 
 {{< image src="/images/module2/modele-entree-sortie.svg" alt="Schéma : à gauche les caractéristiques d'une maison (superficie, année, chambres, salles de bain) ; une flèche vers une boîte « modèle » ; une flèche en sortie vers le prix (420 000 $)." title="Un modèle : les caractéristiques entrent, le prix sort." loading="lazy" >}}
 
@@ -87,11 +87,11 @@ rencontrerez les noms partout :
   chien, ou encore lequel des dix chiffres est écrit sur une enveloppe)
   s'appelle une **classification**.
 
-La seule chose qui distingue ces deux familles est la **nature de la cible**.
-Cette distinction est pourtant l'une des plus utiles du domaine, parce que presque
-tout problème d'apprentissage à partir d'exemples étiquetés appartient à l'une ou
-à l'autre. Nous les retrouverons souvent, et nous verrons que certains algorithmes
-savent faire les deux, alors que d'autres se spécialisent.
+La seule chose qui distingue ces deux familles est la **nature de la cible**. Cette
+distinction est pourtant l'une des plus utiles du domaine, parce que presque tout
+problème d'apprentissage à partir d'exemples étiquetés (*labeled examples*)
+appartient à l'une ou à l'autre. Nous les retrouverons souvent, et nous verrons que
+certains algorithmes savent faire les deux, alors que d'autres se spécialisent.
 
 ## Un vecteur, c'est un point dans un espace
 
@@ -258,16 +258,16 @@ programme :
 **Niveau des langages de programmation**
 
 Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
-façon qu'on peut écrire un jeu ou un système d'exploitation en langage machine, on
-peut y écrire un autre langage. Ce langage est plus *abstrait*, plus éloigné de la
-réalité physique, et il permet d'exprimer des idées plus complexes de façon plus
-naturelle (C++, Python, JavaScript). On peut le voir comme un « ordinateur
-virtuel » implémenté au moyen d'un langage moins abstrait. À ce niveau
+façon qu'on peut écrire un jeu ou un système d'exploitation (*operating system*) en
+langage machine, on peut y écrire un autre langage. Ce langage est plus *abstrait*,
+plus éloigné de la réalité physique, et il permet d'exprimer des idées plus complexes
+de façon plus naturelle (C++, Python, JavaScript). On peut le voir comme un
+« ordinateur virtuel » implémenté au moyen d'un langage moins abstrait. À ce niveau
 apparaissent des représentations beaucoup plus riches :
 
 - des nombres entiers ;
 - des nombres réels (beaucoup plus complexes à représenter) ;
-- des chaînes de caractères ;
+- des chaînes de caractères (*strings*) ;
 - des listes de nombres, de mots, de listes… ;
 - des images, des sons ;
 - etc.

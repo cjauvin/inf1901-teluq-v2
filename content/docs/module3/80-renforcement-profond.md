@@ -17,10 +17,10 @@ permis à une machine de battre les meilleurs joueurs de go.
 ## Les limites de la table
 
 Rappelons le vocabulaire du Module 2. Un **agent** choisit des **actions**. Il
-reçoit parfois une **récompense**, souvent longtemps après les actions qui l'ont
-produite. Il apprend la **valeur** de chaque situation, c'est-à-dire la récompense
-qu'il peut en espérer, et doit trouver un équilibre entre **explorer** de nouvelles
-actions et **exploiter** celles qu'il connaît.
+reçoit parfois une **récompense** (*reward*), souvent longtemps après les actions
+qui l'ont produite. Il apprend la **valeur** de chaque situation, c'est-à-dire la
+récompense qu'il peut en espérer, et doit trouver un équilibre entre **explorer** de
+nouvelles actions et **exploiter** celles qu'il connaît.
 
 La grille du Module 2 comptait une vingtaine de cases, et la table des valeurs
 tenait sur un écran. Les situations réelles sont beaucoup plus nombreuses. Une
@@ -32,9 +32,8 @@ n'apprendrait rien d'utile.
 
 ## Remplacer la table par un réseau
 
-La solution consiste à remplacer la table par un réseau de neurones. Le réseau
-reçoit la situation, par exemple l'image de l'écran, et estime la valeur de chaque
-action possible.
+La solution consiste à remplacer la table par un réseau de neurones. Le réseau reçoit la situation, par exemple l'image de l'écran, et estime
+la valeur de chaque action possible.
 
 {{< image src="/images/module3/table-vers-reseau.svg" alt="Deux panneaux. À gauche, une grille de quatre cases sur cinq, avec une valeur écrite dans chaque case, comme la table du Module 2. À droite, un écran de jeu, avec un mur de briques, une balle et une raquette, est donné à un réseau de neurones ; le réseau produit une valeur pour chacune des trois actions possibles : aller à gauche, rester, aller à droite." title="La table du Module 2 donne une valeur par situation ; un réseau estime la valeur de chaque action, pour n'importe quelle situation." loading="lazy" >}}
 
@@ -56,11 +55,10 @@ propre au backgammon, et elle est peu reprise pendant vingt ans.
 En 2013, la jeune entreprise londonienne DeepMind présente **DQN** (*deep
 Q-network*). En 2015, une version améliorée paraît dans la revue *Nature*. Le même
 réseau, un
-[réseau convolutif](docs/module3/50-reseaux-convolutifs/#du-filtre-au-réseau),
-apprend à jouer à 49 jeux vidéo de la console Atari 2600. Il ne reçoit que les
-pixels de l'écran et le score. Personne ne lui explique les règles, ni le but du
-jeu. Sur une bonne partie de ces jeux, il atteint ou dépasse le niveau d'un joueur
-humain expérimenté.
+[réseau convolutif](docs/module3/50-reseaux-convolutifs/#du-filtre-au-réseau), apprend à jouer à 49 jeux vidéo de la console
+Atari 2600. Il ne reçoit que les pixels de l'écran et le score. Personne ne lui
+explique les règles, ni le but du jeu. Sur une bonne partie de ces jeux, il atteint
+ou dépasse le niveau d'un joueur humain expérimenté.
 
 L'exemple le plus connu est *Breakout*, où il faut détruire un mur de briques avec
 une balle. Après quelques centaines de parties, le réseau découvre une stratégie que
@@ -72,8 +70,8 @@ pour envoyer la balle derrière, où elle détruit les briques toute seule.
 Le réseau échoue en revanche à *Montezuma's Revenge*, un jeu d'exploration où il
 faut traverser plusieurs salles avant d'obtenir le moindre point. En jouant au
 hasard, l'agent ne reçoit presque jamais de récompense, et n'a donc rien à
-renforcer. Le compromis entre explorer et exploiter, vu au Module 2, reste une
-difficulté centrale.
+renforcer. Le compromis entre explorer et exploiter (*exploration-exploitation
+trade-off*), vu au Module 2, reste une difficulté centrale.
 
 ## AlphaGo
 
@@ -86,28 +84,28 @@ La méthode de
 [Deep Blue](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997),
 présentée au Module 1, ne suffisait pas, pour deux raisons. À chaque tour, un
 joueur de go a environ 250 coups possibles, contre environ 35 aux échecs. L'arbre
-des coups grandit donc beaucoup trop vite. Surtout, personne ne savait écrire une
-bonne fonction d'évaluation pour une position de go. Les meilleurs joueurs
-eux-mêmes jugent une position à l'intuition, sans pouvoir l'expliquer en règles.
+des coups (*game tree*) grandit donc beaucoup trop vite. Surtout, personne ne savait
+écrire une bonne fonction d'évaluation (*evaluation function*) pour une position de
+go. Les meilleurs joueurs eux-mêmes jugent une position à l'intuition, sans pouvoir
+l'expliquer en règles.
 
 **AlphaGo**, de DeepMind, combine trois éléments :
 
-- un **réseau de politique**, qui regarde la position et propose les coups
-  prometteurs. Il évite d'explorer les 250 coups possibles ;
-- un **réseau de valeur**, qui regarde une position et estime qui va gagner. Il
-  remplace la fonction d'évaluation que personne ne savait écrire ;
-- une **recherche dans l'arbre des coups**, comme au Module 1, guidée par ces deux
-  réseaux.
+- un **réseau de politique** (*policy network*), qui regarde la position et propose
+  les coups prometteurs. Il évite d'explorer les 250 coups possibles ;
+- un **réseau de valeur** (*value network*), qui regarde une position et estime qui
+  va gagner. Il remplace la fonction d'évaluation que personne ne savait écrire ;
+- une **recherche dans l'arbre des coups** (*tree search*), comme au Module 1,
+  guidée par ces deux réseaux.
 
 {{< image src="/images/module3/alphago-recherche.svg" alt="Un arbre de coups qui part de la position actuelle, en haut. Le réseau de politique désigne trois coups prometteurs, dont les branches sont explorées ; les autres coups possibles, en pointillé, sont laissés de côté. Au bout des branches explorées, le réseau de valeur estime la probabilité de gagner de chaque position. AlphaGo joue le coup dont les positions sont les mieux évaluées." title="AlphaGo : le réseau de politique choisit les coups à explorer, le réseau de valeur évalue les positions atteintes." loading="lazy" >}}
 
 C'est la rencontre des deux traditions de ce cours : la
 [recherche](docs/module1/30-chercher-raisonner/#résoudre-cest-explorer) du
 Module 1, et l'apprentissage des Modules 2 et 3. Les deux réseaux sont d'abord
-entraînés sur des parties de joueurs humains, en apprentissage supervisé : le
-réseau de politique apprend à prédire le coup qu'un expert jouerait. Ils sont
-ensuite améliorés par renforcement, AlphaGo jouant des millions de parties contre
-lui-même.
+entraînés sur des parties de joueurs humains, en apprentissage supervisé
+(*supervised learning*) : le réseau de politique apprend à prédire le coup qu'un
+expert jouerait. Ils sont ensuite améliorés par renforcement, AlphaGo jouant des millions de parties contre lui-même.
 
 En mars 2016, à Séoul, AlphaGo affronte Lee Sedol, l'un des meilleurs joueurs du
 monde, en cinq parties. Il gagne 4 à 1.
@@ -150,8 +148,8 @@ de positions par seconde. AlphaZero a appris seul sa fonction d'évaluation, et 
 examine environ 80 000 positions par seconde, plus de deux mille fois moins, parce
 que son réseau de politique lui indique où chercher. C'est l'illustration la plus
 nette de la [leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère) :
-une méthode générale, l'apprentissage par auto-jeu, dépasse le savoir humain
-inscrit à la main.
+une méthode générale, l'apprentissage par auto-jeu (*self-play*), dépasse le savoir
+humain inscrit à la main.
 
 ## Une machine qui apprend en jouant contre elle-même
 
@@ -185,8 +183,8 @@ Personne ne lui a montré de bon coup.
 ## Au-delà des jeux, et les limites
 
 Les jeux sont un terrain d'essai commode : les règles sont claires, la récompense
-est nette, et l'on peut jouer des millions de parties. Le renforcement profond a
-aussi trouvé des usages hors des jeux.
+est nette, et l'on peut jouer des millions de parties. Le renforcement profond
+(*deep reinforcement learning*) a aussi trouvé des usages hors des jeux.
 
 - En 2016, Google l'utilise pour piloter le refroidissement de ses centres de
   données, et annonce une réduction d'environ 40 % de l'énergie consacrée au
@@ -211,8 +209,7 @@ Il fait exactement ce qu'on lui a demandé, et pas du tout ce qu'on voulait. Ce
 problème de la récompense mal définie concerne tous les systèmes qui optimisent un
 objectif. Le [Module 5](docs/module5) y reviendra, sous le nom d'**alignement**.
 
-Le renforcement a enfin une place importante dans les grands modèles de langage,
-comme l'annonçait le
+Le renforcement a enfin une place importante dans les grands modèles de langage, comme l'annonçait le
 [Module 2](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement).
 Il sert à ajuster leurs réponses selon les préférences d'évaluateurs humains, et à
 les entraîner à raisonner sur des problèmes dont la réponse peut être vérifiée. Le

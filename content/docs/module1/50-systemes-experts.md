@@ -38,9 +38,9 @@ comment une machine peut raisonner avec des règles.
 
 Un système expert comporte **trois composantes**. La première est une **base de
 règles**, qui contient la connaissance du domaine sous forme d'énoncés *si… alors…*.
-La deuxième est une **base de faits** (ou « mémoire de travail »), qui rassemble ce
+La deuxième est une **base de faits** (ou « mémoire de travail », *working memory*), qui rassemble ce
 qu'on sait du cas traité, par exemple les symptômes d'un patient ou l'état d'une
-voiture. La troisième est un **moteur d'inférence**, un mécanisme général qui
+voiture. La troisième est un **moteur d'inférence** (*inference engine*), un mécanisme général qui
 compare les faits aux règles, applique celles dont les conditions sont remplies et
 en tire de nouveaux faits, jusqu'à une conclusion.
 
@@ -77,7 +77,7 @@ conditions de R3 et de R4 ne sont pas remplies, et ces règles ne font rien. En 
 des phares faibles.
 
 Ce mode de raisonnement, qui part des faits pour arriver à une conclusion, s'appelle
-le **chaînage avant**. Il convient bien quand on dispose déjà de nombreux faits et
+le **chaînage avant** (*forward chaining*). Il convient bien quand on dispose déjà de nombreux faits et
 qu'on veut savoir ce qui en découle.
 
 {{< image src="/images/module1/chainage-avant.svg" alt="Schéma de gauche à droite : les deux faits observés mènent à la règle R1, qui produit le fait « la batterie est déchargée » ; ce fait mène à la règle R2, qui donne la conclusion « recharger ou remplacer la batterie »." title="Le chaînage avant : des faits observés vers la conclusion, règle après règle." loading="lazy" >}}
@@ -89,7 +89,7 @@ l'**hypothèse**, traitée comme un but, et remonte les règles. Pour conclure
 (R1), il faut que le moteur ne se lance pas **et** que les phares soient faibles.
 Aucune règle ne produit ces deux derniers faits, qu'il faut donc **observer**. Le
 système pose alors la question à l'utilisateur (« les phares sont-ils faibles ? »)
-et n'examine que ce qui concerne l'hypothèse étudiée. C'est le **chaînage arrière**.
+et n'examine que ce qui concerne l'hypothèse étudiée. C'est le **chaînage arrière** (*backward chaining*).
 
 {{< image src="/images/module1/chainage-arriere.svg" alt="Le même schéma parcouru de droite à gauche : de l'hypothèse « et si c'était la batterie ? », la règle R2 mène au sous-but « la batterie est-elle déchargée ? », puis la règle R1 mène à deux questions posées à l'utilisateur sur le moteur et les phares." title="Le chaînage arrière : de l'hypothèse vers les faits à vérifier, en ne posant que les questions utiles." loading="lazy" >}}
 
@@ -100,13 +100,14 @@ général les enchaîner) un **langage de programmation**, **Prolog**. Le progra
 n'y écrit que des faits et des règles, et le langage fournit lui-même le moteur
 d'inférence, un chaînage arrière comme celui qu'on vient de décrire. On n'indique
 pas au programme comment calculer, mais ce qui est vrai. Cette approche s'appelle la
-**programmation logique**. Elle est différente de la programmation fonctionnelle du
+**programmation logique** (*logic programming*). Elle est différente de la programmation
+fonctionnelle (*functional programming*) du
 langage Lisp (celui des machines de la photo [plus
 bas](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom)). Prolog a longtemps été le
 langage de référence de l'IA symbolique en Europe. Le projet japonais de
 **Cinquième Génération**, [présenté plus
 bas](docs/module1/50-systemes-experts/#lâge-dor-mycin-xcon-et-le-boom), l'a choisi comme langage principal, et
-ses principes se retrouvent aujourd'hui dans Datalog et dans les moteurs de règles.
+ses principes se retrouvent aujourd'hui dans Datalog et dans les moteurs de règles (*rule engines*).
 {{% /hint %}}
 
 {{% details "Pour aller plus loin : à quoi ressemble du Prolog ?" %}}
@@ -172,7 +173,7 @@ mécanisme, il pouvait **justifier** sa démarche. Quand on lui demandait pourqu
 posait une question, il indiquait la règle qu'il cherchait à vérifier.
 
 En médecine, cependant, peu de choses sont certaines. Un symptôme peut suggérer un
-germe sans le confirmer. MYCIN utilisait donc des **facteurs de certitude** (un
+germe sans le confirmer. MYCIN utilisait donc des **facteurs de certitude** (*certainty factors* : un
 nombre associé à chaque règle, qui indique à quel point sa conclusion est fiable)
 et les combinait au cours du raisonnement. Cette méthode était approximative. Plus
 tard, une théorie plus rigoureuse de l'incertitude, celle des **réseaux
@@ -230,7 +231,7 @@ Après XCON, les investissements se sont multipliés. Au début des années 1980
 est devenue pour la première fois une **industrie**. On vendait des **coquilles**
 (*shells*), c'est-à-dire des moteurs d'inférence vides, prêts à recevoir la base de
 règles de n'importe quel domaine. Un nouveau métier est apparu, celui d'**ingénieur
-de la connaissance**, chargé de recueillir le savoir des experts. Des entreprises
+de la connaissance** (*knowledge engineer*), chargé de recueillir le savoir des experts. Des entreprises
 ont été créées et ont attiré des capitaux. On a même construit des ordinateurs
 spécialisés pour ces programmes, les **machines Lisp**. Le Japon a lancé un grand
 projet national, la **Cinquième Génération**, pour devenir le leader de ce type
@@ -249,10 +250,11 @@ interroge longuement un expert pour traduire son savoir en règles *si… alors�
 travail s'est révélé très lent. De plus, une grande partie de l'expertise est
 difficile à exprimer. Le médecin expérimenté qui reconnaît un diagnostic au premier
 coup d'œil, ou le mécanicien qui identifie une panne au bruit du moteur, ne savent
-pas toujours expliquer ce qu'ils savent. Leur compétence est un **savoir tacite**,
+pas toujours expliquer ce qu'ils savent. Leur compétence est un **savoir tacite** (*tacit knowledge*),
 fondé sur l'intuition et l'expérience, et non une liste de règles qu'il suffirait
 de noter. On ne peut pas codifier ce qui n'a jamais été formulé. Ce problème est
-connu sous le nom de **goulot d'étranglement de l'acquisition des connaissances**.
+connu sous le nom de **goulot d'étranglement de l'acquisition des connaissances**
+(*knowledge acquisition bottleneck*).
 
 La deuxième limite, déjà évoquée dans « [Représenter le
 monde](docs/module1/40-representer-le-monde) », est la **rigidité**. Un système
@@ -271,7 +273,7 @@ dizaines de règles reste gérable. XCON en a accumulé des milliers, et on a co
 qu'au-delà d'un certain nombre, les règles **interagissent** de façon imprévisible.
 Ajouter une règle pour corriger un cas pouvait en perturber plusieurs autres, sans
 qu'on s'en aperçoive. Maintenir une grande base de règles demandait plus de temps
-pour corriger ces effets de bord que pour ajouter des connaissances. La
+pour corriger ces effets de bord (*side effects*) que pour ajouter des connaissances. La
 connaissance explicite, écrite à la main, ne **passait pas à l'échelle**.
 
 La quatrième limite est la plus fondamentale : un système expert n'**apprend

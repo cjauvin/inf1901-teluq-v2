@@ -70,8 +70,8 @@ aujourd'hui dans la conversation courante. Pour eux, l'IA consistait à faire
 logique, explorer méthodiquement des possibilités, comme on le fait pour
 démontrer un théorème ou jouer aux échecs. Aucune partie de ce programme
 n'apprenait à partir de grandes quantités de données. Aujourd'hui, le mot « IA »
-désigne presque toujours les **grands modèles de langage** et les modèles
-apparentés qui génèrent des images. Ce sont d'immenses réseaux de neurones,
+désigne presque toujours les **grands modèles de langage** (*large language models*) et les modèles
+apparentés qui génèrent des images. Ce sont d'immenses réseaux de neurones (*neural networks*),
 entraînés sur une bonne partie de ce que l'humanité a écrit, qui ne contiennent
 aucune règle écrite à la main.
 
@@ -79,7 +79,7 @@ Ce module raconte ce renversement. L'expression a été créée par les partisan
 premier pari, celui de la logique. Elle est aujourd'hui associée aux héritiers du
 second, celui du cerveau et de l'apprentissage, que les premiers ont longtemps
 considéré comme une impasse. Entre les deux, il y a soixante-dix ans, deux
-[« hivers »](docs/module1/60-hivers) et un renversement que rien ne laissait prévoir. Gardez
+[« hivers »](docs/module1/60-hivers) (*AI winters*) et un renversement que rien ne laissait prévoir. Gardez
 donc les deux sens à l'esprit. Dans les pages qui suivent, « IA » a d'abord le
 sens qu'il avait à Dartmouth.
 {{% /hint %}}
@@ -106,7 +106,7 @@ artificielle**, c'est-à-dire une machine qui ne calcule pas des nombres, mais q
 raisonne, du moins en apparence.
 
 {{% hint info %}}
-**Soixante-dix ans plus tard.** La démonstration de théorèmes par machine a
+**Soixante-dix ans plus tard.** La démonstration de théorèmes par machine (*automated theorem proving*) a
 progressé d'une manière que Newell et Simon n'avaient pas prévue.
 En 2025, des grands modèles de langage entraînés par renforcement ont atteint
 le niveau d'une médaille d'or aux Olympiades internationales de mathématiques.
@@ -155,8 +155,8 @@ posséderait tout ce qu'il faut pour être intelligent. Pendant les décennies
 suivantes, cette voie **symbolique** domine la recherche et obtient l'essentiel
 des financements. Elle fait l'objet des chapitres suivants :
 la [recherche](docs/module1/30-chercher-raisonner), la [représentation des
-connaissances](docs/module1/40-representer-le-monde), les [systèmes
-experts](docs/module1/50-systemes-experts).
+connaissances](docs/module1/40-representer-le-monde) (*knowledge representation*), les [systèmes
+experts](docs/module1/50-systemes-experts) (*expert systems*).
 
 ## Le second pari : l'esprit comme cerveau
 
@@ -201,7 +201,7 @@ ses erreurs, s'est cependant révélée très féconde. Elle est à la base de t
 que nous étudierons aux [modules 2](docs/module2), [3](docs/module3) et [4](docs/module4).
 
 Le perceptron est l'**ancêtre direct des réseaux de neurones** actuels.
-L'apprentissage profond d'aujourd'hui est, pour l'essentiel, un empilement de
+L'apprentissage profond (*deep learning*) d'aujourd'hui est, pour l'essentiel, un empilement de
 perceptrons perfectionnés, en très grand nombre et sur de nombreuses couches.
 Nous étudierons cette filiation au [**Module 3**](docs/module3/10-un-neurone).
 

@@ -19,10 +19,10 @@ données, lui sert de guide. Il en existe trois grands types :
 - une **réponse fournie** pour chaque exemple, ce qui correspond à
   l'apprentissage **supervisé**, étudié depuis le début du module ;
 - **aucune réponse**, seulement des données brutes dans lesquelles il faut
-  trouver une structure, ce qui correspond à l'apprentissage **non supervisé** ;
+  trouver une structure, ce qui correspond à l'apprentissage **non supervisé** (*unsupervised learning*) ;
 - ni réponse ni structure donnée, mais une **récompense** qui arrive après
   coup, au fil des actions, ce qui correspond à l'apprentissage par
-  **renforcement**.
+  **renforcement** (*reinforcement learning*).
 
 {{< image src="/images/module2/trois-paradigmes.svg" alt="Trois panneaux. « Supervisé » : des points étiquetés en bleu et rouge, la réponse étant donnée. « Non supervisé » : les mêmes points, tous gris et sans étiquette, que l'algorithme regroupe en cercles pointillés pour former des groupes. « Renforcement » : une boucle entre un agent et son environnement, reliés par une flèche « action » et une flèche « récompense »." title="Les trois grandes familles, par la nature de leur signal : réponse donnée (supervisé), structure à découvrir (non supervisé), récompense au fil de l'action (renforcement)." loading="lazy" >}}
 
@@ -117,10 +117,10 @@ les résumant par leurs groupes.
 Le regroupement n'est qu'une partie du non-supervisé. Celui-ci comprend aussi
 la **réduction de dimension** (simplifier des données à mille variables en
 perdant le moins d'information possible) et l'**apprentissage de
-représentations**, qui consiste à découvrir sans étiquettes de bonnes
+représentations** (*representation learning*), qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l'IA
-moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** de mots ([Module 4](docs/module4)).
+moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** (*embeddings*) de mots ([Module 4](docs/module4)).
 
 {{% details "Les mathématiques de k-means (optionnel)" %}}
 
@@ -180,7 +180,7 @@ apprend à faire du vélo, à un robot qui apprend à marcher ou à un joueur qu
 découvre un jeu. Personne ne leur indique le bon mouvement à chaque instant.
 Ils essaient, échouent, recommencent et retiennent ce qui fonctionne.
 
-Le signal est ici une **récompense**, par exemple un point gagné, une partie
+Le signal est ici une **récompense** (*reward*), par exemple un point gagné, une partie
 remportée ou une chute évitée. Cette récompense arrive souvent **bien après**
 les actions qui l'ont produite. Quand on gagne une partie d'échecs, il est
 difficile de savoir quel coup a été décisif. Ce décalage est la principale
@@ -198,12 +198,12 @@ l'entraînement.
 
 Au début, l'agent se déplace au hasard. Puis, d'un épisode à l'autre, une
 **carte de valeur** se forme (les cases se colorent selon leur valeur estimée)
-et une **politique** apparaît. Les flèches, qui indiquent pour chaque case le
+et une **politique** (*policy*) apparaît. Les flèches, qui indiquent pour chaque case le
 meilleur mouvement, finissent par former un chemin sûr vers le but. Le curseur
 d'**exploration** (ε) est instructif. À zéro, l'agent ne fait qu'exploiter ce
 qu'il croit déjà savoir, et il peut rester dans un chemin médiocre. Un peu de
 hasard l'amène à explorer d'autres chemins, et parfois à en trouver de
-meilleurs. Ce compromis entre **explorer et exploiter** est au centre du
+meilleurs. Ce compromis entre **explorer et exploiter** (*exploration vs. exploitation*) est au centre du
 renforcement.
 
 Cette approche rappelle une notion déjà vue. Au [Module 1](docs/module1/30-chercher-raisonner/#lapogée-deep-blue-bat-kasparov-1997), nous avons étudié les machines qui

@@ -8,28 +8,29 @@ slug: attention-transformer
 
 Le chapitre
 « [Lire une séquence](docs/module3/60-reseaux-recurrents/#les-limites) » s'est
-terminé sur trois limites des réseaux récurrents : toute une phrase passe par un
-seul état, le calcul avance une étape à la fois, et les éléments lointains
-s'oublient. Ce chapitre présente le mécanisme qui a levé ces limites,
-l'**attention**, puis l'architecture construite autour de lui, le **Transformer**.
-Il traite le Transformer comme une architecture, au même titre que les réseaux
-convolutifs ou récurrents. Ce qu'il permet de faire avec le langage est le sujet du
-[Module 4](docs/module4).
+terminé sur trois limites des réseaux récurrents (*recurrent neural networks*,
+RNN) : toute une phrase passe par un seul état, le calcul avance une étape à la
+fois, et les éléments lointains s'oublient. Ce chapitre présente le mécanisme qui a
+levé ces limites, l'**attention**, puis l'architecture construite autour de lui, le
+**Transformer**. Il traite le Transformer comme une architecture, au même titre que
+les réseaux convolutifs ou récurrents. Ce
+qu'il permet de faire avec le langage est le sujet du [Module 4](docs/module4).
 
 ## L'attention dans la traduction
 
 Revenons à
-l'[encodeur-décodeur](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis).
-Le décodeur écrit la traduction à partir d'un seul état, qui résume toute la phrase
-d'origine. En 2014, Dzmitry Bahdanau, Kyunghyun Cho et Yoshua Bengio, à Montréal,
-gardent l'état de l'encodeur après **chaque** mot, et non seulement le dernier. Le
-décodeur peut alors consulter toute la phrase d'origine à chaque mot qu'il écrit.
+l'[encodeur-décodeur](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis). Le décodeur écrit la traduction à partir d'un seul état, qui
+résume toute la phrase d'origine. En 2014, Dzmitry Bahdanau, Kyunghyun Cho et Yoshua
+Bengio, à Montréal, gardent l'état de l'encodeur après **chaque** mot, et non
+seulement le dernier. Le décodeur peut alors consulter toute la phrase d'origine à
+chaque mot qu'il écrit.
 
 Pour chaque mot à écrire, le décodeur procède en trois temps :
 
 1. il compare ce qu'il cherche à chacun des mots de la phrase d'origine, ce qui
    donne un score par mot ;
-2. il transforme ces scores en **poids**, positifs et de total égal à 1 ;
+2. il transforme ces scores en **poids**, positifs et de total égal à
+   1 ;
 3. il fait un mélange des mots d'origine selon ces poids, et s'en sert pour choisir
    le mot à écrire.
 
@@ -64,9 +65,9 @@ floue.
 
 On donne un nom à chacun des trois éléments :
 
-- la **requête** est ce que l'on cherche ;
-- les **clés** sont ce à quoi on compare la requête, une par entrée ;
-- les **valeurs** sont ce que l'on récupère, une par entrée.
+- la **requête** (*query*) est ce que l'on cherche ;
+- les **clés** (*keys*) sont ce à quoi on compare la requête, une par entrée ;
+- les **valeurs** (*values*) sont ce que l'on récupère, une par entrée.
 
 Dans un réseau, les requêtes, les clés et les valeurs sont des listes de nombres
 calculées par des neurones. Leurs poids sont appris. Le réseau apprend donc à la
@@ -94,7 +95,7 @@ requête a surtout récupéré les valeurs de A et de C, dont les clés lui ress
 Dans la traduction, le décodeur porte son attention sur la phrase d'origine.
 L'étape suivante consiste à appliquer l'attention à l'intérieur d'une même phrase.
 Chaque mot émet une requête, et va chercher l'information utile chez les autres
-mots de la phrase. On parle d'**auto-attention**.
+mots de la phrase. On parle d'**auto-attention** (*self-attention*).
 
 Prenons la phrase « Le chien n'est pas monté dans le camion parce qu'il était trop
 fatigué. » Le mot « il » peut désigner le chien ou le camion. Pour le comprendre,
@@ -148,21 +149,21 @@ grands modèles actuels en empilent une centaine.
 Deux précisions complètent ce schéma.
 
 **Plusieurs têtes.** Chaque couche d'auto-attention contient plusieurs mécanismes
-d'attention en parallèle, appelés **têtes**, par exemple huit. Chacune a ses
-propres requêtes, clés et valeurs, et peut apprendre un type de lien différent :
-une tête relie un verbe à son sujet, une autre un pronom au nom qu'il désigne, une
-autre un mot à son voisin.
+d'attention en parallèle, appelés **têtes** (*attention heads*), par exemple huit.
+Chacune a ses propres requêtes, clés et valeurs, et peut apprendre un type de lien
+différent : une tête relie un verbe à son sujet, une autre un pronom au nom qu'il
+désigne, une autre un mot à son voisin.
 
 **La position.** Un réseau récurrent connaissait l'ordre des mots, puisqu'il les
 lisait un à un. L'auto-attention, elle, traite tous les mots en même temps et ne
 connaît pas leur ordre. Pour elle, « le chien mord l'homme » et « l'homme mord le
 chien » seraient identiques. On ajoute donc à chaque mot, à l'entrée du réseau, une
-indication de sa position dans la phrase.
+indication de sa position dans la phrase (*positional encoding*).
 
 On retrouve aussi dans le Transformer les
-[raccourcis](docs/module3/50-reseaux-convolutifs/#après-2012) de ResNet, qui
-laissent l'information sauter une étape et facilitent l'entraînement d'une pile
-très profonde.
+[raccourcis](docs/module3/50-reseaux-convolutifs/#après-2012)
+de ResNet, qui laissent l'information sauter une étape et facilitent l'entraînement
+d'une pile très profonde.
 
 ## Pourquoi il a tout changé
 
@@ -190,7 +191,7 @@ disponible sur le Web. Ce changement d'échelle est celui que décrivait la
 texte de 1 000 mots, cela fait un million de comparaisons. Pour 2 000 mots, quatre
 millions. Le calcul croît avec le carré de la longueur du texte. C'est pourquoi un
 Transformer ne peut traiter qu'un texte de longueur limitée à la fois, sa
-**fenêtre de contexte**. Le Module 4 reviendra sur cette notion.
+**fenêtre de contexte** (*context window*). Le Module 4 reviendra sur cette notion.
 
 ## Au-delà du texte
 
@@ -228,8 +229,8 @@ Dès 2018, deux usages du Transformer apparaissent. **BERT**, chez Google, lit u
 texte en entier pour en produire une représentation, utile par exemple aux moteurs
 de recherche. **GPT**, chez OpenAI, est entraîné à une tâche plus simple : prédire
 le mot suivant d'un texte. Agrandi de version en version, ce second type de modèle
-est à l'origine des grands modèles de langage, comme ChatGPT. Le
-[Module 4](docs/module4) leur est consacré.
+est à l'origine des grands modèles de langage, comme
+ChatGPT. Le [Module 4](docs/module4) leur est consacré.
 
 ## Pour voir le mécanisme en détail
 
@@ -243,4 +244,5 @@ est en anglais.
 Le chapitre suivant, « [Apprendre à jouer : le renforcement profond](docs/module3/80-renforcement-profond) », quitte les
 séquences. Il revient à
 l'[apprentissage par renforcement](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement)
-du Module 2 et montre ce qu'il devient avec les réseaux profonds.
+(*reinforcement learning*) du Module 2 et montre ce qu'il devient avec les réseaux
+profonds.

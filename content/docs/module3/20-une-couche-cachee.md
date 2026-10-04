@@ -14,15 +14,15 @@ reliés entre eux dépassent cette limite.
 ## Relier des neurones
 
 La sortie d'un neurone est un nombre. Rien n'empêche de donner ce nombre en entrée
-à un autre neurone. On obtient alors un **réseau de neurones**, organisé en
-**couches** :
+à un autre neurone. On obtient alors un **réseau de neurones**,
+organisé en **couches** (*layers*) :
 
-- la **couche d'entrée** contient les données, par exemple les deux entrées du XOR
-  ou les 784 pixels d'une image ;
-- la **couche de sortie** donne la réponse du réseau ;
-- entre les deux, une ou plusieurs **couches cachées** font des calculs
-  intermédiaires. On les appelle « cachées » parce que, de l'extérieur, on ne voit
-  que les entrées et la réponse.
+- la **couche d'entrée** (*input layer*) contient les données, par exemple les deux
+  entrées du XOR ou les 784 pixels d'une image ;
+- la **couche de sortie** (*output layer*) donne la réponse du réseau ;
+- entre les deux, une ou plusieurs **couches cachées** (*hidden layers*) font des
+  calculs intermédiaires. On les appelle « cachées » parce que, de l'extérieur, on
+  ne voit que les entrées et la réponse.
 
 Chaque neurone d'une couche reçoit les sorties de tous les neurones de la couche
 précédente, chacune avec son propre poids.
@@ -52,9 +52,8 @@ La table suivante reprend les quatre cas :
 | 1 | 1 | 1 | 1 | 0 |
 
 La dernière colonne est bien celle de la
-[table de vérité du XOR](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969).
-Aucun des trois neurones ne fait quelque chose de difficile. C'est leur combinaison
-qui résout un problème qu'aucun d'eux ne peut résoudre seul.
+[table de vérité du XOR](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969). Aucun des trois neurones ne fait quelque chose de difficile. C'est
+leur combinaison qui résout un problème qu'aucun d'eux ne peut résoudre seul.
 
 {{% details "Pour aller plus loin : les poids de ce réseau" %}}
 Voici des poids et des biais qui donnent exactement ce comportement. Chaque
@@ -97,20 +96,20 @@ séparer des deux autres. Le neurone de sortie trace cette droite.
 
 Cette seconde lecture rejoint une idée du Module 2. Dans
 « [Généraliser](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner) »,
-on rendait le XOR séparable en ajoutant à la main une caractéristique, le produit
-des deux entrées. Ce produit vaut 1 seulement quand les deux entrées valent 1. C'est
-exactement la question à laquelle répond le neurone 2. La différence est que
-personne n'a besoin de trouver cette caractéristique : avec les bons poids, le
-réseau la construit lui-même. Une couche cachée est donc une **fabrique de
+on rendait le XOR séparable en ajoutant à la main une caractéristique,
+le produit des deux entrées. Ce produit vaut 1 seulement quand les deux entrées
+valent 1. C'est exactement la question à laquelle répond le neurone 2. La différence
+est que personne n'a besoin de trouver cette caractéristique : avec les bons poids,
+le réseau la construit lui-même. Une couche cachée est donc une **fabrique de
 caractéristiques**.
 
 ## Deux droites à déplacer
 
 Dans l'applet ci-dessous, chaque droite représente un neurone caché. Vous pouvez la
 déplacer et la faire pivoter, comme dans l'applet de la
-[régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique).
-La zone délimitée par les deux droites est colorée : c'est là que le réseau répond
-« vrai ». Un point mal classé est entouré d'un cercle orange.
+[régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique). La zone délimitée par les deux droites est colorée : c'est
+là que le réseau répond « vrai ». Un point mal classé est entouré d'un cercle
+orange.
 
 {{< applet src="/html/applets/xor-deux-droites.html" height="667" >}}
 
@@ -130,9 +129,9 @@ nombre de neurones, on peut entourer une zone de forme quelconque, à la précis
 voulue.
 
 Ce résultat a été démontré en 1989, sous le nom de **théorème d'approximation
-universelle** : un réseau à une seule couche cachée, avec assez de neurones, peut
-approcher presque n'importe quelle fonction. Le répertoire de formes d'un réseau de
-neurones n'a donc pas la limite de celui d'un
+universelle** (*universal approximation theorem*) : un réseau à une seule couche
+cachée, avec assez de neurones, peut approcher presque n'importe quelle fonction. Le
+répertoire de formes d'un réseau de neurones n'a donc pas la limite de celui d'un
 [modèle linéaire](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner).
 
 Un réseau peut aussi avoir plusieurs sorties. Pour reconnaître les chiffres
@@ -160,5 +159,6 @@ pas comment les trouver. Ce problème a bloqué les réseaux de neurones pendant
 de vingt ans. On savait depuis les années 1960 qu'une couche cachée dépasserait la
 [limite du perceptron](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969),
 mais on ne savait pas comment entraîner un tel réseau. La solution, la
-**rétropropagation du gradient**, s'est imposée en 1986. C'est le sujet du chapitre
-suivant, « [Entraîner un réseau](docs/module3/30-entrainer-un-reseau) ».
+**rétropropagation du gradient** (*backpropagation*), s'est imposée en 1986. C'est
+le sujet du chapitre suivant,
+« [Entraîner un réseau](docs/module3/30-entrainer-un-reseau) ».

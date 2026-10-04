@@ -22,11 +22,12 @@ Dans notre exemple, ce prix moyen est d'environ **500 000 \\$**. La prédiction 
 dépend donc plus de rien. Elle est de 500 000 \\$ pour un très petit studio, et
 de 500 000 \\$ aussi pour un grand manoir. C'est évidemment absurde.
 
-Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et
-il donne toujours une réponse. Sur le nuage de points de la [page précédente](docs/module2/10-le-probleme/#notre-fil-rouge-des-maisons-à-vendre), il
-correspond à une simple **ligne horizontale**, à la même hauteur (500 000 \\$)
-quelle que soit la superficie. Cette ligne traverse le nuage en son milieu,
-au-dessus des maisons bon marché et en dessous des plus chères.
+Ce prédicteur est cependant parfaitement défini, il ne tombe jamais en panne et il
+donne toujours une réponse. Sur le nuage de points (*scatter plot*) de la [page
+précédente](docs/module2/10-le-probleme/#notre-fil-rouge-des-maisons-à-vendre), il
+correspond à une simple **ligne horizontale**, à la même hauteur (500 000 \\$) quelle
+que soit la superficie. Cette ligne traverse le nuage en son milieu, au-dessus des
+maisons bon marché et en dessous des plus chères.
 
 {{< image src="/images/module2/maisons-baseline.svg" alt="Le nuage de maisons traversé par une droite horizontale à 500 000 $ : un modèle qui prédit toujours le prix moyen, sans tenir compte de la superficie." title="Le modèle le plus bête : une droite plate à 500 000 $, qui ignore complètement la superficie." loading="lazy" >}}
 
@@ -86,8 +87,9 @@ paramètres, une sortie.
 
 ## Pourquoi un modèle aussi bête est utile
 
-Ce modèle est très mauvais, mais il est utile parce qu'il fournit un **étalon**,
-c'est-à-dire un point de comparaison pour juger tous les modèles suivants.
+Ce modèle est très mauvais, mais il est utile parce qu'il fournit un **étalon**
+(*baseline*), c'est-à-dire un point de comparaison pour juger tous les modèles
+suivants.
 
 Les mots « bon » et « mauvais » n'ont pas de sens dans l'absolu. Pour savoir si
 un modèle a de la valeur, il faut une référence. La référence la plus élémentaire
@@ -95,13 +97,14 @@ consiste à vérifier s'il fait mieux qu'un modèle qui ne regarde rien du tout.
 modèle, même sophistiqué, qui ne fait pas mieux que « toujours 500 000 \\$ » n'a
 rien appris d'utile.
 
-On peut faire cette comparaison concrètement, sans formule, en mesurant **de
-combien un modèle se trompe, en moyenne**. Pour le prédicteur bête, l'écart entre
-le prix annoncé (toujours 500 000 \\$) et le vrai prix dépasse 250 000 \\$ pour
-les maisons situées aux extrêmes. C'est cette « distance à la vérité » qu'un
-meilleur modèle cherchera à réduire. Nous lui donnerons au chapitre « [Un modèle qui s'entraîne](docs/module2/50-entrainer-un-modele/#mesurer-lerreur) » un nom et une
-définition précise, la *fonction d'erreur*, mais l'idée suffit pour l'instant :
-un bon modèle est un modèle qui se trompe moins.
+On peut faire cette comparaison concrètement, sans formule, en mesurant **de combien
+un modèle se trompe, en moyenne**. Pour le prédicteur bête, l'écart entre le prix
+annoncé (toujours 500 000 \\$) et le vrai prix dépasse 250 000 \\$ pour les maisons
+situées aux extrêmes. C'est cette « distance à la vérité » qu'un meilleur modèle
+cherchera à réduire. Nous lui donnerons au chapitre « [Un modèle qui
+s'entraîne](docs/module2/50-entrainer-un-modele/#mesurer-lerreur) » un nom et une
+définition précise, la *fonction d'erreur* (*loss function*), mais l'idée suffit pour
+l'instant : un bon modèle est un modèle qui se trompe moins.
 
 {{< image src="/images/module2/maisons-erreurs.svg" alt="Le nuage de maisons et la droite plate à 500 000 $, avec un segment vertical rouge reliant chaque maison à la droite : c'est l'erreur du modèle sur cette maison, longue aux extrêmes et courte près du centre." title="L'erreur du modèle, maison par maison : l'écart vertical entre le vrai prix et la prédiction." loading="lazy" >}}
 

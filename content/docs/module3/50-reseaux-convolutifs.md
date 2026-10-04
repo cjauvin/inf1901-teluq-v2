@@ -24,21 +24,22 @@ Pour ce réseau, rien ne change : il apprend aussi bien qu'avant. Il n'utilise 
 pas le fait que des pixels voisins forment ensemble un trait ou une courbe.
 
 **Il ne reconnaît pas un motif déplacé.** Si un chiffre est décalé de quelques
-pixels, il active d'autres entrées, reliées à d'autres poids. Pour le réseau, c'est
-une image nouvelle. Il doit apprendre séparément le même chiffre à chaque position.
+pixels, il active d'autres entrées, reliées à d'autres poids. Pour le
+réseau, c'est une image nouvelle. Il doit apprendre séparément le même chiffre à
+chaque position.
 
 {{< image src="/images/module3/chiffre-decale.svg" alt="En haut, deux grilles de 10 pixels sur 10. La première montre un « 1 » à gauche, la seconde le même « 1 » décalé de trois pixels vers la droite. En bas, chaque grille est mise à plat en une liste de 100 pixels, rangée après rangée. Les pixels allumés n'occupent pas les mêmes places dans les deux listes." title="Le même chiffre à deux positions : une fois mises à plat, les deux images n'ont presque aucun pixel allumé en commun." loading="lazy" >}}
 
 **Il a trop de poids.** Une photo en couleur de 1 000 pixels sur 1 000 compte trois
-millions de valeurs. Avec une couche cachée de 1 000 neurones, il faudrait trois
-milliards de poids pour cette seule couche.
+millions de valeurs. Avec une couche cachée de 1 000 neurones, il
+faudrait trois milliards de poids pour cette seule couche.
 
 ## Le filtre
 
-La solution repose sur un petit élément, le **filtre**. Un filtre est un carré de
-poids, par exemple de 3 sur 3. On le pose sur un coin de l'image, où il recouvre
-neuf pixels. Il calcule la somme de ces neuf pixels, chacun multiplié par le poids
-qui le recouvre. C'est le calcul d'un
+La solution repose sur un petit élément, le **filtre** (*filter* ou *kernel*). Un
+filtre est un carré de poids, par exemple de 3 sur 3. On le pose sur un coin de
+l'image, où il recouvre neuf pixels. Il calcule la somme de ces neuf pixels, chacun
+multiplié par le poids qui le recouvre. C'est le calcul d'un
 [neurone](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique),
 limité à neuf entrées.
 
@@ -96,15 +97,15 @@ Le filtre répond aux trois problèmes de départ.
   la troisième manipulation.
 - **Le nombre de poids.** Un filtre de 3 sur 3 a neuf poids, que l'image compte 784
   pixels ou trois millions. Les mêmes poids servent à toutes les positions. On
-  parle de **partage des poids**.
+  parle de **partage des poids** (*weight sharing*).
 
 ## Du filtre au réseau
 
 Un réseau convolutif est fait de plusieurs éléments, répétés.
 
-Une **couche convolutive** contient plusieurs filtres, par exemple 32. Chacun
-détecte un motif différent et produit sa propre image de résultat. La couche
-transforme donc une image en 32 images.
+Une **couche convolutive** (*convolutional layer*) contient plusieurs filtres, par
+exemple 32. Chacun détecte un motif différent et produit sa propre image de
+résultat. La couche transforme donc une image en 32 images.
 
 Une étape de **réduction** (*pooling* en anglais) diminue ensuite la taille de ces
 images. La méthode la plus courante découpe l'image en carrés de 2 sur 2 et ne
@@ -127,10 +128,9 @@ ordinaire, à quelques couches, qui produit la réponse.
 Il reste un point essentiel. Dans l'applet, les filtres étaient choisis à la main.
 Dans un réseau convolutif, personne ne les choisit. Les poids des filtres sont
 tirés au hasard au départ, puis réglés par
-[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation),
-comme tous les autres poids. Le réseau trouve lui-même les motifs utiles pour sa
-tâche. Entraîné sur des visages, il produit des filtres adaptés aux visages.
-Entraîné sur des radiographies, il en produit d'autres.
+[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation), comme tous les autres poids. Le réseau trouve lui-même les
+motifs utiles pour sa tâche. Entraîné sur des visages, il produit des filtres
+adaptés aux visages. Entraîné sur des radiographies, il en produit d'autres.
 
 ## Yann Le Cun et les chèques
 
@@ -165,8 +165,8 @@ d'un réseau de neurones.
 Pour entraîner et comparer ces réseaux, l'équipe constitue une base de chiffres
 manuscrits, **MNIST** : 60 000 images d'entraînement et 10 000 images de test, de
 28 pixels sur 28. C'est l'origine des chiffres qui servent d'exemple tout au long
-de ce module. MNIST est devenue la base d'essai la plus utilisée de l'apprentissage
-automatique.
+de ce module. MNIST est devenue la base d'essai (*benchmark*) la plus utilisée de
+l'apprentissage automatique (*machine learning*).
 
 {{< image src="/images/module3/mnist-exemples.png" alt="Une grille de petits chiffres manuscrits, blancs sur fond noir, rangés par ligne de 0 à 9. Chaque chiffre est écrit par une personne différente, avec des formes et des inclinaisons variées." title="Des chiffres de la base MNIST, une ligne par chiffre (image : Josef Steppan, Wikimedia Commons, CC BY-SA 4.0)." loading="lazy" >}}
 
@@ -187,19 +187,18 @@ en informatique, pour leurs travaux sur l'apprentissage profond.
 
 Les réseaux convolutifs deviennent ensuite plus profonds : 8 couches pour AlexNet
 en 2012, 22 pour GoogLeNet en 2014, 152 pour ResNet en 2015. Ce dernier introduit
-des **raccourcis** qui laissent l'information sauter certaines couches, ce qui
-limite
-l'[évanouissement du gradient](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012)
-et permet d'entraîner des réseaux très profonds.
+des **raccourcis** (*skip connections*) qui laissent l'information sauter certaines
+couches, ce qui limite
+l'[évanouissement du gradient](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012) et permet d'entraîner des réseaux très profonds.
 
 Ils servent aujourd'hui à de nombreuses tâches :
 
-- **reconnaître et localiser des objets** dans une image, par exemple les piétons
-  et les autres véhicules pour l'aide à la conduite ;
+- **reconnaître et localiser des objets** (*object detection*) dans une image, par
+  exemple les piétons et les autres véhicules pour l'aide à la conduite ;
 - **analyser des images médicales**, comme des radiographies ou des images de la
   rétine ;
-- **reconnaître des visages**, un usage qui pose des questions de surveillance et de
-  vie privée, traitées au [Module 5](docs/module5) ;
+- **reconnaître des visages** (*face recognition*), un usage qui pose des questions
+  de surveillance et de vie privée, traitées au [Module 5](docs/module5) ;
 - **traiter des sons**, en les transformant d'abord en images de leurs fréquences.
 
 ## La leçon de la convolution

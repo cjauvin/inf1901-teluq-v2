@@ -46,9 +46,9 @@ comprendre. C'est le sur-apprentissage (*overfitting*) de l'étudiant, et le jeu
 de test permet de le détecter. Pour évaluer la compréhension, il faut des
 questions nouvelles. On procède de la même façon avec un modèle.
 
-Ces deux parties des données ont un nom. L'**ensemble d'entraînement** sert à
+Ces deux parties des données ont un nom. L'**ensemble d'entraînement** (*training set*) sert à
 l'apprentissage du modèle, et on y mesure l'**erreur d'entraînement**.
-L'**ensemble de test** reste à l'écart jusqu'à la fin et sert à mesurer
+L'**ensemble de test** (*test set*) reste à l'écart jusqu'à la fin et sert à mesurer
 l'**erreur de test**, la seule qui estime la généralisation. La règle d'or est
 qu'*on ne touche jamais au jeu de test pendant l'entraînement.* Si le modèle
 apprend, même indirectement, sur ses propres données d'examen, le test ne veut
@@ -59,7 +59,7 @@ plus rien dire.
 Lorsqu'il faut *régler* quelque chose (la valeur de $k$ pour kNN, ou le taux
 d'apprentissage vu dans [*Un modèle qui s'entraîne*](docs/module2/50-entrainer-un-modele)), on ne peut pas non plus utiliser le
 jeu de test pour choisir, car il ne serait alors plus neuf. On réserve donc un
-troisième ensemble, l'**ensemble de validation**, consacré à ces réglages. Le jeu
+troisième ensemble, l'**ensemble de validation** (*validation set*), consacré à ces réglages. Le jeu
 de test reste intact pour l'évaluation finale.
 
 {{% /hint %}}
@@ -97,7 +97,7 @@ logistique est une droite. Celle de Bayes naïf est aussi une droite, comme nous
 l'avions remarqué. Même notre filtre anti-pourriel, malgré son grand nombre de
 mots, prenait une décision linéaire. Ces modèles ont donc un point commun.
 
-Ils tirent tous leur décision d'une **somme pondérée** des caractéristiques.
+Ils tirent tous leur décision d'une **somme pondérée** (*weighted sum*) des caractéristiques.
 Chaque attribut pousse d'un côté ou de l'autre, proportionnellement à son poids,
 et la décision dépend du total. Sur le plan géométrique, le résultat est
 toujours une droite (un plan en trois dimensions, un *hyperplan* au-delà). On
@@ -150,7 +150,7 @@ supplémentaire ne l'y mettront.
 L'apprentissage automatique classique offre deux moyens de contourner cette
 limite. Le premier vient d'être présenté, il consiste à prendre un modèle
 non-linéaire comme kNN. Le second consiste à **construire soi-même la bonne
-caractéristique**. Si on ajoute aux deux entrées leur produit $x_1 \cdot x_2$,
+caractéristique** (*feature engineering*). Si on ajoute aux deux entrées leur produit $x_1 \cdot x_2$,
 le XOR devient séparable par une droite dans ce nouvel espace. Cependant, c'est
 l'humain qui a dû trouver cette astuce, et il arrive que personne ne sache quelle
 caractéristique construire.
@@ -294,7 +294,7 @@ souplesse : le nombre de termes d'une courbe plus souple qu'une droite ([nous l
 verrons plus bas](#garder-un-modèle-riche-mais-le-tenir-en-laisse-la-régularisation)), la profondeur d'un arbre de décision ou le nombre de
 paramètres d'un réseau de neurones. Chacun présente la même courbe en U et le
 même arbitrage entre s'ajuster aux données et lisser. C'est le **compromis
-biais-variance**, et savoir le régler est une compétence essentielle en
+biais-variance** (*bias-variance tradeoff*), et savoir le régler est une compétence essentielle en
 apprentissage automatique.
 
 
@@ -369,7 +369,7 @@ caractéristiques). Pour les réseaux de neurones, on parle de *weight decay*, q
 désigne le même terme. D'autres méthodes ne passent pas par la fonction
 d'erreur, mais visent le même but, empêcher le modèle de suivre le bruit. On
 peut arrêter l'entraînement avant que le modèle s'ajuste trop aux données
-(l'*arrêt précoce*) ou désactiver au hasard une partie des neurones à chaque
+(l'*arrêt précoce*, en anglais *early stopping*) ou désactiver au hasard une partie des neurones à chaque
 étape (le *dropout*). Pour l'arbre, l'**élagage** consiste à le laisser croître,
 puis à couper les branches qui n'apportent que du détail. Le
 [Module 3](docs/module3/30-entrainer-un-reseau/#lentraînement-en-pratique) reviendra sur ces méthodes. Elles reposent toutes sur

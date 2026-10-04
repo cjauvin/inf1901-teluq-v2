@@ -22,7 +22,7 @@ distingue un modèle qui fonctionne d'un modèle qui semble fonctionner.
 Le premier piège est le plus courant et le plus difficile à repérer. Un modèle
 obtient 99 % de bonnes réponses sur le jeu de test, on le met en service, et ses
 résultats deviennent très mauvais. La cause est le plus souvent une **fuite de
-données** : une information qui n'aurait pas dû être disponible a été utilisée
+données** (*data leakage*) : une information qui n'aurait pas dû être disponible a été utilisée
 pendant l'entraînement, et le test n'était plus vraiment nouveau.
 
 La fuite prend deux formes. La première est la **contamination** : le jeu de
@@ -86,7 +86,7 @@ kilomètres et une différence d'années. Or rien n'indique qu'un kilomètre
 « vaut » une année. Si on avait placé la superficie en mètres carrés à côté du
 nombre de chambres, un écart de 50 m² aurait été beaucoup plus important qu'un
 écart d'une chambre, et la distance n'aurait plus eu beaucoup de sens. On
-corrige ce problème en **mettant à l'échelle** chaque caractéristique, par
+corrige ce problème en **mettant à l'échelle** (*feature scaling*) chaque caractéristique, par
 exemple en la ramenant entre 0 et 1, ou en soustrayant sa moyenne et en
 divisant par son écart-type. La descente de gradient en profite aussi, car elle
 fonctionne mal dans une cuvette très étirée dans une direction. La règle
@@ -112,7 +112,7 @@ groupe sert de test et les seize autres maisons servent à l'apprentissage. Au
 deuxième tour, c'est le deuxième groupe qui sert de test, et ainsi de suite. On
 obtient cinq tours et cinq scores, dont on calcule la moyenne. Chaque maison a
 servi de test exactement une fois, et chacune a servi à l'entraînement quatre
-fois sur cinq. C'est la **validation croisée**, et le nombre de groupes se
+fois sur cinq. C'est la **validation croisée** (*cross-validation*), et le nombre de groupes se
 choisit librement. On en utilise le plus souvent cinq ou dix, et jusqu'à *n*
 groupes d'un seul exemple quand les données sont très rares.
 
@@ -139,7 +139,7 @@ validation de la [page précédente](docs/module2/70-generaliser/#un-modèle-se-
 
 La troisième question est de savoir si le score mesure ce qui coûte vraiment.
 Jusqu'ici, pour une catégorie, nous avons compté le **taux de bonnes
-réponses**. Nous connaissons déjà son défaut. Dans [*Le modèle le plus
+réponses** (*accuracy*). Nous connaissons déjà son défaut. Dans [*Le modèle le plus
 bête*](docs/module2/20-modele-le-plus-bete), un filtre qui ne signalait
 *jamais* de pourriel obtenait 99 % de bonnes réponses, parce que les pourriels
 étaient rares. Un seul nombre ne peut pas indiquer à la fois combien de
@@ -148,7 +148,7 @@ compter ces deux quantités séparément.
 
 Prenons 1000 courriels, dont 50 pourriels, et un filtre qui en élimine une
 partie. Quatre cas sont possibles pour chaque courriel, et on les range dans un
-tableau appelé la **matrice de confusion** : un pourriel éliminé (**vrai
+tableau appelé la **matrice de confusion** (*confusion matrix*) : un pourriel éliminé (**vrai
 positif**), un pourriel qui passe (**faux négatif**), un vrai courriel éliminé
 (**faux positif**) et un vrai courriel conservé (**vrai négatif**). Ici,
 « positif » signifie « signalé par le filtre » et n'indique pas un résultat
@@ -172,7 +172,7 @@ jamais de pourriel en obtiendrait 95 %. Le taux global cache donc presque tout.
 Le tableau permet de répondre à deux questions plus précises, qui ont chacune un
 nom. La **précision** est la part de vrais pourriels parmi les courriels que le
 filtre a éliminés. Ici, elle est de 40 sur 60, soit 67 %, et le reste
-correspond à des courriels légitimes perdus. Le **rappel** est la part des vrais
+correspond à des courriels légitimes perdus. Le **rappel** (*recall*) est la part des vrais
 pourriels que le filtre a interceptés. Ici, il est de 40 sur 50, soit 80 %, et
 le reste est passé. On obtient ainsi deux nombres au lieu d'un, et ils varient
 en sens contraire.
@@ -180,7 +180,7 @@ en sens contraire.
 {{< image src="/images/module2/precision-rappel.svg" alt="À gauche, des courriels figurés par des points, rouges pour les pourriels, bleus pour les légitimes, et un lasso pointillé autour de ce que le filtre a jeté : 40 rouges et 20 bleus à l'intérieur, 10 rouges restés dehors. À droite, deux barres. La barre de la précision représente les 60 courriels jetés, dont 40 rouges : 67 %. La barre du rappel représente les 50 vrais pourriels, dont 40 attrapés : 80 %." title="Précision et rappel, avec les nombres de la matrice : deux questions, deux dénominateurs. La précision se lit à l'intérieur du lasso ; le rappel, parmi les points rouges." loading="lazy" >}}
 
 Ces deux termes ne viennent pas non plus de l'IA, mais de la **recherche
-d'information**, la discipline des catalogues de bibliothèque puis des moteurs
+d'information** (*information retrieval*), la discipline des catalogues de bibliothèque puis des moteurs
 de recherche. Pour une requête, un bon système retourne des documents
 *pertinents* sans y mêler de documents inutiles (la précision), et n'en oublie
 pas (le rappel). Dès les années 1960, on a fait de ces deux mesures la
@@ -233,7 +233,7 @@ Pour une prédiction numérique, la même question se pose, de façon plus simpl
 L'erreur quadratique moyenne d'[*Un modèle qui s'entraîne*](docs/module2/50-entrainer-un-modele)
 est conçue pour être *minimisée*. Ses carrés sont pratiques pour la descente de
 gradient, mais difficiles à interpréter (ils sont exprimés en dollars au carré).
-Pour présenter les résultats, on préfère l'**erreur absolue moyenne**. Sur nos
+Pour présenter les résultats, on préfère l'**erreur absolue moyenne** (*mean absolute error*). Sur nos
 vingt maisons, la droite se trompe de 41 000 \\$ en moyenne, et de 59 000 \\$ au
 maximum. Ces valeurs sont faciles à comprendre et permettent de juger si le
 modèle convient *à l'usage prévu*. Il est excellent pour obtenir un ordre de
@@ -270,7 +270,7 @@ que le test est **en distribution**. Un modèle généralise toujours à cette
 distribution, jamais au monde entier.
 
 Quand cette hypothèse n'est plus vraie, c'est-à-dire quand une donnée est **hors
-distribution**, le problème peut prendre trois formes.
+distribution** (*out of distribution*), le problème peut prendre trois formes.
 
 - **L'extrapolation.** Nos maisons vont de 112 à 280 m². Si on demande à la
   droite le prix d'un manoir de 600 m², elle répond 1 696 000 \\$, avec la même
@@ -316,7 +316,7 @@ leurs particularités. De même, si des décisions humaines passées ont laissé
 traces dans les exemples (des prêts refusés plus souvent à certains groupes, des
 dossiers triés selon des habitudes que personne n'a jamais écrites), le modèle
 apprendra ces habitudes avec le reste, sans que cela soit visible, et les
-appliquera de façon systématique. C'est le **biais des données**. Il ne se
+appliquera de façon systématique. C'est le **biais des données** (*data bias*). Il ne se
 mesure sur aucun jeu de test, puisque le test provient des mêmes données. Un
 score honnête, fiable, pertinent et valable peut donc correspondre à un modèle
 injuste. C'est une raison de plus d'examiner la provenance des données, et pas
@@ -410,7 +410,7 @@ point sa couleur. Le modèle devait seulement apprendre à passer de la question
 à une réponse *fournie d'avance*.
 
 Cette situation porte un nom, que nous pouvons maintenant introduire après
-l'avoir étudiée en détail : l'**apprentissage supervisé**. Le terme
+l'avoir étudiée en détail : l'**apprentissage supervisé** (*supervised learning*). Le terme
 « supervisé » renvoie à un élève corrigé par un professeur qui connaît la
 réponse attendue. Régression ou classification, droite ou Bayes, paramétrique
 ou non, tout ce que nous avons construit appartient à cette grande famille,
@@ -419,7 +419,7 @@ celle de l'apprentissage à partir d'exemples **étiquetés**.
 Il reste à savoir d'où vient cette réponse fournie d'avance. Quelqu'un a dû
 étiqueter ces milliers d'exemples un à un, un travail souvent long et coûteux,
 et parfois impossible. Ce travail est si important qu'il est devenu une
-**industrie à part entière**, celle de l'*étiquetage de données*. Des
+**industrie à part entière**, celle de l'*étiquetage de données* (*data labeling*). Des
 entreprises comme Scale AI (dans laquelle Meta a investi une quinzaine de
 milliards de dollars en 2025), Appen, Sama ou Labelbox, ou des plateformes comme
 le Mechanical Turk d'Amazon, emploient ou mobilisent des centaines de milliers

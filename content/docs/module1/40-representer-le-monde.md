@@ -48,9 +48,9 @@ Si l'intelligence exige des connaissances, il faut trouver un moyen de les
 des années 1960 et les années 1970, trois grandes façons de structurer le savoir
 sont proposées.
 
-**Les réseaux sémantiques** (Ross Quillian). On représente les connaissances comme
+**Les réseaux sémantiques** (*semantic networks*, Ross Quillian). On représente les connaissances comme
 un **réseau de concepts reliés** par des relations. « Canari » est relié à
-« oiseau » par un lien *est-un*, et « oiseau » est relié à « animal » de la même
+« oiseau » par un lien *est-un* (*is-a*), et « oiseau » est relié à « animal » de la même
 façon. « Oiseau » est relié à « ailes » par un lien *possède*. La machine peut
 alors **déduire** des faits qu'on ne lui a pas donnés explicitement. Par exemple,
 pour savoir si un canari a des ailes, il suffit de suivre les liens (*canari est-un
@@ -174,7 +174,7 @@ constitue la principale limite du GOFAI.
 
 ## Le mur du sens commun
 
-Cette limite s'appelle le **sens commun**. Il s'agit de l'ensemble très vaste des
+Cette limite s'appelle le **sens commun** (*common sense*). Il s'agit de l'ensemble très vaste des
 choses si évidentes que personne ne prend la peine de les dire. Par exemple, l'eau
 mouille, un objet qu'on lâche tombe, on ne peut pas pousser une corde, votre mère
 est plus âgée que vous, et si Jean entre dans un restaurant, il y entre par la
@@ -219,17 +219,17 @@ Ce chercheur est **Douglas Hofstadter**, l'auteur de la notion de *boucle étran
 déjà présenté dans « [Turing et la question
 fondatrice](docs/module1/10-turing) » à propos de Gödel.
 Pendant que ses collègues construisaient des moteurs d'échecs et des bases de
-règles, il répétait que l'IA dominante ne s'attaquait pas au bon problème. Selon
+règles (*rule bases*), il répétait que l'IA dominante ne s'attaquait pas au bon problème. Selon
 Hofstadter, battre Kasparov par force brute ou accumuler des millions d'assertions
 comme CYC ne concerne pas l'essentiel de la pensée.
 
 Pour lui, l'essentiel de la pensée est l'**analogie**. Penser ne consiste pas à
 appliquer des règles, mais à *percevoir des ressemblances*, à adapter des
-**concepts fluides** à des situations nouvelles et à comprendre l'inconnu à partir
+**concepts fluides** (*fluid concepts*) à des situations nouvelles et à comprendre l'inconnu à partir
 de ce qu'on connaît déjà. Quand vous parlez du *pied* d'une montagne, des *jambes*
 d'une table ou de la *bouche* d'un fleuve, vous faites de l'analogie sans y penser.
 C'est l'opération de l'esprit la plus courante et aussi la plus fondamentale. Or
-une analogie ne peut pas être inscrite d'avance dans une base de connaissances.
+une analogie ne peut pas être inscrite d'avance dans une base de connaissances (*knowledge base*).
 Elle se construit au moment où on en a besoin, selon le contexte. C'est
 précisément ce qu'un projet comme CYC ne pouvait pas représenter.
 

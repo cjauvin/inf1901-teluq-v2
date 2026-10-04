@@ -32,7 +32,7 @@ interrupteur, la lumière change d'état. Si les deux interrupteurs sont dans la
 position, la lampe est éteinte ; s'ils sont dans des positions opposées, elle est
 allumée. La réponse dépend donc du désaccord entre les deux entrées.
 
-On peut résumer le XOR dans une **table de vérité**, qui donne la réponse pour
+On peut résumer le XOR dans une **table de vérité** (*truth table*), qui donne la réponse pour
 chaque combinaison possible des deux entrées. On note 0 pour « bas » (ou « faux »)
 et 1 pour « haut » (ou « vrai ») :
 
@@ -66,7 +66,8 @@ Le premier hiver de l'IA ne toucha donc pas la tradition dominante, mais sa
 **rivale**, et c'est un chercheur du camp symbolique qui en fut en partie la cause.
 Comme le connexionnisme était mis de côté, les vingt années suivantes furent celles
 d'une **domination symbolique** presque complète : la recherche dans un espace
-d'états, les systèmes experts et l'ensemble des travaux présentés dans les chapitres
+d'états, les systèmes experts et l'ensemble des
+travaux présentés dans les chapitres
 « [Chercher et raisonner](docs/module1/30-chercher-raisonner) », « [Représenter le
 monde](docs/module1/40-representer-le-monde) » et « [Capturer
 l'expertise](docs/module1/50-systemes-experts) ». Le déclin d'une tradition a ainsi favorisé le développement de l'autre.
@@ -110,7 +111,7 @@ difficilement décrire par des règles écrites à la main.
 Pendant que le camp symbolique déclinait, le camp connexionniste, qu'on croyait
 abandonné depuis 1969, **reprenait de l'activité**. En 1986, un petit groupe de
 chercheurs, dont **Geoffrey Hinton**, avait publié une méthode appelée
-**rétropropagation**. Elle permettait de faire apprendre les réseaux à **plusieurs
+**rétropropagation** (*backpropagation*). Elle permettait de faire apprendre les réseaux à **plusieurs
 couches**, c'est-à-dire justement ceux qui, selon les intuitions de l'époque,
 pouvaient traiter le XOR. L'obstacle signalé dans *Perceptrons* était donc levé. Ce
 retour resta toutefois discret au début : il fallut attendre les **données** et la
@@ -122,7 +123,7 @@ avec la reprise de l'autre.
 
 Après deux hivers successifs, on pourrait conclure que le GOFAI a échoué. Cette
 conclusion serait cependant incomplète, à cause d'un phénomène que les chercheurs
-appellent l'**« effet IA »** : dès qu'une technique fonctionne bien, on cesse de
+appellent l'**« effet IA »** (*AI effect*) : dès qu'une technique fonctionne bien, on cesse de
 l'appeler « intelligence artificielle » et on la considère comme « juste un
 algorithme ». La formule la plus courte est attribuée à l'informaticien Larry Tesler,
 et c'est **Hofstadter** qui l'a popularisée : *« l'IA, c'est tout ce qui n'a pas
@@ -162,8 +163,9 @@ transporteur ou les mouvements d'un robot. Les personnes qui suivent un itinéra
 sur leur téléphone ne pensent généralement pas qu'elles utilisent une technique
 d'« intelligence artificielle » des années 1960.
 
-**[Les moteurs de règles](docs/module1/50-systemes-experts)**. Les systèmes experts n'ont pas disparu, mais ils
-ont changé de nom. On parle aujourd'hui de « règles métier », et ces systèmes
+**[Les moteurs de règles](docs/module1/50-systemes-experts)**. Les
+systèmes experts n'ont pas disparu, mais ils
+ont changé de nom. On parle aujourd'hui de « règles métier » (*business rules*), et ces systèmes
 décident automatiquement de l'octroi d'un prêt, du repérage d'une transaction
 frauduleuse ou du calcul d'une prime d'assurance. Les **configurateurs** qui, sur un
 site marchand, vérifient que les options d'une voiture ou d'un ordinateur sont
@@ -178,15 +180,15 @@ comme des valeurs (les *lambdas*), enchaîner des opérations comme `map`, `filt
 `reduce`, utiliser des *closures*. Ces constructions, courantes aujourd'hui en
 Python, en JavaScript ou en Java, viennent des laboratoires d'IA. Lisp a aussi
 introduit des outils qu'on considère maintenant comme normaux : le
-**ramasse-miettes** (la gestion automatique de la mémoire) et le **REPL**, la console
+**ramasse-miettes** (*garbage collection* : la gestion automatique de la mémoire) et le **REPL**, la console
 qui permet d'essayer du code au fur et à mesure. L'autre grande tradition
 fonctionnelle, celle des langages typés comme Haskell, descend du langage **ML**, que
 Robin Milner avait créé pour programmer un **assistant de démonstration de
-théorèmes**. Les deux sources de la programmation fonctionnelle moderne viennent donc
+théorèmes** (*proof assistant*). Les deux sources de la programmation fonctionnelle moderne viennent donc
 du raisonnement symbolique.
 
 **[La représentation des connaissances](docs/module1/40-representer-le-monde)**. Les
-réseaux sémantiques et les frames, [présentés plus
+réseaux sémantiques (*semantic networks*) et les frames, [présentés plus
 tôt](docs/module1/40-representer-le-monde/#donner-un-savoir-à-la-machine), ont eu des successeurs. Les
 **ontologies** et les **knowledge graphs** qui structurent le savoir du web en sont
 les héritiers directs. Quand Google affiche une fiche résumée à côté des résultats,
@@ -228,7 +230,7 @@ américain *Jeopardy!*, les deux meilleurs champions de l'histoire de l'émissio
 Jennings et Brad Rutter, et les bat nettement.
 
 Cette réussite est d'une autre nature que celle de Deep Blue. Les échecs ont des
-règles précises et un espace de recherche bien défini. *Jeopardy!*, au contraire,
+règles précises et un espace de recherche (*search space*) bien défini. *Jeopardy!*, au contraire,
 repose sur un **langage** difficile, fait de calembours, d'allusions, de jeux de mots
 et d'indices indirects. Comprendre ce que la question demande est déjà un problème
 difficile. Watson y répond en quelques secondes, en utilisant une très grande base de
@@ -272,7 +274,8 @@ Il s'est cependant heurté deux fois à la même difficulté. Dans « [Représ
 monde](docs/module1/40-representer-le-monde) », il s'agissait du **sens commun**,
 l'ensemble des évidences que personne ne pense à formuler et qu'on ne peut donc pas
 écrire. Dans « [Capturer l'expertise](docs/module1/50-systemes-experts) », il
-s'agissait du **goulot d'étranglement** : l'expertise est difficile à mettre en
+s'agissait du **goulot d'étranglement** :
+l'expertise est difficile à mettre en
 règles, parce qu'une grande partie du savoir humain n'est pas exprimée. Ces deux
 difficultés relèvent d'une même leçon, que Hofstadter avait peut-être formulée le
 premier : on ne peut pas inscrire l'intelligence de l'extérieur, fait après fait,

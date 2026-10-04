@@ -97,9 +97,9 @@ sous plusieurs angles.
 
 <p class="image-credit">Photo : Kindel Media, <a href="https://www.pexels.com/photo/for-sale-sign-on-green-grass-lawn-7578849/">Pexels</a>.</p>
 
-Tout au long de ce module, nous suivrons un seul exemple, volontairement simple
-pour qu'on puisse en comprendre tous les détails : **un registre de ventes
-immobilières**. Nous poserons plus d'une question à ce même jeu de données.
+Tout au long de ce module, nous suivrons un seul exemple, volontairement simple pour
+qu'on puisse en comprendre tous les détails : **un registre de ventes immobilières**.
+Nous poserons plus d'une question à ce même jeu de données (*dataset*).
 
 Supposons qu'on dispose d'une liste de maisons récemment vendues, avec pour
 chacune quelques renseignements (sa superficie, son année de construction, son

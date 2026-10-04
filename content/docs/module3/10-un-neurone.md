@@ -14,24 +14,27 @@ a montré comment cette approche a été mise de côté après 1969, quand Minsk
 Papert ont démontré qu'un perceptron ne peut pas apprendre certaines fonctions
 simples, comme le XOR.
 
-Les **réseaux de neurones** actuels sont les descendants directs du perceptron. Ce
-module explique comment ils fonctionnent, comment ils ont dépassé la limite de
-1969, et pourquoi ils dominent l'intelligence artificielle depuis le début des
-années 2010. Il commence par l'élément de base, le **neurone artificiel**.
+Les **réseaux de neurones** (*neural networks*) actuels sont les descendants directs
+du perceptron. Ce module explique comment ils fonctionnent, comment ils ont dépassé
+la limite de 1969, et pourquoi ils dominent l'intelligence artificielle depuis le
+début des années 2010. Il commence par l'élément de base, le **neurone artificiel**
+(*artificial neuron*).
 
 ## Un neurone est une régression logistique
 
 Vous connaissez déjà le neurone artificiel, sous un autre nom. C'est la
 [régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique)
-du Module 2.
+(*logistic regression*) du Module 2.
 
 Un neurone reçoit des nombres en **entrée**, et il produit un seul nombre en
 **sortie**. Il effectue pour cela deux opérations :
 
-1. Il multiplie chaque entrée par un **poids**, il additionne les résultats, et il
-   ajoute un dernier nombre, le **biais**. On obtient une somme pondérée.
-2. Il passe cette somme dans une **fonction d'activation**. La plus classique est
-   la sigmoïde, qui ramène n'importe quel nombre à une valeur comprise entre 0 et 1.
+1. Il multiplie chaque entrée par un **poids** (*weight*), il additionne les
+   résultats, et il ajoute un dernier nombre, le **biais** (*bias*). On obtient une
+   somme pondérée (*weighted sum*).
+2. Il passe cette somme dans une **fonction d'activation** (*activation function*).
+   La plus classique est la sigmoïde, qui ramène n'importe quel nombre à une valeur
+   comprise entre 0 et 1.
 
 Pour un neurone à deux entrées, le calcul s'écrit ainsi :
 
@@ -47,13 +50,13 @@ poids élevé donne beaucoup d'importance à l'entrée correspondante, un poids 
 de zéro la fait presque ignorer, et un poids négatif la fait compter contre la
 conclusion. Comme pour tous les modèles du Module 2, on ne fixe pas ces paramètres
 à la main. On les règle par
-[descente de gradient](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente),
-à partir d'exemples.
+[descente de gradient](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente)
+(*gradient descent*), à partir d'exemples.
 
 Un neurone peut avoir beaucoup plus que deux entrées. Prenons l'exemple qui servira
-dans tout ce module, la **reconnaissance de chiffres manuscrits**. Une image de
-chiffre de 28 pixels sur 28 est une liste de 784 nombres, un par pixel, comme l'a
-montré le chapitre
+dans tout ce module, la **reconnaissance de chiffres manuscrits** (*handwritten
+digit recognition*). Une image de chiffre de 28 pixels sur 28 est une liste de 784
+nombres, un par pixel, comme l'a montré le chapitre
 « [Regarder les données](docs/module2/30-les-donnees/#une-maison-cest-une-liste-de-nombres) ».
 Un neurone qui reçoit cette image a donc 784 entrées et 784 poids. Sa sortie peut se
 lire comme une réponse à une question simple, par exemple « cette image est-elle un
@@ -105,14 +108,14 @@ si une droite suffit à les séparer.
 
 Ce n'est pas toujours le cas. Le XOR, présenté avec sa
 [table de vérité](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969)
-au Module 1, en est l'exemple le plus simple. Ses quatre cas occupent les coins
-d'un carré, et
+(*truth table*) au Module 1, en est l'exemple le plus simple. Ses quatre cas
+occupent les coins d'un carré, et
 [aucune droite](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner)
 ne sépare les deux cas « vrai » des deux cas « faux ». C'est exactement la limite
 que Minsky et Papert ont démontrée en 1969.
 
 Au Module 2, on contournait cette limite de deux façons : en changeant de modèle,
-ou en fabriquant à la main une nouvelle caractéristique. Les réseaux de neurones
-apportent une troisième réponse. On relie plusieurs neurones entre eux, et le
-réseau fabrique lui-même la caractéristique qui manque. C'est le sujet du chapitre
-suivant, « [Une couche cachée](docs/module3/20-une-couche-cachee) ».
+ou en fabriquant à la main une nouvelle caractéristique (*feature*). Les réseaux de
+neurones apportent une troisième réponse. On relie plusieurs neurones entre eux, et
+le réseau fabrique lui-même la caractéristique qui manque. C'est le sujet du
+chapitre suivant, « [Une couche cachée](docs/module3/20-une-couche-cachee) ».

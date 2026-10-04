@@ -17,7 +17,7 @@ Prenons l'exemple d'un labyrinthe. À chaque instant, vous êtes dans une certai
 position, qu'on appelle un **état**. À partir de cet état, quelques actions sont
 possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un
 nouvel état. L'ensemble de tous les états atteignables forme une grande
-arborescence, l'**espace d'états**. Résoudre le labyrinthe revient alors à
+arborescence, l'**espace d'états** (*state space*). Résoudre le labyrinthe revient alors à
 **trouver un chemin** dans cette arborescence, depuis l'état de départ jusqu'à
 l'état-but (la sortie).
 
@@ -34,7 +34,7 @@ auteurs du Logic Theorist, poussent l'idée jusqu'à construire un programme app
 traiter n'importe quel problème exprimé sous cette forme.
 
 La recherche n'est pas une technique parmi d'autres. C'est le mécanisme
-central de l'IA symbolique. Pour démontrer un théorème, planifier un trajet,
+central de l'IA symbolique (*symbolic AI*). Pour démontrer un théorème, planifier un trajet,
 diagnostiquer une panne ou lever l'ambiguïté d'une phrase, le GOFAI ramène le
 problème à l'exploration d'un espace de possibilités, jusqu'à y trouver une
 solution. Nous la retrouverons dans « [Représenter le
@@ -43,7 +43,7 @@ l'expertise](docs/module1/50-systemes-experts) ».
 À la fin du module, dans [*Les hivers et la
 bascule*](docs/module1/60-hivers/#la-bascule), c'est aussi elle qui marquera la
 différence avec l'autre tradition : l'IA symbolique cherche une solution, alors
-que l'apprentissage automatique apprend à partir d'exemples.
+que l'apprentissage automatique (*machine learning*) apprend à partir d'exemples.
 
 ## L'explosion combinatoire
 
@@ -73,7 +73,7 @@ Comme l'arbre reste trop grand pour être exploré jusqu'au bout, il faut des
 une certaine profondeur et estime la qualité d'une position à l'aide d'une
 **règle empirique** (une « heuristique »), par exemple en comptant les pièces ou
 en évaluant le contrôle du centre. D'autres techniques, comme l'**élagage**
-(ignorer dès le départ les branches qui ne peuvent pas changer la décision),
+(*pruning* : ignorer dès le départ les branches qui ne peuvent pas changer la décision),
 évitent des explorations inutiles.
 
 {{< image src="/images/module1/minimax-elagage.svg" alt="Un arbre de jeu à trois niveaux. À la racine, c'est à la machine (MAX) de jouer ; au niveau suivant, trois coups de l'adversaire (MIN) ; en bas, neuf positions estimées par une heuristique. Chaque nœud MIN prend le minimum de ses feuilles : 3, au plus 2, et 2. La racine prend le maximum : 3, et une flèche épaisse montre le coup choisi. Au deuxième nœud MIN, dès que la feuille 2 est vue, les deux autres feuilles sont barrées : c'est l'élagage, car ce coup ne peut plus battre le 3 déjà garanti." title="Minimax sur un petit arbre : les estimations remontent, en alternant le plus petit (l'adversaire) et le plus grand (la machine) ; au milieu, l'élagage évite d'examiner deux positions inutiles." loading="lazy" >}}
@@ -85,15 +85,15 @@ nommé **A\*** (prononcé « A étoile ») se laisse guider par une heuristi
 chaque embranchement, il privilégie la direction qui semble le rapprocher le plus
 du but (par exemple, selon la distance à vol d'oiseau jusqu'à la destination). Le
 GPS qui calcule une route utilise ce genre de stratégie. C'est aussi le cas de
-l'**IA des jeux vidéo** : les personnages non joueurs qui trouvent leur route sur
+l'**IA des jeux vidéo** : les personnages non joueurs (*non-player characters*) qui trouvent leur route sur
 la carte, ou les ennemis qui poursuivent ou contournent le joueur, s'appuient le
-plus souvent sur ces mêmes algorithmes de recherche de chemin, en particulier A\*.
+plus souvent sur ces mêmes algorithmes de recherche de chemin (*pathfinding*), en particulier A\*.
 La principale leçon de cette période est donc la suivante : un système efficace
 n'explore pas tout, il explore **au bon endroit**. La qualité des heuristiques
 est déterminante.
 
 L'applet ci-dessous compare les deux stratégies sur le même labyrinthe. À gauche,
-une recherche aveugle s'étend dans toutes les directions à la fois. À droite, A*
+une recherche aveugle (*blind search*) s'étend dans toutes les directions à la fois. À droite, A*
 est guidé par la distance qui le sépare du but. Lancez les deux recherches, puis
 comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
 avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
@@ -104,7 +104,7 @@ la recherche dans une mauvaise direction.
 
 Nous retrouverons cette limite, sous un autre nom, quand il s'agira d'apprendre à
 partir de données décrites par des milliers de caractéristiques. Ce sera la
-[malédiction de la dimension](docs/module2/40-predire-par-ressemblance), au
+[malédiction de la dimension](docs/module2/40-predire-par-ressemblance) (*curse of dimensionality*), au
 [Module 2](docs/module2).
 
 

@@ -7,13 +7,12 @@ slug: apprentissage-profond
 # L'apprentissage profond
 
 D'après le
-[théorème d'approximation universelle](docs/module3/20-une-couche-cachee/#plus-de-neurones-plus-de-formes),
-une seule couche cachée suffit pour approcher presque n'importe quelle fonction.
-Pourtant, les réseaux qui ont transformé l'IA à partir de 2012 comptent des
-dizaines de couches. On les appelle des réseaux **profonds**, et leur entraînement,
-l'**apprentissage profond** (*deep learning* en anglais). Ce chapitre explique ce
-qu'on gagne à empiler les couches, et pourquoi cela n'a fonctionné qu'à partir de
-2012.
+[théorème d'approximation universelle](docs/module3/20-une-couche-cachee/#plus-de-neurones-plus-de-formes), une seule couche cachée suffit
+pour approcher presque n'importe quelle fonction. Pourtant, les réseaux qui ont
+transformé l'IA à partir de 2012 comptent des dizaines de couches. On les appelle
+des réseaux **profonds**, et leur entraînement, l'**apprentissage profond** (*deep
+learning* en anglais). Ce chapitre explique ce qu'on gagne à empiler les couches, et
+pourquoi cela n'a fonctionné qu'à partir de 2012.
 
 ## Large ou profond
 
@@ -34,9 +33,10 @@ profond obtient le même résultat avec beaucoup moins de neurones.
 ## Une hiérarchie de caractéristiques
 
 Le chapitre « [Une couche cachée](docs/module3/20-une-couche-cachee/#ce-que-fait-la-couche-cachée-changer-de-point-de-vue) »
-a montré qu'une couche cachée est une fabrique de caractéristiques. Dans un réseau
-profond, chaque couche fabrique les siennes à partir de celles de la couche
-précédente. Les caractéristiques deviennent plus complexes de couche en couche.
+a montré qu'une couche cachée est une fabrique de caractéristiques.
+Dans un réseau profond, chaque couche fabrique les siennes à partir de celles de la
+couche précédente. Les caractéristiques deviennent plus complexes de couche en
+couche.
 
 Prenons les chiffres manuscrits. Une première couche peut détecter de petits
 traits, à différents endroits et selon différentes orientations. Une deuxième
@@ -62,16 +62,16 @@ réseaux profonds se sont inspirés de ce résultat.
 
 La ressemblance s'arrête là. Comme l'expliquait
 « [D'où vient le mot « neurone »](docs/module3/10-un-neurone/#doù-vient-le-mot-neurone) »,
-un neurone artificiel est une formule. Un neurone biologique émet des impulsions
-électriques dans le temps, et son comportement dépend de nombreux signaux
-chimiques. Rien n'indique que le cerveau utilise la rétropropagation. Enfin, un
-enfant reconnaît un chat après en avoir vu quelques-uns, avec un cerveau qui
-consomme environ 20 watts, alors qu'un réseau a besoin de milliers d'exemples et de
-beaucoup plus d'énergie.
+un neurone artificiel est une formule. Un neurone biologique
+émet des impulsions électriques dans le temps, et son comportement dépend de
+nombreux signaux chimiques. Rien n'indique que le cerveau utilise la
+rétropropagation. Enfin, un enfant reconnaît un chat après en avoir vu quelques-uns,
+avec un cerveau qui consomme environ 20 watts, alors qu'un réseau a besoin de
+milliers d'exemples et de beaucoup plus d'énergie.
 
-Un réseau de neurones est un modèle mathématique inspiré du cerveau. Ce n'est pas
-une copie du cerveau, et son fonctionnement ne nous apprend que peu de choses sur
-le nôtre.
+Un réseau de neurones est un modèle mathématique inspiré du
+cerveau. Ce n'est pas une copie du cerveau, et son fonctionnement ne nous apprend
+que peu de choses sur le nôtre.
 {{% /hint %}}
 
 ## La fin des caractéristiques fabriquées à la main
@@ -92,9 +92,8 @@ choisir la forme du réseau.
 ## Pourquoi seulement en 2012
 
 L'idée d'empiler des couches est ancienne, et la
-[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation)
-s'applique à un réseau de n'importe quelle profondeur. Trois obstacles ont pourtant
-bloqué les réseaux profonds pendant plus de vingt ans.
+[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation) s'applique à un réseau de n'importe quelle profondeur. Trois
+obstacles ont pourtant bloqué les réseaux profonds pendant plus de vingt ans.
 
 **Le gradient qui s'évanouit.** Pendant la rétropropagation, l'erreur remonte de
 couche en couche. Avec la sigmoïde, elle s'affaiblit à chaque couche traversée.
@@ -119,9 +118,10 @@ décrite au Module 2.
 
 **Le calcul.** Entraîner un réseau profond sur des millions d'images demande une
 quantité de calculs hors de portée des processeurs des années 2000. La solution est
-venue du jeu vidéo, avec les **processeurs graphiques** (GPU), qui entraînent un
-réseau des dizaines de fois plus vite qu'un processeur ordinaire. Des bibliothèques
-logicielles ont ensuite automatisé la rétropropagation. Le chapitre
+venue du jeu vidéo, avec les **processeurs graphiques** (*graphics processing
+units*, GPU), qui entraînent un réseau des dizaines de fois plus vite qu'un
+processeur ordinaire. Des bibliothèques logicielles ont ensuite automatisé la
+rétropropagation. Le chapitre
 « [Le matériel et les outils](docs/module3/42-materiel-et-outils) » raconte ces
 deux histoires.
 
@@ -133,11 +133,12 @@ Une réponse est comptée comme une erreur si la bonne catégorie ne figure pas 
 les cinq propositions du système.
 
 En 2010 et 2011, les meilleurs systèmes reposent sur des caractéristiques
-fabriquées à la main, et leur taux d'erreur est de 28 %, puis de 26 %. En 2012,
-Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton, de l'Université de Toronto,
-présentent un réseau profond, **AlexNet**. Il compte huit couches et 60 millions de
-paramètres, il utilise la ReLU, et il a été entraîné pendant environ une semaine
-sur deux GPU. Son taux d'erreur est de 15 %. Le deuxième système est à 26 %.
+fabriquées à la main (*hand-crafted features*), et leur taux d'erreur est de 28 %,
+puis de 26 %. En 2012, Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton, de
+l'Université de Toronto, présentent un réseau profond, **AlexNet**. Il compte huit
+couches et 60 millions de paramètres, il utilise la ReLU, et il a été entraîné
+pendant environ une semaine sur deux GPU. Son taux d'erreur est de 15 %. Le deuxième
+système est à 26 %.
 
 {{< image src="/images/module3/imagenet-erreur.svg" alt="Un diagramme à barres. En 2010 et 2011, les systèmes gagnants reposent sur des caractéristiques fabriquées à la main : 28,2 % puis 25,8 % d'erreur. En 2012, le réseau profond AlexNet obtient 15,3 %. Les gagnants suivants sont tous des réseaux profonds : 11,7 % en 2013, 6,7 % en 2014, 3,6 % en 2015, 3,0 % en 2016 et 2,3 % en 2017. Une ligne horizontale marque le niveau humain, estimé à 5 %, dépassé à partir de 2015." title="Le taux d'erreur du système gagnant au concours ImageNet, de 2010 à 2017." loading="lazy" >}}
 
@@ -147,8 +148,10 @@ compte 152 couches et son taux d'erreur, 3,6 %, est inférieur à celui d'un hum
 sur la même tâche, estimé à 5 %. La même bascule se produit ensuite pour la
 reconnaissance de la parole, puis pour la traduction.
 
-AlexNet est un réseau d'un type particulier, un réseau convolutif, conçu pour les
-images. Le chapitre « [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) » lui est consacré.
+AlexNet est un réseau d'un type particulier, un réseau convolutif (*convolutional
+neural network*, CNN), conçu pour les images. Le chapitre
+« [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) » lui est
+consacré.
 
 ## La leçon amère
 
@@ -172,9 +175,9 @@ Sutton qualifie cette leçon d'amère parce qu'elle va contre l'intuition des
 chercheurs : le savoir qu'ils inscrivent dans un système finit par le limiter. Elle
 a aussi un coût. Un réseau profond ne donne pas ses raisons, alors qu'on pouvait
 lire les règles d'un [système expert](docs/module1/50-systemes-experts) ou les
-questions d'un [arbre de décision](docs/module2/65-arbres-de-decision). Et ses
-progrès dépendent de quantités de données et de calcul que peu d'organisations
-possèdent.
+questions d'un [arbre de décision](docs/module2/65-arbres-de-decision) (*decision
+tree*). Et ses progrès dépendent de quantités de données et de calcul que peu
+d'organisations possèdent.
 
 La leçon ne dit pas que le savoir humain est inutile. Il reste présent, mais
 ailleurs : dans le choix des données, et dans la forme donnée au réseau. Les
@@ -197,20 +200,21 @@ Mais elle ne suffit pas à expliquer le phénomène. Quand on fait grossir un r�
 on observe d'abord la courbe en U du Module 2 : l'erreur sur les exemples nouveaux
 baisse, puis remonte. Si l'on continue au-delà du point où le réseau peut mémoriser
 tous ses exemples, l'erreur redescend, parfois plus bas qu'avant. Ce phénomène
-s'appelle la **double descente**.
+s'appelle la **double descente** (*double descent*).
 
 {{< image src="/images/module3/double-descente.svg" alt="Un graphique. À l'horizontale, la taille du modèle ; à la verticale, l'erreur sur des exemples nouveaux. La courbe descend, remonte jusqu'à un pic, puis redescend plus bas qu'avant. La partie à gauche du pic est la courbe en U du Module 2. Le pic se trouve à la taille où le modèle peut mémoriser tous ses exemples. La partie à droite est celle des grands réseaux." title="La double descente : après le pic, un modèle plus grand généralise mieux." loading="lazy" >}}
 
 Le phénomène est bien établi, mais son explication n'est pas complète. L'hypothèse
 la plus courante est la suivante. Un très grand réseau dispose de nombreuses façons
-de reproduire ses exemples, et la descente de gradient aboutit le plus souvent à
-l'une des plus simples. C'est un cas où la pratique a précédé la théorie.
+de reproduire ses exemples, et la descente de gradient aboutit
+le plus souvent à l'une des plus simples. C'est un cas où la pratique a précédé la
+théorie.
 
 ## Apprendre sans étiquettes : l'autoencodeur
 
-Tous les réseaux vus jusqu'ici sont entraînés avec des exemples étiquetés. Un
-réseau peut aussi apprendre des caractéristiques sans étiquettes. L'**autoencodeur**
-en est l'exemple le plus simple.
+Tous les réseaux vus jusqu'ici sont entraînés avec des exemples étiquetés (*labeled
+examples*). Un réseau peut aussi apprendre des caractéristiques sans étiquettes.
+L'**autoencodeur** (*autoencoder*) en est l'exemple le plus simple.
 
 Un autoencodeur est un réseau en forme de sablier. On lui donne une image en
 entrée, et on lui demande de produire la même image en sortie. L'erreur est l'écart
@@ -226,9 +230,10 @@ chiffre doivent passer par quelques dizaines de neurones seulement.
 Pour réussir, le réseau doit garder l'essentiel de l'image dans la couche étroite :
 quel chiffre, quelle inclinaison, quelle épaisseur de trait. Ces quelques nombres
 forment une représentation compacte de l'image, qu'on appelle sa **représentation
-latente**. C'est un cas
-d'[auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-même-ses-réponses-lauto-supervision),
-présentée au Module 2 : les données fournissent elles-mêmes la réponse attendue.
+latente** (*latent representation*). C'est un cas
+d'[auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-même-ses-réponses-lauto-supervision)
+(*self-supervised learning*), présentée au Module 2 : les données fournissent
+elles-mêmes la réponse attendue.
 
 Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
 d'aucune image réelle, il produit quand même une image. C'est une première façon de

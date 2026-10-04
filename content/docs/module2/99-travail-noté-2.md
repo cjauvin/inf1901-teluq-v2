@@ -15,7 +15,7 @@ algorithme :
 
 La classification de courriels est un problème classique qu'on peut traiter avec
 cet algorithme. On cherche à estimer la probabilité qu'un courriel soit un
-pourriel à partir des mots qu'il contient, parce que certains mots sont plus
+pourriel (*spam*) à partir des mots qu'il contient, parce que certains mots sont plus
 souvent utilisés dans les pourriels et d'autres dans les courriels.
 
 Comme nous l'avons vu au chapitre « [Classer](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne) », la classification naïve bayésienne est un algorithme

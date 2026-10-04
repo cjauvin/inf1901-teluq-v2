@@ -15,10 +15,11 @@ que cela révèle de leur fonctionnement.
 ## Le panda devenu gibbon
 
 En 2014, Ian Goodfellow, Jonathon Shlens et Christian Szegedy, chez Google,
-publient l'exemple suivant. Un réseau convolutif entraîné sur ImageNet reconnaît un
-panda, avec 58 % de confiance. Les chercheurs ajoutent à l'image une perturbation
-très faible, calculée avec soin. À l'œil, l'image modifiée est identique à
-l'originale. Le réseau y voit maintenant un gibbon, avec 99 % de confiance.
+publient l'exemple suivant. Un réseau convolutif (*convolutional neural network*,
+CNN) entraîné sur ImageNet reconnaît un panda, avec 58 % de confiance. Les
+chercheurs ajoutent à l'image une perturbation très faible, calculée avec soin. À
+l'œil, l'image modifiée est identique à l'originale. Le réseau y voit maintenant un
+gibbon, avec 99 % de confiance.
 
 {{< image src="/images/module3/panda-gibbon.png" alt="Trois vignettes. À gauche, la photo d'un panda, que le réseau reconnaît comme un panda avec 57,7 % de confiance. Au centre, la perturbation, un bruit coloré, amplifiée pour être visible. À droite, la somme des deux, une photo identique à l'œil à la première, que le réseau classe comme un gibbon avec 99,3 % de confiance." title="L'exemple du panda : une perturbation invisible fait passer la réponse de « panda » à « gibbon » (d'après Goodfellow, Shlens et Szegedy, 2014)." loading="lazy" >}}
 
@@ -30,15 +31,14 @@ réseau.
 ## Comment on le fabrique
 
 La méthode utilise la
-[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation), mais
-à l'envers.
+[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation), mais à l'envers.
 
-À l'entraînement, on garde l'image fixe et on modifie les poids, dans le sens qui
-réduit l'erreur. Pour tromper un réseau déjà entraîné, on garde les poids fixes et
-on modifie l'image. La rétropropagation indique, pour chaque pixel, dans quel sens
-le modifier pour augmenter la probabilité d'une réponse choisie, par exemple
-« gibbon ». On déplace alors chaque pixel d'une quantité minuscule, toujours dans
-le sens le plus utile.
+À l'entraînement, on garde l'image fixe et on modifie les poids, dans le
+sens qui réduit l'erreur. Pour tromper un réseau déjà entraîné, on garde les poids
+fixes et on modifie l'image. La rétropropagation indique, pour chaque pixel, dans
+quel sens le modifier pour augmenter la probabilité d'une réponse choisie, par
+exemple « gibbon ». On déplace alors chaque pixel d'une quantité minuscule, toujours
+dans le sens le plus utile.
 
 Aucun pixel ne change de façon visible. Mais une image de 224 pixels sur 224 en
 couleur compte environ 150 000 valeurs. Des changements minuscules, tous orientés
@@ -48,9 +48,8 @@ dans le même sens, finissent par s'additionner et faire basculer la réponse.
 
 Dans l'applet ci-dessous, un classifieur de chiffres est entraîné quand la page
 s'ouvre, sur des chiffres dessinés par l'ordinateur. C'est un modèle simple, une
-[régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique)
-à dix sorties, sans couche cachée, et non un réseau profond. Le principe de
-l'attaque est le même.
+[régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique) à dix sorties, sans couche cachée, et non
+un réseau profond. Le principe de l'attaque est le même.
 
 {{< applet src="/html/applets/adverse.html" height="444" >}}
 
@@ -67,8 +66,9 @@ Plusieurs explications se complètent.
 
 **La dimension.** Une image est un point dans un espace qui compte autant de
 dimensions que de valeurs de pixels, des centaines de milliers. Dans un espace
-aussi grand, une frontière de décision passe presque toujours tout près de chaque
-image, dans une direction ou une autre. L'attaque trouve cette direction.
+aussi grand, une frontière de décision (*decision boundary*) passe presque toujours
+tout près de chaque image, dans une direction ou une autre. L'attaque trouve cette
+direction.
 
 **Le réseau ne voit pas comme nous.** Il utilise tous les indices qui l'aident à
 réduire son erreur d'entraînement, y compris des indices que nous ne remarquons pas
@@ -99,8 +99,8 @@ le psychologue Oskar Pfungst montre que Hans ne compte pas. Il observe la person
 qui l'interroge, et s'arrête quand il perçoit chez elle une réaction involontaire,
 un léger mouvement de tête, au moment où il atteint le bon nombre. Hans réussissait
 vraiment, mais pour une autre raison que celle qu'on croyait. On parle aujourd'hui
-d'**effet Hans le Malin** pour un modèle d'apprentissage qui réussit en s'appuyant
-sur un indice imprévu, comme la neige derrière les loups.
+d'**effet Hans le Malin** (*Clever Hans effect*) pour un modèle d'apprentissage qui
+réussit en s'appuyant sur un indice imprévu, comme la neige derrière les loups.
 
 {{< image src="/images/module3/hans-le-malin.jpg" alt="Une photographie ancienne en noir et blanc : un cheval dans une cour, entouré d'une foule d'hommes en chapeau." title="Hans le Malin et son public, à Berlin, vers 1904 (photo du domaine public, Wikimedia Commons)." loading="lazy" >}}
 {{% /hint %}}
@@ -121,8 +121,8 @@ fonctionnent aussi dans le monde physique.
   réseau y voit un fusil.
 - **Les lunettes.** En 2016, des chercheurs montrent qu'une monture de lunettes
   imprimée avec un motif particulier peut empêcher un système de reconnaissance
-  faciale de reconnaître une personne, ou lui faire croire qu'il s'agit de
-  quelqu'un d'autre.
+  faciale (*facial recognition*) de reconnaître une personne, ou lui faire croire
+  qu'il s'agit de quelqu'un d'autre.
 - **La voix.** Des commandes vocales peuvent être cachées dans un enregistrement de
   musique ou de parole, sans qu'un humain les remarque, et être comprises par un
   assistant vocal.
@@ -133,21 +133,20 @@ fonctionnent aussi dans le monde physique.
 
 ## Se défendre
 
-La défense la plus utilisée s'appelle l'**entraînement adverse**. On fabrique des
-exemples adverses pendant l'entraînement, et on les ajoute aux données avec leur
-bonne réponse. Le réseau apprend à ne plus se laisser tromper par ces
-perturbations. Il devient plus robuste, mais il reste vulnérable à des attaques
-plus fortes ou d'un autre type, et sa précision sur les images normales baisse
-souvent un peu.
+La défense la plus utilisée s'appelle l'**entraînement adverse** (*adversarial
+training*). On fabrique des exemples adverses pendant l'entraînement, et on les
+ajoute aux données avec leur bonne réponse. Le réseau apprend à ne plus se laisser
+tromper par ces perturbations. Il devient plus robuste, mais il reste vulnérable à
+des attaques plus fortes ou d'un autre type, et sa précision sur les images normales
+baisse souvent un peu.
 
 Depuis 2014, de nombreuses autres défenses ont été proposées. La plupart ont été
 contournées, parfois quelques mois après leur publication. C'est une course entre
 attaques et défenses, sans solution complète à ce jour.
 
-Le problème ne se limite pas aux images. Les grands modèles de langage ont leurs
-propres attaques : des formulations conçues pour leur faire ignorer leurs
-consignes, ou des instructions cachées dans un document qu'on leur demande de
-lire. Le [Module 4](docs/module4) y reviendra.
+Le problème ne se limite pas aux images. Les grands modèles de langage ont leurs propres attaques : des formulations conçues pour
+leur faire ignorer leurs consignes, ou des instructions cachées dans un document
+qu'on leur demande de lire. Le [Module 4](docs/module4) y reviendra.
 
 ## Une boîte noire
 
@@ -158,16 +157,16 @@ Le contraste avec les systèmes des modules précédents est net. On pouvait lir
 règles d'un
 [système expert](docs/module1/50-systemes-experts/#lanatomie-dun-système-expert)
 du Module 1 et suivre son raisonnement. On pouvait lire les questions d'un
-[arbre de décision](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait)
-du Module 2. Un réseau profond compte des millions de poids, et aucun d'eux n'a de
-signification isolée. Il donne une réponse, souvent très bonne, sans donner ses
-raisons. On dit que c'est une **boîte noire**.
+[arbre de décision](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait) du Module 2. Un réseau profond compte des millions de poids, et
+aucun d'eux n'a de signification isolée. Il donne une réponse, souvent très bonne,
+sans donner ses raisons. On dit que c'est une **boîte noire** (*black box*).
 
-L'**IA explicable** cherche à retrouver ces raisons. Une de ses méthodes produit
-une **carte de saillance** : pour une image donnée, elle indique quels pixels ont
-le plus pesé sur la réponse. C'est ainsi que l'on découvre qu'un classifieur de
-loups regarde la neige, ou qu'un classifieur de radiographies s'appuie sur une
-marque propre à l'hôpital qui a pris l'image plutôt que sur les poumons du patient.
+L'**IA explicable** (*explainable AI*, XAI) cherche à retrouver ces raisons. Une de
+ses méthodes produit une **carte de saillance** (*saliency map*) : pour une image
+donnée, elle indique quels pixels ont le plus pesé sur la réponse. C'est ainsi que
+l'on découvre qu'un classifieur de loups regarde la neige, ou qu'un classifieur de
+radiographies s'appuie sur une marque propre à l'hôpital qui a pris l'image plutôt
+que sur les poumons du patient.
 
 {{< image src="/images/module3/saillance-7.svg" alt="Deux grilles de 28 pixels sur 28. À gauche, l'image d'un 7. À droite, sa carte de saillance : en vert, les pixels qui ont poussé le classifieur vers la réponse « 7 », surtout les extrémités de la barre horizontale et le haut du trait vertical ; en rouge, ceux qui l'ont poussé vers « 2 », sa deuxième réponse, surtout le bas du trait." title="La carte de saillance d'un 7, calculée sur le classifieur de l'applet : en vert ce qui plaide pour « 7 », en rouge ce qui plaide pour « 2 »." loading="lazy" >}}
 
@@ -182,10 +181,10 @@ pas expliquer sa réponse ?
 Ce module est parti d'un neurone, qui n'est qu'une
 [régression logistique](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique).
 En reliant des neurones en couches, on obtient un réseau qui fabrique ses propres
-caractéristiques, et qui résout le XOR, le problème qui avait arrêté le perceptron
-en 1969. La rétropropagation permet d'entraîner ces réseaux. Avec des données et du
-calcul en quantité suffisante, des réseaux profonds de formes adaptées ont dépassé
-toutes les autres méthodes pour les images, les séquences et les jeux.
+caractéristiques, et qui résout le XOR, le problème qui avait arrêté le
+perceptron en 1969. La rétropropagation permet d'entraîner ces réseaux. Avec des
+données et du calcul en quantité suffisante, des réseaux profonds de formes adaptées
+ont dépassé toutes les autres méthodes pour les images, les séquences et les jeux.
 
 Ce module a aussi montré leurs limites. Ces réseaux ne voient pas, ne lisent pas
 et ne jouent pas comme nous. Ils peuvent être trompés par des perturbations

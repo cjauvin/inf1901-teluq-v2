@@ -7,26 +7,26 @@ slug: materiel-et-outils
 # Le matériel et les outils
 
 Le chapitre « [L'apprentissage profond](docs/module3/40-apprentissage-profond/#pourquoi-seulement-en-2012) »
-a nommé trois conditions du succès de 2012 : une meilleure fonction d'activation,
-des données, et du calcul. Ce chapitre revient sur la troisième. Deux progrès
-techniques ont rendu l'apprentissage profond praticable : des processeurs capables
-de faire les calculs, et des bibliothèques logicielles qui écrivent la
-rétropropagation à la place du programmeur.
+a nommé trois conditions du succès de 2012 : une meilleure fonction d'activation, des données, et du calcul. Ce chapitre revient sur la
+troisième. Deux progrès techniques ont rendu l'apprentissage profond (*deep
+learning*) praticable : des processeurs capables de faire les calculs, et des
+bibliothèques logicielles qui écrivent la rétropropagation à la
+place du programmeur.
 
 {{< image src="/images/module3/frise-materiel-logiciel.svg" alt="Une frise chronologique à deux rangées. En haut, le matériel : fondation de Nvidia en 1993, GeForce 256 en 1999, CUDA en 2007, un réseau entraîné 70 fois plus vite sur GPU en 2009, premières machines conçues pour l'apprentissage profond en 2016. En bas, le logiciel : la méthode de Linnainmaa en 1970, Torch en 2002, Theano en 2007, Caffe en 2013, TensorFlow et Keras en 2015, PyTorch en 2016. Au centre, en 2012, AlexNet, où les deux histoires se rejoignent." title="Le matériel et le logiciel de l'apprentissage profond : deux histoires qui se rejoignent en 2012." loading="lazy" >}}
 
 ## Les processeurs graphiques
 
-Un réseau de neurones répète toujours le même calcul : multiplier des entrées par
-des poids et additionner les résultats, pour chaque neurone, des millions de fois.
-Ces calculs sont indépendants les uns des autres, et peuvent donc être faits en
-même temps.
+Un réseau de neurones répète toujours le même calcul : multiplier
+des entrées par des poids et additionner les résultats, pour chaque
+neurone, des millions de fois. Ces calculs sont indépendants les uns des autres, et
+peuvent donc être faits en même temps.
 
 Un processeur ordinaire (CPU) a quelques cœurs puissants, conçus pour exécuter des
-tâches variées l'une après l'autre. Un **processeur graphique** (GPU) a des
-milliers de cœurs simples, qui exécutent tous le même calcul en parallèle. Il a été
-conçu pour l'affichage des jeux vidéo, où il faut calculer la couleur de millions
-de pixels des dizaines de fois par seconde, ce qui est un problème du même type.
+tâches variées l'une après l'autre. Un **processeur graphique** (GPU) a des milliers de cœurs simples, qui exécutent tous le même
+calcul en parallèle. Il a été conçu pour l'affichage des jeux vidéo, où il faut
+calculer la couleur de millions de pixels des dizaines de fois par seconde, ce qui
+est un problème du même type.
 
 {{< image src="/images/module3/cpu-gpu.svg" alt="Deux panneaux. À gauche, un processeur ordinaire (CPU) : huit gros cœurs, de couleurs différentes, qui traitent chacun une tâche différente. À droite, un processeur graphique (GPU) : une grille de plusieurs centaines de petits cœurs identiques, qui font tous le même calcul en même temps." title="Un processeur ordinaire a quelques cœurs puissants ; un processeur graphique a des milliers de cœurs simples." loading="lazy" >}}
 
@@ -66,10 +66,10 @@ longtemps, ce calcul a été fait à la main : pour chaque nouveau réseau, il 
 établir les formules sur papier, puis les programmer. Le travail prenait des
 semaines, et les erreurs étaient fréquentes et difficiles à repérer.
 
-La **différentiation automatique** supprime ce travail. Le programmeur décrit
-seulement la propagation avant, c'est-à-dire le calcul qui mène des entrées à
-l'erreur. La bibliothèque enregistre chaque opération, et en déduit elle-même le
-calcul de la rétropropagation.
+La **différentiation automatique** (*automatic differentiation*) supprime ce
+travail. Le programmeur décrit seulement la propagation avant,
+c'est-à-dire le calcul qui mène des entrées à l'erreur. La bibliothèque enregistre
+chaque opération, et en déduit elle-même le calcul de la rétropropagation.
 
 - **1970.** Le Finlandais Seppo Linnainmaa décrit la méthode mathématique générale,
   dont la rétropropagation est un cas particulier.
@@ -82,8 +82,8 @@ calcul de la rétropropagation.
   calculs sur GPU.
 - **2013.** Caffe, à Berkeley, conçue pour les réseaux qui traitent des images.
   Elle se répand vite après le succès d'AlexNet.
-- **2015.** Google publie TensorFlow en code ouvert. La même année paraît Keras,
-  qui permet de décrire un réseau en quelques lignes.
+- **2015.** Google publie TensorFlow en code ouvert (*open source*). La même année
+  paraît Keras, qui permet de décrire un réseau en quelques lignes.
 - **2016.** Facebook publie PyTorch. On y écrit un réseau comme un programme Python
   ordinaire. Elle devient en quelques années l'outil le plus utilisé en recherche.
 

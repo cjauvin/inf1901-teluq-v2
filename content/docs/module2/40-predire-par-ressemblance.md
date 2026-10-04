@@ -63,15 +63,15 @@ millions.
 {{% hint warning %}}
 **Une nuance importante.** Le fait que la distance se calcule sur des pixels ne
 signifie pas qu'elle mesure bien la ressemblance entre images. Sur des
-caractéristiques choisies par un humain (superficie, nombre de pièces…), la
-proximité a un sens clair. Sur des pixels bruts, elle en a beaucoup moins. Deux
-photos du même chat, dans deux poses différentes, peuvent être très éloignées
-pixel à pixel. Une photo et sa version simplement assombrie, presque identiques
-pour notre œil, peuvent l'être tout autant. Obtenir une distance qui reflète la
-ressemblance réelle d'objets complexes est un problème à part entière, celui des
-**bonnes représentations**, que nous retrouverons avec les réseaux de neurones
-(Module&nbsp;3) et les plongements (Module&nbsp;4). Pour des données tabulaires
-comme nos maisons, en revanche, la distance brute convient déjà très bien.
+caractéristiques choisies par un humain (superficie, nombre de pièces…), la proximité
+a un sens clair. Sur des pixels bruts, elle en a beaucoup moins. Deux photos du même
+chat, dans deux poses différentes, peuvent être très éloignées pixel à pixel. Une
+photo et sa version simplement assombrie, presque identiques pour notre œil, peuvent
+l'être tout autant. Obtenir une distance qui reflète la ressemblance réelle d'objets
+complexes est un problème à part entière, celui des **bonnes représentations**, que
+nous retrouverons avec les réseaux de neurones (Module&nbsp;3) et les plongements
+(*embeddings*, Module&nbsp;4). Pour des données tabulaires comme nos maisons, en
+revanche, la distance brute convient déjà très bien.
 {{% /hint %}}
 
 {{% hint warning %}}
@@ -152,14 +152,15 @@ votent « a traîné ». Voici le résultat pour *k* = 3 :
 {{< image src="/images/module2/maisons-frontiere-k3.svg" alt="Le nuage coloré des maisons, dans le plan distance du centre × année de construction, avec le fond teinté : bleu pâle là où kNN (k = 3) répondrait « vendue vite » à une maison qui s'y trouverait, rouge pâle là où il répondrait « a traîné ». La ligne où la teinte change passe dans la bande vide entre les deux amas : c'est la frontière de décision. Les deux exceptions se trouvent dans la zone de la couleur opposée." title="La frontière de décision de kNN (k = 3) sur nos maisons : le fond donne la réponse du modèle en chaque point du plan, et la ligne où la couleur change est la frontière." loading="lazy" >}}
 
 Le plan est ainsi divisé en deux **régions**. La ligne où la couleur change, qui
-passe dans la bande vide entre les deux amas, s'appelle la **frontière de
-décision**. Personne ne l'a tracée : elle résulte de l'application de la règle en
-chaque point. C'est elle qui détermine la prédiction. Une maison située d'un côté
-sera classée « vendue vite », et une maison située de l'autre côté sera classée
+passe dans la bande vide entre les deux amas, s'appelle la **frontière de décision**
+(*decision boundary*). Personne ne l'a tracée : elle résulte de l'application de la
+règle en chaque point. C'est elle qui détermine la prédiction. Une maison située d'un
+côté sera classée « vendue vite », et une maison située de l'autre côté sera classée
 « a traîné », sans autre nuance. On peut aussi observer ce qui arrive aux deux
-exceptions du [premier chapitre](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature). Avec *k* = 3, chacune se trouve dans la région de
-la couleur opposée, puisque ses trois voisins les plus proches votent pour l'autre
-catégorie.
+exceptions du [premier
+chapitre](docs/module2/10-le-probleme/#une-seconde-question-dune-tout-autre-nature).
+Avec *k* = 3, chacune se trouve dans la région de la couleur opposée, puisque ses
+trois voisins les plus proches votent pour l'autre catégorie.
 
 Cette observation vaut pour tout classificateur, et pas seulement pour kNN :
 **classer revient à diviser l'espace en régions, et un modèle de classification
@@ -181,16 +182,16 @@ frontière de décision change.
 
 L'applet soulève rapidement une question : quelle valeur faut-il donner à **k** ?
 
-Les deux extrêmes sont instructifs. Avec **k = 1**, chaque prédiction ne s'appuie
-que sur le voisin le plus proche. La frontière suit alors le moindre détail, fait
-le tour de chaque point individuel et devient très irrégulière. Le modèle suit les
-exemples connus de si près qu'il réagit au moindre point aberrant. Ce défaut porte
+Les deux extrêmes sont instructifs. Avec **k = 1**, chaque prédiction ne s'appuie que
+sur le voisin le plus proche. La frontière suit alors le moindre détail, fait le tour
+de chaque point individuel et devient très irrégulière. Le modèle suit les exemples
+connus de si près qu'il réagit au moindre point aberrant (*outlier*). Ce défaut porte
 un nom, et il est central dans tout ce qui suit : le **sur-apprentissage**
-(*overfitting*), qui consiste à apprendre les exemples eux-mêmes au lieu
-d'apprendre à partir d'eux. Nous y reviendrons en détail dans
-[*Généraliser*](docs/module2/70-generaliser). Nos maisons le montrent : avec
-*k* = 1, chacune des deux exceptions crée autour d'elle une petite zone de sa
-couleur dans la région opposée, et la frontière se découpe en cellules anguleuses.
+(*overfitting*), qui consiste à apprendre les exemples eux-mêmes au lieu d'apprendre
+à partir d'eux. Nous y reviendrons en détail dans
+[*Généraliser*](docs/module2/70-generaliser). Nos maisons le montrent : avec *k* = 1,
+chacune des deux exceptions crée autour d'elle une petite zone de sa couleur dans la
+région opposée, et la frontière se découpe en cellules anguleuses.
 
 {{< image src="/images/module2/maisons-frontiere-k1.svg" alt="Même plan, même fond teinté, mais avec k = 1 : chaque maison impose sa couleur à tout ce qui l'entoure. Les deux exceptions créent chacune une petite zone de leur couleur dans la région opposée, et la frontière se découpe en cellules anguleuses." title="La même frontière avec k = 1 : chaque exception crée sa propre petite zone, et la frontière suit chaque point." loading="lazy" >}}
 
