@@ -175,7 +175,7 @@ def reseau_chiffres():
             o.append(f'<text x="{xc}" y="{y + 6:.1f}" font-size="18" fill="{TEAL}" text-anchor="middle" font-weight="700">⋮</text>')
         else:
             o.append(f'<circle cx="{xc}" cy="{y:.1f}" r="10" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="2.2"/>')
-    valeurs = [0.96, 0.01, 0.03, 0.02, 0.01, 0.04, 0.11, 0.01, 0.07, 0.02]
+    valeurs = [0.96, 0.00, 0.01, 0.00, 0.00, 0.01, 0.01, 0.00, 0.01, 0.00]     # elles totalisent 1
     for k, (y, v) in enumerate(zip(sorties, valeurs)):
         gagne = k == 0
         o.append(f'<circle cx="{xs}" cy="{y:.1f}" r="10" fill="{ROUGE if gagne else PANNEAU}" fill-opacity="{0.85 if gagne else 1}" stroke="{ROUGE}" stroke-width="2.2"/>')

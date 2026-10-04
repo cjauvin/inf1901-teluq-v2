@@ -28,6 +28,12 @@ les paramètres sont les poids et les biais. Le paysage a alors des milliers de
 dimensions et on ne peut plus le dessiner, mais la méthode reste la même : mesurer
 la pente, puis faire un pas vers le bas.
 
+Pour un réseau qui classe, l'erreur mesurée est en général la même que celle de la
+régression logistique. La réduire revient à rendre les bonnes réponses aussi
+probables que possible : c'est le
+[maximum de vraisemblance](docs/module2/60-classer/#sous-les-modèles-des-probabilités)
+présenté au Module 2.
+
 ## Le problème des couches cachées
 
 La deuxième étape est simple pour un neurone seul. On connaît la bonne réponse, on

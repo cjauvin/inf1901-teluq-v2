@@ -138,7 +138,12 @@ neurones n'a donc pas la limite de celui d'un
 Un réseau peut aussi avoir plusieurs sorties. Pour reconnaître les chiffres
 manuscrits, on utilise un réseau à **dix sorties**, une par chiffre. Chaque sortie
 donne un nombre entre 0 et 1, et le réseau répond par le chiffre dont la sortie est
-la plus élevée.
+la plus élevée. En pratique, on fait en sorte que les dix sorties totalisent 1.
+Elles forment alors une distribution de probabilités sur les dix chiffres, comme
+les probabilités « pourriel » et « courriel » du
+[classifieur bayésien](docs/module2/60-classer/#le-cas-des-pourriels). Le réseau
+ne répond pas seulement « c'est un 0 », mais « c'est un 0, avec une probabilité de
+96 % ».
 
 {{< image src="/images/module3/reseau-chiffres.svg" alt="De gauche à droite : une image de 28 pixels sur 28 qui montre un zéro ; une couche d'entrée de 784 valeurs, une par pixel ; une couche cachée de 30 neurones ; une couche de sortie de dix neurones, numérotés de 0 à 9. Chaque sortie donne un nombre entre 0 et 1. La sortie du chiffre 0 est la plus élevée, 0,96 : c'est la réponse du réseau." title="Un réseau pour les chiffres manuscrits : 784 entrées, une couche cachée de 30 neurones, dix sorties." loading="lazy" >}}
 
