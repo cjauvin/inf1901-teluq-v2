@@ -131,8 +131,9 @@ plupart des creux donnent des résultats comparables.
 
 La rétropropagation a été découverte plusieurs fois. Paul Werbos la décrit dans sa
 thèse en 1974, sans que le résultat soit remarqué. En 1986, David Rumelhart,
-Geoffrey Hinton et Ronald Williams publient dans la revue *Nature* un article qui
-montre, expériences à l'appui, qu'un réseau entraîné de cette façon construit
+Geoffrey Hinton et Ronald Williams publient dans la revue *Nature* un article,
+« [Learning representations by back-propagating errors](https://www.nature.com/articles/323533a0) »,
+qui montre, expériences à l'appui, qu'un réseau entraîné de cette façon construit
 lui-même des caractéristiques utiles dans ses couches cachées. C'est
 cet article qui impose la méthode.
 
@@ -140,7 +141,11 @@ La question ouverte en
 [1969](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) est
 alors réglée. Le XOR, que le perceptron ne pouvait pas apprendre, est appris par un
 réseau à couche cachée. Les réseaux de neurones redeviennent un sujet de recherche
-actif, sous le nom de **connexionnisme**.
+actif, sous le nom de **connexionnisme**. La même année, Rumelhart, James McClelland
+et leur groupe de recherche publient *Parallel Distributed Processing*, deux volumes
+qui présentent cette approche, de ses principes à ses applications en psychologie.
+L'ouvrage fait connaître le connexionnisme bien au-delà de l'informatique, chez les
+psychologues, les linguistes et les philosophes.
 
 Ce retour reste limité pendant une vingtaine d'années. Les réseaux de l'époque
 sont petits, les données rares et les ordinateurs lents. D'autres méthodes
