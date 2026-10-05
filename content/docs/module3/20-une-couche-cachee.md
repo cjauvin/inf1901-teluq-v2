@@ -34,6 +34,17 @@ puisque leur sortie varie de façon continue au lieu de passer brusquement de 0 
 Mais l'idée est bien celle-là : des perceptrons empilés en plusieurs couches. C'est
 le type de réseau le plus simple, et celui de ce chapitre et du suivant.
 
+La forme d'un réseau s'appelle son **architecture** (*architecture*) : le nombre de
+couches, le nombre de neurones dans chacune, et surtout la façon dont ils sont
+reliés. Le dessin de ces connexions, où chaque neurone est un point et chaque poids
+un trait, s'appelle sa **topologie** (*topology*). L'architecture est choisie par un
+humain avant l'entraînement, alors que les poids sont appris. Le perceptron
+multicouche relie chaque neurone à tous ceux de la couche précédente. C'est la
+topologie la plus simple, mais pas la seule. Les chapitres suivants présentent
+d'autres architectures, adaptées aux images, aux séquences ou au langage. Elles sont
+toutes faites des mêmes briques, des neurones reliés par des poids et entraînés par
+la même méthode. Seule change la façon de les relier.
+
 {{< image src="/images/module3/reseau-xor.svg" alt="Trois colonnes. À gauche, la couche d'entrée : A et B. Au centre, la couche cachée : le neurone 1, qui répond à la question « au moins une ? », et le neurone 2, qui répond à « les deux ? ». À droite, la couche de sortie : un neurone qui donne A XOR B. Chaque entrée est reliée aux deux neurones cachés, et chaque neurone caché au neurone de sortie." title="Le plus petit réseau qui résout le XOR : deux entrées, deux neurones cachés, un neurone de sortie." loading="lazy" >}}
 
 ## Le XOR résolu avec trois neurones

@@ -117,6 +117,27 @@ optimiseur.step()                            # la correction de tous les poids
 La ligne `erreur.backward()` remplace les semaines de calcul à la main. La
 conséquence est importante pour la suite. Essayer une nouvelle forme de réseau ne
 demande plus que quelques heures. Les chercheurs ont donc pu en essayer beaucoup,
-et c'est ainsi que se sont répandues les architectures des chapitres suivants. La
-première, présentée dans « [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) », est conçue pour les
-images.
+et c'est ainsi que se sont répandues les architectures des chapitres suivants.
+
+## Un jeu de construction
+
+L'exemple précédent assemble trois blocs : une couche, une fonction d'activation, une
+autre couche. Rien n'oblige à s'en tenir là. On peut empiler d'autres couches, en
+ajouter de types différents, faire passer les données par deux chemins puis les
+réunir, ou brancher deux réseaux l'un à la suite de l'autre. Quel que soit
+l'assemblage, la différentiation automatique calcule comment l'erreur dépend de
+chaque poids, et le tout s'entraîne d'un seul coup, par la même rétropropagation.
+
+C'est l'une des grandes forces des réseaux de neurones. Ils se composent comme les
+pièces d'un jeu de construction, et chaque nouvel assemblage s'entraîne sans qu'il
+faille inventer une nouvelle méthode. En 2018, Yann Le Cun a proposé de parler de
+**programmation différentiable** (*differentiable programming*) : on écrit un
+programme fait de blocs ajustables, et ce sont les données qui en règlent les
+paramètres.
+
+{{< image src="/images/module3/lego.jpg" alt="Un tas de briques Lego de toutes les couleurs, rouges, jaunes, vertes, bleues, orange et grises, de différentes longueurs, empilées pêle-mêle." title="Quelques sortes de briques, toujours les mêmes, et des assemblages sans fin : c'est l'image qu'on donne souvent des réseaux de neurones (photo : Alan Chia, Wikimedia Commons, CC BY-SA 2.0)." loading="lazy" >}}
+
+Les chapitres suivants présentent les assemblages qui ont le plus
+compté. Le premier, présenté dans
+« [Voir : les réseaux convolutifs](docs/module3/50-reseaux-convolutifs) », est conçu
+pour les images.
