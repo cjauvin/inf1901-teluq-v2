@@ -263,6 +263,8 @@ l'Amii à Edmonton, où travaille Richard Sutton, l'auteur de la
 [leçon amère](#la-leçon-amère).
 {{% /hint %}}
 
+{{< image src="/images/module3/laureats-turing-2018.jpg" alt="Trois portraits côte à côte. À gauche, Geoffrey Hinton, un homme aux cheveux gris en chemise claire, sur une scène. Au centre, Yoshua Bengio, un homme aux cheveux gris et à la barbe courte, en pull bordeaux, les bras croisés. À droite, Yann Le Cun, un homme à lunettes, qui parle derrière un ordinateur portable." title="Geoffrey Hinton, Yoshua Bengio et Yann Le Cun, lauréats du prix Turing 2018 (photos : Ramsey Cardy / Collision via Sportsfile, CC BY 2.0 ; Maryse Boyce, CC BY 4.0 ; Jérémy Barande, CC BY-SA 2.0 ; Wikimedia Commons)." loading="lazy" >}}
+
 ## La leçon amère
 
 La [fin du Module 2](docs/module2/80-trois-facons-d-apprendre/#un-même-squelette-dun-bout-à-lautre)
