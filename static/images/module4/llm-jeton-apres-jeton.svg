@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Comment un grand modèle de langage écrit</title>
+<desc>Un schéma en cinq étapes, de haut en bas. 1 : le texte « Le capitaine Nemo » est découpé en trois jetons. 2 : chaque jeton est remplacé par son plongement, une colonne de nombres. 3 : les plongements traversent les couches d'un Transformer, où chaque jeton ne peut regarder que les jetons qui le précèdent. 4 : à la sortie, le modèle donne une probabilité pour chacun des jetons du vocabulaire, par exemple 18 % pour « regarda », 11 % pour « sortit ». 5 : on tire un jeton, ici « regarda », on l'ajoute au texte, et on recommence avec le texte allongé.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="700" height="560" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<circle cx="38" cy="40" r="13" fill="#2f6f6a"/>
+<text x="38" y="44.5" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="44.5" font-size="13.5" fill="#3a3531" font-weight="700">Découper en jetons</text>
+<rect x="284" y="24" width="92" height="32" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="330" y="45" font-size="13" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">Le</text>
+<line x1="330" y1="58" x2="330" y2="82" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="384" y="24" width="92" height="32" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="430" y="45" font-size="13" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">·capitaine</text>
+<line x1="430" y1="58" x2="430" y2="82" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="484" y="24" width="92" height="32" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="530" y="45" font-size="13" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">·Nemo</text>
+<line x1="530" y1="58" x2="530" y2="82" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<circle cx="38" cy="106" r="13" fill="#2f6f6a"/>
+<text x="38" y="110.5" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="60" y="110.5" font-size="13.5" fill="#3a3531" font-weight="700">Remplacer chaque jeton</text>
+<text x="60" y="127.5" font-size="13.5" fill="#3a3531" font-weight="700">par son plongement</text>
+<rect x="321" y="86" width="18" height="8" fill="#c9d8ea" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="321" y="95" width="18" height="8" fill="#9fbad8" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="321" y="104" width="18" height="8" fill="#e7c9c3" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="321" y="113" width="18" height="8" fill="#d8e6e2" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="321" y="122" width="18" height="8" fill="#b9d3cd" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="321" y="131" width="18" height="8" fill="#efdcc8" stroke="#b8a888" stroke-width="0.6"/>
+<line x1="330" y1="144" x2="330" y2="172" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="421" y="86" width="18" height="8" fill="#e7c9c3" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="421" y="95" width="18" height="8" fill="#d8e6e2" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="421" y="104" width="18" height="8" fill="#b9d3cd" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="421" y="113" width="18" height="8" fill="#efdcc8" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="421" y="122" width="18" height="8" fill="#c9d8ea" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="421" y="131" width="18" height="8" fill="#9fbad8" stroke="#b8a888" stroke-width="0.6"/>
+<line x1="430" y1="144" x2="430" y2="172" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="521" y="86" width="18" height="8" fill="#b9d3cd" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="521" y="95" width="18" height="8" fill="#efdcc8" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="521" y="104" width="18" height="8" fill="#c9d8ea" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="521" y="113" width="18" height="8" fill="#9fbad8" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="521" y="122" width="18" height="8" fill="#e7c9c3" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="521" y="131" width="18" height="8" fill="#d8e6e2" stroke="#b8a888" stroke-width="0.6"/>
+<line x1="530" y1="144" x2="530" y2="172" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<circle cx="38" cy="222" r="13" fill="#2f6f6a"/>
+<text x="38" y="226.5" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="60" y="226.5" font-size="13.5" fill="#3a3531" font-weight="700">Traverser le Transformer</text>
+<rect x="270" y="176" width="320" height="92" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<line x1="282" y1="198" x2="578" y2="198" stroke="#d9cbac" stroke-width="1"/>
+<line x1="282" y1="220" x2="578" y2="220" stroke="#d9cbac" stroke-width="1"/>
+<line x1="282" y1="242" x2="578" y2="242" stroke="#d9cbac" stroke-width="1"/>
+<text x="430" y="192" font-size="11.5" fill="#5b5249" text-anchor="middle">des dizaines de couches d'attention</text>
+<path d="M330 236 Q380.0 206 430 236" fill="none" stroke="#3a6ea5" stroke-width="1.6" marker-end="url(#p)"/>
+<path d="M330 236 Q430.0 200 530 236" fill="none" stroke="#3a6ea5" stroke-width="1.6" marker-end="url(#p)"/>
+<path d="M430 236 Q480.0 206 530 236" fill="none" stroke="#3a6ea5" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="330" cy="240" r="5" fill="#3a6ea5"/>
+<circle cx="430" cy="240" r="5" fill="#3a6ea5"/>
+<circle cx="530" cy="240" r="5" fill="#3a6ea5"/>
+<text x="430" y="261" font-size="11.5" fill="#5b5249" text-anchor="middle">chaque jeton ne regarde que ceux qui le précèdent</text>
+<line x1="530" y1="270" x2="530" y2="298" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="60" y="242" font-size="11.5" fill="#5b5249">les vecteurs sont modifiés</text>
+<text x="60" y="257" font-size="11.5" fill="#5b5249">d'après le contexte</text>
+<circle cx="38" cy="318" r="13" fill="#2f6f6a"/>
+<text x="38" y="322.5" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+<text x="60" y="322.5" font-size="13.5" fill="#3a3531" font-weight="700">Calculer la probabilité</text>
+<text x="60" y="339.5" font-size="13.5" fill="#3a3531" font-weight="700">de chaque jeton suivant</text>
+<text x="420" y="315" font-size="12" fill="#3a3531" text-anchor="end" font-family="ui-monospace, Menlo, monospace">·regarda</text>
+<rect x="428" y="306" width="126" height="12" fill="#3a6ea5"/>
+<text x="560" y="316" font-size="11.5" fill="#5b5249">18 %</text>
+<text x="420" y="334" font-size="12" fill="#3a3531" text-anchor="end" font-family="ui-monospace, Menlo, monospace">·sortit</text>
+<rect x="428" y="325" width="77" height="12" fill="#3a6ea5"/>
+<text x="511" y="335" font-size="11.5" fill="#5b5249">11 %</text>
+<text x="420" y="353" font-size="12" fill="#3a3531" text-anchor="end" font-family="ui-monospace, Menlo, monospace">,</text>
+<rect x="428" y="344" width="63" height="12" fill="#3a6ea5"/>
+<text x="497" y="354" font-size="11.5" fill="#5b5249">9 %</text>
+<text x="420" y="372" font-size="12" fill="#3a3531" text-anchor="end" font-family="ui-monospace, Menlo, monospace">·me</text>
+<rect x="428" y="363" width="49" height="12" fill="#3a6ea5"/>
+<text x="483" y="373" font-size="11.5" fill="#5b5249">7 %</text>
+<text x="420" y="391" font-size="12" fill="#3a3531" text-anchor="end" font-family="ui-monospace, Menlo, monospace">·répondit</text>
+<rect x="428" y="382" width="35" height="12" fill="#3a6ea5"/>
+<text x="469" y="392" font-size="11.5" fill="#5b5249">5 %</text>
+<text x="428" y="409" font-size="11.5" fill="#5b5249">… et ainsi pour 200 000 jetons</text>
+<text x="60" y="358" font-size="11.5" fill="#5b5249">(probabilités fictives,</text>
+<text x="60" y="373" font-size="11.5" fill="#5b5249">pour l'exemple)</text>
+<line x1="530" y1="422" x2="530" y2="446" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<circle cx="38" cy="462" r="13" fill="#2f6f6a"/>
+<text x="38" y="466.5" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">5</text>
+<text x="60" y="466.5" font-size="13.5" fill="#3a3531" font-weight="700">Tirer un jeton,</text>
+<text x="60" y="483.5" font-size="13.5" fill="#3a3531" font-weight="700">l'ajouter</text>
+<rect x="284" y="454" width="292" height="32" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="430" y="475" font-size="13" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">Le·capitaine·Nemo<tspan fill="#c4564a" font-weight="700">·regarda</tspan></text>
+<path d="M578 470 L650 470 L650 40 L582 40" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#pb)"/>
+<text x="60" y="500" font-size="11.5" fill="#5b5249">selon la température</text>
+<text x="350.0" y="530" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">On recommence avec le texte allongé, jusqu'à un jeton spécial qui marque la fin.</text>
+</svg>
