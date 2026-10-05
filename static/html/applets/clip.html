@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : images et légendes dans un même espace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .onglet[aria-selected=true] { background: #4f46e5; color: white; border-color: #4f46e5; }
+        .leg[aria-pressed=true] { background: #e0e7ff; border-color: #4f46e5; }
+        .img-choix[aria-pressed=true] { outline: 3px solid #4f46e5; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-wrap gap-2 mb-3">
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="true" onclick="onglet('texte', this)">Chercher une image par une phrase</button>
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="false" onclick="onglet('image', this)">Décrire une image</button>
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="false" onclick="onglet('matrice', this)">La matrice</button>
+    </div>
+
+    <div id="p-texte">
+        <div id="legendes" class="flex flex-wrap gap-1 mb-3"></div>
+        <div id="classement" class="grid grid-cols-4 md:grid-cols-6 gap-2"></div>
+    </div>
+    <div id="p-image" class="hidden">
+        <div class="text-slate-600 mb-2">Choisissez une image&#8239;: CLIP compare son vecteur à celui de chacune des vingt légendes.</div>
+        <div id="choix-images" class="grid grid-cols-6 md:grid-cols-12 gap-1 mb-3"></div>
+        <div id="scores"></div>
+    </div>
+    <div id="p-matrice" class="hidden">
+        <div class="text-slate-600 mb-2">Ressemblance entre chaque image (en ligne) et chaque légende (en colonne). Plus la case est foncée, plus les vecteurs sont proches.</div>
+        <div class="overflow-x-auto"><table id="matrice" class="text-xs border-collapse"></table></div>
+    </div>
+
+    <div class="mt-3 p-2 bg-slate-100 rounded-lg text-xs text-slate-500">
+        Ressemblances calculées avec CLIP (OpenAI, 2021, modèle ViT-B/32). CLIP a été entraîné sur des légendes en anglais&#8239;: les
+        phrases lui ont été données en anglais, et leur traduction est affichée. Sous les images, le nombre est la ressemblance (le
+        cosinus entre les deux vecteurs). Pour décrire une image, les pourcentages comparent les légendes entre elles, comme
+        un classificateur&#8239;; ils totalisent 100&nbsp;%. Images&#8239;: Wikimedia Commons, domaine public et CC0.
+    </div>
+</div>
+</div>
+
+<script>
+/** Ressemblances précalculées par scripts/gen_clip.py (cosinus entre vecteurs d'images et de légendes). */
+let D = null, legende = 0, image = 0;
+const $ = id => document.getElementById(id);
+const pct = p => (p * 100).toFixed(p < 0.1 ? 1 : 0).replace('.', ',') + ' %';
+function softmax(xs) { const m = Math.max(...xs), e = xs.map(x => Math.exp(D.echelle * (x - m))), z = e.reduce((a, b) => a + b, 0); return e.map(x => x / z); }
+function onglet(nom, b) {
+    ['texte', 'image', 'matrice'].forEach(n => $('p-' + n).classList.toggle('hidden', n !== nom));
+    document.querySelectorAll('.onglet').forEach(o => o.setAttribute('aria-selected', o === b));
+}
+function parTexte(j) {
+    legende = j;
+    document.querySelectorAll('.leg').forEach((b, i) => b.setAttribute('aria-pressed', i === j));
+    const s = D.sim.map(l => l[j]);
+    const ordre = s.map((x, i) => i).sort((a, b) => s[b] - s[a]);
+    $('classement').innerHTML = ordre.map((i, r) => `<div class="text-center"><img src="${D.images[i].src}" class="rounded w-full" style="border:3px solid ${r === 0 ? '#4f46e5' : '#e2e8f0'}">`
+        + `<div class="text-xs mt-1 ${r === 0 ? 'font-semibold text-indigo-700' : 'text-slate-500'}">${s[i].toFixed(2).replace('.', ',')}</div></div>`).join('');
+}
+function parImage(i) {
+    image = i;
+    document.querySelectorAll('.img-choix').forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+    const s = D.sim[i], p = softmax(s);
+    const ordre = s.map((x, j) => j).sort((a, b) => s[b] - s[a]).slice(0, 8);
+    $('scores').innerHTML = '<div class="grid gap-1" style="grid-template-columns:auto 1fr auto">' + ordre.map(j =>
+        `<div class="pr-2" title="${D.legendes[j].en}">${D.legendes[j].fr}</div><div class="self-center h-3 rounded bg-slate-100"><div class="h-3 rounded" style="width:${p[j] * 100}%;background:#3a6ea5"></div></div>`
+        + `<div class="pl-2 tabular-nums text-slate-500">${pct(p[j])}</div>`).join('') + '</div>'
+        + '<div class="text-xs text-slate-500 mt-1">Les huit légendes les plus proches sur vingt.</div>';
+}
+function matrice() {
+    const n = D.images.length, cols = D.legendes.slice(0, n);
+    let lo = Infinity, hi = -Infinity;
+    D.sim.forEach(l => l.slice(0, n).forEach(x => { lo = Math.min(lo, x); hi = Math.max(hi, x); }));
+    let h = '<tr><td></td>' + cols.map(c => `<th class="font-normal text-slate-600 align-bottom" style="height:150px;width:30px"><div style="writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap" title="${c.en}">${c.fr}</div></th>`).join('') + '</tr>';
+    D.images.forEach((im, i) => {
+        h += `<tr><td class="pr-1"><img src="${im.src}" style="width:30px;height:30px" class="rounded"></td>` + cols.map((c, j) => {
+            const t = (D.sim[i][j] - lo) / (hi - lo);
+            return `<td style="width:30px;height:30px;background:rgba(58,110,165,${(0.08 + 0.92 * t * t).toFixed(2)});border:1px solid #fff" title="${D.sim[i][j].toFixed(3)}"></td>`;
+        }).join('') + '</tr>';
+    });
+    $('matrice').innerHTML = h;
+}
+fetch('data/clip.json').then(r => r.json()).then(d => {
+    D = d;
+    $('legendes').innerHTML = D.legendes.map((l, j) => `<button class="leg px-2 py-1 border border-slate-300 rounded-md hover:text-indigo-600" title="${l.en}" data-j="${j}">${l.fr}</button>`).join('');
+    document.querySelectorAll('.leg').forEach(b => b.onclick = () => parTexte(+b.dataset.j));
+    $('choix-images').innerHTML = D.images.map((im, i) => `<img src="${im.src}" class="img-choix rounded w-full cursor-pointer" data-i="${i}">`).join('');
+    document.querySelectorAll('.img-choix').forEach(b => b.onclick = () => parImage(+b.dataset.i));
+    parTexte(11); parImage(5); matrice();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

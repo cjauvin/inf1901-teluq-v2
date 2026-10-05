@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 750 474" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'apprentissage contrastif</title>
+<desc>Un schéma. Quatre images, à gauche, passent par un encodeur d'images ; quatre légendes, en haut, passent par un encodeur de textes. Chaque image et chaque légende devient un vecteur. Une grille de quatre sur quatre compare chaque image à chaque légende. Les quatre cases de la diagonale, qui associent chaque image à sa propre légende, sont marquées « rapprocher » ; les douze autres cases sont marquées « éloigner ».</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="750" height="474" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="375.0" y="30" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Rapprocher les bonnes paires, éloigner toutes les autres</text>
+<rect x="300" y="50" width="280" height="34" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="440" y="72" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700">encodeur de textes</text>
+<line x1="335.0" y1="86" x2="335.0" y2="118" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="335.0" y="136" font-size="11" fill="#3a3531" text-anchor="middle">« un chat »</text>
+<text x="335.0" y="156" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">T1</text>
+<line x1="405.0" y1="86" x2="405.0" y2="118" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="405.0" y="136" font-size="11" fill="#3a3531" text-anchor="middle">« un vélo »</text>
+<text x="405.0" y="156" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">T2</text>
+<line x1="475.0" y1="86" x2="475.0" y2="118" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="475.0" y="136" font-size="11" fill="#3a3531" text-anchor="middle">« une pizza »</text>
+<text x="475.0" y="156" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">T3</text>
+<line x1="545.0" y1="86" x2="545.0" y2="118" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="545.0" y="136" font-size="11" fill="#3a3531" text-anchor="middle">« méduses »</text>
+<text x="545.0" y="156" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">T4</text>
+<rect x="150" y="170" width="40" height="280" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="170" y="310" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700" transform="rotate(-90 170 310)">encodeur d'images</text>
+<rect x="16" y="183.0" width="110" height="44" rx="6" fill="#fbf7ee" stroke="#b8a888"/>
+<text x="71" y="209.0" font-size="11.5" fill="#5b5249" text-anchor="middle">[photo : chat]</text>
+<line x1="126" y1="205.0" x2="146" y2="205.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="192" y1="205.0" x2="274" y2="205.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="288" y="209.0" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">I1</text>
+<rect x="16" y="253.0" width="110" height="44" rx="6" fill="#fbf7ee" stroke="#b8a888"/>
+<text x="71" y="279.0" font-size="11.5" fill="#5b5249" text-anchor="middle">[photo : vélo]</text>
+<line x1="126" y1="275.0" x2="146" y2="275.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="192" y1="275.0" x2="274" y2="275.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="288" y="279.0" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">I2</text>
+<rect x="16" y="323.0" width="110" height="44" rx="6" fill="#fbf7ee" stroke="#b8a888"/>
+<text x="71" y="349.0" font-size="11.5" fill="#5b5249" text-anchor="middle">[photo : pizza]</text>
+<line x1="126" y1="345.0" x2="146" y2="345.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="192" y1="345.0" x2="274" y2="345.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="288" y="349.0" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">I3</text>
+<rect x="16" y="393.0" width="110" height="44" rx="6" fill="#fbf7ee" stroke="#b8a888"/>
+<text x="71" y="419.0" font-size="11.5" fill="#5b5249" text-anchor="middle">[photo : méduses]</text>
+<line x1="126" y1="415.0" x2="146" y2="415.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="192" y1="415.0" x2="274" y2="415.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="288" y="419.0" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">I4</text>
+<rect x="302" y="172" width="66" height="66" rx="6" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a"/>
+<text x="335.0" y="209.0" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">rapprocher</text>
+<rect x="372" y="172" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="405.0" y="209.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="442" y="172" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="475.0" y="209.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="512" y="172" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="545.0" y="209.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="302" y="242" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="335.0" y="279.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="372" y="242" width="66" height="66" rx="6" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a"/>
+<text x="405.0" y="279.0" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">rapprocher</text>
+<rect x="442" y="242" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="475.0" y="279.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="512" y="242" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="545.0" y="279.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="302" y="312" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="335.0" y="349.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="372" y="312" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="405.0" y="349.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="442" y="312" width="66" height="66" rx="6" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a"/>
+<text x="475.0" y="349.0" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">rapprocher</text>
+<rect x="512" y="312" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="545.0" y="349.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="302" y="382" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="335.0" y="419.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="372" y="382" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="405.0" y="419.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="442" y="382" width="66" height="66" rx="6" fill="#fbf7ee" fill-opacity="1" stroke="#d9cbac"/>
+<text x="475.0" y="419.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="400">éloigner</text>
+<rect x="512" y="382" width="66" height="66" rx="6" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a"/>
+<text x="545.0" y="419.0" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">rapprocher</text>
+<text x="600" y="200" font-size="12" fill="#3a3531">Chaque case compare</text>
+<text x="600" y="216" font-size="12" fill="#3a3531">le vecteur d'une image</text>
+<text x="600" y="232" font-size="12" fill="#3a3531">à celui d'une légende.</text>
+<text x="600" y="268" font-size="12" fill="#2f6f6a" font-weight="700">Diagonale : l'image</text>
+<text x="600" y="284" font-size="12" fill="#2f6f6a" font-weight="700">et sa vraie légende.</text>
+<text x="600" y="320" font-size="12" fill="#5b5249">Dans CLIP, chaque lot</text>
+<text x="600" y="336" font-size="12" fill="#5b5249">compte des milliers</text>
+<text x="600" y="352" font-size="12" fill="#5b5249">de paires.</text>
+</svg>

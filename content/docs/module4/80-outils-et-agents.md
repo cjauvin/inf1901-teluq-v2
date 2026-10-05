@@ -146,4 +146,4 @@ des heuristiques écrites à la main. Le modèle de langage choisit d'après tou
 appris en lisant.
 
 Les assistants présentés jusqu'ici lisent et écrivent du texte. Le
-[chapitre suivant](docs/module4) montre comment on a relié les mots et les images.
+[chapitre suivant](docs/module4/90-mots-et-images) montre comment on a relié les mots et les images.
