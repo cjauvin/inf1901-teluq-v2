@@ -91,8 +91,15 @@ chaque opération, et en déduit elle-même le calcul de la rétropropagation.
 
 Voici à quoi ressemble aujourd'hui le
 [réseau des chiffres](docs/module3/20-une-couche-cachee/#plus-de-neurones-plus-de-formes)
-du chapitre « Une couche cachée », écrit avec PyTorch. Il n'est pas nécessaire de
-comprendre le détail du code. Il suffit de constater sa longueur.
+du chapitre « Une couche cachée », écrit en **Python** avec la bibliothèque
+PyTorch. Python est le langage de programmation le plus utilisé en apprentissage
+automatique. Il est simple à lire et à écrire, et des bibliothèques comme PyTorch
+s'y chargent des calculs lourds, programmés dans des langages plus rapides et
+exécutés sur les processeurs graphiques. Plusieurs de ses traits viennent d'ailleurs
+de Lisp, le langage de l'IA symbolique, comme le montre
+[*L'héritage invisible*](docs/module1/60-hivers/#lhéritage-invisible) au Module 1.
+Il n'est pas nécessaire de comprendre le détail du code. Il suffit de constater sa
+longueur.
 
 ```python
 reseau = nn.Sequential(
