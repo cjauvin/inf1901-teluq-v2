@@ -172,7 +172,7 @@ Un modèle entraîné seulement à prédire le jeton suivant n'est pas encore un
 assistant. Si on lui écrit « Quelle est la capitale du Canada ? », il peut tout aussi
 bien continuer par une autre question, comme dans une liste de questions d'examen.
 Le passage de ce modèle à un assistant qui répond fait l'objet d'un chapitre
-ultérieur du [Module 4](docs/module4). Le [chapitre suivant](docs/module4) montre
+ultérieur du [Module 4](docs/module4). Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
 d'abord ce qui s'est passé quand on a rendu ces modèles beaucoup plus grands.
 
 ## Pour voir le mécanisme en détail
