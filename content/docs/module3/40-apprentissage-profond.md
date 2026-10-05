@@ -368,6 +368,8 @@ et faire ses prévisions dans un tel espace, plutôt que sur les données brutes
 [Module 4](docs/module4/10-generer/#lespace-latent) permet d'explorer l'espace latent
 d'un réseau entraîné sur des chiffres manuscrits.
 
+{{< image src="/images/module3/espace-latent.jpg" alt="Trois panneaux. À gauche, un 3 écrit à la main, de 784 pixels, passe par l'encodeur et devient deux nombres, 0,31 et 1,13. Au centre, une carte de 2 000 vrais chiffres, placés par l'encodeur et colorés selon le chiffre : les 1, les 0, les 7 et les autres forment des régions distinctes, et le 3 du premier panneau est cerclé parmi les autres 3. À droite, le décodeur appliqué à une grille régulière de points de la même carte : on y voit des chiffres qui se transforment progressivement, par exemple des 1 qui deviennent des 7, puis des 9 et des 4." title="L'espace latent d'un autoencodeur entraîné sur des chiffres manuscrits. Pour pouvoir le dessiner, ce réseau n'en a que deux dimensions, alors qu'un autoencodeur ordinaire en a quelques dizaines. C'est le même réseau que celui de l'applet du Module 4." loading="lazy" >}}
+
 Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
 d'aucune image réelle, il produit quand même une image. C'est une première façon de
 générer du contenu, sur laquelle le [Module 4](docs/module4/10-generer/#lespace-latent) reviendra.

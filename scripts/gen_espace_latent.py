@@ -7,7 +7,7 @@
 Entraîne un petit autoencodeur variationnel (VAE) sur MNIST, avec un espace latent à deux
 dimensions, puis exporte pour l'applet `espace-latent.html` :
 - les poids du décodeur (2 → 128 → 256 → 784), en float16 encodés en base64 ;
-- la position latente (moyenne de l'encodeur) de 2 000 chiffres du jeu de test, avec leur étiquette.
+- la position latente (moyenne de l'encodeur) de 2 000 chiffres du jeu de test, avec leur étiquette et leur numéro.
 
 MNIST est téléchargé par torchvision dans ~/.cache/inf1901/mnist au premier lancement.
 
@@ -80,6 +80,7 @@ SORTIE.parent.mkdir(parents=True, exist_ok=True)
 SORTIE.write_text(json.dumps({
     "couches": [couche(m.dec[0]), couche(m.dec[2]), couche(m.dec[4])],
     "points": [[round(float(a), 2), round(float(b), 2), int(e)] for (a, b), e in zip(mu, etiquettes)],
+    "indices": [int(i) for i in idx],                  # numéros des images de test, pour les figures
 }, separators=(",", ":")))
 print(SORTIE.name, "écrit,", SORTIE.stat().st_size // 1024, "Ko ; étendue latente",
       mu.min(0).round(2), mu.max(0).round(2))
