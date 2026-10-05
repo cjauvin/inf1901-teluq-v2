@@ -1,0 +1,284 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="L’apprentissage profond D’après le théorème d’approximation universelle, une seule couche cachée suffit pour approcher presque n’importe quelle fonction. Pourtant, les réseaux qui ont transformé l’IA à partir de 2012 comptent des dizaines de couches. On les appelle des réseaux profonds, et leur entraînement, l’apprentissage profond (deep learning en anglais). Ce chapitre explique ce qu’on gagne à empiler les couches, et pourquoi cela n’a fonctionné qu’à partir de 2012.
+Large ou profond Le théorème dit qu’une couche suffit. Il ne dit pas combien de neurones elle doit contenir. Pour certains problèmes, ce nombre est si grand que le réseau ne peut être ni stocké ni entraîné.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module3/apprentissage-profond/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="L'apprentissage profond"><meta property="og:description" content="L’apprentissage profond D’après le théorème d’approximation universelle, une seule couche cachée suffit pour approcher presque n’importe quelle fonction. Pourtant, les réseaux qui ont transformé l’IA à partir de 2012 comptent des dizaines de couches. On les appelle des réseaux profonds, et leur entraînement, l’apprentissage profond (deep learning en anglais). Ce chapitre explique ce qu’on gagne à empiler les couches, et pourquoi cela n’a fonctionné qu’à partir de 2012.
+Large ou profond Le théorème dit qu’une couche suffit. Il ne dit pas combien de neurones elle doit contenir. Pour certains problèmes, ce nombre est si grand que le réseau ne peut être ni stocké ni entraîné."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="L'apprentissage profond"><meta itemprop=description content="L’apprentissage profond D’après le théorème d’approximation universelle, une seule couche cachée suffit pour approcher presque n’importe quelle fonction. Pourtant, les réseaux qui ont transformé l’IA à partir de 2012 comptent des dizaines de couches. On les appelle des réseaux profonds, et leur entraînement, l’apprentissage profond (deep learning en anglais). Ce chapitre explique ce qu’on gagne à empiler les couches, et pourquoi cela n’a fonctionné qu’à partir de 2012.
+Large ou profond Le théorème dit qu’une couche suffit. Il ne dit pas combien de neurones elle doit contenir. Pour certains problèmes, ce nombre est si grand que le réseau ne peut être ni stocké ni entraîné."><meta itemprop=wordCount content="3089"><title>L'apprentissage profond • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module3/apprentissage-profond/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.2f6fd832d1e78d346304f886ffb40d30ce2b34a434eb3ebbb6b65e544fc2108b.css integrity="sha256-L2/YMtHnjTRjBPiG/7QNMM4rNKQ06z67trZeVE/CEIs=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.54e255ac1868e3da3866b60466bf8726281f30d75724ed4e6a52be4ff1f12944.js integrity="sha256-VOJVrBho49o4ZrYEZr+HJigfMNdXJO1OalK+T/HxKUQ=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle checked>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/ class=active>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>L'apprentissage profond</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#large-ou-profond>Large ou profond</a></li><li><a href=#une-hiérarchie-de-caractéristiques>Une hiérarchie de caractéristiques</a></li><li><a href=#la-fin-des-caractéristiques-fabriquées-à-la-main>La fin des caractéristiques fabriquées à la main</a></li><li><a href=#pourquoi-seulement-en-2012>Pourquoi seulement en 2012</a></li><li><a href=#2012-le-concours-imagenet>2012 : le concours ImageNet</a></li><li><a href=#la-leçon-amère>La leçon amère</a></li><li><a href=#plus-de-paramètres-que-dexemples>Plus de paramètres que d&rsquo;exemples</a></li><li><a href=#apprendre-sans-étiquettes-lautoencodeur>Apprendre sans étiquettes : l&rsquo;autoencodeur</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=lapprentissage-profond>L&rsquo;apprentissage profond<a class=anchor href=#lapprentissage-profond></a></h1><p>D&rsquo;après le
+<a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/#plus-de-neurones-plus-de-formes>théorème d&rsquo;approximation universelle</a>, une seule couche cachée suffit
+pour approcher presque n&rsquo;importe quelle fonction. Pourtant, les réseaux qui ont
+transformé l&rsquo;IA à partir de 2012 comptent des dizaines de couches. On les appelle
+des réseaux <strong>profonds</strong>, et leur entraînement, l&rsquo;<strong>apprentissage profond</strong> (<em>deep
+learning</em> en anglais). Ce chapitre explique ce qu&rsquo;on gagne à empiler les couches, et
+pourquoi cela n&rsquo;a fonctionné qu&rsquo;à partir de 2012.</p><h2 id=large-ou-profond>Large ou profond<a class=anchor href=#large-ou-profond></a></h2><p>Le théorème dit qu&rsquo;une couche suffit. Il ne dit pas combien de neurones elle doit
+contenir. Pour certains problèmes, ce nombre est si grand que le réseau ne peut
+être ni stocké ni entraîné.</p><p>Il y a deux façons d&rsquo;agrandir un réseau. On peut l&rsquo;élargir, en ajoutant des
+neurones à sa couche cachée. On peut l&rsquo;approfondir, en ajoutant des couches. Les
+deux augmentent ce que le réseau peut représenter, mais pas au même coût. Dans un
+réseau profond, chaque couche part de ce que la précédente a déjà construit, et le
+réutilise. Un réseau large à une seule couche doit tout construire directement à
+partir des entrées, sans étape intermédiaire. Pour beaucoup de problèmes, le réseau
+profond obtient le même résultat avec beaucoup moins de neurones.</p><label class=book-image for=book-image-toggle-99c21e15082d><input class="hidden toggle" type=checkbox id=book-image-toggle-99c21e15082d>
+<img src=/inf1901-teluq-v2/images/module3/large-ou-profond.svg alt="Deux réseaux qui ont les mêmes quatre entrées et les mêmes deux sorties. À gauche, un réseau large : une seule couche cachée de douze neurones. À droite, un réseau profond : trois couches cachées de quatre neurones chacune." loading=lazy title="Deux façons d'agrandir un réseau : ajouter des neurones à la couche cachée, ou ajouter des couches." width=700 height=400 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-99c21e15082d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=une-hiérarchie-de-caractéristiques>Une hiérarchie de caractéristiques<a class=anchor href=#une-hi%c3%a9rarchie-de-caract%c3%a9ristiques></a></h2><p>Le chapitre « <a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/#ce-que-fait-la-couche-cach%c3%a9e-changer-de-point-de-vue>Une couche cachée</a> »
+a montré qu&rsquo;une couche cachée est une fabrique de caractéristiques.
+Dans un réseau profond, chaque couche fabrique les siennes à partir de celles de la
+couche précédente. Les caractéristiques deviennent plus complexes de couche en
+couche.</p><p>Prenons les chiffres manuscrits. Une première couche peut détecter de petits
+traits, à différents endroits et selon différentes orientations. Une deuxième
+couche combine ces traits en formes : une boucle, un angle, une barre verticale.
+Une troisième combine ces formes en chiffres. Un 9 est une boucle au-dessus d&rsquo;une
+barre, un 8 est fait de deux boucles.</p><label class=book-image for=book-image-toggle-4ed34c2110d9><input class="hidden toggle" type=checkbox id=book-image-toggle-4ed34c2110d9>
+<img src=/inf1901-teluq-v2/images/module3/hierarchie-chiffres.svg alt="Trois colonnes reliées par des traits. À gauche, la première couche détecte des traits simples : horizontal, vertical, oblique, arcs de cercle. Au centre, la deuxième couche les combine en formes : une boucle, une barre verticale, un angle. À droite, la troisième couche combine les formes en chiffres : le 8 est fait de deux boucles, le 9 d'une boucle au-dessus d'une barre." loading=lazy title="Une hiérarchie de caractéristiques : des traits, puis des formes, puis des chiffres." width=700 height=430 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-4ed34c2110d9"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Cette description est simplifiée. Personne n&rsquo;indique au réseau quoi détecter dans
+chaque couche. Il le trouve pendant l&rsquo;entraînement, et les caractéristiques réelles
+sont souvent moins nettes que dans ce schéma. Mais quand on examine les couches
+d&rsquo;un réseau entraîné sur des images, on observe bien cette progression, de motifs
+simples vers des motifs complexes.</p><p>On peut voir ce que cherche un neurone d&rsquo;un réseau entraîné. On part d&rsquo;une image de
+bruit, et on la modifie pas à pas, par rétropropagation, pour activer le plus
+possible un neurone choisi. L&rsquo;image obtenue montre ce à quoi ce neurone réagit. Le
+même procédé sert à fabriquer les
+<a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/#comment-on-le-fabrique>exemples adverses</a>,
+présentés plus loin, au chapitre « Tromper un réseau ». En 2017, Chris Olah, Alexander Mordvintsev et Ludwig Schubert, chez
+Google, ont appliqué cette méthode à toutes les couches d&rsquo;un réseau convolutif
+entraîné sur ImageNet.</p><label class=book-image for=book-image-toggle-6ba6353f8163><input class="hidden toggle" type=checkbox id=book-image-toggle-6ba6353f8163>
+<img src=/inf1901-teluq-v2/images/module3/visualisation-neurones.jpg alt="Cinq colonnes de trois images chacune, de la première couche à la dernière. Traits : des rayures fines, orientées. Textures : des surfaces répétitives, alvéoles et écailles. Motifs : des entrelacs, des pompons colorés. Parties d'objets : des fleurs, des morceaux de vêtements, des formes de boutons. Objets : des façades de bâtiments, des jambes en short, des assiettes de nourriture." loading=lazy title="Ce que cherchent des neurones de couches de plus en plus profondes d'un réseau entraîné sur ImageNet (d'après Olah, Mordvintsev et Schubert, Distill, 2017, CC BY 4.0)." width=1342 height=986 style=--largeur-plafond:953px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-6ba6353f8163"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>La progression décrite plus haut apparaît bien, sans que personne l&rsquo;ait programmée.</p><blockquote class="book-hint info"><p><strong>DeepDream</strong></p><p>En juin 2015, Alexander Mordvintsev, Christopher Olah et Mike Tyka, ingénieurs chez
+Google, publient des images produites par un réseau convolutif entraîné sur
+ImageNet. Ils partent d&rsquo;une photo ordinaire et la modifient pas à pas, par
+rétropropagation, pour <strong>renforcer</strong> ce que le réseau croit y voir. Si une tache
+rappelle vaguement un œil à une couche du réseau, l&rsquo;image est modifiée pour
+ressembler davantage à un œil. On recommence, encore et encore. Comme ImageNet
+contient beaucoup de photos de chiens, des têtes de chiens, des yeux et des pattes
+finissent par apparaître partout : dans les nuages, sur les visages, dans les
+feuillages.</p><label class=book-image for=book-image-toggle-38f76f299128><input class="hidden toggle" type=checkbox id=book-image-toggle-38f76f299128>
+<img src=/inf1901-teluq-v2/images/module3/deepdream-meduses.jpg alt="Quatre images côte à côte. La première est une photo de méduses dans un aquarium bleu. Les trois suivantes sont la même photo transformée par DeepDream après 10, 50 puis 100 itérations : des créatures à plusieurs yeux, puis des chiens et d'autres animaux envahissent l'image, de plus en plus nets et colorés." loading=lazy title="Une photo de méduses transformée par DeepDream : à chaque itération, le réseau renforce les formes animales qu'il croit voir (images de Martin Thoma, Wikimedia Commons, CC0)." width=1328 height=431 style=--largeur-plafond:1328px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-38f76f299128"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Les chercheurs publient leur programme, et des milliers de personnes l&rsquo;appliquent à
+leurs propres photos. Les images circulent dans le monde entier, et beaucoup y
+voient pour la première fois ce qui se passe à l&rsquo;intérieur d&rsquo;un réseau de neurones.
+Le phénomène rappelle la <strong>paréidolie</strong> (<em>pareidolia</em>), notre tendance à voir des visages dans les
+nuages ou les prises électriques. Le réseau fait de même avec ce qu&rsquo;il a appris à
+reconnaître, mais en l&rsquo;exagérant à chaque itération. DeepDream a aussi ouvert la
+voie à des usages artistiques des réseaux de neurones, qui annoncent l&rsquo;IA
+générative du <span title="Ce module sera publié plus tard">Module 4</span>.</p></blockquote><blockquote class="book-hint info"><p><strong>La carte n&rsquo;est pas le territoire</strong></p><p>Cette hiérarchie rappelle celle du cerveau. Dans les années 1960, David Hubel et
+Torsten Wiesel ont montré que le cortex visuel traite l&rsquo;image par étapes : certains
+neurones réagissent à des traits orientés, d&rsquo;autres, plus loin, à des formes. Les
+réseaux profonds se sont inspirés de ce résultat.</p><p>La ressemblance s&rsquo;arrête là. Comme l&rsquo;expliquait
+« <a href=/inf1901-teluq-v2/docs/module3/un-neurone/#do%c3%b9-vient-le-mot-neurone>D&rsquo;où vient le mot « neurone »</a> »,
+un neurone artificiel est une formule. Un neurone biologique
+émet des impulsions électriques dans le temps, et son comportement dépend de
+nombreux signaux chimiques. Rien n&rsquo;indique que le cerveau utilise la
+rétropropagation. Enfin, un enfant reconnaît un chat après en avoir vu quelques-uns,
+avec un cerveau qui consomme environ 20 watts, alors qu&rsquo;un réseau a besoin de
+milliers d&rsquo;exemples et de beaucoup plus d&rsquo;énergie.</p><p>Un réseau de neurones est un modèle mathématique inspiré du
+cerveau. Ce n&rsquo;est pas une copie du cerveau, et son fonctionnement ne nous apprend
+que peu de choses sur le nôtre.</p></blockquote><h2 id=la-fin-des-caractéristiques-fabriquées-à-la-main>La fin des caractéristiques fabriquées à la main<a class=anchor href=#la-fin-des-caract%c3%a9ristiques-fabriqu%c3%a9es-%c3%a0-la-main></a></h2><p>Jusqu&rsquo;en 2012, un système de reconnaissance d&rsquo;images se construisait en deux
+étapes. Des spécialistes concevaient d&rsquo;abord des caractéristiques : des détecteurs
+de contours, de coins, de textures. Ces caractéristiques étaient ensuite données à
+un modèle simple, du type de ceux du <a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>. L&rsquo;essentiel du
+travail, et de la performance, tenait à la première étape. Elle demandait des
+années de mise au point pour chaque type de données.</p><p>Un réseau profond supprime cette première étape. Il reçoit les pixels bruts, et il
+apprend à la fois les caractéristiques et la décision. On parle d&rsquo;apprentissage
+<strong>de bout en bout</strong> (<em>end-to-end</em> en anglais). Le travail humain se déplace : il ne
+consiste plus à concevoir des caractéristiques, mais à rassembler des données et à
+choisir la forme du réseau.</p><h2 id=pourquoi-seulement-en-2012>Pourquoi seulement en 2012<a class=anchor href=#pourquoi-seulement-en-2012></a></h2><p>L&rsquo;idée d&rsquo;empiler des couches est ancienne, et la
+<a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/#la-r%c3%a9tropropagation>rétropropagation</a> s&rsquo;applique à un réseau de n&rsquo;importe quelle profondeur. Trois
+obstacles ont pourtant bloqué les réseaux profonds pendant plus de vingt ans.</p><p><strong>Le gradient qui s&rsquo;évanouit.</strong> Pendant la rétropropagation, l&rsquo;erreur remonte de
+couche en couche. Avec la sigmoïde, elle s&rsquo;affaiblit à chaque couche traversée.
+Après quelques couches, il n&rsquo;en reste presque rien, et les premières couches
+n&rsquo;apprennent plus. Ce problème s&rsquo;appelle l&rsquo;<strong>évanouissement du gradient</strong>
+(<em>vanishing gradient</em>). Un des remèdes est de remplacer la sigmoïde par une
+fonction plus simple, la <strong>ReLU</strong> : elle donne 0 quand son entrée est négative, et
+laisse passer l&rsquo;entrée telle quelle quand elle est positive. Avec elle, l&rsquo;erreur
+traverse les couches sans s&rsquo;affaiblir autant.</p><label class=book-image for=book-image-toggle-4e4adcfded08><input class="hidden toggle" type=checkbox id=book-image-toggle-4e4adcfded08>
+<img src=/inf1901-teluq-v2/images/module3/sigmoide-relu.svg alt="Deux graphiques. À gauche, la sigmoïde : une courbe en S, qui plafonne à 0 pour les entrées très négatives et à 1 pour les entrées très positives. À droite, la ReLU : elle vaut 0 pour toute entrée négative, puis monte en ligne droite pour les entrées positives, sans plafond." loading=lazy title="Deux fonctions d'activation : la sigmoïde, qui plafonne des deux côtés, et la ReLU." width=700 height=330 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-4e4adcfded08"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Les données.</strong> Un réseau profond a des millions de paramètres, et il lui faut des
+millions d&rsquo;exemples. Ils n&rsquo;existaient pas. En 2009, l&rsquo;équipe de Fei-Fei Li, à
+Stanford, publie <strong>ImageNet</strong> : 14 millions d&rsquo;images, classées à la main dans plus
+de 20 000 catégories. Ce travail a été réalisé par des dizaines de milliers de
+personnes, sur la plateforme Mechanical Turk. C&rsquo;est un exemple de
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9>industrie de l&rsquo;étiquetage</a>
+décrite au Module 2.</p><label class=book-image for=book-image-toggle-5cbf913fc326><input class="hidden toggle" type=checkbox id=book-image-toggle-5cbf913fc326>
+<img src=/inf1901-teluq-v2/images/module3/imagenet-mosaique.jpg alt="Une mosaïque de plusieurs centaines de petites photos très variées : véhicules, bâtiments, objets du quotidien, aliments, personnes, et de nombreux animaux. Les photos qui se ressemblent sont regroupées : les véhicules en haut, les chiens en bas à droite, les insectes et les oiseaux en bas." loading=lazy title="Quelques centaines d'images d'ImageNet. Elles sont disposées par un réseau profond, qui a placé côte à côte celles qu'il juge semblables (image : Andrej Karpathy)." width=1001 height=1001 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-5cbf913fc326"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Le calcul.</strong> Entraîner un réseau profond sur des millions d&rsquo;images demande une
+quantité de calculs hors de portée des processeurs des années 2000. La solution est
+venue du jeu vidéo, avec les <strong>processeurs graphiques</strong> (<em>graphics processing
+units</em>, GPU), qui entraînent un réseau des dizaines de fois plus vite qu&rsquo;un
+processeur ordinaire. Des bibliothèques logicielles ont ensuite automatisé la
+rétropropagation. Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a> » raconte ces
+deux histoires.</p><p><strong>Un premier contournement, en 2006.</strong> Avant que ces trois obstacles soient levés,
+Hinton propose un détour. Au lieu d&rsquo;entraîner toutes les couches d&rsquo;un coup, on les
+entraîne une à une, sans étiquettes : chaque couche apprend à résumer ce que lui
+transmet la précédente, un peu comme un
+<a href=#apprendre-sans-%c3%a9tiquettes-lautoencodeur>autoencodeur</a>. Une fois toutes les
+couches en place, la rétropropagation ajuste l&rsquo;ensemble. Ce <strong>préentraînement
+couche par couche</strong> (<em>greedy layer-wise pre-training</em>), publié par Hinton et ses
+collègues en 2006 et repris aussitôt par l&rsquo;équipe de Bengio, montre qu&rsquo;on peut
+enfin entraîner des réseaux à plusieurs couches cachées, et qu&rsquo;ils font mieux que
+les réseaux peu profonds sur plusieurs tâches. C&rsquo;est à cette époque que le nom
+<em>deep learning</em> s&rsquo;impose. Quelques années plus tard, avec la ReLU, de grandes bases
+de données et les GPU, le détour devient inutile : AlexNet s&rsquo;en passe. Mais il
+avait ramené l&rsquo;attention sur les réseaux profonds.</p><h2 id=2012-le-concours-imagenet>2012 : le concours ImageNet<a class=anchor href=#2012-le-concours-imagenet></a></h2><p>À partir de 2010, ImageNet sert de base à un concours annuel. Il faut classer des
+images parmi 1 000 catégories, après un entraînement sur 1,2 million d&rsquo;exemples.
+Une réponse est comptée comme une erreur si la bonne catégorie ne figure pas parmi
+les cinq propositions du système.</p><p>En 2010 et 2011, les meilleurs systèmes reposent sur des caractéristiques
+fabriquées à la main (<em>hand-crafted features</em>), et leur taux d&rsquo;erreur est de 28 %,
+puis de 26 %. En 2012, Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton, de
+l&rsquo;Université de Toronto, présentent un réseau profond, <strong>AlexNet</strong>. Il compte huit
+couches et 60 millions de paramètres, il utilise la ReLU, et il a été entraîné
+pendant environ une semaine sur deux GPU.</p><p>Avec 60 millions de paramètres pour 1,2 million
+d&rsquo;images, le risque de
+<a href=/inf1901-teluq-v2/docs/module2/generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance>sur-apprentissage</a>
+(<em>overfitting</em>) est grand. AlexNet le limite par une forme de
+<a href=/inf1901-teluq-v2/docs/module2/generaliser/#garder-un-mod%c3%a8le-riche-mais-le-tenir-en-laisse-la-r%c3%a9gularisation>régularisation</a>,
+au sens du Module 2 : le réseau reste riche, mais on l&rsquo;empêche de trop coller à ses
+données d&rsquo;entraînement. Il utilise une méthode toute récente, publiée par l&rsquo;équipe
+de Hinton la même année, le <strong>dropout</strong>. À chaque étape de l&rsquo;entraînement, une
+partie des neurones, tirés au hasard, est mise hors service. Le réseau ne peut donc
+pas compter sur un neurone en particulier, et il apprend des caractéristiques plus
+robustes, un peu comme une équipe où chacun doit pouvoir remplacer un absent. Les
+images d&rsquo;entraînement sont aussi recadrées et retournées au hasard, ce qui en
+multiplie les variantes.</p><label class=book-image for=book-image-toggle-48024cd41364><input class="hidden toggle" type=checkbox id=book-image-toggle-48024cd41364>
+<img src=/inf1901-teluq-v2/images/module3/dropout.svg alt="Quatre fois le même réseau, de quatre couches. Dans les trois premiers panneaux, trois étapes successives de l'entraînement : à chaque étape, la moitié des neurones des couches cachées, tirés au hasard, sont éteints, marqués d'une croix, et leurs connexions disparaissent ; ce ne sont pas les mêmes neurones d'une étape à l'autre. Dans le quatrième panneau, à l'utilisation, tous les neurones et toutes les connexions sont présents." loading=lazy title="Le dropout : à chaque étape de l'entraînement, d'autres neurones sont éteints au hasard. Une fois l'entraînement terminé, le réseau utilise tous ses neurones." width=760 height=330 style=--largeur-plafond:760px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-48024cd41364"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le taux d&rsquo;erreur d&rsquo;AlexNet est de 15 %. Le deuxième système est à 26 %.</p><label class=book-image for=book-image-toggle-42769209a975><input class="hidden toggle" type=checkbox id=book-image-toggle-42769209a975>
+<img src=/inf1901-teluq-v2/images/module3/imagenet-erreur.svg alt="Un diagramme à barres. En 2010 et 2011, les systèmes gagnants reposent sur des caractéristiques fabriquées à la main : 28,2 % puis 25,8 % d'erreur. En 2012, le réseau profond AlexNet obtient 15,3 %. Les gagnants suivants sont tous des réseaux profonds : 11,7 % en 2013, 6,7 % en 2014, 3,6 % en 2015, 3,0 % en 2016 et 2,3 % en 2017. Une ligne horizontale marque le niveau humain, estimé à 5 %, dépassé à partir de 2015." loading=lazy title="Le taux d'erreur du système gagnant au concours ImageNet, de 2010 à 2017." width=700 height=420 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-42769209a975"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;écart est si grand que le domaine change de méthode en deux ans. Dès 2014, tous
+les systèmes en compétition sont des réseaux profonds. En 2015, le réseau gagnant
+compte 152 couches et son taux d&rsquo;erreur, 3,6 %, est inférieur à celui d&rsquo;un humain
+sur la même tâche, estimé à 5 %. La même bascule se produit quelques années plus tard pour la
+traduction. Pour la reconnaissance de la parole, elle avait même commencé un peu
+plus tôt. Entre 2009 et 2012, des étudiants de Hinton, avec des équipes de
+Microsoft, de Google et d&rsquo;IBM, remplacent une partie des systèmes de reconnaissance
+vocale par des réseaux profonds,
+<a href=#pourquoi-seulement-en-2012>préentraînés couche par couche</a>. En 2012, la
+recherche vocale des téléphones Android en profite. C&rsquo;est le premier grand succès
+industriel de l&rsquo;apprentissage profond. ImageNet a pourtant davantage frappé les
+esprits, parce que l&rsquo;écart y était spectaculaire et mesuré lors d&rsquo;un concours
+public.</p><p>AlexNet est un réseau d&rsquo;un type particulier, un réseau convolutif (<em>convolutional
+neural network</em>, CNN), conçu pour les images. Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a> » lui est
+consacré.</p><blockquote class="book-hint info"><p><strong>Une école canadienne</strong></p><p>AlexNet est sorti du laboratoire de Geoffrey Hinton, à l&rsquo;Université de Toronto. Ce
+n&rsquo;est pas un hasard. Pendant les années 1990 et 2000, les réseaux de neurones
+intéressaient peu, et les organismes qui finançaient la recherche s&rsquo;en
+détournaient. En 2004, l&rsquo;Institut canadien de recherches avancées (CIFAR) lance un
+programme intitulé « Calcul neuronal et perception adaptative » (<em>Neural
+Computation and Adaptive Perception</em>), dirigé par Hinton. Le programme réunit un
+petit groupe de chercheurs convaincus, dont Yoshua Bengio, à l&rsquo;Université de
+Montréal, et Yann Le Cun, à l&rsquo;Université de New York. Ils continuent à travailler
+sur les réseaux profonds quand presque personne d&rsquo;autre ne le fait.</p><p>Le pari réussit en 2012. Hinton, Bengio et Le Cun reçoivent ensemble le prix Turing
+2018. En 2024, Hinton reçoit le prix Nobel de physique avec l&rsquo;Américain John
+Hopfield, « pour des découvertes et des inventions fondamentales qui permettent
+l&rsquo;apprentissage automatique avec des réseaux de neurones artificiels ». Le comité
+récompense deux réseaux des années 1980 qui empruntent leurs outils à la physique
+statistique : le réseau de Hopfield (1982), une mémoire qui retrouve une image
+complète à partir d&rsquo;un fragment, et la machine de Boltzmann de Hinton, qui tire son
+nom du physicien Ludwig Boltzmann. Le choix a surpris, et plusieurs physiciens se
+sont demandé si l&rsquo;on récompensait encore de la physique. Hinton, qui avait quitté
+Google en 2023 pour parler librement des risques de l&rsquo;IA, a profité de la tribune
+pour les rappeler. Le <span title="Ce module sera publié plus tard">Module 5</span> revient sur ces risques. Le laboratoire fondé par Bengio en 1993 devient en 2017 <strong>Mila</strong>, l&rsquo;Institut
+québécois d&rsquo;intelligence artificielle, l&rsquo;un des plus grands centres de recherche
+universitaire en apprentissage profond au monde. La même année, le gouvernement du
+Canada confie au CIFAR la Stratégie pancanadienne en matière d&rsquo;intelligence
+artificielle, l&rsquo;une des premières stratégies nationales consacrées à l&rsquo;IA. Elle
+s&rsquo;appuie sur trois instituts : Mila à Montréal, l&rsquo;Institut Vecteur à Toronto et
+l&rsquo;Amii à Edmonton, où travaille Richard Sutton, l&rsquo;auteur de la
+<a href=#la-le%c3%a7on-am%c3%a8re>leçon amère</a>.</p></blockquote><label class=book-image for=book-image-toggle-4f0c3018d0fc><input class="hidden toggle" type=checkbox id=book-image-toggle-4f0c3018d0fc>
+<img src=/inf1901-teluq-v2/images/module3/laureats-turing-2018.jpg alt="Trois portraits côte à côte. À gauche, Geoffrey Hinton, un homme aux cheveux gris en chemise claire, sur une scène. Au centre, Yoshua Bengio, un homme aux cheveux gris et à la barbe courte, en pull bordeaux, les bras croisés. À droite, Yann Le Cun, un homme à lunettes, qui parle derrière un ordinateur portable." loading=lazy title="Geoffrey Hinton, Yoshua Bengio et Yann Le Cun, lauréats du prix Turing 2018 (photos : Ramsey Cardy / Collision via Sportsfile, CC BY 2.0 ; Maryse Boyce, CC BY 4.0 ; Jérémy Barande, CC BY-SA 2.0 ; Wikimedia Commons)." width=1024 height=586 style=--largeur-plafond:1024px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-4f0c3018d0fc"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=la-leçon-amère>La leçon amère<a class=anchor href=#la-le%c3%a7on-am%c3%a8re></a></h2><p>La <a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#un-m%c3%aame-squelette-dun-bout-%c3%a0-lautre>fin du Module 2</a>
+a présenté l&rsquo;essai de Richard Sutton,
+« <a href=http://www.incompleteideas.net/IncIdeas/BitterLesson.html>The Bitter Lesson</a> »
+(2019). Sa thèse est la suivante. Dans l&rsquo;histoire de l&rsquo;IA, les chercheurs ont
+d&rsquo;abord tenté d&rsquo;inscrire leur propre savoir dans les systèmes. Cela aidait à court
+terme. À long terme, ces systèmes ont été dépassés par des méthodes générales, qui
+n&rsquo;utilisent aucun savoir particulier, mais qui tirent parti de la puissance de
+calcul disponible.</p><p>Le concours de 2012 en est l&rsquo;exemple le plus net. Les caractéristiques d&rsquo;images
+mises au point par des experts pendant vingt ans ont été dépassées par un réseau
+qui apprend les siennes. Le Module 1 en donnait un autre exemple, avec
+<a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lapog%c3%a9e-deep-blue-bat-kasparov-1997>Deep Blue</a> :
+la recherche à grande échelle l&rsquo;avait emporté sur les programmes qui tentaient
+d&rsquo;imiter le raisonnement des grands maîtres.</p><p>Sutton qualifie cette leçon d&rsquo;amère parce qu&rsquo;elle va contre l&rsquo;intuition des
+chercheurs : le savoir qu&rsquo;ils inscrivent dans un système finit par le limiter. Elle
+a aussi un coût. Un réseau profond ne donne pas ses raisons, alors qu&rsquo;on pouvait
+lire les règles d&rsquo;un <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>système expert</a> ou les
+questions d&rsquo;un <a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>arbre de décision</a> (<em>decision
+tree</em>). Et ses progrès dépendent de quantités de données et de calcul que peu
+d&rsquo;organisations possèdent.</p><p>La leçon ne dit pas que le savoir humain est inutile. Il reste présent, mais
+ailleurs : dans le choix des données, et dans la forme donnée au réseau. Les
+chapitres sur les réseaux convolutifs, les réseaux récurrents et l&rsquo;attention en
+donnent des exemples.</p><h2 id=plus-de-paramètres-que-dexemples>Plus de paramètres que d&rsquo;exemples<a class=anchor href=#plus-de-param%c3%a8tres-que-dexemples></a></h2><p>AlexNet a 60 millions de paramètres, pour 1,2 million d&rsquo;images d&rsquo;entraînement.
+D&rsquo;après « <a href=/inf1901-teluq-v2/docs/module2/generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance>Généraliser</a> »,
+un modèle aussi souple devrait apprendre ses exemples par cœur et échouer sur des
+images nouvelles. C&rsquo;est le sur-apprentissage (<em>overfitting</em>). Or les réseaux
+profonds généralisent bien. C&rsquo;est la question que le
+<a href=/inf1901-teluq-v2/docs/module2/generaliser/#garder-un-mod%c3%a8le-riche-mais-le-tenir-en-laisse-la-r%c3%a9gularisation>Module 2</a>
+avait laissée ouverte.</p><p>Une partie de la réponse tient à la régularisation, décrite dans
+« <a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/#lentra%c3%aenement-en-pratique>Entraîner un réseau</a> ».
+Mais elle ne suffit pas à expliquer le phénomène. Quand on fait grossir un réseau,
+on observe d&rsquo;abord la courbe en U du Module 2 : l&rsquo;erreur sur les exemples nouveaux
+baisse, puis remonte. Si l&rsquo;on continue au-delà du point où le réseau peut mémoriser
+tous ses exemples, l&rsquo;erreur redescend, parfois plus bas qu&rsquo;avant. Ce phénomène
+s&rsquo;appelle la <strong>double descente</strong> (<em>double descent</em>).</p><label class=book-image for=book-image-toggle-7165190076b5><input class="hidden toggle" type=checkbox id=book-image-toggle-7165190076b5>
+<img src=/inf1901-teluq-v2/images/module3/double-descente.svg alt="Un graphique. À l'horizontale, la taille du modèle ; à la verticale, l'erreur sur des exemples nouveaux. La courbe descend, remonte jusqu'à un pic, puis redescend plus bas qu'avant. La partie à gauche du pic est la courbe en U du Module 2. Le pic se trouve à la taille où le modèle peut mémoriser tous ses exemples. La partie à droite est celle des grands réseaux." loading=lazy title="La double descente : après le pic, un modèle plus grand généralise mieux." width=700 height=400 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-7165190076b5"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le phénomène est bien établi, mais son explication n&rsquo;est pas complète. L&rsquo;hypothèse
+la plus courante est la suivante. Un très grand réseau dispose de nombreuses façons
+de reproduire ses exemples, et la descente de gradient aboutit
+le plus souvent à l&rsquo;une des plus simples. C&rsquo;est un cas où la pratique a précédé la
+théorie.</p><p>Un phénomène voisin a été observé en 2022 par une équipe d&rsquo;OpenAI, cette fois au fil
+de l&rsquo;entraînement plutôt qu&rsquo;en fonction de la taille. Sur de petites tâches
+d&rsquo;arithmétique, un réseau apprend d&rsquo;abord ses exemples par cœur : il ne fait plus
+aucune erreur sur eux, mais répond au hasard sur les nouveaux. Si l&rsquo;on poursuit
+l&rsquo;entraînement bien au-delà, parfois des milliers d&rsquo;étapes plus tard, il se met
+soudain à généraliser presque parfaitement. Les chercheurs ont appelé ce phénomène
+<em><strong>grokking</strong></em>, d&rsquo;après un mot inventé par l&rsquo;écrivain Robert Heinlein, qui signifie
+« comprendre en profondeur ».</p><h2 id=apprendre-sans-étiquettes-lautoencodeur>Apprendre sans étiquettes : l&rsquo;autoencodeur<a class=anchor href=#apprendre-sans-%c3%a9tiquettes-lautoencodeur></a></h2><p>Tous les réseaux vus jusqu&rsquo;ici sont entraînés avec des exemples étiquetés (<em>labeled
+examples</em>). Un réseau peut aussi apprendre des caractéristiques sans étiquettes.
+L&rsquo;<strong>autoencodeur</strong> (<em>autoencoder</em>) en est l&rsquo;exemple le plus simple.</p><p>Un autoencodeur est un réseau en forme de sablier. On lui donne une image en
+entrée, et on lui demande de produire la même image en sortie. L&rsquo;erreur est l&rsquo;écart
+entre les deux. La tâche serait sans intérêt si le réseau pouvait simplement
+recopier son entrée, mais la couche du milieu est très étroite. Les 784 pixels d&rsquo;un
+chiffre doivent passer par quelques dizaines de neurones seulement.</p><label class=book-image for=book-image-toggle-24d02de92811><input class="hidden toggle" type=checkbox id=book-image-toggle-24d02de92811>
+<img src=/inf1901-teluq-v2/images/module3/autoencodeur.svg alt="De gauche à droite : l'image d'un zéro manuscrit ; un réseau en forme de sablier, dont les couches comptent de moins en moins de neurones jusqu'à une couche centrale très étroite, puis de plus en plus ; l'image reconstruite, presque identique à l'image de départ. La première moitié du réseau est l'encodeur, la couche centrale est la représentation latente, la seconde moitié est le décodeur." loading=lazy title="Un autoencodeur : l'image doit passer par une couche étroite, puis être reconstruite." width=700 height=400 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-24d02de92811"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><ul><li>La première moitié, l&rsquo;<strong>encodeur</strong>, réduit l&rsquo;image à quelques nombres.</li><li>La seconde moitié, le <strong>décodeur</strong>, reconstruit l&rsquo;image à partir de ces nombres.</li></ul><p>L&rsquo;autoencodeur est un premier exemple d&rsquo;assemblage : deux réseaux, l&rsquo;un qui comprime
+et l&rsquo;autre qui reconstruit, branchés l&rsquo;un à la suite de l&rsquo;autre et entraînés
+ensemble, comme les pièces du <a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/#un-jeu-de-construction>jeu de construction</a> présenté au chapitre
+suivant.</p><p>Pour réussir, le réseau doit garder l&rsquo;essentiel de l&rsquo;image dans la couche étroite :
+quel chiffre, quelle inclinaison, quelle épaisseur de trait. Ces quelques nombres
+forment une représentation compacte de l&rsquo;image, qu&rsquo;on appelle sa <strong>représentation
+latente</strong> (<em>latent representation</em>). C&rsquo;est un cas
+d&rsquo;<a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#fabriquer-soi-m%c3%aame-ses-r%c3%a9ponses-lauto-supervision>auto-supervision</a>
+(<em>self-supervised learning</em>), présentée au Module 2 : les données fournissent
+elles-mêmes la réponse attendue.</p><p>L&rsquo;ensemble des valeurs que peuvent prendre ces quelques nombres forme l&rsquo;<strong>espace
+latent</strong> (<em>latent space</em>) du réseau. C&rsquo;est un espace <strong>compressé</strong> : quelques
+dizaines de dimensions au lieu de 784, où ne reste que ce qui distingue une image
+d&rsquo;une autre. Deux images semblables y occupent des points voisins, et l&rsquo;on peut s&rsquo;y
+déplacer d&rsquo;un chiffre à l&rsquo;autre par petites étapes. Beaucoup de chercheurs y voient
+l&rsquo;endroit où un réseau travaille vraiment : il n&rsquo;y manipule plus des pixels, mais
+des propriétés abstraites, comme la forme ou l&rsquo;inclinaison d&rsquo;un chiffre. Certains,
+comme Yann Le Cun, pensent même qu&rsquo;une intelligence artificielle devrait raisonner
+et faire ses prévisions dans un tel espace, plutôt que sur les données brutes. Le
+<span title="Ce module sera publié plus tard">Module 4</span> permet d&rsquo;explorer l&rsquo;espace latent
+d&rsquo;un réseau entraîné sur des chiffres manuscrits.</p><label class=book-image for=book-image-toggle-5e7e37ed327b><input class="hidden toggle" type=checkbox id=book-image-toggle-5e7e37ed327b>
+<img src=/inf1901-teluq-v2/images/module3/espace-latent.jpg alt="Trois panneaux. À gauche, un 3 écrit à la main, de 784 pixels, passe par l'encodeur et devient deux nombres, 0,31 et 1,13. Au centre, une carte de 2 000 vrais chiffres, placés par l'encodeur et colorés selon le chiffre : les 1, les 0, les 7 et les autres forment des régions distinctes, et le 3 du premier panneau est cerclé parmi les autres 3. À droite, le décodeur appliqué à une grille régulière de points de la même carte : on y voit des chiffres qui se transforment progressivement, par exemple des 1 qui deviennent des 7, puis des 9 et des 4." loading=lazy title="L'espace latent d'un autoencodeur entraîné sur des chiffres manuscrits. Pour pouvoir le dessiner, ce réseau n'en a que deux dimensions, alors qu'un autoencodeur ordinaire en a quelques dizaines. C'est le même réseau que celui de l'applet du Module 4." width=1360 height=680 style=--largeur-plafond:1360px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-5e7e37ed327b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
+d&rsquo;aucune image réelle, il produit quand même une image. C&rsquo;est une première façon de
+générer du contenu, sur laquelle le <span title="Ce module sera publié plus tard">Module 4</span> reviendra.</p><p>Un réseau profond peut donc apprendre ses propres caractéristiques, à condition
+d&rsquo;avoir assez de données et de calcul. Le chapitre suivant,
+« <a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a> », raconte
+comment ce calcul est devenu possible.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Entraîner un réseau</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/ class="flex align-center"><span>Le matériel et les outils</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#large-ou-profond>Large ou profond</a></li><li><a href=#une-hiérarchie-de-caractéristiques>Une hiérarchie de caractéristiques</a></li><li><a href=#la-fin-des-caractéristiques-fabriquées-à-la-main>La fin des caractéristiques fabriquées à la main</a></li><li><a href=#pourquoi-seulement-en-2012>Pourquoi seulement en 2012</a></li><li><a href=#2012-le-concours-imagenet>2012 : le concours ImageNet</a></li><li><a href=#la-leçon-amère>La leçon amère</a></li><li><a href=#plus-de-paramètres-que-dexemples>Plus de paramètres que d&rsquo;exemples</a></li><li><a href=#apprendre-sans-étiquettes-lautoencodeur>Apprendre sans étiquettes : l&rsquo;autoencodeur</a></li></ul></nav></div></aside></main></body></html>
