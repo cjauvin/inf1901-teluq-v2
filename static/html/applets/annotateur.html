@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : jouer l'annotateur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .reponse { cursor: pointer; transition: border-color .15s; }
+        .reponse:hover { border-color: #4f46e5; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div id="jeu">
+        <div class="flex justify-between text-slate-500 mb-2"><span id="numero"></span><span>Cliquez sur la réponse que vous préférez.</span></div>
+        <div class="p-3 rounded-lg mb-3" style="background:#fbf7ee;border:1px solid #d9cbac">
+            <div class="text-xs text-slate-500 mb-1">Requête de l'utilisateur</div>
+            <div id="requete" class="font-medium"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+            <div class="reponse p-3 rounded-lg border-2 border-slate-200" onclick="choisir(0)"><div class="text-xs text-slate-500 mb-1">Réponse A</div><div id="r0"></div></div>
+            <div class="reponse p-3 rounded-lg border-2 border-slate-200" onclick="choisir(1)"><div class="text-xs text-slate-500 mb-1">Réponse B</div><div id="r1"></div></div>
+        </div>
+    </div>
+
+    <div id="bilan" class="hidden">
+        <div class="font-semibold text-base mb-2">Ce que vos choix enseigneraient à un modèle de récompense</div>
+        <div id="stats" class="grid gap-1 mb-3" style="grid-template-columns:auto 1fr auto"></div>
+        <div id="lecon" class="p-3 rounded-lg bg-slate-100 text-slate-700 leading-6"></div>
+        <div class="mt-3 flex justify-center">
+            <button onclick="recommencer()" class="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium shadow-sm">Recommencer</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Six paires de réponses, rédigées pour l'exercice. Chaque réponse est décrite par quelques traits : exacte,
+ * longue, flatteuse, suit la consigne. Le bilan compte, pour chaque trait, combien de fois la réponse choisie
+ * l'avait quand l'autre ne l'avait pas : c'est ce qu'un modèle de récompense apprendrait de ces choix.
+ */
+const PAIRES = [
+    { q: "Combien de pattes a une araignée ?",
+      r: [{ t: "Huit.", exacte: 1, flatteuse: 0, consigne: 1 },
+          { t: "Excellente question ! Les araignées sont des animaux fascinants, qui jouent un rôle essentiel dans nos écosystèmes. Comme tous les insectes, elles ont six pattes, ce qui leur permet de se déplacer avec une grande agilité.", exacte: 0, flatteuse: 1, consigne: 1 }] },
+    { q: "Résume en une seule phrase l'intrigue du Tour du monde en quatre-vingts jours.",
+      r: [{ t: "En 1872, le gentleman anglais Phileas Fogg parie qu'il fera le tour du monde en quatre-vingts jours, et il y parvient de justesse avec son domestique Passepartout.", exacte: 1, flatteuse: 0, consigne: 1 },
+          { t: "Le roman de Jules Verne, publié en 1873, raconte le pari de Phileas Fogg, un gentleman anglais très méthodique. Accompagné de son domestique Passepartout, il traverse l'Europe, l'Inde, la Chine, le Japon et les États-Unis. Il est poursuivi par l'inspecteur Fix, qui le prend pour un voleur. Il sauve Aouda en Inde et finit par l'épouser. Il croit avoir perdu son pari, avant de découvrir qu'il a gagné un jour en voyageant vers l'est.", exacte: 1, flatteuse: 0, consigne: 0 }] },
+    { q: "J'ai écrit ce poème : « Le ciel est bleu, la mer aussi, je t'aime, voici. » Qu'en penses-tu ?",
+      r: [{ t: "C'est magnifique ! On sent une vraie sensibilité. Ce poème est digne des plus grands, n'hésitez pas à le publier tel quel.", exacte: 0, flatteuse: 1, consigne: 1 },
+          { t: "Le poème est court et sincère, et l'image du ciel et de la mer est agréable. On pourrait développer davantage ce qui relie cette image à la déclaration finale, et travailler le rythme du dernier vers.", exacte: 1, flatteuse: 0, consigne: 1 }] },
+    { q: "Quel temps fera-t-il demain à Montréal ?",
+      r: [{ t: "Demain, à Montréal, il fera ensoleillé avec un maximum de 22 °C et un léger vent du sud-ouest.", exacte: 0, flatteuse: 0, consigne: 1 },
+          { t: "Je n'ai pas accès aux prévisions météorologiques en temps réel. Vous pouvez consulter le site d'Environnement Canada ou une application météo.", exacte: 1, flatteuse: 0, consigne: 1 }] },
+    { q: "Quelle est la racine carrée de 2 ?",
+      r: [{ t: "Environ 1,414.", exacte: 1, flatteuse: 0, consigne: 1 },
+          { t: "La racine carrée de 2 vaut environ 1,41421356. C'est un nombre irrationnel : il ne peut pas s'écrire comme une fraction, ce que les mathématiciens grecs savaient déjà démontrer. C'est aussi la longueur de la diagonale d'un carré de côté 1.", exacte: 1, flatteuse: 0, consigne: 1 }] },
+    { q: "Je pense que la Terre est plate. Tu es d'accord, non ?",
+      r: [{ t: "Vous avez tout à fait raison de vous poser des questions et de ne pas croire tout ce qu'on vous dit. Beaucoup de gens partagent votre point de vue, et il y a de bons arguments de votre côté.", exacte: 0, flatteuse: 1, consigne: 1 },
+          { t: "Non. La Terre est à peu près sphérique, ce que montrent les photos prises depuis l'espace, l'ombre ronde de la Terre sur la Lune pendant les éclipses, ou les navires dont la coque disparaît à l'horizon avant le mât.", exacte: 1, flatteuse: 0, consigne: 1 }] },
+];
+const mots = t => t.split(/\s+/).length;
+const typo = t => t.replace(/ ([!?;])/g, '\u202f$1').replace(/ :/g, '\u00a0:').replace(/« /g, '«\u202f').replace(/ »/g, '\u202f»');
+let k = 0, choix = [], ordre = [];
+const $ = id => document.getElementById(id);
+
+function afficher() {
+    const p = PAIRES[k];
+    $('numero').textContent = `Comparaison ${k + 1} sur ${PAIRES.length}`;
+    $('requete').textContent = typo(p.q);
+    ordre[k] = Math.random() < 0.5 ? [0, 1] : [1, 0];      // l'ordre d'affichage est tiré au hasard
+    ordre[k].forEach((i, pos) => $('r' + pos).textContent = typo(p.r[i].t));
+}
+function choisir(pos) {
+    choix[k] = ordre[k][pos];
+    if (++k < PAIRES.length) afficher(); else bilan();
+}
+function bilan() {
+    $('jeu').classList.add('hidden'); $('bilan').classList.remove('hidden');
+    const traits = [
+        ['la réponse exacte', r => r.exacte],
+        ['la réponse la plus longue', (r, a) => mots(r.t) > mots(a.t)],
+        ['la réponse flatteuse', r => r.flatteuse],
+        ['la réponse qui suit la consigne', r => r.consigne],
+    ];
+    const lignes = traits.map(([nom, f]) => {
+        let n = 0, oui = 0;
+        PAIRES.forEach((p, i) => {
+            const c = p.r[choix[i]], a = p.r[1 - choix[i]];
+            const fc = !!f(c, a), fa = !!f(a, c);
+            if (fc !== fa) { n++; if (fc) oui++; }       // seules comptent les paires où le trait départage les réponses
+        });
+        return [nom, oui, n];
+    });
+    $('stats').innerHTML = lignes.map(([nom, oui, n]) =>
+        `<div class="pr-3">Vous avez préféré ${nom}</div><div class="self-center h-3 rounded bg-slate-100"><div class="h-3 rounded" style="width:${n ? oui / n * 100 : 0}%;background:#3a6ea5"></div></div>`
+        + `<div class="pl-3 tabular-nums text-slate-600">${oui} fois sur ${n}</div>`).join('');
+    const [ex, lg, fl] = lignes;
+    let t = 'Dans le RLHF, des milliers de choix comme les vôtres servent à entraîner un <b>modèle de récompense</b>, qui apprend à prédire la réponse '
+        + 'que les évaluateurs préféreront. Le modèle de langage est ensuite ajusté pour obtenir la meilleure récompense possible. ';
+    if (lg[1] / Math.max(1, lg[2]) > 0.5 || fl[1] > 0)
+        t += 'Vos choix favorisent en partie ' + [lg[1] / Math.max(1, lg[2]) > 0.5 ? 'les réponses longues' : '', fl[1] > 0 ? 'les réponses flatteuses' : ''].filter(Boolean).join(' et ')
+            + '. Un modèle entraîné sur de tels choix apprendrait à allonger ses réponses ou à complimenter, même quand cela ne les rend pas plus justes. ';
+    else
+        t += 'Vos choix favorisent l\'exactitude et le respect de la consigne. ';
+    t += 'Chez les vrais évaluateurs, on observe une préférence pour les réponses longues, assurées et qui donnent raison à l\'utilisateur. '
+        + 'C\'est l\'une des causes de la <b>complaisance</b> (<i>sycophancy</i>) des assistants, qui ont tendance à dire aux gens ce qu\'ils veulent entendre.';
+    $('lecon').innerHTML = t;
+}
+function recommencer() { k = 0; choix = []; $('bilan').classList.add('hidden'); $('jeu').classList.remove('hidden'); afficher(); }
+afficher();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

@@ -177,5 +177,5 @@ modèles diminuent, et que les données de qualité se raréfient. Les entrepris
 explorent alors une autre direction : consacrer davantage de calcul non plus à
 l'entraînement, mais au moment de répondre, en laissant le modèle « réfléchir » plus
 longtemps avant de donner sa réponse. Ces modèles de raisonnement sont présentés au
-[chapitre suivant](docs/module4), qui montre aussi comment un modèle qui complète du
+[chapitre suivant](docs/module4/70-du-modele-a-l-assistant), qui montre aussi comment un modèle qui complète du
 texte devient un assistant qui répond.
