@@ -178,9 +178,19 @@ explique ce qui a changé ensuite.
 
 Quelques termes reviennent dans la suite du cours.
 
-- Un **lot** (*batch* en anglais) est un petit groupe d'exemples traités ensemble.
-  On ne corrige pas les poids après chaque exemple, ni après le jeu complet, mais
-  après chaque lot.
+- La **descente de gradient stochastique** (*stochastic gradient descent*, SGD).
+  Calculer la pente exacte demanderait de passer sur tous les exemples
+  d'entraînement avant chaque pas, soit des millions pour un grand réseau. En
+  pratique, on estime la pente à partir d'un petit groupe d'exemples tirés au
+  hasard, un **lot** (*batch* ou *mini-batch*), de quelques dizaines à quelques
+  milliers d'exemples, et on fait un pas après chaque lot. Cette pente est
+  approximative, un peu différente d'un lot à l'autre, et la descente zigzague,
+  d'où le mot *stochastique*, qui signifie « au hasard ». Elle est pourtant beaucoup
+  plus rapide, et ce bruit a un avantage inattendu : il aide parfois la descente à
+  sortir d'un creux peu profond, comme celui de la
+  [figure plus haut](#le-même-principe-quau-module-2). Des variantes, comme Adam
+  (2014), ajustent en plus la taille des pas pour chaque poids, et ce sont elles
+  qu'on utilise le plus aujourd'hui.
 - Une **époque** (*epoch*) est un passage complet sur tous les exemples
   d'entraînement. Un entraînement compte en général plusieurs époques.
 - Le **taux d'apprentissage** (*learning rate*) règle la taille de chaque
