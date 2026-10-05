@@ -24,7 +24,7 @@ def ecrire(nom, o):
 
 
 def grille_traduction():
-    W, H = 700, 410
+    W, H = 700, 466
     anglais = ["the", "European", "Economic", "Area"]
     francais = ["la", "zone", "économique", "européenne"]
     poids = [[0.85, 0.05, 0.04, 0.06],
@@ -37,7 +37,7 @@ def grille_traduction():
                f"français. «{FINE}la{FINE}» regarde «{FINE}the{FINE}», «{FINE}zone{FINE}» regarde «{FINE}Area{FINE}», «{FINE}économique{FINE}» regarde "
                f"«{FINE}Economic{FINE}» et «{FINE}européenne{FINE}» regarde «{FINE}European{FINE}»{NB}: les deux dernières cases foncées se croisent.")
     o.append(f'<text x="{W / 2}" y="36" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Où regarde le décodeur, pour chaque mot qu\'il écrit{NB}?</text>')
-    c, x0, y0 = 62, 300, 116
+    c, x0, y0 = 78, 290, 116
     for j, mot in enumerate(anglais):
         o.append(f'<text x="{x0 + j * c + c / 2}" y="{y0 - 12}" font-size="13" fill="{BLEU}" text-anchor="middle" font-weight="700">{mot}</text>')
     o.append(f'<text x="{x0 + 2 * c}" y="{y0 - 38}" font-size="12" fill="{ENCRE_PALE}" text-anchor="middle">phrase d\'origine (anglais)</text>')
