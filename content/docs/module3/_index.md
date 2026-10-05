@@ -36,9 +36,15 @@ autres méthodes de reconnaissance d'images. En quelques années, les réseaux d
 neurones deviennent la méthode dominante pour les images, la parole et le texte.
 Ils sont aujourd'hui au cœur de la reconnaissance d'images et de la parole, de la
 traduction automatique, et des grands modèles de langage comme ChatGPT. Les autres
-méthodes n'ont pas disparu pour autant : sur des données en tableau, comme celles
-d'une banque ou d'un hôpital, les forêts et le *gradient boosting* restent souvent
-les plus efficaces.
+méthodes n'ont pas disparu pour autant, et la différence tient à la nature des
+données. Dans une image, un son ou un texte, un élément isolé ne veut presque rien
+dire : un pixel n'est qu'un point de couleur, et le sens naît de l'agencement de
+milliers d'éléments voisins. Dans un tableau, comme les dossiers d'une banque ou
+d'un hôpital, chaque colonne a déjà un sens, comme l'âge, le revenu ou la pression
+artérielle. On peut d'ailleurs mélanger l'ordre des colonnes d'un tableau sans rien
+perdre, alors que mélanger les pixels d'une photo la détruit. Sur les premières
+données, les réseaux de neurones l'emportent. Sur les secondes, les forêts
+aléatoires et le *gradient boosting* restent souvent les plus efficaces.
 
 Ce module raconte ce retour, et explique comment ces réseaux fonctionnent.
 
