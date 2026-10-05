@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Tirer le mot suivant</title>
+<desc>En haut, une bande horizontale de 0 à 1 découpée en trois segments, un par mot qui peut suivre « le » : chat de 0 à 0,5, chien de 0,5 à 0,9, fromage de 0,9 à 1. Une flèche marque un nombre tiré au hasard, 0,63, qui tombe dans le segment de chien. En bas, une chaîne de mots générés, le, chien, court, le, chat, chaque mot étant tiré d'après le mot qui le précède.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="700" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Après « le », tirer le mot suivant</text>
+<rect x="70.0" y="96" width="280.0" height="46" fill="#3a6ea5" fill-opacity="0.85" stroke="#efe7d3" stroke-width="2"/>
+<text x="210.0" y="124" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">chat</text>
+<text x="210.0" y="162" font-size="12" fill="#5b5249" text-anchor="middle">0,5</text>
+<rect x="350.0" y="96" width="224.0" height="46" fill="#2f6f6a" fill-opacity="0.85" stroke="#efe7d3" stroke-width="2"/>
+<text x="462.0" y="124" font-size="13.5" fill="#fff" text-anchor="middle" font-weight="700">chien</text>
+<text x="462.0" y="162" font-size="12" fill="#5b5249" text-anchor="middle">0,4</text>
+<rect x="574.0" y="96" width="55.999999999999986" height="46" fill="#9a5b33" fill-opacity="0.85" stroke="#efe7d3" stroke-width="2"/>
+<text x="602.0" y="124" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">fromage</text>
+<text x="602.0" y="162" font-size="12" fill="#5b5249" text-anchor="middle">0,1</text>
+<line x1="70" y1="90" x2="70" y2="96" stroke="#b8a888" stroke-width="1.4"/>
+<text x="70" y="86" font-size="11.5" fill="#5b5249" text-anchor="middle">0</text>
+<line x1="350.0" y1="90" x2="350.0" y2="96" stroke="#b8a888" stroke-width="1.4"/>
+<text x="350.0" y="86" font-size="11.5" fill="#5b5249" text-anchor="middle">0,5</text>
+<line x1="574.0" y1="90" x2="574.0" y2="96" stroke="#b8a888" stroke-width="1.4"/>
+<text x="574.0" y="86" font-size="11.5" fill="#5b5249" text-anchor="middle">0,9</text>
+<line x1="630.0" y1="90" x2="630.0" y2="96" stroke="#b8a888" stroke-width="1.4"/>
+<text x="630.0" y="86" font-size="11.5" fill="#5b5249" text-anchor="middle">1</text>
+<text x="60" y="162" font-size="11.5" fill="#7a6f63" text-anchor="end">probabilité</text>
+<line x1="422.8" y1="208" x2="422.8" y2="146" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pr)"/>
+<text x="422.8" y="226" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">nombre tiré au hasard : 0,63 → « chien »</text>
+<rect x="54" y="302" width="72" height="36" rx="8" fill="#fbf7ee" stroke="#3a3531" stroke-width="1.8"/>
+<text x="90" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">le</text>
+<path d="M120 300 Q142.0 268 164 300" fill="none" stroke="#7a6f63" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#p)"/>
+<rect x="158" y="302" width="72" height="36" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="194" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">chien</text>
+<path d="M224 300 Q246.0 268 268 300" fill="none" stroke="#7a6f63" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#p)"/>
+<rect x="262" y="302" width="72" height="36" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="298" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">court</text>
+<path d="M328 300 Q350.0 268 372 300" fill="none" stroke="#7a6f63" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#p)"/>
+<rect x="366" y="302" width="72" height="36" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="402" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">le</text>
+<path d="M432 300 Q454.0 268 476 300" fill="none" stroke="#7a6f63" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#p)"/>
+<rect x="470" y="302" width="72" height="36" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="506" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">chat</text>
+<path d="M536 300 Q558.0 268 580 300" fill="none" stroke="#7a6f63" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#p)"/>
+<text x="610" y="325" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">…</text>
+<text x="350.0" y="262" font-size="12" fill="#5b5249" text-anchor="middle">chaque mot est tiré d'après le mot qui le précède</text>
+<text x="90" y="358" font-size="11.5" fill="#7a6f63" text-anchor="middle">mot de départ</text>
+</svg>
