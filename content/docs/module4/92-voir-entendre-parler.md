@@ -129,5 +129,5 @@ montrent qu'ils voient autrement.
 Ces difficultés posent une question déjà rencontrée avec la vidéo : un modèle qui
 décrit si bien des images a-t-il une représentation du monde qu'elles montrent, ou
 reproduit-il les associations les plus fréquentes entre images et mots ? Le
-[chapitre suivant](docs/module4) aborde cette question pour l'ensemble des modèles de
+[chapitre suivant](docs/module4/94-comprendre-et-rater) aborde cette question pour l'ensemble des modèles de
 langage.
