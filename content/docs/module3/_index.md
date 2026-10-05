@@ -19,8 +19,9 @@ perceptron de Rosenblatt, en 1958, en était la première machine.
 Ce second pari a connu une longue éclipse. En 1969, Minsky et Papert montrent qu'un
 perceptron ne peut pas apprendre une fonction aussi simple que le
 [XOR](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969), et la
-recherche sur les réseaux de neurones s'arrête presque. Elle reprend en 1986, avec
-une méthode pour entraîner des réseaux à plusieurs couches. Mais pendant les
+recherche sur les réseaux de neurones s'arrête presque. Elle reprend au début des
+années 1980, et surtout en 1986, avec une méthode pour entraîner des réseaux dotés
+d'une couche cachée, la rétropropagation. Mais pendant les
 vingt-cinq années suivantes, les progrès de l'apprentissage automatique viennent
 surtout d'autres méthodes : les [machines à vecteurs de support](docs/module2/60-classer/#la-plus-grande-marge-les-machines-à-vecteurs-de-support)
 (SVM) à partir du milieu des années 1990, le *boosting*, les
