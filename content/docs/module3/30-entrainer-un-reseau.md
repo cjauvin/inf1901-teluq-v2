@@ -143,7 +143,8 @@ Geoffrey Hinton et Ronald Williams publient dans la revue *Nature* un article,
 « [Learning representations by back-propagating errors](https://www.nature.com/articles/323533a0) »,
 qui montre, expériences à l'appui, qu'un réseau entraîné de cette façon construit
 lui-même des caractéristiques utiles dans ses couches cachées. C'est
-cet article qui impose la méthode.
+cet article qui impose la méthode, et son nom anglais, *backpropagation*, souvent
+abrégé en *backprop*.
 
 La question ouverte en
 [1969](docs/module1/60-hivers/#le-premier-hiver-la-mort-du-perceptron-1969) est
