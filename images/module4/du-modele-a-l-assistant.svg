@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Du modèle de base à l'assistant</title>
+<desc>Trois colonnes reliées par des flèches. 1, le préentraînement : des milliers de milliards de jetons de textes, la tâche de prédire le jeton suivant, et pour résultat un modèle de base qui continue des textes. 2, l'ajustement par instructions : des dizaines de milliers d'exemples de requêtes et de bonnes réponses rédigées par des humains, et pour résultat un modèle qui répond aux requêtes. 3, l'apprentissage par renforcement : des humains comparent des réponses, un modèle de récompense apprend leurs préférences, et le modèle est ajusté pour obtenir la meilleure récompense ; pour les mathématiques et le code, la récompense peut venir d'une vérification automatique. Le résultat est un assistant.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Du modèle de base à l'assistant</text>
+<rect x="20" y="52" width="204" height="252" rx="10" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="42" cy="76" r="12" fill="#3a6ea5"/>
+<text x="42" y="80.5" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="81" font-size="14" fill="#3a6ea5" font-weight="700">Préentraînement</text>
+<text x="34" y="110" font-size="11" fill="#7a6f63">DONNÉES</text>
+<text x="34" y="127" font-size="12" fill="#3a3531">des milliers de milliards</text>
+<text x="34" y="142" font-size="12" fill="#3a3531">de jetons de textes</text>
+<text x="34" y="171" font-size="11" fill="#7a6f63">TÂCHE</text>
+<text x="34" y="188" font-size="12" fill="#3a3531" font-weight="600">prédire le jeton suivant</text>
+<text x="34" y="213" font-size="11.5" fill="#5b5249" font-style="italic">des semaines de calcul,</text>
+<text x="34" y="228" font-size="11.5" fill="#5b5249" font-style="italic">l'essentiel du coût</text>
+<rect x="32" y="318" width="180" height="48" rx="8" fill="#efe7d3" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="122.0" y="338" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">un modèle de base,</text>
+<text x="122.0" y="355" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">qui continue des textes</text>
+<line x1="122.0" y1="304" x2="122.0" y2="316" stroke="#3a6ea5" stroke-width="1.6"/>
+<line x1="212" y1="342" x2="258" y2="342" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="248" y="52" width="204" height="252" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="270" cy="76" r="12" fill="#2f6f6a"/>
+<text x="270" y="80.5" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+<text x="290" y="81" font-size="14" fill="#2f6f6a" font-weight="700">Ajustement</text>
+<text x="262" y="110" font-size="11" fill="#7a6f63">DONNÉES</text>
+<text x="262" y="127" font-size="12" fill="#3a3531">des dizaines de milliers</text>
+<text x="262" y="142" font-size="12" fill="#3a3531">de requêtes et de réponses</text>
+<text x="262" y="157" font-size="12" fill="#3a3531">rédigées par des humains</text>
+<text x="262" y="186" font-size="11" fill="#7a6f63">TÂCHE</text>
+<text x="262" y="203" font-size="12" fill="#3a3531" font-weight="600">imiter ces réponses</text>
+<text x="262" y="228" font-size="11.5" fill="#5b5249" font-style="italic">quelques jours</text>
+<rect x="260" y="318" width="180" height="48" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.6"/>
+<text x="350.0" y="338" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">un modèle qui répond</text>
+<text x="350.0" y="355" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">aux requêtes</text>
+<line x1="350.0" y1="304" x2="350.0" y2="316" stroke="#2f6f6a" stroke-width="1.6"/>
+<line x1="440" y1="342" x2="486" y2="342" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="476" y="52" width="204" height="252" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<circle cx="498" cy="76" r="12" fill="#9a5b33"/>
+<text x="498" y="80.5" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+<text x="518" y="81" font-size="14" fill="#9a5b33" font-weight="700">Renforcement</text>
+<text x="490" y="110" font-size="11" fill="#7a6f63">DONNÉES</text>
+<text x="490" y="127" font-size="12" fill="#3a3531">des humains comparent</text>
+<text x="490" y="142" font-size="12" fill="#3a3531">deux réponses ; un modèle</text>
+<text x="490" y="157" font-size="12" fill="#3a3531">de récompense apprend</text>
+<text x="490" y="172" font-size="12" fill="#3a3531">leurs préférences</text>
+<text x="490" y="201" font-size="11" fill="#7a6f63">TÂCHE</text>
+<text x="490" y="218" font-size="12" fill="#3a3531" font-weight="600">obtenir la meilleure</text>
+<text x="490" y="233" font-size="12" fill="#3a3531" font-weight="600">récompense</text>
+<text x="490" y="258" font-size="11.5" fill="#5b5249" font-style="italic">ou une vérification</text>
+<text x="490" y="273" font-size="11.5" fill="#5b5249" font-style="italic">automatique (calcul, code)</text>
+<rect x="488" y="318" width="180" height="48" rx="8" fill="#efe7d3" stroke="#9a5b33" stroke-width="1.6"/>
+<text x="578.0" y="347" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">un assistant</text>
+<line x1="578.0" y1="304" x2="578.0" y2="316" stroke="#9a5b33" stroke-width="1.6"/>
+<text x="350.0" y="386" font-size="11.5" fill="#7a6f63" text-anchor="middle">Chaque étape part du modèle produit par la précédente.</text>
+</svg>
