@@ -126,9 +126,10 @@ envisagé, et il joue mal pendant plusieurs coups ensuite.
 
 {{< image src="/images/module3/go-coup-78.svg" alt="Un goban de 19 lignes sur 19, avec la position de la quatrième partie après 78 coups. Lee Sedol a les blancs. Le coup 78, une pierre blanche en L11, est entourée en rouge, au milieu d'un groupe de pierres noires au centre du goban." title="Le coup 78 de la quatrième partie (positions relevées d'après une image de Axd, Wikimedia Commons, CC BY-SA 4.0)." loading="lazy" >}}
 
-Le documentaire
-[*AlphaGo*](https://www.youtube.com/watch?v=WXuK6gekU1Y) (2017), mis en ligne
-gratuitement par DeepMind, raconte ce match.
+Le documentaire *AlphaGo* (2017), mis en ligne gratuitement par DeepMind, raconte ce
+match. Il dure environ une heure et demie, en anglais.
+
+{{< youtube WXuK6gekU1Y >}}
 
 ## AlphaZero : sans parties humaines
 
