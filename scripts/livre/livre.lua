@@ -6,7 +6,8 @@ function Header(el)
   if el.level == 1 and el.classes:includes('partie') and FORMAT:match('latex') then
     local titre = pandoc.write(pandoc.Pandoc({pandoc.Plain(el.content)}), 'latex')
     return {
-      latex('\\part*{' .. titre .. '}\\addcontentsline{toc}{part}{' .. titre .. '}'),
+      latex('\\part*{' .. titre .. '}\\addcontentsline{toc}{part}{' .. titre .. '}'
+            .. '\\markboth{\\MakeUppercase{' .. titre .. '}}{\\MakeUppercase{' .. titre .. '}}'),  -- en-tête de l\'accueil du module
       latex('\\phantomsection\\label{' .. el.identifier .. '}\\hypertarget{' .. el.identifier .. '}{}'),
     }
   end

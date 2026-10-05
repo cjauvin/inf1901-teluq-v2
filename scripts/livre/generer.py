@@ -53,9 +53,9 @@ CJK = re.compile(r"[\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]+")
 
 
 def remplacer_caracteres(section, soup):
-    """Caractères absents des polices du PDF : remplacés (CARACTERES), mis en exposant (ᵉ),
+    """Caractères absents des polices du PDF : remplacés (CARACTERES), mis en exposant (ᵉ) ou en indice (₀ à ₉),
     ou balisés pour une police de repli (chinois, japonais : span.cjk, voir livre.lua)."""
-    decoupe = re.compile(r"(ᵉ|[\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]+)")
+    decoupe = re.compile(r"(ᵉ|[₀-₉]|[\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]+)")
     for texte in list(section.find_all(string=True)):
         s = str(texte)
         for a, b in CARACTERES.items():
@@ -69,6 +69,9 @@ def remplacer_caracteres(section, soup):
             if morceau == "ᵉ":
                 x = soup.new_tag("sup")
                 x.string = "e"
+            elif len(morceau) == 1 and "₀" <= morceau <= "₉":
+                x = soup.new_tag("sub")
+                x.string = str(ord(morceau) - ord("₀"))
             elif CJK.fullmatch(morceau):
                 x = soup.new_tag("span", attrs={"class": "cjk"})
                 x.string = morceau

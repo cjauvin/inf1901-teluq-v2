@@ -27,7 +27,7 @@ BookLogo = "images/paperclip-logo.png"
     startLevel = 2
     endLevel = 4
 # --- Modules pas encore refaits pour la v2 ---
-# En production seulement (le site publié), les modules 3 à 5 ne sont ni
+# En production seulement (le site publié), les modules 4 et 5 ne sont ni
 # générés ni listés dans le menu ; le serveur local les montre toujours.
 # Les liens qui y mènent deviennent du texte simple (layouts/_markup/render-link.html).
 # Pour publier un module : retirer son chemin de la liste ci-dessous.
@@ -36,5 +36,5 @@ BookLogo = "images/paperclip-logo.png"
     render = 'never'
     list = 'never'
   [cascade.target]
-    path = '{/docs/module3,/docs/module3/**,/docs/module4,/docs/module4/**,/docs/module5,/docs/module5/**}'
+    path = '{/docs/module4,/docs/module4/**,/docs/module5,/docs/module5/**}'
     environment = 'production'

@@ -2,7 +2,7 @@
        vers un module pas encore publié (voir le cascade de hugo.toml) devient
        du texte simple, pour éviter les 404. */ -}}
 {{- $destination := .Destination -}}
-{{- if and hugo.IsProduction (findRE `(^|/)docs/module[345]([/#]|$)` $destination) -}}
+{{- if and hugo.IsProduction (findRE `(^|/)docs/module[45]([/#]|$)` $destination) -}}
 <span title="Ce module sera publié plus tard">{{ .Text | safeHTML }}</span>
 {{- else -}}
 {{- if .Page.Site.Params.BookPortableLinks -}}
