@@ -189,8 +189,23 @@ fabriquées à la main (*hand-crafted features*), et leur taux d'erreur est de 2
 puis de 26 %. En 2012, Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton, de
 l'Université de Toronto, présentent un réseau profond, **AlexNet**. Il compte huit
 couches et 60 millions de paramètres, il utilise la ReLU, et il a été entraîné
-pendant environ une semaine sur deux GPU. Son taux d'erreur est de 15 %. Le deuxième
-système est à 26 %.
+pendant environ une semaine sur deux GPU.
+
+Avec 60 millions de paramètres pour 1,2 million
+d'images, le risque de
+[sur-apprentissage](docs/module2/70-generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance)
+(*overfitting*) est grand. AlexNet le limite par une forme de
+[régularisation](docs/module2/70-generaliser/#garder-un-modèle-riche-mais-le-tenir-en-laisse-la-régularisation),
+au sens du Module 2 : le réseau reste riche, mais on l'empêche de trop coller à ses
+données d'entraînement. Il utilise une méthode toute récente, publiée par l'équipe
+de Hinton la même année, le **dropout**. À chaque étape de l'entraînement, une
+partie des neurones, tirés au hasard, est mise hors service. Le réseau ne peut donc
+pas compter sur un neurone en particulier, et il apprend des caractéristiques plus
+robustes, un peu comme une équipe où chacun doit pouvoir remplacer un absent. Les
+images d'entraînement sont aussi recadrées et retournées au hasard, ce qui en
+multiplie les variantes.
+
+Le taux d'erreur d'AlexNet est de 15 %. Le deuxième système est à 26 %.
 
 {{< image src="/images/module3/imagenet-erreur.svg" alt="Un diagramme à barres. En 2010 et 2011, les systèmes gagnants reposent sur des caractéristiques fabriquées à la main : 28,2 % puis 25,8 % d'erreur. En 2012, le réseau profond AlexNet obtient 15,3 %. Les gagnants suivants sont tous des réseaux profonds : 11,7 % en 2013, 6,7 % en 2014, 3,6 % en 2015, 3,0 % en 2016 et 2,3 % en 2017. Une ligne horizontale marque le niveau humain, estimé à 5 %, dépassé à partir de 2015." title="Le taux d'erreur du système gagnant au concours ImageNet, de 2010 à 2017." loading="lazy" >}}
 
