@@ -23,6 +23,8 @@ personne. L'expression **IA générative** (*generative AI*) se répand alors po
 désigner l'ensemble de ces systèmes, et les **grands modèles de langage** (*large
 language models*, LLM) comme celui de ChatGPT en deviennent la figure centrale.
 
+{{< image src="/images/module4/cent-millions-utilisateurs.svg" alt="Un graphique à barres horizontales : le temps qu'a mis chaque service, après son lancement, à atteindre 100 millions d'utilisateurs. Threads, 2023 : 5 jours, en inscriptions. ChatGPT, 2022 : 2 mois. TikTok, 2017 : 9 mois. Instagram, 2010 : 2 ans et demi. Facebook, 2004 : 4 ans et demi. Twitter, 2006 : 5 ans. Spotify, 2008 : 7 ans et demi. Netflix, 2007, pour sa diffusion en ligne : 10 ans." title="ChatGPT a atteint 100 millions d'utilisateurs plus vite que tous les grands services en ligne avant lui. Seul Threads, adossé aux comptes Instagram, a fait mieux depuis. Sources : UBS et Similarweb, annonces des entreprises." loading="lazy" >}}
+
 Ce module explique comment ces systèmes fonctionnent, ce qu'ils permettent, et ce
 qui leur échappe.
 
@@ -41,6 +43,16 @@ d'images a appris la distribution des photos. Un grand modèle de langage a appr
 celle des textes écrits par des humains : il donne, pour chaque début de texte, la
 probabilité de chaque mot qui pourrait suivre, et il écrit en tirant ces mots un par
 un.
+
+Le mécanisme est d'une simplicité déconcertante. Rien, dans cette description, ne
+parle de comprendre une question, de raisonner ou de vérifier une réponse. Il est
+pourtant difficile d'imaginer comment, en répétant cette seule opération, un mot
+après l'autre, on obtient les réponses de ChatGPT : expliquer une notion, écrire un
+programme, résumer un article ou traduire un poème. Ce contraste est l'une des
+grandes surprises de l'IA récente, et il traverse tout ce module. Il revient dans
+« [Ce que la prédiction exige](docs/module4/50-predire-le-mot-suivant/#ce-que-la-prédiction-exige) »,
+puis dans « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »,
+qui se demande ce que ces modèles comprennent vraiment.
 
 Pour le reste, rien ne change par rapport aux modules précédents. Ces modèles sont
 des [réseaux de neurones](docs/module3), entraînés par
