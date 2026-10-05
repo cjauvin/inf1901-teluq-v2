@@ -42,8 +42,9 @@
 <script>
 /**
  * Un classifieur simple (une régression logistique à dix sorties, sans couche
- * cachée) est entraîné dans la page, sur des chiffres dessinés avec plusieurs
- * polices, tailles, positions et inclinaisons. On fabrique ensuite un exemple
+ * cachée) a été entraîné hors ligne (scripts/gen_adverse.py), sur des chiffres
+ * dessinés avec plusieurs polices, tailles, positions et inclinaisons ; la page
+ * charge ses poids depuis data/adverse.json. On fabrique ensuite un exemple
  * adverse : chaque pixel est déplacé d'au plus « force », dans le sens qui
  * augmente le plus la probabilité de la réponse cible (méthode du signe du
  * gradient, Goodfellow et collègues, 2014).
@@ -75,25 +76,22 @@ function probas(x) {
     const m = Math.max(...z), e = z.map(v => Math.exp(v - m)), t = e.reduce((a, b) => a + b, 0);
     return e.map(v => v / t);
 }
-function entrainer() {
-    const r = hasard(12345), [X, Y] = exemples(6000, r);
-    W = Array.from({ length: 10 }, () => new Float32Array(D)); B = new Float32Array(10);
-    for (let ep = 0; ep < 15; ep++) {
-        const taux = 0.5 / (1 + ep);
-        for (let n = 0; n < X.length; n++) {
-            const p = probas(X[n]);
-            for (let k = 0; k < 10; k++) {
-                const g = p[k] - (Y[n] === k ? 1 : 0);
-                if (Math.abs(g) < 1e-4) continue;
-                const w = W[k], x = X[n];
-                for (let i = 0; i < D; i++) w[i] -= taux * (g * x[i] + 1e-4 * w[i]);
-                B[k] -= taux * g;
-            }
-        }
+function demi(buf) {                       // float16 encodés en base64 → Float32Array
+    const o = Uint8Array.from(atob(buf), c => c.charCodeAt(0)), h = new Uint16Array(o.buffer), f = new Float32Array(h.length);
+    for (let i = 0; i < h.length; i++) {
+        const s = h[i] & 0x8000 ? -1 : 1, e = (h[i] >> 10) & 0x1f, m = h[i] & 0x3ff;
+        f[i] = s * (e === 0 ? m * 2 ** -24 : e === 31 ? (m ? NaN : Infinity) : (1 + m / 1024) * 2 ** (e - 15));
     }
+    return f;
+}
+async function charger() {
+    const d = await (await fetch('data/adverse.json')).json(), w = demi(d.w);
+    W = Array.from({ length: 10 }, (_, k) => w.subarray(k * D, (k + 1) * D)); B = demi(d.b);
+}
+function justesse() {                      // une demi-seconde de calcul : après le premier affichage
     const [Xt, Yt] = exemples(1000, hasard(999));
     const juste = Xt.filter((x, n) => { const p = probas(x); return p.indexOf(Math.max(...p)) === Yt[n]; }).length;
-    document.getElementById('info').textContent = `Ce classifieur, entraîné dans la page sur 6 000 chiffres dessinés par l'ordinateur, reconnaît ${Math.round(juste / 10)} % de 1 000 chiffres de test.`;
+    document.getElementById('info').textContent = `Ce classifieur, entraîné sur 6 000 chiffres dessinés par l'ordinateur, reconnaît ${Math.round(juste / 10)} % de 1 000 chiffres de test.`;
 }
 
 function peindre(id, x, signe) {
@@ -145,8 +143,7 @@ for (let k = 0; k < 10; k++) {
     document.getElementById('cibles').insertAdjacentHTML('beforeend', `<button id="t${k}" class="choix cible" onclick="cible=${k};maj()">${k}</button>`);
 }
 document.getElementById('eps').addEventListener('input', maj);
-entrainer();
-maj();
+charger().then(() => { maj(); setTimeout(justesse, 50); });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
 </body>

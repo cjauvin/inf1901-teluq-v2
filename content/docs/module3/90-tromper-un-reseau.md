@@ -46,8 +46,8 @@ dans le même sens, finissent par s'additionner et faire basculer la réponse.
 
 ## Tromper un réseau à manipuler
 
-Dans l'applet ci-dessous, un classifieur de chiffres est entraîné quand la page
-s'ouvre, sur des chiffres dessinés par l'ordinateur. C'est un modèle simple, une
+Dans l'applet ci-dessous, un classifieur de chiffres a été entraîné sur des chiffres
+dessinés par l'ordinateur. C'est un modèle simple, une
 [régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique) à dix sorties, sans couche cachée, et non
 un réseau profond. Le principe de l'attaque est le même.
 
