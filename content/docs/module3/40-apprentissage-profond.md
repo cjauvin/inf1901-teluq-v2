@@ -322,6 +322,15 @@ de reproduire ses exemples, et la descente de gradient aboutit
 le plus souvent à l'une des plus simples. C'est un cas où la pratique a précédé la
 théorie.
 
+Un phénomène voisin a été observé en 2022 par une équipe d'OpenAI, cette fois au fil
+de l'entraînement plutôt qu'en fonction de la taille. Sur de petites tâches
+d'arithmétique, un réseau apprend d'abord ses exemples par cœur : il ne fait plus
+aucune erreur sur eux, mais répond au hasard sur les nouveaux. Si l'on poursuit
+l'entraînement bien au-delà, parfois des milliers d'étapes plus tard, il se met
+soudain à généraliser presque parfaitement. Les chercheurs ont appelé ce phénomène
+***grokking***, d'après un mot inventé par l'écrivain Robert Heinlein, qui signifie
+« comprendre en profondeur ».
+
 ## Apprendre sans étiquettes : l'autoencodeur
 
 Tous les réseaux vus jusqu'ici sont entraînés avec des exemples étiquetés (*labeled
@@ -346,6 +355,18 @@ latente** (*latent representation*). C'est un cas
 d'[auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-même-ses-réponses-lauto-supervision)
 (*self-supervised learning*), présentée au Module 2 : les données fournissent
 elles-mêmes la réponse attendue.
+
+L'ensemble des valeurs que peuvent prendre ces quelques nombres forme l'**espace
+latent** (*latent space*) du réseau. C'est un espace **compressé** : quelques
+dizaines de dimensions au lieu de 784, où ne reste que ce qui distingue une image
+d'une autre. Deux images semblables y occupent des points voisins, et l'on peut s'y
+déplacer d'un chiffre à l'autre par petites étapes. Beaucoup de chercheurs y voient
+l'endroit où un réseau travaille vraiment : il n'y manipule plus des pixels, mais
+des propriétés abstraites, comme la forme ou l'inclinaison d'un chiffre. Certains,
+comme Yann Le Cun, pensent même qu'une intelligence artificielle devrait raisonner
+et faire ses prévisions dans un tel espace, plutôt que sur les données brutes. Le
+[Module 4](docs/module4/10-generer/#lespace-latent) permet d'explorer l'espace latent
+d'un réseau entraîné sur des chiffres manuscrits.
 
 Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
 d'aucune image réelle, il produit quand même une image. C'est une première façon de
