@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 760 496" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le temps pour atteindre 100 millions d'utilisateurs</title>
+<desc>Un graphique à barres horizontales : le temps qu'a mis chaque service, après son lancement, à atteindre 100 millions d'utilisateurs. Threads, 2023 : 5 jours, en inscriptions. ChatGPT, 2022 : 2 mois. TikTok, 2017 : 9 mois. Instagram, 2010 : 2 ans et demi. Facebook, 2004 : 4 ans et demi. Twitter, 2006 : 5 ans. Spotify, 2008 : 7 ans et demi. Netflix, 2007, pour sa diffusion en ligne : 10 ans.</desc>
+<rect x="0" y="0" width="760" height="496" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="380.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Combien de temps pour atteindre 100 millions d'utilisateurs ?</text>
+<text x="192" y="78" font-size="10.5" fill="#7a6f63" text-anchor="end">lancement</text>
+<line x1="200.0" y1="86" x2="200.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="none"/>
+<text x="200.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">0</text>
+<line x1="280.0" y1="86" x2="280.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="280.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">2 ans</text>
+<line x1="360.0" y1="86" x2="360.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="360.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">4 ans</text>
+<line x1="440.0" y1="86" x2="440.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="440.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">6 ans</text>
+<line x1="520.0" y1="86" x2="520.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="520.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">8 ans</text>
+<line x1="600.0" y1="86" x2="600.0" y2="424" stroke="#b8a888" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="600.0" y="440" font-size="10.5" fill="#7a6f63" text-anchor="middle">10 ans</text>
+<text x="40" y="112" font-size="13" fill="#3a3531" font-weight="400">Threads*</text>
+<text x="192" y="112" font-size="11" fill="#7a6f63" text-anchor="end">2023</text>
+<rect x="200" y="92" width="2.5" height="30" rx="3" fill="#b8a888"/>
+<text x="210.5" y="112" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">5 jours</text>
+<text x="40" y="154" font-size="13" fill="#3a3531" font-weight="700">ChatGPT</text>
+<text x="192" y="154" font-size="11" fill="#7a6f63" text-anchor="end">2022</text>
+<rect x="200" y="134" width="6.7" height="30" rx="3" fill="#c4564a"/>
+<text x="214.7" y="154" font-size="12.5" fill="#3a3531" font-weight="700" stroke="#efe7d3" stroke-width="5" paint-order="stroke">2 mois</text>
+<text x="40" y="196" font-size="13" fill="#3a3531" font-weight="400">TikTok</text>
+<text x="192" y="196" font-size="11" fill="#7a6f63" text-anchor="end">2017</text>
+<rect x="200" y="176" width="30.0" height="30" rx="3" fill="#9a5b33"/>
+<text x="238.0" y="196" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">9 mois</text>
+<text x="40" y="238" font-size="13" fill="#3a3531" font-weight="400">Instagram</text>
+<text x="192" y="238" font-size="11" fill="#7a6f63" text-anchor="end">2010</text>
+<rect x="200" y="218" width="100.0" height="30" rx="3" fill="#9a5b33"/>
+<text x="308.0" y="238" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">2 ans et demi</text>
+<text x="40" y="280" font-size="13" fill="#3a3531" font-weight="400">Facebook</text>
+<text x="192" y="280" font-size="11" fill="#7a6f63" text-anchor="end">2004</text>
+<rect x="200" y="260" width="180.0" height="30" rx="3" fill="#9a5b33"/>
+<text x="388.0" y="280" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">4 ans et demi</text>
+<text x="40" y="322" font-size="13" fill="#3a3531" font-weight="400">Twitter</text>
+<text x="192" y="322" font-size="11" fill="#7a6f63" text-anchor="end">2006</text>
+<rect x="200" y="302" width="206.7" height="30" rx="3" fill="#9a5b33"/>
+<text x="414.7" y="322" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">5 ans</text>
+<text x="40" y="364" font-size="13" fill="#3a3531" font-weight="400">Spotify</text>
+<text x="192" y="364" font-size="11" fill="#7a6f63" text-anchor="end">2008</text>
+<rect x="200" y="344" width="306.7" height="30" rx="3" fill="#9a5b33"/>
+<text x="514.7" y="364" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">7 ans et demi</text>
+<text x="40" y="406" font-size="13" fill="#3a3531" font-weight="400">Netflix</text>
+<text x="192" y="406" font-size="11" fill="#7a6f63" text-anchor="end">2007</text>
+<rect x="200" y="386" width="410.0" height="30" rx="3" fill="#9a5b33"/>
+<text x="618.0" y="406" font-size="12.5" fill="#3a3531" font-weight="400" stroke="#efe7d3" stroke-width="5" paint-order="stroke">10 ans</text>
+<text x="40" y="462" font-size="10.5" fill="#5b5249">* Threads : inscriptions, grâce aux comptes Instagram existants. Netflix : depuis le lancement de sa diffusion en ligne.</text>
+<text x="40" y="478" font-size="10.5" fill="#5b5249">Sources : UBS et Similarweb (ChatGPT, TikTok, Instagram) ; annonces des entreprises (les autres).</text>
+</svg>
