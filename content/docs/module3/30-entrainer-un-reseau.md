@@ -28,6 +28,14 @@ Pour un réseau, les paramètres sont les poids et les biais. Le paysage a alors
 milliers de dimensions et on ne peut plus le dessiner, mais la méthode reste la
 même : mesurer la pente, puis faire un pas vers le bas.
 
+On peut toutefois en dessiner une tranche, en ne faisant varier que deux poids.
+Contrairement à la cuvette du Module 2, ce paysage a en général plusieurs creux, et
+le creux où l'on arrive dépend du point de départ. La section
+« [Un réseau qui apprend le XOR](docs/module3/30-entrainer-un-reseau/#un-réseau-qui-apprend-le-xor) »
+le montre sur un vrai réseau.
+
+{{< image src="/images/module3/paysage-reseau.svg" alt="Une surface en trois dimensions, vue en perspective, au-dessus du plan de deux poids du réseau. La hauteur de la surface est l'erreur. Contrairement à une cuvette, la surface est accidentée : elle a plusieurs creux de profondeurs différentes. Deux billes partent de deux points de départ différents et descendent la pente, pas à pas. La première arrive au fond du creux le plus profond, la seconde s'arrête dans un creux moins profond, d'où elle ne peut plus sortir en descendant." title="Une tranche du paysage d'erreur d'un réseau, selon deux de ses poids. Selon le point de départ, la descente de gradient mène à des creux différents." loading="lazy" >}}
+
 Pour un réseau qui classe, l'erreur mesurée est en général la même que celle de la
 régression logistique. La réduire revient à rendre les bonnes réponses aussi
 probables que possible : c'est le
