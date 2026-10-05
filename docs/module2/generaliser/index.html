@@ -142,7 +142,7 @@ comme kNN le classait selon ses voisins. La différence est que le SVM ne garde
 que les vecteurs de support, et qu&rsquo;il pondère leur influence pour obtenir la plus
 grande marge.</p><p>L&rsquo;applet ci-dessous est celle de la section sur la marge, avec le jeu de points
 « XOR » et le noyau gaussien. Le curseur de portée règle la distance à laquelle
-deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791226712894368848 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
+deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1791226814954174064 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
 mal classés.</li><li>Revenez au noyau gaussien. La frontière se courbe et sépare les quatre groupes.</li><li>Réduisez la portée. La frontière se met à entourer chaque groupe de près, et
 presque tous les points deviennent des vecteurs de support. C&rsquo;est le
 sur-apprentissage (<em>overfitting</em>) de la
@@ -166,7 +166,7 @@ trop souple finit par suivre le hasard autant que le signal. Pour observer ce
 compromis (et le mesurer, puisque nous savons maintenant le faire), revenons à
 kNN. Son seul réglage, le nombre de voisins $k$, contrôle directement la
 souplesse du modèle. Dans l&rsquo;applet ci-dessous, faites glisser lentement $k$
-d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791226712894435437 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
+d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1791226814954274521 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
 frontière se déforme pour entourer chaque exemple, forme des îlots autour des
 points isolés et suit tous les détails. L&rsquo;erreur d&rsquo;entraînement est nulle,
 puisque chaque exemple est son propre plus proche voisin. Cependant, cette
