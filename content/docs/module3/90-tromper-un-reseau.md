@@ -186,6 +186,15 @@ perceptron en 1969. La rétropropagation permet d'entraîner ces réseaux. Avec 
 données et du calcul en quantité suffisante, des réseaux profonds de formes adaptées
 ont dépassé toutes les autres méthodes pour les images, les séquences et les jeux.
 
+Ces réseaux ne sont pas des inventions séparées. Le perceptron multicouche, le réseau
+convolutif, le réseau récurrent, le Transformer et des assemblages comme AlphaGo sont
+des [variations sur un même thème](docs/module3/#des-variations-sur-un-même-thème).
+Ce sont les mêmes pièces, reliées autrement et entraînées par la même
+rétropropagation. Cette facilité à composer explique en bonne partie leur succès. Le
+Module 4 en tire parti à son tour, par exemple en branchant un réseau qui lit une
+image sur un
+[modèle de langage](docs/module4/92-voir-entendre-parler/#un-modèle-de-langage-qui-lit-des-images).
+
 Ce module a aussi montré leurs limites. Ces réseaux ne voient pas, ne lisent pas
 et ne jouent pas comme nous. Ils peuvent être trompés par des perturbations
 invisibles, réussir pour de mauvaises raisons, et ils n'expliquent pas leurs

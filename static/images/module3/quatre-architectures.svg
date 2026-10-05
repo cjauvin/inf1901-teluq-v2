@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Quatre architectures, les mêmes pièces</title>
+<desc>Quatre petits réseaux, dessinés avec les mêmes neurones, les données montant du bas vers le haut. Perceptron multicouche : trois couches, chaque neurone relié à tous ceux de la couche précédente. Réseau convolutif : chaque neurone n'est relié qu'à trois voisins de la couche précédente, avec les trois mêmes poids, marqués de trois couleurs qui se répètent partout : un même filtre, réutilisé partout. Réseau récurrent : la même couche, déroulée sur les mots « le », « chat », « dort », chaque étape transmettant sa mémoire à la suivante par les mêmes poids. Transformer : pour les mêmes trois mots, chaque mot consulte tous les autres, avec des poids d'attention plus ou moins forts, puis un petit réseau est appliqué à chaque mot.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="760" height="340" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="380.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Quatre architectures, les mêmes pièces</text>
+<rect x="20.0" y="52" width="172.5" height="272" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<line x1="40.0" y1="220.0" x2="61.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="40.0" y1="220.0" x2="91.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="40.0" y1="220.0" x2="121.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="40.0" y1="220.0" x2="151.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="73.1" y1="220.0" x2="61.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="73.1" y1="220.0" x2="91.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="73.1" y1="220.0" x2="121.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="73.1" y1="220.0" x2="151.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="106.2" y1="220.0" x2="61.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="106.2" y1="220.0" x2="91.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="106.2" y1="220.0" x2="121.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="106.2" y1="220.0" x2="151.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="139.4" y1="220.0" x2="61.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="139.4" y1="220.0" x2="91.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="139.4" y1="220.0" x2="121.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="139.4" y1="220.0" x2="151.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="172.5" y1="220.0" x2="61.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="172.5" y1="220.0" x2="91.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="172.5" y1="220.0" x2="121.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="172.5" y1="220.0" x2="151.2" y2="158.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="61.2" y1="158.0" x2="89.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="61.2" y1="158.0" x2="123.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="91.2" y1="158.0" x2="89.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="91.2" y1="158.0" x2="123.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="121.2" y1="158.0" x2="89.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="121.2" y1="158.0" x2="123.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="151.2" y1="158.0" x2="89.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="151.2" y1="158.0" x2="123.2" y2="96.0" stroke="#b8a888" stroke-width="1" stroke-opacity="1" stroke-linecap="round"/>
+<circle cx="40.0" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="73.1" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="106.2" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="139.4" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="172.5" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="61.2" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="91.2" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="121.2" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="151.2" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="89.2" cy="96.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="123.2" cy="96.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<text x="106.25" y="276" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Perceptron multicouche</text>
+<text x="106.25" y="295" font-size="10.5" fill="#5b5249" text-anchor="middle">chaque neurone relié à tous</text>
+<text x="106.25" y="309" font-size="10.5" fill="#5b5249" text-anchor="middle">ceux de la couche précédente</text>
+<rect x="202.5" y="52" width="172.5" height="272" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<line x1="222.5" y1="220.0" x2="244.6" y2="158.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="244.6" y1="220.0" x2="244.6" y2="158.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="266.7" y1="220.0" x2="244.6" y2="158.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="244.6" y1="220.0" x2="266.7" y2="158.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="266.7" y1="220.0" x2="266.7" y2="158.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="220.0" x2="266.7" y2="158.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="266.7" y1="220.0" x2="288.8" y2="158.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="220.0" x2="288.8" y2="158.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="310.8" y1="220.0" x2="288.8" y2="158.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="220.0" x2="310.8" y2="158.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="310.8" y1="220.0" x2="310.8" y2="158.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="332.9" y1="220.0" x2="310.8" y2="158.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="310.8" y1="220.0" x2="332.9" y2="158.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="332.9" y1="220.0" x2="332.9" y2="158.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="355.0" y1="220.0" x2="332.9" y2="158.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="244.6" y1="158.0" x2="266.7" y2="96.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="266.7" y1="158.0" x2="266.7" y2="96.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="158.0" x2="266.7" y2="96.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="266.7" y1="158.0" x2="288.8" y2="96.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="158.0" x2="288.8" y2="96.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="310.8" y1="158.0" x2="288.8" y2="96.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="288.8" y1="158.0" x2="310.8" y2="96.0" stroke="#9a5b33" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="310.8" y1="158.0" x2="310.8" y2="96.0" stroke="#c4564a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="332.9" y1="158.0" x2="310.8" y2="96.0" stroke="#3a6ea5" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<circle cx="222.5" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="244.6" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="266.7" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="288.8" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="310.8" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="332.9" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="355.0" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="244.6" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="266.7" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="288.8" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="310.8" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="332.9" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="266.7" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="288.8" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="310.8" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<text x="288.75" y="276" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Réseau convolutif</text>
+<text x="288.75" y="295" font-size="10.5" fill="#5b5249" text-anchor="middle">un même filtre (trois poids),</text>
+<text x="288.75" y="309" font-size="10.5" fill="#5b5249" text-anchor="middle">réutilisé partout</text>
+<rect x="385.0" y="52" width="172.5" height="272" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<line x1="411.0" y1="220.0" x2="411.0" y2="158.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="411.0" y1="158.0" x2="411.0" y2="96.0" stroke="#b8a888" stroke-width="1.4" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="417.5" y1="158.0" x2="462.8" y2="158.0" stroke="#9a5b33" stroke-width="2.2" stroke-opacity="1" stroke-linecap="round" marker-end="url(#p)"/>
+<line x1="471.2" y1="220.0" x2="471.2" y2="158.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="471.2" y1="158.0" x2="471.2" y2="96.0" stroke="#b8a888" stroke-width="1.4" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="477.8" y1="158.0" x2="523.0" y2="158.0" stroke="#9a5b33" stroke-width="2.2" stroke-opacity="1" stroke-linecap="round" marker-end="url(#p)"/>
+<line x1="531.5" y1="220.0" x2="531.5" y2="158.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="531.5" y1="158.0" x2="531.5" y2="96.0" stroke="#b8a888" stroke-width="1.4" stroke-opacity="1" stroke-linecap="round"/>
+<circle cx="411.0" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="471.2" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="531.5" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="411.0" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="471.2" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="531.5" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="411.0" cy="96.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="471.2" cy="96.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="531.5" cy="96.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<text x="411.0" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">le</text>
+<text x="471.2" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">chat</text>
+<text x="531.5" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">dort</text>
+<text x="471.25" y="276" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Réseau récurrent</text>
+<text x="471.25" y="295" font-size="10.5" fill="#5b5249" text-anchor="middle">la même couche,</text>
+<text x="471.25" y="309" font-size="10.5" fill="#5b5249" text-anchor="middle">réutilisée à chaque mot</text>
+<rect x="567.5" y="52" width="172.5" height="272" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<line x1="593.5" y1="220.0" x2="593.5" y2="158.0" stroke="#c4564a" stroke-width="3.0" stroke-opacity="0.74" stroke-linecap="round"/>
+<line x1="653.8" y1="220.0" x2="593.5" y2="158.0" stroke="#c4564a" stroke-width="1.6" stroke-opacity="0.5125" stroke-linecap="round"/>
+<line x1="714.0" y1="220.0" x2="593.5" y2="158.0" stroke="#c4564a" stroke-width="1.2" stroke-opacity="0.4475" stroke-linecap="round"/>
+<line x1="593.5" y1="220.0" x2="653.8" y2="158.0" stroke="#c4564a" stroke-width="1.4" stroke-opacity="0.48" stroke-linecap="round"/>
+<line x1="653.8" y1="220.0" x2="653.8" y2="158.0" stroke="#c4564a" stroke-width="2.8000000000000003" stroke-opacity="0.7075" stroke-linecap="round"/>
+<line x1="714.0" y1="220.0" x2="653.8" y2="158.0" stroke="#c4564a" stroke-width="1.6" stroke-opacity="0.5125" stroke-linecap="round"/>
+<line x1="593.5" y1="220.0" x2="714.0" y2="158.0" stroke="#c4564a" stroke-width="1.0" stroke-opacity="0.415" stroke-linecap="round"/>
+<line x1="653.8" y1="220.0" x2="714.0" y2="158.0" stroke="#c4564a" stroke-width="3.2" stroke-opacity="0.7725" stroke-linecap="round"/>
+<line x1="714.0" y1="220.0" x2="714.0" y2="158.0" stroke="#c4564a" stroke-width="1.6" stroke-opacity="0.5125" stroke-linecap="round"/>
+<line x1="593.5" y1="158.0" x2="593.5" y2="96.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="653.8" y1="158.0" x2="653.8" y2="96.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<line x1="714.0" y1="158.0" x2="714.0" y2="96.0" stroke="#2f6f6a" stroke-width="1.8" stroke-opacity="1" stroke-linecap="round"/>
+<circle cx="593.5" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="653.8" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="714.0" cy="220.0" r="6.5" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="593.5" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="653.8" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="714.0" cy="158.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="593.5" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="653.8" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<circle cx="714.0" cy="96.0" r="6.5" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1.5"/>
+<text x="593.5" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">le</text>
+<text x="653.8" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">chat</text>
+<text x="714.0" y="242" font-size="11" fill="#3a3531" text-anchor="middle" font-style="italic">dort</text>
+<text x="653.75" y="276" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Transformer</text>
+<text x="653.75" y="295" font-size="10.5" fill="#5b5249" text-anchor="middle">chaque mot consulte</text>
+<text x="653.75" y="309" font-size="10.5" fill="#5b5249" text-anchor="middle">tous les autres</text>
+</svg>

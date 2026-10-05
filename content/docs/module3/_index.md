@@ -112,6 +112,27 @@ Trois précisions évitent des malentendus fréquents.
   figures et des applets. Les calculs, pour qui veut les voir, sont dans des blocs
   dépliables « Pour aller plus loin ».
 
+## Des variations sur un même thème
+
+Les réseaux de ce module portent des noms différents : perceptron multicouche, réseau
+convolutif, réseau récurrent, Transformer. Ils reposent pourtant tous sur les mêmes
+pièces. Ce sont des neurones qui calculent des sommes pondérées, des fonctions
+d'activation et des poids ajustés par une même méthode, la rétropropagation. D'un
+réseau à l'autre, seule change la façon de relier ces pièces, c'est-à-dire
+l'[architecture](docs/module3/20-une-couche-cachee/#relier-des-neurones). Un réseau
+convolutif réutilise le même petit filtre partout dans l'image. Un réseau récurrent
+réutilise la même couche à chaque mot. Un Transformer laisse chaque mot consulter
+tous les autres.
+
+{{< image src="/images/module3/quatre-architectures.svg" alt="Quatre petits réseaux, dessinés avec les mêmes neurones, les données montant du bas vers le haut. Perceptron multicouche : trois couches, chaque neurone relié à tous ceux de la couche précédente. Réseau convolutif : chaque neurone n'est relié qu'à trois voisins de la couche précédente, avec les trois mêmes poids, marqués de trois couleurs qui se répètent partout. Réseau récurrent : la même couche, déroulée sur les mots « le », « chat », « dort », chaque étape transmettant sa mémoire à la suivante. Transformer : pour les mêmes trois mots, chaque mot consulte tous les autres, avec des poids d'attention plus ou moins forts, puis un petit réseau est appliqué à chaque mot." title="Des neurones, des poids, une activation. Seule change la façon de les relier." loading="lazy" >}}
+
+Ces pièces s'assemblent comme celles d'un
+[jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction).
+On peut les empiler, les combiner, ou brancher un réseau à la suite d'un autre, et
+l'ensemble s'entraîne toujours de la même façon. C'est l'une des grandes forces des
+réseaux de neurones. C'est aussi ce qui explique qu'une seule famille de méthodes se
+soit imposée pour les images, les sons, les textes et les jeux.
+
 ## Le parcours du module
 
 Comme au Module 2, chaque page rencontre une limite qui mène à la suivante.
