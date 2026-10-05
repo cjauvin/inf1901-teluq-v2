@@ -16,7 +16,7 @@ contenus posent, en particulier les hypertrucages.
 Beaucoup de ces systèmes produisent un contenu à partir d'une phrase, comme « un
 chat sur la lune ». Leur fonctionnement demande de savoir représenter le sens d'un
 texte, ce qui sera présenté avec les modèles de langage. Les chapitres du
-[Module 4](docs/module4) consacrés aux modèles multimodaux expliqueront comment le
+[Module 4](docs/module4/90-mots-et-images) consacrés aux modèles multimodaux expliqueront comment le
 texte et l'image sont reliés.
 
 ## Les images
@@ -151,7 +151,7 @@ importante. Pour produire une vidéo réaliste, un modèle doit-il comprendre le
 lois de la physique, ou lui suffit-il d'imiter l'apparence des vidéos qu'il a
 vues ? On retrouve la notion de
 [modèle du monde](docs/module1/40-representer-le-monde/#shrdlu-ou-le-sommet-de-lambition) présentée au Module 1.
-Le chapitre du [Module 4](docs/module4) sur ce que les modèles comprennent
+Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) sur ce que les modèles comprennent
 reprendra cette question.
 
 ## Au-delà des médias
@@ -175,7 +175,7 @@ sons.
 - **Les matériaux et les médicaments.** Des modèles génératifs proposent des
   molécules et des matériaux nouveaux, qui sont ensuite testés en laboratoire.
 - **Le code informatique.** Les programmes sont des textes. Leur génération relève
-  des modèles de langage, présentés dans la suite du [Module 4](docs/module4).
+  des modèles de langage, présentés dans la suite du [Module 4](docs/module4/50-predire-le-mot-suivant).
 
 Dans ces domaines, l'intérêt d'un modèle génératif est le même que pour les
 images : il propose rapidement un grand nombre de candidats plausibles, que l'on

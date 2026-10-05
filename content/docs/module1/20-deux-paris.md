@@ -117,7 +117,7 @@ version de l'un des sept problèmes du millénaire, celui des équations de
 Navier-Stokes, un résultat que les mathématiciens sont encore en train de
 vérifier. Ces machines raisonnent elles aussi, mais elles sont issues de l'autre
 pari, celui de l'apprentissage, et ne contiennent aucune règle de logique écrite
-à la main. Nous y reviendrons au [Module 4](docs/module4).
+à la main. Nous y reviendrons au [Module 4](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent).
 {{% /hint %}}
 
 {{% hint info %}}

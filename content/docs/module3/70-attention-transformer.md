@@ -230,7 +230,7 @@ texte en entier pour en produire une représentation, utile par exemple aux mote
 de recherche. **GPT**, chez OpenAI, est entraîné à une tâche plus simple : prédire
 le mot suivant d'un texte. Agrandi de version en version, ce second type de modèle
 est à l'origine des grands modèles de langage, comme
-ChatGPT. Le [Module 4](docs/module4) leur est consacré.
+ChatGPT. Le [Module 4](docs/module4/50-predire-le-mot-suivant) leur est consacré.
 
 ## Pour voir le mécanisme en détail
 

@@ -139,7 +139,7 @@ humains décident des principes plutôt que de juger chaque réponse.
 Ces protections restent imparfaites. Des utilisateurs trouvent régulièrement des
 formulations qui amènent un assistant à ignorer ses consignes, comme les attaques
 présentées au chapitre « [Tromper un réseau](docs/module3/90-tromper-un-reseau/#se-défendre) »
-du Module 3. Le chapitre du [Module 4](docs/module4) sur ce que les modèles ratent y
+du Module 3. Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices) sur ce que les modèles ratent y
 revient.
 
 ## Des modèles qui « raisonnent »
@@ -178,6 +178,6 @@ Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du ca
 réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
 l'intérieur d'un modèle est une question ouverte, présentée au chapitre du
-[Module 4](docs/module4) sur ce que les modèles comprennent. Le
+[Module 4](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) sur ce que les modèles comprennent. Le
 [chapitre suivant](docs/module4/80-outils-et-agents) montre d'abord comment on donne à ces assistants des
 outils pour agir.

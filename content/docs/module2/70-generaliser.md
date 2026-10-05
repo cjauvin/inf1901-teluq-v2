@@ -85,7 +85,7 @@ qu'un modèle sait déjà (parce que c'était dans ses données) de ce qu'il app
 de nouveau (parce qu'il généralise) est devenu, pour ces systèmes, une question
 ouverte, et en partie philosophique : où finit la mémoire, et où commence la
 compréhension ? Ce chapitre a posé cette question sur vingt maisons. Le
-[Module 4](docs/module4) la reprendra à propos d'un modèle qui a lu une grande
+[Module 4](docs/module4/94-comprendre-et-rater/#deux-façons-de-savoir) la reprendra à propos d'un modèle qui a lu une grande
 partie de ce que l'humanité a écrit.
 {{% /hint %}}
 

@@ -145,7 +145,7 @@ rappeler son action précédente et de justifier ce qu'il a fait. SHRDLU ne se
 contente donc pas de parler des blocs, il en possède une représentation exacte.
 Cette idée est importante : **un modèle du monde est une représentation interne de
 la réalité, sur laquelle on peut raisonner**. Nous la retrouverons [beaucoup plus
-loin dans le cours](docs/module4), au centre d'un débat important sur les IA actuelles.
+loin dans le cours](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde), au centre d'un débat important sur les IA actuelles.
 
 Cette réussite repose cependant sur une simplification. Le modèle du monde de
 SHRDLU est exact parce qu'il a très peu de choses à représenter : quelques blocs,

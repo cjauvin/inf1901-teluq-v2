@@ -213,7 +213,7 @@ simulation qu'à l'IA), mais elles reposent sur la même intuition. Une dernièr
 remarque prépare le [module 4](docs/module4) : tout ce savoir est **structuré à la main** par des
 humains. C'est l'opposé de la façon dont les grands modèles de langage acquièrent
 leur savoir, en traitant d'énormes quantités de texte. Ces deux conceptions du savoir
-seront comparées [plus loin dans le cours](docs/module4).
+seront comparées [plus loin dans le cours](docs/module4/94-comprendre-et-rater/#deux-façons-de-savoir).
 
 Ces quatre exemples ne sont pas les seuls. Aucune de ces techniques ne porte plus
 l'étiquette « IA », parce qu'elles font maintenant partie de l'informatique

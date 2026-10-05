@@ -330,7 +330,7 @@ elles-mêmes la réponse attendue.
 
 Le décodeur a une autre utilité. Si on lui donne des nombres qui ne viennent
 d'aucune image réelle, il produit quand même une image. C'est une première façon de
-générer du contenu, sur laquelle le [Module 4](docs/module4) reviendra.
+générer du contenu, sur laquelle le [Module 4](docs/module4/10-generer/#lespace-latent) reviendra.
 
 Un réseau profond peut donc apprendre ses propres caractéristiques, à condition
 d'avoir assez de données et de calcul. Le chapitre suivant,

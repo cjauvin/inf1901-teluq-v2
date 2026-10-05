@@ -201,7 +201,7 @@ assez vite pour traiter une vidéo en temps réel. La **segmentation** (*image
 segmentation*) va plus loin : elle classe chaque pixel, ce qui dessine le contour
 exact de chaque objet. La même année, le réseau U-Net, conçu pour des images de
 microscopie, devient la référence en imagerie médicale, par exemple pour délimiter
-une tumeur. On le retrouvera au [Module 4](docs/module4) : il sert de squelette aux
+une tumeur. On le retrouvera au [Module 4](docs/module4/20-quatre-facons-de-generer/#retirer-le-bruit-pas-à-pas-la-diffusion) : il sert de squelette aux
 premiers générateurs d'images par diffusion.
 
 {{< image src="/images/module3/classer-detecter-segmenter.jpg" alt="Trois fois la même photo d'une rue de Vancouver, avec des piétons au premier plan, des voitures, un autobus et des feux de circulation. À gauche, une seule étiquette pour toute l'image, « taxi ». Au centre, des rectangles de couleur entourent les personnes, les voitures, l'autobus et les feux, chacun avec son étiquette. À droite, chaque objet est recouvert d'une silhouette colorée qui suit exactement sa forme : rouge pour les personnes, bleu pour les voitures, jaune pour les feux." title="Classer, détecter, segmenter. Les étiquettes, les rectangles et les silhouettes ont été produits par deux réseaux préentraînés : un classifieur entraîné sur ImageNet, qui ne donne qu'une réponse pour toute l'image, et Mask R-CNN, qui détecte et segmente chaque objet (photo de Gabriel Santiago, Unsplash, CC0)." loading="lazy" >}}
@@ -246,7 +246,7 @@ lésion de la peau avant cet ajustement, mais il savait déjà voir.
 
 L'apprentissage par transfert est devenu la manière normale d'utiliser
 l'apprentissage profond. C'est aussi l'idée qui fonde les grands modèles de langage
-du [Module 4](docs/module4) : un modèle est d'abord pré-entraîné sur une immense
+du [Module 4](docs/module4/70-du-modele-a-l-assistant/#imiter-de-bonnes-réponses) : un modèle est d'abord pré-entraîné sur une immense
 quantité de texte, puis ajusté pour une tâche ou pour la conversation. Le *P* de
 GPT signifie d'ailleurs *pre-trained*.
 

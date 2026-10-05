@@ -319,7 +319,7 @@ On dispose donc de deux approches pour le même objectif :
 Sur nos données en deux dimensions, ces deux approches très différentes
 aboutissent à la **même forme de frontière**, une droite. La distinction entre
 apprendre à séparer et apprendre à décrire reste cependant l'une des plus
-importantes du domaine. Nous la retrouverons au [Module 4](docs/module4), qui
+importantes du domaine. Nous la retrouverons au [Module 4](docs/module4/10-generer/#décrire-plutôt-que-séparer), qui
 distingue les modèles qui classent et ceux qui produisent du contenu.
 
 {{% details "Les mathématiques de la classification bayésienne naïve (optionnel)" %}}

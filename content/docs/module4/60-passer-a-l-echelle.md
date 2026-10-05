@@ -105,7 +105,7 @@ n'est modifié. Le modèle reconnaît la tâche dans le texte qu'on lui donne, e
 performances augmentent avec sa taille. GPT-3 réussit de nombreuses tâches de cette
 façon, alors que les modèles plus petits n'y parviennent presque pas. La rédaction des
 requêtes est devenue une compétence à part entière, présentée au chapitre du
-[Module 4](docs/module4) sur les outils et les agents.
+[Module 4](docs/module4/80-outils-et-agents/#formuler-la-requête) sur les outils et les agents.
 
 ## Des capacités qui apparaissent ?
 

@@ -103,7 +103,7 @@ Pour une même distribution, un réglage modifie la façon de tirer. On l'appell
 La température est un réglage des modèles génératifs actuels. Dans un modèle de
 langage, une température basse donne des réponses prévisibles, qui conviennent à
 une question factuelle. Une température plus haute donne des textes plus variés,
-qui conviennent mieux à un poème ou à une liste d'idées. Le chapitre du [Module 4](docs/module4)
+qui conviennent mieux à un poème ou à une liste d'idées. Le chapitre du [Module 4](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant)
 consacré aux modèles de langage reprendra ce réglage avec de vrais textes.
 
 ## Le vrai problème : les grandes dimensions

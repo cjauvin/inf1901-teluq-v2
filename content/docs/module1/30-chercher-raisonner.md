@@ -196,7 +196,7 @@ ELIZA »** cette forte tendance à *projeter* de la compréhension, et même d
 
 ELIZA est en quelque sorte l'inverse du test de Turing. Elle montre qu'il peut
 être facile de donner l'illusion de penser sans rien comprendre. Cette mise en
-garde prendra toute son importance avec les agents conversationnels ([module 4](docs/module4)) et
+garde prendra toute son importance avec les agents conversationnels ([module 4](docs/module4/94-comprendre-et-rater/#lillusion-de-comprendre)) et
 dans le débat, toujours ouvert, sur ce que « comprendre » veut dire pour une
 machine ([module 5](docs/module5)).
 

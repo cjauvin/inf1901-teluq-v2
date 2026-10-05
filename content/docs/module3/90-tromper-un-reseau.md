@@ -146,7 +146,7 @@ attaques et défenses, sans solution complète à ce jour.
 
 Le problème ne se limite pas aux images. Les grands modèles de langage ont leurs propres attaques : des formulations conçues pour
 leur faire ignorer leurs consignes, ou des instructions cachées dans un document
-qu'on leur demande de lire. Le [Module 4](docs/module4) y reviendra.
+qu'on leur demande de lire. Le [Module 4](docs/module4/80-outils-et-agents/#des-agents) y reviendra.
 
 ## Une boîte noire
 

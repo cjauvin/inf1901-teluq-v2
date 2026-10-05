@@ -4,59 +4,145 @@ weight: 400
 bookCollapseSection: true
 ---
 
-![](/images/llm.png)
+# Module 4 — IA générative et grands modèles de langage
 
-# Module 4 - IA générative et grands modèles de langage
+{{< image src="/images/module4/visages-stylegan.jpg" alt="Quatre portraits photographiques en gros plan : une jeune femme aux cheveux châtains avec une frange, un homme aux cheveux courts sur fond bleu, un garçon souriant en chemise blanche, une femme souriante sur fond sombre. Rien ne les distingue de vraies photos." title="Ces quatre visages ont été produits par un réseau de neurones. Aucune de ces personnes n'existe." loading="lazy" >}}
 
-Depuis l'introduction spectaculaire de ChatGPT en novembre 2022, les mots
-"intelligence artificielle", qui étaient déjà omniprésents, sont passés en
-vitesse supérieure, surtout dans la culture populaire. Pour la première fois,
-avec ChatGPT et son interface conversationnelle (de "chat", car ChatGPT est un
-"chatbot"), on a l'impression d'être en présence d'une _vraie_ intelligence
-artificielle, presque _générale_, et non un système d'IA étroit, qui peut
-seulement accomplir une fonction particulière et limitée. Comme nous l'avons
-soulevé à quelques reprises dans le cours, une réaction normale, quand on
-apprend le fonctionnement d'une régression linéaire ou logistique, peut être de
-se poser la question : en quoi est-ce que ceci constitue de l'IA au juste?
-Pourtant avec ChatGPT, ceci devenait clair : il est désormais non seulement
-possible de converser avec un ordinateur, mais il est également possible de lui
-faire produire (générer) des poèmes, des textes, des images, etc. Bien que cela
-soit discutable, on peut penser que ChatGPT constitue la première application
-d'IA capable de passer le fameux [test de
-Turing](https://fr.wikipedia.org/wiki/Test_de_Turing).
+## Reconnaître, puis produire
 
-En parallèle de cette introduction fracassante, on a commencé entendre parler de
-plus en plus d'un autre concept, étroitement associé : l'IA générative. Et on
-comprend que ChatGPT est un exemple d'IA générative en fait, mais que cette
-dernière ne se limite pas à ce type d'application (les grands modèles de langage
-comme ChatGPT). Il s'agit d'un domaine plus vaste et complexe, qui regroupe de
-nombreuses idées, que nous allons explorer dans ce module.
+Les réseaux du [Module 3](docs/module3) **reconnaissent**. On leur donne une image,
+et ils répondent « 7 » ou « panda ». On leur donne une phrase, et ils proposent sa
+traduction. Depuis une dizaine d'années, les mêmes architectures apprennent aussi à
+**produire** : des visages de personnes qui n'existent pas, des images à partir
+d'une phrase, des voix, de la musique, des vidéos, et surtout du texte.
 
-## But et objectifs
+Le 30 novembre 2022, OpenAI ouvre au public ChatGPT. En deux mois, le service compte
+100 millions d'utilisateurs. Pour beaucoup de gens, c'est la première fois qu'une
+machine semble comprendre ce qu'on lui dit, et répondre comme le ferait une
+personne. L'expression **IA générative** (*generative AI*) se répand alors pour
+désigner l'ensemble de ces systèmes, et les **grands modèles de langage** (*large
+language models*, LLM) comme celui de ChatGPT en deviennent la figure centrale.
 
-Le but de ce module est de vous amener à avoir une vue d'ensemble et une
-compréhension de haut niveau raisonnable de ce qu'on entend par "IA générative",
-et plus spécifiquement :
+Ce module explique comment ces systèmes fonctionnent, ce qu'ils permettent, et ce
+qui leur échappe.
 
-* Explorer et comprendre les grandes lignes de certains modèles d'IAG comme les
-réseaux de neurones adversériaux (GANs), les modèles de diffusion (qui
-permettent de passer du texte aux images, avec DALL-E par exemple), les modèles
-de génération vidéo, comme les très récents Sora et Veo;
-* Explorer et comprendre tout d'abord la notion fondamentale et classique de
-*modèle de langage*, pour ensuite plonger dans sa version moderne et extrêmement
-puissante, les grands modèles de langage (GML, ou LLM en anglais), avec ChatGPT, qui
-est l'application la plus fameuse et spectaculaire de l'IAG.
+## Une seule grande idée : imiter une distribution
 
-![](/images/module4/ai-venn.png)
+Le chapitre « [Classer](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne) »
+du Module 2 distinguait deux façons de construire un modèle. Un modèle
+**discriminatif** trace une frontière entre des classes. Un modèle **génératif**
+décrit chaque classe, assez précisément pour pouvoir, en principe, en produire de
+nouveaux exemples.
+
+L'IA générative, c'est ce « en principe » devenu réalité. Un modèle génératif
+apprend comment se répartissent les données, leur **distribution**, puis il tire au
+hasard de nouveaux exemples qui se répartissent de la même façon. Un générateur
+d'images a appris la distribution des photos. Un grand modèle de langage a appris
+celle des textes écrits par des humains : il donne, pour chaque début de texte, la
+probabilité de chaque mot qui pourrait suivre, et il écrit en tirant ces mots un par
+un.
+
+Pour le reste, rien ne change par rapport aux modules précédents. Ces modèles sont
+des [réseaux de neurones](docs/module3), entraînés par
+[descente de gradient](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente),
+et leur architecture la plus importante est le
+[Transformer](docs/module3/70-attention-transformer) présenté au Module 3. Ce qui a
+changé, c'est l'échelle : des milliards de paramètres, entraînés sur une grande
+partie du texte et des images disponibles sur le Web.
+
+## Ce que ce module n'est pas
+
+Trois précisions évitent des malentendus fréquents.
+
+- **Ce module ne demande aucune formule.** Les mécanismes sont expliqués par des
+  figures et des applets, dont plusieurs utilisent de vrais modèles : un
+  autoencodeur, un modèle de diffusion, de vrais plongements de mots, le découpage
+  en jetons de GPT-4o, et CLIP.
+- **Ce module explique, il ne tranche pas les grands débats.** La question de savoir
+  si ces modèles comprennent est posée au
+  [dernier chapitre](docs/module4/94-comprendre-et-rater), avec les arguments des
+  deux côtés. Les questions de société, comme le droit d'auteur, l'emploi,
+  l'environnement ou la désinformation, sont signalées au passage et traitées au
+  [Module 5](docs/module5).
+- **Ce module n'est pas un mode d'emploi.** Il présente quelques principes pour
+  formuler des requêtes, mais son but est de comprendre ce que font ces systèmes,
+  pour mieux juger ce qu'ils produisent.
+
+## Le parcours du module
+
+Le module compte trois parties : l'IA générative en général, puis les grands
+modèles de langage, puis la rencontre du texte et de l'image.
+
+**L'IA générative**
+
+1. [*Générer : imiter une distribution*](docs/module4/10-generer) : la distribution,
+   le tirage, la température, et l'espace latent d'un autoencodeur.
+2. [*Quatre façons de générer*](docs/module4/20-quatre-facons-de-generer) : les GAN,
+   les autoencodeurs variationnels, la diffusion et les modèles autorégressifs.
+3. [*Des images, des voix, des vidéos*](docs/module4/30-images-voix-videos) : dix
+   ans de génération, des protéines à la météo, et les hypertrucages.
+
+**Les grands modèles de langage**
+
+4. [*Des mots aux nombres : jetons et plongements*](docs/module4/40-des-mots-aux-nombres) :
+   découper un texte, et représenter le sens des mots par des vecteurs.
+5. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
+   n-grammes de Markov aux Transformers de GPT.
+6. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
+   l'apprentissage en contexte, les coûts, les modèles ouverts.
+7. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
+   l'ajustement, le renforcement à partir de préférences humaines, et les modèles
+   qui raisonnent.
+8. [*Des outils et des agents*](docs/module4/80-outils-et-agents) : la recherche
+   augmentée, l'appel d'outils, les agents et leurs risques.
+
+**Le texte et l'image, et le bilan**
+
+9. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
+   classification sans exemple, et la génération d'images à partir d'une phrase.
+10. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
+    les modèles multimodaux.
+11. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
+    hallucinations, interprétabilité, perroquets ou modèles du monde.
+
+Le module compte dix applets, dont un espace latent à explorer, un modèle de
+diffusion qui redessine une feuille d'érable, un test pour distinguer une vraie
+photo d'un visage généré, un générateur de texte entraîné sur Jules Verne, et un
+rôle d'évaluateur humain pour comprendre comment on entraîne un assistant.
+
+Pour situer ce module dans l'ensemble du cours : l'IA générative repose sur
+l'apprentissage profond du Module 3, lui-même une famille de méthodes
+d'apprentissage automatique.
+
+{{< image src="/images/module4/ai-venn.svg" alt="Carte en régions imbriquées de l'intelligence artificielle. À l'intérieur de « Intelligence artificielle (IA) » : d'un côté « IA classique » ; de l'autre « Apprentissage automatique (AA) » (machine learning), qui contient « Méthodes d'AA diverses » et « Réseaux de neurones / apprentissage profond », lesquels contiennent à leur tour « IA générative » et « ChatGPT ». Un repère « Module 4 » pointe vers l'« IA générative » et « ChatGPT », qui sont le sujet du module." title="La carte de l'IA : le Module 4 porte sur l'IA générative et les grands modèles de langage." loading="lazy" >}}
+
+## Objectifs
+
+Au terme de ce module, vous devriez être en mesure de :
+
+* expliquer la différence entre un modèle qui reconnaît et un modèle qui génère, et
+  ce que signifie tirer des exemples dans une distribution ;
+* décrire le principe des quatre grandes familles de modèles génératifs : GAN,
+  autoencodeurs variationnels, diffusion et modèles autorégressifs ;
+* expliquer comment un texte est découpé en jetons, et comment des plongements
+  représentent le sens des mots ;
+* expliquer ce qu'est un modèle de langage, et comment un Transformer génère un texte
+  jeton après jeton ;
+* expliquer pourquoi la taille des modèles a tant compté, et ce que sont les lois
+  d'échelle et l'apprentissage en contexte ;
+* décrire les étapes qui transforment un modèle de base en assistant, et le rôle du
+  travail humain dans ces étapes ;
+* expliquer ce qu'apportent les outils et les agents, et les risques qu'ils posent ;
+* expliquer comment des modèles relient les textes, les images et les sons ;
+* identifier les principales limites de ces modèles, comme les hallucinations, et
+  présenter les arguments du débat sur leur compréhension.
 
 ## Durée
 
-Trois semaines ou 27 heures.
+Quatre semaines, soit environ 36 heures.
 
 ## Évaluation
 
-Le travail noté pour ce module sera la construction interactive (dans Google
-Spreadsheet encore une fois, comme pour le deuxième travail noté) d'un modèle de
-langage miniature, une sorte de mini ChatGPT, extrêmement limité donc, mais qui
-donnera une idée de ce que veut dire, concrètement, un algorithme pour "générer
-des mots".
+Un [travail noté](docs/module4/99-travail-noté-4) (20 % de la note finale) où vous
+construirez un modèle de langage miniature dans Google Sheets, puis l'utiliserez pour
+générer du texte, avec des questions d'interprétation.

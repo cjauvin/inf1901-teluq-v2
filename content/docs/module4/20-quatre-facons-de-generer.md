@@ -204,7 +204,7 @@ une image de départ, ou une phrase. On parle de génération **conditionnelle**
 DALL·E ou Stable Diffusion, est un modèle de diffusion conditionné par une phrase.
 Pour cela, il faut traduire la phrase en nombres que le réseau comprend, ce qui
 demande de savoir représenter le sens d'un texte. Le chapitre du
-[Module 4](docs/module4) consacré aux modèles multimodaux y reviendra, une fois
+[Module 4](docs/module4/90-mots-et-images/#du-texte-à-limage) consacré aux modèles multimodaux y reviendra, une fois
 présentés les modèles de langage.
 
 ## Quatre familles, et leurs combinaisons
@@ -223,5 +223,5 @@ d'abord chaque image à une représentation latente beaucoup plus petite, et la
 diffusion se fait dans cet espace latent, ce qui la rend bien plus rapide. Le
 décodeur transforme ensuite le résultat en image.
 
-Le [chapitre suivant](docs/module4) montre ce que ces méthodes ont permis de
+Le [chapitre suivant](docs/module4/30-images-voix-videos) montre ce que ces méthodes ont permis de
 produire depuis 2014 : des images, des voix, de la musique et des vidéos.

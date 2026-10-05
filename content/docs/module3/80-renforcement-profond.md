@@ -213,7 +213,7 @@ Le renforcement a enfin une place importante dans les grands modèles de langage
 [Module 2](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement).
 Il sert à ajuster leurs réponses selon les préférences d'évaluateurs humains, et à
 les entraîner à raisonner sur des problèmes dont la réponse peut être vérifiée. Le
-[Module 4](docs/module4) présentera ces méthodes.
+[Module 4](docs/module4/70-du-modele-a-l-assistant/#le-renforcement-à-partir-de-préférences-humaines) présentera ces méthodes.
 
 Les réseaux profonds voient, lisent et jouent désormais mieux que nous dans
 plusieurs domaines. Le dernier chapitre, « [Tromper un réseau](docs/module3/90-tromper-un-reseau) », montre qu'ils

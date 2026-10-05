@@ -165,14 +165,14 @@ d'une façon ou d'une autre, capter la grammaire, des connaissances sur le monde
 styles d'écriture et des formes de raisonnement. Certains chercheurs, comme Ilya
 Sutskever, cofondateur d'OpenAI, en concluent que bien prédire le texte demande une
 forme de compréhension. D'autres estiment que le modèle n'apprend que des régularités
-de surface, sans représentation du monde. Le chapitre du [Module 4](docs/module4) sur
+de surface, sans représentation du monde. Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) sur
 ce que les modèles de langage comprennent présente ce débat.
 
 Un modèle entraîné seulement à prédire le jeton suivant n'est pas encore un
 assistant. Si on lui écrit « Quelle est la capitale du Canada ? », il peut tout aussi
 bien continuer par une autre question, comme dans une liste de questions d'examen.
 Le passage de ce modèle à un assistant qui répond fait l'objet d'un chapitre
-ultérieur du [Module 4](docs/module4). Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
+ultérieur du [Module 4](docs/module4/70-du-modele-a-l-assistant). Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
 d'abord ce qui s'est passé quand on a rendu ces modèles beaucoup plus grands.
 
 ## Pour voir le mécanisme en détail

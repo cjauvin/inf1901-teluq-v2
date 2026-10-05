@@ -62,7 +62,7 @@ aux contenus les plus violents du Web, et la modération de contenus est l'un
 des métiers les plus éprouvants de cette chaîne. Les assistants les plus
 récents en dépendent aussi : une partie de l'entraînement de ChatGPT repose sur
 des humains qui notent et corrigent ses réponses (nous y reviendrons au
-[Module 4](docs/module4)). L'« intelligence » de ces systèmes repose donc en
+[Module 4](docs/module4/70-du-modele-a-l-assistant/#le-travail-humain-derrière-lassistant)). L'« intelligence » de ces systèmes repose donc en
 partie sur un travail humain, ce qui soulève des questions que nous
 retrouverons au [Module 5](docs/module5).
 {{% /hint %}}
@@ -120,7 +120,7 @@ perdant le moins d'information possible) et l'**apprentissage de
 représentations** (*representation learning*), qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l'IA
-moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** (*embeddings*) de mots ([Module 4](docs/module4)).
+moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** (*embeddings*) de mots ([Module 4](docs/module4/40-des-mots-aux-nombres/#les-plongements)).
 
 {{% details "Les mathématiques de k-means (optionnel)" %}}
 
@@ -163,7 +163,7 @@ qu'elle supprime le besoin d'étiquetage. Le Web contient des milliers de
 milliards de mots disponibles, qui ne demandent aucune heure de travail
 humain : chaque phrase fournit un exercice avec son corrigé. C'est de cette
 façon, en apprenant à prédire le mot suivant, que les grands modèles de langage
-du [Module 4](docs/module4) sont entraînés, et c'est pour cette raison qu'ils
+du [Module 4](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant) sont entraînés, et c'est pour cette raison qu'ils
 ont pu traiter une grande partie de ce que l'humanité a écrit. L'apprentissage
 supervisé intervient ensuite, sur des quantités beaucoup plus petites, avec les
 réponses notées par des humains dont parlait l'[encadré plus haut](#apprendre-avec-un-professeur-le-supervisé). Cependant,
@@ -222,7 +222,7 @@ humains (le **RLHF**). Le renforcement sert également, avec des récompenses
 vérifiables (un problème de mathématiques a une bonne réponse, un programme
 réussit ou non ses tests, ce qu'on appelle le **RLVR**), à entraîner les
 modèles les plus récents à « raisonner » longuement avant de répondre. Nous
-verrons ces méthodes au [Module 4](docs/module4).
+verrons ces méthodes au [Module 4](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent).
 
 ## Un même squelette, d'un bout à l'autre
 

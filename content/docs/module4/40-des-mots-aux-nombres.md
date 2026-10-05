@@ -213,15 +213,15 @@ Cette idée a de nombreux usages.
 
 - **La recherche par le sens.** Un moteur de recherche qui compare des vecteurs de
   phrases trouve un document qui répond à une question, même s'il n'utilise aucun
-  des mots de la question. Le chapitre du [Module 4](docs/module4) sur les outils
+  des mots de la question. Le chapitre du [Module 4](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) sur les outils
   et les agents y reviendra.
 - **La recommandation.** Les plateformes de musique ou de vidéo représentent chaque
   morceau et chaque utilisateur par un vecteur, et proposent les morceaux proches.
 - **Les liens entre images et textes.** Si une image et sa légende reçoivent des
   vecteurs proches, on peut chercher une image avec une phrase, ou guider la
   génération d'une image par un texte. C'est le sujet du chapitre du
-  [Module 4](docs/module4) sur les mots et les images.
+  [Module 4](docs/module4/90-mots-et-images) sur les mots et les images.
 
 Les mots sont maintenant des vecteurs, et le Transformer sait les modifier d'après
-leur contexte. Le [chapitre suivant](docs/module4) montre comment un modèle s'en
+leur contexte. Le [chapitre suivant](docs/module4/50-predire-le-mot-suivant) montre comment un modèle s'en
 sert pour prédire le mot suivant d'un texte, et pour écrire.

@@ -308,7 +308,7 @@ performance. C'est l'une des raisons pour lesquelles les arbres, apparus dans le
 années 1960 et mis au point en 1984 par quatre statisticiens (c'est la méthode
 CART, celle que nous avons suivie ici), sont toujours utilisés. Nous retrouverons
 cette opposition entre performance et explicabilité avec les grands modèles de
-langage du [Module 4](docs/module4).
+langage du [Module 4](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur).
 
 Les faiblesses de l'arbre découlent de sa méthode. D'abord, un arbre est
 **instable**. Rappelez-vous l'[égalité entre la distance et l'année](#comment-larbre-choisit-ses-questions) : si l'on
