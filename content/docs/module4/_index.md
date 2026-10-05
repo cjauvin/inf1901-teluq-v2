@@ -6,7 +6,7 @@ bookCollapseSection: true
 
 # Module 4 — IA générative et grands modèles de langage
 
-{{< image src="/images/module4/visages-stylegan.jpg" alt="Quatre portraits photographiques en gros plan : une jeune femme aux cheveux châtains avec une frange, un homme aux cheveux courts sur fond bleu, un garçon souriant en chemise blanche, une femme souriante sur fond sombre. Rien ne les distingue de vraies photos." title="Ces quatre visages ont été produits par un réseau de neurones. Aucune de ces personnes n'existe." loading="lazy" >}}
+{{< image src="/images/module4/edmond-de-belamy.jpg" alt="Un portrait peint, flou et inachevé, à la manière d'un tableau ancien : un homme vêtu de noir, au col blanc, sur un fond sombre et une toile laissée claire. Son visage est à peine esquissé. En bas à droite, à la place de la signature, une formule mathématique manuscrite." title="Portrait d'Edmond de Belamy (2018), produit par un réseau générateur du collectif Obvious, et vendu 432 500 $ chez Christie's. Il est signé de la formule mathématique qui a servi à l'entraîner. Wikimedia Commons, domaine public." loading="lazy" >}}
 
 ## Reconnaître, puis produire
 
