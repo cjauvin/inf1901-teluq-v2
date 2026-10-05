@@ -46,7 +46,7 @@ perdre, alors que mélanger les pixels d'une photo la détruit. Sur les premièr
 données, les réseaux de neurones l'emportent. Sur les secondes, les forêts
 aléatoires et le *gradient boosting* restent souvent les plus efficaces.
 
-{{< image src="/images/module3/tableau-ou-pixels.svg" alt="Deux colonnes. À gauche, un tableau de quatre maisons, avec leur superficie, leur année de construction, leur distance au centre et leur prix ; en dessous, le même tableau avec ses colonnes dans un autre ordre : l'information est intacte. À droite, un zéro écrit à la main, de 28 pixels sur 28 ; en dessous, les mêmes 784 pixels mélangés au hasard : on ne voit plus qu'une neige de points, et le chiffre a disparu, alors que les 784 valeurs sont toujours là." title="Mélanger les colonnes d'un tableau ne change rien à ce qu'il dit. Mélanger les pixels d'une image efface ce qu'elle montre." loading="lazy" >}}
+{{< image src="/images/module3/tableau-ou-pixels.svg" alt="Deux colonnes. À gauche, un tableau de quatre maisons, avec leur superficie, leur année de construction, leur distance au centre et leur prix ; en dessous, le même tableau avec ses colonnes dans un autre ordre : l'information est intacte. À droite, un 3 écrit à la main, de 28 pixels sur 28 ; en dessous, les mêmes 784 pixels mélangés au hasard : on ne voit plus qu'une neige de points, et le chiffre a disparu, alors que les 784 valeurs sont toujours là." title="Mélanger les colonnes d'un tableau ne change rien à ce qu'il dit. Mélanger les pixels d'une image efface ce qu'elle montre." loading="lazy" >}}
 
 Ce module raconte ce retour, et explique comment ces réseaux fonctionnent.
 

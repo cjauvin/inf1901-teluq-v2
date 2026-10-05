@@ -1,7 +1,7 @@
 """Module 3, accueil : mélanger les colonnes d'un tableau, ou les pixels d'une image.
 
 À gauche, les quatre maisons des tables du Module 2 (jeu canonique de gen_maisons.py), puis le même tableau avec
-ses colonnes dans un autre ordre. À droite, le premier 0 du jeu de test de MNIST (cache de gen_espace_latent.py),
+ses colonnes dans un autre ordre. À droite, un 3 net du jeu de test de MNIST (image 32 ; le chiffre de l'image en tête de l'accueil) (cache de gen_espace_latent.py),
 puis les mêmes 784 pixels mélangés au hasard.
 
     uv run --with numpy python scripts/gen_tableau_pixels.py
@@ -21,7 +21,8 @@ NB, FINE = " ", " "
 cache = Path.home() / ".cache" / "inf1901" / "mnist" / "MNIST" / "raw"
 imgs = np.frombuffer((cache / "t10k-images-idx3-ubyte").read_bytes(), np.uint8, offset=16).reshape(-1, 28, 28)
 etiq = np.frombuffer((cache / "t10k-labels-idx1-ubyte").read_bytes(), np.uint8, offset=8)
-zero = imgs[int(np.argmax(etiq == 0))] / 255
+assert etiq[32] == 3
+zero = imgs[32] / 255
 melange = zero.flatten().copy()
 random.Random(4).shuffle(melange)
 melange = melange.reshape(28, 28)
@@ -36,7 +37,7 @@ o = ['<?xml version="1.0" encoding="UTF-8"?>',
      "<title>Mélanger un tableau, mélanger une image</title>",
      "<desc>Deux colonnes. À gauche, un tableau de quatre maisons, avec leur superficie, leur année de construction, leur distance "
      "au centre et leur prix ; en dessous, le même tableau avec ses colonnes dans un autre ordre : l'information est intacte. À droite, "
-     "un zéro écrit à la main, de 28 pixels sur 28 ; en dessous, les mêmes 784 pixels mélangés au hasard : on ne voit plus qu'une "
+     "un 3 écrit à la main, de 28 pixels sur 28 ; en dessous, les mêmes 784 pixels mélangés au hasard : on ne voit plus qu'une "
      "neige grise, et le chiffre a disparu, alors qu'aucun pixel n'a changé de valeur.</desc>",
      f'<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">'
      f'<path d="M0 0 L10 5 L0 10 z" fill="{GRIS}"/></marker></defs>',
