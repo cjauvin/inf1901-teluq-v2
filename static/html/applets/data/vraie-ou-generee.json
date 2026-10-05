@@ -1,0 +1,52 @@
+[
+ {
+  "image": "img-01.jpg",
+  "vraie": false,
+  "note": "StyleGAN2, 2020. Dans le fond, à droite, un objet flou qui ne ressemble à rien de connu. Le cadrage aussi : comme tous les visages StyleGAN, il est centré, les yeux exactement au même endroit. (Wikimedia Commons, domaine public.)"
+ },
+ {
+  "image": "img-02.jpg",
+  "vraie": false,
+  "note": "ChatGPT Images, 2026. Presque aucun indice : seulement une lumière de studio très flatteuse et des mèches qui se fondent dans le fond. Les générateurs récents ont fait disparaître la plupart des défauts visibles. (Wikimedia Commons, domaine public.)"
+ },
+ {
+  "image": "img-03.jpg",
+  "vraie": true,
+  "note": "Photo de REASONS ART (Unsplash, CC0)."
+ },
+ {
+  "image": "img-04.jpg",
+  "vraie": true,
+  "note": "Photo de Seth Doyle (Unsplash, CC0)."
+ },
+ {
+  "image": "img-05.jpg",
+  "vraie": false,
+  "note": "StyleGAN2, 2019. Le fond, à droite, contient des formes qui ne correspondent à aucun objet. Le cadrage aussi : comme tous les visages StyleGAN, il est centré, les yeux exactement au même endroit. (Datasciencearabic1, Wikimedia Commons, CC BY-SA 4.0.)"
+ },
+ {
+  "image": "img-06.jpg",
+  "vraie": false,
+  "note": "Stable Diffusion, 2022. La peau est parfaitement lisse et les traits très réguliers. Ce visage vient d'une grille où le même modèle a produit douze femmes presque identiques, avec la même coiffure et le même chemisier. (Benlisquare, Wikimedia Commons, CC BY-SA 4.0.)"
+ },
+ {
+  "image": "img-07.jpg",
+  "vraie": true,
+  "note": "Photo de Kahar Saidyhalam (Unsplash, CC0)."
+ },
+ {
+  "image": "img-08.jpg",
+  "vraie": false,
+  "note": "Stable Diffusion, 2022. La peau est parfaitement lisse et les traits très réguliers. Ce visage vient d'une grille où le même modèle a produit douze femmes presque identiques, avec la même coiffure et le même chemisier. (Benlisquare, Wikimedia Commons, CC BY-SA 4.0.)"
+ },
+ {
+  "image": "img-09.jpg",
+  "vraie": true,
+  "note": "Photo de Christopher Campbell (Unsplash, CC0)."
+ },
+ {
+  "image": "img-10.jpg",
+  "vraie": true,
+  "note": "Photo de Foto Sushi (Unsplash, CC0)."
+ }
+]

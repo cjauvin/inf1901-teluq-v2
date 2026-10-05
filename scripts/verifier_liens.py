@@ -49,7 +49,7 @@ def resoudre(chemin: str):
     return None
 
 
-fichiers = [Path(a) for a in sys.argv[1:]] or sorted((RACINE / "content/docs").glob("module[123]/*.md"))
+fichiers = [Path(a) for a in sys.argv[1:]] or sorted((RACINE / "content/docs").glob("module[1234]/*.md"))
 erreurs = 0
 for f in fichiers:
     source = Path(f).resolve()

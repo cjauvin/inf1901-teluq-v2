@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : vraie photo ou image générée ?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div id="jeu" class="flex flex-col md:flex-row gap-4 items-center md:items-start">
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img id="visage" alt="Un visage à juger : vraie photo ou image générée ?" class="rounded-lg w-full" style="max-width:400px;aspect-ratio:1;border:1px solid #d9cbac;background:#fbf7ee">
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col gap-3 text-sm">
+            <div class="flex justify-between text-slate-600"><span id="numero">Image 1 sur 10</span><span id="score">Score&nbsp;: 0</span></div>
+            <div class="font-semibold text-slate-700 text-base">Ce visage est-il celui d'une personne réelle&#8239;?</div>
+            <div class="flex gap-2">
+                <button id="b-vraie" onclick="repondre(true)" class="flex-1 px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium shadow-sm">Vraie photo</button>
+                <button id="b-generee" onclick="repondre(false)" class="flex-1 px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium shadow-sm">Générée par un réseau</button>
+            </div>
+            <div id="verdict" class="p-3 rounded-lg bg-slate-100 text-slate-700 min-h-[6rem]">Regardez bien le visage, mais aussi le fond, les cheveux, les oreilles et les accessoires.</div>
+            <button id="b-suivante" onclick="suivante()" class="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium shadow-sm" disabled style="opacity:.4">Image suivante</button>
+        </div>
+    </div>
+
+    <div id="bilan" class="hidden">
+        <div id="bilan-texte" class="p-3 rounded-lg bg-slate-100 text-slate-700 text-sm mb-3"></div>
+        <div id="grille" class="grid grid-cols-5 gap-2"></div>
+        <div class="mt-3 flex justify-center">
+            <button onclick="recommencer()" class="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium text-sm shadow-sm">Recommencer</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Cinq vraies photos (Unsplash, CC0) et cinq visages générés par StyleGAN et StyleGAN2 (domaine public),
+ * préparés par scripts/gen_vraie_ou_generee.py. Réponses et indices dans data/vraie-ou-generee.json.
+ */
+let items = [], k = 0, score = 0, choix = [];
+const $ = id => document.getElementById(id);
+
+function afficher() {
+    const it = items[k];
+    $('visage').src = 'data/vraie-ou-generee/' + it.image;
+    $('numero').textContent = `Image ${k + 1} sur ${items.length}`;
+    $('score').textContent = `Score : ${score}`;
+    $('verdict').textContent = 'Regardez bien le visage, mais aussi le fond, les cheveux, les oreilles et les accessoires.';
+    $('verdict').className = 'p-3 rounded-lg bg-slate-100 text-slate-700 min-h-[6rem]';
+    ['b-vraie', 'b-generee'].forEach(id => $(id).disabled = false);
+    $('b-suivante').disabled = true; $('b-suivante').style.opacity = .4;
+    $('b-suivante').textContent = k === items.length - 1 ? 'Voir le bilan' : 'Image suivante';
+}
+function repondre(vraie) {
+    const it = items[k], juste = vraie === it.vraie;
+    choix[k] = juste;
+    if (juste) score++;
+    $('score').textContent = `Score : ${score}`;
+    $('verdict').className = 'p-3 rounded-lg min-h-[6rem] ' + (juste ? 'bg-emerald-50 text-emerald-900' : 'bg-rose-50 text-rose-900');
+    $('verdict').innerHTML = `<b>${juste ? 'Exact.' : 'Raté.'}</b> ${it.vraie ? 'C\'est une vraie photo.' : 'Ce visage a été généré par un réseau.'} ${it.note}`;
+    ['b-vraie', 'b-generee'].forEach(id => $(id).disabled = true);
+    $('b-suivante').disabled = false; $('b-suivante').style.opacity = 1;
+}
+function suivante() {
+    if (k < items.length - 1) { k++; afficher(); return; }
+    $('jeu').classList.add('hidden'); $('bilan').classList.remove('hidden');
+    $('bilan-texte').innerHTML = `<b>Score : ${score} sur ${items.length}.</b> Les visages générés sont encadrés en rouge. `
+        + 'Les plus anciens (StyleGAN2, 2019 et 2020) se trahissent par leur fond, qui ne représente rien, et par leur cadrage, '
+        + 'toujours identique, parce que le réseau a été entraîné sur des photos de visages alignées. Les plus récents '
+        + '(Stable Diffusion, ChatGPT) n\'ont presque plus de défauts visibles\u00a0: à l\'œil, on ne peut plus être sûr.';
+    $('grille').innerHTML = items.map((it, i) =>
+        `<div class="text-center text-xs text-slate-600"><img src="data/vraie-ou-generee/${it.image}" class="rounded w-full" style="border:3px solid ${it.vraie ? '#d9cbac' : '#c4564a'}">`
+        + `<div class="mt-1">${it.vraie ? 'vraie' : 'générée'} ${choix[i] ? '✓' : '✗'}</div></div>`).join('');
+}
+function recommencer() {
+    k = 0; score = 0; choix = [];
+    $('bilan').classList.add('hidden'); $('jeu').classList.remove('hidden');
+    afficher();
+}
+fetch('data/vraie-ou-generee.json').then(r => r.json()).then(d => {
+    items = d;
+    items.forEach(it => { const i = new Image(); i.src = 'data/vraie-ou-generee/' + it.image; });
+    afficher();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
