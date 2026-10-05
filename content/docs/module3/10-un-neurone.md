@@ -15,7 +15,9 @@ Papert ont démontré qu'un perceptron ne peut pas apprendre certaines fonctions
 simples, comme le XOR.
 
 Les **réseaux de neurones** (*neural networks*) actuels sont les descendants directs
-du perceptron. Ce module explique comment ils fonctionnent, comment ils ont dépassé
+du perceptron. Le plus simple d'entre eux en porte d'ailleurs le nom : le
+**perceptron multicouche** (*multilayer perceptron*, MLP). Ce module explique
+comment ils fonctionnent, comment ils ont dépassé
 la limite de 1969, et pourquoi ils dominent l'intelligence artificielle depuis le
 début des années 2010. Il commence par l'élément de base, le **neurone artificiel**
 (*artificial neuron*).

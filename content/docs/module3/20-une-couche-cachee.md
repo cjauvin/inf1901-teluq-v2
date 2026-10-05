@@ -27,6 +27,13 @@ organisé en **couches** (*layers*) :
 Chaque neurone d'une couche reçoit les sorties de tous les neurones de la couche
 précédente, chacune avec son propre poids.
 
+Un réseau construit de cette façon s'appelle un **perceptron multicouche**
+(*multilayer perceptron*, MLP). Le nom est un héritage historique, un peu
+trompeur : ses neurones ne sont pas exactement des perceptrons de Rosenblatt,
+puisque leur sortie varie de façon continue au lieu de passer brusquement de 0 à 1.
+Mais l'idée est bien celle-là : des perceptrons empilés en plusieurs couches. C'est
+le type de réseau le plus simple, et celui de ce chapitre et du suivant.
+
 {{< image src="/images/module3/reseau-xor.svg" alt="Trois colonnes. À gauche, la couche d'entrée : A et B. Au centre, la couche cachée : le neurone 1, qui répond à la question « au moins une ? », et le neurone 2, qui répond à « les deux ? ». À droite, la couche de sortie : un neurone qui donne A XOR B. Chaque entrée est reliée aux deux neurones cachés, et chaque neurone caché au neurone de sortie." title="Le plus petit réseau qui résout le XOR : deux entrées, deux neurones cachés, un neurone de sortie." loading="lazy" >}}
 
 ## Le XOR résolu avec trois neurones
