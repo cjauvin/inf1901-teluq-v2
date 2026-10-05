@@ -139,7 +139,7 @@ moins nets.
 ## Le Transformer
 
 En 2017, huit chercheurs de Google, dont Ashish Vaswani, publient un article
-intitulé « Attention Is All You Need » (« L'attention suffit »). L'idée tient dans
+intitulé « [Attention Is All You Need](https://arxiv.org/abs/1706.03762) » (« L'attention suffit »). L'idée tient dans
 le titre. On supprime la récurrence et on ne garde que l'attention. L'architecture
 qui en résulte s'appelle le **Transformer**.
 
