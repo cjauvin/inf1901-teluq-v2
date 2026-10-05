@@ -1,6 +1,6 @@
 ---
 title: "Grands modèles de langage"
-weight: 20
+weight: 90
 slug: grands-modèles-de-langage
 ---
 

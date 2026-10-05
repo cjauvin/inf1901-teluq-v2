@@ -172,12 +172,16 @@ Quelques manipulations à faire :
    décodeur en fait un chiffre que personne n'a jamais écrit.
 
 Un autoencodeur ordinaire, comme celui du
-[Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur), laisse des trous dans son
-espace latent : des zones où ne tombe aucune image d'entraînement, et où le
-décodeur produit des formes informes. Le réseau de l'applet est un autoencodeur
-**variationnel** (*variational autoencoder*, VAE). Il est entraîné pour remplir
-son espace latent sans laisser de trous, de façon qu'un point tiré au hasard
-donne presque toujours un chiffre. Le [chapitre suivant](docs/module4) explique comment.
+[Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur),
+range ses images n'importe où dans son espace latent. Certains chiffres
+s'entassent, d'autres s'étalent très loin, et de grandes zones restent vides. On ne
+sait donc pas où tirer un point au hasard pour obtenir des chiffres variés. Le
+réseau de l'applet est un autoencodeur **variationnel** (*variational
+autoencoder*, VAE). Il est entraîné pour ranger ses images autour du centre de la
+carte, sans laisser de trous, de sorte qu'un point tiré au hasard près du centre
+donne presque toujours un chiffre. Le
+[chapitre suivant](docs/module4/20-quatre-facons-de-generer/#remplir-lespace-latent-les-autoencodeurs-variationnels)
+explique comment.
 
 Cette carte n'a que deux dimensions, ce qui limite la qualité des chiffres
 produits : beaucoup sont flous. Les modèles qui ont produit les visages du début
@@ -213,5 +217,5 @@ Les visages du début du chapitre ont été produits par une autre méthode. Il 
 existe quatre grandes familles, qui ont chacune marqué l'histoire du domaine :
 les réseaux antagonistes génératifs, les autoencodeurs variationnels, les modèles
 de diffusion et les modèles qui génèrent élément par élément. Les grands modèles
-de langage appartiennent à cette dernière famille. Le [chapitre suivant](docs/module4)
+de langage appartiennent à cette dernière famille. Le [chapitre suivant](docs/module4/20-quatre-facons-de-generer)
 présente les quatre.

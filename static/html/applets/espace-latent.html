@@ -34,7 +34,7 @@
     </div>
 
     <div class="mt-3 p-3 bg-slate-100 rounded-lg text-sm text-slate-600">
-        Promenez la souris (ou le doigt) sur la carte : le décodeur transforme chaque point en image. Les petits points colorés sont
+        Promenez la souris (ou le doigt) sur la carte&nbsp;: le décodeur transforme chaque point en image. Les petits points colorés sont
         de vrais chiffres manuscrits, placés là où l'encodeur les range. Cliquez deux points pour voir le chemin qui les relie.
     </div>
 </div>
@@ -130,7 +130,7 @@ function montrer(z) {
     courant = z;
     peindre(document.getElementById('chiffre').getContext('2d'), decoder(z), 0);
     document.getElementById('coords').textContent =
-        `point : (${z[0].toFixed(2).replace('.', ',')} ; ${z[1].toFixed(2).replace('.', ',')})`;
+        `point\u00a0: (${z[0].toFixed(2).replace('.', ',')}\u202f; ${z[1].toFixed(2).replace('.', ',')})`;
     dessinerCarte();
 }
 function dessinerChemin() {
