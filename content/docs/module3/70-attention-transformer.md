@@ -80,6 +80,8 @@ On donne un nom à chacun des trois éléments :
 - les **clés** (*keys*) sont ce à quoi on compare la requête, une par entrée ;
 - les **valeurs** (*values*) sont ce que l'on récupère, une par entrée.
 
+{{< image src="/images/module3/recherche-floue.svg" alt="Deux panneaux, avec les mêmes colonnes : requête, clés, poids, valeurs, résultat. Les clés sont quatre entrées d'un dictionnaire, chameau, chat, château et chien, et les valeurs leurs définitions. En haut, une recherche exacte : la requête « chat » correspond exactement à la clé « chat », qui reçoit tout le poids ; le résultat est sa définition, « petit félin ». En bas, une recherche floue, comme l'attention : la requête « chaton » n'est pas dans le dictionnaire ; elle est comparée à toutes les clés, qui reçoivent des poids de 12 % pour chameau, 60 % pour chat, 8 % pour château et 20 % pour chien ; le résultat est un mélange des quatre définitions dans ces proportions, surtout celle de chat." title="Une recherche exacte ne retient qu'une entrée. L'attention les retient toutes, chacune selon sa ressemblance avec la requête, et répond même quand aucune entrée ne correspond exactement." loading="lazy" >}}
+
 Dans un réseau, les requêtes, les clés et les valeurs sont des listes de nombres
 calculées par des neurones. Leurs poids sont appris. Le réseau apprend donc à la
 fois quoi chercher, comment se décrire pour être trouvé, et quoi transmettre.
