@@ -45,6 +45,25 @@ prochaines images trompent mieux l'expert. Au fil de l'entraînement, l'expert
 devient plus exigeant, et le faussaire doit produire des images de plus en plus
 réalistes pour le tromper. À la fin, on garde le faussaire.
 
+Cette mise en scène vient de la **théorie des jeux** (*game theory*), fondée par
+John von Neumann entre la fin des années 1920 et les années 1940, qui étudie les
+situations où des joueurs ont des intérêts opposés. L'article de 2014 décrit
+l'entraînement d'un GAN comme un jeu à deux joueurs à **somme nulle** (*zero-sum
+game*) : ce que l'un gagne, l'autre le perd. L'expert cherche à maximiser ses
+bonnes réponses, et le faussaire cherche à les minimiser. C'est le principe du
+[minimax](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) des
+programmes d'échecs du Module 1, appliqué à des poids qu'on ajuste plutôt qu'à des
+coups qu'on explore. La formule qui signe le
+[*Portrait d'Edmond de Belamy*](docs/module4), à l'accueil de ce module, est celle
+de ce jeu : on y lit « min » sous G, le générateur, et « max » sous D, le
+discriminateur.
+
+Ce jeu a une issue idéale, un **équilibre de Nash** (*Nash equilibrium*), du nom du
+mathématicien John Nash. C'est une situation où aucun joueur ne peut améliorer son
+sort en changeant seul de stratégie. Pour un GAN, l'équilibre est atteint quand le
+faussaire imite parfaitement la distribution des vraies images. L'expert ne peut
+alors faire mieux que répondre au hasard, et il se trompe une fois sur deux.
+
 Le discriminateur est un classificateur **discriminatif**, au sens du chapitre
 « [Classer](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne) »
 du Module 2. Il trace une frontière entre les vraies images et les fausses. Un GAN
@@ -57,7 +76,9 @@ StyleGAN produisait les visages photoréalistes présentés au
 
 - Leur entraînement est **instable**. Les deux réseaux doivent progresser au même
   rythme. Si l'expert devient trop fort trop vite, le faussaire ne reçoit plus
-  d'indication utile et cesse de progresser.
+  d'indication utile et cesse de progresser. Chercher l'équilibre d'un jeu est plus délicat
+  que descendre une pente : chaque pas de l'un des joueurs change le relief sur
+  lequel l'autre avance.
 - Le faussaire peut se contenter de produire **quelques images** qui trompent bien
   l'expert, plutôt que toute la diversité des données. Un GAN entraîné sur des
   chiffres peut ainsi ne produire que des 1 et des 7. Ce défaut s'appelle
