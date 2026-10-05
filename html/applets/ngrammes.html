@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un modèle de langage à n-grammes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .copie { background: #f6d5cf; border-radius: 3px; }
+        .dernier { background: #dbe7f3; border-radius: 3px; }
+        input[type=range] { accent-color: #4f46e5; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <label class="flex items-center gap-2">Taille des n-grammes&nbsp;:
+            <select id="n" class="border border-slate-300 rounded-md px-2 py-1" onchange="majDistribution()">
+                <option value="1">1 (mots isolés)</option><option value="2" selected>2 (le mot précédent)</option>
+                <option value="3">3 (les deux mots précédents)</option><option value="4">4 (les trois mots précédents)</option>
+            </select></label>
+        <label class="flex items-center gap-2">Température&nbsp;:
+            <input id="temp" type="range" min="0.1" max="2" step="0.1" value="1" oninput="$('temp-v').textContent=(+this.value).toFixed(1).replace('.', ','); majDistribution()">
+            <span id="temp-v" class="tabular-nums w-6">1,0</span></label>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 mt-2">
+        <span>Début du texte&nbsp;:</span><input id="debut" type="text" value="Le capitaine" class="border border-slate-300 rounded-md px-2 py-1 w-48">
+        <button onclick="recommencer()" class="px-3 py-1.5 bg-white border border-slate-300 rounded-md hover:text-indigo-600 font-medium">Recommencer</button>
+        <button onclick="pas()" class="px-3 py-1.5 bg-white border border-slate-300 rounded-md hover:text-indigo-600 font-medium">Mot suivant</button>
+        <button onclick="generer(40)" class="px-3 py-1.5 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">Générer 40 mots</button>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-3 mt-3">
+        <div class="md:w-3/5">
+            <div id="texte" class="p-3 rounded-lg leading-6 min-h-[9rem]" style="background:#fbf7ee;border:1px solid #d9cbac"></div>
+            <div id="copie" class="mt-1 text-xs text-slate-500"></div>
+        </div>
+        <div class="md:w-2/5">
+            <div id="contexte" class="text-slate-600 mb-1"></div>
+            <div id="distribution"></div>
+        </div>
+    </div>
+    <div class="mt-3 p-2 bg-slate-100 rounded-lg text-xs text-slate-500">
+        Le modèle est entraîné sur deux romans de Jules Verne, <i>Le Tour du monde en quatre-vingts jours</i> et <i>Vingt mille lieues
+        sous les mers</i> (environ 253 000 mots et signes de ponctuation). Il compte, dans ces textes, quels mots suivent le contexte.
+        Si le contexte n'y apparaît jamais, il se replie sur un contexte plus court. Les passages <span class="copie">surlignés</span>
+        reprennent mot pour mot au moins huit mots consécutifs des romans.
+    </div>
+</div>
+</div>
+
+<script>
+/** Corpus préparé par scripts/gen_ngrammes.py ; les n-grammes sont comptés ici, à la demande. */
+const $ = id => document.getElementById(id);
+let vocab = [], ids = null, positions = [], texte = [], debutLongueur = 0;
+const PONCT = new Set(['.', ',', ';', ':', '!', '?']);
+
+function suivants(ctx) {                                   // les mots qui suivent ctx dans le corpus, avec leur nombre
+    const c = new Map();
+    if (!ctx.length) { for (let i = 0; i < ids.length; i++) c.set(ids[i], (c.get(ids[i]) || 0) + 1); return c; }
+    const k = ctx.length, der = ctx[k - 1];
+    for (const p of positions[der]) {
+        if (p + 1 >= ids.length || p - k + 1 < 0) continue;
+        let ok = true;
+        for (let j = 1; j < k; j++) if (ids[p - j] !== ctx[k - 1 - j]) { ok = false; break; }
+        if (ok) c.set(ids[p + 1], (c.get(ids[p + 1]) || 0) + 1);
+    }
+    return c;
+}
+function distribution() {                                  // contexte effectivement utilisé (repli) et probabilités après température
+    const n = +$('n').value, T = +$('temp').value;
+    let k = Math.min(n - 1, texte.length), c;
+    for (; k >= 0; k--) { c = suivants(texte.slice(texte.length - k)); if (c.size) break; }
+    const total = [...c.values()].reduce((a, b) => a + b, 0);
+    let ent = [...c.entries()].map(([w, x]) => [w, Math.pow(x / total, 1 / T)]);
+    const z = ent.reduce((a, [, p]) => a + p, 0);
+    ent = ent.map(([w, p]) => [w, p / z]).sort((a, b) => b[1] - a[1]);
+    return { k, voulu: Math.min(n - 1, texte.length), ent, total };
+}
+function ecrire(liste, depuis) {
+    let s = '';
+    liste.forEach((w, i) => {
+        const m = vocab[w], prec = i ? vocab[liste[i - 1]] : '';
+        let esp = i === 0 ? '' : ' ';
+        if (m === '.' || m === ',') esp = '';
+        else if (PONCT.has(m)) esp = ' ';
+        if (prec.endsWith("'")) esp = '';
+        const maj = i === 0 || ['.', '!', '?'].includes(prec) ? m.charAt(0).toUpperCase() + m.slice(1) : m;
+        s += esp + `<span data-i="${i}">${maj.replace(/</g, '&lt;')}</span>`;
+    });
+    return s;
+}
+function majTexte() {
+    $('texte').innerHTML = ecrire(texte);
+    // repérer les suites d'au moins 8 jetons présentes telles quelles dans le corpus
+    const L = 8, marque = new Array(texte.length).fill(false);
+    for (let i = debutLongueur; i + L <= texte.length; i++) {
+        const fen = texte.slice(i, i + L);
+        if (suivantsFenetre(fen)) for (let j = i; j < i + L; j++) marque[j] = true;
+    }
+    const spans = $('texte').querySelectorAll('span[data-i]');
+    spans.forEach((s, i) => { if (marque[i]) s.classList.add('copie'); });
+    if (spans.length) spans[spans.length - 1].classList.add('dernier');
+    const gen = texte.length - debutLongueur, copies = marque.slice(debutLongueur).filter(Boolean).length;
+    $('copie').textContent = gen ? `${gen} mots générés, dont ${copies} dans des passages recopiés mot pour mot.` : '';
+}
+function suivantsFenetre(fen) {                             // la suite fen apparaît-elle dans le corpus ?
+    const k = fen.length;
+    for (const p of positions[fen[k - 1]]) {
+        if (p - k + 1 < 0) continue;
+        let ok = true;
+        for (let j = 1; j < k; j++) if (ids[p - j] !== fen[k - 1 - j]) { ok = false; break; }
+        if (ok) return true;
+    }
+    return false;
+}
+function majDistribution() {
+    const d = distribution();
+    const ctx = texte.slice(texte.length - d.k).map(w => vocab[w]).join(' ');
+    $('contexte').innerHTML = (d.k ? `Contexte&#8239;: <b>«&#8239;${ctx}&#8239;»</b>, vu ${d.total} fois.` : `Sans contexte&#8239;: la fréquence de chaque mot.`)
+        + (d.k < d.voulu ? ` <span class="text-rose-700">Contexte plus long jamais vu&#8239;: repli sur ${d.k} mot${d.k > 1 ? 's' : ''}.</span>` : '')
+        + '<br>Mots suivants les plus probables&#8239;:';
+    $('distribution').innerHTML = '<div class="grid gap-1" style="grid-template-columns:auto 1fr auto">' + d.ent.slice(0, 8).map(([w, p]) =>
+        `<div class="pr-2 font-medium">${vocab[w]}</div><div class="self-center h-3 rounded bg-slate-100"><div class="h-3 rounded" style="width:${p * 100}%;background:#3a6ea5"></div></div>`
+        + `<div class="pl-2 text-slate-500 tabular-nums">${(p * 100).toFixed(p < 0.1 ? 1 : 0).replace('.', ',')}&nbsp;%</div>`).join('') + '</div>'
+        + (d.ent.length > 8 ? `<div class="text-xs text-slate-500 mt-1">… et ${d.ent.length - 8} autres mots possibles.</div>` : '');
+}
+function tirer() {
+    const d = distribution();
+    let r = Math.random();
+    for (const [w, p] of d.ent) { r -= p; if (r <= 0) return w; }
+    return d.ent[d.ent.length - 1][0];
+}
+function pas() { texte.push(tirer()); majTexte(); majDistribution(); }
+function generer(n) { for (let i = 0; i < n; i++) texte.push(tirer()); majTexte(); majDistribution(); }
+function recommencer() {
+    const mots = ($('debut').value.replace(/’/g, "'").match(/[A-Za-zÀ-ÖØ-öø-ÿŒœ]+(?:-[A-Za-zÀ-ÖØ-öø-ÿŒœ]+)*'?|[0-9]+|[.,;:!?]/g) || []);
+    const index = new Map(vocab.map((m, i) => [m, i]));
+    texte = mots.map(m => index.has(m) ? index.get(m) : index.get(m.toLowerCase())).filter(x => x !== undefined);
+    debutLongueur = texte.length;
+    majTexte(); majDistribution();
+}
+fetch('data/ngrammes.json').then(r => r.json()).then(d => {
+    vocab = d.vocab;
+    const o = atob(d.texte); ids = new Uint16Array(o.length / 2);
+    for (let i = 0; i < ids.length; i++) ids[i] = o.charCodeAt(2 * i) | (o.charCodeAt(2 * i + 1) << 8);
+    positions = vocab.map(() => []);
+    for (let i = 0; i < ids.length; i++) positions[ids[i]].push(i);
+    recommencer();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
