@@ -118,7 +118,7 @@ Un réglage permet de doser l'influence du texte. On estime le bruit à retirer 
 fois, avec la phrase et sans elle, puis on amplifie la différence entre les deux.
 C'est le **guidage sans classificateur** (*classifier-free guidance*), présenté en
 2021 par Jonathan Ho et Tim Salimans. Plus l'**échelle de guidage** est forte, plus
-l'image respecte la phrase, au prix d'une moindre variété et parfois d'un aspect
+l'image respecte la phrase, au prix d'une moindre diversité et parfois d'un aspect
 artificiel. La plupart des générateurs d'images proposent ce réglage à leurs
 utilisateurs, comme les modèles de langage proposent la
 [température](docs/module4/10-generer/#la-température).

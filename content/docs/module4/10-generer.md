@@ -129,8 +129,27 @@ plus : avec 60 000 chiffres dans un espace aussi vaste, chaque cloche resterait
 isolée, et le relief serait nul partout sauf tout près des exemples connus. Le
 modèle ne pourrait que les recopier.
 
-La difficulté de l'IA générative est là. Il faut trouver, dans un espace immense,
-la petite région où se trouvent les vraies images, et apprendre sa forme.
+## La variété des vraies images
+
+Les vraies images ne sont pas éparpillées au hasard dans cette portion infime.
+Partons d'un 7, et changeons-le très peu : on l'incline un peu, on épaissit son
+trait, on allonge sa barre. On obtient un autre 7, tout aussi plausible, et l'on
+peut continuer ainsi, par petits pas, sans jamais sortir des vrais chiffres. Les
+façons dont un chiffre peut varier sont peu nombreuses, quelques dizaines tout au
+plus, alors que l'espace des pixels compte 784 dimensions.
+
+Les vraies images se trouvent donc près d'une surface de peu de dimensions, repliée
+sur elle-même dans l'immense espace des pixels. On l'appelle une **variété**
+(*manifold*). Pensez à une feuille de papier froissée au milieu d'une pièce. La
+pièce a trois dimensions, la feuille n'en a que deux, et chaque point de la feuille
+peut être repéré par deux nombres, même si elle est toute chiffonnée. L'idée que
+les données réelles, images, sons ou textes, se trouvent près d'une telle variété
+s'appelle l'**hypothèse de la variété** (*manifold hypothesis*). Elle n'est pas
+démontrée, mais elle explique pourquoi l'apprentissage reste possible dans des
+espaces aussi vastes.
+
+La difficulté de l'IA générative se précise alors. Il faut trouver cette variété
+dans l'espace immense des pixels, et apprendre sa forme.
 
 ## L'espace latent
 
@@ -147,6 +166,17 @@ décodeur les transforme en image. Comme il a appris à reconstruire de vrais
 chiffres, ce qu'il produit ressemble à un chiffre. Générer revient à choisir un
 point dans un petit espace bien organisé, plutôt que dans l'immense espace des
 pixels.
+
+La variété et l'espace latent ne sont pas la même chose. La variété appartient aux
+données : c'est la feuille froissée que forment les vraies images dans l'espace des
+pixels. L'espace latent appartient au modèle : c'est une carte plane que le modèle
+construit pour repérer les points de cette feuille. Le décodeur passe de la carte à
+la feuille, et l'encodeur fait le chemin inverse. Comme une carte du monde, qui
+étale à plat la surface de la Terre, un espace latent n'est qu'une carte parmi
+d'autres. Deux autoencodeurs entraînés sur les mêmes chiffres dessinent deux cartes
+différentes de la même variété.
+
+{{< image src="/images/module4/variete-espace-latent.svg" alt="Deux panneaux. À gauche, l'espace des pixels, dessiné en trois dimensions : une feuille enroulée sur elle-même comme un parchemin, sur laquelle sont posés de vrais chiffres manuscrits, de petits points de couleur, un par chiffre, et dix chiffres dessinés, de 0 à 9. C'est la variété des vraies images. À droite, l'espace latent : la même feuille déroulée à plat, un carré où les mêmes chiffres occupent les mêmes places, chaque chiffre dans sa région. Une flèche va du carré vers la feuille enroulée : le décodeur. Une autre va de la feuille vers le carré : l'encodeur." title="La variété est la forme que prennent les vraies images dans l'espace des pixels, ici dessinée comme une feuille enroulée en trois dimensions. L'espace latent est la carte plane de cette feuille, construite par le modèle. Les points sont de vrais chiffres, placés selon la carte de l'applet ci-dessous." loading="lazy" >}}
 
 L'applet ci-dessous contient le décodeur d'un autoencodeur entraîné sur les
 60 000 chiffres de MNIST. Son espace latent n'a que **deux** dimensions, ce qui

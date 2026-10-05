@@ -59,7 +59,7 @@ StyleGAN produisait les visages photoréalistes présentés au
   rythme. Si l'expert devient trop fort trop vite, le faussaire ne reçoit plus
   d'indication utile et cesse de progresser.
 - Le faussaire peut se contenter de produire **quelques images** qui trompent bien
-  l'expert, plutôt que toute la variété des données. Un GAN entraîné sur des
+  l'expert, plutôt que toute la diversité des données. Un GAN entraîné sur des
   chiffres peut ainsi ne produire que des 1 et des 7. Ce défaut s'appelle
   l'**effondrement des modes** (*mode collapse*).
 
@@ -154,7 +154,7 @@ est devenue efficace en 2020, avec les travaux de Jonathan Ho, Ajay Jain et Piet
 Abbeel, à l'Université de Californie à Berkeley. En 2022, les modèles de diffusion
 ont dépassé les GAN, avec DALL·E 2 (OpenAI) et Stable Diffusion (Stability AI et
 l'Université de Munich), qui produisent des images à partir d'une phrase. Ils
-s'entraînent de façon stable, et ils couvrent toute la variété des données, sans
+s'entraînent de façon stable, et ils couvrent toute la diversité des données, sans
 effondrement des modes. Leur défaut est la **lenteur**, puisqu'une image demande de
 nombreux passages dans le réseau, là où un GAN n'en demande qu'un. Une grande
 partie de la recherche récente vise à réduire ce nombre d'étapes.
@@ -213,7 +213,7 @@ présentés les modèles de langage.
 |---|---|---|---|---|
 | Idée | un faussaire contre un expert | un espace latent rempli | retirer le bruit pas à pas | un élément après l'autre |
 | Première publication | 2014 | 2013 | 2015 (efficace en 2020) | bien plus ancienne pour le texte ; 2016 pour les images et les sons |
-| Points forts | images nettes, génération rapide | entraînement stable, espace latent organisé | qualité et variété | entraînement stable, probabilités explicites |
+| Points forts | images nettes, génération rapide | entraînement stable, espace latent organisé | qualité et diversité | entraînement stable, probabilités explicites |
 | Limites | entraînement instable, effondrement des modes | images floues | génération lente | génération très lente pour les images |
 | Exemples | StyleGAN | l'autoencodeur de Stable Diffusion | DALL·E 2, Stable Diffusion | WaveNet, GPT |
 
