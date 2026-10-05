@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : explorer des plongements de mots</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .onglet[aria-selected=true] { background: #4f46e5; color: white; border-color: #4f46e5; }
+        input[type=text] { border: 1px solid #cbd5e1; border-radius: .375rem; padding: .35rem .5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-wrap gap-2 mb-3">
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="true" onclick="onglet('voisins', this)">Voisins d'un mot</button>
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="false" onclick="onglet('analogies', this)">Analogies</button>
+        <button class="onglet px-3 py-2 border border-slate-300 rounded-md font-medium" aria-selected="false" onclick="onglet('carte', this)">Carte</button>
+        <span id="charge" class="ml-auto self-center text-slate-500">Chargement des vecteurs…</span>
+    </div>
+
+    <div id="p-voisins">
+        <div class="flex flex-wrap items-center gap-2">
+            <span>Mot&nbsp;:</span><input id="v-mot" type="text" value="chat" class="w-40" onkeydown="if(event.key==='Enter')voisins()">
+            <button onclick="voisins()" class="px-3 py-1.5 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">Chercher</button>
+            <span class="text-slate-500">Exemples&nbsp;:</span>
+            <span id="v-exemples" class="flex flex-wrap gap-1"></span>
+        </div>
+        <div id="v-res" class="mt-3"></div>
+    </div>
+
+    <div id="p-analogies" class="hidden">
+        <div class="flex flex-wrap items-center gap-2">
+            <input id="a-a" type="text" value="homme" class="w-28"><span>est à</span><input id="a-b" type="text" value="roi" class="w-28">
+            <span>ce que</span><input id="a-c" type="text" value="femme" class="w-28"><span>est à&nbsp;?</span>
+            <button onclick="analogie()" class="px-3 py-1.5 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">Calculer</button>
+        </div>
+        <div class="mt-2 flex flex-wrap gap-1 items-center"><span class="text-slate-500">Exemples&nbsp;:</span><span id="a-exemples" class="flex flex-wrap gap-1"></span></div>
+        <div id="a-calc" class="mt-3 text-slate-600"></div>
+        <div id="a-res" class="mt-2"></div>
+    </div>
+
+    <div id="p-carte" class="hidden">
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="text-slate-500">Groupes&nbsp;:</span><span id="c-exemples" class="flex flex-wrap gap-1"></span>
+        </div>
+        <div class="mt-2 flex gap-2 items-center">
+            <input id="c-mots" type="text" class="flex-1" onkeydown="if(event.key==='Enter')carte()">
+            <button onclick="carte()" class="px-3 py-1.5 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">Dessiner</button>
+        </div>
+        <svg id="c-svg" viewBox="0 0 700 380" class="w-full mt-2 rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac" font-family="system-ui, -apple-system, sans-serif"></svg>
+        <div id="c-note" class="mt-1 text-xs text-slate-500"></div>
+    </div>
+
+    <div class="mt-3 p-2 bg-slate-100 rounded-lg text-xs text-slate-500">
+        Vecteurs fastText français (Meta, entraînés sur Common Crawl, licence CC BY-SA 3.0), réduits à 200 dimensions,
+        pour les 17 258 mots les plus fréquents. La ressemblance est le cosinus de l'angle entre deux vecteurs&nbsp;: 1 pour des
+        vecteurs de même direction, 0 pour des vecteurs perpendiculaires.
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Plongements préparés par scripts/gen_plongements.py : un vecteur de 200 nombres par mot, codés sur un octet.
+ * Les voisins et les analogies sont calculés exactement, par produit scalaire entre vecteurs normalisés.
+ */
+let D = 0, mots = [], V = null, idx = new Map();
+const $ = id => document.getElementById(id);
+
+function onglet(nom, b) {
+    ['voisins', 'analogies', 'carte'].forEach(n => $('p-' + n).classList.toggle('hidden', n !== nom));
+    document.querySelectorAll('.onglet').forEach(o => o.setAttribute('aria-selected', o === b));
+    if (nom === 'carte' && mots.length) carte();
+}
+function vec(m) { const i = idx.get(m); return i === undefined ? null : V.subarray(i * D, (i + 1) * D); }
+function trouver(m) {                                   // le mot tel quel, sinon sa forme en minuscules ou capitalisée
+    m = m.trim();
+    for (const f of [m, m.toLowerCase(), m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()]) if (idx.has(f)) return f;
+    return null;
+}
+function proches(v, exclus, n) {
+    let norme = 0; for (let j = 0; j < D; j++) norme += v[j] * v[j]; norme = Math.sqrt(norme);
+    const s = [];
+    for (let i = 0; i < mots.length; i++) {
+        if (exclus.has(mots[i])) continue;
+        let p = 0; const o = i * D;
+        for (let j = 0; j < D; j++) p += v[j] * V[o + j];
+        s.push([p / norme, i]);
+    }
+    s.sort((a, b) => b[0] - a[0]);
+    return s.slice(0, n).map(([p, i]) => [mots[i], p]);
+}
+function barres(liste) {
+    return '<div class="grid gap-1" style="grid-template-columns:auto 1fr auto">' + liste.map(([m, p]) =>
+        `<div class="font-medium pr-2">${m}</div><div class="self-center h-3 rounded bg-slate-100"><div class="h-3 rounded" style="width:${Math.max(0, p) * 100}%;background:#3a6ea5"></div></div>`
+        + `<div class="pl-2 text-slate-500 tabular-nums">${p.toFixed(2).replace('.', ',')}</div>`).join('') + '</div>';
+}
+function absent(m) { return `<div class="text-rose-700">«&#8239;${m}&#8239;» ne fait pas partie des 17 258 mots les plus fréquents.</div>`; }
+
+function voisins(m) {
+    if (m) $('v-mot').value = m;
+    const w = trouver($('v-mot').value);
+    if (!w) { $('v-res').innerHTML = absent($('v-mot').value); return; }
+    $('v-res').innerHTML = `<div class="mb-2 text-slate-600">Les dix mots dont le vecteur est le plus proche de celui de «&#8239;${w}&#8239;»&#8239;:</div>`
+        + barres(proches(vec(w), new Set([w]), 10));
+}
+function analogie(a, b, c) {
+    if (a) { $('a-a').value = a; $('a-b').value = b; $('a-c').value = c; }
+    const t = ['a-a', 'a-b', 'a-c'].map(id => $(id).value), w = t.map(trouver);
+    const manque = t.find((x, i) => !w[i]);
+    if (manque !== undefined) { $('a-calc').innerHTML = ''; $('a-res').innerHTML = absent(manque); return; }
+    const [va, vb, vc] = w.map(vec), v = new Float32Array(D);
+    const n = x => { let s = 0; for (let j = 0; j < D; j++) s += x[j] * x[j]; return Math.sqrt(s); };
+    const [na, nb, nc] = [va, vb, vc].map(n);
+    for (let j = 0; j < D; j++) v[j] = vb[j] / nb - va[j] / na + vc[j] / nc;
+    $('a-calc').innerHTML = `Calcul&#8239;: <b>${w[1]}</b> − <b>${w[0]}</b> + <b>${w[2]}</b>, puis les mots dont le vecteur est le plus proche du résultat (sans les trois mots de départ)&#8239;:`;
+    $('a-res').innerHTML = barres(proches(v, new Set(w), 6));
+}
+const GROUPES = {
+    'animaux, couleurs, pays': 'chat chien lapin cheval vache tigre lion rouge bleu vert jaune noir blanc France Italie Allemagne Espagne Japon Brésil',
+    'pays et capitales': 'France Paris Italie Rome Allemagne Berlin Espagne Madrid Japon Tokyo Canada Ottawa Russie Moscou',
+    'professions': 'avocat juriste notaire médecin infirmière pharmacien ingénieur informaticien programmeur boulanger boucher cuisinier',
+    'émotions et météo': 'joie bonheur tristesse colère peur pluie neige soleil orage nuage vent',
+};
+function carte(liste) {
+    if (liste) $('c-mots').value = liste;
+    const brut = $('c-mots').value.split(/[\s,]+/).filter(Boolean);
+    const w = [...new Set(brut.map(trouver).filter(Boolean))], absents = brut.filter(m => !trouver(m));
+    const svg = $('c-svg');
+    if (w.length < 3) { svg.innerHTML = ''; $('c-note').textContent = 'Entrez au moins trois mots connus.'; return; }
+    // analyse en composantes principales des vecteurs choisis (deux premières composantes, par itération de la puissance)
+    const X = w.map(m => { const v = Float32Array.from(vec(m)); let s = 0; v.forEach(x => s += x * x); s = Math.sqrt(s); return v.map(x => x / s); });
+    const moy = new Float32Array(D); X.forEach(v => v.forEach((x, j) => moy[j] += x / X.length));
+    X.forEach(v => v.forEach((x, j) => v[j] = x - moy[j]));
+    const axes = [];
+    for (let a = 0; a < 2; a++) {
+        let u = Float32Array.from({ length: D }, (_, j) => Math.sin(j * 1.7 + a));
+        for (let it = 0; it < 200; it++) {
+            const nu = new Float32Array(D);
+            X.forEach(v => { let p = 0; for (let j = 0; j < D; j++) p += v[j] * u[j]; for (let j = 0; j < D; j++) nu[j] += p * v[j]; });
+            axes.forEach(b => { let p = 0; for (let j = 0; j < D; j++) p += nu[j] * b[j]; for (let j = 0; j < D; j++) nu[j] -= p * b[j]; });
+            let s = 0; nu.forEach(x => s += x * x); s = Math.sqrt(s); u = nu.map(x => x / s);
+        }
+        axes.push(u);
+    }
+    const P = X.map(v => axes.map(u => { let p = 0; for (let j = 0; j < D; j++) p += v[j] * u[j]; return p; }));
+    const xs = P.map(p => p[0]), ys = P.map(p => p[1]);
+    const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+    const px = x => 60 + (x - x0) / (x1 - x0 || 1) * 580, py = y => 340 - (y - y0) / (y1 - y0 || 1) * 300;
+    svg.innerHTML = w.map((m, i) => `<circle cx="${px(P[i][0]).toFixed(1)}" cy="${py(P[i][1]).toFixed(1)}" r="5" fill="#2f6f6a"/>`
+        + `<text x="${(px(P[i][0]) + 8).toFixed(1)}" y="${(py(P[i][1]) + 4).toFixed(1)}" font-size="13" fill="#3a3531">${m}</text>`).join('');
+    $('c-note').textContent = 'Chaque mot est projeté sur les deux directions où ces vecteurs varient le plus (analyse en composantes principales). '
+        + (absents.length ? ` Mots absents du vocabulaire : ${absents.join(', ')}.` : '');
+}
+
+function exemples(id, items, f) {
+    $(id).innerHTML = items.map((x, i) => `<button class="px-2 py-1 border border-slate-300 rounded-md hover:text-indigo-600" data-i="${i}">${Array.isArray(x) ? x.join(' : ') : x}</button>`).join('');
+    $(id).querySelectorAll('button').forEach(b => b.onclick = () => f(items[+b.dataset.i]));
+}
+exemples('v-exemples', ['chat', 'avocat', 'Montréal', 'démocratie', 'rouge', 'ordinateur'], m => voisins(m));
+exemples('a-exemples', [['homme', 'roi', 'femme'], ['France', 'Paris', 'Italie'], ['France', 'français', 'Allemagne'], ['homme', 'médecin', 'femme'], ['grand', 'grande', 'petit']], t => analogie(...t));
+exemples('c-exemples', Object.keys(GROUPES), k => carte(GROUPES[k]));
+$('c-mots').value = GROUPES['animaux, couleurs, pays'];
+
+fetch('data/plongements.json').then(r => r.json()).then(d => {
+    D = d.dims; mots = d.mots;
+    const o = atob(d.v); V = new Float32Array(o.length);
+    for (let i = 0; i < o.length; i++) { const b = o.charCodeAt(i); V[i] = (b > 127 ? b - 256 : b) * d.echelle; }
+    mots.forEach((m, i) => idx.set(m, i));
+    $('charge').textContent = '';
+    voisins(); analogie();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

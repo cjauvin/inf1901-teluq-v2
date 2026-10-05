@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : découper un texte en jetons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .jeton { display: inline-block; padding: 1px 2px; margin: 1px 0; border-radius: 3px; white-space: pre; font-family: ui-monospace, Menlo, monospace; }
+        .espace { color: #9a8f80; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-wrap gap-1 items-center mb-2">
+        <span class="text-slate-500">Exemples&nbsp;:</span><span id="exemples" class="flex flex-wrap gap-1"></span>
+    </div>
+    <textarea id="texte" rows="3" class="w-full p-2 border border-slate-300 rounded-md font-mono text-sm"></textarea>
+    <div class="flex flex-wrap gap-4 mt-2 text-slate-700">
+        <div><b id="n-jetons">—</b> jetons</div>
+        <div><b id="n-car">—</b> caractères</div>
+        <div><b id="ratio">—</b> caractères par jeton</div>
+        <label class="ml-auto flex items-center gap-1 text-slate-600"><input type="checkbox" id="numeros" onchange="decouper()"> afficher les numéros des jetons</label>
+    </div>
+    <div id="jetons" class="mt-2 p-2 rounded-lg leading-7" style="background:#fbf7ee;border:1px solid #d9cbac;min-height:4rem"></div>
+    <div class="mt-3 p-2 bg-slate-100 rounded-lg text-xs text-slate-500">
+        Découpage de GPT-4o et des modèles d'OpenAI qui l'ont suivi (vocabulaire <i>o200k_base</i>, environ 200 000 jetons), calculé
+        dans votre navigateur par la bibliothèque libre <i>gpt-tokenizer</i>. Un point <span class="espace">·</span> marque une espace.
+        Un jeton marqué <span style="text-decoration:underline dotted">en pointillé</span> ne contient qu'un morceau de caractère&nbsp;:
+        certains caractères, comme les lettres accentuées rares ou les émojis, occupent plusieurs octets, que le découpage peut séparer.
+    </div>
+</div>
+</div>
+
+<script type="module">
+/**
+ * Le découpage en jetons de GPT-4o (o200k_base), par la bibliothèque gpt-tokenizer (licence MIT), chargée depuis jsdelivr.
+ * Pour afficher chaque jeton, on le décode seul ; un jeton qui ne contient qu'un morceau de caractère est regroupé
+ * avec les suivants jusqu'à former un caractère complet, et le groupe est souligné en pointillé.
+ */
+import { encode, decodeGenerator } from 'https://cdn.jsdelivr.net/npm/gpt-tokenizer@3.4.0/esm/encoding/o200k_base.js';
+const $ = id => document.getElementById(id);
+const COUL = ['#dbe7f3', '#f3dcd9', '#d8ebe8', '#efe0cf', '#e6def0', '#f6ead0'];
+const EXEMPLES = {
+    'une phrase en français': "Les grands modèles de langage découpent le texte en morceaux avant de le lire.",
+    'la même en anglais': "Large language models cut text into pieces before reading it.",
+    'un mot rare': "anticonstitutionnellement",
+    'strawberry': "How many r's are in the word strawberry?",
+    'du code': "for i in range(10):\n    print(i * i)",
+    'des chiffres': "3,14159 × 12 345 = 38 781,93",
+    'des émojis': "Bravo ! 🎉🍁",
+};
+function echapper(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+function decouper() {
+    const t = $('texte').value, ids = encode(t), avecNum = $('numeros').checked;
+    const lire = g => [...decodeGenerator(g)].join('');   // un décodage neuf pour chaque groupe
+    const morceaux = [];
+    let groupe = [];
+    for (const id of ids) {
+        groupe.push(id);
+        const texte = lire(groupe);
+        if (texte === '' || texte.includes('\uFFFD')) continue;   // caractère incomplet : on attend le jeton suivant
+        morceaux.push({ ids: groupe, texte });
+        groupe = [];
+    }
+    if (groupe.length) morceaux.push({ ids: groupe, texte: lire(groupe) });
+    $('jetons').innerHTML = morceaux.map((m, k) => {
+        const vis = echapper(m.texte).replace(/ /g, '<span class="espace">·</span>').replace(/\n/g, '<span class="espace">↵</span>\n');
+        const style = `background:${COUL[k % COUL.length]}` + (m.ids.length > 1 ? ';text-decoration:underline dotted' : '');
+        return `<span class="jeton" style="${style}" title="${m.ids.join(', ')}">${vis}${avecNum ? `<sub class="text-slate-500"> ${m.ids.join('+')}</sub>` : ''}</span>`;
+    }).join('');
+    $('n-jetons').textContent = ids.length;
+    $('n-car').textContent = [...t].length;
+    $('ratio').textContent = ids.length ? ([...t].length / ids.length).toFixed(1).replace('.', ',') : '—';
+}
+$('exemples').innerHTML = Object.keys(EXEMPLES).map(k => `<button class="px-2 py-1 border border-slate-300 rounded-md hover:text-indigo-600">${k}</button>`).join('');
+$('exemples').querySelectorAll('button').forEach(b => b.onclick = () => { $('texte').value = EXEMPLES[b.textContent]; decouper(); });
+$('texte').addEventListener('input', decouper);
+window.decouper = decouper;
+$('texte').value = EXEMPLES['une phrase en français'];
+decouper();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

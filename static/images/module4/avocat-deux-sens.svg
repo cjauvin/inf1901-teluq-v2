@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Avocat : un seul vecteur pour deux sens</title>
+<desc>Une carte calculée à partir de vrais plongements. À gauche, tribunal, juge et procureur ; à droite, fruit, banane et tomate. Le point du mot avocat, un vecteur unique, se trouve du côté de la justice, loin des fruits. Deux flèches pointillées partent de ce point vers deux points vides, qui figurent les vecteurs contextuels du mot dans deux phrases : l'un rejoint le groupe de la justice, l'autre le groupe des fruits.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="700" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="34" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">« avocat » : un seul vecteur pour deux sens</text>
+<circle cx="120.0" cy="215.3" r="5.5" fill="#3a6ea5"/>
+<text x="130.0" y="219.8" font-size="13" fill="#3a3531">tribunal</text>
+<circle cx="125.2" cy="202.6" r="5.5" fill="#3a6ea5"/>
+<text x="135.2" y="207.1" font-size="13" fill="#3a3531">juge</text>
+<circle cx="120.5" cy="248.9" r="5.5" fill="#3a6ea5"/>
+<text x="130.5" y="253.4" font-size="13" fill="#3a3531">procureur</text>
+<circle cx="545.6" cy="100.0" r="5.5" fill="#2f6f6a"/>
+<text x="555.6" y="104.5" font-size="13" fill="#3a3531">fruit</text>
+<circle cx="559.4" cy="266.8" r="5.5" fill="#2f6f6a"/>
+<text x="569.4" y="271.3" font-size="13" fill="#3a3531">banane</text>
+<circle cx="560.0" cy="300.0" r="5.5" fill="#2f6f6a"/>
+<text x="570.0" y="304.5" font-size="13" fill="#3a3531">tomate</text>
+<line x1="251.8" y1="270.7" x2="161.6" y2="290.2" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#p)"/>
+<circle cx="151.9" cy="292.3" r="7" fill="#efe7d3" stroke="#9a5b33" stroke-width="2.5"/>
+<line x1="271.5" y1="269.6" x2="505.0" y2="291.3" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#p)"/>
+<circle cx="515.0" cy="292.3" r="7" fill="#efe7d3" stroke="#9a5b33" stroke-width="2.5"/>
+<circle cx="261.6" cy="268.6" r="7.5" fill="#c4564a"/>
+<text x="273.6" y="260.6" font-size="13.5" fill="#c4564a" font-weight="700">avocat (vecteur unique)</text>
+<text x="151.9" y="320.3" font-size="12" fill="#9a5b33" text-anchor="middle">« L'avocat plaide devant le juge. »</text>
+<text x="515.0" y="320.3" font-size="12" fill="#9a5b33" text-anchor="middle">« Cet avocat est bien mûr. »</text>
+<text x="350.0" y="366" font-size="12" fill="#7a6f63" text-anchor="middle">Axe horizontal : de la justice vers les fruits. Ressemblance avec « procureur » : 0,57 ; avec « banane » : 0,16.</text>
+<text x="350.0" y="384" font-size="12" fill="#7a6f63" text-anchor="middle">Points pleins : vrais vecteurs fastText. Points vides : vecteurs contextuels, position schématique.</text>
+</svg>
