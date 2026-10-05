@@ -1,8 +1,8 @@
-"""Module 3, « L'attention et le Transformer » : les trois façons d'assembler le Transformer
+"""Module 4, « Prédire le mot suivant » : les trois façons d'assembler le Transformer
 (encodeur et décodeur, encodeur seul, décodeur seul), en silhouettes simplifiées du schéma de 2017."""
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "static" / "images" / "module3"
+OUT = Path(__file__).resolve().parent.parent / "static" / "images" / "module4"
 FOND, BORD, ENCRE, ENCRE_PALE, GRIS, TEAL, BRUN, ROUGE, BLEU, AXE, PANNEAU = (
     "#efe7d3", "#d9cbac", "#3a3531", "#5b5249", "#7a6f63", "#2f6f6a", "#9a5b33", "#c4564a", "#3a6ea5", "#b8a888", "#fbf7ee")
 W, H = 780, 352

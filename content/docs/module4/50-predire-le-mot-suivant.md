@@ -107,12 +107,30 @@ modèles de langage et de traduction sont des réseaux récurrents. Ils ont cepe
 deux défauts : leur mémoire s'efface sur les longs textes, et ils lisent un mot après
 l'autre, ce qui rend leur entraînement lent.
 
+## Trois façons d'assembler le Transformer
+
+Le [Transformer](docs/module3/70-attention-transformer/#le-transformer) de 2017,
+présenté au Module 3, est conçu pour la traduction. Il a deux colonnes : un encodeur
+lit la phrase d'origine, et un décodeur écrit la traduction en consultant l'encodeur
+par l'attention croisée. Les deux colonnes peuvent aussi servir séparément. Trois
+familles de modèles en sont nées.
+
+| Variante | Ce qu'on garde | Exemples | Pour quoi faire |
+|---|---|---|---|
+| encodeur et décodeur | les deux colonnes | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
+| encodeur seul | la colonne de gauche ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/40-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
+| décodeur seul | la colonne de droite, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, jeton après jeton |
+
+{{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
+
+C'est la troisième qui l'a emporté, et c'est elle que décrit la suite de cette page.
+Un décodeur assez grand, entraîné à prédire le jeton suivant, apprend aussi à
+traduire, à résumer et à classer.
+
 ## GPT : un Transformer qui prédit le jeton suivant
 
 En juin 2018, l'entreprise OpenAI publie GPT (*Generative Pre-trained Transformer*),
-un modèle de langage construit avec le
-[Transformer](docs/module3/70-attention-transformer/#le-transformer) présenté au
-Module 3. Le principe reste le même que celui des n-grammes : prédire le jeton
+un modèle de langage qui ne garde que le décodeur du Transformer. Le principe reste le même que celui des n-grammes : prédire le jeton
 suivant. Ce qui change, c'est la façon de calculer la distribution.
 
 {{< image src="/images/module4/llm-jeton-apres-jeton.svg" alt="Un schéma en cinq étapes, de haut en bas. 1 : le texte « Le capitaine Nemo » est découpé en trois jetons. 2 : chaque jeton est remplacé par son plongement, une colonne de nombres. 3 : les plongements traversent les couches d'un Transformer, où chaque jeton ne peut regarder que les jetons qui le précèdent. 4 : à la sortie, le modèle donne une probabilité pour chacun des jetons du vocabulaire, par exemple 18 % pour « regarda », 11 % pour « sortit ». 5 : on tire un jeton, ici « regarda », on l'ajoute au texte, et on recommence avec le texte allongé." title="Comment un grand modèle de langage écrit : un jeton à la fois, en recommençant chaque fois avec le texte allongé." loading="lazy" >}}

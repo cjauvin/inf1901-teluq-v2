@@ -195,22 +195,8 @@ que le Transformer a d'abord été conçu pour la traduction.
 
 {{< image src="/images/module3/transformer-complet.svg" alt="Le schéma du Transformer de 2017, en deux colonnes. À gauche, l'encodeur : la phrase d'origine devient des plongements, auxquels on ajoute un encodage de la position ; puis un bloc, répété N fois, formé d'une attention multi-têtes et d'un réseau à propagation avant, chacun suivi d'une étape « ajouter et normaliser » qui reçoit aussi, par un raccourci, l'entrée de l'étape. À droite, le décodeur : la traduction déjà écrite passe par les mêmes plongements et le même encodage de position ; son bloc, répété N fois, contient une attention multi-têtes masquée, une attention croisée qui reçoit la sortie de l'encodeur, et un réseau à propagation avant, chacun suivi d'« ajouter et normaliser ». En haut du décodeur, une couche linéaire et un softmax donnent la probabilité de chaque mot suivant." title="Le Transformer de 2017, d'après la figure de l'article « Attention Is All You Need ». Chaque colonne répète son bloc N fois (six dans l'article)." loading="lazy" >}}
 
-## Trois façons d'assembler le Transformer
-
-Les deux colonnes peuvent aussi servir séparément. Trois familles de modèles en sont
-nées.
-
-| Variante | Ce qu'on garde | Exemples | Pour quoi faire |
-|---|---|---|---|
-| encodeur et décodeur | les deux colonnes | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
-| encodeur seul | la colonne de gauche ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/40-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
-| décodeur seul | la colonne de droite, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, mot après mot |
-
-{{< image src="/images/module3/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
-
-C'est la troisième qui l'a emporté. Un décodeur assez grand, entraîné à
-[prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant),
-apprend aussi à traduire, à résumer et à classer.
+Les deux colonnes peuvent aussi servir séparément. Le Module 4 montre
+[ce que chacune est devenue](docs/module4/50-predire-le-mot-suivant/#trois-façons-dassembler-le-transformer).
 
 ## Pourquoi il a tout changé
 
