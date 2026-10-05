@@ -52,12 +52,12 @@ sont souvent moins nettes que dans ce schéma. Mais quand on examine les couches
 d'un réseau entraîné sur des images, on observe bien cette progression, de motifs
 simples vers des motifs complexes.
 
-On peut voir ce que cherche un neurone d'un réseau entraîné. Le principe ressemble à
-celui des
-[exemples adverses](docs/module3/90-tromper-un-reseau/#comment-on-le-fabrique) :
-on part d'une image de bruit, et on la modifie pas à pas, par rétropropagation, pour
-activer le plus possible un neurone choisi. L'image obtenue montre ce à quoi ce
-neurone réagit. En 2017, Chris Olah, Alexander Mordvintsev et Ludwig Schubert, chez
+On peut voir ce que cherche un neurone d'un réseau entraîné. On part d'une image de
+bruit, et on la modifie pas à pas, par rétropropagation, pour activer le plus
+possible un neurone choisi. L'image obtenue montre ce à quoi ce neurone réagit. Le
+même procédé sert à fabriquer les
+[exemples adverses](docs/module3/90-tromper-un-reseau/#comment-on-le-fabrique),
+présentés plus loin, au chapitre « Tromper un réseau ». En 2017, Chris Olah, Alexander Mordvintsev et Ludwig Schubert, chez
 Google, ont appliqué cette méthode à toutes les couches d'un réseau convolutif
 entraîné sur ImageNet.
 
