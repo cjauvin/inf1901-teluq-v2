@@ -102,7 +102,10 @@ l'expliquer en règles.
 
 C'est la rencontre des deux traditions de ce cours : la
 [recherche](docs/module1/30-chercher-raisonner/#résoudre-cest-explorer) du
-Module 1, et l'apprentissage des Modules 2 et 3. Les deux réseaux sont d'abord
+Module 1, et l'apprentissage des Modules 2 et 3. AlphaGo montre aussi que
+l'[assemblage](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) ne se limite pas aux réseaux : on peut brancher des réseaux de
+neurones sur un algorithme classique, ici une recherche, et chacun fait ce qu'il fait
+le mieux. Les deux réseaux sont d'abord
 entraînés sur des parties de joueurs humains, en apprentissage supervisé
 (*supervised learning*) : le réseau de politique apprend à prédire le coup qu'un
 expert jouerait. Ils sont ensuite améliorés par renforcement, AlphaGo jouant des millions de parties contre lui-même.

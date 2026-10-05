@@ -348,6 +348,11 @@ chiffre doivent passer par quelques dizaines de neurones seulement.
 - La première moitié, l'**encodeur**, réduit l'image à quelques nombres.
 - La seconde moitié, le **décodeur**, reconstruit l'image à partir de ces nombres.
 
+L'autoencodeur est un premier exemple d'assemblage : deux réseaux, l'un qui comprime
+et l'autre qui reconstruit, branchés l'un à la suite de l'autre et entraînés
+ensemble, comme les pièces du [jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) présenté au chapitre
+suivant.
+
 Pour réussir, le réseau doit garder l'essentiel de l'image dans la couche étroite :
 quel chiffre, quelle inclinaison, quelle épaisseur de trait. Ces quelques nombres
 forment une représentation compacte de l'image, qu'on appelle sa **représentation

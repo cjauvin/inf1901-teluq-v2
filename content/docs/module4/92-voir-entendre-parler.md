@@ -49,6 +49,10 @@ Pour qu'un modèle de langage lise une image, on combine trois éléments.
 3. Le **modèle de langage** reçoit les jetons visuels suivis des jetons de la question,
    et il prédit sa réponse jeton après jeton, comme d'habitude.
 
+Ces modèles sont des assemblages, au sens du [jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) du
+Module 3 : un encodeur d'images et un modèle de langage, souvent entraînés
+séparément, sont reliés par une projection, puis ajustés ensemble.
+
 {{< image src="/images/module4/modele-qui-voit.svg" alt="Un schéma. Une image est découpée en carreaux, qui passent par un encodeur d'images. Une projection transforme chaque vecteur obtenu en un jeton visuel, de même forme que les jetons de mots. Les jetons visuels et les jetons de la question « Combien de personnes traversent ? » forment une seule séquence, que lit le modèle de langage. Le modèle répond par du texte, jeton après jeton." title="Un modèle de langage qui lit une image : l'image devient une suite de jetons visuels, placés devant la question." loading="lazy" >}}
 
 Le modèle est ensuite entraîné sur des paires d'images et de textes, puis ajusté sur

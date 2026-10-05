@@ -173,9 +173,10 @@ téléphones, et son taux d'erreur baisse nettement.
 proposent l'architecture **encodeur-décodeur** (*encoder-decoder*) pour la
 traduction. Un premier réseau récurrent, l'encodeur, lit la phrase à traduire et la
 résume dans son état final. Un second réseau récurrent, le décodeur, part de cet
-état et écrit la traduction mot par mot. On retrouve l'idée de
-l'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur) : une représentation compacte au milieu, entre un encodeur et un
-décodeur. En novembre 2016, Google Traduction adopte cette méthode. Selon le *New
+état et écrit la traduction mot par mot. On retrouve l'assemblage de
+l'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur) :
+deux réseaux branchés l'un à la suite de l'autre et entraînés ensemble, avec une
+représentation compacte au milieu. En novembre 2016, Google Traduction adopte cette méthode. Selon le *New
 York Times*, le gain obtenu d'un seul coup équivaut à peu près à tous les progrès
 accumulés par l'ancien système depuis son lancement, une dizaine d'années plus tôt.
 

@@ -45,6 +45,9 @@ et un **encodeur de textes** transforme une légende en vecteur de même taille.
 entraîne ensemble, par lots de milliers de paires. Dans chaque lot, le vecteur de
 chaque image doit être proche de celui de sa propre légende, et éloigné de ceux de
 toutes les autres légendes du lot.
+C'est un nouvel exemple du [jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) du Module 3 : deux
+réseaux d'architectures différentes, un réseau pour les images et un Transformer pour
+les textes, entraînés ensemble.
 
 {{< image src="/images/module4/apprentissage-contrastif.svg" alt="Un schéma. Quatre images, à gauche, passent par un encodeur d'images ; quatre légendes, en haut, passent par un encodeur de textes. Chaque image et chaque légende devient un vecteur. Une grille de quatre sur quatre compare chaque image à chaque légende. Les quatre cases de la diagonale, qui associent chaque image à sa propre légende, sont marquées « rapprocher » ; les douze autres cases sont marquées « éloigner »." title="L'apprentissage contrastif de CLIP : dans chaque lot, chaque image doit ressembler à sa propre légende plus qu'à toutes les autres." loading="lazy" >}}
 
