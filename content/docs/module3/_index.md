@@ -52,15 +52,31 @@ Ce module raconte ce retour, et explique comment ces réseaux fonctionnent.
 
 ## Une seule grande idée : apprendre ses propres caractéristiques
 
-Au [Module 2](docs/module2), un modèle recevait des données décrites par des
-caractéristiques choisies par un humain : la superficie d'une maison, la présence
-d'un mot dans un courriel. Quand un problème résistait, comme le XOR, c'était
-encore à l'humain de
-[fabriquer la bonne caractéristique](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner).
+Au Module 2, un modèle recevait des données décrites par des **caractéristiques**
+(*features*), c'est-à-dire des
+[grandeurs mesurables](docs/module2/30-les-donnees/#une-maison-cest-une-liste-de-nombres)
+qui décrivent chaque exemple : la superficie d'une maison, son année de
+construction, la présence d'un mot dans un courriel. C'est un humain qui choisissait
+ces caractéristiques, et le modèle ne voyait les données qu'à travers elles. Quand un
+problème résistait, comme le XOR, c'était encore à l'humain
+d'[inventer une nouvelle caractéristique](docs/module2/70-generaliser/#linéaire-ou-non-linéaire-ce-quun-modèle-peut-dessiner),
+le produit des deux entrées, qui rendait le problème facile.
+
+Cette nouvelle caractéristique est une **combinaison** de deux autres. C'est une idée
+importante : une caractéristique peut être construite à partir d'autres
+caractéristiques, elles-mêmes construites à partir d'autres, sur plusieurs étages.
+Pour une image de chiffre, les caractéristiques de départ sont les pixels, qui ne
+disent presque rien isolément. En combinant des pixels voisins, on obtient de petits
+traits. En combinant des traits, on obtient des courbes et des coins. En combinant
+des courbes, on obtient une boucle fermée ou une barre verticale. C'est en combinant
+ces formes qu'on reconnaît un 8 ou un 9. Concevoir à la main tous ces étages, pour
+toutes les façons d'écrire chaque chiffre, est presque impossible.
+
+{{< image src="/images/module3/hierarchie-chiffres.svg" alt="Trois colonnes reliées par des traits. À gauche, la première couche détecte des traits simples : horizontal, vertical, oblique, arcs de cercle. Au centre, la deuxième couche les combine en formes : une boucle, une barre verticale, un angle. À droite, la troisième couche combine les formes en chiffres : le 8 est fait de deux boucles, le 9 d'une boucle au-dessus d'une barre." title="Une hiérarchie de caractéristiques : des traits, puis des formes, puis des chiffres." loading="lazy" >}}
 
 Un réseau de neurones fabrique lui-même ses caractéristiques. Chacune de ses
-couches transforme les données en une nouvelle description, plus utile que la
-précédente. Un réseau qui reconnaît des chiffres manuscrits reçoit seulement des
+couches combine les caractéristiques de la couche précédente pour en former de
+nouvelles, plus utiles. Un réseau qui reconnaît des chiffres manuscrits reçoit seulement des
 pixels. Il apprend seul à y repérer des traits, puis des formes, puis des chiffres.
 Personne ne lui indique quoi chercher.
 
