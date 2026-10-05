@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une loi d'échelle</title>
+<desc>Un schéma. L'axe horizontal donne la quantité de calcul utilisée pour l'entraînement, l'axe vertical l'erreur du modèle sur des textes qu'il n'a jamais vus, tous deux sur une échelle logarithmique. Des points, un par modèle entraîné, s'alignent sur une droite qui descend régulièrement. La droite est prolongée en pointillé vers la droite : on peut prédire l'erreur d'un modèle plus grand avant de l'entraîner.</desc>
+<rect x="0" y="0" width="700" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Une loi d'échelle (schéma)</text>
+<line x1="90" y1="290" x2="640" y2="290" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="90" y1="60" x2="90" y2="290" stroke="#b8a888" stroke-width="1.6"/>
+<line x1="120" y1="290" x2="120" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="120" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">1</text>
+<line x1="215" y1="290" x2="215" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="215" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">×10</text>
+<line x1="310" y1="290" x2="310" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="310" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">×10<tspan baseline-shift="super" font-size="8">2</tspan></text>
+<line x1="405" y1="290" x2="405" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="405" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">×10<tspan baseline-shift="super" font-size="8">3</tspan></text>
+<line x1="500" y1="290" x2="500" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="500" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">×10<tspan baseline-shift="super" font-size="8">4</tspan></text>
+<line x1="595" y1="290" x2="595" y2="296" stroke="#b8a888" stroke-width="1.4"/>
+<text x="595" y="312" font-size="11.5" fill="#5b5249" text-anchor="middle">×10<tspan baseline-shift="super" font-size="8">5</tspan></text>
+<text x="365.0" y="338" font-size="13" fill="#3a3531" text-anchor="middle">calcul utilisé pour l'entraînement (échelle logarithmique)</text>
+<text x="34" y="175.0" font-size="13" fill="#3a3531" text-anchor="middle" transform="rotate(-90 34 175.0)">erreur sur des textes neufs</text>
+<line x1="110" y1="86" x2="519.0" y2="228.6" stroke="#3a6ea5" stroke-width="2.2"/>
+<line x1="519.0" y1="228.6" x2="614.0" y2="261.6" stroke="#3a6ea5" stroke-width="2.2" stroke-dasharray="7 6"/>
+<circle cx="120.0" cy="94.0" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="186.5" cy="108.1" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="253.0" cy="139.2" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="319.5" cy="156.3" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="386.0" cy="187.4" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="452.5" cy="203.5" r="6" fill="#c4564a" stroke="#efe7d3" stroke-width="1.5"/>
+<circle cx="614.0" cy="261.6" r="7" fill="none" stroke="#9a5b33" stroke-width="2.5"/>
+<text x="596.0" y="280" font-size="12" fill="#9a5b33" text-anchor="end" font-weight="700">le modèle suivant, prévu avant d'être entraîné</text>
+<text x="430" y="110" font-size="12" fill="#5b5249">chaque point est un modèle entraîné</text>
+</svg>

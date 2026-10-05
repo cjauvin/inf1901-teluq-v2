@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 444" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La croissance des modèles de langage</title>
+<desc>Deux diagrammes à barres sur une échelle logarithmique, où chaque graduation vaut dix fois la précédente. À gauche, le nombre de paramètres : 117 millions pour GPT-1 en 2018, 1,5 milliard pour GPT-2 en 2019, 175 milliards pour GPT-3 en 2020, 70 milliards pour Chinchilla en 2022, 405 milliards pour Llama 3.1 en 2024. À droite, le nombre de jetons d'entraînement : 300 milliards pour GPT-3, 1 400 milliards pour Chinchilla, 15 000 milliards pour Llama 3.1.</desc>
+<rect x="0" y="0" width="700" height="444" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Six ans de croissance (échelle logarithmique : chaque graduation vaut dix fois la précédente)</text>
+<rect x="20" y="48" width="320" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="180.0" y="70" font-size="13.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">Paramètres</text>
+<line x1="30" y1="340.0" x2="330" y2="340.0" stroke="#d9cbac" stroke-width="1"/>
+<line x1="30" y1="282.5" x2="330" y2="282.5" stroke="#d9cbac" stroke-width="1"/>
+<line x1="30" y1="225.0" x2="330" y2="225.0" stroke="#d9cbac" stroke-width="1"/>
+<line x1="30" y1="167.5" x2="330" y2="167.5" stroke="#d9cbac" stroke-width="1"/>
+<line x1="30" y1="110.0" x2="330" y2="110.0" stroke="#d9cbac" stroke-width="1"/>
+<rect x="40.8" y="336.1" width="38.4" height="3.9" fill="#3a6ea5"/>
+<text x="60.0" y="330.1" font-size="10.5" fill="#3a3531" text-anchor="middle">117 millions</text>
+<text x="60.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-1</text>
+<text x="60.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2018</text>
+<rect x="100.8" y="272.4" width="38.4" height="67.6" fill="#3a6ea5"/>
+<text x="120.0" y="266.4" font-size="10.5" fill="#3a3531" text-anchor="middle">1,5 milliard</text>
+<text x="120.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-2</text>
+<text x="120.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2019</text>
+<rect x="160.8" y="153.5" width="38.4" height="186.5" fill="#3a6ea5"/>
+<text x="180.0" y="147.5" font-size="10.5" fill="#3a3531" text-anchor="middle">175 milliards</text>
+<text x="180.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-3</text>
+<text x="180.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2020</text>
+<rect x="220.8" y="176.4" width="38.4" height="163.6" fill="#3a6ea5"/>
+<text x="240.0" y="170.4" font-size="10.5" fill="#3a3531" text-anchor="middle">70 milliards</text>
+<text x="240.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">Chinchilla</text>
+<text x="240.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2022</text>
+<rect x="280.8" y="132.6" width="38.4" height="207.4" fill="#3a6ea5"/>
+<text x="300.0" y="126.6" font-size="10.5" fill="#3a3531" text-anchor="middle">405 milliards</text>
+<text x="300.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">Llama 3.1</text>
+<text x="300.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2024</text>
+<line x1="30" y1="340" x2="330" y2="340" stroke="#b8a888" stroke-width="1.4"/>
+<rect x="360" y="48" width="320" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="520.0" y="70" font-size="13.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">Jetons d'entraînement</text>
+<line x1="370" y1="340.0" x2="670" y2="340.0" stroke="#d9cbac" stroke-width="1"/>
+<line x1="370" y1="263.3" x2="670" y2="263.3" stroke="#d9cbac" stroke-width="1"/>
+<line x1="370" y1="186.7" x2="670" y2="186.7" stroke="#d9cbac" stroke-width="1"/>
+<line x1="370" y1="110.0" x2="670" y2="110.0" stroke="#d9cbac" stroke-width="1"/>
+<text x="400.0" y="334" font-size="11" fill="#7a6f63" text-anchor="middle">—</text>
+<text x="400.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-1</text>
+<text x="400.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2018</text>
+<text x="460.0" y="334" font-size="11" fill="#7a6f63" text-anchor="middle">—</text>
+<text x="460.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-2</text>
+<text x="460.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2019</text>
+<rect x="500.8" y="303.4" width="38.4" height="36.6" fill="#2f6f6a"/>
+<text x="520.0" y="297.4" font-size="10.5" fill="#3a3531" text-anchor="middle">300 milliards</text>
+<text x="520.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">GPT-3</text>
+<text x="520.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2020</text>
+<rect x="560.8" y="252.1" width="38.4" height="87.9" fill="#2f6f6a"/>
+<text x="580.0" y="246.1" font-size="10.5" fill="#3a3531" text-anchor="middle">1 400 milliards</text>
+<text x="580.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">Chinchilla</text>
+<text x="580.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2022</text>
+<rect x="620.8" y="173.2" width="38.4" height="166.8" fill="#2f6f6a"/>
+<text x="640.0" y="167.2" font-size="10.5" fill="#3a3531" text-anchor="middle">15 000 milliards</text>
+<text x="640.0" y="356" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="600">Llama 3.1</text>
+<text x="640.0" y="370" font-size="10.5" fill="#5b5249" text-anchor="middle">2024</text>
+<line x1="370" y1="340" x2="670" y2="340" stroke="#b8a888" stroke-width="1.4"/>
+<text x="350.0" y="434" font-size="11.5" fill="#7a6f63" text-anchor="middle">La taille de GPT-4 (2023) et des modèles suivants des grandes entreprises n'a pas été publiée.</text>
+</svg>
