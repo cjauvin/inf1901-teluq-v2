@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 344" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La génération augmentée par la recherche</title>
+<desc>Un schéma de gauche à droite. La question de l'utilisateur est transformée en plongement. On cherche, dans une base de documents déjà transformés en plongements, les passages dont le vecteur est le plus proche. Les trois passages trouvés sont ajoutés au contexte du modèle de langage, avec la question. Le modèle rédige une réponse appuyée sur ces passages, en les citant.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="700" height="344" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Chercher d'abord, répondre ensuite</text>
+<rect x="20" y="60" width="140" height="92" rx="10" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="90.0" y="82" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">Question</text>
+<text x="90.0" y="102" font-size="11.5" fill="#3a3531" text-anchor="middle">« Quelle est la durée</text>
+<text x="90.0" y="118" font-size="11.5" fill="#3a3531" text-anchor="middle">du TN4 dans le</text>
+<text x="90.0" y="134" font-size="11.5" fill="#3a3531" text-anchor="middle">cours INF1901 ? »</text>
+<line x1="160" y1="106" x2="196" y2="106" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="200" y="60" width="140" height="92" rx="10" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="270.0" y="82" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">Plongement</text>
+<text x="270.0" y="102" font-size="11.5" fill="#3a3531" text-anchor="middle">la question devient</text>
+<text x="270.0" y="118" font-size="11.5" fill="#3a3531" text-anchor="middle">un vecteur</text>
+<rect x="247" y="128" width="8" height="16" fill="#c9d8ea" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="256" y="128" width="8" height="16" fill="#9fbad8" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="265" y="128" width="8" height="16" fill="#e7c9c3" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="274" y="128" width="8" height="16" fill="#d8e6e2" stroke="#b8a888" stroke-width="0.6"/>
+<rect x="283" y="128" width="8" height="16" fill="#efdcc8" stroke="#b8a888" stroke-width="0.6"/>
+<line x1="270" y1="152" x2="270" y2="186" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="170" y="190" width="200" height="120" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="270.0" y="212" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700">Base de documents</text>
+<text x="270.0" y="232" font-size="11.5" fill="#3a3531" text-anchor="middle">des milliers de passages,</text>
+<text x="270.0" y="248" font-size="11.5" fill="#3a3531" text-anchor="middle">chacun avec son plongement</text>
+<text x="270.0" y="264" font-size="11.5" fill="#3a3531" text-anchor="middle"></text>
+<text x="270.0" y="280" font-size="11.5" fill="#3a3531" text-anchor="middle">on garde les trois plus</text>
+<text x="270.0" y="296" font-size="11.5" fill="#3a3531" text-anchor="middle">proches de la question</text>
+<line x1="370" y1="250" x2="412" y2="190" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="416" y="60" width="264" height="160" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="548.0" y="82" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">Contexte du modèle</text>
+<text x="548.0" y="102" font-size="11.5" fill="#3a3531" text-anchor="middle">la question</text>
+<text x="548.0" y="118" font-size="11.5" fill="#3a3531" text-anchor="middle">+ passage 1 (guide du cours)</text>
+<text x="548.0" y="134" font-size="11.5" fill="#3a3531" text-anchor="middle">+ passage 2 (travail noté 4)</text>
+<text x="548.0" y="150" font-size="11.5" fill="#3a3531" text-anchor="middle">+ passage 3 (feuille de route)</text>
+<text x="548.0" y="166" font-size="11.5" fill="#3a3531" text-anchor="middle">+ « Réponds à partir de ces</text>
+<text x="548.0" y="182" font-size="11.5" fill="#3a3531" text-anchor="middle">passages, et cite-les. »</text>
+<line x1="548" y1="220" x2="548" y2="246" stroke="#7a6f63" stroke-width="2" marker-end="url(#p)"/>
+<rect x="416" y="250" width="264" height="74" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="548.0" y="272" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">Réponse</text>
+<text x="548.0" y="292" font-size="11.5" fill="#3a3531" text-anchor="middle">appuyée sur les passages,</text>
+<text x="548.0" y="308" font-size="11.5" fill="#3a3531" text-anchor="middle">avec leurs références</text>
+</svg>

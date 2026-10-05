@@ -179,5 +179,5 @@ réellement effectué par le réseau. Un modèle peut écrire un raisonnement pl
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
 l'intérieur d'un modèle est une question ouverte, présentée au chapitre du
 [Module 4](docs/module4) sur ce que les modèles comprennent. Le
-[chapitre suivant](docs/module4) montre d'abord comment on donne à ces assistants des
+[chapitre suivant](docs/module4/80-outils-et-agents) montre d'abord comment on donne à ces assistants des
 outils pour agir.
