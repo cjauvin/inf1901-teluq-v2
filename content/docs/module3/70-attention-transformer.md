@@ -16,6 +16,17 @@ levé ces limites, l'**attention**, puis l'architecture construite autour de lui
 les réseaux convolutifs ou récurrents. Ce
 qu'il permet de faire avec le langage est le sujet du [Module 4](docs/module4).
 
+Le Transformer est lui aussi fait des mêmes briques. Son
+[biais inductif](docs/module3/50-reseaux-convolutifs) est le plus faible des trois :
+chaque élément peut consulter tous les autres, quelle que soit leur distance, et
+l'architecture ne suppose presque rien sur l'ordre ou le voisinage. Le Transformer
+doit donc presque tout apprendre des données, ce qui demande d'énormes quantités
+d'exemples, mais il s'adapte ainsi à presque tout : le texte, les images, le son, et
+même les protéines. On retrouve la
+[leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère) de Richard
+Sutton : moins on impose d'hypothèses, plus on dépend des données et du calcul, et
+plus la méthode est générale.
+
 ## L'attention dans la traduction
 
 Revenons à

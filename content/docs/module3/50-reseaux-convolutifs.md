@@ -13,6 +13,19 @@ que ces pixels forment une grille, ni que deux pixels voisins sont liés. Ce
 chapitre présente une forme de réseau qui tient compte de la disposition des
 pixels, le **réseau convolutif**.
 
+Ce réseau est fait des mêmes briques que le perceptron multicouche : des neurones,
+des poids, la même rétropropagation. Seule change son
+[architecture](docs/module3/20-une-couche-cachee/#relier-des-neurones), c'est-à-dire
+la façon dont ses neurones sont reliés. Chaque neurone n'y regarde qu'un petit
+voisinage de l'image, et les mêmes poids servent partout. Ce choix traduit une
+hypothèse sur les données : dans une image, ce qui compte est d'abord local, et une
+même forme peut apparaître n'importe où. Une hypothèse de ce genre, inscrite dans
+l'architecture avant tout apprentissage, s'appelle un **biais inductif**
+(*inductive bias*). Comme le
+[biais](docs/module2/70-generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance)
+du Module 2, il restreint ce que le réseau peut apprendre. S'il est juste, il lui
+permet d'apprendre avec beaucoup moins d'exemples.
+
 ## Ce qu'un réseau ordinaire ignore dans une image
 
 Un réseau dont chaque neurone est relié à toutes les entrées pose trois problèmes

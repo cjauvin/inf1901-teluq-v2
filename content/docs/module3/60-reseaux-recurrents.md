@@ -13,6 +13,12 @@ un morceau de musique ou le tracé d'un stylo sur une tablette arrivent élémen
 données des **séquences**. Ce chapitre présente les réseaux conçus pour les
 traiter, les **réseaux récurrents** (*recurrent neural networks*, RNN).
 
+Comme le réseau convolutif, le réseau récurrent est fait des mêmes briques que le
+perceptron multicouche. Il en diffère par son architecture : ses neurones forment une
+boucle, et les mêmes poids servent à chaque élément de la séquence. Son
+[biais inductif](docs/module3/50-reseaux-convolutifs) est qu'une séquence se lit
+dans l'ordre, un élément après l'autre, et qu'une même règle s'applique à chaque pas.
+
 ## Le problème des séquences
 
 Un réseau ordinaire a un nombre fixe d'entrées. Pour lui donner une séquence, on
