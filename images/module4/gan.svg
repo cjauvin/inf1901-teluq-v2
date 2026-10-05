@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un réseau antagoniste génératif</title>
+<desc>Un schéma en deux parties. En bas à gauche, des nombres tirés au hasard entrent dans le générateur, qui produit une image fausse. En haut, des vraies images. Les vraies images et l'image fausse entrent toutes deux dans le discriminateur, qui répond « vraie » ou « fausse ». Deux flèches pointillées repartent de ce verdict : l'une vers le discriminateur, qui apprend à mieux distinguer, l'autre vers le générateur, qui apprend à mieux tromper.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="700" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="350.0" y="34" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Deux réseaux qui s'entraînent l'un contre l'autre</text>
+<g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#3a3531"><text x="70" y="250" text-anchor="middle">0,82</text><text x="70" y="270" text-anchor="middle">−1,37</text><text x="70" y="290" text-anchor="middle">0,05</text><text x="70" y="310" text-anchor="middle">…</text></g>
+<text x="70" y="226" font-size="12.5" fill="#5b5249" text-anchor="middle">hasard</text>
+<line x1="104" y1="275" x2="150" y2="275" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#p)"/>
+<rect x="155.0" y="245" width="140" height="60" rx="14" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4"/>
+<text x="225" y="271" font-size="14.5" fill="#3a3531" text-anchor="middle" font-weight="700">générateur</text>
+<text x="225" y="291" font-size="12" fill="#5b5249" text-anchor="middle">le faussaire</text>
+<line x1="297" y1="275" x2="342" y2="275" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#p)"/>
+<rect x="350" y="245" width="60" height="60" rx="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="380.0" cy="272.0" r="13.2" fill="none" stroke="#2f6f6a" stroke-width="1.8"/>
+<path d="M363.2 300.2 Q380.0 282.2 396.8 300.2" fill="none" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="380.0" y="276.2" font-size="16.8" fill="#2f6f6a" text-anchor="middle" font-weight="700">?</text>
+<text x="380" y="327" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">image fausse</text>
+<rect x="338" y="70" width="60" height="60" rx="4" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="368.0" cy="97.0" r="13.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<path d="M351.2 125.2 Q368.0 107.2 384.8 125.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<rect x="350" y="76" width="60" height="60" rx="4" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="380.0" cy="103.0" r="13.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<path d="M363.2 131.2 Q380.0 113.2 396.8 131.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<rect x="362" y="82" width="60" height="60" rx="4" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<circle cx="392.0" cy="109.0" r="13.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<path d="M375.2 137.2 Q392.0 119.2 408.8 137.2" fill="none" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="380" y="168" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">vraies images</text>
+<line x1="420" y1="120" x2="492" y2="178" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#p)"/>
+<line x1="420" y1="268" x2="492" y2="214" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#p)"/>
+<rect x="495.0" y="166" width="150" height="60" rx="14" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2.4"/>
+<text x="570" y="192" font-size="14.5" fill="#3a3531" text-anchor="middle" font-weight="700">discriminateur</text>
+<text x="570" y="212" font-size="12" fill="#5b5249" text-anchor="middle">l'expert</text>
+<line x1="570" y1="228" x2="570" y2="268" stroke="#7a6f63" stroke-width="2.2" marker-end="url(#p)"/>
+<rect x="490" y="272" width="160" height="40" rx="20" fill="#efe7d3" stroke="#3a3531" stroke-width="1.6"/>
+<text x="570" y="297" font-size="13.5" fill="#3a3531" text-anchor="middle" font-weight="700">« vraie » ou « fausse » ?</text>
+<path d="M650 292 L682 292 L682 120 L612 120 L612 162" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#pb)"/>
+<path d="M570 314 L570 352 L225 352 L225 310" fill="none" stroke="#9a5b33" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#pb)"/>
+<text x="398" y="374" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">le générateur apprend à mieux tromper</text>
+<text x="590" y="88" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">le discriminateur apprend</text>
+<text x="590" y="104" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">à mieux distinguer</text>
+</svg>

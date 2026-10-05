@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : un modèle de diffusion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        input[type=range] { accent-color: #4f46e5; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex flex-col md:flex-row gap-4 items-center md:items-start">
+        <div class="w-full md:w-3/5">
+            <canvas id="vue" width="760" height="760" class="w-full rounded-lg" style="background:#fbf7ee;border:1px solid #d9cbac"></canvas>
+        </div>
+        <div class="w-full md:w-2/5 flex flex-col gap-3 text-sm">
+            <div id="etat" class="p-3 rounded-lg bg-slate-100 text-slate-700 font-medium min-h-[3.5rem]">Chargement…</div>
+            <button id="b-brouiller" onclick="brouiller()" class="px-3 py-2 bg-white border border-slate-300 text-slate-700 rounded-md hover:text-indigo-600 font-medium shadow-sm">Brouiller la feuille</button>
+            <button id="b-generer" onclick="generer()" class="px-3 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium shadow-sm">Générer de nouveaux points</button>
+            <div>
+                <div class="flex justify-between text-slate-600"><span>Étape</span><span id="etape-txt">—</span></div>
+                <input id="etape" type="range" min="0" max="100" value="0" class="w-full" disabled>
+                <div class="flex justify-between text-xs text-slate-500"><span>0&nbsp;: la forme</span><span>100&nbsp;: du bruit</span></div>
+            </div>
+            <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" id="contour" checked onchange="dessiner()"> Afficher le contour de la feuille</label>
+            <label class="flex items-center gap-2 text-slate-600"><input type="checkbox" id="suivre" checked onchange="dessiner()"> Suivre six points</label>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg text-sm text-slate-600">
+        «&#8239;Brouiller&#8239;» ajoute du bruit aux points de la feuille, étape par étape, jusqu'à obtenir un nuage informe. «&#8239;Générer&#8239;» part
+        d'un nouveau nuage de bruit, et le réseau retire un peu de bruit à chaque étape. Une fois l'animation terminée, le curseur
+        permet de revenir sur chaque étape.
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Un modèle de diffusion (DDPM, 100 étapes) entraîné sur des points tirés dans la feuille d'érable
+ * du drapeau du Canada (scripts/gen_diffusion.py). Le réseau reçoit la position d'un point et le
+ * numéro de l'étape, et estime le bruit qu'il contient. Poids en float16 (base64) dans data/diffusion.json.
+ */
+const N = 1200, SUIVIS = [3, 211, 457, 640, 902, 1150], COUL_SUIVIS = ['#2f6f6a', '#3a6ea5', '#9a5b33', '#7b5ea7', '#d18f2f', '#3a3531'];
+let couches = [], betas = [], abar = [], donnees = [], contour = [], images = [], mode = null, enCours = false;
+
+function demi(h) {
+    const s = h & 0x8000 ? -1 : 1, e = (h >> 10) & 0x1f, f = h & 0x3ff;
+    if (e === 0) return s * Math.pow(2, -14) * (f / 1024);
+    if (e === 31) return f ? NaN : s * Infinity;
+    return s * Math.pow(2, e - 15) * (1 + f / 1024);
+}
+function lire(b64) {
+    const o = atob(b64), r = new Float32Array(o.length / 2);
+    for (let i = 0; i < r.length; i++) r[i] = demi(o.charCodeAt(2 * i) | (o.charCodeAt(2 * i + 1) << 8));
+    return r;
+}
+function gauss() { return Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()); }
+
+const F = Array.from({ length: 8 }, (_, k) => Math.exp(k * (-Math.log(100) / 7)));
+function bruitEstime(x, y, t) {                          // le réseau : (x, y, étape) → bruit estimé
+    let h = new Float32Array(18);
+    h[0] = x; h[1] = y;
+    for (let k = 0; k < 8; k++) { h[2 + k] = Math.sin(t * F[k]); h[10 + k] = Math.cos(t * F[k]); }
+    couches.forEach((c, n) => {
+        const s = Float32Array.from(c.b);
+        for (let i = 0; i < c.entrees; i++) {
+            const v = h[i];
+            if (v === 0) continue;
+            const l = i * c.sorties;
+            for (let j = 0; j < c.sorties; j++) s[j] += v * c.w[l + j];
+        }
+        if (n < couches.length - 1) for (let j = 0; j < s.length; j++) if (s[j] < 0) s[j] = 0;
+        h = s;
+    });
+    return h;
+}
+
+const vue = document.getElementById('vue'), cx = vue.getContext('2d'), L = 2.6;
+const px = v => (v + L) / (2 * L) * vue.width, py = v => (L - v) / (2 * L) * vue.height;
+function dessiner() {
+    const k = +document.getElementById('etape').value, pts = images[k];
+    cx.clearRect(0, 0, vue.width, vue.height);
+    if (document.getElementById('contour').checked && contour.length) {
+        cx.strokeStyle = '#b8a888'; cx.lineWidth = 2; cx.setLineDash([8, 6]); cx.beginPath();
+        contour.forEach(([a, b], i) => i ? cx.lineTo(px(a), py(b)) : cx.moveTo(px(a), py(b)));
+        cx.closePath(); cx.stroke(); cx.setLineDash([]);
+    }
+    if (!pts) return;
+    cx.fillStyle = '#c4564a'; cx.globalAlpha = 0.7;
+    for (let i = 0; i < pts.length; i += 2) { cx.beginPath(); cx.arc(px(pts[i]), py(pts[i + 1]), 3.2, 0, 2 * Math.PI); cx.fill(); }
+    cx.globalAlpha = 1;
+    if (document.getElementById('suivre').checked) {
+        SUIVIS.forEach((s, j) => {
+            const debut = mode === 'brouiller' ? 0 : images.length - 1;
+            cx.strokeStyle = COUL_SUIVIS[j]; cx.lineWidth = 2.2; cx.beginPath();
+            const a = Math.min(debut, k), b = Math.max(debut, k);
+            for (let q = a; q <= b; q++) if (images[q]) {
+                const X = px(images[q][2 * s]), Y = py(images[q][2 * s + 1]);
+                q === a ? cx.moveTo(X, Y) : cx.lineTo(X, Y);
+            }
+            cx.stroke();
+            cx.fillStyle = COUL_SUIVIS[j]; cx.strokeStyle = '#fbf7ee'; cx.lineWidth = 2.5; cx.beginPath();
+            cx.arc(px(pts[2 * s]), py(pts[2 * s + 1]), 8, 0, 2 * Math.PI); cx.fill(); cx.stroke();
+        });
+    }
+}
+function majEtat(k) {
+    document.getElementById('etape').value = k;
+    document.getElementById('etape-txt').textContent = `${k} / 100`;
+    const t = mode === 'brouiller'
+        ? (k === 0 ? 'Les points de la feuille, sans bruit.' : k === 100 ? 'Il ne reste que du bruit\u00a0: la forme a disparu.' : 'On ajoute un peu de bruit à chaque étape.')
+        : (k === 100 ? 'Un nouveau nuage de bruit, tiré au hasard.' : k === 0 ? 'Le réseau a retiré tout le bruit\u00a0: des points nouveaux, dans la forme apprise.' : 'Le réseau retire un peu de bruit à chaque étape.');
+    document.getElementById('etat').textContent = t;
+    dessiner();
+}
+function verrouiller(v) {
+    enCours = v;
+    ['b-brouiller', 'b-generer'].forEach(id => document.getElementById(id).disabled = v);
+    document.getElementById('etape').disabled = v;
+}
+function brouiller() {                                   // processus direct : x_k = √(1 − β_k) · x_{k−1} + √β_k · z, un bruit neuf à chaque étape
+    if (enCours) return;
+    mode = 'brouiller';
+    let x = Float32Array.from(donnees.flat());
+    images = [x];
+    for (let k = 0; k < 100; k++) {
+        const a = Math.sqrt(1 - betas[k]), b = Math.sqrt(betas[k]), y = new Float32Array(2 * N);
+        for (let i = 0; i < 2 * N; i++) y[i] = a * x[i] + b * gauss();
+        images.push(x = y);
+    }
+    verrouiller(true);
+    let k = 0;
+    const pas = () => { majEtat(k); if (k++ < 100) setTimeout(pas, 35); else verrouiller(false); };
+    pas();
+}
+function generer() {                                     // processus inverse, une étape du réseau par image
+    if (enCours) return;
+    mode = 'generer';
+    images = new Array(101);
+    let x = Float32Array.from({ length: 2 * N }, gauss);
+    images[100] = x;
+    verrouiller(true);
+    majEtat(100);
+    let t = 99;
+    const pas = () => {
+        const y = new Float32Array(2 * N), c1 = betas[t] / Math.sqrt(1 - abar[t]), c2 = 1 / Math.sqrt(1 - betas[t]), sig = Math.sqrt(betas[t]);
+        for (let i = 0; i < N; i++) {
+            const e = bruitEstime(x[2 * i], x[2 * i + 1], t);
+            y[2 * i] = (x[2 * i] - c1 * e[0]) * c2 + (t > 0 ? sig * gauss() : 0);
+            y[2 * i + 1] = (x[2 * i + 1] - c1 * e[1]) * c2 + (t > 0 ? sig * gauss() : 0);
+        }
+        x = y; images[t] = y; majEtat(t);
+        if (t-- > 0) setTimeout(pas, 10); else verrouiller(false);
+    };
+    setTimeout(pas, 300);
+}
+document.getElementById('etape').addEventListener('input', e => majEtat(+e.target.value));
+
+fetch('data/diffusion.json').then(r => r.json()).then(d => {
+    couches = d.couches.map(c => ({ entrees: c.entrees, sorties: c.sorties, w: lire(c.w), b: lire(c.b) }));
+    betas = d.betas;
+    let p = 1; abar = betas.map(b => (p *= 1 - b));
+    donnees = d.donnees.slice(0, N); contour = d.contour;
+    mode = 'brouiller';
+    images = [Float32Array.from(donnees.flat())];
+    majEtat(0);
+    document.getElementById('etape-txt').textContent = '0 / 100';
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
