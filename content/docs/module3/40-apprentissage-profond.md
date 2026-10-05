@@ -205,6 +205,8 @@ robustes, un peu comme une équipe où chacun doit pouvoir remplacer un absent. 
 images d'entraînement sont aussi recadrées et retournées au hasard, ce qui en
 multiplie les variantes.
 
+{{< image src="/images/module3/dropout.svg" alt="Quatre fois le même réseau, de quatre couches. Dans les trois premiers panneaux, trois étapes successives de l'entraînement : à chaque étape, la moitié des neurones des couches cachées, tirés au hasard, sont éteints, marqués d'une croix, et leurs connexions disparaissent ; ce ne sont pas les mêmes neurones d'une étape à l'autre. Dans le quatrième panneau, à l'utilisation, tous les neurones et toutes les connexions sont présents." title="Le dropout : à chaque étape de l'entraînement, d'autres neurones sont éteints au hasard. Une fois l'entraînement terminé, le réseau utilise tous ses neurones." loading="lazy" >}}
+
 Le taux d'erreur d'AlexNet est de 15 %. Le deuxième système est à 26 %.
 
 {{< image src="/images/module3/imagenet-erreur.svg" alt="Un diagramme à barres. En 2010 et 2011, les systèmes gagnants reposent sur des caractéristiques fabriquées à la main : 28,2 % puis 25,8 % d'erreur. En 2012, le réseau profond AlexNet obtient 15,3 %. Les gagnants suivants sont tous des réseaux profonds : 11,7 % en 2013, 6,7 % en 2014, 3,6 % en 2015, 3,0 % en 2016 et 2,3 % en 2017. Une ligne horizontale marque le niveau humain, estimé à 5 %, dépassé à partir de 2015." title="Le taux d'erreur du système gagnant au concours ImageNet, de 2010 à 2017." loading="lazy" >}}
