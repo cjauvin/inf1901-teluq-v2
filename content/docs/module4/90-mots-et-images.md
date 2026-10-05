@@ -146,5 +146,5 @@ L'association entre mots et images reste approximative.
   Le [Module 5](docs/module5) revient sur ces questions.
 
 CLIP relie un texte et une image, mais il ne décrit pas une image avec ses propres
-mots, et il ne converse pas. Le [chapitre suivant](docs/module4) présente les modèles
+mots, et il ne converse pas. Le [chapitre suivant](docs/module4/92-voir-entendre-parler) présente les modèles
 qui voient, entendent et parlent.

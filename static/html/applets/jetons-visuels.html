@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : une image en jetons visuels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        input[type=range] { accent-color: #4f46e5; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-col md:flex-row gap-4">
+        <div class="md:w-1/2">
+            <canvas id="image" width="448" height="448" class="w-full rounded-lg" style="border:1px solid #d9cbac"></canvas>
+        </div>
+        <div class="md:w-1/2 flex flex-col gap-3">
+            <label>Taille des carreaux&nbsp;: <b id="taille-v"></b>
+                <input id="taille" type="range" min="0" max="4" step="1" value="2" class="w-full" oninput="dessiner()"></label>
+            <div class="p-3 rounded-lg bg-slate-100 leading-6">
+                <div><b id="n"></b> jetons visuels</div>
+                <div class="text-slate-600" id="detail"></div>
+            </div>
+            <div>
+                <div class="text-xs text-slate-500 mb-1">La séquence de jetons que lit le Transformer, ligne après ligne (les premiers)</div>
+                <canvas id="sequence" width="640" height="48" class="w-full rounded" style="border:1px solid #d9cbac;background:#fbf7ee"></canvas>
+            </div>
+            <div class="text-xs text-slate-500">Survolez l'image pour voir le numéro d'un carreau dans la séquence.</div>
+            <div id="survol" class="text-slate-700 min-h-[1.5rem]"></div>
+        </div>
+    </div>
+    <div class="mt-3 p-2 bg-slate-100 rounded-lg text-xs text-slate-500">
+        Une image de 448 × 448 pixels, découpée comme le fait un Vision Transformer. Chaque carreau devient un vecteur, puis un jeton
+        de la séquence, au même titre qu'un morceau de mot. Photo&#8239;: une rue de Vancouver, Gabriel Santiago (Unsplash, CC0).
+    </div>
+</div>
+</div>
+
+<script>
+const TAILLES = [8, 14, 16, 32, 64], $ = id => document.getElementById(id);
+const img = new Image();
+img.src = 'data/jetons-visuels.jpg';
+let t = 16;
+function dessiner() {
+    t = TAILLES[+$('taille').value];
+    const c = $('image').getContext('2d'), n = 448 / t;
+    c.drawImage(img, 0, 0, 448, 448);
+    c.strokeStyle = 'rgba(255,255,255,.85)'; c.lineWidth = t >= 14 ? 1.5 : 0.8;
+    for (let k = 0; k <= 448; k += t) { c.beginPath(); c.moveTo(k, 0); c.lineTo(k, 448); c.stroke(); c.beginPath(); c.moveTo(0, k); c.lineTo(448, k); c.stroke(); }
+    $('taille-v').textContent = `${t} × ${t} pixels`;
+    $('n').textContent = (n * n).toLocaleString('fr-CA');
+    $('detail').textContent = `${n} carreaux par ligne × ${n} lignes. Chaque carreau contient ${t * t * 3} nombres (${t * t} pixels, trois couleurs chacun).`;
+    const s = $('sequence').getContext('2d'), k = 24, l = 640 / k;
+    s.fillStyle = '#fbf7ee'; s.fillRect(0, 0, 640, 48);
+    for (let i = 0; i < k - 1; i++) {
+        const r = Math.floor(i / n), q = i % n;
+        s.drawImage(img, q * t, r * t, t, t, i * l + 2, 8, l - 4, l - 4);
+    }
+    s.fillStyle = '#5b5249'; s.font = '16px system-ui'; s.fillText('…', (k - 1) * l + 6, 30);
+}
+$('image').addEventListener('mousemove', e => {
+    const r = $('image').getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 448, y = (e.clientY - r.top) / r.height * 448;
+    const n = 448 / t, q = Math.floor(x / t), ligne = Math.floor(y / t);
+    $('survol').textContent = `Carreau de la ligne ${ligne + 1}, colonne ${q + 1} : jeton n° ${(ligne * n + q + 1).toLocaleString('fr-CA')}.`;
+});
+img.onload = dessiner;
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
