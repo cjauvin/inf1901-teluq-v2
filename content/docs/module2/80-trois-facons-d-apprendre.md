@@ -115,8 +115,7 @@ des millions d'autres (détection de fraude) ou pour compresser des données en
 les résumant par leurs groupes.
 
 Le regroupement n'est qu'une partie du non-supervisé. Celui-ci comprend aussi
-la **réduction de dimension** (simplifier des données à mille variables en
-perdant le moins d'information possible) et l'**apprentissage de
+la [réduction de dimension](#réduire-la-dimension), présentée ci-dessous, et l'**apprentissage de
 représentations** (*representation learning*), qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l'IA
@@ -142,6 +141,86 @@ de groupes $k$ est un **hyper-paramètre**, qu'on choisit d'avance comme le $k$
 de kNN. De plus, l'algorithme peut s'arrêter dans un minimum local. C'est
 pourquoi on le relance habituellement plusieurs fois avec des centres initiaux
 différents, et on garde la meilleure solution.
+
+{{% /details %}}
+
+### Réduire la dimension
+
+Les données ont souvent beaucoup de caractéristiques : des dizaines pour un client,
+784 pour une image de chiffre manuscrit (une par pixel), des millions pour une
+photo. On ne peut pas dessiner un nuage de points à 784 dimensions. Et la
+[malédiction de la dimension](docs/module2/40-predire-par-ressemblance/#mesurer-la-ressemblance-la-distance)
+rend les distances de moins en moins utiles à mesure que les dimensions s'ajoutent.
+
+Heureusement, ces caractéristiques sont rarement indépendantes. Dans une image de
+chiffre, deux pixels voisins ont presque toujours la même teinte. Chez un client,
+le revenu et la valeur de la maison varient souvent ensemble. Une bonne partie de
+l'information est donc redondante. La **réduction de dimension** (*dimensionality
+reduction*) en tire parti : elle résume chaque exemple par quelques nombres
+seulement, en perdant le moins d'information possible.
+
+La méthode classique est l'**analyse en composantes principales** (ACP, *principal
+component analysis*), proposée par le statisticien Karl Pearson en 1901. Elle
+cherche la direction dans laquelle les données s'étalent le plus, puis la
+suivante, perpendiculaire à la première, et ainsi de suite. On ne garde que les
+premières directions, appelées **composantes principales**, et chaque exemple est
+résumé par sa position le long de chacune.
+
+Une comparaison aide à voir pourquoi on cherche l'étalement. Photographier un
+objet, c'est le réduire de trois dimensions à deux. Une théière photographiée de
+côté se reconnaît à son bec et à son anse. Photographiée de dessus, ce n'est plus
+qu'un disque. Le bon angle est celui qui conserve le plus de différences entre les
+points de l'objet. L'ACP choisit cet angle automatiquement, quel que soit le nombre
+de dimensions.
+
+Dans l'applet ci-dessous, un nuage de points en deux dimensions doit être réduit à
+une seule. Faites tourner l'axe. Les points se projettent sur lui, et l'indicateur
+montre la part de l'étalement conservée. Cherchez l'angle qui la rend la plus
+grande, puis comparez-le avec celui que trouve le bouton « ACP ».
+
+{{< applet src="/html/applets/acp.html" height="515" >}}
+
+Appliquée aux 784 pixels des chiffres manuscrits, l'ACP donne la figure
+ci-dessous. Chaque chiffre y est réduit à deux nombres, ses positions le long des
+deux premières composantes principales. Les 0 et les 1 se séparent assez bien,
+mais la plupart des chiffres se chevauchent. Ces deux nombres ne conservent
+d'ailleurs que 17 % de l'étalement des données.
+
+{{< image src="/images/module2/acp-mnist.svg" alt="Une carte en deux dimensions : 2 000 chiffres manuscrits de la base MNIST, chacun réduit de 784 pixels à deux nombres, ses positions le long des deux premières composantes principales. Chaque point est coloré selon le chiffre qu'il représente. Les 0 et les 1 occupent des régions assez distinctes, de part et d'autre de la carte ; les autres chiffres se chevauchent largement au centre." title="2 000 chiffres de la base MNIST, réduits par l'ACP de 784 pixels à deux nombres. L'ACP a été calculée sur les 60 000 images d'entraînement." loading="lazy" >}}
+
+L'ACP a une limite : elle ne trouve que des directions droites. Elle revient à
+regarder les données sous le meilleur angle, sans pouvoir les déformer. Or les
+données réelles se trouvent souvent sur des surfaces courbes, repliées sur
+elles-mêmes. Des méthodes plus récentes savent déplier ces surfaces, comme t-SNE
+(2008), de Laurens van der Maaten et Geoffrey Hinton, et UMAP (2018). On les
+utilise surtout pour visualiser des données en deux dimensions.
+
+La réduction de dimension reviendra dans la suite du cours.
+L'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)
+du Module 3 est un réseau de neurones qui réduit lui aussi chaque image à quelques
+nombres, puis la reconstruit. Il agit comme une ACP capable de suivre les courbes.
+Ces quelques nombres forment l'**espace latent**, au cœur de
+l'[IA générative](docs/module4/10-generer/#lespace-latent) du Module 4.
+
+{{% details "Les mathématiques de l'ACP (optionnel)" %}}
+
+On centre d'abord les données, en retranchant à chaque caractéristique sa moyenne.
+L'étalement des données le long d'une direction $\mathbf{u}$ de longueur 1 est la
+variance de leurs projections :
+
+$$\mathrm{Var}(\mathbf{u}) = \frac{1}{n} \sum_{i=1}^{n} (\mathbf{u}^\top \mathbf{x}_i)^2 = \mathbf{u}^\top \Sigma \, \mathbf{u}$$
+
+où $\Sigma$ est la **matrice de covariance** des données. La direction qui maximise
+cette variance est le **vecteur propre** de $\Sigma$ associé à sa plus grande
+**valeur propre**, et cette valeur propre est la variance conservée. Les
+composantes suivantes sont les vecteurs propres suivants, par ordre de valeur
+propre décroissante. La part de l'étalement conservée par les $k$ premières
+composantes est la somme de leurs valeurs propres, divisée par la somme de toutes.
+
+Un autoencodeur dont les couches n'ont pas de fonction d'activation, entraîné à
+minimiser l'erreur de reconstruction au carré, retrouve exactement le même
+sous-espace que l'ACP (Pierre Baldi et Kurt Hornik, 1989). Les fonctions
+d'activation lui permettent d'aller au-delà, vers les surfaces courbes.
 
 {{% /details %}}
 

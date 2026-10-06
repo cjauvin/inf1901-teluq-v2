@@ -158,7 +158,9 @@ du Module 3 a présenté l'**autoencodeur**. C'est un réseau en forme de sablie
 qui réduit une image à quelques nombres (l'**encodeur**), puis la reconstruit à
 partir de ces nombres (le **décodeur**). Ces quelques nombres forment la
 **représentation latente** de l'image, et l'ensemble des valeurs qu'ils peuvent
-prendre s'appelle l'**espace latent** (*latent space*).
+prendre s'appelle l'**espace latent** (*latent space*). C'est une
+[réduction de dimension](docs/module2/80-trois-facons-d-apprendre/#réduire-la-dimension),
+au sens du Module 2, faite par un réseau de neurones.
 
 Le décodeur fournit une solution au problème des grandes dimensions. Au lieu de
 tirer 784 pixels au hasard, on tire quelques nombres dans l'espace latent, et le
