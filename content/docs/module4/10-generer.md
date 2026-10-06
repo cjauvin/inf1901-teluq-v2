@@ -181,7 +181,11 @@ différentes de la même variété.
 L'applet ci-dessous contient le décodeur d'un autoencodeur entraîné sur les
 60 000 chiffres de MNIST. Son espace latent n'a que **deux** dimensions, ce qui
 permet de le dessiner comme une carte. Les petits points colorés sont de vrais
-chiffres, placés à l'endroit où l'encodeur les range. Chaque chiffre occupe sa
+chiffres, placés à l'endroit où l'encodeur les range. Ranger une image, pour l'encodeur, c'est
+calculer ses coordonnées sur la carte : il reçoit les 784 pixels et en tire deux
+nombres. Personne ne choisit ces places. Elles découlent des poids de l'encodeur,
+ajustés pendant l'entraînement pour que le décodeur puisse reconstruire l'image à
+partir de ces deux nombres. Chaque chiffre occupe sa
 propre région, sans que personne n'ait indiqué au réseau quel chiffre était quel
 chiffre : il n'a vu aucune étiquette.
 

@@ -90,24 +90,60 @@ L'applet du [chapitre précédent](docs/module4/10-generer/#lespace-latent) util
 **autoencodeur variationnel** (*variational autoencoder*, VAE), proposé en 2013 par
 Diederik Kingma et Max Welling, à l'Université d'Amsterdam. Comme l'autoencodeur du
 [Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur),
-c'est un réseau en sablier, avec un encodeur et un décodeur. Il diffère de
-l'autoencodeur ordinaire sur deux points.
+c'est un réseau en sablier, avec un encodeur et un décodeur.
 
-1. L'encodeur ne place pas chaque image en un point précis de l'espace latent, mais
-   dans une petite **zone floue** autour de ce point. Pendant l'entraînement, le
-   décodeur reçoit un point tiré au hasard dans cette zone, et doit quand même
-   reconstruire l'image. Il apprend ainsi à produire une image correcte pour tous
-   les points voisins, et pas seulement pour un point isolé.
-2. Une **pénalité** est ajoutée à l'erreur. Elle augmente quand les zones
-   s'éloignent du centre de la carte ou deviennent trop petites. Toutes les zones
-   sont donc ramenées autour du centre, où elles se chevauchent sans laisser de
-   trous.
+**À quoi sert l'espace latent.** Rappelons l'idée du
+[chapitre précédent](docs/module4/10-generer/#lespace-latent). L'encodeur range
+chaque image en un point d'une carte de quelques dimensions, l'espace latent. Le
+décodeur fait l'inverse : on lui donne un point de la carte, et il en fait une
+image. Pour **générer**, on se passe de l'encodeur. On choisit un point au hasard
+sur la carte, et le décodeur en fait une image nouvelle. Tout repose donc sur une
+question : où tirer ce point ?
+
+**Le problème de l'autoencodeur ordinaire.** Un autoencodeur ordinaire n'a appris
+qu'une chose : reconstruire les images qu'on lui a montrées. Son encodeur calcule
+pour chaque image des coordonnées qui permettent de la reconstruire, et rien de
+plus. Aucune règle ne fixe l'étendue de la carte ni la façon d'en occuper l'espace.
+Deux défauts en résultent.
+
+- **On ne sait pas où est la carte.** Les points peuvent occuper n'importe quelle
+  étendue, par exemple des coordonnées allant de −3 à 2 sur un axe et de 10 à 250
+  sur l'autre. Pour tirer un point au hasard, il faudrait d'abord connaître ces
+  limites.
+- **La carte a des trous.** Entre les points des images d'entraînement, il reste des
+  zones où le décodeur n'a jamais été exercé. Un point tiré dans un tel trou donne
+  une image qui ne ressemble à rien.
+
+Tirer un point au hasard dans cette carte, c'est un peu comme lancer une fléchette
+les yeux bandés sur une carte du monde dont on ignore les bords, couverte
+d'océans : on tombe rarement sur une ville.
+
+**Les deux remèdes du VAE.** Le VAE ajoute deux règles à l'entraînement, une contre
+chaque défaut.
+
+1. **Contre les trous : des zones plutôt que des points.** L'encodeur ne place plus
+   chaque image en un point précis, mais dans une petite **zone floue** autour de ce
+   point. Pendant l'entraînement, le décodeur reçoit un point tiré au hasard dans
+   cette zone, et doit quand même reconstruire l'image. Il apprend ainsi à produire
+   une image correcte dans tout le voisinage de chaque point. Les zones voisines se
+   chevauchent et bouchent les trous.
+2. **Contre l'étendue inconnue : une pénalité.** Une pénalité ajoutée à l'erreur
+   augmente quand une zone s'éloigne du centre de la carte, le point (0, 0), ou
+   devient trop petite. Toutes les zones sont donc ramenées dans un même disque
+   autour du centre, de taille connue à l'avance. Le centre n'a rien de particulier
+   en lui-même : c'est un rendez-vous convenu. Ce qui compte, c'est qu'on sache
+   d'avance où se trouvent les images.
+
+Les deux forces s'équilibrent. L'erreur de reconstruction pousse les zones à rester
+distinctes, pour que chaque image soit bien reconstruite. La pénalité les rassemble
+autour du centre. Le résultat est une carte serrée, sans trous, dont on connaît la
+forme : une cloche centrée sur l'origine. Pour générer, il suffit de tirer un point
+dans cette cloche, comme on lancerait la fléchette sur une carte où chaque endroit
+est une ville.
 
 {{< image src="/images/module4/ae-et-vae.svg" alt="Deux rangées. En haut, l'autoencodeur ordinaire : un 7 manuscrit entre dans l'encodeur, qui le réduit à un point sur une petite carte de l'espace latent ; le décodeur reconstruit le 7 à partir de ce point. L'erreur de reconstruction compare l'entrée et la sortie. En bas, l'autoencodeur variationnel : l'encodeur donne deux sorties, le centre et la taille d'une zone floue, dessinée sur la carte comme une tache en forme de cloche ; un point est tiré au hasard dans cette zone, et le décodeur reconstruit le 7 à partir de ce point. Une pénalité ramène la zone vers le centre de la carte. Les éléments propres à l'autoencodeur variationnel sont en rouge." title="Le VAE garde le sablier de l'autoencodeur. Ce qui change est en rouge : l'encodeur donne une zone plutôt qu'un point, le décodeur reçoit un point tiré au hasard dans cette zone, et une pénalité ramène la zone vers le centre. Le 7, sa place sur la carte et les sorties viennent du réseau de l'applet du chapitre précédent." loading="lazy" >}}
 
-Le résultat est un espace latent organisé selon une distribution connue à
-l'avance, une cloche centrée sur l'origine. Pour générer une image, il suffit de
-tirer un point dans cette cloche et de le décoder. La figure ci-dessous compare
+La figure ci-dessous compare
 deux réseaux entraînés sur les mêmes chiffres de MNIST, un autoencodeur ordinaire
 et le VAE de l'applet du chapitre précédent. Dans les deux cartes, dix points sont
 tirés selon la même règle, dans la cloche centrée sur l'origine.
