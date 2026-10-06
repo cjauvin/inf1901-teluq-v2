@@ -11,7 +11,7 @@ a présenté les méthodes. Celui-ci présente ce qu'elles ont produit en une di
 d'années, type de contenu par type de contenu : les images, les voix et la
 musique, la vidéo, puis des domaines plus inattendus, comme la conception de
 protéines ou la prévision météorologique. Il se termine par les problèmes que ces
-contenus posent, en particulier les hypertrucages.
+contenus posent, en particulier les hypertrucages (*deepfakes*).
 
 Beaucoup de ces systèmes produisent un contenu à partir d'une phrase, comme « un
 chat sur la lune ». Leur fonctionnement demande de savoir représenter le sens d'un

@@ -92,7 +92,7 @@ modèles de langage, puis la rencontre du texte et de l'image.
 2. [*Quatre façons de générer*](docs/module4/20-quatre-facons-de-generer) : les GAN,
    les autoencodeurs variationnels, la diffusion et les modèles autorégressifs.
 3. [*Des images, des voix, des vidéos*](docs/module4/30-images-voix-videos) : dix
-   ans de génération, des protéines à la météo, et les hypertrucages.
+   ans de génération, des protéines à la météo, et les hypertrucages (*deepfakes*).
 
 **Les grands modèles de langage**
 
