@@ -155,10 +155,20 @@ est une ville.
 
 {{< image src="/images/module4/ae-et-vae.svg" alt="Deux rangées. En haut, l'autoencodeur ordinaire : un 7 manuscrit entre dans l'encodeur, qui le réduit à un point sur une petite carte de l'espace latent ; le décodeur reconstruit le 7 à partir de ce point. L'erreur de reconstruction compare l'entrée et la sortie. En bas, l'autoencodeur variationnel : l'encodeur donne deux sorties, le centre et la taille d'une zone floue, dessinée sur la carte comme une tache en forme de cloche ; un point est tiré au hasard dans cette zone, et le décodeur reconstruit le 7 à partir de ce point. Une pénalité ramène la zone vers le centre de la carte. Les éléments propres à l'autoencodeur variationnel sont en rouge." title="Le VAE garde le sablier de l'autoencodeur. Ce qui change est en rouge : l'encodeur donne une zone plutôt qu'un point, le décodeur reçoit un point tiré au hasard dans cette zone, et une pénalité ramène la zone vers le centre. Le 7, sa place sur la carte et les sorties viennent du réseau de l'applet du chapitre précédent." loading="lazy" >}}
 
-La figure ci-dessous compare
-deux réseaux entraînés sur les mêmes chiffres de MNIST, un autoencodeur ordinaire
-et le VAE de l'applet du chapitre précédent. Dans les deux cartes, dix points sont
-tirés selon la même règle, dans la cloche centrée sur l'origine.
+La règle de tirage est la même pour les deux réseaux. Chacun des deux nombres du
+code est tiré au hasard selon une **courbe en cloche** centrée sur zéro, la
+[gaussienne](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne)
+du Module 2. Les valeurs proches de zéro sont les plus fréquentes, et les valeurs
+qui dépassent 2 ou −2 sont rares. Sur la carte, qui a deux dimensions, cette cloche
+devient une colline ronde, la plus haute au centre, le point (0, 0). Les points
+tirés s'y entassent près du centre, et se raréfient à mesure qu'on s'en éloigne. Le
+**cercle noir** de la figure entoure la zone où tombent 95 % des tirages : c'est là
+que le générateur ira chercher ses points. C'est aussi la région que la pénalité du
+VAE pousse ses chiffres à occuper.
+
+La figure ci-dessous compare deux réseaux entraînés sur les mêmes chiffres de
+MNIST, un autoencodeur ordinaire et le VAE de l'applet du chapitre précédent. Dans
+chaque carte, dix points ont été tirés selon cette règle, puis décodés en chiffres.
 
 {{< image src="/images/module4/ae-vae.png" alt="Deux cartes de l'espace latent, côte à côte, avec dessous les dix chiffres produits par chacun des deux décodeurs. À gauche, l'autoencodeur ordinaire : ses chiffres s'étalent sur une très grande surface, et le cercle de tirage, minuscule, ne couvre qu'un coin où se mêlent des 3, des 5 et des 9 ; les dix chiffres produits sont presque tous des 3, des 5 et des 9. À droite, le VAE : ses chiffres sont regroupés autour du centre, le cercle de tirage couvre presque toute la carte, et les dix chiffres produits sont variés (8, 2, 7, 5, 4, 3, 6)." title="Avec la même règle de tirage, l'autoencodeur ordinaire ne produit presque que des 3, des 5 et des 9, car ses chiffres ne sont pas rangés autour du centre. Le VAE produit des chiffres variés." loading="lazy" >}}
 
