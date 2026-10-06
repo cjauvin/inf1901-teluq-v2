@@ -234,7 +234,9 @@ collègues, à l'Université Stanford, qui s'inspiraient de la thermodynamique. 
 est devenue efficace en 2020, avec les travaux de Jonathan Ho, Ajay Jain et Pieter
 Abbeel, à l'Université de Californie à Berkeley. En 2022, les modèles de diffusion
 ont dépassé les GAN, avec DALL·E 2 (OpenAI) et Stable Diffusion (Stability AI et
-l'Université de Munich), qui produisent des images à partir d'une phrase. Ils
+l'Université de Munich), qui produisent des images à partir d'une phrase.
+Midjourney, très populaire auprès du public, reposerait sur le même principe, bien
+que l'entreprise n'ait jamais publié les détails de son modèle. Ils
 s'entraînent de façon stable, et ils couvrent toute la diversité des données, sans
 effondrement des modes. Leur défaut est la **lenteur**, puisqu'une image demande de
 nombreux passages dans le réseau, là où un GAN n'en demande qu'un. Une grande

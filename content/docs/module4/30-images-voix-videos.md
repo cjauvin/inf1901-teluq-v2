@@ -44,7 +44,9 @@ Les étapes principales sont les suivantes.
   dessinées ensemble.
 - **Avril 2022** : DALL·E 2, un modèle de diffusion, produit des images réalistes
   de 1 024 pixels de côté.
-- **Juillet 2022** : Midjourney ouvre son service au public.
+- **Juillet 2022** : Midjourney, sans doute lui aussi un modèle de
+  [diffusion](docs/module4/20-quatre-facons-de-generer/#retirer-le-bruit-pas-à-pas-la-diffusion),
+  ouvre son service au public.
 - **Août 2022** : Stable Diffusion est publié avec ses poids. N'importe qui peut
   le télécharger et le faire tourner sur un ordinateur personnel muni d'une bonne
   carte graphique, ce qui multiplie les usages et les variantes.
