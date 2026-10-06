@@ -103,6 +103,8 @@ l'autoencodeur ordinaire sur deux points.
    sont donc ramenées autour du centre, où elles se chevauchent sans laisser de
    trous.
 
+{{< image src="/images/module4/ae-et-vae.svg" alt="Deux rangées. En haut, l'autoencodeur ordinaire : un 7 manuscrit entre dans l'encodeur, qui le réduit à un point sur une petite carte de l'espace latent ; le décodeur reconstruit le 7 à partir de ce point. L'erreur de reconstruction compare l'entrée et la sortie. En bas, l'autoencodeur variationnel : l'encodeur donne deux sorties, le centre et la taille d'une zone floue, dessinée sur la carte comme une tache en forme de cloche ; un point est tiré au hasard dans cette zone, et le décodeur reconstruit le 7 à partir de ce point. Une pénalité ramène la zone vers le centre de la carte. Les éléments propres à l'autoencodeur variationnel sont en rouge." title="Le VAE garde le sablier de l'autoencodeur. Ce qui change est en rouge : l'encodeur donne une zone plutôt qu'un point, le décodeur reçoit un point tiré au hasard dans cette zone, et une pénalité ramène la zone vers le centre. Le 7, sa place sur la carte et les sorties viennent du réseau de l'applet du chapitre précédent." loading="lazy" >}}
+
 Le résultat est un espace latent organisé selon une distribution connue à
 l'avance, une cloche centrée sur l'origine. Pour générer une image, il suffit de
 tirer un point dans cette cloche et de le décoder. La figure ci-dessous compare
