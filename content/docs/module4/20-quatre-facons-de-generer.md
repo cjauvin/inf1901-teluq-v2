@@ -290,7 +290,9 @@ demande de savoir représenter le sens d'un texte. Le chapitre du
 [Module 4](docs/module4/90-mots-et-images/#du-texte-à-limage) consacré aux modèles multimodaux y reviendra, une fois
 présentés les modèles de langage.
 
-La figure ci-dessous montre un vrai générateur conditionnel, un VAE entraîné sur les
+{{< image src="/images/module4/trois-consignes.svg" alt="Trois rangées, de gauche à droite : la consigne, sa traduction en nombres, le générateur qui reçoit aussi du hasard, et le résultat. Première rangée : une étiquette, « 7 », devient un code de dix cases dont une seule est allumée ; un VAE conditionnel produit un 7 manuscrit. Deuxième rangée : une image de départ, un dessin d'enfant d'une maison sous le soleil, est déjà faite de nombres ; un modèle de diffusion en fait un tableau qui reprend sa composition. Troisième rangée : une phrase, « un chat astronaute sur la lune », passe par un encodeur de textes, l'étape difficile, qui doit représenter le sens de la phrase ; un modèle de diffusion produit un chat en scaphandre sur la Lune." title="Trois sortes de consignes. Chacune est d'abord traduite en nombres ; pour une phrase, c'est l'étape la plus difficile. Les résultats sont réels : un VAE conditionnel entraîné sur MNIST, puis Stable Diffusion 1.5, à partir du dessin ou de la phrase (en anglais)." loading="lazy" >}}
+
+La figure suivante montre de près un vrai générateur conditionnel, un VAE entraîné sur les
 chiffres de MNIST. Son hasard est un tirage de quatre nombres, et sa consigne
 l'étiquette du chiffre à produire. Chaque colonne de la grille reçoit son propre
 tirage, et chaque rangée sa propre consigne. La consigne décide quel chiffre est
