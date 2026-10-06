@@ -98,7 +98,11 @@ l'espace des pixels : 784 nombres pour un chiffre de MNIST, environ trois milli
 pour une photo en couleurs de 1 000 pixels de côté. Il la réduit à un point d'une
 carte qui n'a que **quelques dimensions**, l'espace latent : deux nombres dans
 l'applet, 512 pour le réseau qui a produit les visages du chapitre précédent.
-Passer de 784 nombres à deux, c'est une compression considérable. L'image y perd
+Passer de 784 nombres à deux, c'est une compression considérable.
+C'est une
+[réduction de dimension](docs/module2/80-trois-facons-d-apprendre/#réduire-la-dimension),
+comme la PCA du Module 2, mais faite par un réseau de neurones capable de suivre
+les courbes des données. L'image y perd
 presque tous ses détails, et n'en garde que ce qui permet de la reconstruire : la
 forme du chiffre, l'inclinaison et l'épaisseur du trait. Cette compression est
 possible parce que les vraies images se trouvent près d'une
