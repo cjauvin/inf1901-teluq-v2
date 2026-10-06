@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
-<title>Les chiffres manuscrits réduits à deux nombres par l'ACP</title>
+<title>Les chiffres manuscrits réduits à deux nombres par la PCA</title>
 <desc>Une carte en deux dimensions : 2 000 chiffres manuscrits de la base MNIST, chacun réduit de 784 pixels à deux nombres, ses positions le long des deux premières composantes principales. Chaque point est coloré selon le chiffre qu'il représente. Les 0 et les 1 occupent des régions assez distinctes, de part et d'autre de la carte ; les autres chiffres se chevauchent largement au centre. Les deux composantes conservent environ 17 % de l'étalement des données.</desc>
 <rect x="0" y="0" width="760" height="560" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="380.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">2 000 chiffres manuscrits, de 784 pixels à 2 nombres</text>

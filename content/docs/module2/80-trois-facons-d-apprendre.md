@@ -159,8 +159,8 @@ l'information est donc redondante. La **réduction de dimension** (*dimensionali
 reduction*) en tire parti : elle résume chaque exemple par quelques nombres
 seulement, en perdant le moins d'information possible.
 
-La méthode classique est l'**analyse en composantes principales** (ACP, *principal
-component analysis*), proposée par le statisticien Karl Pearson en 1901. Elle
+La méthode classique est l'**analyse en composantes principales** (*principal
+component analysis*, PCA), proposée par le statisticien Karl Pearson en 1901. Elle
 cherche la direction dans laquelle les données s'étalent le plus, puis la
 suivante, perpendiculaire à la première, et ainsi de suite. On ne garde que les
 premières directions, appelées **composantes principales**, et chaque exemple est
@@ -170,25 +170,25 @@ Une comparaison aide à voir pourquoi on cherche l'étalement. Photographier un
 objet, c'est le réduire de trois dimensions à deux. Une théière photographiée de
 côté se reconnaît à son bec et à son anse. Photographiée de dessus, ce n'est plus
 qu'un disque. Le bon angle est celui qui conserve le plus de différences entre les
-points de l'objet. L'ACP choisit cet angle automatiquement, quel que soit le nombre
+points de l'objet. La PCA choisit cet angle automatiquement, quel que soit le nombre
 de dimensions.
 
 Dans l'applet ci-dessous, un nuage de points en deux dimensions doit être réduit à
 une seule. Faites tourner l'axe. Les points se projettent sur lui, et l'indicateur
 montre la part de l'étalement conservée. Cherchez l'angle qui la rend la plus
-grande, puis comparez-le avec celui que trouve le bouton « ACP ».
+grande, puis comparez-le avec celui que trouve le bouton « PCA ».
 
 {{< applet src="/html/applets/acp.html" height="515" >}}
 
-Appliquée aux 784 pixels des chiffres manuscrits, l'ACP donne la figure
+Appliquée aux 784 pixels des chiffres manuscrits, la PCA donne la figure
 ci-dessous. Chaque chiffre y est réduit à deux nombres, ses positions le long des
 deux premières composantes principales. Les 0 et les 1 se séparent assez bien,
 mais la plupart des chiffres se chevauchent. Ces deux nombres ne conservent
 d'ailleurs que 17 % de l'étalement des données.
 
-{{< image src="/images/module2/acp-mnist.svg" alt="Une carte en deux dimensions : 2 000 chiffres manuscrits de la base MNIST, chacun réduit de 784 pixels à deux nombres, ses positions le long des deux premières composantes principales. Chaque point est coloré selon le chiffre qu'il représente. Les 0 et les 1 occupent des régions assez distinctes, de part et d'autre de la carte ; les autres chiffres se chevauchent largement au centre." title="2 000 chiffres de la base MNIST, réduits par l'ACP de 784 pixels à deux nombres. L'ACP a été calculée sur les 60 000 images d'entraînement." loading="lazy" >}}
+{{< image src="/images/module2/acp-mnist.svg" alt="Une carte en deux dimensions : 2 000 chiffres manuscrits de la base MNIST, chacun réduit de 784 pixels à deux nombres, ses positions le long des deux premières composantes principales. Chaque point est coloré selon le chiffre qu'il représente. Les 0 et les 1 occupent des régions assez distinctes, de part et d'autre de la carte ; les autres chiffres se chevauchent largement au centre." title="2 000 chiffres de la base MNIST, réduits par la PCA de 784 pixels à deux nombres. La PCA a été calculée sur les 60 000 images d'entraînement." loading="lazy" >}}
 
-L'ACP a une limite : elle ne trouve que des directions droites. Elle revient à
+La PCA a une limite : elle ne trouve que des directions droites. Elle revient à
 regarder les données sous le meilleur angle, sans pouvoir les déformer. Or les
 données réelles se trouvent souvent sur des surfaces courbes, repliées sur
 elles-mêmes. Des méthodes plus récentes savent déplier ces surfaces, comme t-SNE
@@ -198,11 +198,11 @@ utilise surtout pour visualiser des données en deux dimensions.
 La réduction de dimension reviendra dans la suite du cours.
 L'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)
 du Module 3 est un réseau de neurones qui réduit lui aussi chaque image à quelques
-nombres, puis la reconstruit. Il agit comme une ACP capable de suivre les courbes.
+nombres, puis la reconstruit. Il agit comme une PCA capable de suivre les courbes.
 Ces quelques nombres forment l'**espace latent**, au cœur de
 l'[IA générative](docs/module4/10-generer/#lespace-latent) du Module 4.
 
-{{% details "Les mathématiques de l'ACP (optionnel)" %}}
+{{% details "Les mathématiques de la PCA (optionnel)" %}}
 
 On centre d'abord les données, en retranchant à chaque caractéristique sa moyenne.
 L'étalement des données le long d'une direction $\mathbf{u}$ de longueur 1 est la
@@ -219,7 +219,7 @@ composantes est la somme de leurs valeurs propres, divisée par la somme de tout
 
 Un autoencodeur dont les couches n'ont pas de fonction d'activation, entraîné à
 minimiser l'erreur de reconstruction au carré, retrouve exactement le même
-sous-espace que l'ACP (Pierre Baldi et Kurt Hornik, 1989). Les fonctions
+sous-espace que la PCA (Pierre Baldi et Kurt Hornik, 1989). Les fonctions
 d'activation lui permettent d'aller au-delà, vers les surfaces courbes.
 
 {{% /details %}}

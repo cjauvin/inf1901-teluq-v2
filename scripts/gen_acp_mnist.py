@@ -1,5 +1,5 @@
 """Module 2, « Trois façons d'apprendre » : les chiffres de MNIST réduits à deux nombres par l'analyse en composantes
-principales (ACP), calculée sur les 60 000 images d'entraînement ; 2 000 images de test sont placées sur la carte.
+principales (PCA), calculée sur les 60 000 images d'entraînement ; 2 000 images de test sont placées sur la carte.
 
 MNIST est lu dans le cache de torchvision (~/.cache/inf1901/mnist), rempli par gen_espace_latent.py.
 
@@ -38,7 +38,7 @@ marge = 0.06 * (hi - lo); lo, hi = lo - marge, hi + marge
 vers = lambda z: (x0 + (z[0] - lo[0]) / (hi[0] - lo[0]) * C, y0 + C - (z[1] - lo[1]) / (hi[1] - lo[1]) * C)
 o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
-     "<title>Les chiffres manuscrits réduits à deux nombres par l'ACP</title>",
+     "<title>Les chiffres manuscrits réduits à deux nombres par la PCA</title>",
      "<desc>Une carte en deux dimensions : 2 000 chiffres manuscrits de la base MNIST, chacun réduit de 784 pixels à deux nombres, ses "
      "positions le long des deux premières composantes principales. Chaque point est coloré selon le chiffre qu'il représente. Les 0 "
      "et les 1 occupent des régions assez distinctes, de part et d'autre de la carte ; les autres chiffres se chevauchent largement au "
