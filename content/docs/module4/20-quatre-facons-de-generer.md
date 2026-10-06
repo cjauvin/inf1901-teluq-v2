@@ -93,8 +93,16 @@ Diederik Kingma et Max Welling, à l'Université d'Amsterdam. Comme l'autoencode
 c'est un réseau en sablier, avec un encodeur et un décodeur.
 
 **À quoi sert l'espace latent.** Rappelons l'idée du
-[chapitre précédent](docs/module4/10-generer/#lespace-latent). L'encodeur range
-chaque image en un point d'une carte de quelques dimensions, l'espace latent. Le
+[chapitre précédent](docs/module4/10-generer/#lespace-latent). L'encodeur reçoit une image, c'est-à-dire un point de
+l'espace des pixels : 784 nombres pour un chiffre de MNIST, environ trois millions
+pour une photo en couleurs de 1 000 pixels de côté. Il la réduit à un point d'une
+carte qui n'a que **quelques dimensions**, l'espace latent : deux nombres dans
+l'applet, 512 pour le réseau qui a produit les visages du chapitre précédent.
+Passer de 784 nombres à deux, c'est une compression considérable. L'image y perd
+presque tous ses détails, et n'en garde que ce qui permet de la reconstruire : la
+forme du chiffre, l'inclinaison et l'épaisseur du trait. Cette compression est
+possible parce que les vraies images se trouvent près d'une
+[variété de peu de dimensions](docs/module4/10-generer/#la-variété-des-vraies-images). Le
 décodeur fait l'inverse : on lui donne un point de la carte, et il en fait une
 image. Pour **générer**, on se passe de l'encodeur. On choisit un point au hasard
 sur la carte, et le décodeur en fait une image nouvelle. Tout repose donc sur une
