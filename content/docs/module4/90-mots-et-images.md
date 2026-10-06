@@ -103,16 +103,44 @@ hasard, une information sur ce qu'on veut obtenir. Pour un générateur d'images
 partir de texte, cette information est le vecteur de la phrase, calculé par un
 encodeur de textes comme celui de CLIP.
 
-- **DALL·E 2** (2022) transforme d'abord le vecteur de la phrase en un vecteur
-  d'image de l'espace de CLIP, puis un modèle de diffusion produit une image qui
-  correspond à ce vecteur.
-- **Stable Diffusion** (2022) fournit les vecteurs des mots de la phrase au réseau qui
-  retire le bruit. À chaque étape du
-  [débruitage](docs/module4/20-quatre-facons-de-generer/#retirer-le-bruit-pas-à-pas-la-diffusion),
-  chaque zone de l'image en cours consulte les mots de la phrase par un mécanisme
-  d'[attention](docs/module3/70-attention-transformer/#une-recherche-floue), comme
-  ceux du Module 3, et le bruit est retiré dans une direction qui rapproche l'image
-  de la description.
+**DALL·E 2** (2022) transforme d'abord le vecteur de la phrase en un vecteur d'image
+de l'espace de CLIP, puis un modèle de diffusion produit une image qui correspond à
+ce vecteur.
+
+Le fonctionnement de **Stable Diffusion** (2022) est le mieux connu, parce que son
+code et ses poids sont publics. Il assemble trois réseaux, en quatre étapes.
+
+1. **Lire la phrase.** L'encodeur de textes de CLIP transforme la consigne, par
+   exemple « un chat astronaute sur la lune », en une suite de vecteurs, un par
+   [jeton](docs/module4/40-des-mots-aux-nombres/#découper-le-texte-les-jetons).
+2. **Partir du bruit, dans un espace latent.** Le modèle ne travaille pas
+   directement sur les pixels. Une image en couleurs de 512 × 512 pixels compte
+   786 432 nombres. Stable Diffusion travaille plutôt sur sa version compressée par
+   un [autoencodeur](docs/module4/20-quatre-facons-de-generer/#remplir-lespace-latent-les-autoencodeurs-variationnels),
+   une grille de 64 × 64 × 4 = 16 384 nombres, 48 fois moins. Au départ, cette
+   grille est remplie de bruit tiré au hasard.
+3. **Retirer le bruit en consultant la phrase.** Le réseau débruiteur est appliqué
+   une cinquantaine de fois. À chaque passage, il estime le bruit présent et en
+   retire une partie. Pour choisir la direction, chaque zone de l'image en cours
+   consulte les vecteurs des mots par **attention croisée**. C'est le mécanisme qui,
+   dans le [Transformer](docs/module3/70-attention-transformer/#le-transformer),
+   permet à la traduction de consulter la phrase d'origine. Une zone qui devient un
+   casque va chercher son information dans « astronaute ».
+4. **Décoder.** Le décodeur de l'autoencodeur transforme la grille finale en une
+   image de 512 × 512 pixels.
+
+{{< image src="/images/module4/texte-image.svg" alt="Un schéma. En haut, la consigne « un chat astronaute sur la lune » entre dans l'encodeur de textes de CLIP, qui en fait six vecteurs, un par mot. En bas, de gauche à droite : une petite grille de bruit dans l'espace latent, de 16 384 nombres ; le débruiteur, appliqué cinquante fois, qui consulte les vecteurs des mots par attention croisée ; la grille débruitée, toujours dans l'espace latent ; le décodeur de l'autoencodeur ; et l'image finale de 512 sur 512 pixels, soit 786 432 nombres, qui montre un chat en combinaison spatiale sur la Lune." title="Stable Diffusion assemble trois réseaux : un encodeur de textes, un débruiteur qui travaille dans l'espace latent, et le décodeur d'un autoencodeur. L'image finale est une vraie sortie du modèle ; les deux petites grilles sont des illustrations." loading="lazy" >}}
+
+La figure ci-dessous montre les vraies étapes du débruitage. À chaque étape, la
+grille en cours est décodée en image. Le chat et son scaphandre émergent peu à peu
+du bruit, puis les détails se précisent.
+
+{{< image src="/images/module4/stable-diffusion-etapes.jpg" alt="Cinq images côte à côte. La première n'est que du bruit coloré. Après 20 passages, on devine une silhouette claire au centre. Après 30 passages, un astronaute se dessine, avec une lune jaune à droite. Après 40 passages, on reconnaît un chat dans un scaphandre blanc, sur un sol gris, sous un ciel étoilé. Après 50 passages, l'image est nette : un chat astronaute dessiné, sur un sol lunaire, entouré d'étoiles." title="Les étapes du débruitage dans Stable Diffusion 1.5, pour la consigne « a cat astronaut on the moon, digital painting » (ce modèle ne comprend que l'anglais). À chaque étape, la grille latente en cours est décodée en image." loading="lazy" >}}
+
+On retrouve ici le
+[jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) du
+Module 3 : un encodeur de textes entraîné par CLIP, un autoencodeur et un
+débruiteur, trois réseaux assemblés en un seul système.
 
 Un réglage permet de doser l'influence du texte. On estime le bruit à retirer deux
 fois, avec la phrase et sans elle, puis on amplifie la différence entre les deux.
