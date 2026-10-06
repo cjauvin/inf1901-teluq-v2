@@ -63,7 +63,17 @@ for epoque in range(30):
 
 m = m.cpu().eval()
 g = torch.Generator().manual_seed(3)
-z = torch.randn(COLS, LAT, generator=g) * 0.9                  # un tirage par colonne, le même pour toutes les rangées
+cand = torch.randn(300, LAT, generator=g)                       # 300 tirages candidats ; on garde les 7 aux styles les plus différents
+cand = cand[cand.abs().max(1).values < 1.8]                     # des tirages ordinaires, sans valeurs extrêmes
+toutes = nn.functional.one_hot(torch.arange(10).repeat_interleave(len(cand)), 10).float()
+with torch.no_grad():
+    vu = torch.sigmoid(m.dec(torch.cat([cand.repeat(10, 1), toutes], 1))).view(10, len(cand), 784).permute(1, 0, 2).reshape(len(cand), -1)
+choix = [int(cand.norm(dim=1).argmin())]                        # un tirage ordinaire, puis les plus éloignés des précédents
+while len(choix) < COLS:
+    dist = torch.cdist(vu, vu[choix]).min(1).values
+    choix.append(int(dist.argmax()))
+z = cand[choix]                                                 # un tirage par colonne, le même pour toutes les rangées
+J = 1                                                           # la colonne encadrée, dont le schéma montre les nombres
 with torch.no_grad():
     rangees = [torch.sigmoid(m.dec(torch.cat([z, nn.functional.one_hot(torch.full((COLS,), c), 10).float()], 1))) for c in range(10)]
 
@@ -105,32 +115,37 @@ def fleche(x1, y1, x2, y2):
 
 # ── le schéma, à gauche ──
 yc = gy + GH / 2
-o.append(f'<rect x="30" y="{yc - 98}" width="140" height="46" rx="7" fill="{PANNEAU}" stroke="{BLEU}" stroke-width="1.6"/>')
-o.append(f'<text x="100" y="{yc - 79}" font-size="12" fill="{ENCRE}" text-anchor="middle" font-weight="700">le hasard</text>')
-o.append(f'<text x="100" y="{yc - 63}" font-size="10.5" fill="{ENCRE_PALE}" text-anchor="middle">quelques nombres tirés</text>')
-o.append(f'<rect x="30" y="{yc + 52}" width="140" height="46" rx="7" fill="{PANNEAU}" stroke="{ROUGE}" stroke-width="1.6"/>')
+num = lambda v: f"{v:.1f}".replace(".", ",").replace("-", "−")
+o.append(f'<rect x="20" y="{yc - 116}" width="160" height="64" rx="7" fill="{PANNEAU}" stroke="{BLEU}" stroke-width="1.6"/>')
+o.append(f'<text x="100" y="{yc - 97}" font-size="12" fill="{BLEU}" text-anchor="middle" font-weight="700">le hasard</text>')
+o.append(f'<text x="100" y="{yc - 81}" font-size="10.5" fill="{ENCRE_PALE}" text-anchor="middle">tirage {J + 1}{NB}: quatre nombres</text>')
+o.append(f'<text x="100" y="{yc - 63}" font-size="11.5" fill="{ENCRE}" text-anchor="middle">{f"{NB};{NB}".join(num(v) for v in z[J].tolist())}</text>')
+o.append(f'<rect x="20" y="{yc + 52}" width="160" height="46" rx="7" fill="{PANNEAU}" stroke="{ROUGE}" stroke-width="1.6"/>')
 o.append(f'<text x="100" y="{yc + 71}" font-size="12" fill="{ROUGE}" text-anchor="middle" font-weight="700">la consigne</text>')
 o.append(f'<text x="100" y="{yc + 87}" font-size="10.5" fill="{ENCRE_PALE}" text-anchor="middle">«{NB}un 7{NB}»</text>')
 o.append(f'<rect x="200" y="{yc - 30}" width="104" height="60" rx="8" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="1.8"/>')
 o.append(f'<text x="252" y="{yc + 5}" font-size="12.5" fill="{ENCRE}" text-anchor="middle" font-weight="700">générateur</text>')
-fleche(172, yc - 70, 198, yc - 14)
-fleche(172, yc + 70, 198, yc + 14)
-c7 = rangees[7][0].view(28, 28).numpy()
+fleche(182, yc - 70, 198, yc - 14)
+fleche(182, yc + 70, 198, yc + 14)
+c7 = rangees[7][J].view(28, 28).numpy()
 im7 = Image.fromarray((f * (1 - c7[..., None]) + e * c7[..., None]).astype(np.uint8)).resize((60, 60), Image.LANCZOS)
 b = io.BytesIO(); im7.save(b, "PNG")
 fleche(306, yc, 326, yc)
 o.append(f'<image x="330" y="{yc - 30}" width="60" height="60" xlink:href="data:image/png;base64,{base64.b64encode(b.getvalue()).decode()}"/>')
 o.append(f'<rect x="330" y="{yc - 30}" width="60" height="60" fill="none" stroke="{BORD}" stroke-width="1.5"/>')
-o.append(f'<text x="210" y="{yc + 136}" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle">la consigne décide quel chiffre{NB};</text>')
-o.append(f'<text x="210" y="{yc + 151}" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle">le hasard décide comment il est écrit</text>')
+o.append(f'<text x="210" y="{yc + 146}" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle">la consigne décide quel chiffre{NB};</text>')
+o.append(f'<text x="210" y="{yc + 161}" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle">le hasard décide comment il est écrit</text>')
 
 # ── la grille, à droite ──
 o.append(f'<image x="{gx}" y="{gy}" width="{GW}" height="{GH}" xlink:href="{url}"/>')
-o.append(f'<text x="{gx + GW / 2}" y="{gy - 30}" font-size="12" fill="{BLEU}" text-anchor="middle" font-weight="700">le même tirage dans chaque colonne →</text>')
+o.append(f'<text x="{gx + GW / 2}" y="{gy - 34}" font-size="12" fill="{BLEU}" text-anchor="middle" font-weight="700">le hasard{NB}: un tirage par colonne</text>')
+for j in range(COLS):
+    o.append(f'<text x="{gx + j * (T + E) + T / 2}" y="{gy - 12}" font-size="12" fill="{BLEU}" text-anchor="middle" font-weight="700">{j + 1}</text>')
+o.append(f'<rect x="{gx + J * (T + E) - 3}" y="{gy - 3}" width="{T + 6}" height="{GH + 6}" rx="4" fill="none" stroke="{BLEU}" stroke-width="2.2"/>')
 for c in range(10):
     o.append(f'<text x="{gx - 12}" y="{gy + c * (T + E) + T / 2 + 5}" font-size="13" fill="{ROUGE}" text-anchor="end" font-weight="700">«{NB}{c}{NB}»</text>')
-o.append(f'<text x="{gx - 12}" y="{gy - 12}" font-size="11" fill="{ROUGE}" text-anchor="end" font-weight="700">consigne</text>')
-o.append(f'<text x="{W - 40}" y="{gy + GH + 24}" font-size="11" fill="{ENCRE_PALE}" text-anchor="end">un vrai générateur conditionnel, entraîné sur les chiffres de MNIST</text>')
+o.append(f'<text x="{gx - 12}" y="{gy - 12}" font-size="11" fill="{ROUGE}" text-anchor="end" font-weight="700">consigne ↓</text>')
+o.append(f'<text x="{W - 40}" y="{gy + GH + 24}" font-size="11" fill="{ENCRE_PALE}" text-anchor="end">un même tirage, dix consignes{NB}: dix chiffres du même style</text>')
 o.append("</svg>")
 (OUT / "generation-conditionnelle.svg").write_text("\n".join(o) + "\n")
 print("generation-conditionnelle.svg écrit", W, H)

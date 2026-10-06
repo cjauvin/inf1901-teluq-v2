@@ -291,11 +291,12 @@ demande de savoir représenter le sens d'un texte. Le chapitre du
 présentés les modèles de langage.
 
 La figure ci-dessous montre un vrai générateur conditionnel, un VAE entraîné sur les
-chiffres de MNIST, qui reçoit en plus du hasard l'étiquette du chiffre à produire.
-Chaque rangée reçoit une étiquette différente, et chaque colonne le même tirage au
-hasard. La consigne décide quel chiffre est produit. Le hasard décide comment il
-est écrit : dans une même colonne, les dix chiffres ont la même inclinaison et la
-même épaisseur de trait.
+chiffres de MNIST. Son hasard est un tirage de quatre nombres, et sa consigne
+l'étiquette du chiffre à produire. Chaque colonne de la grille reçoit son propre
+tirage, et chaque rangée sa propre consigne. La consigne décide quel chiffre est
+produit. Le hasard décide comment il est écrit : la colonne encadrée reçoit le
+tirage 2, et ses dix chiffres sont tous droits et d'un trait épais, alors que ceux
+de la colonne 3 sont penchés et fins.
 
 {{< image src="/images/module4/generation-conditionnelle.svg" alt="Deux volets. À gauche, un schéma : deux entrées, le hasard (quelques nombres tirés) et une consigne (l'étiquette 7), entrent dans le générateur, qui produit un 7. À droite, une grille de chiffres produits par un vrai générateur conditionnel entraîné sur les chiffres de MNIST : dix rangées, une par étiquette de 0 à 9, et sept colonnes, une par tirage au hasard. Chaque rangée ne contient que le chiffre demandé. Dans chaque colonne, les dix chiffres partagent le même style : même inclinaison, même épaisseur de trait." title="Un générateur conditionnel reçoit deux entrées. La consigne (les rangées) fixe le chiffre, le hasard (les colonnes) fixe la façon de l'écrire." loading="lazy" >}}
 
