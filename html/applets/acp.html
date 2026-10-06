@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : l'analyse en composantes principales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        #plan { touch-action: none; cursor: grab; }
+        #plan.tire { cursor: grabbing; }
+        .bouton { padding: 0.35rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.85rem; font-weight: 600; color: #334155; }
+        .bouton:hover { background: #f1f5f9; }
+        .bouton.acp { background: #2f6f6a; border-color: #2f6f6a; color: #fff; }
+        .bouton.acp:hover { background: #285e5a; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex flex-col md:flex-row gap-3 rounded-lg p-3" style="background:#fbf7ee;border:1px solid #d9cbac">
+        <div style="flex:1.35">
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1 text-center">Deux dimensions&nbsp;: le nuage et l'axe</div>
+            <svg id="plan" viewBox="0 0 400 300" class="w-full" style="background:#efe7d3;border:1px solid #d9cbac;border-radius:6px"></svg>
+            <div class="text-xs text-slate-500 text-center mt-1">Faites glisser l'axe pour le faire tourner.</div>
+        </div>
+        <div style="flex:1" class="flex flex-col justify-center gap-4">
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1 text-center">Une dimension&nbsp;: les points projetés</div>
+                <svg id="ligne" viewBox="0 0 300 60" class="w-full"></svg>
+            </div>
+            <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1 text-center">Étalement conservé</div>
+                <div class="relative h-6 rounded" style="background:#efe7d3;border:1px solid #d9cbac">
+                    <div id="barre" class="h-full rounded" style="background:#9a5b33;width:0"></div>
+                    <div id="pct" class="absolute inset-0 flex items-center justify-center text-sm font-bold text-slate-800"></div>
+                </div>
+                <div id="message" class="text-xs text-slate-600 text-center mt-2 h-8"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3 p-3 bg-slate-100 rounded-lg flex flex-wrap items-center gap-3 text-sm">
+        <span class="font-bold text-slate-700">Angle de l'axe&nbsp;: <span id="angleAff"></span></span>
+        <input type="range" id="angle" min="0" max="179" step="1" value="100" class="flex-1 accent-teal-700" style="min-width:12rem">
+        <button id="btnAcp" class="bouton acp">ACP</button>
+        <button id="btnNuage" class="bouton">Nouveau nuage</button>
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Réduire un nuage de points de deux dimensions à une seule : chaque point est projeté sur un axe passant par le
+ * centre du nuage. La part de l'étalement conservée est la variance des projections divisée par la variance totale.
+ * Le bouton « ACP » place l'axe selon la première composante principale, le vecteur propre de la matrice de
+ * covariance associé à la plus grande valeur propre.
+ */
+const NS = 'http://www.w3.org/2000/svg', plan = document.getElementById('plan'), ligne = document.getElementById('ligne');
+const W = 400, H = 300, N = 90;
+let P = [], mx = 0, my = 0, cxx = 0, cyy = 0, cxy = 0, theta = 100 * Math.PI / 180, graine = 7;
+
+function hasard() { graine = (graine * 1664525 + 1013904223) % 4294967296; return graine / 4294967296; }
+function gauss() { return Math.sqrt(-2 * Math.log(hasard() + 1e-12)) * Math.cos(2 * Math.PI * hasard()); }
+
+function nuage() {
+    const a = (15 + hasard() * 50) * Math.PI / 180 * (hasard() < 0.5 ? 1 : -1), s1 = 70 + hasard() * 25, s2 = 16 + hasard() * 16;
+    P = Array.from({ length: N }, () => {
+        const u = gauss() * s1, v = gauss() * s2;
+        return [W / 2 + u * Math.cos(a) - v * Math.sin(a), H / 2 - (u * Math.sin(a) + v * Math.cos(a))];
+    });
+    mx = P.reduce((s, p) => s + p[0], 0) / N; my = P.reduce((s, p) => s + p[1], 0) / N;
+    cxx = P.reduce((s, p) => s + (p[0] - mx) ** 2, 0) / N;
+    cyy = P.reduce((s, p) => s + (p[1] - my) ** 2, 0) / N;
+    cxy = P.reduce((s, p) => s + (p[0] - mx) * (p[1] - my), 0) / N;
+}
+function meilleur() { return 0.5 * Math.atan2(2 * cxy, cxx - cyy); }   // direction de plus grande variance (écran)
+function el(nom, att) { const e = document.createElementNS(NS, nom); for (const k in att) e.setAttribute(k, att[k]); return e; }
+
+function dessiner() {
+    const ux = Math.cos(theta), uy = -Math.sin(theta);              // l'angle se lit vers le haut, l'écran descend
+    const proj = P.map(p => (p[0] - mx) * ux + (p[1] - my) * uy);
+    const v = proj.reduce((s, t) => s + t * t, 0) / N, part = v / (cxx + cyy);
+    plan.innerHTML = '';
+    const L = 260;
+    plan.appendChild(el('line', { x1: mx - ux * L, y1: my - uy * L, x2: mx + ux * L, y2: my + uy * L, stroke: '#2f6f6a', 'stroke-width': 2.5 }));
+    P.forEach((p, i) => {
+        const qx = mx + proj[i] * ux, qy = my + proj[i] * uy;
+        plan.appendChild(el('line', { x1: p[0], y1: p[1], x2: qx, y2: qy, stroke: '#b8a888', 'stroke-width': 0.8 }));
+    });
+    P.forEach((p, i) => {
+        plan.appendChild(el('circle', { cx: p[0], cy: p[1], r: 3.6, fill: '#3a6ea5', stroke: '#fbf7ee', 'stroke-width': 1 }));
+        plan.appendChild(el('circle', { cx: mx + proj[i] * ux, cy: my + proj[i] * uy, r: 2.6, fill: '#c4564a' }));
+    });
+    // la ligne d'arrivée : les mêmes projections, à plat
+    ligne.innerHTML = '';
+    ligne.appendChild(el('line', { x1: 10, y1: 30, x2: 290, y2: 30, stroke: '#2f6f6a', 'stroke-width': 2.5 }));
+    proj.forEach(t => ligne.appendChild(el('circle', { cx: 150 + t * 0.62, cy: 30, r: 3.2, fill: '#c4564a', 'fill-opacity': 0.55 })));
+    const pc = Math.round(part * 100);
+    document.getElementById('barre').style.width = pc + '%';
+    document.getElementById('pct').textContent = pc + ' %';
+    let d = Math.abs(((theta + meilleur()) * 180 / Math.PI) % 180); d = Math.min(d, 180 - d);
+    document.getElementById('message').textContent = d < 1.5 ? 'C’est la direction de l’ACP : aucun angle ne conserve davantage.'
+        : pc < 40 ? 'Les points s’entassent sur l’axe : on a perdu presque tout ce qui les distingue.' : '';
+    document.getElementById('angleAff').textContent = Math.round(((theta * 180 / Math.PI) % 180 + 180) % 180) + '°';
+}
+function regler(t) { theta = ((t % Math.PI) + Math.PI) % Math.PI; document.getElementById('angle').value = Math.round(theta * 180 / Math.PI); dessiner(); }
+
+document.getElementById('angle').addEventListener('input', e => regler(+e.target.value * Math.PI / 180));
+document.getElementById('btnAcp').addEventListener('click', () => regler(-meilleur()));
+document.getElementById('btnNuage').addEventListener('click', () => { nuage(); regler(theta); });
+let tire = false;
+function angleSouris(e) {
+    const r = plan.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W, y = (e.clientY - r.top) / r.height * H;
+    return Math.atan2(-(y - my), x - mx);
+}
+plan.addEventListener('pointerdown', e => { tire = true; plan.classList.add('tire'); plan.setPointerCapture(e.pointerId); regler(angleSouris(e)); });
+plan.addEventListener('pointermove', e => { if (tire) regler(angleSouris(e)); });
+plan.addEventListener('pointerup', () => { tire = false; plan.classList.remove('tire'); });
+nuage(); regler(theta);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
