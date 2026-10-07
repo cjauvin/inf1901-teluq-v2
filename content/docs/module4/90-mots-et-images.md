@@ -53,7 +53,7 @@ les textes, entraînés ensemble.
 
 Après l'entraînement, images et textes vivent dans un même espace. Une photo de chat
 et la phrase « une photo d'un chat » y reçoivent des vecteurs proches. On retrouve
-l'idée des [plongements](docs/module4/40-des-mots-aux-nombres/#tout-devient-vecteur)
+l'idée des [plongements](docs/module4/45-des-mots-aux-nombres/#tout-devient-vecteur)
 du chapitre sur les mots, étendue à deux types de données à la fois.
 
 L'applet ci-dessous utilise le vrai modèle CLIP. Il a placé douze images et vingt
@@ -112,7 +112,7 @@ code et ses poids sont publics. Il assemble trois réseaux, en quatre étapes.
 
 1. **Lire la phrase.** L'encodeur de textes de CLIP transforme la consigne, par
    exemple « un chat astronaute sur la lune », en une suite de vecteurs, un par
-   [jeton](docs/module4/40-des-mots-aux-nombres/#découper-le-texte-les-jetons).
+   [jeton](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons).
 2. **Partir du bruit, dans un espace latent.** Le modèle ne travaille pas
    directement sur les pixels. Une image en couleurs de 512 × 512 pixels compte
    786 432 nombres. Stable Diffusion travaille plutôt sur sa version compressée par

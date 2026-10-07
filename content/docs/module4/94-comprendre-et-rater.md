@@ -58,7 +58,7 @@ Certaines erreurs montrent bien la différence entre ces modèles et une intelli
 humaine.
 
 - **Les lettres.** Compter les *r* de *strawberry* a longtemps été difficile, parce
-  que le modèle reçoit des [jetons](docs/module4/40-des-mots-aux-nombres/#découper-le-texte-les-jetons),
+  que le modèle reçoit des [jetons](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons),
   pas des lettres.
 - **L'inversion.** En 2023, une équipe de chercheurs montre qu'un modèle entraîné sur
   des phrases de la forme « A est B » n'en déduit pas « B est A ». Un modèle qui sait

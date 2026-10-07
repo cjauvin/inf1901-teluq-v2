@@ -1,13 +1,17 @@
 ---
 title: "Des mots aux nombres : jetons et plongements"
-weight: 40
+weight: 45
 slug: des-mots-aux-nombres
 ---
 
 # Des mots aux nombres : jetons et plongements
 
-Le chapitre « [Lire une séquence : les réseaux récurrents](docs/module3/60-reseaux-recurrents/#le-problème-des-séquences) »
-du Module 3 laissait une question de côté. Un réseau de neurones ne manipule que des
+Le chapitre « [Les outils statistiques](docs/module4/42-les-outils-statistiques/#ce-qui-manquait) »
+s'achevait sur une limite : pour un modèle à n-grammes, « chat » et « chien » sont
+deux symboles sans rapport. Ce chapitre ouvre l'ère des réseaux de neurones par
+cette question. Le chapitre
+« [Lire une séquence : les réseaux récurrents](docs/module3/60-reseaux-recurrents/#le-problème-des-séquences) »
+du Module 3 en laissait d'ailleurs une autre de côté. Un réseau de neurones ne manipule que des
 nombres, alors que le texte est fait de mots. Avant qu'un modèle de langage puisse
 lire ou écrire une phrase, il faut donc convertir les mots en nombres.
 

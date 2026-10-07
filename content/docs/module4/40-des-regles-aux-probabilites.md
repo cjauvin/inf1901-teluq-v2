@@ -1,6 +1,6 @@
 ---
 title: "Des règles aux probabilités"
-weight: 44
+weight: 40
 slug: des-regles-aux-probabilites
 ---
 
@@ -13,8 +13,9 @@ langue** (*natural language processing*, NLP), le domaine qui cherche à faire l
 connu trois grandes approches : écrire des **règles**, compter des **statistiques**
 dans de grandes collections de textes, puis entraîner des **réseaux de neurones**.
 
-Ce chapitre et le suivant présentent les deux premières. Le chapitre
-« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présente la
+Ce chapitre et le suivant présentent les deux premières. Les chapitres
+« [Des mots aux nombres](docs/module4/45-des-mots-aux-nombres) » et
+« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présentent la
 troisième. Plusieurs idées nées bien avant les réseaux de neurones sont encore au
 cœur des LLM : le modèle de langage lui-même, la façon de le mesurer, et l'idée de
 produire la suite la plus probable d'un texte.
@@ -85,7 +86,7 @@ traduction, IBM utilise un corpus canadien, le **Hansard**, le compte rendu des
 débats du Parlement du Canada, publié dans les deux langues officielles. Ses millions
 de phrases traduites par des professionnels deviennent, vers 1990, la matière
 première de la traduction statistique, présentée au
-[chapitre suivant](docs/module4/46-les-outils-statistiques).
+[chapitre suivant](docs/module4/42-les-outils-statistiques).
 
 ## Un modèle de langage
 
@@ -207,7 +208,7 @@ probables. Plus elle est basse, mieux le modèle prédit. Sur des articles de
 journaux en anglais, un bon modèle à trigrammes lissé atteint une perplexité
 d'environ 150. Les modèles neuronaux l'ont fait baisser par étapes, et les grands
 modèles actuels descendent à quelques dizaines, ou moins, selon les textes et la
-façon de les découper en jetons.
+façon de les découper en [jetons](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons).
 
 La perplexité n'appartient pas au passé. L'erreur que les grands modèles de langage
 réduisent pendant leur entraînement est directement liée à leur perplexité : un LLM
@@ -229,7 +230,7 @@ chaque mot une probabilité de $1/150$, la perplexité vaudrait exactement 150.
 ## La suite de l'histoire
 
 Les n-grammes ne voient que deux ou trois mots, et ils ne savent rien du sens. Le
-[chapitre suivant](docs/module4/46-les-outils-statistiques) présente les autres
+[chapitre suivant](docs/module4/42-les-outils-statistiques) présente les autres
 outils de l'ère statistique, qui ont dominé le traitement de la langue jusqu'au
 début des années 2010 : les modèles de Markov cachés, la traduction statistique, la
 représentation des documents, et les modèles qui étiquettent les mots.

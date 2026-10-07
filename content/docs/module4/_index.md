@@ -96,13 +96,13 @@ modèles de langage, puis la rencontre du texte et de l'image.
 
 **Les grands modèles de langage**
 
-4. [*Des mots aux nombres : jetons et plongements*](docs/module4/40-des-mots-aux-nombres) :
-   découper un texte, et représenter le sens des mots par des vecteurs.
-5. [*Des règles aux probabilités*](docs/module4/44-des-regles-aux-probabilites) :
+4. [*Des règles aux probabilités*](docs/module4/40-des-regles-aux-probabilites) :
    soixante-dix ans de traitement de la langue, les n-grammes, le lissage et la
    perplexité.
-6. [*Les outils statistiques*](docs/module4/46-les-outils-statistiques) : les
+5. [*Les outils statistiques*](docs/module4/42-les-outils-statistiques) : les
    modèles de Markov cachés, la traduction statistique, les vecteurs de documents.
+6. [*Des mots aux nombres : jetons et plongements*](docs/module4/45-des-mots-aux-nombres) :
+   découper un texte, et représenter le sens des mots par des vecteurs.
 7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
    modèles neuronaux aux Transformers de GPT.
 8. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,

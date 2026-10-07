@@ -13,12 +13,12 @@ font, répondre à une question, traduire, résumer, écrire un programme, repos
 une seule opération, répétée des milliers de fois : prédire le jeton suivant d'un
 texte.
 
-Les chapitres « [Des règles aux probabilités](docs/module4/44-des-regles-aux-probabilites) »
-et « [Les outils statistiques](docs/module4/46-les-outils-statistiques) » ont présenté
+Les chapitres « [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »
+et « [Les outils statistiques](docs/module4/42-les-outils-statistiques) » ont présenté
 le modèle de langage et ses premières versions, fondées sur le comptage. Ce chapitre
 présente la troisième ère, celle des réseaux de neurones, jusqu'aux modèles actuels.
 Il s'appuie sur les jetons et les plongements présentés au chapitre
-« [Des mots aux nombres](docs/module4/40-des-mots-aux-nombres) ».
+« [Des mots aux nombres](docs/module4/45-des-mots-aux-nombres) ».
 
 ## Généraliser : les modèles neuronaux
 
@@ -26,7 +26,7 @@ En 2003, Yoshua Bengio, Réjean Ducharme, Pascal Vincent et Christian Jauvin, à
 l'Université de Montréal, publient un article intitulé « A Neural Probabilistic
 Language Model » (Christian Jauvin est l'auteur de ce cours). Ils remplacent le
 comptage par un réseau de neurones. Chaque mot y est représenté par un
-[plongement](docs/module4/40-des-mots-aux-nombres/#les-plongements), appris en
+[plongement](docs/module4/45-des-mots-aux-nombres/#les-plongements), appris en
 même temps que le réseau, et le réseau prédit le mot suivant à partir des plongements
 des mots précédents. Comme « chat » et « chien » reçoivent des plongements voisins,
 ce que le modèle apprend sur l'un profite à l'autre. Le modèle peut ainsi donner une
@@ -52,7 +52,7 @@ familles de modèles en sont nées.
 | Variante | Ce qu'on garde | Exemples | Pour quoi faire |
 |---|---|---|---|
 | encodeur et décodeur | les deux colonnes | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
-| encodeur seul | la colonne de gauche ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/40-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
+| encodeur seul | la colonne de gauche ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/45-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
 | décodeur seul | la colonne de droite, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, jeton après jeton |
 
 {{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}

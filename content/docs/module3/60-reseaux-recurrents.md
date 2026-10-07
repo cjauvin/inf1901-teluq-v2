@@ -39,7 +39,7 @@ Il faut donc un réseau capable de lire une séquence de n'importe quelle longue
 dans l'ordre, en gardant une trace de ce qu'il a déjà lu.
 
 Pour traiter des mots, il faut d'abord les convertir en nombres. Le chapitre
-« [Des mots aux nombres](docs/module4/40-des-mots-aux-nombres) » du Module 4
+« [Des mots aux nombres](docs/module4/45-des-mots-aux-nombres) » du Module 4
 expliquera comment. Les exemples de ce chapitre portent
 sur des suites de bits, qui sont déjà des nombres.
 

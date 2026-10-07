@@ -89,7 +89,7 @@ problème touche directement kNN. C'est l'une des raisons pour lesquelles, sur d
 images ou du texte, on cherche d'abord à réduire le nombre de dimensions à
 quelques-unes qui comptent, une idée que les Modules 3 (avec
 l'[autoencodeur](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et
-[4](docs/module4/40-des-mots-aux-nombres/#les-plongements) développeront. Vous avez déjà rencontré ce phénomène sous un
+[4](docs/module4/45-des-mots-aux-nombres/#les-plongements) développeront. Vous avez déjà rencontré ce phénomène sous un
 autre nom, l'[explosion
 combinatoire](docs/module1/30-chercher-raisonner/#lexplosion-combinatoire) du
 Module 1. Dans ce cas, chaque coup supplémentaire multipliait le nombre de parties

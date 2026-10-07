@@ -1,12 +1,12 @@
 ---
 title: "Les outils statistiques"
-weight: 46
+weight: 42
 slug: les-outils-statistiques
 ---
 
 # Les outils statistiques
 
-Le chapitre « [Des règles aux probabilités](docs/module4/44-des-regles-aux-probabilites) »
+Le chapitre « [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »
 a présenté le tournant statistique du traitement de la langue, et son premier outil,
 le modèle de langage à n-grammes. Entre 1980 et 2012, d'autres outils statistiques
 s'y ajoutent. Ils servent à étiqueter les mots, à transcrire la parole, à traduire,
@@ -28,7 +28,7 @@ souvent la première étape d'un système de traitement de la langue.
 
 Un **modèle de Markov caché** (*hidden Markov model*, HMM) décrit cette situation.
 Il suppose qu'une suite d'**états cachés**, ici les étiquettes grammaticales, se
-déroule comme une [chaîne de Markov](docs/module4/44-des-regles-aux-probabilites/#compter-les-n-grammes) :
+déroule comme une [chaîne de Markov](docs/module4/40-des-regles-aux-probabilites/#compter-les-n-grammes) :
 chaque étiquette dépend de la précédente. Chaque état caché produit, ou **émet**, un
 mot visible. Le modèle tient donc deux tables de probabilités.
 
@@ -148,7 +148,7 @@ proche de la [PCA](docs/module2/80-trois-facons-d-apprendre/#réduire-la-dimensi
 du Module 2. Chaque mot y reçoit un vecteur, et deux mots qui apparaissent dans les
 mêmes documents, comme « médecin » et « hôpital », reçoivent des vecteurs voisins,
 même s'ils n'apparaissent jamais ensemble. Ce sont les premiers vecteurs de mots,
-fondés sur la même idée que les [plongements](docs/module4/40-des-mots-aux-nombres/#on-reconnaît-un-mot-à-ses-fréquentations)
+fondés sur la même idée que les [plongements](docs/module4/45-des-mots-aux-nombres/#on-reconnaît-un-mot-à-ses-fréquentations)
 modernes : on reconnaît un mot à ses fréquentations. Le mot « latent » a d'ailleurs
 le même sens que dans l'[espace latent](docs/module4/10-generer/#lespace-latent)
 des générateurs d'images.
@@ -197,5 +197,9 @@ trouvent ce qu'on cherche. Quatre limites demeurent pourtant.
   chaque langue, qui demandent des années de travail.
 - **Un modèle par tâche**, et des chaînes de traitement fragiles.
 
-Les réseaux de neurones vont lever ces quatre limites, une à une. Le chapitre
-« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » raconte comment.
+Les réseaux de neurones vont lever ces quatre limites, une à une. Le
+[chapitre suivant](docs/module4/45-des-mots-aux-nombres) commence par la deuxième :
+donner aux mots des représentations qui se ressemblent quand leurs sens se
+ressemblent. Le chapitre
+« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présente les
+autres.

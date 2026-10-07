@@ -246,5 +246,6 @@ de personnes utilisent chaque semaine un modèle qui génère du texte. Ces mod�
 appartiennent à la famille
 [autorégressive](docs/module4/20-quatre-facons-de-generer/#un-élément-après-lautre-les-modèles-autorégressifs) :
 ils produisent un texte un élément après l'autre. Le
-[chapitre suivant](docs/module4/40-des-mots-aux-nombres) commence leur étude par une question préalable :
-comment transformer des mots en nombres.
+[chapitre suivant](docs/module4/40-des-regles-aux-probabilites) commence leur étude par leur histoire :
+soixante-dix ans de recherche pour faire lire, écrire et traduire la langue par une
+machine.

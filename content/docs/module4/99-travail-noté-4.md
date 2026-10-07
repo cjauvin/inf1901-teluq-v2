@@ -8,7 +8,7 @@ slug: travail-noté-4
 
 Ce travail construit, dans Google Sheets, un modèle de langage miniature : un modèle
 à **bigrammes**, qui donne la probabilité de chaque mot d'après le mot qui le précède.
-C'est le principe des [n-grammes](docs/module4/44-des-regles-aux-probabilites/#compter-les-n-grammes)
+C'est le principe des [n-grammes](docs/module4/40-des-regles-aux-probabilites/#compter-les-n-grammes)
 présenté au chapitre « Prédire le mot suivant », avec *n* = 2. Le modèle est ensuite
 utilisé pour **générer** du texte, en tirant chaque mot au hasard selon ces
 probabilités, comme le font, à une tout autre échelle, les grands modèles de langage.
@@ -284,7 +284,7 @@ tirages, et produit donc un nouveau texte.
 14. Qu'est-ce qui changerait si l'on utilisait un modèle à trigrammes plutôt qu'à
     bigrammes ? Quelles seraient les contraintes de ce choix ? Vous pouvez comparer les
     tailles 2 et 3 dans l'applet du chapitre
-    « [Prédire le mot suivant](docs/module4/44-des-regles-aux-probabilites/#compter-les-n-grammes) ».
+    « [Prédire le mot suivant](docs/module4/40-des-regles-aux-probabilites/#compter-les-n-grammes) ».
 
 15. Expliquez les limites de ce modèle quant à sa capacité de généralisation. À quoi
     sont-elles dues, et comment le modèle neuronal de 2003 présenté au chapitre

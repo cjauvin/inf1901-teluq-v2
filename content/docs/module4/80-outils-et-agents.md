@@ -53,7 +53,7 @@ Pour répondre à une question sur des documents récents ou privés, on peut ch
 les passages utiles, puis les placer dans le contexte du modèle avec la question.
 C'est la **génération augmentée par la recherche** (*retrieval-augmented generation*,
 RAG), présentée en 2020 par Patrick Lewis et ses collègues, chez Facebook. La
-recherche utilise des [plongements](docs/module4/40-des-mots-aux-nombres/#tout-devient-vecteur) :
+recherche utilise des [plongements](docs/module4/45-des-mots-aux-nombres/#tout-devient-vecteur) :
 chaque passage de la base de documents est représenté par un vecteur, et on retient
 ceux dont le vecteur est le plus proche de celui de la question. On trouve ainsi un
 passage qui répond à la question même s'il n'en reprend pas les mots.

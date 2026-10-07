@@ -119,7 +119,7 @@ la [réduction de dimension](#réduire-la-dimension), présentée ci-dessous, et
 représentations** (*representation learning*), qui consiste à découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données. Cette idée, qui consiste à laisser
 la machine construire ses propres descripteurs, joue un rôle central dans l'IA
-moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** (*embeddings*) de mots ([Module 4](docs/module4/40-des-mots-aux-nombres/#les-plongements)).
+moderne. Nous la retrouverons avec les **autoencodeurs** ([Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur)) et les **plongements** (*embeddings*) de mots ([Module 4](docs/module4/45-des-mots-aux-nombres/#les-plongements)).
 
 {{% details "Les mathématiques de k-means (optionnel)" %}}
 
