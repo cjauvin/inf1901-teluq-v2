@@ -292,6 +292,24 @@ présentés les modèles de langage.
 
 {{< image src="/images/module4/trois-consignes.svg" alt="Trois rangées, de gauche à droite : la consigne, sa traduction en nombres, le générateur qui reçoit aussi du hasard, et le résultat. Première rangée : une étiquette, « 7 », devient un code de dix cases dont une seule est allumée ; un VAE conditionnel produit un 7 manuscrit. Deuxième rangée : une image de départ, un dessin d'enfant d'une maison sous le soleil, est déjà faite de nombres ; un modèle de diffusion en fait un tableau qui reprend sa composition. Troisième rangée : une phrase, « un chat astronaute sur la lune », passe par un encodeur de textes, l'étape difficile, qui doit représenter le sens de la phrase ; un modèle de diffusion produit un chat en scaphandre sur la Lune." title="Trois sortes de consignes. Chacune est d'abord traduite en nombres ; pour une phrase, c'est l'étape la plus difficile. Les résultats sont réels : un VAE conditionnel entraîné sur MNIST, puis Stable Diffusion 1.5, à partir du dessin ou de la phrase (en anglais)." loading="lazy" >}}
 
+**Le rôle du hasard.** Un réseau de neurones est une fonction : pour une même
+entrée, il donne toujours la même sortie. Sans hasard, la consigne « 7 » donnerait
+donc toujours exactement le même 7. Or il existe une infinité de façons d'écrire un
+7, plus ou moins penché, épais ou large. Générer, c'est
+[tirer au hasard](docs/module4/10-generer/#une-distribution-et-tirer-dedans) l'une
+de ces façons. Le hasard est ce tirage : quelques nombres choisis au hasard, que le
+générateur reçoit en même temps que la consigne, et qui désignent l'une des façons
+possibles. **La consigne restreint les possibilités** (que des 7), **le hasard
+choisit parmi celles qui restent.** Dans un VAE, ces nombres sont un point de
+l'espace latent. Dans un modèle de diffusion, c'est le bruit de départ. Dans un
+modèle de langage, c'est le tirage de chaque mot.
+
+Les générateurs d'images appellent ce tirage la **graine** (*seed*). Avec la même
+consigne et la même graine, on obtient exactement la même image. Si l'on change
+seulement la graine, on obtient une autre image qui respecte la même consigne.
+
+{{< image src="/images/module4/quatre-graines.jpg" alt="Quatre images produites par Stable Diffusion pour la même consigne, « un chat astronaute sur la lune », avec quatre graines différentes. Graine 1 : un astronaute en combinaison blanche, au visage de chat sombre, debout devant une planète orange. Graine 4 : un chat roux dans un casque bleu, en gros plan, sous un ciel étoilé. Graine 7 : un chat noir dans un scaphandre blanc très détaillé, devant une planète bleue. Graine 11 : un chat tigré en scaphandre, debout sur un sol gris, entouré d'étoiles et d'une lune jaune." title="La même consigne, quatre graines : quatre images différentes, toutes conformes à la consigne (Stable Diffusion 1.5, consigne donnée en anglais)." loading="lazy" >}}
+
 La figure suivante montre de près un vrai générateur conditionnel, un VAE entraîné sur les
 chiffres de MNIST. Son hasard est un tirage de quatre nombres, et sa consigne
 l'étiquette du chiffre à produire. Chaque colonne de la grille reçoit son propre
