@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un modèle de Markov caché</title>
+<desc>Deux rangées. En haut, dans une bande marquée « caché », une suite d'étiquettes grammaticales : déterminant, nom, verbe, déterminant, nom, reliées par des flèches de transition, avec leur probabilité, par exemple 0,70 de passer d'un déterminant à un nom. En bas, dans une bande marquée « visible », les mots de la phrase « la petite brise la glace ». Chaque étiquette émet le mot placé sous elle, avec une probabilité d'émission, par exemple 0,005 pour qu'un nom soit le mot « petite ».</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker><marker id="pb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker></defs>
+<rect x="0" y="0" width="760" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="380.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un modèle de Markov caché : des étiquettes cachées émettent des mots visibles</text>
+<rect x="20" y="58" width="720" height="96" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-dasharray="6 4"/>
+<text x="34" y="78" font-size="12" fill="#2f6f6a" font-weight="700">caché</text>
+<rect x="20" y="226" width="720" height="64" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-dasharray="6 4"/>
+<text x="34" y="246" font-size="12" fill="#9a5b33" font-weight="700">visible</text>
+<rect x="58" y="94" width="104" height="36" rx="18" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="110" y="117" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">déterminant</text>
+<line x1="110" y1="132" x2="110" y2="250" stroke="#9a5b33" stroke-width="1.6" marker-end="url(#pb)"/>
+<text x="116" y="194" font-size="11" fill="#9a5b33">0,25</text>
+<text x="110" y="272" font-size="16" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">la</text>
+<line x1="164" y1="112" x2="189" y2="112" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#pt)"/>
+<text x="177.5" y="106" font-size="11" fill="#2f6f6a" text-anchor="middle">0,70</text>
+<rect x="193" y="94" width="104" height="36" rx="18" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="245" y="117" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">nom</text>
+<line x1="245" y1="132" x2="245" y2="250" stroke="#9a5b33" stroke-width="1.6" marker-end="url(#pb)"/>
+<text x="251" y="194" font-size="11" fill="#9a5b33">0,005</text>
+<text x="245" y="272" font-size="16" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">petite</text>
+<line x1="299" y1="112" x2="324" y2="112" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#pt)"/>
+<text x="312.5" y="106" font-size="11" fill="#2f6f6a" text-anchor="middle">0,30</text>
+<rect x="328" y="94" width="104" height="36" rx="18" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="380" y="117" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">verbe</text>
+<line x1="380" y1="132" x2="380" y2="250" stroke="#9a5b33" stroke-width="1.6" marker-end="url(#pb)"/>
+<text x="386" y="194" font-size="11" fill="#9a5b33">0,005</text>
+<text x="380" y="272" font-size="16" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">brise</text>
+<line x1="434" y1="112" x2="459" y2="112" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#pt)"/>
+<text x="447.5" y="106" font-size="11" fill="#2f6f6a" text-anchor="middle">0,35</text>
+<rect x="463" y="94" width="104" height="36" rx="18" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="515" y="117" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">déterminant</text>
+<line x1="515" y1="132" x2="515" y2="250" stroke="#9a5b33" stroke-width="1.6" marker-end="url(#pb)"/>
+<text x="521" y="194" font-size="11" fill="#9a5b33">0,25</text>
+<text x="515" y="272" font-size="16" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">la</text>
+<line x1="569" y1="112" x2="594" y2="112" stroke="#2f6f6a" stroke-width="1.8" marker-end="url(#pt)"/>
+<text x="582.5" y="106" font-size="11" fill="#2f6f6a" text-anchor="middle">0,70</text>
+<rect x="598" y="94" width="104" height="36" rx="18" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="650" y="117" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="600">nom</text>
+<line x1="650" y1="132" x2="650" y2="250" stroke="#9a5b33" stroke-width="1.6" marker-end="url(#pb)"/>
+<text x="656" y="194" font-size="11" fill="#9a5b33">0,02</text>
+<text x="650" y="272" font-size="16" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">glace</text>
+<text x="312.5" y="166" font-size="11" fill="#9a5b33" text-anchor="middle">émissions :</text>
+<text x="312.5" y="180" font-size="11" fill="#9a5b33" text-anchor="middle">P(mot | étiquette)</text>
+<text x="380.0" y="84" font-size="11" fill="#2f6f6a" text-anchor="middle">transitions : P(étiquette | étiquette précédente)</text>
+<text x="380.0" y="314" font-size="11" fill="#5b5249" text-anchor="middle">On ne voit que les mots ; l'algorithme de Viterbi retrouve la suite d'étiquettes la plus probable.</text>
+</svg>
