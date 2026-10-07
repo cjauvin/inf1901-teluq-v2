@@ -6,8 +6,29 @@ slug: des-regles-aux-probabilites
 
 # Des règles aux probabilités
 
-Les grands modèles de langage semblent apparus d'un coup, en 2022. Ils sont pourtant
-l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
+Faire maîtriser la langue à une machine est l'un des plus vieux rêves de
+l'informatique. En 1950, Alan Turing propose déjà de juger l'intelligence d'une
+machine à sa capacité de converser : c'est le
+[jeu de l'imitation](docs/module1/10-turing/#le-jeu-de-limitation) du Module 1. La
+science-fiction en a fait l'un de ses thèmes favoris :
+
+- l'ordinateur HAL 9000 de *2001 : l'odyssée de l'espace* (Stanley Kubrick, 1968),
+  qui converse calmement avec les astronautes, avant de leur désobéir ;
+- l'ordinateur de bord de *Star Trek* (1966), à qui l'équipage pose ses questions à
+  voix haute ;
+- le robot C-3PO de *La Guerre des étoiles* (1977), qui parle des millions de
+  langues ;
+- Samantha, l'assistante vocale dont s'éprend le héros de *Her* (Spike Jonze, 2013).
+
+{{< image src="/images/module4/hal-9000.svg" alt="Un disque noir cerclé de métal, au centre duquel brille un œil rouge lumineux : l'objectif de la caméra de HAL 9000." title="L'œil de HAL 9000, l'ordinateur qui converse avec l'équipage dans 2001 : l'odyssée de l'espace (1968). Il incarne pour des générations l'idée d'une machine qui parle et qui comprend. Dessin : Cryteria, Wikimedia Commons, CC BY 3.0." loading="lazy" >}}
+
+Le rêve de comprendre toutes les langues est plus ancien encore. Il remonte au récit
+de la tour de Babel, et la science-fiction l'a repris avec le « poisson de Babel »
+du *Guide du voyageur galactique* (Douglas Adams, 1979) : glissé dans l'oreille, il
+traduit instantanément tout ce qu'on entend.
+
+Ce rêve semble aujourd'hui en partie réalisé. Les grands modèles de langage
+paraissent pourtant apparus d'un coup, en 2022. Ils sont l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
 langue** (*natural language processing*, NLP), le domaine qui cherche à faire lire,
 écrire, traduire ou transcrire la langue humaine par une machine. Cette recherche a
 connu trois grandes approches : écrire des **règles**, compter des **statistiques**
