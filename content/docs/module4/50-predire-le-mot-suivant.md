@@ -13,84 +13,18 @@ font, répondre à une question, traduire, résumer, écrire un programme, repos
 une seule opération, répétée des milliers de fois : prédire le jeton suivant d'un
 texte.
 
-Ce chapitre présente cette opération, de ses origines au début du XXᵉ siècle
-jusqu'aux modèles actuels. Il s'appuie sur les jetons et les plongements présentés
-au chapitre « [Des mots aux nombres](docs/module4/40-des-mots-aux-nombres) ».
-
-## Un modèle de langage
-
-Un **modèle de langage** (*language model*) est un modèle qui donne, pour un début
-de texte, la probabilité de chaque mot qui pourrait venir ensuite. Après « Le chat
-dort sur le », il donne une probabilité élevée à « canapé », « lit » ou « tapis »,
-une probabilité faible à « toit », et une probabilité presque nulle à « démocratie ».
-C'est une [distribution](docs/module4/10-generer/#une-distribution-et-tirer-dedans),
-au sens du premier chapitre de ce module, et on peut y tirer des mots.
-
-Les modèles de langage existaient bien avant ChatGPT. Ils servaient à choisir, parmi
-plusieurs interprétations possibles, celle qui ressemble le plus à du vrai texte.
-
-- En **reconnaissance de la parole**, « un verre d'eau » et « un vert d'eau » se
-  prononcent de la même façon. Le modèle de langage sait que la première suite est
-  beaucoup plus probable.
-- En **traduction automatique**, il aide à choisir, parmi plusieurs traductions mot
-  à mot, celle qui forme une phrase naturelle.
-- Le **clavier prédictif** d'un téléphone propose les mots les plus probables après
-  ceux qu'on vient de taper.
-
-## Compter : les n-grammes
-
-La façon la plus simple d'estimer ces probabilités est de compter. En 1913, le
-mathématicien russe Andreï Markov analyse les 20 000 premières lettres du roman en
-vers *Eugène Onéguine*, de Pouchkine. Il compte combien de fois une voyelle suit une
-voyelle, ou une consonne, et montre que ces enchaînements obéissent à des
-probabilités régulières. Ces suites où chaque élément dépend du précédent
-s'appellent depuis des **chaînes de Markov**. En 1948, Claude Shannon, le fondateur
-de la théorie de l'information, applique la même idée aux mots anglais. Il montre
-que des mots tirés au hasard en tenant compte du mot précédent produisent des suites
-qui ressemblent de plus en plus à de l'anglais.
-
-On appelle **n-gramme** une suite de *n* mots consécutifs. Un modèle à n-grammes
-prédit chaque mot d'après les *n* − 1 mots qui le précèdent, en comptant dans un
-grand corpus de textes combien de fois chaque mot les a suivis. Le
-[travail noté 4](docs/module4/99-travail-noté-4) construit un modèle à bigrammes
-(*n* = 2) dans un tableur.
-
-L'applet ci-dessous contient un modèle à n-grammes entraîné sur deux romans de Jules
-Verne, *Le Tour du monde en quatre-vingts jours* et *Vingt mille lieues sous les
-mers*. À droite, elle affiche le contexte utilisé et les mots suivants les plus
-probables.
-
-{{< applet src="/html/applets/ngrammes.html" height="469" >}}
-
-Quelques manipulations à faire :
-
-1. Avec des n-grammes de taille 1, cliquez sur « Générer 40 mots ». Le modèle tire
-   chaque mot selon sa seule fréquence dans les romans, et le texte n'a aucun sens.
-2. Passez à la taille 2 et recommencez. Les paires de mots deviennent correctes
-   (« Le capitaine Nemo »), mais les phrases partent dans toutes les directions.
-3. Passez aux tailles 3 et 4. Le texte devient plus fluide, mais les passages
-   surlignés se multiplient. Ce sont des suites d'au moins huit mots recopiées telles
-   quelles des romans. Avec trois mots de contexte, la plupart des contextes
-   n'apparaissent qu'une fois dans le corpus, et le modèle ne peut que recopier ce
-   qui les suivait.
-4. Cliquez plusieurs fois sur « Mot suivant » et observez la colonne de droite. Quand
-   le contexte n'a jamais été vu, le modèle se replie sur un contexte plus court.
-5. Faites varier la température, présentée au
-   [chapitre « Générer »](docs/module4/10-generer/#la-température).
-
-L'applet montre la limite des n-grammes. Avec 20 000 mots de vocabulaire, il existe
-8 000 milliards de suites possibles de trois mots, et même un corpus immense n'en
-contient qu'une infime partie. Plus le contexte est long, plus il est rare, et plus
-le modèle recopie au lieu de généraliser. C'est le
-[sur-apprentissage](docs/module2/70-generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance)
-(*overfitting*) présenté au Module 2. Surtout, un modèle à n-grammes ne sait rien de
-la ressemblance entre les mots : avoir vu « le chat dort sur le canapé » ne l'aide
-pas à prédire la suite de « le chien dort sur le ».
+Les chapitres « [Des règles aux probabilités](docs/module4/44-des-regles-aux-probabilites) »
+et « [Les outils statistiques](docs/module4/46-les-outils-statistiques) » ont présenté
+le modèle de langage et ses premières versions, fondées sur le comptage. Ce chapitre
+présente la troisième ère, celle des réseaux de neurones, jusqu'aux modèles actuels.
+Il s'appuie sur les jetons et les plongements présentés au chapitre
+« [Des mots aux nombres](docs/module4/40-des-mots-aux-nombres) ».
 
 ## Généraliser : les modèles neuronaux
 
-En 2003, Yoshua Bengio et ses collègues, à l'Université de Montréal, publient un
-article intitulé « A Neural Probabilistic Language Model ». Ils remplacent le
+En 2003, Yoshua Bengio, Réjean Ducharme, Pascal Vincent et Christian Jauvin, à
+l'Université de Montréal, publient un article intitulé « A Neural Probabilistic
+Language Model » (Christian Jauvin est l'auteur de ce cours). Ils remplacent le
 comptage par un réseau de neurones. Chaque mot y est représenté par un
 [plongement](docs/module4/40-des-mots-aux-nombres/#les-plongements), appris en
 même temps que le réseau, et le réseau prédit le mot suivant à partir des plongements

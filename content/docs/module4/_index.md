@@ -98,28 +98,34 @@ modèles de langage, puis la rencontre du texte et de l'image.
 
 4. [*Des mots aux nombres : jetons et plongements*](docs/module4/40-des-mots-aux-nombres) :
    découper un texte, et représenter le sens des mots par des vecteurs.
-5. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
-   n-grammes de Markov aux Transformers de GPT.
-6. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
+5. [*Des règles aux probabilités*](docs/module4/44-des-regles-aux-probabilites) :
+   soixante-dix ans de traitement de la langue, les n-grammes, le lissage et la
+   perplexité.
+6. [*Les outils statistiques*](docs/module4/46-les-outils-statistiques) : les
+   modèles de Markov cachés, la traduction statistique, les vecteurs de documents.
+7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
+   modèles neuronaux aux Transformers de GPT.
+8. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
    l'apprentissage en contexte, les coûts, les modèles ouverts.
-7. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
+9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
    l'ajustement, le renforcement à partir de préférences humaines, et les modèles
    qui raisonnent.
-8. [*Des outils et des agents*](docs/module4/80-outils-et-agents) : la recherche
+10. [*Des outils et des agents*](docs/module4/80-outils-et-agents) : la recherche
    augmentée, l'appel d'outils, les agents et leurs risques.
 
 **Le texte et l'image, et le bilan**
 
-9. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
+11. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
    classification sans exemple, et la génération d'images à partir d'une phrase.
-10. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
+12. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
     les modèles multimodaux.
-11. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
+13. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
     hallucinations, interprétabilité, perroquets ou modèles du monde.
 
-Le module compte dix applets, dont un espace latent à explorer, un modèle de
+Le module compte onze applets, dont un espace latent à explorer, un modèle de
 diffusion qui redessine une feuille d'érable, un test pour distinguer une vraie
-photo d'un visage généré, un générateur de texte entraîné sur Jules Verne, et un
+photo d'un visage généré, un générateur de texte entraîné sur Jules Verne, un
+étiqueteur grammatical à modèle de Markov caché, et un
 rôle d'évaluateur humain pour comprendre comment on entraîne un assistant.
 
 Pour situer ce module dans l'ensemble du cours : l'IA générative repose sur
