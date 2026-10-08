@@ -27,6 +27,8 @@ de la tour de Babel, et la science-fiction l'a repris avec le « poisson de Ba
 du *Guide du voyageur galactique* (Douglas Adams, 1979) : glissé dans l'oreille, il
 traduit instantanément tout ce qu'on entend.
 
+{{< image src="/images/module4/tour-de-babel.jpg" alt="Un tableau de la Renaissance : une tour gigantesque et inachevée, en forme de cône à étages, aux arcades innombrables, s'élève jusqu'aux nuages au-dessus d'une ville et d'un port. Des échafaudages et des grues couvrent ses flancs ; au premier plan, un roi et sa suite visitent les tailleurs de pierre." title="Pieter Bruegel l'Ancien, La Tour de Babel (1563), Kunsthistorisches Museum de Vienne. Dans le récit biblique, les humains, qui parlent tous la même langue, bâtissent une tour qui doit atteindre le ciel ; leurs langues sont alors brouillées, et ils ne se comprennent plus. Domaine public, Wikimedia Commons." loading="lazy" >}}
+
 Ce rêve semble aujourd'hui en partie réalisé. Les grands modèles de langage
 paraissent pourtant apparus d'un coup, en 2022. Ils sont l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
 langue** (*natural language processing*, NLP), le domaine qui cherche à faire lire,
