@@ -20,14 +20,12 @@ science-fiction en a fait l'un de ses thèmes favoris :
   langues ;
 - Samantha, l'assistante vocale dont s'éprend le héros de *Her* (Spike Jonze, 2013).
 
-{{< image src="/images/module4/hal-9000.svg" alt="Un disque noir cerclé de métal, au centre duquel brille un œil rouge lumineux : l'objectif de la caméra de HAL 9000." title="L'œil de HAL 9000, l'ordinateur qui converse avec l'équipage dans 2001 : l'odyssée de l'espace (1968). Il incarne pour des générations l'idée d'une machine qui parle et qui comprend. Dessin : Cryteria, Wikimedia Commons, CC BY 3.0." loading="lazy" >}}
-
 Le rêve de comprendre toutes les langues est plus ancien encore. Il remonte au récit
 de la tour de Babel, et la science-fiction l'a repris avec le « poisson de Babel »
 du *Guide du voyageur galactique* (Douglas Adams, 1979) : glissé dans l'oreille, il
 traduit instantanément tout ce qu'on entend.
 
-{{< image src="/images/module4/tour-de-babel.jpg" alt="Un tableau de la Renaissance : une tour gigantesque et inachevée, en forme de cône à étages, aux arcades innombrables, s'élève jusqu'aux nuages au-dessus d'une ville et d'un port. Des échafaudages et des grues couvrent ses flancs ; au premier plan, un roi et sa suite visitent les tailleurs de pierre." title="Pieter Bruegel l'Ancien, La Tour de Babel (1563), Kunsthistorisches Museum de Vienne. Dans le récit biblique, les humains, qui parlent tous la même langue, bâtissent une tour qui doit atteindre le ciel ; leurs langues sont alors brouillées, et ils ne se comprennent plus. Domaine public, Wikimedia Commons." loading="lazy" >}}
+{{< image src="/images/module4/reves-langage.jpg" alt="Un panneau de deux images. À gauche, le panneau vertical de HAL 9000, l'ordinateur de 2001 : l'odyssée de l'espace : une plaque bleue et noire « HAL 9000 », un œil rouge lumineux dans un disque cerclé de métal, et une grille de haut-parleur. À droite, La Tour de Babel de Pieter Bruegel l'Ancien : une tour gigantesque et inachevée, en forme de cône à étages, aux arcades innombrables, s'élève jusqu'aux nuages au-dessus d'une ville et d'un port ; au premier plan, un roi et sa suite visitent les tailleurs de pierre." title="À gauche, HAL 9000, l'ordinateur qui converse avec l'équipage dans 2001 : l'odyssée de l'espace (1968) ; dessin de Tom Cowap, Wikimedia Commons, CC BY-SA 4.0. À droite, La Tour de Babel de Pieter Bruegel l'Ancien (1563), Kunsthistorisches Museum de Vienne : dans le récit biblique, les humains, qui parlent tous la même langue, bâtissent une tour qui doit atteindre le ciel ; leurs langues sont alors brouillées, et ils ne se comprennent plus. Domaine public, Wikimedia Commons." loading="lazy" >}}
 
 Ce rêve semble aujourd'hui en partie réalisé. Les grands modèles de langage
 paraissent pourtant apparus d'un coup, en 2022. Ils sont l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
