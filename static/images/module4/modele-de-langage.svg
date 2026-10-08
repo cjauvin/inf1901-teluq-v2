@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 810 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un modèle de langage</title>
+<desc>À gauche, le début de phrase « Le chat dort sur le » entre dans un modèle de langage. À droite, le modèle donne une probabilité à chaque mot qui pourrait suivre, sous forme de barres : canapé 28 %, lit 22 %, tapis 14 %, coussin 9 %, sol 7 %, fauteuil 6 %, d'autres mots 13,5 % au total, toit 0,5 %, et démocratie presque 0. En bas, on tire un mot selon ces probabilités, ici « lit », et la phrase devient « Le chat dort sur le lit ».</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="810" height="430" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="405.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un modèle de langage : la probabilité de chaque mot suivant</text>
+<rect x="24" y="164" width="168" height="52" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="108" y="184" font-size="10.5" fill="#5b5249" text-anchor="middle">début de texte</text>
+<text x="108" y="203" font-size="14" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">Le chat dort sur le…</text>
+<line x1="196" y1="190" x2="220" y2="190" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="224" y="160" width="112" height="60" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="280" y="186" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="280" y="203" font-size="12.5" fill="#3a3531" text-anchor="middle" font-weight="700">de langage</text>
+<line x1="340" y1="190" x2="364" y2="190" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="368" y="56" font-size="11" fill="#5b5249">mot suivant</text>
+<text x="470" y="56" font-size="11" fill="#5b5249">probabilité</text>
+<text x="368" y="81" font-size="13" fill="#3a3531" font-weight="400">canapé</text>
+<rect x="470" y="69" width="220.0" height="16" rx="3" fill="#2f6f6a"/>
+<text x="698.0" y="81" font-size="12" fill="#3a3531" font-weight="400">28 %</text>
+<text x="368" y="109" font-size="13" fill="#3a3531" font-weight="700">lit</text>
+<rect x="470" y="97" width="172.9" height="16" rx="3" fill="#c4564a"/>
+<text x="650.9" y="109" font-size="12" fill="#3a3531" font-weight="700">22 %</text>
+<text x="368" y="137" font-size="13" fill="#3a3531" font-weight="400">tapis</text>
+<rect x="470" y="125" width="110.0" height="16" rx="3" fill="#2f6f6a"/>
+<text x="588.0" y="137" font-size="12" fill="#3a3531" font-weight="400">14 %</text>
+<text x="368" y="165" font-size="13" fill="#3a3531" font-weight="400">coussin</text>
+<rect x="470" y="153" width="70.7" height="16" rx="3" fill="#2f6f6a"/>
+<text x="548.7" y="165" font-size="12" fill="#3a3531" font-weight="400">9 %</text>
+<text x="368" y="193" font-size="13" fill="#3a3531" font-weight="400">sol</text>
+<rect x="470" y="181" width="55.0" height="16" rx="3" fill="#2f6f6a"/>
+<text x="533.0" y="193" font-size="12" fill="#3a3531" font-weight="400">7 %</text>
+<text x="368" y="221" font-size="13" fill="#3a3531" font-weight="400">fauteuil</text>
+<rect x="470" y="209" width="47.1" height="16" rx="3" fill="#2f6f6a"/>
+<text x="525.1" y="221" font-size="12" fill="#3a3531" font-weight="400">6 %</text>
+<text x="368" y="249" font-size="13" fill="#5b5249" font-weight="400" font-style="italic">(autres mots)</text>
+<rect x="470" y="237" width="106.1" height="16" rx="3" fill="#b8a888"/>
+<text x="584.1" y="249" font-size="12" fill="#3a3531" font-weight="400">13,5 %</text>
+<text x="368" y="277" font-size="13" fill="#3a3531" font-weight="400">toit</text>
+<rect x="470" y="265" width="3.9" height="16" rx="3" fill="#2f6f6a"/>
+<text x="481.9" y="277" font-size="12" fill="#3a3531" font-weight="400">0,5 %</text>
+<text x="368" y="305" font-size="13" fill="#3a3531" font-weight="400">démocratie</text>
+<rect x="470" y="293" width="1.5" height="16" rx="3" fill="#2f6f6a"/>
+<text x="479.5" y="305" font-size="12" fill="#3a3531" font-weight="400">presque 0</text>
+<text x="703" y="109" font-size="11.5" fill="#c4564a" font-weight="700">← le mot tiré</text>
+<text x="368" y="326" font-size="10.5" fill="#5b5249">total : 100 %</text>
+<rect x="24" y="364" width="762" height="40" rx="8" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="44" y="389" font-size="11.5" fill="#5b5249">on tire un mot selon ces probabilités :</text>
+<text x="290" y="390" font-size="15" fill="#3a3531" font-style="italic" font-weight="600">Le chat dort sur le <tspan fill="#c4564a" font-weight="700">lit</tspan></text>
+<text x="766" y="389" font-size="11.5" fill="#5b5249" text-anchor="end">puis on recommence, mot après mot</text>
+</svg>
