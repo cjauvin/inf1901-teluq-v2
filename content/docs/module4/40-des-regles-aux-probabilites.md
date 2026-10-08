@@ -56,7 +56,9 @@ scientifiques soviétiques intéresse beaucoup le gouvernement américain.
 En 1957, le linguiste Noam Chomsky publie *Structures syntaxiques* (*Syntactic
 Structures*). Il y décrit une langue par une **grammaire générative** : un petit
 ensemble de règles capable de produire toutes les phrases correctes de la langue, et
-seulement celles-là. Il y conteste aussi l'idée de décrire la langue par des
+seulement celles-là. Analyser une phrase avec ces règles produit un **arbre
+syntaxique** (*parse tree*), qui montre comment elle se décompose en groupes de
+mots. Il y conteste aussi l'idée de décrire la langue par des
 probabilités, avec un exemple resté célèbre : « *Colorless green ideas sleep
 furiously* » (« D'incolores idées vertes dorment furieusement »). La phrase n'a pas
 de sens, mais elle est grammaticale, alors que les mêmes mots à l'envers,
@@ -67,6 +69,8 @@ L'argument pèse lourd. Pendant une vingtaine d'années, l'approche dominante co
 à écrire des règles à la main : des dictionnaires, des grammaires, des règles pour
 passer d'une langue à l'autre. Nous verrons [plus bas](#les-suites-jamais-vues-le-lissage)
 comment les statistiques ont fini par répondre à Chomsky.
+
+{{< image src="/images/module4/arbre-chomsky.svg" alt="À gauche, quatre règles de grammaire : une phrase est un groupe nominal suivi d'un groupe verbal ; un groupe nominal est un adjectif suivi d'un groupe nominal, ou un nom seul ; un groupe verbal est un verbe suivi d'un adverbe. Au centre, l'arbre que ces règles construisent pour « Colorless green ideas sleep furiously » : la phrase se divise en un groupe nominal, « colorless green ideas », fait de deux adjectifs et d'un nom emboîtés, et un groupe verbal, « sleep furiously », fait d'un verbe et d'un adverbe. En bas, la même phrase à l'envers, « Furiously sleep ideas green colorless », marquée d'une croix : aucune combinaison des règles ne permet de la construire." title="L'arbre syntaxique de la phrase de Chomsky. Quatre règles suffisent à la construire, alors qu'elles ne peuvent pas produire la même phrase à l'envers. La grammaire distingue les deux phrases sans rien savoir de leur sens." loading="lazy" >}}
 
 Les résultats déçoivent. En 1966, un comité consultatif du gouvernement américain,
 l'ALPAC (*Automatic Language Processing Advisory Committee*), conclut que la
