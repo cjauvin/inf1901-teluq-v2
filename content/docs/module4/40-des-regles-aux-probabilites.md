@@ -139,16 +139,32 @@ exclu d'avance.
 
 {{< image src="/images/module4/modele-de-langage.svg" alt="À gauche, le début de phrase « Le chat dort sur le » entre dans un modèle de langage. À droite, le modèle donne une probabilité à chaque mot qui pourrait suivre, sous forme de barres : canapé 28 %, lit 22 %, tapis 14 %, coussin 9 %, sol 7 %, fauteuil 6 %, d'autres mots 13,5 % au total, toit 0,5 %, et démocratie presque 0. En bas, on tire un mot selon ces probabilités, ici « lit », et la phrase devient « Le chat dort sur le lit »." title="Un modèle de langage donne une distribution sur le mot suivant. On y tire un mot, on l'ajoute au texte, et on recommence. Les probabilités sont données à titre d'illustration." loading="lazy" >}}
 
-Les modèles de langage existaient bien avant ChatGPT. Ils servaient à choisir, parmi
-plusieurs interprétations possibles, celle qui ressemble le plus à du vrai texte.
+Les modèles de langage existaient bien avant ChatGPT, mais ils jouaient un rôle de
+second plan. Pendant des décennies, ils ont été une **pièce** parmi d'autres dans des
+systèmes plus vastes, où d'autres composants faisaient l'essentiel du travail. Le
+modèle de langage y servait d'arbitre : parmi plusieurs interprétations proposées
+par le reste du système, il choisissait celle qui ressemble le plus à du vrai texte.
 
-- En **reconnaissance de la parole**, « un verre d'eau » et « un vert d'eau » se
-  prononcent de la même façon. Le modèle de langage sait que la première suite est
-  beaucoup plus probable.
-- En **traduction automatique**, il aide à choisir, parmi plusieurs traductions mot
-  à mot, celle qui forme une phrase naturelle.
+- En **reconnaissance de la parole**, un premier composant analyse les sons et
+  propose plusieurs suites de mots qui leur correspondent. « Un verre d'eau » et
+  « un vert d'eau » se prononcent de la même façon. Le modèle de langage tranche :
+  la première suite est beaucoup plus probable.
+- En **traduction automatique**, le modèle de traduction propose plusieurs
+  traductions possibles, et le modèle de langage choisit celle qui forme une phrase
+  naturelle. C'est le [canal bruité](docs/module4/42-les-outils-statistiques/#la-traduction-comme-un-canal-bruité)
+  présenté au chapitre suivant.
 - Le **clavier prédictif** d'un téléphone propose les mots les plus probables après
-  ceux qu'on vient de taper.
+  ceux qu'on vient de taper. C'est l'un des rares usages où le modèle de langage
+  travaille presque seul, mais il ne prédit qu'un mot à la fois, et c'est
+  l'utilisateur qui écrit.
+
+Personne ne demandait alors à un modèle de langage d'écrire seul un texte. Ceux
+qu'il produisait perdaient le fil au bout de quelques mots, comme le montre
+l'applet ci-dessous. Il faudra attendre les grands modèles de langage, et surtout
+[ChatGPT](docs/module4/70-du-modele-a-l-assistant), en 2022, pour que le modèle de
+langage passe au premier plan. Il n'est plus une pièce du système, il est le
+système. La même opération, prédire le mot suivant, suffit alors à répondre à des
+questions, à traduire, à résumer ou à écrire un programme.
 
 ## Compter : les n-grammes
 
