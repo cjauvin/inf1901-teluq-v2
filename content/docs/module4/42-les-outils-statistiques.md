@@ -140,18 +140,23 @@ fréquents dans un document mais rares ailleurs. Avec la représentation des doc
 par des vecteurs, développée par Gerard Salton à l'Université Cornell, elle est au
 cœur des moteurs de recherche pendant des décennies.
 
+{{< image src="/images/module4/tfidf.svg" alt="Deux tableaux, des mots en rangées et trois documents en colonnes : botanique, biologie et sport. À gauche, le sac de mots, avec le nombre d'occurrences : le mot « le » apparaît 12, 10 et 15 fois, photosynthèse 3, 1 et 0 fois, chlorophylle 2, 0 et 0 fois, match 0, 0 et 4 fois, but 0, 0 et 3 fois. À droite, les poids TF-IDF : « le », présent dans les trois documents, reçoit un poids nul partout ; chlorophylle, match et but, propres à un seul document, reçoivent les poids les plus élevés. En bas, la formule : le poids d'un mot dans un document est son nombre d'occurrences multiplié par le logarithme du nombre de documents divisé par le nombre de documents qui contiennent le mot." title="Le sac de mots compte les occurrences ; TF-IDF les multiplie par la rareté du mot. Un mot présent dans tous les documents, comme « le », ne distingue plus rien et son poids s'annule." loading="lazy" >}}
+
 En 1990, une équipe des laboratoires Bellcore pousse l'idée plus loin avec
 l'**analyse sémantique latente** (*latent semantic analysis*, LSA). On construit
 un immense tableau qui indique combien de fois chaque mot apparaît dans chaque
 document, puis on le réduit à quelques centaines de dimensions, par une méthode
 proche de la [PCA](docs/module2/80-trois-facons-d-apprendre/#réduire-la-dimension)
-du Module 2. Chaque mot y reçoit un vecteur, et deux mots qui apparaissent dans les
-mêmes documents, comme « médecin » et « hôpital », reçoivent des vecteurs voisins,
-même s'ils n'apparaissent jamais ensemble. Ce sont les premiers vecteurs de mots,
+du Module 2. Chaque mot y reçoit un vecteur, et deux mots qui apparaissent dans des
+documents semblables, entourés des mêmes autres mots, reçoivent des vecteurs voisins,
+même s'ils n'apparaissent jamais dans le même document. C'est le cas de « médecin » et
+« hôpital » dans la figure ci-dessous. Ce sont les premiers vecteurs de mots,
 fondés sur la même idée que les [plongements](docs/module4/45-des-mots-aux-nombres/#on-reconnaît-un-mot-à-ses-fréquentations)
 modernes : on reconnaît un mot à ses fréquentations. Le mot « latent » a d'ailleurs
 le même sens que dans l'[espace latent](docs/module4/10-generer/#lespace-latent)
 des générateurs d'images.
+
+{{< image src="/images/module4/lsa.svg" alt="À gauche, un tableau de 12 mots sur 8 petits documents, avec une case colorée quand le mot apparaît dans le document. Les quatre premiers documents parlent de santé, les quatre derniers de sport. « Médecin » n'apparaît que dans les documents 1 et 2, « hôpital » que dans les documents 3 et 4 : jamais ensemble. Une flèche indique la réduction à deux dimensions. À droite, la carte obtenue : chaque mot est un point. Les mots de la santé se regroupent d'un côté, ceux du sport de l'autre, « blessure », présent dans les deux thèmes, entre les deux, et « médecin » et « hôpital » sont voisins." title="Une LSA calculée sur huit petits documents. Réduit à deux dimensions, le tableau mots × documents donne à chaque mot un vecteur. « Médecin » et « hôpital » deviennent voisins parce qu'ils fréquentent les mêmes mots, sans jamais se rencontrer." loading="lazy" >}}
 
 ## Étiqueter avec des caractéristiques faites à la main
 

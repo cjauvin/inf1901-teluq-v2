@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'analyse sémantique latente</title>
+<desc>À gauche, un tableau de 12 mots sur 8 petits documents, avec une case colorée quand le mot apparaît dans le document. Les quatre premiers documents parlent de santé, les quatre derniers de sport. « Médecin » n'apparaît que dans les documents 1 et 2, « hôpital » que dans les documents 3 et 4 : jamais ensemble. Une flèche indique la réduction à deux dimensions. À droite, la carte obtenue : chaque mot est un point. Les mots de la santé se regroupent d'un côté, ceux du sport de l'autre, « blessure », présent dans les deux thèmes, entre les deux, et « médecin » et « hôpital » sont voisins.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="800" height="440" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="400.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">L'analyse sémantique latente : des mots aux vecteurs</text>
+<text x="200" y="66" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">mots × documents</text>
+<text x="123.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">1</text>
+<text x="145.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">2</text>
+<text x="167.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">3</text>
+<text x="189.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">4</text>
+<text x="211.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">5</text>
+<text x="233.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">6</text>
+<text x="255.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">7</text>
+<text x="277.0" y="80" font-size="10" fill="#5b5249" text-anchor="middle">8</text>
+<text x="104" y="99" font-size="11" fill="#c4564a" text-anchor="end" font-weight="700">médecin</text>
+<rect x="113" y="85" width="20" height="20" rx="2" fill="#c4564a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="85" width="20" height="20" rx="2" fill="#c4564a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="85" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="121" font-size="11" fill="#c4564a" text-anchor="end" font-weight="700">hôpital</text>
+<rect x="113" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="107" width="20" height="20" rx="2" fill="#c4564a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="107" width="20" height="20" rx="2" fill="#c4564a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="107" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="143" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">patient</text>
+<rect x="113" y="129" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="129" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="129" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="129" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="129" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="129" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="129" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="129" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="165" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">soigne</text>
+<rect x="113" y="151" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="151" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="151" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="187" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">maladie</text>
+<rect x="113" y="173" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="173" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="173" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="173" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="173" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="173" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="173" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="173" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="209" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">urgence</text>
+<rect x="113" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="195" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="195" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="195" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="231" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">blessure</text>
+<rect x="113" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="217" width="20" height="20" rx="2" fill="#2f6f6a" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="217" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="217" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="253" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">match</text>
+<rect x="113" y="239" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="239" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="239" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="239" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="239" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="239" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="239" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="239" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="275" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">équipe</text>
+<rect x="113" y="261" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="261" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="261" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="261" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="261" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="261" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="261" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="261" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="297" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">but</text>
+<rect x="113" y="283" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="283" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="283" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="283" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="283" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="283" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="283" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="283" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="319" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">joueur</text>
+<rect x="113" y="305" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="305" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="305" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="305" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="305" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="305" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="305" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="305" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="104" y="341" font-size="11" fill="#3a3531" text-anchor="end" font-weight="400">arbitre</text>
+<rect x="113" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="135" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="157" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="179" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="201" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="223" y="327" width="20" height="20" rx="2" fill="#fbf7ee" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="245" y="327" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<rect x="267" y="327" width="20" height="20" rx="2" fill="#3a6ea5" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="156" y="366" font-size="10.5" fill="#2f6f6a" text-anchor="middle">santé</text>
+<text x="244" y="366" font-size="10.5" fill="#3a6ea5" text-anchor="middle">sport</text>
+<line x1="302" y1="216" x2="364" y2="216" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="333" y="202" font-size="10.5" fill="#5b5249" text-anchor="middle">réduire à</text>
+<text x="333" y="236" font-size="10.5" fill="#5b5249" text-anchor="middle">2 dimensions</text>
+<rect x="400" y="60" width="370" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="674.3" y="109.1" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700">santé</text>
+<text x="482.7" y="177.2" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">sport</text>
+<circle cx="669.9" cy="231.9" r="5.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1"/>
+<text x="679.9" y="235.9" font-size="12.5" fill="#c4564a" text-anchor="start" font-weight="700">médecin</text>
+<circle cx="654.9" cy="237.9" r="5.5" fill="#c4564a" stroke="#fbf7ee" stroke-width="1"/>
+<text x="654.9" y="259.9" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">hôpital</text>
+<circle cx="702.9" cy="127.1" r="4" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="672.5" cy="220.0" r="4" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="691.0" cy="132.3" r="4" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="654.9" cy="237.9" r="4" fill="#2f6f6a" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="570.4" cy="236.8" r="4" fill="#7a6f63" stroke="#fbf7ee" stroke-width="1"/>
+<text x="570.4" y="256.8" font-size="11" fill="#7a6f63" text-anchor="middle" font-weight="400">blessure</text>
+<circle cx="467.1" cy="195.2" r="4" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="467.1" cy="195.2" r="4" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="473.2" cy="207.0" r="4" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="481.3" cy="219.5" r="4" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1"/>
+<circle cx="524.7" cy="312.9" r="4" fill="#3a6ea5" stroke="#fbf7ee" stroke-width="1"/>
+<text x="585.0" y="386" font-size="10.5" fill="#5b5249" text-anchor="middle">« médecin » et « hôpital » ne sont jamais dans le même document,</text>
+<text x="585.0" y="402" font-size="10.5" fill="#5b5249" text-anchor="middle">mais ils fréquentent les mêmes mots : ils deviennent voisins</text>
+</svg>
