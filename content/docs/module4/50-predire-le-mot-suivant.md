@@ -42,6 +42,8 @@ tableau, comme dans la section
 « [Compter les voisins](docs/module4/45-des-mots-aux-nombres/#compter-les-voisins) ».
 Les plongements prennent simplement la forme qui aide le plus à prédire.
 
+{{< image src="/images/module4/modele-neuronal-2003.svg" alt="Le contexte « chat dort sur » entre dans le modèle, dessiné comme un grand cadre. Dans le cadre, à gauche, la table des plongements : une rangée de nombres pour chaque mot du vocabulaire, aboie, canapé, chat, chien, dort, le, sur. Les rangées de chat, dort et sur sont surlignées. Leurs plongements sont mis bout à bout, puis passent dans une couche cachée de neurones, qui donne la probabilité de chaque mot suivant : le en tête, puis un, son et mon. Une flèche rouge, en bas, revient en sens inverse, de l'erreur jusqu'à la table : la rétropropagation ajuste les poids des neurones et aussi les plongements. Une étiquette sous le cadre indique que les paramètres du modèle sont la table des plongements et les poids des neurones, appris ensemble." title="Le modèle de langage neuronal de 2003. La table des plongements est à l'intérieur du modèle : comme les poids des neurones, elle part de valeurs tirées au hasard et s'ajuste à chaque erreur. Valeurs données à titre d'illustration." loading="lazy" >}}
+
 Le résultat rejoint l'hypothèse distributionnelle. Comme « chat » et « chien »
 apparaissent dans les mêmes contextes, la rétropropagation les pousse vers des
 plongements voisins, et ce que le modèle apprend sur l'un profite à l'autre. Le
@@ -81,8 +83,35 @@ familles de modèles en sont nées.
 {{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
 
 C'est la troisième qui l'a emporté, et c'est elle que décrit la suite de cette page.
-Un décodeur assez grand, entraîné à prédire le jeton suivant, apprend aussi à
-traduire, à résumer et à classer.
+Un décodeur assez grand, entraîné seulement à prédire le jeton suivant, apprend
+aussi à traduire, à résumer et à classer. Trois raisons l'expliquent.
+
+- **Toute tâche peut s'écrire comme une suite de texte.** Traduire, c'est continuer
+  « Traduis en anglais : La maison est petite. → ». Classer un avis, c'est continuer
+  « Cet avis est-il positif ou négatif ? … Réponse : ». Un décodeur n'a pas besoin
+  d'une architecture différente pour chaque tâche : il suffit de lui donner le bon
+  début de texte.
+- **Le Web regorge d'exemples de ces tâches.** On y trouve des pages bilingues, des
+  articles suivis d'un résumé, des avis suivis d'une note, des questions suivies de
+  leur réponse. Pour bien prédire la suite de ces textes, le modèle doit apprendre à
+  faire ce qu'ils font. En 2019, les chercheurs d'OpenAI constatent ainsi que GPT-2
+  produit un résumé si l'on termine un article par « TL;DR: », l'abréviation que les
+  internautes placent avant un résumé.
+- **Il n'a besoin d'aucune étiquette.** Un encodeur-décodeur s'entraîne sur des
+  paires de textes, comme une phrase et sa traduction. Un encodeur comme BERT doit
+  être ajusté sur des exemples annotés pour chaque tâche. Un décodeur s'entraîne
+  sur n'importe quel texte, par
+  [auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-même-ses-réponses-lauto-supervision).
+  Il peut donc profiter de tout le texte disponible, et grandir presque sans limite,
+  comme le montre le chapitre
+  « [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#des-lois-déchelle) ».
+
+Plus le modèle grandit, mieux ces compétences se manifestent. En 2020, GPT-3
+accomplit des tâches nouvelles à partir de quelques exemples donnés dans la
+consigne, sans aucun entraînement supplémentaire : c'est
+l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte).
+La section « [Ce que la prédiction exige](#ce-que-la-prédiction-exige) », plus bas,
+revient sur ce que ce simple objectif oblige le modèle à apprendre.
 
 ## GPT : un Transformer qui prédit le jeton suivant
 
