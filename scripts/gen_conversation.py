@@ -11,16 +11,16 @@ W, H = 840, 500
 o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>Une conversation qui n'en est pas une</title>",
-     "<desc>Deux rangées de trois répliques. En haut, un modèle de langage : à la première réplique, il reçoit les instructions "
-     "de départ et la première question, et produit la première réponse ; à la deuxième, il reçoit tout cela de nouveau, plus la "
-     "deuxième question ; à la troisième, encore tout, plus la troisième question. La barre de texte s'allonge à chaque réplique, "
-     "alors que le modèle, au milieu, reste identique, avec des paramètres fixes. En bas, une personne : à chaque réplique, seule "
-     "la nouvelle question entre ; ce qui change, c'est un état intérieur, dessiné dans une tête, qui grandit et évolue d'une "
-     "réplique à l'autre.</desc>",
+     "<desc>Deux rangées de trois répliques. En haut, une personne : à chaque réplique, seule la nouvelle question entre ; ce qui "
+     "change, c'est un état intérieur, dessiné dans une tête, qui grandit et évolue d'une réplique à l'autre. En bas, un modèle de "
+     "langage : à la première réplique, il reçoit les instructions de départ et la première question, et produit la première "
+     "réponse ; à la deuxième, il reçoit tout cela de nouveau, plus la deuxième question ; à la troisième, encore tout, plus la "
+     "troisième question. La barre de texte s'allonge à chaque réplique, alors que le modèle, au milieu, reste identique, avec des "
+     "paramètres fixes.</desc>",
      f'<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">'
      f'<path d="M0 0 L10 5 L0 10 z" fill="{GRIS}"/></marker></defs>',
      f'<rect x="0" y="0" width="{W}" height="{H}" rx="14" fill="{FOND}" stroke="{BORD}"/>',
-     f'<text x="{W / 2}" y="32" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Une conversation{NB}: le modèle relit tout, la personne se souvient</text>']
+     f'<text x="{W / 2}" y="32" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Une conversation{NB}: la personne se souvient, le modèle relit tout</text>']
 CX = [175, 435, 695]
 SW, SH = 36, 22
 COUL = {"inst.": GRIS, "Q": BLEU, "R": TEAL}
@@ -36,7 +36,8 @@ def fleche(x1, y1, x2, y2):
     o.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#p)"/>')
 
 
-# ── le modèle ──
+# ── le modèle, en bas ──
+o.append('<g transform="translate(0, 202)">')
 o.append(f'<rect x="20" y="50" width="{W - 40}" height="214" rx="10" fill="{PANNEAU}" stroke="{BORD}"/>')
 o.append(f'<text x="36" y="72" font-size="13" fill="{BRUN}" font-weight="700">Un modèle de langage{NB}: à chaque réplique, tout le texte est présenté de nouveau</text>')
 textes = [["inst.", "Q1"], ["inst.", "Q1", "R1", "Q2"], ["inst.", "Q1", "R1", "Q2", "R2", "Q3"]]
@@ -53,7 +54,9 @@ for k, (cx, tx) in enumerate(zip(CX, textes)):
     segment(cx - SW / 2, 212, f"R{k + 1}", neuf=True)
 o.append(f'<text x="{W / 2}" y="254" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle">le texte s\'allonge à chaque réplique{NB}; le modèle, lui, ne change pas et ne garde rien d\'une réplique à l\'autre</text>')
 
-# ── la personne ──
+o.append('</g>')
+# ── la personne, en haut ──
+o.append('<g transform="translate(0, -226)">')
 o.append(f'<rect x="20" y="276" width="{W - 40}" height="190" rx="10" fill="{PANNEAU}" stroke="{BORD}"/>')
 o.append(f'<text x="36" y="298" font-size="13" fill="{BRUN}" font-weight="700">Une personne{NB}: seule la nouvelle phrase entre, et un état intérieur évolue</text>')
 etats = [(9, "#9fc7c2"), (14, "#6aa49d"), (19, TEAL)]
@@ -68,6 +71,7 @@ for k, (cx, (r, c)) in enumerate(zip(CX, etats)):
         fleche(cx + 36, 384, CX[k + 1] - 36, 384)
         o.append(f'<text x="{(cx + CX[k + 1]) / 2}" y="376" font-size="10.5" fill="{TEAL}" text-anchor="middle">l\'état intérieur</text>')
         o.append(f'<text x="{(cx + CX[k + 1]) / 2}" y="402" font-size="10.5" fill="{TEAL}" text-anchor="middle">évolue</text>')
+o.append('</g>')
 o.append(f'<text x="{W / 2}" y="{H - 14}" font-size="10.5" fill="{ENCRE_PALE}" text-anchor="middle">inst.{NB}: instructions de départ{NB}; Q{NB}: question{NB}; R{NB}: réponse (en rouge, la réponse produite à cette réplique)</text>')
 o.append("</svg>")
 (OUT / "conversation.svg").write_text("\n".join(o) + "\n")
