@@ -260,9 +260,15 @@ C'est précisément ce que feront les modèles neuronaux du chapitre
 
 ## Mesurer un modèle : la perplexité
 
-Comment comparer deux modèles de langage ? On leur présente un texte qu'ils n'ont
-jamais vu, et on mesure la probabilité que chacun donne aux mots qui viennent
-vraiment. Un bon modèle leur donne une probabilité élevée.
+Comment comparer deux modèles de langage ? Comme pour les classificateurs du
+Module 2, il faut une [métrique](docs/module2/75-bien-evaluer/#compter-juste-les-métriques),
+mesurée sur des données que le modèle n'a jamais vues, l'équivalent de
+l'[ensemble de test](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu).
+On présente donc aux modèles un texte mis de côté. Le taux de bonnes réponses
+conviendrait mal : avec des dizaines de milliers de mots possibles, même un bon
+modèle devine rarement le mot exact qui suit. On mesure plutôt la probabilité que
+chaque modèle donne aux mots qui viennent vraiment. Un bon modèle leur donne une
+probabilité élevée, même quand ce n'est pas le mot qu'il jugeait le plus probable.
 
 La mesure habituelle est la **perplexité** (*perplexity*). Elle s'interprète
 simplement : une perplexité de 150 signifie que le modèle est, en moyenne, aussi
