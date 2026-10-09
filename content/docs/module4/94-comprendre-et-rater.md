@@ -71,14 +71,12 @@ humaine.
   semblent reconnaître des problèmes familiers plutôt que de raisonner sur chaque
   énoncé.
 
-Ce dernier résultat rejoint la mise en garde du chapitre
-« [Généraliser](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu) »
-du Module 2. Ces modèles ont été entraînés sur une grande partie du Web, où circulent
-aussi les questions des bancs d'essai et leurs réponses. On ne sait donc jamais
-complètement si un modèle résout un problème ou s'il se souvient de sa solution. C'est
-la **contamination** des bancs d'essai (*benchmark contamination*). Les chercheurs
-construisent régulièrement de nouveaux tests, gardés secrets ou rédigés après
-l'entraînement des modèles, comme *Humanity's Last Exam* (le « dernier examen de
+Ce dernier résultat rejoint le problème présenté dans la section
+« [Que mesurent les scores ?](docs/module4/60-passer-a-l-echelle/#que-mesurent-les-scores) »
+du chapitre « Passer à l'échelle » : on ne sait jamais complètement si un modèle
+résout un problème ou s'il se souvient de sa solution, puisque les questions des
+bancs d'essai circulent sur le Web. Les chercheurs construisent donc régulièrement
+de nouveaux tests, comme *Humanity's Last Exam* (le « dernier examen de
 l'humanité »), publié en janvier 2025, qui rassemble des questions de spécialistes de
 nombreuses disciplines. Les modèles y progressent vite, et le débat recommence avec
 chaque nouveau test.

@@ -153,6 +153,46 @@ exacts, la note passe brusquement de 0 à 1. Si l'on compte les chiffres exacts 
 un, le progrès est régulier. Le débat n'est pas tranché : certaines capacités semblent
 bien apparaître de façon abrupte, d'autres sont des effets de mesure.
 
+## Que mesurent les scores ?
+
+Toutes ces mesures supposent une chose : que le modèle n'ait jamais vu les questions
+du test. C'est la règle fondamentale du Module 2 :
+[un modèle se juge sur ce qu'il n'a jamais vu](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu),
+et la moindre
+[fuite de données](docs/module2/75-bien-evaluer/#le-score-trop-beau-pour-être-vrai-la-fuite-de-données)
+rend le score trop beau pour être vrai.
+
+Avec les grands modèles de langage, cette règle devient presque impossible à
+respecter. On les compare sur des **bancs d'essai** (*benchmarks*), des tests
+standardisés de questions et de problèmes. Or ces modèles sont entraînés sur une
+grande partie du Web, où circulent aussi ces questions : les énoncés sont publiés en
+ligne, discutés sur des forums, accompagnés de leurs solutions. Plus le corpus est
+grand, plus il est probable qu'une question du test, ou une variante proche, s'y
+trouve. Et comme les entreprises publient rarement la liste exacte de leurs données
+d'entraînement, on ne peut même pas le vérifier. C'est la **contamination** des bancs
+d'essai (*benchmark contamination*) : la contamination du Module 2, à l'échelle du
+Web.
+
+Deux observations montrent que le problème est réel.
+
+- En 2023, des utilisateurs remarquent que GPT-4 résout des problèmes de
+  programmation du site Codeforces publiés avant la fin de ses données
+  d'entraînement, mais presque aucun des problèmes de même difficulté publiés après.
+- En 2024, une équipe de l'entreprise Scale AI rédige GSM1k, mille nouveaux
+  problèmes de mathématiques de même niveau que ceux de GSM8k, un banc d'essai très
+  utilisé. Plusieurs modèles y perdent jusqu'à 13 points : ils avaient en partie
+  appris le banc d'essai lui-même.
+
+S'y ajoute un effet plus subtil, résumé par la **loi de Goodhart** : quand une mesure
+devient un objectif, elle cesse d'être une bonne mesure. Comme les entreprises se
+comparent sur les mêmes bancs d'essai, elles ont intérêt à y optimiser leurs
+modèles, consciemment ou non. Les chercheurs répondent de plusieurs façons : des
+tests gardés secrets, des tests rédigés après la date de fin des données
+d'entraînement, et des évaluations où des humains comparent deux réponses sans
+savoir de quel modèle elles viennent. Aucune n'est parfaite. Savoir ce qu'un grand
+modèle sait vraiment faire, au-delà de ce qu'il a vu, reste l'une des questions les
+plus difficiles du domaine.
+
 ## Le prix de la taille
 
 Entraîner un grand modèle demande des dizaines de milliers de
