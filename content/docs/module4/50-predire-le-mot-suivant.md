@@ -25,13 +25,36 @@ Il s'appuie sur les jetons et les plongements présentés au chapitre
 En 2003, Yoshua Bengio, Réjean Ducharme, Pascal Vincent et Christian Jauvin, à
 l'Université de Montréal, publient un article intitulé « A Neural Probabilistic
 Language Model » (Christian Jauvin est l'auteur de ce cours). Ils remplacent le
-comptage par un réseau de neurones. Chaque mot y est représenté par un
-[plongement](docs/module4/45-des-mots-aux-nombres/#les-plongements), appris en
-même temps que le réseau, et le réseau prédit le mot suivant à partir des plongements
-des mots précédents. Comme « chat » et « chien » reçoivent des plongements voisins,
-ce que le modèle apprend sur l'un profite à l'autre. Le modèle peut ainsi donner une
-probabilité raisonnable à des suites qu'il n'a jamais vues. C'est l'un des travaux
-fondateurs de l'[école canadienne](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet)
+comptage par un réseau de neurones, avec une idée décisive : les
+[plongements](docs/module4/45-des-mots-aux-nombres/#les-plongements) des mots ne
+sont pas calculés d'avance, ils sont **appris** par le réseau, en même temps que
+tout le reste.
+
+Concrètement, le modèle contient une table qui associe à chaque mot du vocabulaire
+une liste de quelques dizaines de nombres. Au départ, ces nombres sont tirés au
+hasard. La table fait partie des **paramètres** du modèle, au même titre que les
+poids de ses neurones. Le réseau lit les plongements des mots précédents et prédit
+le mot suivant. À chaque erreur, la
+[rétropropagation](docs/module3/30-entrainer-un-reseau/#la-rétropropagation) ajuste
+les poids des neurones, mais aussi les nombres des plongements qui ont servi à la
+prédiction. Il n'y a aucune étape séparée pour compter les voisins puis réduire un
+tableau, comme dans la section
+« [Compter les voisins](docs/module4/45-des-mots-aux-nombres/#compter-les-voisins) ».
+Les plongements prennent simplement la forme qui aide le plus à prédire.
+
+Le résultat rejoint l'hypothèse distributionnelle. Comme « chat » et « chien »
+apparaissent dans les mêmes contextes, la rétropropagation les pousse vers des
+plongements voisins, et ce que le modèle apprend sur l'un profite à l'autre. Le
+modèle peut ainsi donner une probabilité raisonnable à des suites qu'il n'a jamais
+vues. C'est la généralisation que les n-grammes, même
+[lissés](docs/module4/40-des-regles-aux-probabilites/#les-suites-jamais-vues-le-lissage),
+ne pouvaient pas atteindre. Dix ans plus tard,
+[word2vec](docs/module4/45-des-mots-aux-nombres/#les-plongements) reprend cette idée
+en la simplifiant à l'extrême, pour l'appliquer à des milliards de mots. Aujourd'hui
+encore, la table des plongements est la première couche de tout grand modèle de
+langage : chaque jeton du vocabulaire y a son plongement, appris comme le reste.
+C'est l'un des travaux fondateurs de
+l'[école canadienne](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet)
 de l'apprentissage profond.
 
 Les [réseaux récurrents](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis)
