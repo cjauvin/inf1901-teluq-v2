@@ -102,6 +102,17 @@ linguiste, la performance du système augmente. » C'est le renversement prés
 [Module 2](docs/module2) : plutôt que de dire à la machine comment faire, on lui
 donne des exemples, et elle apprend.
 
+Le filtre à pourriels du [Module 2](docs/module2/60-classer/#le-cas-des-pourriels),
+que vous construisez dans le [travail noté 2](docs/module2/99-travail-noté-2),
+appartient à ce même tournant. Plutôt que d'écrire des règles comme « si le courriel
+contient *gratuit*, c'est un pourriel », on estime, à partir de courriels déjà triés,
+la probabilité de chaque mot dans les pourriels et dans les courriels ordinaires.
+Popularisée en 2002 par l'essai « A Plan for Spam » de Paul Graham, la méthode est
+vite adoptée par la plupart des messageries. Le Module 2 la replaçait d'ailleurs
+parmi les autres succès du
+[tournant probabiliste](docs/module2/60-classer/#raisonner-sous-incertitude-les-réseaux-bayésiens),
+aux côtés des travaux de Jelinek.
+
 Cette approche demande des **corpus**, c'est-à-dire de grandes collections de
 textes. Le Brown Corpus, réuni à l'Université Brown dans les années 1960, rassemble
 un million de mots d'anglais américain publiés en 1961. Le Penn Treebank (1993)
