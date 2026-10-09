@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le sac des mots voisins</title>
+<desc>À gauche, un tableau : trois mots en rangées, chat, chien et démocratie, et en colonnes dix mots voisins, avec le nombre de fois où chacun est apparu près du mot. Chat et chien ont des rangées semblables : croquettes, dort, caresse et vétérinaire reviennent souvent, et miaule pour l'un, aboie pour l'autre. Démocratie a une rangée différente : vote, élection et liberté. La colonne du mot « le » est grisée : il est voisin de tout, avec des comptes très élevés pour les trois mots. Une mention indique 99 990 autres colonnes, presque toutes à zéro. Une flèche « réduire » mène, à droite, à trois vecteurs de trois nombres seulement. Ceux de chat et de chien se ressemblent, avec une ressemblance de 0,98 ; ceux de chat et de démocratie, presque pas, avec une ressemblance de −0,1.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="360" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Représenter un mot par le sac de ses voisins, puis réduire</text>
+<text x="350" y="64" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">combien de fois chaque mot est apparu près de…</text>
+<text x="143.0" y="138" font-size="11.5" fill="#7a6f63" font-style="italic" transform="rotate(-40 143.0 138)">le</text>
+<text x="189.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 189.0 138)">croquettes</text>
+<text x="235.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 235.0 138)">dort</text>
+<text x="281.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 281.0 138)">caresse</text>
+<text x="327.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 327.0 138)">vétérinaire</text>
+<text x="373.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 373.0 138)">miaule</text>
+<text x="419.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 419.0 138)">aboie</text>
+<text x="465.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 465.0 138)">vote</text>
+<text x="511.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 511.0 138)">élection</text>
+<text x="557.0" y="138" font-size="11.5" fill="#5b5249" font-style="italic" transform="rotate(-40 557.0 138)">liberté</text>
+<text x="110" y="174" font-size="13.5" fill="#2f6f6a" text-anchor="end" font-weight="700">chat</text>
+<rect x="122" y="152" width="42" height="36" rx="4" fill="#e4dccb" stroke="#d9cbac"/>
+<text x="143.0" y="175" font-size="12" fill="#7a6f63" text-anchor="middle">900</text>
+<rect x="168" y="152" width="42" height="36" rx="4" fill="#98b5ae" stroke="#d9cbac"/>
+<text x="189.0" y="175" font-size="12" fill="#fbf7ee" text-anchor="middle">85</text>
+<rect x="214" y="152" width="42" height="36" rx="4" fill="#588a84" stroke="#d9cbac"/>
+<text x="235.0" y="175" font-size="12" fill="#fbf7ee" text-anchor="middle">140</text>
+<rect x="260" y="152" width="42" height="36" rx="4" fill="#b5c8c1" stroke="#d9cbac"/>
+<text x="281.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">60</text>
+<rect x="306" y="152" width="42" height="36" rx="4" fill="#d8e0d7" stroke="#d9cbac"/>
+<text x="327.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">30</text>
+<rect x="352" y="152" width="42" height="36" rx="4" fill="#a9c1b9" stroke="#d9cbac"/>
+<text x="373.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">70</text>
+<rect x="398" y="152" width="42" height="36" rx="4" fill="#f9f5ec" stroke="#d9cbac"/>
+<text x="419.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">2</text>
+<rect x="444" y="152" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="465.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="490" y="152" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="511.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="536" y="152" width="42" height="36" rx="4" fill="#f8f5ec" stroke="#d9cbac"/>
+<text x="557.0" y="175" font-size="12" fill="#3a3531" text-anchor="middle">3</text>
+<text x="110" y="214" font-size="13.5" fill="#2f6f6a" text-anchor="end" font-weight="700">chien</text>
+<rect x="122" y="192" width="42" height="36" rx="4" fill="#e4dccb" stroke="#d9cbac"/>
+<text x="143.0" y="215" font-size="12" fill="#7a6f63" text-anchor="middle">950</text>
+<rect x="168" y="192" width="42" height="36" rx="4" fill="#92b1aa" stroke="#d9cbac"/>
+<text x="189.0" y="215" font-size="12" fill="#fbf7ee" text-anchor="middle">90</text>
+<rect x="214" y="192" width="42" height="36" rx="4" fill="#6f9a93" stroke="#d9cbac"/>
+<text x="235.0" y="215" font-size="12" fill="#fbf7ee" text-anchor="middle">120</text>
+<rect x="260" y="192" width="42" height="36" rx="4" fill="#bbccc5" stroke="#d9cbac"/>
+<text x="281.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">55</text>
+<rect x="306" y="192" width="42" height="36" rx="4" fill="#ccd8d0" stroke="#d9cbac"/>
+<text x="327.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">40</text>
+<rect x="352" y="192" width="42" height="36" rx="4" fill="#faf6ed" stroke="#d9cbac"/>
+<text x="373.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">1</text>
+<rect x="398" y="192" width="42" height="36" rx="4" fill="#a4bdb5" stroke="#d9cbac"/>
+<text x="419.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">75</text>
+<rect x="444" y="192" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="465.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="490" y="192" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="511.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="536" y="192" width="42" height="36" rx="4" fill="#f6f4eb" stroke="#d9cbac"/>
+<text x="557.0" y="215" font-size="12" fill="#3a3531" text-anchor="middle">4</text>
+<text x="110" y="254" font-size="13.5" fill="#3a6ea5" text-anchor="end" font-weight="700">démocratie</text>
+<rect x="122" y="232" width="42" height="36" rx="4" fill="#e4dccb" stroke="#d9cbac"/>
+<text x="143.0" y="255" font-size="12" fill="#7a6f63" text-anchor="middle">800</text>
+<rect x="168" y="232" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="189.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="214" y="232" width="42" height="36" rx="4" fill="#faf6ee" stroke="#d9cbac"/>
+<text x="235.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">1</text>
+<rect x="260" y="232" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="281.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="306" y="232" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="327.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="352" y="232" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="373.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="398" y="232" width="42" height="36" rx="4" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="419.0" y="255" font-size="12" fill="#3a3531" text-anchor="middle">0</text>
+<rect x="444" y="232" width="42" height="36" rx="4" fill="#82a1c0" stroke="#d9cbac"/>
+<text x="465.0" y="255" font-size="12" fill="#fbf7ee" text-anchor="middle">110</text>
+<rect x="490" y="232" width="42" height="36" rx="4" fill="#92adc6" stroke="#d9cbac"/>
+<text x="511.0" y="255" font-size="12" fill="#fbf7ee" text-anchor="middle">95</text>
+<rect x="536" y="232" width="42" height="36" rx="4" fill="#6c91b8" stroke="#d9cbac"/>
+<text x="557.0" y="255" font-size="12" fill="#fbf7ee" text-anchor="middle">130</text>
+<text x="594" y="175" font-size="14" fill="#7a6f63" text-anchor="middle">…</text>
+<text x="594" y="215" font-size="14" fill="#7a6f63" text-anchor="middle">…</text>
+<text x="594" y="255" font-size="14" fill="#7a6f63" text-anchor="middle">…</text>
+<text x="350" y="292" font-size="11" fill="#5b5249" text-anchor="middle">… et 99 990 autres colonnes, une par mot du vocabulaire, presque toutes à 0</text>
+<text x="143.0" y="314" font-size="10.5" fill="#7a6f63" text-anchor="middle">« le », voisin de tout,</text>
+<text x="143.0" y="328" font-size="10.5" fill="#7a6f63" text-anchor="middle">ne dit rien</text>
+<line x1="614" y1="210" x2="664" y2="210" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="639" y="196" font-size="11" fill="#5b5249" text-anchor="middle">réduire</text>
+<text x="742.0" y="64" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">quelques nombres</text>
+<rect x="678" y="152" width="40" height="36" rx="4" fill="#89aba4" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="698.0" y="175" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,80</text>
+<rect x="722" y="152" width="40" height="36" rx="4" fill="#b4c7c0" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="742.0" y="175" font-size="11.5" fill="#3a3531" text-anchor="middle">0,50</text>
+<rect x="766" y="152" width="40" height="36" rx="4" fill="#edede5" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="786.0" y="175" font-size="11.5" fill="#3a3531" text-anchor="middle">−0,10</text>
+<rect x="678" y="192" width="40" height="36" rx="4" fill="#97b4ad" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="698.0" y="215" font-size="11.5" fill="#3a3531" text-anchor="middle">0,70</text>
+<rect x="722" y="192" width="40" height="36" rx="4" fill="#a5beb7" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="742.0" y="215" font-size="11.5" fill="#3a3531" text-anchor="middle">0,60</text>
+<rect x="766" y="192" width="40" height="36" rx="4" fill="#dee4dc" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="786.0" y="215" font-size="11.5" fill="#3a3531" text-anchor="middle">−0,20</text>
+<rect x="678" y="232" width="40" height="36" rx="4" fill="#edede9" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="698.0" y="255" font-size="11.5" fill="#3a3531" text-anchor="middle">0,10</text>
+<rect x="722" y="232" width="40" height="36" rx="4" fill="#e7e9e6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="742.0" y="255" font-size="11.5" fill="#3a3531" text-anchor="middle">−0,15</text>
+<rect x="766" y="232" width="40" height="36" rx="4" fill="#7b9cbd" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="786.0" y="255" font-size="11.5" fill="#fbf7ee" text-anchor="middle">0,95</text>
+<text x="742.0" y="300" font-size="11" fill="#3a3531" text-anchor="middle">ressemblance</text>
+<text x="742.0" y="317" font-size="11" fill="#2f6f6a" text-anchor="middle">chat–chien : <tspan font-weight="700">0,98</tspan></text>
+<text x="742.0" y="334" font-size="11" fill="#3a6ea5" text-anchor="middle">chat–démocratie : <tspan font-weight="700">−0,10</tspan></text>
+</svg>
