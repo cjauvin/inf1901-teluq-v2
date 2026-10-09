@@ -244,8 +244,11 @@ la redistribuer aux suites jamais vues. Plusieurs méthodes se sont succédé.
 - **Kneser et Ney** (1995). Leur méthode tient compte de la variété des contextes
   dans lesquels un mot apparaît. « Francisco » est un mot fréquent, mais il ne suit
   presque jamais autre chose que « San ». Dans un contexte inconnu, il doit donc
-  recevoir une probabilité faible. Cette méthode reste la meilleure jusqu'à
+  recevoir une probabilité faible, alors que « lunettes », moins fréquent mais
+  qui suit toutes sortes de mots, doit en recevoir une forte. Cette méthode reste la meilleure jusqu'à
   l'arrivée des réseaux de neurones.
+
+{{< image src="/images/module4/kneser-ney.svg" alt="En haut, deux panneaux. À gauche, le mot « Francisco », vu 1 000 fois dans le corpus, mais toujours après le même mot, « San » : une seule flèche épaisse y mène. À droite, le mot « lunettes », vu 300 fois seulement, mais après 120 mots différents, comme mes, des, ses, les, nouvelles ou vos : une gerbe de flèches fines y mène. En bas, un contexte jamais vu, « Je ne vois rien sans mes », et deux façons d'estimer le mot suivant. Selon la fréquence, « Francisco » l'emporte sur « lunettes », ce qui est absurde. Selon la variété des contextes, l'idée de Kneser-Ney, « lunettes » l'emporte nettement." title="Dans un contexte jamais vu, Kneser-Ney ne demande pas combien de fois un mot a été vu, mais après combien de mots différents. Les nombres sont donnés à titre d'illustration." loading="lazy" >}}
 
 Le lissage permet aussi de répondre à Chomsky. En 2000, Fernando Pereira entraîne
 un modèle lissé qui regroupe les mots en classes de mots semblables. Ce modèle juge
