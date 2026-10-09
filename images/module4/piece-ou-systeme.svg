@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le modèle de langage, de la pièce au système</title>
+<desc>Deux panneaux. À gauche, « Avant : une pièce du système » : dans un système de reconnaissance de la parole, un signal sonore passe par un composant qui analyse les sons et propose trois transcriptions, « un verre d'eau », « un vert d'eau » et « un ver d'eau ». Un petit modèle de langage, en arbitre, leur donne des probabilités, 0,92, 0,07 et 0,01, et retient « un verre d'eau ». À droite, « Depuis 2022 : le système » : un grand modèle de langage, au centre, reçoit trois demandes, une question sur la capitale de l'Australie, une phrase anglaise à traduire et une demande de programme, et produit lui-même les trois réponses.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="800" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="400.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le modèle de langage : d'une pièce du système au système lui-même</text>
+<rect x="20" y="52" width="370" height="398" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="205.0" y="78" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">Avant : une pièce du système</text>
+<text x="205.0" y="96" font-size="11" fill="#5b5249" text-anchor="middle">un système de reconnaissance de la parole</text>
+<polyline points="60.0,128.0 61.5,128.7 63.0,129.2 64.5,129.5 66.0,129.3 67.5,128.7 69.0,127.7 70.5,126.7 72.0,126.0 73.5,125.8 75.0,126.3 76.5,127.4 78.0,128.9 79.5,130.3 81.0,131.2 82.5,131.2 84.0,130.1 85.5,128.3 87.0,126.1 88.5,124.3 90.0,123.4 91.5,123.8 93.0,125.7 94.5,128.5 96.0,131.4 97.5,133.6 99.0,134.2 100.5,133.0 102.0,130.1 103.5,126.3 105.0,122.7 106.5,120.4 108.0,120.3 109.5,122.6 111.0,126.7 112.5,131.5 114.0,135.6 115.5,137.7 117.0,136.9 118.5,133.3 120.0,127.9 121.5,122.2 123.0,118.0 124.5,116.6 126.0,118.6 127.5,123.5 129.0,130.0 130.5,136.2 132.0,140.1 133.5,140.5 135.0,137.1 136.5,130.9 138.0,123.7 139.5,117.6 141.0,114.5 142.5,115.4 144.0,120.0 145.5,127.1 147.0,134.5 148.5,140.0 150.0,142.0 151.5,139.8 153.0,134.2 154.5,126.7 156.0,119.7 157.5,115.2 159.0,114.5 160.5,117.8 162.0,124.1 163.5,131.3 165.0,137.4 166.5,140.6 168.0,140.0 169.5,135.9 171.0,129.7 172.5,123.2 174.0,118.4 175.5,116.6 177.0,118.1 178.5,122.5 180.0,128.2 181.5,133.5 183.0,137.0 184.5,137.7 186.0,135.5 187.5,131.3 189.0,126.5 190.5,122.4 192.0,120.2 193.5,120.4 195.0,122.8 196.5,126.5 198.0,130.3 199.5,133.1 201.0,134.2 202.5,133.5 204.0,131.3 205.5,128.3 207.0,125.6 208.5,123.8 210.0,123.4 211.5,124.3 213.0,126.2 214.5,128.4 216.0,130.2 217.5,131.2 219.0,131.2 220.5,130.3 222.0,128.8 223.5,127.3 225.0,126.2 226.5,125.7 228.0,126.0 229.5,126.7 231.0,127.8 232.5,128.7 234.0,129.3 235.5,129.5 237.0,129.2 238.5,128.6" fill="none" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="252" y="132" font-size="11" fill="#5b5249">les sons</text>
+<line x1="150" y1="146" x2="150" y2="160" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="70" y="162" width="160" height="36" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="150.0" y="184.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">analyse des sons</text>
+<line x1="150" y1="200" x2="150" y2="214" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="60" y="218" width="180" height="24" rx="5" fill="#efe7d3" stroke="#c4564a" stroke-width="1.8"/>
+<text x="150" y="234" font-size="12" fill="#3a3531" text-anchor="middle" font-style="italic">un verre d'eau</text>
+<text x="256" y="234" font-size="12" fill="#c4564a" font-weight="700">0,92</text>
+<rect x="60" y="248" width="180" height="24" rx="5" fill="#efe7d3" stroke="#d9cbac" stroke-width="1"/>
+<text x="150" y="264" font-size="12" fill="#3a3531" text-anchor="middle" font-style="italic">un vert d'eau</text>
+<text x="256" y="264" font-size="12" fill="#5b5249" font-weight="400">0,07</text>
+<rect x="60" y="278" width="180" height="24" rx="5" fill="#efe7d3" stroke="#d9cbac" stroke-width="1"/>
+<text x="150" y="294" font-size="12" fill="#3a3531" text-anchor="middle" font-style="italic">un ver d'eau</text>
+<text x="256" y="294" font-size="12" fill="#5b5249" font-weight="400">0,01</text>
+<text x="150" y="212" font-size="10" fill="#5b5249" text-anchor="middle"> </text>
+<rect x="298" y="238" width="80" height="46" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.6"/>
+<text x="338.0" y="257.0" font-size="10.5" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="338.0" y="273.0" font-size="10.5" fill="#3a3531" text-anchor="middle" font-weight="700">de langage</text>
+<text x="338" y="300" font-size="10" fill="#2f6f6a" text-anchor="middle">l'arbitre</text>
+<line x1="296" y1="261" x2="288" y2="261" stroke="#2f6f6a" stroke-width="1.6"/>
+<path d="M288 230 L288 292" fill="none" stroke="#2f6f6a" stroke-width="1.6"/>
+<line x1="150" y1="308" x2="150" y2="326" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="60" y="330" width="180" height="30" rx="6" fill="#fbf7ee" stroke="#c4564a" stroke-width="2"/>
+<text x="150" y="350" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="700" font-style="italic">un verre d'eau</text>
+<text x="205.0" y="416" font-size="11" fill="#5b5249" text-anchor="middle">le modèle de langage choisit parmi</text>
+<text x="205.0" y="432" font-size="11" fill="#5b5249" text-anchor="middle">des propositions faites par d'autres</text>
+<rect x="410" y="52" width="370" height="398" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="595.0" y="78" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">Depuis 2022 : le système</text>
+<text x="595.0" y="96" font-size="11" fill="#5b5249" text-anchor="middle">un assistant comme ChatGPT</text>
+<text x="595.0" y="128" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-style="italic">« Capitale de l'Australie ? »</text>
+<text x="595.0" y="158" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-style="italic">« Traduis : the house is small »</text>
+<text x="595.0" y="188" font-size="11.5" fill="#3a6ea5" text-anchor="middle" font-style="italic">« Écris un programme qui… »</text>
+<line x1="595.0" y1="200" x2="595.0" y2="222" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="450" y="226" width="290" height="84" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.4"/>
+<text x="595.0" y="256" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="700">grand modèle de langage</text>
+<text x="595.0" y="284" font-size="11.5" fill="#5b5249" text-anchor="middle">prédit le mot suivant, encore et encore</text>
+<line x1="595.0" y1="314" x2="595.0" y2="334" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="595.0" y="352" font-size="12" fill="#3a3531" text-anchor="middle">Canberra.</text>
+<text x="595.0" y="374" font-size="12" fill="#3a3531" text-anchor="middle">La maison est petite.</text>
+<text x="595.0" y="396" font-size="12" fill="#3a3531" text-anchor="middle">def trier(liste): …</text>
+<text x="595.0" y="432" font-size="11" fill="#5b5249" text-anchor="middle">le modèle de langage fait lui-même tout le travail</text>
+</svg>
