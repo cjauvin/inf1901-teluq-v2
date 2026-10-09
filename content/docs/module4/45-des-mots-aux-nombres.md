@@ -129,10 +129,45 @@ relations, comme « un chat est un animal ». Ici, le sens n'est décrit par
 il est déduit de l'usage, en observant quels mots apparaissent ensemble dans
 d'énormes quantités de texte.
 
+
+## Compter les voisins
+
+La façon la plus directe d'appliquer cette idée est de compter. On parcourt un grand
+corpus, et pour chaque mot, on note les mots qui apparaissent près de lui, par
+exemple dans une fenêtre de deux mots avant et deux mots après. Chaque mot est alors
+représenté par un **sac de ses mots voisins** : une longue liste qui indique combien
+de fois chaque mot du vocabulaire est apparu à côté de lui. C'est le
+[sac de mots](docs/module2/60-classer/#le-cas-des-pourriels) du Module 2, mais
+construit autour d'un mot plutôt que d'un document.
+
+Ces listes ont exactement le comportement recherché. « Chat » et « chien » ont
+beaucoup de voisins communs (*croquettes*, *dort*, *caresse*, *vétérinaire*), donc
+des listes qui se ressemblent. « Démocratie » a des voisins tout différents (*vote*,
+*élection*, *liberté*). La ressemblance entre deux mots se mesure en comparant leurs
+listes.
+
+Ces vecteurs ont pourtant deux défauts.
+
+- **Ils sont immenses.** Avec un vocabulaire de 100 000 mots, chaque mot devient une
+  liste de 100 000 nombres, presque tous nuls.
+- **Les mots très fréquents dominent.** « Le » ou « de » sont voisins de tout, et ne
+  disent rien. On les pondère, comme le fait
+  [TF-IDF](docs/module4/42-les-outils-statistiques/#représenter-des-documents) pour
+  les documents.
+
+La solution est celle de
+l'[analyse sémantique latente](docs/module4/42-les-outils-statistiques/#représenter-des-documents) :
+réduire ces listes à quelques centaines de nombres, en gardant l'essentiel de leurs
+ressemblances. On obtient des vecteurs compacts, où chaque nombre résume une
+tendance de l'usage plutôt qu'un voisin précis.
+
+{{< image src="/images/module4/sac-des-voisins.svg" alt="À gauche, un tableau : trois mots en rangées, chat, chien et démocratie, et en colonnes dix mots voisins, avec le nombre de fois où chacun est apparu près du mot. Chat et chien ont des rangées semblables : croquettes, dort, caresse et vétérinaire reviennent souvent, et miaule pour l'un, aboie pour l'autre. Démocratie a une rangée différente : vote, élection et liberté. La colonne du mot « le » est grisée : il est voisin de tout, avec des comptes très élevés pour les trois mots. Une mention indique 99 990 autres colonnes, presque toutes à zéro. Une flèche « réduire » mène, à droite, à trois vecteurs de trois nombres seulement. Ceux de chat et de chien se ressemblent, avec une ressemblance de 0,98 ; ceux de chat et de démocratie, presque pas, avec une ressemblance de −0,1." title="Chaque mot est d'abord représenté par le sac de ses voisins, une liste immense et presque vide. Réduite à quelques nombres, elle garde l'essentiel : chat et chien restent proches, démocratie reste loin. Les nombres sont donnés à titre d'illustration." loading="lazy" >}}
+
 ## Les plongements
 
 En 2013, Tomas Mikolov et ses collègues, chez Google, publient **word2vec**, une
-méthode simple et rapide pour appliquer cette idée à grande échelle. Chaque mot
+méthode simple et rapide qui obtient directement ces vecteurs compacts, sans passer
+par l'immense tableau des voisins. Chaque mot
 reçoit une liste de quelques centaines de nombres, au départ tirés au hasard. Un
 petit réseau de neurones est ensuite entraîné sur des milliards de mots de texte à
 une tâche simple : à partir d'un mot, prédire les mots qui l'entourent. C'est un cas
@@ -140,7 +175,9 @@ d'[auto-supervision](docs/module2/80-trois-facons-d-apprendre/#fabriquer-soi-mê
 puisque le texte fournit lui-même les réponses. Pendant l'entraînement, la
 rétropropagation ajuste les nombres de chaque mot. Deux mots qui apparaissent dans
 les mêmes contextes, comme « chat » et « chien », finissent par recevoir des listes
-de nombres voisines.
+de nombres voisines. En 2014, Omer Levy et Yoav Goldberg ont d'ailleurs montré que
+word2vec revient, en pratique, à résumer un tableau de voisins pondéré : les deux
+approches se rejoignent.
 
 Chaque mot devient ainsi un point dans un espace de quelques centaines de
 dimensions, où la distance entre deux points correspond à la différence de sens. On
