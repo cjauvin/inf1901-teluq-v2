@@ -107,6 +107,35 @@ façon, alors que les modèles plus petits n'y parviennent presque pas. La réda
 requêtes est devenue une compétence à part entière, présentée au chapitre du
 [Module 4](docs/module4/80-outils-et-agents/#formuler-la-requête) sur les outils et les agents.
 
+Ces mots existaient avant les grands modèles de langage, avec un autre sens. En
+apprentissage automatique, l'**apprentissage à partir de quelques exemples**
+(*few-shot learning*) désignait la capacité d'apprendre une catégorie nouvelle, un
+oiseau ou un visage jamais vus, à partir d'une poignée d'exemples étiquetés, en
+ajustant les poids d'un modèle déjà entraîné. L'apprentissage **sans exemple**
+(*zero-shot learning*) désignait la reconnaissance d'une catégorie qu'on n'a jamais
+vue, à partir de sa seule description, par exemple « un oiseau au bec rouge et à la
+queue fourchue ». Avec GPT-3, les mêmes mots ont pris un sens nouveau : les exemples
+se trouvent dans la requête, et le modèle n'est pas entraîné du tout. Les deux sens
+coexistent encore, et il faut souvent deviner, d'après le contexte, lequel un auteur
+emploie.
+
+L'apprentissage en contexte n'est qu'un point sur un spectre. Pour faire accomplir
+une tâche à un modèle, on peut lui donner plus ou moins d'exemples, et modifier plus
+ou moins ses poids.
+
+| Façon de faire | Exemples nécessaires | Les poids changent-ils ? |
+|---|---|---|
+| requête sans exemple (*zero-shot*) | aucun, seulement une consigne | non |
+| requête avec quelques exemples (*few-shot*) | de un à quelques dizaines, placés dans la requête | non |
+| [ajustement](docs/module4/70-du-modele-a-l-assistant/#imiter-de-bonnes-réponses) (*fine-tuning*) | des centaines à des milliers | oui, un peu |
+| [entraînement complet](docs/module2/50-entrainer-un-modele) | des milliers à des milliards | oui, entièrement |
+
+Plus on descend dans le tableau, plus il faut de données et de calcul, mais plus le
+modèle se spécialise. En pratique, on essaie d'abord la requête, qui ne coûte presque
+rien, et on n'ajuste le modèle que si elle ne suffit pas. Jusqu'en 2020, presque tout
+se faisait dans les deux dernières rangées. La surprise de GPT-3 est que les deux
+premières suffisent souvent.
+
 ## Des capacités qui apparaissent ?
 
 En 2022, Jason Wei et ses collègues, chez Google, décrivent des **capacités
