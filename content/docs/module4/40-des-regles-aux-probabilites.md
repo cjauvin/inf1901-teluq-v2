@@ -131,7 +131,11 @@ de texte, la probabilité de chaque mot qui pourrait venir ensuite. Après « 
 dort sur le », il donne une probabilité élevée à « canapé », « lit » ou « tapis »,
 une probabilité faible à « toit », et une probabilité presque nulle à « démocratie ».
 C'est une [distribution](docs/module4/10-generer/#une-distribution-et-tirer-dedans),
-au sens du premier chapitre de ce module, et on peut y tirer des mots.
+au sens du premier chapitre de ce module, et on peut y tirer des mots au hasard,
+chacun selon sa probabilité. C'est l'**échantillonnage** (*sampling*), présenté au
+chapitre « [Générer](docs/module4/10-generer/#une-distribution-et-tirer-dedans) » :
+les mots probables sortent souvent, les mots improbables rarement, mais aucun n'est
+exclu d'avance.
 
 {{< image src="/images/module4/modele-de-langage.svg" alt="À gauche, le début de phrase « Le chat dort sur le » entre dans un modèle de langage. À droite, le modèle donne une probabilité à chaque mot qui pourrait suivre, sous forme de barres : canapé 28 %, lit 22 %, tapis 14 %, coussin 9 %, sol 7 %, fauteuil 6 %, d'autres mots 13,5 % au total, toit 0,5 %, et démocratie presque 0. En bas, on tire un mot selon ces probabilités, ici « lit », et la phrase devient « Le chat dort sur le lit »." title="Un modèle de langage donne une distribution sur le mot suivant. On y tire un mot, on l'ajoute au texte, et on recommence. Les probabilités sont données à titre d'illustration." loading="lazy" >}}
 
