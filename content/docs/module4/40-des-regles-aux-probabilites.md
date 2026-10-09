@@ -139,6 +139,27 @@ exclu d'avance.
 
 {{< image src="/images/module4/modele-de-langage.svg" alt="À gauche, le début de phrase « Le chat dort sur le » entre dans un modèle de langage. À droite, le modèle donne une probabilité à chaque mot qui pourrait suivre, sous forme de barres : canapé 28 %, lit 22 %, tapis 14 %, coussin 9 %, sol 7 %, fauteuil 6 %, d'autres mots 13,5 % au total, toit 0,5 %, et démocratie presque 0. En bas, on tire un mot selon ces probabilités, ici « lit », et la phrase devient « Le chat dort sur le lit »." title="Un modèle de langage donne une distribution sur le mot suivant. On y tire un mot, on l'ajoute au texte, et on recommence. Les probabilités sont données à titre d'illustration." loading="lazy" >}}
 
+En notation mathématique, on écrit les mots d'un texte $w_1, w_2, w_3, \dots$ (*w*
+pour *word*, « mot » en anglais). Un modèle de langage donne la probabilité du mot
+suivant, sachant tous ceux qui le précèdent :
+
+$$P(w_i \mid w_1, \dots, w_{i-1})$$
+
+La barre verticale se lit « sachant », comme dans les probabilités conditionnelles
+de la [classification bayésienne](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne)
+du Module 2. Dans l'exemple ci-dessus,
+$P(\text{canapé} \mid \text{le chat dort sur le}) = 0{,}28$.
+
+Ces probabilités suffisent pour donner une probabilité à un texte entier : on
+multiplie la probabilité de chaque mot, sachant ceux qui le précèdent.
+
+$$\begin{aligned} P(w_1, \dots, w_N) &= P(w_1) \times P(w_2 \mid w_1) \times P(w_3 \mid w_1, w_2) \times \dots \\ &= \prod_{i=1}^{N} P(w_i \mid w_1, \dots, w_{i-1}) \end{aligned}$$
+
+C'est la **règle de la chaîne** (*chain rule*) des probabilités. Elle est exacte :
+elle ne fait aucune hypothèse sur la langue. Toute la difficulté consiste à estimer
+chacun de ses facteurs. La même règle permet de générer un texte : on tire $w_1$,
+puis $w_2$ sachant $w_1$, puis $w_3$ sachant les deux premiers, et ainsi de suite.
+
 Les modèles de langage existaient bien avant ChatGPT, mais ils jouaient un rôle de
 second plan. Pendant des décennies, ils ont été une **pièce** parmi d'autres dans des
 systèmes plus vastes, où d'autres composants faisaient l'essentiel du travail. Le
@@ -185,6 +206,21 @@ prédit chaque mot d'après les *n* − 1 mots qui le précèdent, en comptant d
 grand corpus de textes combien de fois chaque mot les a suivis. Le
 [travail noté 4](docs/module4/99-travail-noté-4) construit un modèle à bigrammes
 (*n* = 2) dans un tableur.
+
+En notation, un modèle à bigrammes remplace chaque facteur de la règle de la chaîne
+par une approximation qui ne garde que le mot précédent :
+
+$$P(w_i \mid w_1, \dots, w_{i-1}) \approx P(w_i \mid w_{i-1})$$
+
+C'est l'**hypothèse de Markov** : le passé lointain est oublié, seul compte le
+contexte immédiat. Un modèle à trigrammes garde les deux mots précédents, et ainsi
+de suite. Chaque probabilité s'estime ensuite en comptant :
+
+$$P(w_i \mid w_{i-1}) = \frac{C(w_{i-1}\, w_i)}{C(w_{i-1})}$$
+
+où $C$ désigne le nombre d'occurrences dans le corpus. Si « capitaine » apparaît
+1 000 fois dans un corpus, et « capitaine Nemo » 400 fois, alors
+$P(\text{Nemo} \mid \text{capitaine}) = 400 / 1000 = 0{,}4$.
 
 L'applet ci-dessous contient un modèle à n-grammes entraîné sur deux romans de Jules
 Verne, *Le Tour du monde en quatre-vingts jours* et *Vingt mille lieues sous les
@@ -287,7 +323,7 @@ qui progresse est un LLM dont la perplexité baisse.
 
 Pour un texte de $N$ mots $w_1, \dots, w_N$, la perplexité d'un modèle est
 
-$$\mathrm{PP} = P(w_1, \dots, w_N)^{-1/N} = \exp\Big(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i \mid w_1, \dots, w_{i-1})\Big).$$
+$$\begin{aligned} \mathrm{PP} &= P(w_1, \dots, w_N)^{-1/N} \\ &= \exp\Big(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i \mid w_1, \dots, w_{i-1})\Big). \end{aligned}$$
 
 La quantité dans l'exponentielle est la moyenne, sur tous les mots du texte, de
 $-\log P$ du mot qui vient vraiment. C'est l'**entropie croisée** (*cross-entropy*),
