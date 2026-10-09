@@ -23,8 +23,18 @@ sur des milliards de mots de français.
 
 ## La première idée : un numéro par mot
 
-La solution la plus simple consiste à numéroter les mots du vocabulaire, puis à
-représenter chaque mot par une liste de zéros, avec un seul 1 à la position de son
+On pourrait se contenter de numéroter les mots du vocabulaire, de 1 à 50 000, et de
+donner au réseau le numéro de chaque mot. Cela ne fonctionne pas. Un
+[neurone](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique)
+traite ses entrées comme des quantités : il les multiplie par des poids et les
+additionne. Le numéro deviendrait donc une grandeur. Si « chat » porte le numéro
+8 112 et « chaise » le numéro 8 113, le réseau les traiterait comme presque
+identiques, simplement parce qu'ils se suivent dans l'ordre alphabétique. Et le mot
+numéro 40 000 pèserait cinq fois plus que le mot numéro 8 000. Or l'ordre de la
+liste est arbitraire, et ces écarts ne veulent rien dire.
+
+La solution consiste plutôt à numéroter les mots, puis à représenter chaque mot par
+une liste de zéros, avec un seul 1 à la position de son
 numéro. Si le vocabulaire compte 50 000 mots, chaque mot devient une liste de
 50 000 nombres. On appelle ce code **un parmi *n*** (*one-hot encoding*). Le
 [sac de mots](docs/module2/60-classer/#le-cas-des-pourriels) du Module 2, qui
