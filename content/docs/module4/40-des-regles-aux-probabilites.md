@@ -166,6 +166,8 @@ langage passe au premier plan. Il n'est plus une pièce du système, il est le
 système. La même opération, prédire le mot suivant, suffit alors à répondre à des
 questions, à traduire, à résumer ou à écrire un programme.
 
+{{< image src="/images/module4/piece-ou-systeme.svg" alt="Deux panneaux. À gauche, « Avant : une pièce du système » : dans un système de reconnaissance de la parole, un signal sonore passe par un composant qui analyse les sons et propose trois transcriptions, « un verre d'eau », « un vert d'eau » et « un ver d'eau ». Un petit modèle de langage, en arbitre, leur donne des probabilités, 0,92, 0,07 et 0,01, et retient « un verre d'eau ». À droite, « Depuis 2022 : le système » : un grand modèle de langage, au centre, reçoit trois demandes, une question sur la capitale de l'Australie, une phrase anglaise à traduire et une demande de programme, et produit lui-même les trois réponses." title="Avant, le modèle de langage arbitrait entre des propositions faites par d'autres composants. Depuis 2022, il fait lui-même tout le travail." loading="lazy" >}}
+
 ## Compter : les n-grammes
 
 La façon la plus simple d'estimer ces probabilités est de compter. En 1913, le
