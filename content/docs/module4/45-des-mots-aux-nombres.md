@@ -21,36 +21,10 @@ chaque morceau par des nombres. Ce chapitre présente les deux, avec de vrais ou
 le découpage utilisé par un modèle d'OpenAI, et des représentations de mots apprises
 sur des milliards de mots de français.
 
-## La première idée : un numéro par mot
-
-On pourrait se contenter de numéroter les mots du vocabulaire, de 1 à 50 000, et de
-donner au réseau le numéro de chaque mot. Cela ne fonctionne pas. Un
-[neurone](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique)
-traite ses entrées comme des quantités : il les multiplie par des poids et les
-additionne. Le numéro deviendrait donc une grandeur. Si « chat » porte le numéro
-8 112 et « chaise » le numéro 8 113, le réseau les traiterait comme presque
-identiques, simplement parce qu'ils se suivent dans l'ordre alphabétique. Et le mot
-numéro 40 000 pèserait cinq fois plus que le mot numéro 8 000. Or l'ordre de la
-liste est arbitraire, et ces écarts ne veulent rien dire.
-
-La solution consiste plutôt à numéroter les mots, puis à représenter chaque mot par
-une liste de zéros, avec un seul 1 à la position de son
-numéro. Si le vocabulaire compte 50 000 mots, chaque mot devient une liste de
-50 000 nombres. On appelle ce code **un parmi *n*** (*one-hot encoding*). Le
-[sac de mots](docs/module2/60-classer/#le-cas-des-pourriels) du Module 2, qui
-représentait un courriel par les mots qu'il contient, était construit de cette
-façon.
-
-Ce code a un défaut. Tous les mots y sont à la même distance les uns des autres :
-« chat » est aussi loin de « chien » que de « démocratie ». Le code identifie les
-mots, mais il ne dit rien de leur sens. Un modèle qui a appris quelque chose sur les
-chats ne peut rien en tirer pour les chiens.
-
-{{< image src="/images/module4/un-parmi-n-ou-plongement.svg" alt="Deux panneaux. À gauche, trois mots, chat, chien et démocratie, codés chacun par une rangée de cases où une seule case est pleine, à une position différente : les trois paires de mots sont à la même distance. À droite, une carte calculée à partir de vrais plongements : chat, chien, lapin et cheval forment un groupe, rouge, bleu et vert un autre, démocratie, république et liberté un troisième, loin des deux premiers." title="À gauche, le code un parmi n ne dit rien du sens. À droite, de vrais plongements, projetés sur un plan : les mots de sens voisin sont proches." loading="lazy" >}}
-
 ## Découper le texte : les jetons
 
-Un vocabulaire de mots entiers pose aussi un problème pratique. Que faire d'un mot
+Avant de représenter les mots par des nombres, il faut décider de ce qu'est un mot.
+Un vocabulaire de mots entiers pose un problème pratique. Que faire d'un mot
 qui n'y figure pas, comme un nom propre, un mot rare, une faute de frappe, un mot
 d'une autre langue ou un mot inventé ? Aucune liste de mots ne peut tout prévoir.
 
@@ -92,10 +66,39 @@ Quelques manipulations à faire :
 4. Regardez les nombres. « 12 345 » et « 38 781,93 » sont coupés en groupes de
    chiffres, ce qui complique le calcul.
 
+## La première idée : un numéro par mot
+
+Une fois le texte découpé, il faut représenter chaque jeton par des nombres. Pour
+simplifier, parlons de mots : les mots courants sont de toute façon des jetons
+entiers. On pourrait se contenter de numéroter les mots du vocabulaire, de 1 à
+100 000, et de donner au réseau le numéro de chaque mot. Cela ne fonctionne pas. Un
+[neurone](docs/module3/10-un-neurone/#un-neurone-est-une-régression-logistique)
+traite ses entrées comme des quantités : il les multiplie par des poids et les
+additionne. Le numéro deviendrait donc une grandeur. Si « chat » porte le numéro
+8 112 et « chaise » le numéro 8 113, le réseau les traiterait comme presque
+identiques, simplement parce qu'ils se suivent dans la liste. Et le mot
+numéro 40 000 pèserait cinq fois plus que le mot numéro 8 000. Or l'ordre de la
+liste est arbitraire, et ces écarts ne veulent rien dire.
+
+La solution consiste plutôt à numéroter les mots, puis à représenter chaque mot par
+une liste de zéros, avec un seul 1 à la position de son
+numéro. Si le vocabulaire compte 100 000 mots, chaque mot devient une liste de
+100 000 nombres. On appelle ce code **un parmi *n*** (*one-hot encoding*). Le
+[sac de mots](docs/module2/60-classer/#le-cas-des-pourriels) du Module 2, qui
+représentait un courriel par les mots qu'il contient, était construit de cette
+façon.
+
+Ce code a un défaut. Tous les mots y sont à la même distance les uns des autres :
+« chat » est aussi loin de « chien » que de « démocratie ». Le code identifie les
+mots, mais il ne dit rien de leur sens. Un modèle qui a appris quelque chose sur les
+chats ne peut rien en tirer pour les chiens.
+
+{{< image src="/images/module4/un-parmi-n-ou-plongement.svg" alt="Deux panneaux. À gauche, trois mots, chat, chien et démocratie, codés chacun par une rangée de cases où une seule case est pleine, à une position différente : les trois paires de mots sont à la même distance. À droite, une carte calculée à partir de vrais plongements : chat, chien, lapin et cheval forment un groupe, rouge, bleu et vert un autre, démocratie, république et liberté un troisième, loin des deux premiers." title="À gauche, le code un parmi n ne dit rien du sens. À droite, de vrais plongements, projetés sur un plan : les mots de sens voisin sont proches." loading="lazy" >}}
+
 ## On reconnaît un mot à ses fréquentations
 
-Une fois le texte découpé, il faut représenter chaque jeton par des nombres qui
-reflètent son sens. L'idée qui permet de le faire vient de la linguistique.
+Pour que les nombres reflètent le sens des mots, il faut une autre idée. Elle vient
+de la linguistique.
 
 {{% hint info %}}
 **Un mot inconnu**
