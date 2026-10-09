@@ -266,23 +266,46 @@ Le **lissage** (*smoothing*) retire un peu de probabilité aux suites observées
 la redistribuer aux suites jamais vues. Plusieurs méthodes se sont succédé.
 
 - **Ajouter un.** On fait comme si chaque suite possible avait été vue une fois de
-  plus qu'en réalité. C'est la règle de Laplace, du XVIIIᵉ siècle. Elle est simple,
-  mais elle donne beaucoup trop de probabilité aux suites inconnues.
+  plus qu'en réalité. C'est la règle de Laplace, du XVIIIᵉ siècle. Pour des
+  bigrammes, avec un vocabulaire de $V$ mots :
+
+  $$P(w_i \mid w_{i-1}) = \frac{C(w_{i-1}\, w_i) + 1}{C(w_{i-1}) + V}$$
+
+  Une suite jamais vue reçoit ainsi une probabilité de $1 / (C(w_{i-1}) + V)$,
+  petite mais pas nulle. La méthode est simple, mais avec un vocabulaire de
+  dizaines de milliers de mots, elle donne beaucoup trop de probabilité aux suites
+  inconnues.
 - **Good et Turing.** Pendant la Seconde Guerre mondiale, à Bletchley Park, en
   [déchiffrant Enigma](docs/module1/10-turing/#le-moment), Alan Turing et son
   assistant I. J. Good mettent au point une façon d'estimer la probabilité de
-  rencontrer un élément jamais vu : elle dépend du nombre d'éléments vus une seule
-  fois. Si beaucoup de suites n'ont été vues qu'une fois, il en reste sans doute
-  beaucoup à découvrir. Good publie la méthode en 1953.
+  rencontrer un élément jamais vu. Si $N_1$ est le nombre de suites vues une seule
+  fois, et $N$ le nombre total de suites observées, la probabilité que la
+  prochaine suite soit nouvelle vaut environ
+
+  $$P(\text{suite jamais vue}) \approx \frac{N_1}{N}$$
+
+  Si beaucoup de suites n'ont été vues qu'une fois, il en reste sans doute beaucoup
+  à découvrir. Good publie la méthode en 1953.
 - **Le repli** (*backoff*, Slava Katz, 1987). Quand le contexte de trois mots n'a
-  jamais été vu, on se replie sur les deux derniers mots, puis sur le dernier.
-  C'est ce que fait l'applet ci-dessus.
+  jamais été vu, on se replie sur les deux derniers mots, puis sur le dernier :
+
+  $$P(w_i \mid w_{i-2}, w_{i-1}) = \begin{cases} P_3(w_i \mid w_{i-2}, w_{i-1}) & \text{si } C(w_{i-2}\, w_{i-1}\, w_i) > 0 \\ \alpha \cdot P(w_i \mid w_{i-1}) & \text{sinon} \end{cases}$$
+
+  où $P_3$ est l'estimation par comptage des trigrammes, et le facteur $\alpha$
+  redistribue la probabilité mise de côté. C'est ce que fait
+  l'applet ci-dessus.
 - **Kneser et Ney** (1995). Leur méthode tient compte de la variété des contextes
   dans lesquels un mot apparaît. « Francisco » est un mot fréquent, mais il ne suit
   presque jamais autre chose que « San ». Dans un contexte inconnu, il doit donc
-  recevoir une probabilité faible, alors que « lunettes », moins fréquent mais
-  qui suit toutes sortes de mots, doit en recevoir une forte. Cette méthode reste la meilleure jusqu'à
-  l'arrivée des réseaux de neurones.
+  recevoir une probabilité faible, alors que « lunettes », moins fréquent mais qui
+  suit toutes sortes de mots, doit en recevoir une forte. Quand il faut se replier,
+  la probabilité d'un mot ne dépend donc pas de sa fréquence, mais du nombre de
+  mots différents qui le précèdent :
+
+  $$P_{\text{KN}}(w) \propto \text{nombre de mots différents } v \text{ tels que } C(v\, w) > 0$$
+
+  Le symbole $\propto$ se lit « proportionnel à ». Cette méthode reste la meilleure
+  jusqu'à l'arrivée des réseaux de neurones.
 
 {{< image src="/images/module4/kneser-ney.svg" alt="En haut, deux panneaux. À gauche, le mot « Francisco », vu 1 000 fois dans le corpus, mais toujours après le même mot, « San » : une seule flèche épaisse y mène. À droite, le mot « lunettes », vu 300 fois seulement, mais après 120 mots différents, comme mes, des, ses, les, nouvelles ou vos : une gerbe de flèches fines y mène. En bas, un contexte jamais vu, « Je ne vois rien sans mes », et deux façons d'estimer le mot suivant. Selon la fréquence, « Francisco » l'emporte sur « lunettes », ce qui est absurde. Selon la variété des contextes, l'idée de Kneser-Ney, « lunettes » l'emporte nettement." title="Dans un contexte jamais vu, Kneser-Ney ne demande pas combien de fois un mot a été vu, mais après combien de mots différents. Les nombres sont donnés à titre d'illustration." loading="lazy" >}}
 
