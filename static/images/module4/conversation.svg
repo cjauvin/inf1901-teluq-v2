@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 500" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une conversation qui n'en est pas une</title>
+<desc>Deux rangées de trois répliques. En haut, un modèle de langage : à la première réplique, il reçoit les instructions de départ et la première question, et produit la première réponse ; à la deuxième, il reçoit tout cela de nouveau, plus la deuxième question ; à la troisième, encore tout, plus la troisième question. La barre de texte s'allonge à chaque réplique, alors que le modèle, au milieu, reste identique, avec des paramètres fixes. En bas, une personne : à chaque réplique, seule la nouvelle question entre ; ce qui change, c'est un état intérieur, dessiné dans une tête, qui grandit et évolue d'une réplique à l'autre.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="500" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Une conversation : le modèle relit tout, la personne se souvient</text>
+<rect x="20" y="50" width="800" height="214" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="72" font-size="13" fill="#9a5b33" font-weight="700">Un modèle de langage : à chaque réplique, tout le texte est présenté de nouveau</text>
+<text x="175" y="98" font-size="11.5" fill="#5b5249" text-anchor="middle">réplique 1</text>
+<rect x="139.0" y="108" width="34" height="22" rx="4" fill="#7a6f63"/>
+<text x="156.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">inst.</text>
+<rect x="175.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="192.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q1</text>
+<line x1="175" y1="134" x2="175" y2="150" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="113" y="153" width="124" height="38" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="175" y="169" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="175" y="184" font-size="10" fill="#5b5249" text-anchor="middle">paramètres fixes</text>
+<line x1="175" y1="193" x2="175" y2="209" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="157.0" y="212" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="174.0" y="227" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R1</text>
+<text x="435" y="98" font-size="11.5" fill="#5b5249" text-anchor="middle">réplique 2</text>
+<rect x="363.0" y="108" width="34" height="22" rx="4" fill="#7a6f63"/>
+<text x="380.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">inst.</text>
+<rect x="399.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="416.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q1</text>
+<rect x="435.0" y="108" width="34" height="22" rx="4" fill="#2f6f6a"/>
+<text x="452.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R1</text>
+<rect x="471.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="488.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q2</text>
+<line x1="435" y1="134" x2="435" y2="150" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="373" y="153" width="124" height="38" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="435" y="169" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="435" y="184" font-size="10" fill="#5b5249" text-anchor="middle">paramètres fixes</text>
+<line x1="435" y1="193" x2="435" y2="209" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="417.0" y="212" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="434.0" y="227" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R2</text>
+<text x="695" y="98" font-size="11.5" fill="#5b5249" text-anchor="middle">réplique 3</text>
+<rect x="587.0" y="108" width="34" height="22" rx="4" fill="#7a6f63"/>
+<text x="604.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">inst.</text>
+<rect x="623.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="640.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q1</text>
+<rect x="659.0" y="108" width="34" height="22" rx="4" fill="#2f6f6a"/>
+<text x="676.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R1</text>
+<rect x="695.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="712.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q2</text>
+<rect x="731.0" y="108" width="34" height="22" rx="4" fill="#2f6f6a"/>
+<text x="748.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R2</text>
+<rect x="767.0" y="108" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="784.0" y="123" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q3</text>
+<line x1="695" y1="134" x2="695" y2="150" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="633" y="153" width="124" height="38" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="695" y="169" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="695" y="184" font-size="10" fill="#5b5249" text-anchor="middle">paramètres fixes</text>
+<line x1="695" y1="193" x2="695" y2="209" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="677.0" y="212" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="694.0" y="227" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R3</text>
+<text x="420.0" y="254" font-size="11" fill="#5b5249" text-anchor="middle">le texte s'allonge à chaque réplique ; le modèle, lui, ne change pas et ne garde rien d'une réplique à l'autre</text>
+<rect x="20" y="276" width="800" height="190" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="298" font-size="13" fill="#9a5b33" font-weight="700">Une personne : seule la nouvelle phrase entre, et un état intérieur évolue</text>
+<rect x="157.0" y="314" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="174.0" y="329" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q1</text>
+<line x1="175" y1="340" x2="175" y2="352" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="175" cy="384" r="30" fill="#efe7d3" stroke="#5b5249" stroke-width="1.6"/>
+<circle cx="175" cy="384" r="9" fill="#9fc7c2"/>
+<line x1="175" y1="416" x2="175" y2="426" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="157.0" y="428" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="174.0" y="443" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R1</text>
+<line x1="211" y1="384" x2="399" y2="384" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="305.0" y="376" font-size="10.5" fill="#2f6f6a" text-anchor="middle">l'état intérieur</text>
+<text x="305.0" y="402" font-size="10.5" fill="#2f6f6a" text-anchor="middle">évolue</text>
+<rect x="417.0" y="314" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="434.0" y="329" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q2</text>
+<line x1="435" y1="340" x2="435" y2="352" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="435" cy="384" r="30" fill="#efe7d3" stroke="#5b5249" stroke-width="1.6"/>
+<circle cx="435" cy="384" r="14" fill="#6aa49d"/>
+<line x1="435" y1="416" x2="435" y2="426" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="417.0" y="428" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="434.0" y="443" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R2</text>
+<line x1="471" y1="384" x2="659" y2="384" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="565.0" y="376" font-size="10.5" fill="#2f6f6a" text-anchor="middle">l'état intérieur</text>
+<text x="565.0" y="402" font-size="10.5" fill="#2f6f6a" text-anchor="middle">évolue</text>
+<rect x="677.0" y="314" width="34" height="22" rx="4" fill="#3a6ea5"/>
+<text x="694.0" y="329" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">Q3</text>
+<line x1="695" y1="340" x2="695" y2="352" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="695" cy="384" r="30" fill="#efe7d3" stroke="#5b5249" stroke-width="1.6"/>
+<circle cx="695" cy="384" r="19" fill="#2f6f6a"/>
+<line x1="695" y1="416" x2="695" y2="426" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="677.0" y="428" width="34" height="22" rx="4" fill="#c4564a"/>
+<text x="694.0" y="443" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">R3</text>
+<text x="420.0" y="486" font-size="10.5" fill="#5b5249" text-anchor="middle">inst. : instructions de départ ; Q : question ; R : réponse (en rouge, la réponse produite à cette réplique)</text>
+</svg>

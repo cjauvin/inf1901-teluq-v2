@@ -152,8 +152,47 @@ Le nombre de jetons que le modèle peut lire d'un coup s'appelle sa **fenêtre d
 contexte** (*context window*). Elle était de 512 jetons pour le premier GPT, en 2018.
 En 2024, Google présente Gemini 1.5, dont la fenêtre atteint un million de jetons,
 soit plusieurs romans entiers. Cette fenêtre est aussi la seule mémoire du modèle
-pendant une conversation : à chaque réponse, toute la conversation précédente lui est
-présentée de nouveau comme un texte à continuer.
+pendant une conversation, comme le montre la section suivante.
+
+## Une conversation qui n'en est pas une
+
+Une conversation avec un assistant ressemble à un échange entre deux
+interlocuteurs : on pose une question, il répond, on enchaîne, il se souvient de ce
+qu'on a dit. Le mécanisme est pourtant tout autre.
+
+Le modèle n'a aucune mémoire d'une réplique à l'autre. Ses paramètres sont fixés une
+fois pour toutes à la fin de l'entraînement, et rien de ce qu'on lui dit ne les
+modifie. Ce qui donne l'illusion de la continuité, c'est l'application qui
+l'entoure. À chaque nouvelle réplique, elle reconstitue un seul long texte, qui
+contient les instructions de départ, tous les messages échangés depuis le début et
+toutes les réponses déjà données par le modèle. Elle le lui présente comme un texte
+à continuer. Le modèle prédit alors un jeton, qu'on ajoute au texte, puis le
+suivant, en tenant compte chaque fois de la totalité de ce qui précède. À la
+réplique suivante, tout recommence. En pratique, les calculs déjà faits sont
+conservés pour aller plus vite, mais le principe ne change pas : le modèle ne voit
+qu'un texte.
+
+{{< image src="/images/module4/conversation.svg" alt="Deux rangées de trois répliques. En haut, un modèle de langage : à la première réplique, il reçoit les instructions de départ et la première question, et produit la première réponse ; à la deuxième, il reçoit tout cela de nouveau, plus la deuxième question ; à la troisième, encore tout, plus la troisième question. La barre de texte s'allonge à chaque réplique, alors que le modèle, au milieu, reste identique, avec des paramètres fixes. En bas, une personne : à chaque réplique, seule la nouvelle question entre ; ce qui change, c'est un état intérieur, dessiné dans une tête, qui grandit et évolue d'une réplique à l'autre." title="Pour le modèle, chaque réplique repart de zéro : toute la conversation lui est présentée de nouveau, comme un texte à continuer. Pour une personne, seule la nouvelle phrase entre, et c'est son état intérieur qui porte la conversation." loading="lazy" >}}
+
+Une conversation humaine fonctionne autrement. Nous ne relisons pas la
+transcription de l'échange avant chaque réplique. Ce que l'autre dit modifie au fur
+et à mesure notre état intérieur, ce que nous comprenons, croyons et voulons. Nous
+oublions vite les mots exacts, mais nous retenons l'essentiel, et nous nous en
+souviendrons demain. Le modèle fait presque l'inverse.
+
+- Il dispose de chaque mot exact de la conversation, tant qu'elle tient dans sa
+  fenêtre de contexte.
+- Il n'a rien d'autre : aucun souvenir de la veille, sauf si l'application glisse
+  des notes dans le texte qu'elle lui présente.
+- Quand la conversation dépasse la fenêtre, les passages les plus anciens sont
+  simplement retirés, et il les oublie d'un coup.
+
+On peut se représenter chaque réplique comme si l'on remettait la transcription
+complète à un nouvel interlocuteur, qui ne vous a jamais rencontré, en lui demandant
+d'écrire la suite. C'est la situation du héros de *Memento* (Christopher Nolan,
+2000) : incapable de former de nouveaux souvenirs, il ne s'y retrouve qu'en relisant
+ses notes. Une conséquence pratique en découle : plus une conversation est longue,
+plus chaque réponse demande de calculs, et plus elle coûte cher.
 
 ## Ce que la prédiction exige
 
