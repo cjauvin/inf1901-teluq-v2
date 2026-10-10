@@ -204,8 +204,30 @@ On peut se représenter chaque réplique comme si l'on remettait la transcriptio
 complète à un nouvel interlocuteur, qui ne vous a jamais rencontré, en lui demandant
 d'écrire la suite. C'est la situation du héros de *Memento* (Christopher Nolan,
 2000) : incapable de former de nouveaux souvenirs, il ne s'y retrouve qu'en relisant
-ses notes. Une conséquence pratique en découle : plus une conversation est longue,
-plus chaque réponse demande de calculs, et plus elle coûte cher.
+ses notes.
+
+C'est pourquoi la taille de la fenêtre compte autant, et pourquoi elle est passée de
+512 jetons en 2018 à un million en 2024. Une fenêtre plus grande permet :
+
+- de tenir de longues conversations sans que le début s'efface ;
+- de confier au modèle un document entier (un contrat, un mémoire, un livre, tout le
+  code d'un logiciel) et de l'interroger sur l'ensemble plutôt que sur des extraits ;
+- de lui donner de nombreux exemples dans la requête, pour
+  l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte) ;
+- de laisser un [agent](docs/module4/80-outils-et-agents/#des-agents) accumuler le
+  résultat de ses actions au fil d'une longue tâche.
+
+Tout ce que le modèle doit savoir pour répondre, et qu'il n'a pas appris pendant
+l'entraînement, doit se trouver dans cette fenêtre. Quand les documents n'y tiennent
+pas, il faut choisir les passages à y placer. C'est la
+[génération augmentée par la recherche](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite).
+
+Une grande fenêtre a toutefois un prix. Dans l'attention, chaque jeton est comparé à
+tous ceux qui le précèdent : doubler la longueur du texte multiplie à peu près par
+quatre ces calculs. Plus une conversation est longue, plus chaque réponse coûte cher.
+De plus, les modèles n'exploitent pas toute leur fenêtre aussi bien. En 2023, Nelson
+Liu et ses collègues, à Stanford, montrent qu'ils retrouvent mieux une information
+placée au début ou à la fin d'un long texte qu'au milieu (*lost in the middle*).
 
 {{% hint warning %}}
 **Deux idées à bien saisir**
