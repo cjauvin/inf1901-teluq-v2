@@ -207,6 +207,29 @@ d'écrire la suite. C'est la situation du héros de *Memento* (Christopher Nolan
 ses notes. Une conséquence pratique en découle : plus une conversation est longue,
 plus chaque réponse demande de calculs, et plus elle coûte cher.
 
+{{% hint warning %}}
+**Deux idées à bien saisir**
+
+Ces deux idées méritent qu'on s'y arrête. Elles vont à l'encontre de l'intuition, et
+comptent parmi les aspects des grands modèles de langage les plus mal compris du
+grand public.
+
+1. **Une conversation avec un modèle de langage n'en est pas une, au sens
+   habituel.** Le modèle ne suit pas l'échange. À chaque réplique, toute la
+   conversation lui est présentée de nouveau, depuis le début, comme un texte à
+   continuer.
+2. **Le modèle n'apprend rien de ses conversations.** Au cours d'un échange, il peut
+   sembler retenir une correction, s'adapter à une préférence ou apprendre une façon
+   de faire. C'est l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte).
+   Mais tout cela n'existe que dans le texte qu'on lui présente : ses paramètres ne
+   changent pas. Une nouvelle conversation repart de zéro, et une erreur corrigée
+   dans un échange pourra être refaite dans le suivant. Les fonctions de « mémoire »
+   de certains assistants ne changent rien au principe, puisqu'elles glissent des
+   notes dans ce texte. Seul un nouvel entraînement modifie un modèle. Une entreprise
+   peut se servir des conversations pour entraîner une version suivante, mais ce sera
+   un autre modèle, publié des mois plus tard.
+{{% /hint %}}
+
 ## Ce que la prédiction exige
 
 La tâche paraît modeste. On compare souvent ces modèles à la fonction de complétion
