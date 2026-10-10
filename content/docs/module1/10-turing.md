@@ -272,6 +272,13 @@ Ce remplacement transforme un paradoxe sans issue en théorème.
 
 {{< image src="/images/module1/paradoxe-menteur.svg" alt="Un personnage déclare « Je mens toujours. » ; un symbole de boucle sans fin illustre que l'affirmation ne peut être ni vraie ni fausse : s'il dit vrai, alors il ment, et s'il ment, alors il dit vrai." title="Le paradoxe du menteur : une phrase qui porte sur elle-même et ne peut être ni vraie ni fausse." loading="lazy" >}}
 
+La science-fiction a souvent prêté ce paradoxe aux humains pour piéger les machines.
+Dans l'épisode « I, Mudd » de la série *Star Trek* (1967), le capitaine Kirk et
+l'escroc Harry Mudd mettent hors d'état de fonctionner un androïde en lui servant une
+variante du paradoxe du menteur.
+
+{{< youtube EzVxsYzXI_Y >}}
+
 Il faut éviter deux contresens. Le théorème ne dit **pas** que « les mathématiques
 sont fausses », ni que la vérité serait une affaire d'opinion. C'est une limite
 **précise** sur ce qu'une démonstration *formelle, à l'intérieur d'un système
