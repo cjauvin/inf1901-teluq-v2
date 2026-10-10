@@ -71,16 +71,16 @@ l'autre, ce qui rend leur entraînement lent.
 ## Trois façons d'assembler le Transformer
 
 Le [Transformer](docs/module3/70-attention-transformer/#le-transformer) de 2017,
-présenté au Module 3, est conçu pour la traduction. Il a deux colonnes : un encodeur
+présenté au Module 3, est conçu pour la traduction. Il a deux parties : un encodeur
 lit la phrase d'origine, et un décodeur écrit la traduction en consultant l'encodeur
-par l'attention croisée. Les deux colonnes peuvent aussi servir séparément. Trois
+par l'attention croisée. Ces deux parties peuvent aussi servir séparément. Trois
 familles de modèles en sont nées.
 
 | Variante | Ce qu'on garde | Exemples | Pour quoi faire |
 |---|---|---|---|
-| encodeur et décodeur | les deux colonnes | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
-| encodeur seul | la colonne de gauche ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/45-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
-| décodeur seul | la colonne de droite, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, jeton après jeton |
+| encodeur et décodeur | les deux parties | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
+| encodeur seul | l'encodeur ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/45-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
+| décodeur seul | le décodeur, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, jeton après jeton |
 
 {{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
 
