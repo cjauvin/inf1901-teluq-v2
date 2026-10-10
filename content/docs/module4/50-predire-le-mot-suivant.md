@@ -59,6 +59,8 @@ C'est l'un des travaux fondateurs de
 l'[école canadienne](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet)
 de l'apprentissage profond.
 
+{{< image src="/images/module4/plongements-rapprochent.svg" alt="À gauche, une carte des plongements à deux dimensions d'un petit modèle de langage, pendant son entraînement. Chat, chien, camion et tracteur partent de positions tirées au hasard, marquées par des cercles vides, et suivent une trajectoire en pointillés jusqu'à leur position finale, marquée par un point plein. À la fin, chat et chien sont voisins, de même que camion et tracteur. À droite, des barres : la probabilité de « dort » après « le chat », une suite présente dans le corpus, vaut 8 % ; après « le chien », une suite jamais vue, 8 % aussi ; après « le tracteur », 0 %. Un modèle à n-grammes donnerait 0 % à « le chien dort »." title="Une petite expérience réelle : un modèle du même type que celui de 2003, avec des plongements à deux dimensions, entraîné sur un corpus jouet où chat et chien partagent six verbes, et où seul le chat « dort ». Les plongements des deux mots se rapprochent, et le modèle prête au chien ce qu'il a appris sur le chat." loading="lazy" >}}
+
 Les [réseaux récurrents](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis)
 présentés au Module 3 ont ensuite permis de tenir compte d'un contexte plus long,
 en résumant tout le texte déjà lu dans leur mémoire. Autour de 2015, les meilleurs
