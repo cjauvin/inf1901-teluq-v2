@@ -85,8 +85,11 @@ familles de modèles en sont nées.
 {{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
 
 C'est la troisième qui l'a emporté, et c'est elle que décrit la suite de cette page.
-Un décodeur assez grand, entraîné seulement à prédire le jeton suivant, apprend
-aussi à traduire, à résumer et à classer. Trois raisons l'expliquent.
+Un décodeur seul, dont l'[attention masquée](docs/module3/70-attention-transformer/#le-transformer)
+ne laisse voir à chaque jeton que ceux qui le précèdent, est exactement un modèle de
+langage : il prédit le jeton suivant. Assez grand, et entraîné seulement à cette
+prédiction, il apprend aussi à traduire, à résumer et à classer. Trois raisons
+l'expliquent.
 
 - **Toute tâche peut s'écrire comme une suite de texte.** Traduire, c'est continuer
   « Traduis en anglais : La maison est petite. → ». Classer un avis, c'est continuer
@@ -118,8 +121,16 @@ revient sur ce que ce simple objectif oblige le modèle à apprendre.
 ## GPT : un Transformer qui prédit le jeton suivant
 
 En juin 2018, l'entreprise OpenAI publie GPT (*Generative Pre-trained Transformer*),
-un modèle de langage qui ne garde que le décodeur du Transformer. Le principe reste le même que celui des n-grammes : prédire le jeton
-suivant. Ce qui change, c'est la façon de calculer la distribution.
+qui ne garde que le décodeur du Transformer. C'est un
+[modèle de langage](docs/module4/40-des-regles-aux-probabilites/#un-modèle-de-langage)
+au sens exact du chapitre « Des règles aux probabilités » : il estime la même
+probabilité que les n-grammes,
+
+$$P(w_i \mid w_1, \dots, w_{i-1})$$
+
+Mais là où un modèle à n-grammes ne gardait que les deux ou trois derniers mots, et
+le modèle de 2003 une courte fenêtre fixe, GPT tient compte de tout le texte qu'il
+peut lire d'un coup. Ce qui change, c'est la façon de calculer la distribution.
 
 {{< image src="/images/module4/llm-jeton-apres-jeton.svg" alt="Un schéma en cinq étapes, de haut en bas. 1 : le texte « Le capitaine Nemo » est découpé en trois jetons. 2 : chaque jeton est remplacé par son plongement, une colonne de nombres. 3 : les plongements traversent les couches d'un Transformer, où chaque jeton ne peut regarder que les jetons qui le précèdent. 4 : à la sortie, le modèle donne une probabilité pour chacun des jetons du vocabulaire, par exemple 18 % pour « regarda », 11 % pour « sortit ». 5 : on tire un jeton, ici « regarda », on l'ajoute au texte, et on recommence avec le texte allongé." title="Comment un grand modèle de langage écrit : un jeton à la fois, en recommençant chaque fois avec le texte allongé." loading="lazy" >}}
 
