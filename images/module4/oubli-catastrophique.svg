@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'oubli catastrophique</title>
+<desc>Un graphique de la justesse d'un petit réseau au fil de l'entraînement. Pendant la première moitié, il apprend à reconnaître les chiffres manuscrits 0 à 4 (tâche A), et sa justesse sur cette tâche monte à 99 %. Pendant la seconde moitié, on ne lui montre plus que les chiffres 5 à 9 (tâche B). Sa justesse sur la tâche B monte à 97 %, mais celle sur la tâche A s'effondre, jusqu'à 0 % : il a oublié. Une courbe en pointillés montre la même expérience quand on rejoue quelques anciens exemples de la tâche A parmi les nouveaux : la justesse sur la tâche A reste à 87 %.</desc>
+<rect x="0" y="0" width="840" height="430" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">L'oubli catastrophique : apprendre B fait oublier A</text>
+<rect x="20" y="52" width="800" height="358" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<rect x="350.0" y="96" width="260.0" height="250" fill="#f3ecdc"/>
+<text x="220.0" y="82" font-size="12" fill="#2f6f6a" text-anchor="middle" font-weight="700">on entraîne sur A : chiffres 0 à 4</text>
+<text x="480.0" y="82" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">puis seulement sur B : chiffres 5 à 9</text>
+<line x1="350.0" y1="96" x2="350.0" y2="346" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="90" y1="346" x2="610" y2="346" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="82" y="350" font-size="10.5" fill="#5b5249" text-anchor="end">0 %</text>
+<line x1="90" y1="283.5" x2="610" y2="283.5" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="82" y="287.5" font-size="10.5" fill="#5b5249" text-anchor="end">25 %</text>
+<line x1="90" y1="221.0" x2="610" y2="221.0" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="82" y="225.0" font-size="10.5" fill="#5b5249" text-anchor="end">50 %</text>
+<line x1="90" y1="158.5" x2="610" y2="158.5" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="82" y="162.5" font-size="10.5" fill="#5b5249" text-anchor="end">75 %</text>
+<line x1="90" y1="96" x2="610" y2="96" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="82" y="100" font-size="10.5" fill="#5b5249" text-anchor="end">100 %</text>
+<line x1="90" y1="346" x2="610" y2="346" stroke="#b8a888" stroke-width="1.2"/>
+<text x="40" y="221.0" font-size="11" fill="#5b5249" text-anchor="middle" transform="rotate(-90 40 221.0)">justesse</text>
+<text x="350.0" y="368" font-size="11" fill="#5b5249" text-anchor="middle">pas d'entraînement →</text>
+<polyline points="350.0,346.0 354.3,335.8 358.7,224.3 363.0,191.7 367.3,184.3 371.7,144.3 376.0,177.8 380.3,136.9 384.7,128.5 389.0,140.6 393.3,132.2 397.7,117.4 402.0,123.9 406.3,121.1 410.7,115.5 415.0,128.5 419.3,111.8 423.7,116.4 428.0,108.1 432.3,107.2 436.7,108.1 441.0,111.8 445.3,109.0 449.7,108.1 454.0,108.1 458.3,107.2 462.7,106.2 467.0,108.1 471.3,106.2 475.7,105.3 480.0,110.9 484.3,107.2 488.7,106.2 493.0,106.2 497.3,106.2 501.7,104.4 506.0,104.4 510.3,107.2 514.7,104.4 519.0,105.3 523.3,104.4 527.7,103.4 532.0,108.1 536.3,106.2 540.7,105.3 545.0,103.4 549.3,104.4 553.7,108.1 558.0,106.2 562.3,104.4 566.7,103.4 571.0,104.4 575.3,104.4 579.7,104.4 584.0,103.4 588.3,105.3 592.7,104.4 597.0,103.4 601.3,103.4 605.7,102.5 610.0,103.4" fill="none" stroke="#3a6ea5" stroke-width="2.4" stroke-linejoin="round"/>
+<polyline points="350.0,99.7 354.3,106.1 358.7,113.5 363.0,122.8 367.3,121.8 371.7,117.2 376.0,130.1 380.3,133.8 384.7,123.7 389.0,133.8 393.3,125.5 397.7,131.1 402.0,132.9 406.3,133.8 410.7,130.1 415.0,142.1 419.3,137.5 423.7,138.4 428.0,134.7 432.3,130.1 436.7,138.4 441.0,133.8 445.3,132.0 449.7,134.7 454.0,133.8 458.3,132.0 462.7,133.8 467.0,134.7 471.3,129.2 475.7,126.4 480.0,129.2 484.3,127.4 488.7,129.2 493.0,126.4 497.3,134.7 501.7,134.7 506.0,130.1 510.3,131.1 514.7,130.1 519.0,129.2 523.3,130.1 527.7,133.8 532.0,138.4 536.3,126.4 540.7,125.5 545.0,131.1 549.3,129.2 553.7,132.9 558.0,128.3 562.3,126.4 566.7,125.5 571.0,127.4 575.3,125.5 579.7,124.6 584.0,125.5 588.3,126.4 592.7,125.5 597.0,124.6 601.3,127.4 605.7,130.1 610.0,128.3" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="90.0,299.9 94.3,257.4 98.7,245.4 103.0,198.4 107.3,180.9 111.7,156.9 116.0,126.4 120.3,113.5 124.7,110.8 129.0,127.4 133.3,110.8 137.7,126.4 142.0,112.6 146.3,117.2 150.7,114.5 155.0,111.7 159.3,107.1 163.7,113.5 168.0,108.9 172.3,108.9 176.7,106.1 181.0,109.8 185.3,105.2 189.7,107.1 194.0,106.1 198.3,105.2 202.7,108.0 207.0,104.3 211.3,103.4 215.7,106.1 220.0,102.5 224.3,105.2 228.7,103.4 233.0,104.3 237.3,103.4 241.7,103.4 246.0,104.3 250.3,103.4 254.7,102.5 259.0,103.4 263.3,100.6 267.7,100.6 272.0,99.7 276.3,100.6 280.7,99.7 285.0,99.7 289.3,100.6 293.7,99.7 298.0,99.7 302.3,101.5 306.7,100.6 311.0,100.6 315.3,100.6 319.7,100.6 324.0,98.8 328.3,99.7 332.7,100.6 337.0,98.8 341.3,98.8 345.7,101.5 350.0,99.7 354.3,107.1 358.7,136.6 363.0,193.8 367.3,251.9 371.7,286.0 376.0,310.0 380.3,319.2 384.7,325.7 389.0,325.7 393.3,330.3 397.7,344.2 402.0,344.2 406.3,345.1 410.7,346.0 415.0,346.0 419.3,346.0 423.7,346.0 428.0,346.0 432.3,346.0 436.7,346.0 441.0,346.0 445.3,346.0 449.7,346.0 454.0,346.0 458.3,346.0 462.7,346.0 467.0,346.0 471.3,346.0 475.7,346.0 480.0,346.0 484.3,346.0 488.7,346.0 493.0,346.0 497.3,346.0 501.7,346.0 506.0,346.0 510.3,346.0 514.7,346.0 519.0,346.0 523.3,346.0 527.7,346.0 532.0,346.0 536.3,346.0 540.7,346.0 545.0,346.0 549.3,346.0 553.7,346.0 558.0,346.0 562.3,346.0 566.7,346.0 571.0,346.0 575.3,346.0 579.7,346.0 584.0,346.0 588.3,346.0 592.7,346.0 597.0,346.0 601.3,346.0 605.7,346.0 610.0,346.0" fill="none" stroke="#2f6f6a" stroke-width="2.4" stroke-linejoin="round"/>
+<text x="620" y="87.43494927883148" font-size="11.5" fill="#3a6ea5" font-weight="700">tâche B : 97 %</text>
+<text x="620" y="101.43494927883148" font-size="10.5" fill="#3a6ea5">apprise</text>
+<text x="620" y="142.2878211736679" font-size="11.5" fill="#2f6f6a" font-weight="700">tâche A : 87 %</text>
+<text x="620" y="156.2878211736679" font-size="10.5" fill="#2f6f6a">en rejouant d'anciens exemples</text>
+<text x="620" y="340.0" font-size="11.5" fill="#2f6f6a" font-weight="700">tâche A : 0 %</text>
+<text x="620" y="354.0" font-size="10.5" fill="#c4564a" font-weight="700">oubliée</text>
+<text x="350.0" y="396" font-size="11" fill="#5b5249" text-anchor="middle">trait plein : on ne montre que les nouveaux exemples ; pointillés : on y mêle 8 anciens exemples sur 32</text>
+</svg>
