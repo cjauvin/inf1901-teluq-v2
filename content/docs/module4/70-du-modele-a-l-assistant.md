@@ -235,6 +235,33 @@ doit être **utile** (*helpful*), **honnête** (*honest*) et **inoffensif**
 tout est inoffensif mais inutile, et un assistant qui accepte tout est utile mais
 dangereux.
 
+Ces tensions rappellent les **trois lois de la robotique** imaginées par l'écrivain
+Isaac Asimov dans une nouvelle de 1942, puis reprises dans le recueil *Les Robots*
+(*I, Robot*, 1950) :
+
+1. un robot ne peut porter atteinte à un être humain ni, par son inaction, permettre
+   qu'un être humain soit exposé au danger ;
+2. un robot doit obéir aux ordres des êtres humains, sauf si ces ordres entrent en
+   conflit avec la première loi ;
+3. un robot doit protéger sa propre existence, tant que cela n'entre pas en conflit
+   avec les deux premières lois.
+
+On y reconnaît l'inoffensif (la première loi) et l'utile (la deuxième), avec un ordre
+de priorité explicite. Les nouvelles d'Asimov montrent surtout que ces lois, si
+claires en apparence, mènent à des impasses dès que la situation devient ambiguë :
+qu'est-ce que « nuire », et à qui ? Dans *Menteur !* (1941), un robot capable de lire
+les pensées ment à tous ceux qui l'interrogent, pour ne pas les blesser. Il préfère
+l'inoffensif à l'honnête, et dit à chacun ce qu'il veut entendre. C'est la
+[complaisance](#le-renforcement-à-partir-de-préférences-humaines-rlhf),
+quatre-vingts ans avant les assistants.
+
+La différence tient à la méthode. Les lois d'Asimov sont des règles, inscrites dans
+le robot et appliquées à la lettre, dans l'esprit de
+l'[IA symbolique](docs/module1/20-deux-paris/#le-premier-pari-lesprit-comme-logique)
+du Module 1. Les qualités d'un assistant, elles, ne sont écrites nulle part dans le
+modèle. Elles sont apprises à partir d'exemples et de préférences, et restent donc
+floues, comme ces exemples, avec les mêmes zones grises qu'Asimov explorait.
+
 Le travail qui consiste à faire en sorte que le comportement d'un modèle corresponde
 aux intentions et aux valeurs de ceux qui l'utilisent s'appelle l'**alignement**
 (*alignment*). En décembre 2022, Anthropic présente une variante du RLHF, l'**IA
