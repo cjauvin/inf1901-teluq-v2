@@ -56,6 +56,13 @@ n'énonce :
   l'autre ;
 - refuser certaines demandes.
 
+Ces conventions n'ont pas de définition simple. Le philosophe Ludwig Wittgenstein
+parlait de **jeux de langage** (*language games*). « Répondre à une question » ne
+désigne pas une essence unique, mais une famille de comportements apparentés, appris
+par la pratique, sans qu'on nous les définisse jamais. L'ajustement par instructions
+procède de la même façon : il ne définit pas ce qu'est une réponse, il en montre des
+milliers d'exemples.
+
 Le Web contient bien des conversations, mais aussi des forums où l'on se dispute,
 des romans où les personnages mentent, et des pages qui posent des questions sans y
 répondre. Un modèle de base les imite tous indifféremment. Si on lui donne le début

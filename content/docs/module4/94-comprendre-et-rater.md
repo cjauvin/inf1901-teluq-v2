@@ -152,6 +152,18 @@ apprennent à prédire l'évolution du monde à partir de la vidéo et de l'acti
 quitte Meta en décembre 2025 pour fonder une entreprise consacrée à ces modèles du
 monde.
 
+Ce débat remet en cause un schéma presque aussi ancien que l'IA elle-même. On a
+longtemps supposé que comprendre une phrase se fait en deux temps : le système
+construit d'abord une représentation interne de son sens, puis s'en sert pour agir ou
+répondre. SHRDLU en est l'exemple parfait. Un modèle de langage semble court-circuiter
+cette étape. Rien, dans son entraînement, ne lui demande de construire une
+représentation du sens, et ses réponses sont pourtant souvent justes. Si une forme de
+compréhension peut émerger de la seule prédiction du mot suivant, le schéma est à
+revoir. L'auteur de ce cours développe cette idée dans un court billet,
+« [Est-ce que ChatGPT sait ce qu'est une question ?](https://cjauvin.github.io/posts/llm-question-reponse/) ».
+Il la rapproche de la [chambre chinoise](docs/module1/10-turing/#le-jeu-de-limitation)
+de Searle et des jeux de langage de Wittgenstein.
+
 Les deux lectures ne sont pas forcément exclusives. Un modèle peut contenir des
 représentations partielles du monde, efficaces dans certains domaines et absentes dans
 d'autres, ce qui expliquerait à la fois ses réussites et ses erreurs étranges.
