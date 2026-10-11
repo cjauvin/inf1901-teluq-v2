@@ -341,6 +341,8 @@ avant de conclure, et il se trompe moins. On parle de **chaîne de pensée**
 pour les suivants, et un calcul écrit en plusieurs lignes est plus facile à
 poursuivre qu'un résultat à deviner d'un coup.
 
+{{< image src="/images/module4/chaine-de-pensee.svg" alt="Deux colonnes. Dans chacune, une requête contient un exemple résolu, puis une nouvelle question. L'exemple : Roger a 5 balles de tennis ; il achète 2 boîtes de 3 balles ; combien de balles a-t-il maintenant ? La nouvelle question : la cafétéria avait 23 pommes ; elle en utilise 20 pour le dîner et en achète 6 ; combien en a-t-elle ? À gauche, l'exemple donne la réponse directement, « La réponse est 11 », et le modèle répond à son tour directement : « La réponse est 27 », ce qui est faux. À droite, l'exemple détaille les étapes, et le modèle fait de même : la cafétéria avait 23 pommes, elle en a utilisé 20, il en reste 23 − 20 = 3 ; elle en a acheté 6, elle en a donc 3 + 6 = 9 ; la réponse est 9, ce qui est juste. Le résultat intermédiaire, 3, est réutilisé dans le calcul suivant." title="La chaîne de pensée, d'après l'exemple de l'article de Jason Wei et ses collègues (2022). Le modèle n'en sait pas plus à droite qu'à gauche : il écrit seulement ses étapes, et chaque résultat écrit lui sert pour le suivant." loading="lazy" >}}
+
 L'étape suivante consiste à entraîner les modèles à raisonner de cette façon. Pour les
 mathématiques ou la programmation, on n'a pas besoin d'un évaluateur humain : on peut
 vérifier automatiquement si la réponse finale est juste, ou si le programme passe ses
