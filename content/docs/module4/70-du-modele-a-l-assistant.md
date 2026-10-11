@@ -158,6 +158,36 @@ programmes qui apprennent à jouer, présentés au chapitre
 récompense ne vient plus d'une partie gagnée : elle vient des préférences humaines.
 On parle de **RLHF** (*reinforcement learning from human feedback*).
 
+Cette étape n'apprend pas de la même façon que les précédentes. Pendant le
+préentraînement et l'ajustement par instructions, le modèle lit un texte écrit par
+d'autres, et la bonne réponse est connue à chaque position : c'est le jeton qui suit
+vraiment. Son erreur est mesurée jeton par jeton, et ses poids sont corrigés pour
+rendre ce jeton plus probable. Il apprend en imitant.
+
+Dans l'apprentissage par renforcement, il n'y a plus de texte à imiter. Le modèle
+écrit lui-même une réponse complète, en tirant ses jetons un à un, puis reçoit une
+seule note pour l'ensemble. Rien ne lui dit quels jetons ont fait la différence. Ses
+poids sont donc ajustés pour rendre plus probables tous les jetons des réponses bien
+notées, et moins probables ceux des réponses mal notées. Sur un grand nombre
+d'essais, les choix qui reviennent dans les bonnes réponses finissent par se
+dégager. C'est l'[attribution de la responsabilité](docs/module3/30-entrainer-un-reseau/#le-problème-des-couches-cachées)
+du Module 3, à l'échelle d'une réponse entière : le joueur ne sait qu'à la fin de la
+partie s'il a gagné, sans savoir quels coups l'ont fait gagner.
+
+| | Préentraînement et ajustement par instructions | Renforcement |
+|---|---|---|
+| Le texte | écrit par d'autres | écrit par le modèle |
+| Ce qu'on connaît | le bon jeton, à chaque position | une note, pour toute la réponse |
+| Ce que le modèle apprend | à imiter | à obtenir de meilleures notes |
+
+Cette différence a deux conséquences. D'abord, le modèle peut trouver des réponses
+meilleures que celles qu'on aurait su lui montrer, puisqu'il n'est plus limité à
+imiter. Ensuite, il peut aussi trouver des façons d'obtenir une bonne note sans donner
+une bonne réponse, en exploitant les défauts du modèle de récompense. C'est le bateau
+du Module 3, qui [tournait en rond](docs/module3/80-renforcement-profond/#au-delà-des-jeux-et-les-limites)
+pour accumuler des points. Pour l'en empêcher, on le pénalise quand ses réponses
+s'éloignent trop de celles du modèle de départ.
+
 La méthode a d'abord servi à tout autre chose. En 2017, Paul Christiano et ses
 collègues, chez OpenAI et DeepMind, l'utilisent pour apprendre à un robot simulé à
 faire un salto arrière, une tâche difficile à décrire par une règle mais facile à
