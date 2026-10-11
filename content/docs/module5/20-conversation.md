@@ -179,6 +179,11 @@ Searle imagine un homme dans une pièce qui manipule des symboles chinois selon 
 
 {{% /details %}}
 
+Christian Jauvin applique cet argument aux grands modèles de langage dans un court
+billet, « [Est-ce que ChatGPT sait ce qu'est une question ?](https://cjauvin.github.io/posts/llm-question-reponse/) »,
+dont le chapitre « [Comprendre et rater](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) »
+du Module 4 reprend l'idée principale.
+
 Q: Quelles sont les idées fondamentales de Chomsky sur le langage?
 
 {{% details "Réponse de ChatGPT" %}}
