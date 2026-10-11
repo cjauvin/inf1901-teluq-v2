@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Même consigne, deux modèles</title>
+<desc>En haut, une consigne : « Explique l'alunissage à un enfant de six ans, en quelques phrases. » Elle est donnée à deux modèles. À gauche, GPT-3, un modèle de base, la continue par d'autres consignes du même genre : explique la théorie de la gravité à un enfant de six ans, explique la théorie de la relativité, explique le big bang, explique l'évolution. Il continue une liste de consignes. À droite, InstructGPT y répond : des gens sont allés sur la Lune, ils ont pris des photos de ce qu'ils voyaient et les ont envoyées sur la Terre, pour que tout le monde puisse les voir.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="420" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Même consigne, deux modèles</text>
+<rect x="170.0" y="52" width="500" height="44" rx="10" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.4"/>
+<text x="420.0" y="79" font-size="13" fill="#3a3531" text-anchor="middle" font-style="italic">Explique l'alunissage à un enfant de six ans, en quelques phrases.</text>
+<path d="M420.0 98 Q 420.0 118 216.0 118 L 216.0 136" fill="none" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<path d="M420.0 98 Q 420.0 118 624.0 118 L 624.0 136" fill="none" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="24" y="140" width="384.0" height="230" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="42" y="166" font-size="13.5" fill="#9a5b33" font-weight="700">GPT-3</text>
+<text x="42" y="184" font-size="11" fill="#5b5249">un modèle de base</text>
+<text x="42" y="218" font-size="12.5" fill="#5b5249" font-style="italic">Explique la théorie de la gravité à un enfant</text>
+<text x="42" y="237" font-size="12.5" fill="#5b5249" font-style="italic">de six ans.</text>
+<text x="42" y="256" font-size="12.5" fill="#5b5249" font-style="italic">Explique la théorie de la relativité à un enfant</text>
+<text x="42" y="275" font-size="12.5" fill="#5b5249" font-style="italic">de six ans, en quelques phrases.</text>
+<text x="42" y="294" font-size="12.5" fill="#5b5249" font-style="italic">Explique le big bang à un enfant de six ans.</text>
+<text x="42" y="313" font-size="12.5" fill="#5b5249" font-style="italic">Explique l'évolution à un enfant de six ans.</text>
+<text x="42" y="352" font-size="12" fill="#9a5b33" font-weight="700">il continue une liste de consignes</text>
+<rect x="432.0" y="140" width="384.0" height="230" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="450.0" y="166" font-size="13.5" fill="#2f6f6a" font-weight="700">InstructGPT</text>
+<text x="450.0" y="184" font-size="11" fill="#5b5249">le même modèle, entraîné à suivre des consignes</text>
+<text x="450.0" y="218" font-size="12.5" fill="#3a3531" font-style="italic">Des gens sont allés sur la Lune. Ils ont pris</text>
+<text x="450.0" y="237" font-size="12.5" fill="#3a3531" font-style="italic">des photos de ce qu'ils voyaient et les ont</text>
+<text x="450.0" y="256" font-size="12.5" fill="#3a3531" font-style="italic">envoyées sur la Terre, pour que tout le monde</text>
+<text x="450.0" y="275" font-size="12.5" fill="#3a3531" font-style="italic">puisse les voir.</text>
+<text x="450.0" y="352" font-size="12" fill="#2f6f6a" font-weight="700">il répond à la consigne</text>
+<text x="420.0" y="402" font-size="10.5" fill="#5b5249" text-anchor="middle">D'après l'exemple publié par OpenAI en 2022, traduit de l'anglais</text>
+</svg>

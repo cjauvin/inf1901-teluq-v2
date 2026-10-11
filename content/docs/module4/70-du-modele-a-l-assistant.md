@@ -42,6 +42,76 @@ exactement ce pour quoi il a été entraîné. Rien, dans sa tâche, ne lui dema
 répondre.
 {{% /hint %}}
 
+L'exemple paraît anodin, mais l'écart est profond. Répondre suppose de maîtriser tout
+un ensemble de conventions que les humains apprennent sans y penser, et que personne
+n'énonce :
+
+- répondre à une question plutôt que la prolonger, et suivre une consigne (« résume
+  ce texte en trois points ») plutôt que l'imiter ;
+- s'arrêter à la fin de sa réplique, au lieu d'écrire aussi celle de son
+  interlocuteur ;
+- demander une précision quand la demande est ambiguë, et dire qu'on ne sait pas
+  plutôt qu'inventer ;
+- adapter la longueur et le ton à la demande, et garder le même rôle d'une réplique à
+  l'autre ;
+- refuser certaines demandes.
+
+Le Web contient bien des conversations, mais aussi des forums où l'on se dispute,
+des romans où les personnages mentent, et des pages qui posent des questions sans y
+répondre. Un modèle de base les imite tous indifféremment. Si on lui donne le début
+d'un dialogue entre un utilisateur et un assistant, il écrit la réplique de
+l'assistant, puis celle de l'utilisateur, puis la suivante. Il ne sait pas qu'il joue
+un rôle, et rien ne lui indique où s'arrêter.
+
+{{% hint info %}}
+**Un dialogue écrit des deux côtés**
+
+On donne à un modèle de base le début d'un dialogue :
+
+```
+Utilisateur : Peux-tu me suggérer un livre pour l'été ?
+Assistant :
+```
+
+Une suite plausible (exemple illustratif) :
+
+```
+Utilisateur : Peux-tu me suggérer un livre pour l'été ?
+Assistant : Bien sûr ! Je vous recommande Le Survenant, de Germaine Guèvremont.
+Utilisateur : Je l'ai déjà lu. Autre chose ?
+Assistant : Alors essayez Kamouraska, d'Anne Hébert.
+Utilisateur : Merci, je vais le commander dès demain !
+```
+
+Le modèle a écrit la réponse de l'assistant, puis inventé la réaction de
+l'utilisateur, et ainsi de suite. Pour lui, il n'y a qu'un texte à continuer, comme
+le montre la section
+« [Une conversation qui n'en est pas une](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une) ».
+Un assistant, lui, a appris à produire une marque spéciale de fin de réplique, qui
+rend la main à l'utilisateur.
+{{% /hint %}}
+
+En 2020, GPT-3 pouvait déjà accomplir beaucoup de tâches, à condition de les lui
+présenter comme un texte à continuer, avec des exemples bien choisis
+(l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte)).
+Pour obtenir une réponse, il fallait ruser : écrire le début d'un document où cette
+réponse viendrait naturellement. Même ainsi, ses suites s'écartaient souvent de la
+demande, ou inventaient. Le problème n'est pas un manque de connaissances. C'est un
+écart entre deux objectifs : celui pour lequel le modèle est entraîné, prédire le
+jeton suivant d'un texte du Web, et celui qu'on attend de lui, suivre les consignes
+de l'utilisateur de façon utile et sûre. Réduire cet écart est le problème de
+l'[alignement](#utile-honnête-inoffensif), qui revient plus bas.
+
+En mars 2022, Long Ouyang et ses collègues, chez OpenAI, publient la recette qui
+comble en bonne partie cet écart. Ils l'appliquent à GPT-3 pour obtenir
+**InstructGPT**, un modèle entraîné à suivre des consignes. Une quarantaine de
+personnes, recrutées pour l'occasion, rédigent environ 13 000 réponses modèles et
+comparent des dizaines de milliers de réponses produites par le modèle. Ces données
+servent aux deux étapes présentées ci-dessous. ChatGPT, ouvert au public huit mois
+plus tard, en est une variante entraînée sur des dialogues.
+
+{{< image src="/images/module4/instructgpt.svg" alt="En haut, une consigne : « Explique l'alunissage à un enfant de six ans, en quelques phrases. » Elle est donnée à deux modèles. À gauche, GPT-3, un modèle de base, la continue par d'autres consignes du même genre : explique la théorie de la gravité à un enfant de six ans, explique la théorie de la relativité, explique le big bang, explique l'évolution. Il continue une liste de consignes. À droite, InstructGPT y répond : des gens sont allés sur la Lune, ils ont pris des photos de ce qu'ils voyaient et les ont envoyées sur la Terre, pour que tout le monde puisse les voir." title="La même consigne donnée à GPT-3 et à InstructGPT, d'après l'exemple publié par OpenAI en 2022. Le modèle de base n'a rien de faux : une liste de consignes est une suite plausible. Mais il ne répond pas." loading="lazy" >}}
+
 Le modèle de base contient pourtant l'essentiel des connaissances et des capacités
 de l'assistant. Il reste à lui apprendre à s'en servir pour répondre. C'est l'objet
 de deux étapes supplémentaires, beaucoup moins coûteuses que le préentraînement.
@@ -84,8 +154,8 @@ On parle de **RLHF** (*reinforcement learning from human feedback*).
 La méthode a d'abord servi à tout autre chose. En 2017, Paul Christiano et ses
 collègues, chez OpenAI et DeepMind, l'utilisent pour apprendre à un robot simulé à
 faire un salto arrière, une tâche difficile à décrire par une règle mais facile à
-juger en regardant deux essais. En mars 2022, OpenAI l'applique aux modèles de langage
-avec InstructGPT. Les évaluateurs préfèrent les réponses d'InstructGPT, qui compte
+juger en regardant deux essais. OpenAI l'applique ensuite aux modèles de langage :
+c'est la troisième étape d'InstructGPT. Les évaluateurs préfèrent les réponses d'InstructGPT, qui compte
 1,3 milliard de paramètres, à celles de GPT-3, cent fois plus grand. Le
 30 novembre 2022, OpenAI ouvre au public ChatGPT, construit selon la même méthode. Le
 service atteint 100 millions d'utilisateurs en deux mois, un record à l'époque.
