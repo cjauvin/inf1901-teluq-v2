@@ -301,7 +301,7 @@ humains (le **RLHF**). Le renforcement sert également, avec des récompenses
 vérifiables (un problème de mathématiques a une bonne réponse, un programme
 réussit ou non ses tests, ce qu'on appelle le **RLVR**), à entraîner les
 modèles les plus récents à « raisonner » longuement avant de répondre. Nous
-verrons ces méthodes au [Module 4](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent).
+verrons ces méthodes au [Module 4](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
 
 ## Un même squelette, d'un bout à l'autre
 

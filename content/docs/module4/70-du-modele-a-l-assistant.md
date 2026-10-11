@@ -329,7 +329,7 @@ Enfin, quand un modèle peut envoyer un courriel ou passer une commande, comme l
 [agents](docs/module4/80-outils-et-agents/#des-agents), ses mots deviennent des actes
 au sens propre, et dire, pour lui aussi, devient faire.
 
-## Des modèles qui « raisonnent »
+## Des modèles qui « raisonnent » (RLVR)
 
 En janvier 2022, Jason Wei et ses collègues, chez Google, constatent qu'un modèle
 résout mieux un problème de mathématiques quand on lui montre des exemples où la

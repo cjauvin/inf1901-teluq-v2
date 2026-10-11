@@ -39,7 +39,7 @@ des requêtes (*prompt engineering*) repose sur quelques principes simples.
 - Fournir les informations nécessaires plutôt que de compter sur la mémoire du
   modèle, par exemple en collant le texte à résumer.
 - Demander un raisonnement par étapes pour les problèmes difficiles, comme la
-  [chaîne de pensée](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent).
+  [chaîne de pensée](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
 
 Les assistants reçoivent aussi une **requête système** (*system prompt*), rédigée par
 l'entreprise ou le développeur, que l'utilisateur ne voit généralement pas. Elle fixe
