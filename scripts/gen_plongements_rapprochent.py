@@ -7,8 +7,8 @@ que celui de 2003 (table de plongements, couche cachée, sortie sur le vocabulai
 des plongements à deux dimensions pour pouvoir les dessiner. Le corpus contient « le chat dort », mais jamais « le chien
 dort » ; « le camion démarre », mais jamais « le tracteur démarre ».
 
-La figure montre, à gauche, la trajectoire des plongements pendant l'entraînement, et à droite la probabilité de « dort »
-après « le chat », « le chien » et « le tracteur ».
+La figure a trois panneaux : le corpus, la trajectoire des plongements pendant l'entraînement, et la probabilité de
+« dort » après « le chat », « le chien » et « le tracteur ».
 
     uv run scripts/gen_plongements_rapprochent.py
 """

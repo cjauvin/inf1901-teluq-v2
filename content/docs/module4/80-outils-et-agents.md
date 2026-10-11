@@ -14,7 +14,8 @@ limites.
 - **Ses connaissances sont figées.** Le modèle ne connaît que ce qui figurait dans
   ses données d'entraînement, jusqu'à une **date de coupure** (*knowledge cutoff*).
   Il ignore les événements plus récents, et les documents privés d'une entreprise ou
-  d'une personne.
+  d'une personne. Le laisser apprendre en continu est plus difficile qu'il n'y paraît,
+  comme l'explique la section « [Pourquoi ne pas le laisser apprendre ?](docs/module4/50-predire-le-mot-suivant/#pourquoi-ne-pas-le-laisser-apprendre) ».
 - **Il calcule mal.** Un modèle de langage prédit des jetons. Il peut écrire le
   résultat d'une multiplication sans l'avoir vraiment effectuée.
 - **Il n'agit pas.** Il ne peut ni consulter une page Web, ni envoyer un courriel, ni

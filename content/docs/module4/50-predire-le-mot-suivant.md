@@ -249,8 +249,54 @@ grand public.
    de certains assistants ne changent rien au principe, puisqu'elles glissent des
    notes dans ce texte. Seul un nouvel entraînement modifie un modèle. Une entreprise
    peut se servir des conversations pour entraîner une version suivante, mais ce sera
-   un autre modèle, publié des mois plus tard.
+   un autre modèle, publié des mois plus tard. La section suivante explique
+   [pourquoi](#pourquoi-ne-pas-le-laisser-apprendre).
 {{% /hint %}}
+
+## Pourquoi ne pas le laisser apprendre ?
+
+On pourrait imaginer un modèle qui continue d'ajuster ses paramètres après
+l'entraînement. Il intégrerait les nouvelles connaissances au fur et à mesure,
+retiendrait les corrections de ses utilisateurs, et n'aurait plus de date de coupure.
+C'est l'**apprentissage continu** (*continual learning*). Les humains apprennent ainsi
+toute leur vie, mais les réseaux de neurones y parviennent mal, pour plusieurs
+raisons.
+
+- **L'oubli catastrophique** (*catastrophic forgetting*). Dans un réseau, chaque
+  connaissance est répartie sur un grand nombre de poids, et chaque poids participe à
+  un grand nombre de connaissances. Si on entraîne le réseau sur de nouveaux exemples
+  seulement, la [descente de gradient](docs/module2/50-entrainer-un-modele/#apprendre-cest-descendre-la-pente)
+  modifie ces poids sans tenir compte de ce qu'ils encodaient déjà, et les anciennes
+  connaissances se dégradent. Michael McCloskey et Neal Cohen le décrivent dès 1989.
+  Pendant l'entraînement initial, ce problème ne se pose pas : les exemples sont
+  mélangés, et chaque pas d'apprentissage voit un peu de tout. Les remèdes connus
+  atténuent le problème sans le régler. On peut rejouer d'anciens exemples parmi les
+  nouveaux, ou protéger les poids les plus importants pour les tâches déjà apprises
+  (James Kirkpatrick et ses collègues, chez DeepMind, en 2017).
+- **Le coût.** Ajuster les paramètres demande la rétropropagation, plusieurs fois plus
+  coûteuse que la simple prédiction. Surtout, un même modèle sert des millions de
+  personnes à la fois. Pour qu'il apprenne de chacune, il faudrait une copie de ses
+  centaines de milliards de paramètres par utilisateur.
+- **La fiabilité.** Ce que les utilisateurs disent au modèle peut être faux, ou
+  malveillant. En 2016, Microsoft met en ligne Tay, un robot conversationnel qui
+  apprend de ses échanges sur Twitter. Des internautes lui font tenir des propos
+  racistes en quelques heures, et Microsoft le retire au bout de seize heures. Ce
+  qu'un modèle apprend d'une personne pourrait aussi ressortir chez une autre, y
+  compris des renseignements privés.
+- **L'évaluation.** Un modèle est testé longuement avant d'être publié. Un modèle qui
+  change sans cesse ne pourrait jamais l'être tout à fait.
+
+{{< image src="/images/module4/oubli-catastrophique.svg" alt="Un graphique de la justesse d'un petit réseau au fil de l'entraînement. Pendant la première moitié, il apprend à reconnaître les chiffres manuscrits 0 à 4 (tâche A), et sa justesse sur cette tâche monte à 99 %. Pendant la seconde moitié, on ne lui montre plus que les chiffres 5 à 9 (tâche B). Sa justesse sur la tâche B monte à 97 %, mais celle sur la tâche A s'effondre, jusqu'à 0 % : il a oublié. Une courbe en pointillés montre la même expérience quand on mêle à chaque lot 8 anciens exemples de la tâche A sur 32 : la justesse sur la tâche A reste alors à 87 %." title="Une petite expérience réelle d'oubli catastrophique. Un réseau à une couche cachée apprend les chiffres 0 à 4, puis seulement les chiffres 5 à 9 : en quelques dizaines de pas, il ne reconnaît plus aucun des premiers. Rejouer quelques anciens exemples suffit ici à limiter l'oubli, mais à l'échelle d'un grand modèle de langage, aucun remède ne règle complètement le problème." loading="lazy" >}}
+
+Le cerveau, lui, semble disposer de deux systèmes complémentaires. L'hippocampe
+enregistre rapidement les expériences nouvelles, et le néocortex les intègre
+lentement, en les entremêlant aux anciennes, notamment pendant le sommeil (James
+McClelland, Bruce McNaughton et Randall O'Reilly, 1995). En attendant de savoir faire
+de même, on contourne le problème : de nouvelles versions du modèle, entraînées tous
+les quelques mois, des notes glissées dans le contexte, et la recherche de documents
+présentée au chapitre
+« [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) ».
+L'apprentissage continu reste un problème de recherche ouvert.
 
 ## Ce que la prédiction exige
 
