@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 490" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Trois niveaux dans un même énoncé</title>
+<desc>À gauche, une bulle : « Sais-tu quelle heure il est ? ». Trois flèches en partent vers trois niveaux. L'acte locutoire, ce qui est dit : une question sur ce que sait l'autre. L'acte illocutoire, ce qu'on fait en le disant : une demande, « dis-moi l'heure ». L'acte perlocutoire, l'effet produit : l'autre regarde sa montre et donne l'heure. En bas, deux réponses possibles. « Oui. » répond à la lettre, au niveau locutoire : c'est exact, mais personne ne l'attend. « Il est 15 h 20. » répond à l'acte, au niveau illocutoire.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="490" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Trois niveaux dans un même énoncé</text>
+<path d="M40 132 H230 Q240 132 240 142 V192 Q240 202 230 202 H90 L64 222 L70 202 H40 Q30 202 30 192 V142 Q30 132 40 132 Z" fill="#fbf7ee" stroke="#5b5249" stroke-width="1.6"/>
+<text x="135.0" y="173" font-size="14" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">Sais-tu quelle heure il est ?</text>
+<rect x="300" y="58" width="510" height="66" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="316" y="85" font-size="13" fill="#9a5b33" font-weight="700">acte locutoire</text>
+<text x="316" y="104" font-size="11" fill="#5b5249">ce qui est dit</text>
+<text x="490" y="96" font-size="12.5" fill="#3a3531">une question sur ce que sait l'autre</text>
+<path d="M244 167.0 C 270 167.0 266 91.0 294 91.0" fill="none" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#p)"/>
+<rect x="300" y="138" width="510" height="66" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="316" y="165" font-size="13" fill="#2f6f6a" font-weight="700">acte illocutoire</text>
+<text x="316" y="184" font-size="11" fill="#5b5249">ce qu'on fait en le disant</text>
+<text x="490" y="176" font-size="12.5" fill="#3a3531">une demande : « dis-moi l'heure »</text>
+<path d="M244 167.0 C 270 167.0 266 171.0 294 171.0" fill="none" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#p)"/>
+<rect x="300" y="218" width="510" height="66" rx="10" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="316" y="245" font-size="13" fill="#3a6ea5" font-weight="700">acte perlocutoire</text>
+<text x="316" y="264" font-size="11" fill="#5b5249">l'effet produit</text>
+<text x="490" y="256" font-size="12.5" fill="#3a3531">l'autre regarde sa montre et donne l'heure</text>
+<path d="M244 167.0 C 270 167.0 266 251.0 294 251.0" fill="none" stroke="#7a6f63" stroke-width="1.5" marker-end="url(#p)"/>
+<text x="420.0" y="322" font-size="12.5" fill="#5b5249" text-anchor="middle" font-weight="700">deux réponses possibles</text>
+<rect x="30" y="336" width="380.0" height="120" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="220.0" y="382" font-size="18" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">Oui.</text>
+<text x="220.0" y="416" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">répond à la lettre (niveau locutoire)</text>
+<text x="220.0" y="436" font-size="11.5" fill="#5b5249" text-anchor="middle">exact, mais personne ne l'attend</text>
+<rect x="430.0" y="336" width="380.0" height="120" rx="10" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.8"/>
+<text x="620.0" y="382" font-size="18" fill="#3a3531" text-anchor="middle" font-style="italic" font-weight="600">Il est 15 h 20.</text>
+<text x="620.0" y="416" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">répond à l'acte (niveau illocutoire)</text>
+<text x="620.0" y="436" font-size="11.5" fill="#5b5249" text-anchor="middle">ce qu'on attendait</text>
+</svg>
