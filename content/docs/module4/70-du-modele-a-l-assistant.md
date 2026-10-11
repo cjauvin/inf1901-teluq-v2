@@ -139,7 +139,7 @@ présentée au Module 3, appliquée au texte. Le préentraînement fournit un mo
 général, et un ajustement sur peu de données le spécialise. C'est aussi ce qu'indique
 le *P* de GPT, pour *pre-trained*.
 
-## Le renforcement à partir de préférences humaines
+## Le renforcement à partir de préférences humaines (RLHF)
 
 Rédiger de bonnes réponses est long, et il est souvent plus facile de juger une
 réponse que de l'écrire. La troisième étape s'appuie donc sur des **comparaisons**. On
@@ -278,7 +278,7 @@ l'autre. La réponse « Oui » est exacte, mais personne ne l'attend.
 Le niveau perlocutoire éclaire le RLHF. Le modèle de récompense n'évalue pas
 directement si une réponse est vraie. Il prédit l'effet qu'elle produira sur un
 évaluateur : sera-t-elle préférée ? Optimiser cet effet, c'est optimiser un acte
-perlocutoire, et la [complaisance](#le-renforcement-à-partir-de-préférences-humaines)
+perlocutoire, et la [complaisance](#le-renforcement-à-partir-de-préférences-humaines-rlhf)
 en découle naturellement. Une réponse qui flatte plaît, même quand elle est fausse.
 On retrouve la vieille opposition entre persuader et dire vrai.
 
