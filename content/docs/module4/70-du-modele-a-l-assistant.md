@@ -219,6 +219,59 @@ présentées au chapitre « [Tromper un réseau](docs/module3/90-tromper-un-re
 du Module 3. Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices) sur ce que les modèles ratent y
 revient.
 
+## Faire des choses avec des mots
+
+La philosophie du langage s'est penchée sur ce que fait un assistant bien avant qu'il
+existe. En 1955, le philosophe britannique John Austin donne à Harvard une série de
+conférences, publiées en 1962 sous le titre *How to Do Things with Words* (traduit en
+français par *Quand dire, c'est faire*). Il y part des énoncés **performatifs**, qui
+accomplissent ce qu'ils disent : « Je vous déclare mari et femme », « Je promets de
+venir ». Il distingue ensuite trois niveaux dans tout acte de parole.
+
+- L'**acte locutoire** : dire quelque chose, c'est-à-dire produire une phrase qui a un
+  sens.
+- L'**acte illocutoire** : ce qu'on fait en le disant, comme questionner, promettre,
+  ordonner ou avertir.
+- L'**acte perlocutoire** : l'effet produit sur l'interlocuteur, comme le convaincre,
+  le rassurer, l'inquiéter ou le faire agir.
+
+Un modèle de base maîtrise le premier niveau, mais pas le deuxième. Il produit des
+phrases bien formées, sans reconnaître l'acte qu'accomplit le texte qu'on lui donne.
+L'ajustement par instructions lui apprend justement à reconnaître la **force
+illocutoire** d'une requête. La tâche est plus subtile qu'il n'y paraît, car beaucoup
+d'actes sont **indirects**, comme le montre John Searle, l'élève d'Austin, en 1975.
+« Sais-tu quelle heure il est ? » est, à la lettre, une question sur ce que sait
+l'autre. La réponse « Oui » est exacte, mais personne ne l'attend.
+
+{{< image src="/images/module4/actes-de-parole.svg" alt="À gauche, une bulle : « Sais-tu quelle heure il est ? ». Trois flèches en partent vers trois niveaux. L'acte locutoire, ce qui est dit : une question sur ce que sait l'autre. L'acte illocutoire, ce qu'on fait en le disant : une demande, « dis-moi l'heure ». L'acte perlocutoire, l'effet produit : l'autre regarde sa montre et donne l'heure. En bas, deux réponses possibles. « Oui. » répond à la lettre, au niveau locutoire : c'est exact, mais personne ne l'attend. « Il est 15 h 20. » répond à l'acte, au niveau illocutoire." title="Les trois niveaux d'un acte de parole, selon John Austin. Répondre, c'est reconnaître l'acte accompli, pas seulement les mots." loading="lazy" >}}
+
+Le niveau perlocutoire éclaire le RLHF. Le modèle de récompense n'évalue pas
+directement si une réponse est vraie. Il prédit l'effet qu'elle produira sur un
+évaluateur : sera-t-elle préférée ? Optimiser cet effet, c'est optimiser un acte
+perlocutoire, et la [complaisance](#le-renforcement-à-partir-de-préférences-humaines)
+en découle naturellement. Une réponse qui flatte plaît, même quand elle est fausse.
+On retrouve la vieille opposition entre persuader et dire vrai.
+
+En 1975 aussi, le philosophe Paul Grice décrit le **principe de coopération** qui
+règle une conversation, sous la forme de quatre maximes :
+
+- la **quantité** : dire ni trop ni trop peu ;
+- la **qualité** : ne pas dire ce qu'on croit faux ou ce qu'on ne peut appuyer ;
+- la **relation** : être pertinent ;
+- la **manière** : être clair et ordonné.
+
+Ces maximes ressemblent beaucoup aux qualités attendues d'un assistant. Les
+[hallucinations](docs/module4/94-comprendre-et-rater/#les-hallucinations) violent la
+maxime de qualité, et les réponses trop longues celle de quantité. Grice montre aussi
+qu'on communique beaucoup par sous-entendus, ses **implicatures**. À « Je n'ai plus
+d'essence », la réponse « Il y a une station au coin de la rue » laisse entendre
+qu'elle est ouverte. Les grands modèles actuels saisissent souvent ces sous-entendus,
+que les systèmes à règles ne pouvaient pas traiter.
+
+Enfin, quand un modèle peut envoyer un courriel ou passer une commande, comme les
+[agents](docs/module4/80-outils-et-agents/#des-agents), ses mots deviennent des actes
+au sens propre, et dire, pour lui aussi, devient faire.
+
 ## Des modèles qui « raisonnent »
 
 En janvier 2022, Jason Wei et ses collègues, chez Google, constatent qu'un modèle
