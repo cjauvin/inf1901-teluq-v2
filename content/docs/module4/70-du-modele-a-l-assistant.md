@@ -352,6 +352,22 @@ vérifiables** (*reinforcement learning with verifiable rewards*, RLVR), comme
 l'annonçait le chapitre « [Trois façons d'apprendre](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement) »
 du Module 2.
 
+Ce renforcement ne demande pas de corpus de raisonnements rédigés par des humains. Il
+faut seulement des problèmes dont on peut vérifier la réponse : des problèmes de
+mathématiques avec leur solution, des exercices de programmation avec leurs tests.
+Rassembler ces problèmes demande un travail considérable : il en faut un très grand
+nombre, variés, de difficulté croissante, avec des vérifications fiables. Mais le
+raisonnement, le modèle l'écrit lui-même, et seule sa conclusion est notée. C'est la
+différence avec l'[ajustement par instructions](#imiter-de-bonnes-réponses), où le
+modèle imite des réponses rédigées.
+
+En pratique, on combine souvent les deux. On amorce l'entraînement avec quelques
+milliers de raisonnements choisis ou rédigés, pour que le modèle adopte une forme
+lisible, puis le renforcement prend le relais. Une fois entraîné, un modèle de
+raisonnement produit à son tour des chaînes de pensée en grande quantité. Elles
+servent de corpus pour ajuster des modèles plus petits, qui apprennent ainsi à
+raisonner par imitation. C'est la **distillation** (*distillation*).
+
 En septembre 2024, OpenAI présente o1, le premier d'une série de **modèles de
 raisonnement** (*reasoning models*), qui « réfléchissent » parfois plusieurs minutes
 avant de répondre. En janvier 2025, DeepSeek publie R1 et décrit sa méthode : un
