@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 624" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Imiter ou être noté</title>
+<desc>Trois parties. En haut, imiter : dans un texte écrit par d'autres, « Il en reste 23 − 20 = 3 », le bon jeton est connu à chaque position, et chaque jeton reçoit sa propre correction. Au milieu, le renforcement : à la question de la cafétéria, qui avait 23 pommes, en utilise 20 et en achète 6, le modèle tire quatre réponses complètes. Deux mènent à 9 et reçoivent la note 1 : tous leurs jetons sont rendus plus probables. Deux mènent à une réponse fausse, 49 et 18, et reçoivent la note 0 : tous leurs jetons sont rendus moins probables. La dernière contient pourtant une bonne étape, 23 − 20 = 3, pénalisée quand même, parce que la note ne dit pas quelle étape était fautive. En bas, sur un grand nombre d'essais : « Elle avait 23 pommes », présent dans toutes les réponses, est poussé dans les deux sens et l'effet s'annule ; « 23 − 20 = 3 », plus fréquent dans les bonnes réponses, est renforcé ; « 3 × 6 = 18 », présent seulement dans les mauvaises, est affaibli.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="840" height="624" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Imiter, ou recevoir une seule note pour toute la réponse</text>
+<rect x="20" y="52" width="800" height="118" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="76" font-size="13" fill="#9a5b33" font-weight="700">1. Imiter (préentraînement, ajustement par instructions)</text>
+<text x="36" y="94" font-size="11" fill="#5b5249">le texte est écrit par d'autres : à chaque position, on connaît le bon jeton</text>
+<rect x="60" y="104" width="34" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="77.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">Il</text>
+<line x1="77.0" y1="148" x2="77.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="102" y="104" width="34" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="119.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">en</text>
+<line x1="119.0" y1="148" x2="119.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="144" y="104" width="58" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="173.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">reste</text>
+<line x1="173.0" y1="148" x2="173.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="210" y="104" width="34" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="227.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">23</text>
+<line x1="227.0" y1="148" x2="227.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="252" y="104" width="26" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="265.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">−</text>
+<line x1="265.0" y1="148" x2="265.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="286" y="104" width="34" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="303.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">20</text>
+<line x1="303.0" y1="148" x2="303.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="328" y="104" width="26" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="341.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">=</text>
+<line x1="341.0" y1="148" x2="341.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<rect x="362" y="104" width="26" height="26" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="375.0" y="121.5" font-size="12" fill="#3a3531" text-anchor="middle">3</text>
+<line x1="375.0" y1="148" x2="375.0" y2="134" stroke="#3a6ea5" stroke-width="1.3" marker-end="url(#p)"/>
+<text x="412" y="122" font-size="12" fill="#3a6ea5" font-weight="700">une correction</text>
+<text x="412" y="139" font-size="12" fill="#3a6ea5" font-weight="700">par jeton</text>
+<text x="60" y="162" font-size="10.5" fill="#5b5249">l'erreur est mesurée sur chaque jeton, et chacun est corrigé pour lui-même</text>
+<rect x="20" y="184" width="800" height="252" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="208" font-size="13" fill="#9a5b33" font-weight="700">2. Renforcement : une seule note pour toute la réponse</text>
+<text x="36" y="226" font-size="11" fill="#5b5249">Q : La cafétéria avait 23 pommes. Elle en utilise 20 et en achète 6. Combien en a-t-elle ?  — le modèle tire quatre réponses</text>
+<rect x="32" y="236" width="776" height="38" rx="6" fill="#dcebe8"/>
+<text x="44" y="258" font-size="11" fill="#5b5249">1</text>
+<rect x="60" y="242" width="150" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="135.0" y="259.5" font-size="12" fill="#3a3531" text-anchor="middle">Elle avait 23 pommes.</text>
+<rect x="218" y="242" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="270.0" y="259.5" font-size="12" fill="#3a3531" text-anchor="middle">23 − 20 = 3</text>
+<rect x="330" y="242" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="382.0" y="259.5" font-size="12" fill="#3a3531" text-anchor="middle">3 + 6 = 9</text>
+<rect x="442" y="242" width="96" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="490.0" y="259.5" font-size="12" fill="#3a3531" text-anchor="middle">réponse : 9</text>
+<line x1="546" y1="255" x2="574" y2="255" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<rect x="580" y="242" width="64" height="26" rx="13" fill="#2f6f6a"/>
+<text x="612" y="259.5" font-size="12" fill="#fbf7ee" text-anchor="middle" font-weight="700">note 1</text>
+<text x="656" y="254" font-size="11.5" fill="#2f6f6a" font-weight="700">↑ tous ses jetons</text>
+<text x="656" y="268" font-size="10.5" fill="#2f6f6a">plus probables</text>
+<rect x="32" y="280" width="776" height="38" rx="6" fill="#dcebe8"/>
+<text x="44" y="302" font-size="11" fill="#5b5249">2</text>
+<rect x="60" y="286" width="150" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="135.0" y="303.5" font-size="12" fill="#3a3531" text-anchor="middle">Elle avait 23 pommes.</text>
+<rect x="218" y="286" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="270.0" y="303.5" font-size="12" fill="#3a3531" text-anchor="middle">23 + 6 = 29</text>
+<rect x="330" y="286" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="382.0" y="303.5" font-size="12" fill="#3a3531" text-anchor="middle">29 − 20 = 9</text>
+<rect x="442" y="286" width="96" height="26" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="490.0" y="303.5" font-size="12" fill="#3a3531" text-anchor="middle">réponse : 9</text>
+<line x1="546" y1="299" x2="574" y2="299" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<rect x="580" y="286" width="64" height="26" rx="13" fill="#2f6f6a"/>
+<text x="612" y="303.5" font-size="12" fill="#fbf7ee" text-anchor="middle" font-weight="700">note 1</text>
+<text x="656" y="298" font-size="11.5" fill="#2f6f6a" font-weight="700">↑ tous ses jetons</text>
+<text x="656" y="312" font-size="10.5" fill="#2f6f6a">plus probables</text>
+<rect x="32" y="324" width="776" height="38" rx="6" fill="#f6dcd6"/>
+<text x="44" y="346" font-size="11" fill="#5b5249">3</text>
+<rect x="60" y="330" width="150" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="135.0" y="347.5" font-size="12" fill="#3a3531" text-anchor="middle">Elle avait 23 pommes.</text>
+<rect x="218" y="330" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="270.0" y="347.5" font-size="12" fill="#3a3531" text-anchor="middle">23 + 20 = 43</text>
+<rect x="330" y="330" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="382.0" y="347.5" font-size="12" fill="#3a3531" text-anchor="middle">43 + 6 = 49</text>
+<rect x="442" y="330" width="96" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="490.0" y="347.5" font-size="12" fill="#3a3531" text-anchor="middle">réponse : 49</text>
+<line x1="546" y1="343" x2="574" y2="343" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<rect x="580" y="330" width="64" height="26" rx="13" fill="#c4564a"/>
+<text x="612" y="347.5" font-size="12" fill="#fbf7ee" text-anchor="middle" font-weight="700">note 0</text>
+<text x="656" y="342" font-size="11.5" fill="#c4564a" font-weight="700">↓ tous ses jetons</text>
+<text x="656" y="356" font-size="10.5" fill="#c4564a">moins probables</text>
+<rect x="32" y="368" width="776" height="38" rx="6" fill="#f6dcd6"/>
+<text x="44" y="390" font-size="11" fill="#5b5249">4</text>
+<rect x="60" y="374" width="150" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="135.0" y="391.5" font-size="12" fill="#3a3531" text-anchor="middle">Elle avait 23 pommes.</text>
+<rect x="218" y="374" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="270.0" y="391.5" font-size="12" fill="#3a3531" text-anchor="middle">23 − 20 = 3</text>
+<rect x="330" y="374" width="104" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="382.0" y="391.5" font-size="12" fill="#3a3531" text-anchor="middle">3 × 6 = 18</text>
+<rect x="442" y="374" width="96" height="26" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="490.0" y="391.5" font-size="12" fill="#3a3531" text-anchor="middle">réponse : 18</text>
+<line x1="546" y1="387" x2="574" y2="387" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<rect x="580" y="374" width="64" height="26" rx="13" fill="#c4564a"/>
+<text x="612" y="391.5" font-size="12" fill="#fbf7ee" text-anchor="middle" font-weight="700">note 0</text>
+<text x="656" y="386" font-size="11.5" fill="#c4564a" font-weight="700">↓ tous ses jetons</text>
+<text x="656" y="400" font-size="10.5" fill="#c4564a">moins probables</text>
+<rect x="215" y="371" width="110" height="32" rx="7" fill="none" stroke="#c4564a" stroke-width="2" stroke-dasharray="4 3"/>
+<line x1="270.0" y1="428" x2="270.0" y2="406" stroke="#c4564a" stroke-width="1.4" marker-end="url(#pr)"/>
+<text x="280.0" y="426" font-size="11.5" fill="#c4564a" font-weight="700">une bonne étape, pénalisée quand même : la note ne dit pas quelle étape était fautive</text>
+<rect x="20" y="450" width="800" height="140" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="474" font-size="13" fill="#9a5b33" font-weight="700">3. Sur un grand nombre d'essais</text>
+<text x="36" y="492" font-size="11" fill="#5b5249">chaque étape est poussée vers le haut ou vers le bas selon les réponses où elle apparaît</text>
+<rect x="60" y="504" width="150" height="22" rx="5" fill="#fbf7ee" stroke="#7a6f63" stroke-width="1.2"/>
+<text x="135.0" y="519.5" font-size="11.5" fill="#3a3531" text-anchor="middle">Elle avait 23 pommes.</text>
+<text x="230" y="519" font-size="11.5" fill="#3a3531">dans toutes les réponses, bonnes ou mauvaises</text>
+<text x="560" y="519" font-size="12" fill="#7a6f63" font-weight="700">＝  les poussées s'annulent</text>
+<rect x="60" y="532" width="104" height="22" rx="5" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="112.0" y="547.5" font-size="11.5" fill="#3a3531" text-anchor="middle">23 − 20 = 3</text>
+<text x="230" y="547" font-size="11.5" fill="#3a3531">plus souvent dans les bonnes réponses</text>
+<text x="560" y="547" font-size="12" fill="#2f6f6a" font-weight="700">↑  renforcée</text>
+<rect x="60" y="560" width="104" height="22" rx="5" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="112.0" y="575.5" font-size="11.5" fill="#3a3531" text-anchor="middle">3 × 6 = 18</text>
+<text x="230" y="575" font-size="11.5" fill="#3a3531">seulement dans des réponses fausses</text>
+<text x="560" y="575" font-size="12" fill="#c4564a" font-weight="700">↓  affaiblie</text>
+<text x="420.0" y="612" font-size="10" fill="#5b5249" text-anchor="middle">chaque case regroupe quelques jetons ; réponses illustratives</text>
+</svg>
