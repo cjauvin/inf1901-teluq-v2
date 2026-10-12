@@ -174,6 +174,8 @@ dégager. C'est l'[attribution de la responsabilité](docs/module3/30-entrainer-
 du Module 3, à l'échelle d'une réponse entière : le joueur ne sait qu'à la fin de la
 partie s'il a gagné, sans savoir quels coups l'ont fait gagner.
 
+{{< image src="/images/module4/une-note-pour-tout.svg" alt="Trois parties. En haut, imiter : dans un texte écrit par d'autres, « Il en reste 23 − 20 = 3 », le bon jeton est connu à chaque position, et chaque jeton reçoit sa propre correction. Au milieu, le renforcement : à la question de la cafétéria, qui avait 23 pommes, en utilise 20 et en achète 6, le modèle tire quatre réponses complètes. Deux mènent à 9 et reçoivent la note 1 : tous leurs jetons sont rendus plus probables. Deux mènent à une réponse fausse, 49 et 18, et reçoivent la note 0 : tous leurs jetons sont rendus moins probables. La dernière contient pourtant une bonne étape, 23 − 20 = 3, pénalisée quand même, parce que la note ne dit pas quelle étape était fautive. En bas, sur un grand nombre d'essais : « Elle avait 23 pommes », présent dans toutes les réponses, est poussé dans les deux sens et l'effet s'annule ; « 23 − 20 = 3 », plus fréquent dans les bonnes réponses, est renforcé ; « 3 × 6 = 18 », présent seulement dans les mauvaises, est affaibli." title="Imiter, ou recevoir une note. Une seule réponse ne dit pas quelle étape était bonne ou fautive ; c'est en comparant un grand nombre de réponses que les bons choix se dégagent." loading="lazy" >}}
+
 | | Préentraînement et ajustement par instructions | Renforcement |
 |---|---|---|
 | Le texte | écrit par d'autres | écrit par le modèle |
