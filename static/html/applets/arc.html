@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : résoudre des tâches ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .choix { padding: 0.25rem 0.6rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.8rem; color: #334155; }
+        .choix:hover { border-color: #2f6f6a; }
+        .choix.actif { background: #2f6f6a; border-color: #2f6f6a; color: #fff; }
+        .choix.reussie { border-color: #2f6f6a; box-shadow: inset 0 -3px 0 #2f6f6a; }
+        .choix.arc2 { border-color: #9a5b33; }
+        .choix.arc2.actif { background: #9a5b33; color: #fff; }
+        .grille { display: inline-grid; gap: 1px; background: #4b5563; border: 1px solid #4b5563; }
+        .grille div { width: var(--c); height: var(--c); }
+        .editable div { cursor: crosshair; }
+        .couleur { width: 26px; height: 26px; border-radius: 4px; border: 2px solid #e5e7eb; cursor: pointer; }
+        .couleur.choisie { border-color: #111827; box-shadow: 0 0 0 2px #fbbf24; }
+        .champ { width: 2.6rem; padding: 0.15rem 0.3rem; border: 1px solid #cbd5e1; border-radius: 0.3rem; font-size: 0.8rem; text-align: center; }
+        .titre { font-size: 0.72rem; font-weight: 700; color: #64748b; letter-spacing: 0.04em; text-transform: uppercase; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200">
+
+    <div class="flex flex-wrap items-center gap-1 mb-1 text-sm">
+        <span class="font-bold text-slate-700 mr-1">Tâche :</span>
+        <div id="choix-taches" class="flex flex-wrap gap-1"></div>
+    </div>
+    <div id="description" class="text-xs text-slate-500 mb-2"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+        <!-- les exemples -->
+        <div class="md:col-span-2 rounded-lg p-2" style="background:#fbf7ee;border:1px solid #d9cbac">
+            <div class="titre mb-1">Exemples : entrée → sortie</div>
+            <div id="exemples" class="flex flex-col gap-3 overflow-y-auto pr-1" style="height:400px"></div>
+        </div>
+
+        <!-- le test -->
+        <div class="md:col-span-3 rounded-lg p-2 bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 mb-1">
+                <div class="titre">À vous</div>
+                <div id="nav-test" class="text-xs text-slate-500 ml-auto"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <div class="text-xs text-slate-500 mb-1">Entrée de test</div>
+                    <div id="entree" class="cadre flex items-center justify-center"></div>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 mb-1">Votre sortie</div>
+                    <div id="sortie" class="cadre flex items-center justify-center"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 mt-3 text-xs">
+                <span class="text-slate-600">Taille :</span>
+                <input id="lignes" class="champ" type="number" min="1" max="30"> ×
+                <input id="colonnes" class="champ" type="number" min="1" max="30">
+                <button class="choix" id="redimensionner">Redimensionner</button>
+                <button class="choix" id="copier">Copier l'entrée</button>
+                <button class="choix" id="effacer">Effacer</button>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 mt-2 text-xs">
+                <button class="choix actif" id="outil-crayon">Crayon</button>
+                <button class="choix" id="outil-remplir">Remplir une zone</button>
+                <div id="palette" class="flex gap-1 ml-1"></div>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 mt-3">
+                <button class="choix" id="verifier" style="background:#2f6f6a;border-color:#2f6f6a;color:#fff;font-weight:600">Vérifier</button>
+                <button class="choix" id="solution">Voir la solution</button>
+                <div id="message" class="text-sm"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-xs text-slate-500 text-center mt-2">
+        Trouvez la règle qui transforme chaque entrée en sortie, puis appliquez-la à l'entrée de test. Cliquez ou glissez pour colorier ;
+        « Remplir une zone » colore toutes les cases voisines de même couleur.<br>
+        Tâches du corpus ARC (François Chollet, 2019) et d'ARC-AGI-2 (ARC Prize Foundation, 2025), licence Apache 2.0 ;
+        interface adaptée de l'interface de test officielle.
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Une version française de l'interface de test officielle d'ARC (github.com/fchollet/ARC-AGI, apps/testing_interface.html).
+ * Les tâches viennent des dépôts officiels (voir scripts/gen_arc_taches.py). Comme dans le concours, une réponse n'est juste
+ * que si la grille entière est exacte, taille comprise, et on a droit à deux essais par entrée de test.
+ */
+const COULEURS = ['#000000', '#0074D9', '#FF4136', '#2ECC40', '#FFDC00', '#AAAAAA', '#F012BE', '#FF851B', '#7FDBFF', '#870C25'];
+const NIVEAUX = ['très facile', 'facile', 'facile', 'facile', 'facile', 'moyenne', 'moyenne', 'moyenne', 'moyenne', 'plus difficile', 'plus difficile', 'plus difficile'];
+let TACHES = [], tache = null, iTache = 0, iTest = 0, sortie = [], couleur = 1, outil = 'crayon', peint = false;
+const essais = {}, reussies = new Set();
+const $ = id => document.getElementById(id);
+
+function dessiner(conteneur, g, taille, editable) {
+    const h = g.length, w = g[0].length;
+    const c = Math.max(4, Math.min(taille.max, Math.floor(Math.min(taille.l / w, (taille.h || taille.l) / h)) - 1));
+    const el = document.createElement('div');
+    el.className = 'grille' + (editable ? ' editable' : '');
+    el.style.gridTemplateColumns = `repeat(${w}, ${c}px)`;
+    el.style.setProperty('--c', c + 'px');
+    g.forEach((rangee, i) => rangee.forEach((v, j) => {
+        const d = document.createElement('div');
+        d.style.background = COULEURS[v];
+        if (editable) { d.dataset.i = i; d.dataset.j = j; }
+        el.appendChild(d);
+    }));
+    conteneur.replaceChildren(el);
+    return el;
+}
+
+function afficherExemples() {
+    const box = $('exemples');
+    box.replaceChildren();
+    tache.train.forEach((p, k) => {
+        const rangee = document.createElement('div');
+        rangee.className = 'flex items-center gap-2';
+        const a = document.createElement('div'), b = document.createElement('div'), f = document.createElement('div');
+        f.textContent = '→'; f.className = 'text-slate-500';
+        const n = document.createElement('div'); n.textContent = k + 1; n.className = 'text-xs text-slate-400 w-3';
+        rangee.append(n, a, f, b);
+        box.appendChild(rangee);
+        const l = Math.floor((box.clientWidth - 44) / 2);
+        dessiner(a, p.input, { l, h: 150, max: 22 }, false);
+        dessiner(b, p.output, { l, h: 150, max: 22 }, false);
+    });
+}
+
+function afficherSortie() {
+    const el = dessiner($('sortie'), sortie, { l: cote(), max: 40 }, true);
+    $('lignes').value = sortie.length; $('colonnes').value = sortie[0].length;
+    el.addEventListener('pointerdown', e => { peint = true; agir(e); });
+    el.addEventListener('pointermove', e => { if (peint && outil === 'crayon') agir(e); });
+}
+window.addEventListener('pointerup', () => { peint = false; });
+window.addEventListener('resize', () => { if (tache) { afficherExemples(); dessiner($('entree'), tache.test[iTest].input, { l: cote(), max: 40 }, false); afficherSortie(); } });
+
+function cote() {                       // le côté des deux cadres carrés du test, selon la largeur disponible
+    const c = Math.floor($('entree').parentElement.clientWidth);
+    document.querySelectorAll('.cadre').forEach(x => { x.style.width = c + 'px'; x.style.height = c + 'px'; });
+    return c;
+}
+
+function cellule(e) {
+    const t = document.elementFromPoint(e.clientX, e.clientY);
+    return t && t.dataset && t.dataset.i !== undefined ? [+t.dataset.i, +t.dataset.j, t] : null;
+}
+
+function agir(e) {
+    e.preventDefault();
+    const c = cellule(e);
+    if (!c) return;
+    const [i, j, el] = c;
+    if (outil === 'crayon') {
+        sortie[i][j] = couleur; el.style.background = COULEURS[couleur];
+    } else {
+        remplir(i, j); afficherSortie(); peint = false;
+    }
+    $('message').textContent = '';
+}
+
+function remplir(i, j) {
+    const cible = sortie[i][j];
+    if (cible === couleur) return;
+    const pile = [[i, j]];
+    while (pile.length) {
+        const [a, b] = pile.pop();
+        if (a < 0 || b < 0 || a >= sortie.length || b >= sortie[0].length || sortie[a][b] !== cible) continue;
+        sortie[a][b] = couleur;
+        pile.push([a + 1, b], [a - 1, b], [a, b + 1], [a, b - 1]);
+    }
+}
+
+function chargerTest() {
+    const t = tache.test[iTest];
+    dessiner($('entree'), t.input, { l: cote(), max: 40 }, false);
+    sortie = t.input.map(r => r.map(() => 0));
+    afficherSortie();
+    const n = tache.test.length;
+    $('nav-test').innerHTML = n > 1
+        ? `Entrée de test ${iTest + 1} sur ${n} <button class="choix ml-1" id="test-suivant">Suivante</button>` : '';
+    if (n > 1) $('test-suivant').onclick = () => { iTest = (iTest + 1) % n; chargerTest(); };
+    $('message').textContent = '';
+}
+
+function choisirTache(k) {
+    iTache = k; tache = TACHES[k]; iTest = 0;
+    const niveau = tache.version === 'ARC-AGI-2' ? 'tirée du jeu d\'évaluation public, nettement plus difficile' : NIVEAUX[k];
+    $('description').textContent = `${tache.version} · ${niveau} · ${tache.train.length} exemples · identifiant ${tache.id}`;
+    document.querySelectorAll('#choix-taches button').forEach((b, j) => b.classList.toggle('actif', j === k));
+    afficherExemples();
+    chargerTest();
+}
+
+function verifier() {
+    const attendu = tache.test[iTest].output;
+    const cle = tache.id + ':' + iTest;
+    essais[cle] = (essais[cle] || 0) + 1;
+    const juste = attendu.length === sortie.length && attendu[0].length === sortie[0].length
+        && attendu.every((r, i) => r.every((v, j) => v === sortie[i][j]));
+    const m = $('message');
+    if (juste) {
+        m.innerHTML = `<span style="color:#2f6f6a;font-weight:700">Exact !</span> <span class="text-slate-500">(essai ${essais[cle]})</span>`;
+        reussies.add(iTache);
+        document.querySelectorAll('#choix-taches button')[iTache].classList.add('reussie');
+    } else {
+        m.innerHTML = `<span style="color:#c4564a;font-weight:700">Ce n'est pas la bonne grille.</span> <span class="text-slate-500">`
+            + (essais[cle] >= 2 ? `Dans ARC, on a droit à deux essais.` : `Essai ${essais[cle]} sur 2.`) + '</span>';
+    }
+}
+
+function montrerSolution() {
+    sortie = tache.test[iTest].output.map(r => r.slice());
+    afficherSortie();
+    $('message').innerHTML = '<span class="text-slate-500">Voici la grille attendue.</span>';
+}
+
+function initialiser() {
+    const box = $('choix-taches');
+    TACHES.forEach((t, k) => {
+        const b = document.createElement('button');
+        b.className = 'choix' + (t.version === 'ARC-AGI-2' ? ' arc2' : '');
+        b.textContent = t.version === 'ARC-AGI-2' ? 'ARC-AGI-2' : k + 1;
+        b.title = t.version + (t.version === 'ARC-AGI-2' ? '' : ' · ' + NIVEAUX[k]);
+        b.onclick = () => choisirTache(k);
+        box.appendChild(b);
+    });
+    COULEURS.forEach((c, k) => {
+        const d = document.createElement('div');
+        d.className = 'couleur' + (k === couleur ? ' choisie' : '');
+        d.style.background = c;
+        d.onclick = () => { couleur = k; document.querySelectorAll('.couleur').forEach((x, j) => x.classList.toggle('choisie', j === k)); };
+        $('palette').appendChild(d);
+    });
+    const outils = { crayon: $('outil-crayon'), remplir: $('outil-remplir') };
+    Object.entries(outils).forEach(([nom, b]) => b.onclick = () => {
+        outil = nom; Object.values(outils).forEach(x => x.classList.toggle('actif', x === b));
+    });
+    $('redimensionner').onclick = () => {
+        const h = Math.max(1, Math.min(30, +$('lignes').value || 1)), w = Math.max(1, Math.min(30, +$('colonnes').value || 1));
+        sortie = Array.from({ length: h }, (_, i) => Array.from({ length: w }, (_, j) => (sortie[i] && sortie[i][j]) || 0));
+        afficherSortie();
+    };
+    $('copier').onclick = () => { sortie = tache.test[iTest].input.map(r => r.slice()); afficherSortie(); };
+    $('effacer').onclick = () => { sortie = sortie.map(r => r.map(() => 0)); afficherSortie(); };
+    $('verifier').onclick = verifier;
+    $('solution').onclick = montrerSolution;
+    choisirTache(0);
+}
+
+fetch('data/arc-taches.json').then(r => r.json()).then(d => { TACHES = d; initialiser(); });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>

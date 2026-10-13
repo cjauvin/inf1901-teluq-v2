@@ -298,7 +298,9 @@ présentée au chapitre
 « [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) ».
 Une piste de recherche, l'**entraînement au moment du test**
 (*test-time training*), ajuste temporairement les poids du modèle sur le problème à
-résoudre, puis les oublie. L'apprentissage continu reste un problème de recherche ouvert.
+résoudre, puis les oublie ; le chapitre
+« [Le défi ARC](docs/module4/93-le-defi-arc/#le-prix-arc-de-2024-et-lentraînement-au-moment-du-test) »
+en montre l'efficacité. L'apprentissage continu reste un problème de recherche ouvert.
 
 ## Ce que la prédiction exige
 

@@ -119,14 +119,17 @@ modèles de langage, puis la rencontre du texte et de l'image.
    classification sans exemple, et la génération d'images à partir d'une phrase.
 12. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
     les modèles multimodaux.
-13. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
+13. [*Le défi ARC*](docs/module4/93-le-defi-arc) : mesurer l'intelligence par
+    des tâches nouvelles, de 2019 à ARC-AGI-3.
+14. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
     hallucinations, interprétabilité, perroquets ou modèles du monde.
 
-Le module compte onze applets, dont un espace latent à explorer, un modèle de
+Le module compte douze applets, dont un espace latent à explorer, un modèle de
 diffusion qui redessine une feuille d'érable, un test pour distinguer une vraie
 photo d'un visage généré, un générateur de texte entraîné sur Jules Verne, un
 étiqueteur grammatical à modèle de Markov caché, et un
-rôle d'évaluateur humain pour comprendre comment on entraîne un assistant.
+rôle d'évaluateur humain pour comprendre comment on entraîne un assistant, et des
+tâches du défi ARC à résoudre soi-même.
 
 Pour situer ce module dans l'ensemble du cours : l'IA générative repose sur
 l'apprentissage profond du Module 3, lui-même une famille de méthodes

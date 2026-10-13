@@ -390,7 +390,9 @@ OpenAI montre que la justesse des réponses augmente aussi, de façon régulièr
 temps de réflexion accordé au modèle au moment de répondre. On parle de **calcul au
 moment de la réponse** (*test-time compute*). Le modèle ne change pas : il écrit
 seulement un raisonnement plus long. Ce levier a un prix, puisque chaque réponse coûte
-d'autant plus cher qu'elle est longue.
+d'autant plus cher qu'elle est longue. Le chapitre
+« [Le défi ARC](docs/module4/93-le-defi-arc/#o3-et-le-calcul-au-moment-de-la-réponse) »
+en donne l'exemple le plus frappant.
 
 Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
 réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
