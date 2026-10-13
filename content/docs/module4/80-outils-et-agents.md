@@ -106,6 +106,8 @@ l'[apprentissage par renforcement](docs/module2/80-trois-facons-d-apprendre/#app
 du Module 2 : une entité qui agit dans un environnement et observe les conséquences
 de ses actions.
 
+{{< image src="/images/module4/agent.svg" alt="À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur ARC et les résumer. Elle entre dans l'agent, dessiné comme un grand cadre. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un autre raisonnement, et ainsi de suite. Quand le modèle juge la tâche terminée, il sort de la boucle et donne sa réponse finale, à gauche." title="Le principe d'un agent. Le modèle de langage ne change pas : c'est la boucle, les outils et le contexte qui s'allonge qui en font un agent." loading="lazy" >}}
+
 L'applet ci-dessous montre, étape par étape, le contexte d'un agent. Les traces ont
 été rédigées pour l'exercice, mais elles suivent la forme réelle de ces échanges.
 Le premier scénario montre une question qui demande deux recherches et un calcul. Le
