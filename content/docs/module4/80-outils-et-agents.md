@@ -23,8 +23,9 @@ limites.
 
 Ce chapitre présente les moyens qui ont été développés pour dépasser ces limites :
 bien formuler les requêtes, donner au modèle des documents à consulter, lui confier
-des outils, et enfin le laisser enchaîner lui-même les actions. Ces systèmes
-s'appellent des **agents**.
+des outils, et enfin le laisser enchaîner lui-même les actions. Ces systèmes, des
+grands modèles de langage augmentés de capacités supplémentaires, comme l'usage
+d'outils, la consultation de documents ou une mémoire, s'appellent des **agents**.
 
 ## Formuler la requête
 
