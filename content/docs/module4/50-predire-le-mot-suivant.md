@@ -296,7 +296,9 @@ de même, on contourne le problème : de nouvelles versions du modèle, entraî
 les quelques mois, des notes glissées dans le contexte, et la recherche de documents
 présentée au chapitre
 « [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) ».
-L'apprentissage continu reste un problème de recherche ouvert.
+Une piste de recherche, l'**entraînement au moment du test**
+(*test-time training*), ajuste temporairement les poids du modèle sur le problème à
+résoudre, puis les oublie. L'apprentissage continu reste un problème de recherche ouvert.
 
 ## Ce que la prédiction exige
 

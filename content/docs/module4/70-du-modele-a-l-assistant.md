@@ -16,7 +16,7 @@ en assistant, le travail humain qu'elles demandent, et les modèles plus récent
 
 ## Un modèle de base ne répond pas
 
-Après le préentraînement, le modèle est un **modèle de base** (*base model*). Il a
+Après le **préentraînement** (*pre-training*), le modèle est un **modèle de base** (*base model*). Il a
 appris à continuer n'importe quel texte de façon plausible, et c'est tout.
 
 {{% hint info %}}
@@ -121,9 +121,11 @@ plus tard, en est une variante entraînée sur des dialogues.
 
 Le modèle de base contient pourtant l'essentiel des connaissances et des capacités
 de l'assistant. Il reste à lui apprendre à s'en servir pour répondre. C'est l'objet
-de deux étapes supplémentaires, beaucoup moins coûteuses que le préentraînement.
+de deux étapes supplémentaires, regroupées sous le nom de **post-entraînement**
+(*post-training*), beaucoup moins coûteuses que le préentraînement, du moins jusqu'aux
+modèles de raisonnement, dont le renforcement mobilise une part croissante du calcul.
 
-{{< image src="/images/module4/du-modele-a-l-assistant.svg" alt="Trois colonnes reliées par des flèches. 1, le préentraînement : des milliers de milliards de jetons de textes, la tâche de prédire le jeton suivant, et pour résultat un modèle de base qui continue des textes. 2, l'ajustement par instructions : des dizaines de milliers d'exemples de requêtes et de bonnes réponses rédigées par des humains, et pour résultat un modèle qui répond aux requêtes. 3, l'apprentissage par renforcement : des humains comparent des réponses, un modèle de récompense apprend leurs préférences, et le modèle est ajusté pour obtenir la meilleure récompense ; pour les mathématiques et le code, la récompense peut venir d'une vérification automatique. Le résultat est un assistant." title="Les trois étapes de l'entraînement d'un assistant. Le préentraînement représente l'essentiel du coût." loading="lazy" >}}
+{{< image src="/images/module4/du-modele-a-l-assistant.svg" alt="Trois colonnes reliées par des flèches. 1, le préentraînement : des milliers de milliards de jetons de textes, la tâche de prédire le jeton suivant, et pour résultat un modèle de base qui continue des textes. 2, l'ajustement par instructions : des dizaines de milliers d'exemples de requêtes et de bonnes réponses rédigées par des humains, et pour résultat un modèle qui répond aux requêtes. 3, l'apprentissage par renforcement : des humains comparent des réponses, un modèle de récompense apprend leurs préférences, et le modèle est ajusté pour obtenir la meilleure récompense ; pour les mathématiques et le code, la récompense peut venir d'une vérification automatique. Le résultat est un assistant. 4, en grisé, au moment de la réponse : aucun entraînement, les poids ne changent plus, mais le modèle peut réfléchir plus ou moins longtemps avant de répondre ; plus de calcul donne de meilleures réponses. Des accolades regroupent les étapes : la première est le préentraînement, la deuxième et la troisième forment le post-entraînement, la quatrième se passe au moment de la réponse." title="Les trois étapes de l'entraînement d'un assistant, puis son utilisation. Le préentraînement représente l'essentiel du coût de l'entraînement ; au moment de la réponse, le modèle ne change plus." loading="lazy" >}}
 
 ## Imiter de bonnes réponses
 
@@ -380,6 +382,15 @@ des modèles de raisonnement d'OpenAI et de Google DeepMind obtiennent un score 
 médaille d'or aux Olympiades internationales de mathématiques. Ces machines qui
 raisonnent sans aucune règle de logique écrite à la main avaient été annoncées au
 chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » du Module 1.
+
+Ces modèles ouvrent un troisième levier. Jusque-là, pour obtenir un meilleur modèle,
+on agrandissait le modèle et ses données, comme le décrivent les
+[lois d'échelle](docs/module4/60-passer-a-l-echelle/#des-lois-déchelle). Avec o1,
+OpenAI montre que la justesse des réponses augmente aussi, de façon régulière, avec le
+temps de réflexion accordé au modèle au moment de répondre. On parle de **calcul au
+moment de la réponse** (*test-time compute*). Le modèle ne change pas : il écrit
+seulement un raisonnement plus long. Ce levier a un prix, puisque chaque réponse coûte
+d'autant plus cher qu'elle est longue.
 
 Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
 réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
