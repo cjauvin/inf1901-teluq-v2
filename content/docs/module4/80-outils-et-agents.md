@@ -1,10 +1,10 @@
 ---
-title: "Des outils et des agents"
+title: "Des outils, un harnais et des agents"
 weight: 80
 slug: outils-et-agents
 ---
 
-# Des outils et des agents
+# Des outils, un harnais et des agents
 
 Un assistant comme ceux présentés au chapitre
 « [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant) » ne fait que

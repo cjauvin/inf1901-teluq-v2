@@ -110,8 +110,9 @@ modèles de langage, puis la rencontre du texte et de l'image.
 9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
    l'ajustement, le renforcement à partir de préférences humaines, et les modèles
    qui raisonnent.
-10. [*Des outils et des agents*](docs/module4/80-outils-et-agents) : la recherche
-   augmentée, l'appel d'outils, les agents et leurs risques.
+10. [*Des outils, un harnais et des agents*](docs/module4/80-outils-et-agents) : la recherche
+   augmentée, l'appel d'outils, le harnais qui entoure le modèle, les agents et leurs
+   risques.
 
 **Le texte et l'image, et le bilan**
 

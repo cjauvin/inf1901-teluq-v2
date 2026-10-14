@@ -296,7 +296,7 @@ McClelland, Bruce McNaughton et Randall O'Reilly, 1995). En attendant de savoir 
 de même, on contourne le problème : de nouvelles versions du modèle, entraînées tous
 les quelques mois, des notes glissées dans le contexte, et la recherche de documents
 présentée au chapitre
-« [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) ».
+« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) ».
 Une piste de recherche, l'**entraînement au moment du test**
 (*test-time training*), ajuste temporairement les poids du modèle sur le problème à
 résoudre, puis les oublie ; le chapitre
