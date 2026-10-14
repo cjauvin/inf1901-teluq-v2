@@ -98,6 +98,34 @@ passage qui répond à la question même s'il n'en reprend pas les mots.
 
 {{< image src="/images/module4/rag.svg" alt="Un schéma. La question de l'utilisateur est transformée en plongement. On cherche, dans une base de documents déjà transformés en plongements, les passages dont le vecteur est le plus proche. Les trois passages trouvés sont ajoutés au contexte du modèle de langage, avec la question. Le modèle rédige une réponse appuyée sur ces passages, en les citant." title="La génération augmentée par la recherche : on cherche les passages utiles, on les place dans le contexte, et le modèle répond à partir de ces passages." loading="lazy" >}}
 
+Concrètement, la recherche se prépare d'avance. On découpe les documents en passages
+de quelques centaines de mots, et un modèle de plongements calcule le vecteur de
+chacun. Ces vecteurs sont rangés, avec le texte de leur passage, dans une **base de
+données vectorielle** (*vector database*). Au moment de la question, on calcule le
+vecteur de la question et on demande à la base les passages dont le vecteur est le
+plus proche. C'est exactement la recherche des
+[k plus proches voisins](docs/module2/40-predire-par-ressemblance/#les-k-plus-proches-voisins)
+du Module 2, appliquée à des vecteurs de plusieurs centaines de dimensions.
+
+La difficulté est l'échelle. Comparer la question à des millions de vecteurs, un par
+un, serait trop lent. Les bases vectorielles font donc une recherche
+**approximative** : elles acceptent de manquer parfois un voisin, en échange d'une
+réponse en quelques millisecondes. La méthode la plus répandue, HNSW (Yury Malkov et
+Dmitry Yashunin, 2016), relie les vecteurs en un graphe à plusieurs étages. On part
+d'un étage clairsemé, où l'on fait de grands sauts, comme sur une autoroute, puis on
+descend vers des étages de plus en plus denses, comme dans les rues d'un quartier,
+jusqu'aux voisins de la question. La bibliothèque Faiss, publiée par Meta en 2017, et
+des bases spécialisées comme Pinecone, Milvus ou Chroma, ou l'extension pgvector de
+PostgreSQL, offrent ce type de recherche.
+
+{{< image src="/images/module4/hnsw.svg" alt="Trois plans superposés, les étages d'un graphe de vecteurs. L'étage du bas contient tous les vecteurs, reliés à leurs voisins proches ; l'étage du milieu en contient une quinzaine, reliés à des voisins plus éloignés ; l'étage du haut, seulement quatre. Une étoile rouge marque la position de la question, au même endroit à chaque étage. La recherche part d'un point d'entrée à l'étage du haut, fait deux grands sauts vers la question, descend à l'étage du milieu, se rapproche encore, puis descend à l'étage du bas, où quelques petits pas l'amènent au plus proche voisin de la question. Les trois plus proches voisins trouvés sont entourés." title="La recherche dans un graphe à étages (HNSW), réellement calculée sur des points tirés au hasard : quelques grands sauts en haut, quelques petits pas en bas, au lieu de comparer la question à tous les vecteurs." loading="lazy" >}}
+
+Les plongements ont aussi un point faible : ils saisissent le sens, mais distinguent
+mal un nom propre rare, un numéro de produit ou un code d'erreur. On combine donc
+souvent la recherche par vecteurs avec une recherche par mots-clés, héritière du
+[tf-idf](docs/module4/42-les-outils-statistiques/#représenter-des-documents) présenté
+au chapitre « Les outils statistiques ». C'est la **recherche hybride**.
+
 Cette méthode a deux avantages. Le modèle s'appuie sur des sources à jour, sans être
 réentraîné, et il peut les citer, ce qui permet de vérifier sa réponse. Elle est
 aujourd'hui utilisée par les moteurs de recherche qui répondent par un texte, et par
