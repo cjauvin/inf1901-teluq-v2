@@ -175,10 +175,11 @@ qu'on a dit. Le mécanisme est pourtant tout autre.
 
 Le modèle n'a aucune mémoire d'une réplique à l'autre. Ses paramètres sont fixés une
 fois pour toutes à la fin de l'entraînement, et rien de ce qu'on lui dit ne les
-modifie. Ce qui donne l'illusion de la continuité, c'est l'application qui
-l'entoure. À chaque nouvelle réplique, elle reconstitue un seul long texte, qui
+modifie. Ce qui donne l'illusion de la continuité, c'est le programme qui
+l'entoure, son [harnais](docs/module4/80-outils-et-agents/#formuler-la-requête).
+À chaque nouvelle réplique, il reconstitue un seul long texte, qui
 contient les instructions de départ, tous les messages échangés depuis le début et
-toutes les réponses déjà données par le modèle. Elle le lui présente comme un texte
+toutes les réponses déjà données par le modèle. Il le lui présente comme un texte
 à continuer. Le modèle prédit alors un jeton, qu'on ajoute au texte, puis le
 suivant, en tenant compte chaque fois de la totalité de ce qui précède. À la
 réplique suivante, tout recommence. En pratique, les calculs déjà faits sont
@@ -195,7 +196,7 @@ souviendrons demain. Le modèle fait presque l'inverse.
 
 - Il dispose de chaque mot exact de la conversation, tant qu'elle tient dans sa
   fenêtre de contexte.
-- Il n'a rien d'autre : aucun souvenir de la veille, sauf si l'application glisse
+- Il n'a rien d'autre : aucun souvenir de la veille, sauf si le harnais glisse
   des notes dans le texte qu'elle lui présente.
 - Quand la conversation dépasse la fenêtre, les passages les plus anciens sont
   simplement retirés, et il les oublie d'un coup.

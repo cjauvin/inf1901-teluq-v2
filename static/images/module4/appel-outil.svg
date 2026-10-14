@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 840 640" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
 <title>Un appel d'outil, pas à pas</title>
-<desc>Un diagramme en trois colonnes : le modèle, l'application et l'outil, avec le temps qui s'écoule vers le bas. 1, l'application envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, l'application vérifie l'appel. 4, elle interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, l'application ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, elle rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, l'application l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois.</desc>
+<desc>Un diagramme en trois colonnes : le modèle, le harnais et l'outil, avec le temps qui s'écoule vers le bas. 1, le harnais envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, le harnais vérifie l'appel. 4, il interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, le harnais ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, il rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, le harnais l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois.</desc>
 <defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
 <rect x="0" y="0" width="840" height="640" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un appel d'outil, pas à pas</text>
@@ -10,8 +10,8 @@
 <text x="130" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">ne fait que prédire des jetons</text>
 <line x1="130" y1="98" x2="130" y2="616" stroke="#b8a888" stroke-width="1.4" stroke-dasharray="5 4"/>
 <rect x="340" y="50" width="180" height="46" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
-<text x="430" y="70" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">l'application</text>
-<text x="430" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">lit, vérifie, exécute</text>
+<text x="430" y="70" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">le harnais</text>
+<text x="430" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">un programme classique</text>
 <line x1="430" y1="98" x2="430" y2="616" stroke="#b8a888" stroke-width="1.4" stroke-dasharray="5 4"/>
 <rect x="640" y="50" width="180" height="46" rx="8" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
 <text x="730" y="70" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">l'outil</text>

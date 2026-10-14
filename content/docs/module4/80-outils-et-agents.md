@@ -51,8 +51,8 @@ du modèle.
 
 Il n'y a pas de canal séparé pour cette requête. Comme toute la
 [conversation](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une),
-elle est simplement placée **au début du texte** que le modèle reçoit. L'application
-assemble ce texte selon un **gabarit de conversation** (*chat template*), qui délimite
+elle est simplement placée **au début du texte** que le modèle reçoit. Le programme qui
+entoure le modèle, qu'on appelle son **harnais** (*harness*), assemble ce texte selon un **gabarit de conversation** (*chat template*), qui délimite
 chaque partie par des jetons spéciaux. Ces jetons ne correspondent à aucun texte qu'un
 utilisateur pourrait taper. Schématiquement, le modèle reçoit ceci :
 
@@ -73,7 +73,7 @@ produire la marque de fin de réplique, qui rend la main à l'utilisateur. La
 description des outils disponibles est elle aussi écrite dans la partie système, sous
 forme de texte.
 
-{{< image src="/images/module4/gabarit-conversation.svg" alt="En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. L'application les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils." title="Le gabarit de conversation. La requête système n'est qu'un début de texte ; c'est le post-entraînement qui apprend au modèle à lui donner priorité." loading="lazy" >}}
+{{< image src="/images/module4/gabarit-conversation.svg" alt="En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. Le harnais les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils." title="Le gabarit de conversation. La requête système n'est qu'un début de texte ; c'est le post-entraînement qui apprend au modèle à lui donner priorité." loading="lazy" >}}
 
 Rien, dans le mécanisme, n'oblige le modèle à respecter la requête système plutôt que
 les messages de l'utilisateur. C'est le
@@ -146,8 +146,8 @@ partir du texte.
 
 Un modèle de langage ne peut qu'écrire du texte. Il ne peut ni consulter une base de
 données, ni faire un calcul exact, ni envoyer un courriel. Mais il peut écrire un texte
-qui **demande** une action, dans un format convenu à l'avance. Un programme qui
-l'entoure, l'application, lit cette demande, l'exécute, et lui rapporte le résultat.
+qui **demande** une action, dans un format convenu à l'avance. Son harnais, le programme qui
+l'entoure, lit cette demande, l'exécute, et lui rapporte le résultat.
 C'est l'**appel d'outils** (*tool use*, ou *function calling*). Quand on dit qu'un
 modèle « décide d'appeler un outil », voici exactement ce qui se passe.
 
@@ -177,13 +177,13 @@ suivie d'un petit texte structuré :
 Rien ne s'est encore passé. Le modèle a seulement prédit des jetons, comme toujours,
 et la génération s'arrête à la marque de fin.
 
-**3. L'application exécute l'appel.** Elle reconnaît la marque d'appel et lit le nom
-de l'outil et ses arguments. Elle vérifie qu'ils sont valides, puis exécute la fonction
-correspondante, ici une requête dans la base de données de la librairie. C'est elle,
+**3. Le harnais exécute l'appel.** Il reconnaît la marque d'appel et lit le nom de
+l'outil et ses arguments. Il vérifie qu'ils sont valides, puis exécute la fonction
+correspondante, ici une requête dans la base de données de la librairie. C'est lui,
 et non le modèle, qui agit sur le monde.
 
-**4. Le résultat est ajouté au texte, et le modèle est appelé de nouveau.**
-L'application ajoute au texte une nouvelle partie, marquée comme venant de l'outil,
+**4. Le résultat est ajouté au texte, et le modèle est appelé de nouveau.** Le
+harnais ajoute au texte une nouvelle partie, marquée comme venant de l'outil,
 puis rouvre une réplique de l'assistant :
 
 ```
@@ -198,7 +198,51 @@ Le modèle relit
 y compris le résultat, et écrit cette fois sa réponse : « Oui, nous l'avons en format
 poche, à 14,95 $, et il nous en reste trois exemplaires. »
 
-{{< image src="/images/module4/appel-outil.svg" alt="Un diagramme en trois colonnes : le modèle, l'application et l'outil, avec le temps qui s'écoule vers le bas. 1, l'application envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, l'application vérifie l'appel. 4, elle interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, l'application ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, elle rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, l'application l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois." title="Un appel d'outil, pas à pas. Le modèle passe deux fois : la première, il écrit l'appel ; la seconde, il lit le résultat et rédige sa réponse. Entre les deux, c'est l'application qui agit." loading="lazy" >}}
+{{< image src="/images/module4/appel-outil.svg" alt="Un diagramme en trois colonnes : le modèle, le harnais et l'outil, avec le temps qui s'écoule vers le bas. 1, le harnais envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, le harnais vérifie l'appel. 4, il interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, le harnais ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, il rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, le harnais l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois." title="Un appel d'outil, pas à pas. Le modèle passe deux fois : la première, il écrit l'appel ; la seconde, il lit le résultat et rédige sa réponse. Entre les deux, c'est le harnais qui agit." loading="lazy" >}}
+
+**Qui fait quoi.** Un assistant qui utilise des outils réunit des composants de nature
+très différente. Un seul est un modèle d'apprentissage automatique ; tous les autres
+sont des programmes ordinaires, écrits par des humains, comme ceux du
+[Module 1](docs/module1).
+
+- **Le modèle** est un très grand ensemble de paramètres, des nombres appris à
+  l'entraînement, que des serveurs équipés de
+  [processeurs graphiques](docs/module3/42-materiel-et-outils/#les-processeurs-graphiques)
+  font tourner, en général chez l'entreprise qui l'a entraîné. Il ne sait faire
+  qu'une chose : recevoir un texte et produire la suite, jeton après jeton. Il n'a ni
+  accès au réseau, ni accès aux fichiers, ni horloge, et rien ne lui reste d'un appel
+  à l'autre. Il ne sait même pas quels outils existent vraiment, seulement ce que leur
+  description en dit.
+- **Le harnais** est un programme classique, écrit par exemple en Python ou en
+  JavaScript. Le mot vient de l'équipement qui relie la force d'un cheval à la
+  charrue : le modèle fournit la force, le harnais la dirige. C'est l'interface Web de
+  ChatGPT, le robot conversationnel d'une banque, ou un assistant de programmation
+  installé sur un ordinateur. Il tient la conversation, assemble le texte selon le
+  gabarit, envoie ce texte au modèle par le réseau, et reçoit sa suite. Si cette suite
+  contient un appel, il lit l'appel, le vérifie, exécute l'outil et rappelle le
+  modèle. C'est aussi lui qui applique les règles : quels outils sont branchés,
+  quelles actions demandent la confirmation de l'utilisateur, ce qui est interdit.
+- **Les outils** sont, eux aussi, des programmes ordinaires : une requête dans une
+  base de données, l'interface d'un moteur de recherche, un calcul, l'envoi d'un
+  courriel. Ils font exactement ce pour quoi ils ont été programmés, avec la fiabilité
+  d'un programme classique. Un outil puissant, comme l'exécution de code, tourne
+  souvent dans un **bac à sable** (*sandbox*), un environnement isolé d'où le code ne
+  peut pas atteindre le reste de la machine.
+
+Ces composants ne tournent pas forcément au même endroit. Le modèle tourne chez son
+fournisseur. Pour la librairie, le harnais et le catalogue tournent sur les serveurs
+de la librairie : le fournisseur du modèle ne voit que le texte qu'on lui envoie, et
+n'a jamais accès à la base de données. Dans ChatGPT, l'interpréteur de code tourne
+chez OpenAI, dans un bac à sable. Un assistant de programmation, lui, exécute ses
+commandes sur l'ordinateur même de l'utilisateur.
+
+{{< image src="/images/module4/modele-harnais-outils.svg" alt="Trois zones côte à côte, séparées par des frontières en pointillés. À gauche, chez le fournisseur du modèle : le modèle, des milliards de paramètres sur des processeurs graphiques ; il sait prolonger un texte, mais n'a ni réseau, ni fichiers, ni horloge, et rien ne lui reste d'un appel à l'autre. Au milieu, chez l'entreprise qui offre l'assistant, ou sur l'ordinateur de l'utilisateur : le harnais, un programme classique, relié à l'utilisateur ; il tient la conversation, assemble le texte, lit et vérifie les appels, exécute les outils, applique les permissions, demande des confirmations et affiche la réponse. Le harnais envoie le texte au modèle et reçoit sa suite, parfois un appel. À droite, le monde : les outils, des programmes ordinaires, comme une base de données, une recherche sur le Web, une messagerie et un bac à sable pour exécuter du code. Le harnais les exécute et reçoit leurs résultats. En bas : le modèle propose, le harnais dispose." title="Le modèle, le harnais et les outils. Seul le modèle a été appris ; le harnais et les outils sont des programmes classiques, et c'est le harnais qui décide de ce que l'assistant peut faire." loading="lazy" >}}
+
+Il en découle un principe simple : **le modèle propose, le harnais dispose**. Ce qu'un
+assistant peut faire dans le monde ne dépend pas du modèle, mais des outils que son
+harnais lui branche et des permissions qu'il lui accorde. Le même modèle est
+inoffensif sans outils, et peut devenir dangereux si son harnais lui donne accès à une
+messagerie ou à un compte bancaire sans demander de confirmation.
 
 **Pourquoi le modèle « décide » d'appeler un outil.** Il n'y a pas de module de
 décision séparé. L'appel est une suite de jetons comme une autre, et il est écrit quand
@@ -213,10 +257,10 @@ appels dans des textes, puis ne garde, pour s'entraîner, que ceux dont le résu
 l'aide à mieux prédire la suite du texte.
 
 **Ce qui peut mal tourner.** Puisque l'appel est prédit, il peut être mal formé,
-appeler un outil qui n'existe pas, ou inventer un argument. L'application doit donc
-tout vérifier. Elle peut aussi contraindre la génération : à chaque jeton, elle
+appeler un outil qui n'existe pas, ou inventer un argument. Le harnais doit donc
+tout vérifier. Il peut aussi contraindre la génération : à chaque jeton, elle
 n'autorise que ceux qui respectent le format de l'appel. Et puisque c'est
-l'application qui exécute, c'est elle qui décide de ce qui est permis, par exemple en
+le harnais qui exécute, c'est lui qui décide de ce qui est permis, par exemple en
 demandant la confirmation de l'utilisateur avant d'envoyer un courriel.
 
 **Plusieurs outils, plusieurs appels.** Dans une même réponse, le modèle peut appeler
@@ -232,7 +276,7 @@ de fichiers donne accès aux documents de l'utilisateur. Un outil peut même êt
 autre modèle, par exemple un générateur d'images. Les principaux assistants offrent
 l'appel d'outils depuis 2023.
 
-Chaque application devait d'abord décrire et brancher ses outils à sa manière. En
+Chaque harnais devait d'abord décrire et brancher ses outils à sa manière. En
 novembre 2024, Anthropic propose une norme ouverte, le *Model Context Protocol* (MCP),
 à la façon d'une prise universelle. Un **serveur MCP** présente un ensemble d'outils,
 comme un agenda, une messagerie ou une base de données, avec leurs descriptions. Tout
@@ -247,7 +291,9 @@ suivante, jusqu'à ce que la tâche soit terminée. Ce schéma, raisonner, agir,
 a été décrit en 2022 sous le nom de ReAct. Le mot *agent* reprend celui de
 l'[apprentissage par renforcement](docs/module2/80-trois-facons-d-apprendre/#apprendre-par-lexpérience-le-renforcement)
 du Module 2 : une entité qui agit dans un environnement et observe les conséquences
-de ses actions.
+de ses actions. Le modèle, lui, ne fait toujours que prédire des jetons. C'est le harnais qui fait
+tourner la boucle : il rappelle le modèle tant que celui-ci demande des outils, et
+s'arrête quand il donne sa réponse finale.
 
 {{< image src="/images/module4/agent.svg" alt="À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur ARC et les résumer. Elle entre dans l'agent, dessiné comme un grand cadre. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un autre raisonnement, et ainsi de suite. Quand le modèle juge la tâche terminée, il sort de la boucle et donne sa réponse finale, à gauche." title="Le principe d'un agent. Le modèle de langage ne change pas : c'est la boucle, les outils et le contexte qui s'allonge qui en font un agent." loading="lazy" >}}
 

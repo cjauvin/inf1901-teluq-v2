@@ -1,4 +1,4 @@
-"""Module 4, « Des outils et des agents » : comment la requête système est combinée aux messages de l'utilisateur. L'application
+"""Module 4, « Des outils et des agents » : comment la requête système est combinée aux messages de l'utilisateur. Le harnais
 assemble un seul texte selon un gabarit de conversation, délimité par des jetons spéciaux ; le texte s'arrête à l'ouverture de
 la réplique de l'assistant, et le modèle le continue jusqu'à la marque de fin. Marques schématiques."""
 from pathlib import Path
@@ -12,7 +12,7 @@ o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>Le gabarit de conversation</title>",
      "<desc>En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la "
-     "description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. L'application les assemble en un "
+     "description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. Le harnais les assemble en un "
      "seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque "
      "spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après "
      "la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en "
@@ -34,7 +34,7 @@ for x, titre, lignes, c in SOURCES:
         o.append(f'<text x="{x + 120}" y="{92 + k * 15}" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle"'
                  + (' font-style="italic"' if x == 570 else "") + f'>{l}</text>')
     o.append(f'<line x1="{x + 120}" y1="140" x2="{x + 120}" y2="156" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#p)"/>')
-o.append(f'<text x="{W / 2}" y="176" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle" stroke="{FOND}" stroke-width="5" paint-order="stroke">l\'application assemble un seul texte, selon un gabarit de conversation</text>')
+o.append(f'<text x="{W / 2}" y="176" font-size="11" fill="{ENCRE_PALE}" text-anchor="middle" stroke="{FOND}" stroke-width="5" paint-order="stroke">le harnais assemble un seul texte, selon un gabarit de conversation</text>')
 
 # le texte assemblé
 TX, TY, TW, TH = 30, 188, 560, 262

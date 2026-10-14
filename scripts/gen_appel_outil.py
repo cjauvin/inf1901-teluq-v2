@@ -1,5 +1,5 @@
 """Module 4, « Des outils et des agents » : un appel d'outil, pas à pas, en diagramme de séquence. Le modèle ne fait que
-prédire des jetons ; l'application lit l'appel, exécute l'outil, ajoute le résultat au texte et rappelle le modèle."""
+prédire des jetons ; le harnais lit l'appel, exécute l'outil, ajoute le résultat au texte et rappelle le modèle."""
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent.parent / "static" / "images" / "module4"
@@ -10,20 +10,20 @@ W, H = 840, 640
 o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>Un appel d'outil, pas à pas</title>",
-     "<desc>Un diagramme en trois colonnes : le modèle, l'application et l'outil, avec le temps qui s'écoule vers le bas. 1, "
-     "l'application envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien "
+     "<desc>Un diagramme en trois colonnes : le modèle, le harnais et l'outil, avec le temps qui s'écoule vers le bas. 1, "
+     "le harnais envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien "
      "coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : "
-     "chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, l'application vérifie l'appel. 4, elle "
-     "interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, l'application ajoute ce résultat au "
-     "texte et rouvre une réplique de l'assistant. 7, elle rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : "
-     "« Oui, nous l'avons en format poche, à 14,95 $. » 9, l'application l'affiche à l'utilisateur. À côté des étapes 1 et 7, le "
+     "chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, le harnais vérifie l'appel. 4, il "
+     "interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, le harnais ajoute ce résultat au "
+     "texte et rouvre une réplique de l'assistant. 7, il rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : "
+     "« Oui, nous l'avons en format poche, à 14,95 $. » 9, le harnais l'affiche à l'utilisateur. À côté des étapes 1 et 7, le "
      "texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois.</desc>",
      f'<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">'
      f'<path d="M0 0 L10 5 L0 10 z" fill="{GRIS}"/></marker></defs>',
      f'<rect x="0" y="0" width="{W}" height="{H}" rx="14" fill="{FOND}" stroke="{BORD}"/>',
      f'<text x="{W / 2}" y="32" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Un appel d\'outil, pas à pas</text>']
 XM, XA, XO = 130, 430, 730
-for x, nom, sous, c in ((XM, "le modèle", "ne fait que prédire des jetons", TEAL), (XA, "l'application", "lit, vérifie, exécute", BLEU),
+for x, nom, sous, c in ((XM, "le modèle", "ne fait que prédire des jetons", TEAL), (XA, "le harnais", "un programme classique", BLEU),
                         (XO, "l'outil", "ici, le catalogue", BRUN)):
     o.append(f'<rect x="{x - 90}" y="50" width="180" height="46" rx="8" fill="{PANNEAU}" stroke="{c}" stroke-width="2"/>')
     o.append(f'<text x="{x}" y="70" font-size="13" fill="{c}" text-anchor="middle" font-weight="700">{nom}</text>')

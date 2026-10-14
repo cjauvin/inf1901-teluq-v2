@@ -12,7 +12,7 @@ o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>Le principe d'un agent</title>",
      "<desc>À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur un sujet et les résumer. Elle entre "
-     "dans l'agent, dessiné comme un grand cadre. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en "
+     "dans l'agent, dessiné comme un grand cadre : le modèle et son harnais. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en "
      "trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, "
      "documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner "
      "de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un "
@@ -50,8 +50,8 @@ boite(20, 300, 150, 50, "les trois résumés", "quand la tâche est finie", coul
 # l'agent
 AX, AY, AW, AH = 196, 58, 404, 384
 o.append(f'<rect x="{AX}" y="{AY}" width="{AW}" height="{AH}" rx="14" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="2.2" stroke-dasharray="7 4"/>')
-o.append(f'<rect x="{AX + 16}" y="{AY - 11}" width="72" height="22" rx="6" fill="{FOND}"/>')
-o.append(f'<text x="{AX + 52}" y="{AY + 5}" font-size="13" fill="{TEAL}" text-anchor="middle" font-weight="700">l\'agent</text>')
+o.append(f'<rect x="{AX + 16}" y="{AY - 11}" width="250" height="22" rx="6" fill="{FOND}"/>')
+o.append(f'<text x="{AX + 24}" y="{AY + 5}" font-size="13" fill="{TEAL}" font-weight="700">l\'agent{NB}: <tspan font-weight="400">le modèle et son harnais</tspan></text>')
 o.append(f'<path d="M170 179 C 205 179 222 180 232 193" fill="none" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#p)"/>')
 # le modèle au centre, et la boucle
 MX, MY = 378, 210
@@ -75,7 +75,7 @@ for lab, c in [("tâche", BLEU), ("raisonnement", TEAL), ("action", TEAL), ("ré
     o.append(f'<rect x="{x}" y="{CY}" width="{w}" height="22" rx="5" fill="{c}"/>')
     o.append(f'<text x="{x + w / 2}" y="{CY + 15}" font-size="10.5" fill="{PANNEAU}" text-anchor="middle" font-weight="700">{lab}</text>')
     x += w + 5
-o.append(f'<text x="{AX + 18}" y="{CY + 44}" font-size="10.5" fill="{ENCRE_PALE}">le modèle relit tout ce contexte avant chaque nouvelle étape</text>')
+o.append(f'<text x="{AX + 18}" y="{CY + 44}" font-size="10.5" fill="{ENCRE_PALE}">le harnais fait tourner la boucle{NB}; le modèle relit tout le contexte à chaque tour</text>')
 # les outils, à droite
 TX, TW = 628, 192
 o.append(f'<text x="{TX + TW / 2}" y="76" font-size="11" fill="{GRIS}" text-anchor="middle" font-weight="700">LES OUTILS</text>')

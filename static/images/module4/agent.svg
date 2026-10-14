@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 840 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
 <title>Le principe d'un agent</title>
-<desc>À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur un sujet et les résumer. Elle entre dans l'agent, dessiné comme un grand cadre. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un autre raisonnement, et ainsi de suite. Quand le modèle juge la tâche terminée, il sort de la boucle et donne sa réponse finale, à gauche.</desc>
+<desc>À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur un sujet et les résumer. Elle entre dans l'agent, dessiné comme un grand cadre : le modèle et son harnais. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un autre raisonnement, et ainsi de suite. Quand le modèle juge la tâche terminée, il sort de la boucle et donne sa réponse finale, à gauche.</desc>
 <defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker></defs>
 <rect x="0" y="0" width="840" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un agent : un modèle de langage qui agit en boucle, avec des outils</text>
@@ -17,8 +17,8 @@
 <text x="95.0" y="322.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">les trois résumés</text>
 <text x="95.0" y="338.0" font-size="11" fill="#5b5249" text-anchor="middle">quand la tâche est finie</text>
 <rect x="196" y="58" width="404" height="384" rx="14" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2.2" stroke-dasharray="7 4"/>
-<rect x="212" y="47" width="72" height="22" rx="6" fill="#efe7d3"/>
-<text x="248" y="63" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700">l'agent</text>
+<rect x="212" y="47" width="250" height="22" rx="6" fill="#efe7d3"/>
+<text x="220" y="63" font-size="13" fill="#2f6f6a" font-weight="700">l'agent : <tspan font-weight="400">le modèle et son harnais</tspan></text>
 <path d="M170 179 C 205 179 222 180 232 193" fill="none" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
 <rect x="306" y="180" width="144" height="60" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="1.6"/>
 <text x="378.0" y="207.0" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="700">grand modèle</text>
@@ -47,7 +47,7 @@
 <text x="513.6999999999999" y="387" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">raisonnement</text>
 <rect x="561.3" y="372" width="18.1" height="22" rx="5" fill="#7a6f63"/>
 <text x="570.3499999999999" y="387" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">…</text>
-<text x="214" y="416" font-size="10.5" fill="#5b5249">le modèle relit tout ce contexte avant chaque nouvelle étape</text>
+<text x="214" y="416" font-size="10.5" fill="#5b5249">le harnais fait tourner la boucle ; le modèle relit tout le contexte à chaque tour</text>
 <text x="724.0" y="76" font-size="11" fill="#7a6f63" text-anchor="middle" font-weight="700">LES OUTILS</text>
 <rect x="628" y="88" width="192" height="40" rx="8" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.6"/>
 <text x="724.0" y="112.0" font-size="12" fill="#3a3531" text-anchor="middle">recherche Web</text>
