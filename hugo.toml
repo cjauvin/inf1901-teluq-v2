@@ -5,6 +5,10 @@ defaultContentLanguage = 'fr'
 title = "INF1901 - Initiation à l'IA : concepts et réflexions"
 theme = 'hugo-book'
 
+# Le gabarit x (message de X) va chercher le message au moment de la construction ; si X ne répond pas,
+# on veut un avertissement, pas un déploiement en échec.
+ignoreLogs = ['shortcode-x-getremote']
+
 # --- Paramètres du thème hugo-book ---
 [params]
 BookTheme = "auto"

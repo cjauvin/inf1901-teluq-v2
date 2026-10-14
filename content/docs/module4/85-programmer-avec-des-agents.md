@@ -250,10 +250,13 @@ Les incidents réels montrent pourquoi ces précautions comptent.
 
 ## Programmer autrement
 
-Le 2 février 2025, l'informaticien Andrej Karpathy décrit une nouvelle façon de
-programmer, qu'il appelle le *vibe coding* : se laisser porter, accepter toutes les
+Le 2 février 2025, dans le message reproduit ci-dessous, l'informaticien Andrej
+Karpathy décrit une nouvelle façon de programmer, qu'il appelle le *vibe coding* : se laisser porter, accepter toutes les
 modifications de l'agent sans les lire, recoller les messages d'erreur, et oublier que
 le code existe. Il la réserve lui-même aux projets jetables d'une fin de semaine.
+
+{{< x user="karpathy" id="1886192184808149383" >}}
+
 L'expression devient le mot de l'année 2025 du dictionnaire Collins. D'autres, comme
 Simon Willison, soulignent qu'elle ne décrit pas la programmation assistée en
 général : un professionnel qui utilise un agent relit, teste et comprend ce qu'il
