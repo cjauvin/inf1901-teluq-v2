@@ -127,7 +127,7 @@ montrent qu'ils voient autrement.
   fourchette à côté d'une assiette.
 - **Les instructions cachées dans les images.** Un texte écrit dans une image est lu
   comme le reste de la requête. Une image peut donc contenir une
-  [injection d'instructions](docs/module4/80-outils-et-agents/#des-agents),
+  [injection d'instructions](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle),
   comme une page Web.
 
 Ces difficultés posent une question déjà rencontrée avec la vidéo : un modèle qui

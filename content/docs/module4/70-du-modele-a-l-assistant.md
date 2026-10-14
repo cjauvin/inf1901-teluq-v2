@@ -330,7 +330,7 @@ qu'elle est ouverte. Les grands modèles actuels saisissent souvent ces sous-ent
 que les systèmes à règles ne pouvaient pas traiter.
 
 Enfin, quand un modèle peut envoyer un courriel ou passer une commande, comme les
-[agents](docs/module4/80-outils-et-agents/#des-agents), ses mots deviennent des actes
+[agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle), ses mots deviennent des actes
 au sens propre, et dire, pour lui aussi, devient faire.
 
 ## Des modèles qui « raisonnent » (RLVR)

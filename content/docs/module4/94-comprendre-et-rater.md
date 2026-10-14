@@ -82,7 +82,7 @@ nombreuses disciplines. Les modèles y progressent vite, et le débat recommence
 chaque nouveau test.
 
 Enfin, comme le montrait le chapitre
-« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#des-agents) », un
+« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle) », un
 modèle distingue mal les consignes de son utilisateur des textes qu'il lit. Les
 [exemples adverses](docs/module3/90-tromper-un-reseau/#se-défendre) du Module 3 ont
 ainsi leur équivalent pour les modèles de langage, qu'il s'agisse de formulations qui

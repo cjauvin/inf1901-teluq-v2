@@ -42,6 +42,8 @@ des requêtes (*prompt engineering*) repose sur quelques principes simples.
 - Demander un raisonnement par étapes pour les problèmes difficiles, comme la
   [chaîne de pensée](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
 
+## La requête système et le harnais
+
 Les assistants reçoivent aussi une **requête système** (*system prompt*), rédigée par
 l'entreprise ou le développeur, que l'utilisateur ne voit généralement pas. Elle fixe
 le rôle de l'assistant, son ton, ce qu'il doit refuser et les outils dont il dispose.
@@ -83,7 +85,7 @@ deux se contredisent. En 2024, une équipe d'OpenAI décrit cette **hiérarchie 
 instructions** (*instruction hierarchy*) : d'abord la requête système, puis
 l'utilisateur, puis le contenu des documents et des outils. Comme tout ce qui est
 appris, cette priorité est imparfaite, et c'est pourquoi les
-[injections d'instructions](#des-agents) restent possibles.
+[injections d'instructions](#des-agents-un-modèle-et-son-harnais-en-boucle) restent possibles.
 
 ## Chercher d'abord, répondre ensuite (RAG)
 
@@ -142,7 +144,7 @@ Deux conceptions du savoir s'y rejoignent : le savoir organisé à la main, ou
 automatiquement, dans un graphe, et le savoir absorbé par un modèle de langage à
 partir du texte.
 
-## Confier des outils au modèle
+## Le harnais et l'appel d'outils
 
 Un modèle de langage ne peut qu'écrire du texte. Il ne peut ni consulter une base de
 données, ni faire un calcul exact, ni envoyer un courriel. Mais il peut écrire un texte
@@ -267,7 +269,7 @@ demandant la confirmation de l'utilisateur avant d'envoyer un courriel.
 plusieurs outils, l'un après l'autre ou en même temps. Chaque résultat s'ajoute au
 texte avant l'étape suivante. Il peut chercher le livre, puis appeler une calculatrice
 pour le prix de trente exemplaires avec les taxes, puis rédiger sa réponse. Cette
-boucle est le cœur des [agents](#des-agents), présentés plus bas.
+boucle est le cœur des [agents](#des-agents-un-modèle-et-son-harnais-en-boucle), présentés plus bas.
 
 Les outils compensent les faiblesses du modèle. Une calculatrice ou un programme
 exécuté donne un résultat exact. Une recherche sur le Web donne une information à
@@ -283,7 +285,7 @@ comme un agenda, une messagerie ou une base de données, avec leurs descriptions
 assistant compatible peut s'y brancher, lire ces descriptions et les placer dans son
 contexte. OpenAI et Google adoptent la norme au printemps 2025.
 
-## Des agents
+## Des agents : un modèle et son harnais, en boucle
 
 Un **agent** est un système qui enchaîne lui-même plusieurs étapes pour accomplir une
 tâche : il raisonne, choisit un outil, observe le résultat, puis décide de l'étape

@@ -176,7 +176,7 @@ qu'on a dit. Le mécanisme est pourtant tout autre.
 Le modèle n'a aucune mémoire d'une réplique à l'autre. Ses paramètres sont fixés une
 fois pour toutes à la fin de l'entraînement, et rien de ce qu'on lui dit ne les
 modifie. Ce qui donne l'illusion de la continuité, c'est le programme qui
-l'entoure, son [harnais](docs/module4/80-outils-et-agents/#formuler-la-requête).
+l'entoure, son [harnais](docs/module4/80-outils-et-agents/#la-requête-système-et-le-harnais).
 À chaque nouvelle réplique, il reconstitue un seul long texte, qui
 contient les instructions de départ, tous les messages échangés depuis le début et
 toutes les réponses déjà données par le modèle. Il le lui présente comme un texte
@@ -215,7 +215,7 @@ C'est pourquoi la taille de la fenêtre compte autant, et pourquoi elle est pass
   code d'un logiciel) et de l'interroger sur l'ensemble plutôt que sur des extraits ;
 - de lui donner de nombreux exemples dans la requête, pour
   l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte) ;
-- de laisser un [agent](docs/module4/80-outils-et-agents/#des-agents) accumuler le
+- de laisser un [agent](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle) accumuler le
   résultat de ses actions au fil d'une longue tâche.
 
 Tout ce que le modèle doit savoir pour répondre, et qu'il n'a pas appris pendant
