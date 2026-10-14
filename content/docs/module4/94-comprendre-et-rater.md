@@ -47,7 +47,7 @@ La plupart des tests notent une réponse juste par 1 et une réponse fausse ou u
 abstention par 0. Comme à un examen à choix multiples sans pénalité, deviner rapporte
 alors plus que d'avouer son ignorance, et l'entraînement renforce cette habitude.
 
-La [recherche augmentée](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite)
+La [recherche augmentée](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag)
 et les citations de sources réduisent les hallucinations, sans les supprimer. La
 consigne pratique reste de vérifier toute information importante, surtout les
 chiffres, les noms et les références.

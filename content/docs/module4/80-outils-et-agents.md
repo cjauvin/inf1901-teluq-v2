@@ -85,7 +85,7 @@ l'utilisateur, puis le contenu des documents et des outils. Comme tout ce qui es
 appris, cette priorité est imparfaite, et c'est pourquoi les
 [injections d'instructions](#des-agents) restent possibles.
 
-## Chercher d'abord, répondre ensuite
+## Chercher d'abord, répondre ensuite (RAG)
 
 Pour répondre à une question sur des documents récents ou privés, on peut chercher
 les passages utiles, puis les placer dans le contexte du modèle avec la question.

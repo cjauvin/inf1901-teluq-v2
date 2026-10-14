@@ -267,7 +267,7 @@ Cette idée a de nombreux usages.
 
 - **La recherche par le sens.** Un moteur de recherche qui compare des vecteurs de
   phrases trouve un document qui répond à une question, même s'il n'utilise aucun
-  des mots de la question. Le chapitre du [Module 4](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) sur les outils
+  des mots de la question. Le chapitre du [Module 4](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) sur les outils
   et les agents y reviendra.
 - **La recommandation.** Les plateformes de musique ou de vidéo représentent chaque
   morceau et chaque utilisateur par un vecteur, et proposent les morceaux proches.

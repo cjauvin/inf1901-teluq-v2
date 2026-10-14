@@ -220,7 +220,7 @@ C'est pourquoi la taille de la fenêtre compte autant, et pourquoi elle est pass
 Tout ce que le modèle doit savoir pour répondre, et qu'il n'a pas appris pendant
 l'entraînement, doit se trouver dans cette fenêtre. Quand les documents n'y tiennent
 pas, il faut choisir les passages à y placer. C'est la
-[génération augmentée par la recherche](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite).
+[génération augmentée par la recherche](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag).
 
 Une grande fenêtre a toutefois un prix. Dans l'attention, chaque jeton est comparé à
 tous ceux qui le précèdent : doubler la longueur du texte multiplie à peu près par
@@ -295,7 +295,7 @@ McClelland, Bruce McNaughton et Randall O'Reilly, 1995). En attendant de savoir 
 de même, on contourne le problème : de nouvelles versions du modèle, entraînées tous
 les quelques mois, des notes glissées dans le contexte, et la recherche de documents
 présentée au chapitre
-« [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite) ».
+« [Des outils et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) ».
 Une piste de recherche, l'**entraînement au moment du test**
 (*test-time training*), ajuste temporairement les poids du modèle sur le problème à
 résoudre, puis les oublie ; le chapitre
