@@ -179,3 +179,10 @@ mjx-container[display="true"] {
 @media (prefers-color-scheme: dark) {
   :root[data-theme="auto"] .logo-mono { filter: invert(1); }
 }
+
+/* Messages de X (gabarit x) : centrés dans la colonne de texte, avant comme après le chargement du script de X. */
+.markdown blockquote.twitter-tweet,
+.markdown .twitter-tweet {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
