@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 530" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le gabarit de conversation</title>
+<desc>En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. L'application les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="530" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un seul texte : la requête système, puis la conversation</text>
+<rect x="30" y="52" width="240" height="86" rx="8" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="150" y="73" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">requête système</text>
+<text x="150" y="92" font-size="11" fill="#5b5249" text-anchor="middle">rédigée par l'entreprise,</text>
+<text x="150" y="107" font-size="11" fill="#5b5249" text-anchor="middle">invisible pour l'utilisateur ;</text>
+<text x="150" y="122" font-size="11" fill="#5b5249" text-anchor="middle">rôle, ton, refus, outils</text>
+<line x1="150" y1="140" x2="150" y2="156" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="300" y="52" width="240" height="86" rx="8" fill="#fbf7ee" stroke="#7a6f63" stroke-width="1.8"/>
+<text x="420" y="73" font-size="12.5" fill="#7a6f63" text-anchor="middle" font-weight="700">échanges précédents</text>
+<text x="420" y="92" font-size="11" fill="#5b5249" text-anchor="middle">les questions et les réponses</text>
+<text x="420" y="107" font-size="11" fill="#5b5249" text-anchor="middle">depuis le début</text>
+<text x="420" y="122" font-size="11" fill="#5b5249" text-anchor="middle">de la conversation</text>
+<line x1="420" y1="140" x2="420" y2="156" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="570" y="52" width="240" height="86" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="690" y="73" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">nouveau message</text>
+<text x="690" y="92" font-size="11" fill="#5b5249" text-anchor="middle" font-style="italic">« Avez-vous Kamouraska,</text>
+<text x="690" y="107" font-size="11" fill="#5b5249" text-anchor="middle" font-style="italic">d'Anne Hébert ? »</text>
+<text x="690" y="122" font-size="11" fill="#5b5249" text-anchor="middle" font-style="italic"></text>
+<line x1="690" y1="140" x2="690" y2="156" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="420.0" y="176" font-size="11" fill="#5b5249" text-anchor="middle" stroke="#efe7d3" stroke-width="5" paint-order="stroke">l'application assemble un seul texte, selon un gabarit de conversation</text>
+<rect x="30" y="188" width="560" height="262" rx="10" fill="#fbf7ee" stroke="#d9cbac" stroke-width="1.4"/>
+<rect x="44" y="199" width="92.2" height="18" rx="4" fill="#9a5b33"/>
+<text x="90.1" y="212" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">début système</text>
+<text x="54" y="231" font-size="11.5" fill="#3a3531" font-family="ui-monospace, Menlo, monospace">Tu es l'assistant de la librairie Le Signet.</text>
+<text x="54" y="247" font-size="11.5" fill="#3a3531" font-family="ui-monospace, Menlo, monospace">Ne donne jamais d'avis médical.</text>
+<text x="54" y="263" font-size="11.5" fill="#3a3531" font-family="ui-monospace, Menlo, monospace">Outil : chercher_catalogue(titre)</text>
+<rect x="44" y="269" width="28.200000000000003" height="18" rx="4" fill="#9a5b33"/>
+<text x="58.1" y="282" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">fin</text>
+<text x="44" y="308" font-size="11" fill="#7a6f63" font-style="italic">… les échanges précédents, avec les mêmes marques …</text>
+<rect x="44" y="323" width="117.80000000000001" height="18" rx="4" fill="#3a6ea5"/>
+<text x="102.9" y="336" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">début utilisateur</text>
+<text x="54" y="355" font-size="11.5" fill="#3a3531" font-family="ui-monospace, Menlo, monospace">Avez-vous Kamouraska, d'Anne Hébert ?</text>
+<rect x="44" y="361" width="28.200000000000003" height="18" rx="4" fill="#3a6ea5"/>
+<text x="58.1" y="374" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">fin</text>
+<rect x="44" y="389" width="105.0" height="18" rx="4" fill="#2f6f6a"/>
+<text x="96.5" y="402" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">début assistant</text>
+<text x="157.0" y="402" font-size="11.5" fill="#c4564a" font-family="ui-monospace, Menlo, monospace" font-weight="700">Oui, nous l'avons en format poche.</text>
+<rect x="423.0" y="389" width="28.200000000000003" height="18" rx="4" fill="#c4564a"/>
+<text x="437.1" y="402" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">fin</text>
+<text x="44" y="428" font-size="10.5" fill="#5b5249">le texte reçu s'arrête après « début assistant » ; en rouge, ce que le modèle écrit</text>
+<rect x="630" y="290" width="180" height="66" rx="10" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2"/>
+<text x="720" y="318" font-size="13" fill="#3a3531" text-anchor="middle" font-weight="700">le modèle</text>
+<text x="720" y="336" font-size="11" fill="#5b5249" text-anchor="middle">prédit la suite, jeton</text>
+<text x="720" y="350" font-size="11" fill="#5b5249" text-anchor="middle">après jeton</text>
+<line x1="594" y1="310" x2="624" y2="310" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<path d="M670 358 C 670 420 650 398 584 398" fill="none" stroke="#c4564a" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="816" y="396" font-size="11" fill="#c4564a" text-anchor="end">jusqu'à la marque de fin,</text>
+<text x="816" y="410" font-size="11" fill="#c4564a" text-anchor="end">qui rend la main</text>
+<text x="816" y="424" font-size="11" fill="#c4564a" text-anchor="end">à l'utilisateur</text>
+<text x="420.0" y="480" font-size="12" fill="#3a3531" text-anchor="middle">priorité apprise au post-entraînement : <tspan fill="#9a5b33" font-weight="700">système</tspan>  ›  <tspan fill="#3a6ea5" font-weight="700">utilisateur</tspan>  ›  <tspan fill="#7a6f63" font-weight="700">documents et outils</tspan></text>
+<text x="420.0" y="502" font-size="10.5" fill="#5b5249" text-anchor="middle">les marques sont des jetons spéciaux, que l'utilisateur ne peut pas taper ; leur forme exacte varie d'un modèle à l'autre</text>
+</svg>

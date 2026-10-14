@@ -49,6 +49,42 @@ Toute la conversation, requête système comprise, doit tenir dans la
 [fenêtre de contexte](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant)
 du modèle.
 
+Il n'y a pas de canal séparé pour cette requête. Comme toute la
+[conversation](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une),
+elle est simplement placée **au début du texte** que le modèle reçoit. L'application
+assemble ce texte selon un **gabarit de conversation** (*chat template*), qui délimite
+chaque partie par des jetons spéciaux. Ces jetons ne correspondent à aucun texte qu'un
+utilisateur pourrait taper. Schématiquement, le modèle reçoit ceci :
+
+```
+<|début|>système
+Tu es l'assistant de la librairie Le Signet. Réponds en français, avec courtoisie.
+Ne donne jamais d'avis médical. Tu peux utiliser l'outil chercher_catalogue(titre).
+<|fin|>
+<|début|>utilisateur
+Avez-vous Kamouraska, d'Anne Hébert ?
+<|fin|>
+<|début|>assistant
+```
+
+Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle fait
+alors ce qu'il a toujours fait : il prédit la suite, jeton après jeton, jusqu'à
+produire la marque de fin de réplique, qui rend la main à l'utilisateur. La
+description des outils disponibles est elle aussi écrite dans la partie système, sous
+forme de texte.
+
+{{< image src="/images/module4/gabarit-conversation.svg" alt="En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. L'application les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils." title="Le gabarit de conversation. La requête système n'est qu'un début de texte ; c'est le post-entraînement qui apprend au modèle à lui donner priorité." loading="lazy" >}}
+
+Rien, dans le mécanisme, n'oblige le modèle à respecter la requête système plutôt que
+les messages de l'utilisateur. C'est le
+[post-entraînement](docs/module4/70-du-modele-a-l-assistant/#un-modèle-de-base-ne-répond-pas)
+qui lui apprend, par des exemples, à donner priorité à la partie système quand les
+deux se contredisent. En 2024, une équipe d'OpenAI décrit cette **hiérarchie des
+instructions** (*instruction hierarchy*) : d'abord la requête système, puis
+l'utilisateur, puis le contenu des documents et des outils. Comme tout ce qui est
+appris, cette priorité est imparfaite, et c'est pourquoi les
+[injections d'instructions](#des-agents) restent possibles.
+
 ## Chercher d'abord, répondre ensuite
 
 Pour répondre à une question sur des documents récents ou privés, on peut chercher
