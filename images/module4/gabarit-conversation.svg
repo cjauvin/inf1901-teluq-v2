@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 840 530" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
 <title>Le gabarit de conversation</title>
-<desc>En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. L'application les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils.</desc>
+<desc>En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. Le harnais les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils.</desc>
 <defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
 <rect x="0" y="0" width="840" height="530" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
 <text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un seul texte : la requête système, puis la conversation</text>
@@ -23,7 +23,7 @@
 <text x="690" y="107" font-size="11" fill="#5b5249" text-anchor="middle" font-style="italic">d'Anne Hébert ? »</text>
 <text x="690" y="122" font-size="11" fill="#5b5249" text-anchor="middle" font-style="italic"></text>
 <line x1="690" y1="140" x2="690" y2="156" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
-<text x="420.0" y="176" font-size="11" fill="#5b5249" text-anchor="middle" stroke="#efe7d3" stroke-width="5" paint-order="stroke">l'application assemble un seul texte, selon un gabarit de conversation</text>
+<text x="420.0" y="176" font-size="11" fill="#5b5249" text-anchor="middle" stroke="#efe7d3" stroke-width="5" paint-order="stroke">le harnais assemble un seul texte, selon un gabarit de conversation</text>
 <rect x="30" y="188" width="560" height="262" rx="10" fill="#fbf7ee" stroke="#d9cbac" stroke-width="1.4"/>
 <rect x="44" y="199" width="92.2" height="18" rx="4" fill="#9a5b33"/>
 <text x="90.1" y="212" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-weight="700">début système</text>
