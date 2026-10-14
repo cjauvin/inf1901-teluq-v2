@@ -116,21 +116,100 @@ partir du texte.
 
 ## Confier des outils au modèle
 
-Un modèle de langage ne peut qu'écrire du texte. Mais il peut écrire un texte qui
-demande une action, dans un format convenu à l'avance, comme
-`calculatrice("1 248 × 37")`. Un programme qui entoure le modèle reconnaît cette
-demande, exécute l'outil, et ajoute le résultat au contexte. Le modèle reprend alors
-sa rédaction en tenant compte du résultat. En février 2023, une équipe de Meta montre
-avec Toolformer qu'un modèle peut apprendre de lui-même quand faire appel à une
-calculatrice, à un moteur de recherche ou à un traducteur. Les principaux assistants
-proposent depuis 2023 cet **appel d'outils** (*tool use*, ou *function calling*).
+Un modèle de langage ne peut qu'écrire du texte. Il ne peut ni consulter une base de
+données, ni faire un calcul exact, ni envoyer un courriel. Mais il peut écrire un texte
+qui **demande** une action, dans un format convenu à l'avance. Un programme qui
+l'entoure, l'application, lit cette demande, l'exécute, et lui rapporte le résultat.
+C'est l'**appel d'outils** (*tool use*, ou *function calling*). Quand on dit qu'un
+modèle « décide d'appeler un outil », voici exactement ce qui se passe.
+
+**1. L'outil est décrit au modèle, en texte.** La requête système contient, pour
+chaque outil, son nom, une phrase qui dit à quoi il sert, et la liste de ses
+paramètres, avec leur type :
+
+```
+Outil : chercher_catalogue
+Description : cherche un livre dans le catalogue de la librairie
+              et donne son prix et sa disponibilité.
+Paramètres : titre (texte, obligatoire)
+```
+
+Le modèle ne voit jamais le code de l'outil, seulement cette description.
+
+**2. Le modèle écrit un appel, au lieu d'une réponse.** L'utilisateur demande
+« Combien coûte Kamouraska ? ». Après la marque qui ouvre la réplique de l'assistant,
+le jeton le plus probable n'est pas un mot, mais une marque spéciale d'appel d'outil,
+suivie d'un petit texte structuré :
+
+```
+<|début|>assistant
+<|appel|>{"outil": "chercher_catalogue", "arguments": {"titre": "Kamouraska"}}<|fin|>
+```
+
+Rien ne s'est encore passé. Le modèle a seulement prédit des jetons, comme toujours,
+et la génération s'arrête à la marque de fin.
+
+**3. L'application exécute l'appel.** Elle reconnaît la marque d'appel et lit le nom
+de l'outil et ses arguments. Elle vérifie qu'ils sont valides, puis exécute la fonction
+correspondante, ici une requête dans la base de données de la librairie. C'est elle,
+et non le modèle, qui agit sur le monde.
+
+**4. Le résultat est ajouté au texte, et le modèle est appelé de nouveau.**
+L'application ajoute au texte une nouvelle partie, marquée comme venant de l'outil,
+puis rouvre une réplique de l'assistant :
+
+```
+<|début|>outil
+{"titre": "Kamouraska", "auteur": "Anne Hébert", "format": "poche", "prix": 14.95, "en stock": 3}
+<|fin|>
+<|début|>assistant
+```
+
+Le modèle relit
+[tout le texte](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une),
+y compris le résultat, et écrit cette fois sa réponse : « Oui, nous l'avons en format
+poche, à 14,95 $, et il nous en reste trois exemplaires. »
+
+{{< image src="/images/module4/appel-outil.svg" alt="Un diagramme en trois colonnes : le modèle, l'application et l'outil, avec le temps qui s'écoule vers le bas. 1, l'application envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, l'application vérifie l'appel. 4, elle interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, l'application ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, elle rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, l'application l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois." title="Un appel d'outil, pas à pas. Le modèle passe deux fois : la première, il écrit l'appel ; la seconde, il lit le résultat et rédige sa réponse. Entre les deux, c'est l'application qui agit." loading="lazy" >}}
+
+**Pourquoi le modèle « décide » d'appeler un outil.** Il n'y a pas de module de
+décision séparé. L'appel est une suite de jetons comme une autre, et il est écrit quand
+il est la suite la plus probable. Le modèle l'a appris au
+[post-entraînement](docs/module4/70-du-modele-a-l-assistant/#un-modèle-de-base-ne-répond-pas),
+sur des milliers de conversations où un outil est décrit et utilisé à bon escient. À la
+question « Quel temps fait-il à Québec ? », avec un outil météo décrit dans le
+contexte, la marque d'appel devient très probable. À la demande « Écris-moi un poème
+sur l'hiver », elle ne l'est pas. En février 2023, une équipe de Meta montre avec
+Toolformer qu'un modèle peut même apprendre seul quand appeler un outil. Il insère des
+appels dans des textes, puis ne garde, pour s'entraîner, que ceux dont le résultat
+l'aide à mieux prédire la suite du texte.
+
+**Ce qui peut mal tourner.** Puisque l'appel est prédit, il peut être mal formé,
+appeler un outil qui n'existe pas, ou inventer un argument. L'application doit donc
+tout vérifier. Elle peut aussi contraindre la génération : à chaque jeton, elle
+n'autorise que ceux qui respectent le format de l'appel. Et puisque c'est
+l'application qui exécute, c'est elle qui décide de ce qui est permis, par exemple en
+demandant la confirmation de l'utilisateur avant d'envoyer un courriel.
+
+**Plusieurs outils, plusieurs appels.** Dans une même réponse, le modèle peut appeler
+plusieurs outils, l'un après l'autre ou en même temps. Chaque résultat s'ajoute au
+texte avant l'étape suivante. Il peut chercher le livre, puis appeler une calculatrice
+pour le prix de trente exemplaires avec les taxes, puis rédiger sa réponse. Cette
+boucle est le cœur des [agents](#des-agents), présentés plus bas.
 
 Les outils compensent les faiblesses du modèle. Une calculatrice ou un programme
 exécuté donne un résultat exact. Une recherche sur le Web donne une information à
-jour. Un outil de lecture de fichiers donne accès aux documents de l'utilisateur. En
-novembre 2024, Anthropic propose une norme ouverte, le *Model Context Protocol*
-(MCP), pour brancher n'importe quel outil sur n'importe quel assistant, à la façon
-d'une prise universelle.
+jour. Une base de données donne des faits précis et vérifiables. Un outil de lecture
+de fichiers donne accès aux documents de l'utilisateur. Un outil peut même être un
+autre modèle, par exemple un générateur d'images. Les principaux assistants offrent
+l'appel d'outils depuis 2023.
+
+Chaque application devait d'abord décrire et brancher ses outils à sa manière. En
+novembre 2024, Anthropic propose une norme ouverte, le *Model Context Protocol* (MCP),
+à la façon d'une prise universelle. Un **serveur MCP** présente un ensemble d'outils,
+comme un agenda, une messagerie ou une base de données, avec leurs descriptions. Tout
+assistant compatible peut s'y brancher, lire ces descriptions et les placer dans son
+contexte. OpenAI et Google adoptent la norme au printemps 2025.
 
 ## Des agents
 

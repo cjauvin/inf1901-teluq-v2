@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 640" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Un appel d'outil, pas à pas</title>
+<desc>Un diagramme en trois colonnes : le modèle, l'application et l'outil, avec le temps qui s'écoule vers le bas. 1, l'application envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, l'application vérifie l'appel. 4, elle interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, l'application ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, elle rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, l'application l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="640" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Un appel d'outil, pas à pas</text>
+<rect x="40" y="50" width="180" height="46" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="130" y="70" font-size="13" fill="#2f6f6a" text-anchor="middle" font-weight="700">le modèle</text>
+<text x="130" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">ne fait que prédire des jetons</text>
+<line x1="130" y1="98" x2="130" y2="616" stroke="#b8a888" stroke-width="1.4" stroke-dasharray="5 4"/>
+<rect x="340" y="50" width="180" height="46" rx="8" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="2"/>
+<text x="430" y="70" font-size="13" fill="#3a6ea5" text-anchor="middle" font-weight="700">l'application</text>
+<text x="430" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">lit, vérifie, exécute</text>
+<line x1="430" y1="98" x2="430" y2="616" stroke="#b8a888" stroke-width="1.4" stroke-dasharray="5 4"/>
+<rect x="640" y="50" width="180" height="46" rx="8" fill="#fbf7ee" stroke="#9a5b33" stroke-width="2"/>
+<text x="730" y="70" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700">l'outil</text>
+<text x="730" y="87" font-size="10.5" fill="#5b5249" text-anchor="middle">ici, le catalogue</text>
+<line x1="730" y1="98" x2="730" y2="616" stroke="#b8a888" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="430" y1="142" x2="138" y2="142" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="138" r="9" fill="#5b5249"/>
+<text x="22" y="142" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">1</text>
+<text x="288.0" y="134" font-size="11.5" fill="#3a3531" text-anchor="middle">le texte assemblé</text>
+<rect x="170" y="148" width="92" height="16" rx="3" fill="#9a5b33"/>
+<text x="216.0" y="159.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">système + outils</text>
+<rect x="264" y="148" width="52" height="16" rx="3" fill="#3a6ea5"/>
+<text x="290.0" y="159.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">question</text>
+<rect x="318" y="148" width="50" height="16" rx="3" fill="#2f6f6a"/>
+<text x="343.0" y="159.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">assistant</text>
+<rect x="122" y="166" width="16" height="50" rx="3" fill="#2f6f6a" opacity="0.85"/>
+<line x1="130" y1="206" x2="422" y2="206" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="202" r="9" fill="#5b5249"/>
+<text x="22" y="206" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">2</text>
+<text x="288.0" y="198" font-size="11.5" fill="#c4564a" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">appel : chercher_catalogue("Kamouraska")</text>
+<text x="288.0" y="222" font-size="10.5" fill="#5b5249" text-anchor="middle">puis la marque de fin : la génération s'arrête</text>
+<rect x="332.0" y="248" width="196" height="36" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.2"/>
+<circle cx="22" cy="266" r="9" fill="#5b5249"/>
+<text x="22" y="270" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">3</text>
+<text x="430" y="265" font-size="11" fill="#3a3531" text-anchor="middle">vérifie l'appel : outil connu,</text>
+<text x="430" y="279" font-size="11" fill="#3a3531" text-anchor="middle">arguments valides, action permise</text>
+<line x1="430" y1="318" x2="722" y2="318" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="314" r="9" fill="#5b5249"/>
+<text x="22" y="318" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">4</text>
+<text x="588.0" y="310" font-size="11.5" fill="#3a3531" text-anchor="middle">requête au catalogue</text>
+<line x1="730" y1="368" x2="438" y2="368" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="364" r="9" fill="#5b5249"/>
+<text x="22" y="368" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">5</text>
+<text x="588.0" y="360" font-size="11.5" fill="#9a5b33" text-anchor="middle">poche, 14,95 $, 3 en stock</text>
+<rect x="332.0" y="402" width="196" height="36" rx="6" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.2"/>
+<circle cx="22" cy="420" r="9" fill="#5b5249"/>
+<text x="22" y="424" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">6</text>
+<text x="430" y="419" font-size="11" fill="#3a3531" text-anchor="middle">ajoute le résultat au texte,</text>
+<text x="430" y="433" font-size="11" fill="#3a3531" text-anchor="middle">rouvre une réplique de l'assistant</text>
+<line x1="430" y1="476" x2="138" y2="476" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="472" r="9" fill="#5b5249"/>
+<text x="22" y="476" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">7</text>
+<text x="288.0" y="468" font-size="11.5" fill="#3a3531" text-anchor="middle">tout le texte, résultat compris</text>
+<rect x="170" y="482" width="92" height="16" rx="3" fill="#9a5b33"/>
+<text x="216.0" y="493.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">système + outils</text>
+<rect x="264" y="482" width="52" height="16" rx="3" fill="#3a6ea5"/>
+<text x="290.0" y="493.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">question</text>
+<rect x="318" y="482" width="34" height="16" rx="3" fill="#c4564a"/>
+<text x="335.0" y="493.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">appel</text>
+<rect x="354" y="482" width="46" height="16" rx="3" fill="#9a5b33"/>
+<text x="377.0" y="493.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">résultat</text>
+<rect x="402" y="482" width="50" height="16" rx="3" fill="#2f6f6a"/>
+<text x="427.0" y="493.5" font-size="9" fill="#fbf7ee" text-anchor="middle" font-weight="700">assistant</text>
+<rect x="122" y="500" width="16" height="50" rx="3" fill="#2f6f6a" opacity="0.85"/>
+<line x1="130" y1="540" x2="422" y2="540" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="536" r="9" fill="#5b5249"/>
+<text x="22" y="540" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">8</text>
+<text x="288.0" y="532" font-size="11.5" fill="#2f6f6a" text-anchor="middle">« Oui, nous l'avons en format poche, à 14,95 $ »</text>
+<line x1="430" y1="588" x2="510" y2="588" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<circle cx="22" cy="588" r="9" fill="#5b5249"/>
+<text x="22" y="592" font-size="10.5" fill="#fbf7ee" text-anchor="middle" font-weight="700">9</text>
+<text x="518" y="592" font-size="11.5" fill="#3a3531">réponse affichée à l'utilisateur</text>
+<text x="130" y="632" font-size="10" fill="#5b5249" text-anchor="middle">rectangles pleins : le modèle prédit des jetons</text>
+</svg>
