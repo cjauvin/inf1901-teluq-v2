@@ -319,9 +319,9 @@ des ordres. Aucune de ces précautions n'est infaillible.
 
 Les agents se sont multipliés à partir de 2024.
 
-- **Les agents de programmation**, comme Claude Code (2025) ou Codex (2025), lisent le
-  code d'un projet, le modifient, exécutent les tests et corrigent leurs erreurs, sur
-  des tâches qui prenaient auparavant des heures à un programmeur.
+- **Les agents de programmation**, comme Claude Code ou Codex, lisent le code d'un
+  projet, le modifient, exécutent les tests et corrigent leurs erreurs. Le chapitre
+  « [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents) » leur est consacré.
 - **Les agents qui utilisent un ordinateur** voient l'écran et manipulent la souris
   et le clavier, comme le fait un humain. Anthropic présente cette capacité en
   octobre 2024, et OpenAI l'année suivante.
@@ -340,5 +340,5 @@ de choisir l'action suivante. Les programmes du Module 1 suivaient des règles e
 des heuristiques écrites à la main. Le modèle de langage choisit d'après tout ce qu'il a
 appris en lisant.
 
-Les assistants présentés jusqu'ici lisent et écrivent du texte. Le
-[chapitre suivant](docs/module4/90-mots-et-images) montre comment on a relié les mots et les images.
+Le [chapitre suivant](docs/module4/85-programmer-avec-des-agents) présente
+l'application la plus aboutie de ces idées : les agents de programmation.
