@@ -64,6 +64,15 @@ Avec ces quatre outils, l'agent travaille comme un programmeur. Il explore le pr
 pour comprendre où se trouve le problème, modifie quelques lignes, lance les tests
 ou la compilation, lit les erreurs, et recommence, jusqu'à ce que les tests passent.
 
+Les tests jouent ici un rôle central. Ils donnent à l'agent ce qu'un assistant qui
+répond à une question d'histoire n'a pas : un moyen de **vérifier son propre
+travail**, sans attendre le jugement d'un humain. C'est la même vérifiabilité que celle
+du [renforcement à partir de récompenses vérifiables](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),
+qui sert ici deux fois. Pendant l'entraînement, la vérification automatique décide
+quels essais renforcer. Pendant le travail, elle dit à l'agent s'il a réussi, et sinon
+où chercher. La section « [Pourquoi le code s'y prête si bien](#pourquoi-le-code-sy-prête-si-bien) »
+y revient.
+
 {{< image src="/images/module4/boucle-agent-code.svg" alt="Une boucle en quatre étapes autour d'une tâche : explorer le projet, avec ls, find, grep et cat ; modifier le code, en ajoutant par exemple deux lignes à la ligne 3 de notes.py ; vérifier, en lançant les tests ou la compilation, avec python -m pytest ou make ; lire le résultat, c'est-à-dire les messages d'erreur et le code de sortie, puis revenir à l'exploration. Quand les tests passent, l'agent sort de la boucle : il consulte git diff, résume ce qu'il a fait et, si on le lui permet, enregistre une version avec git commit. Une note rappelle que tout passe par du texte : commandes, résultats et erreurs." title="La boucle d'un agent de programmation. À chaque tour, le modèle écrit une commande, le harnais l'exécute, et le résultat, du texte, s'ajoute au contexte." loading="lazy" >}}
 
 L'applet ci-dessous déroule deux sessions, étape par étape. La première corrige un
