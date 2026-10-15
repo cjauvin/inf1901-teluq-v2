@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 396" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Deux têtes d'attention qui recopient</title>
+<desc>Une phrase découpée en jetons : « Le docteur Lavoie est arrivé tôt. … Plus tard, le docteur », et le modèle doit prédire le jeton suivant. Sous la phrase, la première tête, la tête du jeton précédent : chaque jeton regarde celui qui le précède, si bien que le jeton « Lavoie » garde la trace d'avoir été précédé de « docteur ». Au-dessus de la phrase, la seconde tête, la tête d'induction : depuis le dernier « docteur », elle cherche dans le texte le jeton qui avait été précédé de « docteur », trouve « Lavoie », et le recopie. La prédiction est « Lavoie ». La règle : si A B est apparu plus tôt, et que A revient, prédire B.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker><marker id="pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="840" height="396" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Les têtes d'induction : deux têtes d'attention qui recopient</text>
+<text x="420.0" y="54" font-size="12" fill="#5b5249" text-anchor="middle">La règle : si « A B » est apparu plus tôt, et que A revient, prédire B.</text>
+<rect x="30" y="197" width="29.2" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="44.6" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">Le</text>
+<rect x="67.2" y="197" width="67.19999999999999" height="30" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="100.8" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">docteur</text>
+<rect x="142.39999999999998" y="197" width="59.599999999999994" height="30" rx="5" fill="#f3e3d3" stroke="#9a5b33" stroke-width="1.6"/>
+<text x="172.2" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">Lavoie</text>
+<rect x="209.99999999999997" y="197" width="36.8" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="228.39999999999998" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">est</text>
+<rect x="254.79999999999995" y="197" width="59.599999999999994" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="284.59999999999997" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">arrivé</text>
+<rect x="322.4" y="197" width="44.4" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="344.59999999999997" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">tôt.</text>
+<rect x="374.79999999999995" y="197" width="21.6" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="385.59999999999997" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">…</text>
+<rect x="404.4" y="197" width="44.4" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="426.59999999999997" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">Plus</text>
+<rect x="456.79999999999995" y="197" width="52.0" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="482.79999999999995" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">tard,</text>
+<rect x="516.8" y="197" width="29.2" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="531.4" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">le</text>
+<rect x="554.0" y="197" width="67.19999999999999" height="30" rx="5" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="587.6" y="217" font-size="12.5" fill="#3a3531" text-anchor="middle" font-style="italic">docteur</text>
+<line x1="627.2" y1="212" x2="659.2" y2="212" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="665.2" y="195" width="76" height="34" rx="6" fill="#f3e3d3" stroke="#9a5b33" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="703.2" y="217" font-size="13" fill="#9a5b33" text-anchor="middle" font-weight="700" font-style="italic">Lavoie</text>
+<text x="703.2" y="248" font-size="10.5" fill="#5b5249" text-anchor="middle">la prédiction</text>
+<text x="100.8" y="244" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">A</text>
+<text x="172.2" y="244" font-size="11" fill="#9a5b33" text-anchor="middle" font-weight="700">B</text>
+<text x="587.6" y="244" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">A</text>
+<path d="M100.8 258 Q72.7 280 48.6 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M172.2 258 Q136.5 292 104.8 258" fill="none" stroke="#2f6f6a" stroke-width="2.2" opacity="1" marker-end="url(#pt)"/>
+<path d="M228.39999999999998 258 Q200.29999999999998 280 176.2 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M284.59999999999997 258 Q256.5 280 232.39999999999998 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M344.59999999999997 258 Q314.59999999999997 280 288.59999999999997 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M385.59999999999997 258 Q365.09999999999997 280 348.59999999999997 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M426.59999999999997 258 Q406.09999999999997 280 389.59999999999997 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M482.79999999999995 258 Q454.69999999999993 280 430.59999999999997 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M531.4 258 Q507.09999999999997 280 486.79999999999995 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<path d="M587.6 258 Q559.5 280 535.4 258" fill="none" stroke="#2f6f6a" stroke-width="1.1" opacity="0.35" marker-end="url(#pt)"/>
+<rect x="30" y="290" width="780" height="40" rx="8" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="46" y="307" font-size="12" fill="#2f6f6a" font-weight="700">1. La tête du jeton précédent</text>
+<text x="46" y="323" font-size="11" fill="#3a3531">Chaque jeton regarde celui qui le précède. Le jeton « Lavoie » garde ainsi la trace d'avoir suivi « docteur ».</text>
+<path d="M587.6 192 C547.6 92 222.2 92 186.2 191" fill="none" stroke="#c4564a" stroke-width="2.4" marker-end="url(#pr)"/>
+<path d="M160.2 191 C152.2 64 703.2 64 703.2 193" fill="none" stroke="#9a5b33" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<text x="379.9" y="156" font-size="11" fill="#c4564a" text-anchor="middle" font-weight="700">qui suivait « docteur » ?</text>
+<text x="497.70000000000005" y="84" font-size="11" fill="#9a5b33" text-anchor="middle" font-weight="700">recopier « Lavoie »</text>
+<rect x="30" y="338" width="780" height="40" rx="8" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.2"/>
+<text x="46" y="355" font-size="12" fill="#c4564a" font-weight="700">2. La tête d'induction</text>
+<text x="46" y="371" font-size="11" fill="#3a3531">Depuis le dernier « docteur », elle cherche le jeton qui avait suivi « docteur », le trouve, et le recopie.</text>
+</svg>
