@@ -86,7 +86,8 @@ Trois précisions évitent des malentendus fréquents.
 
 Le module compte trois parties : l'IA générative en général, puis les grands
 modèles de langage, puis la rencontre du texte et de l'image, qui se termine par
-un bilan de ce que ces modèles comprennent et de ce qu'ils ratent.
+un regard à l'intérieur des modèles et un bilan de ce qu'ils comprennent et de ce
+qu'ils ratent.
 
 **L'IA générative**
 
@@ -125,23 +126,26 @@ un bilan de ce que ces modèles comprennent et de ce qu'ils ratent.
 13. [*Le défi ARC*](docs/module4/88-le-defi-arc) : mesurer l'intelligence par des
     tâches nouvelles, de 2019 à ARC-AGI-3.
 
-**Le texte et l'image, et le bilan**
+**Le texte et l'image, l'intérieur des modèles, et le bilan**
 
 14. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
     classification sans exemple, et la génération d'images à partir d'une phrase.
 15. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
     les modèles multimodaux, la lecture du texte dans les images (OCR) et la
     conversation à voix haute.
-16. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
-    hallucinations, interprétabilité, perroquets ou modèles du monde, et le bilan du
-    module.
+16. [*Regarder à l'intérieur*](docs/module4/93-regarder-a-l-interieur) :
+    l'interprétabilité mécaniste, la superposition, les caractéristiques et les
+    circuits.
+17. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
+    hallucinations, perroquets ou modèles du monde, et le bilan du module.
 
-Le module compte treize applets, dont un espace latent à explorer, un modèle de
+Le module compte quatorze applets, dont un espace latent à explorer, un modèle de
 diffusion qui redessine une feuille d'érable, un test pour distinguer une vraie
 photo d'un visage généré, un générateur de texte entraîné sur Jules Verne, un
 étiqueteur grammatical à modèle de Markov caché, un rôle d'évaluateur humain pour
 comprendre comment on entraîne un assistant, un agent de programmation à suivre pas à
-pas, et des tâches du défi ARC à résoudre soi-même.
+pas, des tâches du défi ARC à résoudre soi-même, et un petit réseau qui range plus de
+concepts que de neurones.
 
 Pour situer ce module dans l'ensemble du cours : l'IA générative repose sur
 l'apprentissage profond du Module 3, lui-même une famille de méthodes
@@ -173,6 +177,8 @@ Au terme de ce module, vous devriez être en mesure de :
 * décrire le fonctionnement d'un agent de programmation ;
 * expliquer comment des modèles relient les textes, les images et les sons ;
 * expliquer comment on tente de mesurer l'intelligence avec des tests comme ARC ;
+* expliquer ce que cherche l'interprétabilité mécaniste, et ce que sont la
+  superposition, les caractéristiques et les circuits ;
 * identifier les principales limites de ces modèles, comme les hallucinations, et
   présenter les arguments du débat sur leur compréhension.
 

@@ -10,11 +10,12 @@ Les chapitres précédents ont présenté ce que font les grands modèles de lan
 prédire le jeton suivant, à une échelle immense, puis être ajustés pour répondre,
 raisonner, démontrer, utiliser des outils, voir et parler. Le chapitre
 « [Le défi ARC](docs/module4/88-le-defi-arc) » a montré ce qui leur résiste encore
-devant des problèmes nouveaux. Ce dernier chapitre du module pose la
+devant des problèmes nouveaux, et le chapitre
+« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur) » ce que les
+chercheurs ont découvert à l'intérieur des modèles. Ce dernier chapitre du module pose la
 question que ces résultats rendent inévitable : ces modèles comprennent-ils ce qu'ils
 disent ? Il commence par leurs erreurs les plus connues, qui renseignent sur leur
-fonctionnement, puis il présente ce que les chercheurs ont découvert à l'intérieur des
-modèles, et les deux grandes lectures qui s'opposent. Il fait enfin le lien avec des
+fonctionnement, puis il présente les deux grandes lectures qui s'opposent. Il fait enfin le lien avec des
 questions posées tout au long du cours.
 
 ## Les hallucinations
@@ -115,34 +116,6 @@ ce qui l'expose aux
 [injections d'instructions](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle),
 l'équivalent pour les modèles de langage des
 [exemples adverses](docs/module3/90-tromper-un-reseau/#se-défendre) du Module 3.
-
-## Regarder à l'intérieur
-
-Les poids d'un grand modèle sont des centaines de milliards de nombres, et ni ses
-concepteurs ni personne d'autre ne peut les lire directement. Le chapitre
-« [Poser des questions : les arbres de décision](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait) »
-du Module 2 opposait déjà la performance des modèles complexes à l'explicabilité des
-modèles simples. Avec les modèles de langage, cette opposition est encore plus marquée.
-Un domaine de recherche, l'**interprétabilité** (*interpretability*), tente pourtant
-d'ouvrir cette [boîte noire](docs/module3/90-tromper-un-reseau/#une-boîte-noire).
-
-- **Des caractéristiques lisibles.** Un même neurone d'un modèle réagit souvent à des
-  concepts sans rapport entre eux. En 2024, des chercheurs d'Anthropic extraient de
-  leur modèle Claude des millions de « caractéristiques » (*features*) plus lisibles, chacune liée
-  à un concept, comme le pont du Golden Gate, le code informatique défectueux ou la
-  flatterie. En amplifiant artificiellement la caractéristique du Golden Gate, ils
-  obtiennent un modèle qui ramène toutes les conversations à ce pont, jusqu'à affirmer
-  qu'il est lui-même le pont.
-- **Des circuits.** En 2025, la même équipe suit le cheminement de l'information dans
-  le modèle. Quand il écrit un poème rimé, le modèle choisit le mot qui rimera à la fin
-  du vers avant d'écrire le début du vers. Il planifie donc, au moins sur quelques
-  mots, alors qu'il ne produit qu'un jeton à la fois.
-
-La vidéo suivante, de la chaîne 3Blue1Brown déjà présentée au chapitre
-« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#pour-voir-le-mécanisme-en-détail) »,
-montre comment un modèle peut stocker des faits dans ses poids.
-
-{{< youtube 9-Jl0dxWQs8 >}}
 
 ## Perroquets ou modèles du monde ?
 
@@ -260,7 +233,11 @@ Les chapitres l'ont décomposé en quelques idées.
    difficile (« [Le défi ARC](docs/module4/88-le-defi-arc) »).
 7. **Les mêmes idées s'étendent aux images et aux sons**, devenus eux aussi des
    jetons (« [Des modèles qui voient, entendent et parlent](docs/module4/92-voir-entendre-parler) »).
-8. **Ces modèles ont des limites caractéristiques** : ils hallucinent, ne voient pas
+8. **L'intérieur des modèles commence à se lire.** On y trouve des concepts
+   superposés, que l'on peut démêler, et des étapes de calcul que le texte produit ne
+   montre pas
+   (« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur) »).
+9. **Ces modèles ont des limites caractéristiques** : ils hallucinent, ne voient pas
    les lettres de leurs jetons, et n'apprennent rien de leurs conversations.
 
 Le mécanisme de départ n'a pas changé : prédire la suite. Ce qui a changé, c'est

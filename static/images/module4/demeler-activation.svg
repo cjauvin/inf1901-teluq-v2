@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 380" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Démêler une activation</title>
+<desc>À gauche, l'activation du modèle sur le mot « Gate », dans la phrase « Nous avons traversé le Golden Gate à vélo » : une colonne de nombres où presque toutes les cases sont actives, chaque neurone mêlant plusieurs concepts. Au milieu, l'autoencodeur clairsemé la récrit comme un choix dans un immense dictionnaire de caractéristiques : une longue rangée de cases presque toutes éteintes, dont trois seulement s'allument, « le pont du Golden Gate », « San Francisco » et « le vélo ». À droite, ces trois caractéristiques, additionnées, reconstruisent presque l'activation de départ. En bas : en amplifiant la caractéristique « le pont du Golden Gate », on obtient le Golden Gate Claude, qui ramène toute conversation au pont.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker><marker id="pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="840" height="380" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Démêler une activation : quelques caractéristiques parmi des millions</text>
+<text x="420.0" y="54" font-size="11.5" fill="#5b5249" text-anchor="middle" font-style="italic">« Nous avons traversé le Golden <tspan font-weight="700" fill="#3a3531">Gate</tspan> à vélo. »</text>
+<text x="70" y="84" font-size="11.5" fill="#9a5b33" text-anchor="middle" font-weight="700">l'activation</text>
+<text x="70" y="98" font-size="10" fill="#5b5249" text-anchor="middle">des milliers de neurones</text>
+<rect x="56" y="108" width="28" height="13" rx="2" fill="#d3b7a1" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="123" width="28" height="13" rx="2" fill="#f0e6d9" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="138" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="153" width="28" height="13" rx="2" fill="#d3b6a0" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="168" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="183" width="28" height="13" rx="2" fill="#fbf6ed" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="198" width="28" height="13" rx="2" fill="#d5baa5" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="213" width="28" height="13" rx="2" fill="#f2e8dc" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="228" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="243" width="28" height="13" rx="2" fill="#ecdfd2" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="258" width="28" height="13" rx="2" fill="#ede0d2" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="273" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="288" width="28" height="13" rx="2" fill="#e8d8c9" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="56" y="303" width="28" height="13" rx="2" fill="#dcc5b2" stroke="#d9cbac" stroke-width="0.6"/>
+<text x="70" y="334" font-size="10" fill="#5b5249" text-anchor="middle">chaque neurone</text>
+<text x="70" y="347" font-size="10" fill="#5b5249" text-anchor="middle">mêle plusieurs concepts</text>
+<line x1="94" y1="212" x2="150" y2="212" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="122" y="204" font-size="10" fill="#5b5249" text-anchor="middle">démêler</text>
+<text x="410.0" y="84" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">les caractéristiques</text>
+<text x="410.0" y="98" font-size="10" fill="#5b5249" text-anchor="middle">un dictionnaire de millions de concepts, presque tous éteints</text>
+<rect x="160.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="172.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="185.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="197.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="210.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="222.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="235.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="247.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="260.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="272.5" y="150" width="10.5" height="26" rx="2" fill="#437d77" stroke="#2f6f6a" stroke-width="1.4"/>
+<rect x="285.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="297.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="310.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="322.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="335.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="347.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="360.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="372.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="385.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="397.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="410.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="422.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="435.0" y="150" width="10.5" height="26" rx="2" fill="#8daea7" stroke="#2f6f6a" stroke-width="1.4"/>
+<rect x="447.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="460.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="472.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="485.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="497.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="510.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="522.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="535.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="547.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="560.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="572.5" y="150" width="10.5" height="26" rx="2" fill="#a8c0b9" stroke="#2f6f6a" stroke-width="1.4"/>
+<rect x="585.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="597.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="610.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="622.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="635.0" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="647.5" y="150" width="10.5" height="26" rx="2" fill="#ebe5d6" stroke="#d9cbac" stroke-width="0.6"/>
+<text x="666.0" y="168" font-size="13" fill="#7a6f63">…</text>
+<line x1="277.75" y1="178" x2="277.75" y2="198" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="277.75" y="210" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">le pont du Golden Gate</text>
+<line x1="440.25" y1="178" x2="440.25" y2="224" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="440.25" y="236" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">San Francisco</text>
+<line x1="577.75" y1="178" x2="577.75" y2="250" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="577.75" y="262" font-size="11.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">le vélo</text>
+<line x1="686.0" y1="212" x2="740.0" y2="212" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="713.0" y="204" font-size="10" fill="#5b5249" text-anchor="middle">additionner</text>
+<text x="778.0" y="84" font-size="11.5" fill="#9a5b33" text-anchor="middle" font-weight="700">la reconstruction</text>
+<text x="778.0" y="98" font-size="10" fill="#5b5249" text-anchor="middle">presque identique</text>
+<rect x="764.0" y="108" width="28" height="13" rx="2" fill="#c49e83" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="123" width="28" height="13" rx="2" fill="#eee2d5" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="138" width="28" height="13" rx="2" fill="#a97451" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="153" width="28" height="13" rx="2" fill="#c7a48a" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="168" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="183" width="28" height="13" rx="2" fill="#f1e8dc" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="198" width="28" height="13" rx="2" fill="#ceaf97" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="213" width="28" height="13" rx="2" fill="#f9f4ea" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="228" width="28" height="13" rx="2" fill="#a46b46" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="243" width="28" height="13" rx="2" fill="#ede1d4" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="258" width="28" height="13" rx="2" fill="#ddc7b4" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="273" width="28" height="13" rx="2" fill="#ae7b59" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="288" width="28" height="13" rx="2" fill="#e8d8c9" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="764.0" y="303" width="28" height="13" rx="2" fill="#e5d4c4" stroke="#d9cbac" stroke-width="0.6"/>
+<rect x="160" y="316" width="500.0" height="44" rx="8" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.4"/>
+<text x="410.0" y="334" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">Amplifier « le pont du Golden Gate » dans le modèle (2024)</text>
+<text x="410.0" y="350" font-size="11" fill="#3a3531" text-anchor="middle">le modèle ramène toute conversation au pont, jusqu'à se prendre pour lui</text>
+</svg>

@@ -384,7 +384,8 @@ en donne un exemple.
 Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
 réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
-l'intérieur d'un modèle est une question ouverte, présentée au chapitre
-« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) ». Le
+l'intérieur d'un modèle est l'objet de l'interprétabilité, présentée au chapitre
+« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#à-quoi-sert-linterprétabilité) »,
+qui montre comment on peut parfois le vérifier. Le
 [chapitre suivant](docs/module4/80-outils-et-agents) montre comment on donne à ces
 assistants des outils pour agir.

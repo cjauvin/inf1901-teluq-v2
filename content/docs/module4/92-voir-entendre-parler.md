@@ -231,5 +231,7 @@ Ces difficultés posent une question déjà rencontrée avec
 [la vidéo](docs/module4/30-images-voix-videos/#la-vidéo) : un modèle qui décrit si bien
 des images a-t-il une représentation du monde qu'elles montrent, ou reproduit-il les
 associations les plus fréquentes entre images et mots ? Le
-[chapitre suivant](docs/module4/94-comprendre-et-rater) aborde cette question pour
-l'ensemble des modèles de langage.
+[chapitre suivant](docs/module4/93-regarder-a-l-interieur) regarde d'abord à
+l'intérieur des modèles, et le chapitre
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »
+aborde ensuite cette question pour l'ensemble des modèles de langage.
