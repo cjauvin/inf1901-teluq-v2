@@ -119,7 +119,7 @@ I. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) :
 12. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
    classification sans exemple, et la génération d'images à partir d'une phrase.
 13. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
-    les modèles multimodaux.
+    les modèles multimodaux, et la lecture du texte dans les images (OCR).
 14. [*Le défi ARC*](docs/module4/93-le-defi-arc) : mesurer l'intelligence par
     des tâches nouvelles, de 2019 à ARC-AGI-3.
 15. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
