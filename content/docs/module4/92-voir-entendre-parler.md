@@ -135,6 +135,62 @@ plusieurs secondes d'attente. En mai 2024, OpenAI présente GPT-4o, où le *o* s
 Il répond à la voix en un tiers de seconde en moyenne, un délai proche de celui d'une
 conversation humaine, et il peut rire, chanter ou changer d'intonation.
 
+## Converser à voix haute
+
+Pour qu'un modèle de langage parle vraiment, il faut d'abord faire du son des jetons.
+Les **codecs audio neuronaux** s'en chargent : SoundStream, présenté par Google
+en 2021, puis EnCodec, présenté par Meta en 2022, compressent un enregistrement en une
+suite de jetons discrets, quelques dizaines par seconde, à partir desquels on peut
+reconstituer le son. Comme les jetons visuels, ce sont des morceaux de signal traités
+comme des mots. En 2022, le modèle AudioLM, de Google, prédit ces jetons un à un : à
+partir de quelques secondes d'une voix, il continue la phrase avec la même voix et la
+même intonation, sans passer par aucun texte. Le principe de prédire le jeton suivant
+s'applique tel quel à la parole.
+
+Reste le tour de parole. Dans une conversation humaine, on ne s'attend pas en
+silence : on se répond en général en moins d'un quart de seconde, comme l'a montré une
+étude menée en 2009 sur dix langues, on glisse des « mm-hmm » pendant que l'autre
+parle, et l'on s'interrompt. Les premiers modes vocaux, comme celui de GPT-4o à sa
+sortie, attendaient que la personne se taise pour répondre. En juillet 2024, le
+laboratoire parisien Kyutai présente **Moshi**, un modèle ouvert qui écoute et parle
+en même temps. Il reçoit deux flux de jetons audio, celui de la personne et le sien,
+et prédit, toutes les 80 millisecondes, son prochain jeton, qui peut être un silence.
+Avant chaque morceau de sa propre parole, il écrit aussi le texte correspondant, une
+sorte de monologue intérieur qui l'aide à rester cohérent. Il répond en environ
+200 millisecondes. On parle de conversation en **duplex intégral** (*full duplex*),
+comme au téléphone, par opposition au talkie-walkie, où l'on parle chacun son tour.
+En juillet 2026, OpenAI adopte ce mode pour ChatGPT avec GPT-Live, qui confie les
+questions difficiles à un modèle plus lent, qui raisonne en arrière-plan.
+
+{{< image src="/images/module4/duplex.svg" alt="Six secondes d'une conversation à voix haute, sur une ligne du temps. En haut, la voix de la personne : « Je cherche un livre pour ma mère, elle aime les romans… ». Pendant qu'elle parle, le modèle glisse un « mm-hmm », sans l'interrompre. Environ deux cents millisecondes après la fin de sa phrase, il répond : « Je vous suggère Kamouraska, d'An… ». La personne l'interrompt, « Ah, elle l'a déjà lu ! », et le modèle s'arrête aussitôt, puis propose autre chose. En bas, deux rangées de petits carrés : les jetons audio de la personne, que le modèle écoute, et ses propres jetons, qu'il produit, un toutes les 80 millisecondes, en même temps ; les silences sont aussi des jetons." title="Une conversation en duplex intégral. Le modèle ne reçoit pas des répliques, mais deux flux continus de jetons audio ; à chaque pas, il décide de parler ou de se taire." loading="lazy" >}}
+
+Le mécanisme reste celui d'[une conversation qui n'en est pas une](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une) :
+tout s'accumule dans le contexte, sous forme de jetons audio plutôt que de texte, et
+le modèle ne garde rien d'une conversation à l'autre. Mais la voix change beaucoup
+l'expérience, et ouvre des usages comme des risques.
+
+- **La traduction simultanée.** En février 2025, Kyutai présente Hibiki, qui traduit
+  en direct du français vers l'anglais en gardant la voix de la personne. Google
+  l'intègre à sa visioconférence Meet en mai 2025, et Apple à ses écouteurs en
+  septembre 2025.
+- **L'illusion de comprendre.** Le ton, le rire et les hésitations renforcent
+  l'[effet ELIZA](docs/module4/94-comprendre-et-rater/#lillusion-de-comprendre). Le
+  13 mai 2024, pendant la présentation de GPT-4o, le patron d'OpenAI, Sam Altman,
+  publie un seul mot, « her », allusion au film *Her* (Spike Jonze, 2013), où un
+  homme tombe amoureux d'une voix artificielle. Une semaine plus tard, OpenAI suspend
+  l'une de ses voix, que l'actrice Scarlett Johansson, la voix du film, jugeait trop
+  semblable à la sienne, qu'elle avait refusé de prêter.
+- **Le clonage de voix.** En janvier 2023, le modèle VALL-E, de Microsoft, imite une
+  voix inconnue à partir de trois secondes d'enregistrement. Un an plus tard, des
+  électeurs du New Hampshire reçoivent un appel automatisé où une fausse voix de Joe
+  Biden les incite à ne pas voter, et l'autorité américaine des télécommunications
+  interdit les voix générées par l'IA dans ce genre d'appels. Le même mois, à Hong
+  Kong, un employé de la firme Arup vire 25 millions de dollars à des escrocs après une
+  visioconférence où tous les autres participants, voix et visages, étaient truqués.
+  C'est le versant sonore des
+  [hypertrucages](docs/module4/30-images-voix-videos/#les-hypertrucages) ; Kyutai a
+  d'ailleurs choisi de ne pas publier la capacité de clonage de ses modèles.
+
 ## Générer des images avec un modèle de langage
 
 Un modèle multimodal peut aussi produire des jetons visuels. Si une image est une suite
