@@ -6,11 +6,11 @@ slug: technologie-normale
 
 # Une technologie normale, ou non ?
 
-Le chapitre « [Les camps du débat](docs/module5/10-les-camps-du-debat) » plaçait les
-positions sur l'IA selon deux questions : quelle sera son ampleur, et que faut-il
-faire. La seconde dépend en grande partie de la première. Ce chapitre examine donc la
-première : l'IA est-elle une technologie comme les autres, ou une rupture sans
-précédent ?
+Le chapitre « [Sur quoi porte le débat ?](docs/module5/10-sur-quoi-porte-le-debat) »
+distinguait six plans de désaccord sur l'IA. Le premier, celui des faits et des
+prévisions, contient une question dont dépendent beaucoup d'autres : l'IA est-elle une
+technologie comme les autres, ou une rupture sans précédent ? Selon la réponse, on ne
+craint pas les mêmes dangers et on ne propose pas les mêmes remèdes.
 
 Au printemps 2025, deux textes publiés à douze jours d'intervalle donnent à cette
 question ses deux réponses les plus nettes. Le 3 avril paraît « *AI 2027* », un
