@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <title>Un pélican à vélo, dessiné par Claude Opus 5.5</title>
+  <!-- ciel et sol -->
+  <rect width="800" height="600" fill="#dff1f7"/>
+  <circle cx="680" cy="100" r="46" fill="#ffd866"/>
+  <rect y="500" width="800" height="100" fill="#c9b78f"/>
+  <line x1="0" y1="500" x2="800" y2="500" stroke="#a8956b" stroke-width="3"/>
+
+  <!-- roues -->
+  <g fill="none" stroke="#2b2b2b">
+    <circle cx="230" cy="420" r="80" stroke-width="10"/>
+    <circle cx="560" cy="420" r="80" stroke-width="10"/>
+  </g>
+  <g stroke="#9a9a9a" stroke-width="2">
+    <line x1="230" y1="340" x2="230" y2="500"/><line x1="150" y1="420" x2="310" y2="420"/>
+    <line x1="173" y1="363" x2="287" y2="477"/><line x1="173" y1="477" x2="287" y2="363"/>
+    <line x1="560" y1="340" x2="560" y2="500"/><line x1="480" y1="420" x2="640" y2="420"/>
+    <line x1="503" y1="363" x2="617" y2="477"/><line x1="503" y1="477" x2="617" y2="363"/>
+  </g>
+  <circle cx="230" cy="420" r="7" fill="#555"/>
+  <circle cx="560" cy="420" r="7" fill="#555"/>
+
+  <!-- cadre : pédalier en (370, 430), selle au-dessus du tube de selle, guidon à l'avant -->
+  <g stroke="#2f6f6a" stroke-width="11" stroke-linecap="round" fill="none">
+    <line x1="230" y1="420" x2="370" y2="430"/>   <!-- base arrière -->
+    <line x1="230" y1="420" x2="340" y2="300"/>   <!-- hauban -->
+    <line x1="370" y1="430" x2="340" y2="300"/>   <!-- tube de selle -->
+    <line x1="340" y1="300" x2="520" y2="300"/>   <!-- tube horizontal -->
+    <line x1="370" y1="430" x2="520" y2="300"/>   <!-- tube diagonal -->
+    <line x1="520" y1="300" x2="560" y2="420"/>   <!-- fourche -->
+  </g>
+  <!-- potence et guidon -->
+  <path d="M520 300 L510 255 L548 248" fill="none" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+  <!-- selle -->
+  <path d="M310 290 Q340 278 372 288 L366 298 Q340 292 316 299 Z" fill="#333"/>
+  <line x1="340" y1="300" x2="340" y2="292" stroke="#333" stroke-width="6"/>
+
+  <!-- pédalier, manivelles, pédales, chaîne -->
+  <ellipse cx="300" cy="425" rx="72" ry="14" fill="none" stroke="#666" stroke-width="3"/>
+  <circle cx="370" cy="430" r="20" fill="#888" stroke="#444" stroke-width="3"/>
+  <line x1="370" y1="430" x2="400" y2="385" stroke="#444" stroke-width="8" stroke-linecap="round"/>
+  <line x1="370" y1="430" x2="340" y2="475" stroke="#444" stroke-width="8" stroke-linecap="round"/>
+  <rect x="388" y="378" width="28" height="9" rx="2" fill="#222"/>
+  <rect x="326" y="471" width="28" height="9" rx="2" fill="#222"/>
+
+  <!-- patte arrière (côté éloigné), plus sombre -->
+  <path d="M352 268 L372 360 L342 472" fill="none" stroke="#d98a1f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M326 470 L360 470 L352 480 L330 480 Z" fill="#d98a1f"/>
+
+  <!-- queue -->
+  <path d="M262 215 L218 196 L230 222 L214 238 L268 240 Z" fill="#f4f4f0" stroke="#b9b9b0" stroke-width="2"/>
+  <!-- corps -->
+  <ellipse cx="345" cy="232" rx="98" ry="62" fill="#fbfbf7" stroke="#b9b9b0" stroke-width="3"/>
+  <!-- aile, tendue vers le guidon -->
+  <path d="M300 220 Q380 196 450 222 Q500 240 534 252 Q470 262 420 256 Q350 258 300 220 Z" fill="#ecebe4" stroke="#a9a89f" stroke-width="2"/>
+  <path d="M330 232 Q400 230 470 248" fill="none" stroke="#c8c7be" stroke-width="2"/>
+  <path d="M340 244 Q400 244 450 254" fill="none" stroke="#c8c7be" stroke-width="2"/>
+
+  <!-- cou -->
+  <path d="M400 196 Q418 150 404 112 Q398 92 418 80 L446 92 Q432 112 440 150 Q446 186 424 214 Z" fill="#fbfbf7" stroke="#b9b9b0" stroke-width="3"/>
+  <!-- tête -->
+  <ellipse cx="438" cy="84" rx="32" ry="26" fill="#fbfbf7" stroke="#b9b9b0" stroke-width="3"/>
+  <!-- huppe -->
+  <path d="M420 62 Q414 44 428 50 Q432 40 440 58" fill="#f2e6b8" stroke="#c9b880" stroke-width="2"/>
+  <!-- bec : mandibule supérieure et poche -->
+  <path d="M462 78 L640 92 Q648 96 640 100 L466 96 Z" fill="#f2a33a" stroke="#c97a14" stroke-width="2"/>
+  <path d="M466 96 L636 100 Q600 150 520 142 Q478 136 462 108 Z" fill="#f7c66b" stroke="#c97a14" stroke-width="2"/>
+  <!-- œil -->
+  <circle cx="446" cy="78" r="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <circle cx="448" cy="78" r="3" fill="#222"/>
+
+  <!-- patte avant (côté proche) : de la hanche au genou, puis à la pédale haute -->
+  <path d="M368 270 L428 330 L404 380" fill="none" stroke="#f0a030" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M388 376 L424 376 L416 388 L392 388 Z" fill="#f0a030"/>
+</svg>

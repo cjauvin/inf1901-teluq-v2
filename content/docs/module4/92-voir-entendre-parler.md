@@ -215,7 +215,9 @@ montrent qu'ils voient autrement.
 - **Les détails géométriques.** En 2024, une équipe de chercheurs publie une étude
   intitulée « *Vision language models are blind* ». Les meilleurs modèles de l'époque
   échouent à des tâches qu'un enfant réussit : dire si deux cercles se touchent,
-  compter les intersections de deux lignes, ou compter les lignes d'une grille.
+  compter les intersections de deux lignes, ou compter les lignes d'une grille. Du
+  côté du dessin, le test du [pélican à vélo](docs/module4/60-passer-a-l-echelle/#que-mesurent-les-scores)
+  de Simon Willison suit les progrès des modèles qui doivent dessiner sans voir.
 - **Le comptage et les positions.** Compter des objets nombreux, dire lequel est à
   gauche de l'autre, ou lire l'heure sur une horloge à aiguilles restent des
   difficultés fréquentes.

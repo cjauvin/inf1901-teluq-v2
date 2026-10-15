@@ -193,6 +193,43 @@ savoir de quel modèle elles viennent. Aucune n'est parfaite. Savoir ce qu'un gr
 modèle sait vraiment faire, au-delà de ce qu'il a vu, reste l'une des questions les
 plus difficiles du domaine.
 
+{{% hint info %}}
+**Un pélican à vélo**
+
+Fin octobre 2024, le programmeur et blogueur Simon Willison commence à soumettre les
+nouveaux modèles à un test de son invention : « *Generate an SVG of a pelican riding
+a bicycle* », dessiner en SVG un pélican qui fait du vélo. Le SVG est un format
+d'image écrit sous forme de code. Le modèle doit donc décrire chaque cercle et chaque
+trait par ses coordonnées, sans jamais voir le résultat. La tâche est plus difficile
+qu'elle n'en a l'air : un vélo est difficile à dessiner de mémoire, un pélican aussi,
+et un pélican n'a pas la forme qu'il faut pour pédaler. Surtout, la scène est assez
+absurde pour qu'aucun dessin de ce genre ne circule sur le Web, et le modèle ne peut
+pas en recopier un.
+
+{{< image src="/images/module4/pelicans-willison.svg" alt="Quatre dessins produits à partir de la même demande, dessiner en SVG un pélican qui fait du vélo. GPT-4o mini, octobre 2024 : deux disques noirs pour les roues, deux traits pour le cadre, un oiseau gris posé dessus. GPT-5, août 2025 : un vrai vélo, avec rayons et pédalier, et un oiseau au long bec orange assis sur la selle. Gemini 3 Pro, novembre 2025 : un pélican blanc à la poche orange sur un vélo rouge, une aile tendue vers le guidon. Claude Fable 5.1, septembre 2026 : une illustration soignée, un pélican casqué qui pédale sur une plage, un poisson dans le panier." title="La même demande, faite à quatre modèles successifs, de 2024 à 2026. Images de Simon Willison, simonwillison.net." loading="lazy" >}}
+
+Le test devient célèbre. En mai 2025, un pélican à vélo apparaît dans la grande
+conférence annuelle de Google, et en octobre 2025, une équipe d'Anthropic s'en sert
+pour [regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur) d'un modèle qui
+dessine : elle y trouve des caractéristiques qui représentent les roues, le vélo ou
+les yeux de l'oiseau. Willison se demande alors si les laboratoires ne finiront pas
+par entraîner leurs modèles sur ce test précis, comme le prévoit la loi de Goodhart.
+Il garde donc en réserve des variantes secrètes, d'autres animaux sur d'autres
+véhicules : un modèle qui dessinerait un excellent pélican et un mauvais flamant rose
+sur un monocycle se trahirait. En avril 2026, un petit modèle ouvert, qui tourne sur
+son ordinateur portable, dessine un meilleur pélican que Claude Opus 4.7. Méfiant,
+Willison sort l'une de ses variantes. En juillet 2026, il rappelle lui-même que le
+test a commencé comme une plaisanterie, et que la qualité d'un pélican ne dit plus
+grand-chose de celle d'un modèle.
+
+Le modèle qui a aidé à rédiger ce cours (voir
+« [Comment ce cours a été produit](docs/60-assistants-intelligents/#comment-ce-cours-a-été-produit) »)
+s'est prêté au jeu en octobre 2026, en un seul essai, sans voir son dessin avant de
+l'avoir terminé.
+
+{{< image src="/images/module4/pelican-opus-5-5.svg" alt="Un pélican blanc à la poche orange, assis sur la selle d'un vélo vert, une aile tendue vers le guidon, une patte sur chaque pédale, sur fond de ciel bleu pâle et de sol beige. Le soleil, en haut à droite, touche le bout du bec." title="Le pélican de Claude Opus 5.5, dessiné en octobre 2026 au premier essai, sans voir le résultat, et gardé tel quel : le soleil touche le bout du bec, et la chaîne du vélo est approximative." loading="lazy" >}}
+{{% /hint %}}
+
 ## Le prix de la taille
 
 Entraîner un grand modèle demande des dizaines de milliers de
