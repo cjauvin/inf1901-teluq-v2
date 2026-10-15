@@ -229,6 +229,14 @@ résoudre, puis les oublie ; le chapitre
 « [Le défi ARC](docs/module4/88-le-defi-arc/#le-prix-arc-de-2024-et-lentraînement-au-moment-du-test) »
 en montre l'efficacité. L'apprentissage continu reste un problème de recherche ouvert.
 
+Les fonctions de **mémoire** des assistants appartiennent à ces contournements. En
+février 2024, OpenAI ajoute à ChatGPT une mémoire : au fil des conversations, le
+modèle note de courts faits sur l'utilisateur, comme son métier ou ses préférences,
+et le harnais glisse ces notes au début de chaque nouvelle conversation. En 2025,
+ChatGPT peut aussi puiser dans l'ensemble des conversations passées, et Claude et
+Gemini offrent des fonctions semblables. Le modèle, lui, n'a toujours rien appris : il
+relit des notes, qu'on peut consulter, corriger ou effacer.
+
 ## Chercher d'abord, répondre ensuite (RAG)
 
 Pour répondre à une question sur des documents récents ou privés, on peut chercher
@@ -470,6 +478,16 @@ Les agents se sont multipliés à partir de 2024.
   octobre 2024, et OpenAI l'année suivante.
 - **Les agents de recherche** consultent des dizaines de sources et rédigent un
   rapport avec leurs références.
+
+Un agent peut aussi en diriger d'autres. Dans un **système à plusieurs agents**
+(*multi-agent system*), un agent principal découpe la tâche, confie chaque morceau à
+un **sous-agent** (*subagent*), qui travaille dans son propre contexte, puis rassemble
+leurs résultats. En juin 2025, Anthropic décrit ainsi son agent de recherche : un
+modèle principal planifie et lance de trois à cinq sous-agents en parallèle, chacun
+chargé d'une piste. Le système fait nettement mieux qu'un agent seul, mais il
+consomme environ quinze fois plus de jetons qu'une conversation ordinaire. Les
+agents de programmation utilisent le même principe, comme le montre le chapitre
+« [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents/#un-projet-plus-grand-que-la-fenêtre-de-contexte) ».
 
 Un agent qui enchaîne des étapes accumule aussi les erreurs : une petite erreur au
 début peut conduire à une longue suite d'actions inutiles ou nuisibles. La question
