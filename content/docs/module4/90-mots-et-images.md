@@ -35,7 +35,7 @@ entraîné sur des images étiquetées.
 
 Ce résultat rejoint le
 [regroupement](docs/module2/80-trois-facons-d-apprendre/#apprendre-sans-réponses-le-non-supervisé)
-du Module 2. Une fois le réseau entraîné, les photos d'une même catégorie se retrouvent
+(*clustering*) du Module 2. Une fois le réseau entraîné, les photos d'une même catégorie se retrouvent
 proches les unes des autres dans l'espace des vecteurs, sans que personne lui ait dit
 ce qu'est un chat. Si l'on applique k-means à ces vecteurs, les groupes obtenus
 correspondent en bonne partie aux catégories qu'un humain aurait choisies. En 2018,
