@@ -149,10 +149,14 @@ Un premier circuit est décrit en 2022 par une équipe d'Anthropic : les **têt
 d'induction** (*induction heads*). Il s'agit de deux têtes
 d'[attention](docs/module3/70-attention-transformer/#lauto-attention) qui travaillent
 ensemble pour appliquer une règle simple : si la suite « A B » est apparue plus tôt
-dans le texte, et que A réapparaît, prédire B. Ces têtes apparaissent brusquement au
+dans le texte, et que A réapparaît, prédire B. Après « Le docteur Lavoie est
+arrivé tôt. […] Plus tard, le docteur », le modèle prédit ainsi « Lavoie », même si
+ce nom ne figurait pas dans ses données d'entraînement. Ces têtes apparaissent brusquement au
 cours de l'entraînement, au moment même où le modèle devient capable de mieux utiliser
 son contexte. Elles fournissent un premier mécanisme concret derrière
 l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte).
+
+{{< image src="/images/module4/tetes-induction.svg" alt="Une phrase découpée en jetons : « Le docteur Lavoie est arrivé tôt. … Plus tard, le docteur », suivie d'une flèche vers la prédiction, « Lavoie ». Le premier « docteur » est marqué A, « Lavoie » B, le dernier « docteur » A. Sous la phrase, de petites flèches vertes vont de chaque jeton au jeton précédent ; celle qui va de « Lavoie » à « docteur » est appuyée : c'est la tête du jeton précédent, grâce à laquelle « Lavoie » garde la trace d'avoir suivi « docteur ». Au-dessus, une grande flèche rouge part du dernier « docteur » et revient sur « Lavoie », avec la question « qui suivait docteur ? » : c'est la tête d'induction. Une flèche pointillée part de « Lavoie » vers la prédiction : recopier « Lavoie »." title="Le circuit d'induction : une première tête relie chaque jeton au précédent, une seconde retrouve ce qui suivait le jeton actuel et le recopie. D'après Olsson et coll., Anthropic (2022)." loading="lazy" >}}
 
 En mars 2025, Anthropic publie une méthode qui permet de suivre le calcul d'un modèle
 de production, Claude 3.5 Haiku, sur une requête précise. Elle produit un **graphe

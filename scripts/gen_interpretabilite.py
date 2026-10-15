@@ -2,11 +2,13 @@
 # requires-python = ">=3.10"
 # dependencies = ["numpy"]
 # ///
-"""Module 4, « Regarder à l'intérieur » : deux figures.
+"""Module 4, « Regarder à l'intérieur » : trois figures.
 1. demeler-activation.svg : un autoencodeur clairsemé récrit l'activation d'un modèle, un vecteur dense où chaque neurone
    mêle plusieurs concepts, comme une somme de quelques caractéristiques lisibles, tirées d'un très grand dictionnaire.
 2. graphe-attribution.svg : un graphe d'attribution simplifié, d'après l'exemple d'Anthropic (2025) : pour « la capitale de
    l'État où se trouve Dallas », le modèle passe par une étape interne, « Texas », avant de répondre « Austin ».
+3. tetes-induction.svg : les deux têtes d'attention d'un circuit d'induction (Olsson et coll., Anthropic, 2022) : si « A B »
+   est apparu plus tôt et que A revient, prédire B.
 Valeurs illustratives."""
 from pathlib import Path
 import numpy as np
@@ -149,4 +151,64 @@ for k, l in enumerate(["L'étape «" + NB + "Texas" + NB + "» n'est donc pas", 
     o.append(f'<text x="698" y="{318 + k * 16}" font-size="11" fill="{ENCRE}" text-anchor="middle">{l}</text>')
 o.append("</svg>")
 (OUT / "graphe-attribution.svg").write_text("\n".join(o) + "\n")
-print("demeler-activation.svg et graphe-attribution.svg écrits")
+
+# ── 3. les têtes d'induction ──
+W, H = 840, 396
+o = entete(W, H, "Deux têtes d'attention qui recopient",
+           "Une phrase découpée en jetons : « Le docteur Lavoie est arrivé tôt. … Plus tard, le docteur », et le modèle doit "
+           "prédire le jeton suivant. Sous la phrase, la première tête, la tête du jeton précédent : chaque jeton regarde celui qui le "
+           "précède, si bien que le jeton « Lavoie » garde la trace d'avoir été précédé de « docteur ». Au-dessus de la phrase, la "
+           "seconde tête, la tête d'induction : depuis le dernier « docteur », elle cherche dans le texte le jeton qui avait été précédé "
+           "de « docteur », trouve « Lavoie », et le recopie. La prédiction est « Lavoie ». La règle : si A B est apparu plus tôt, et "
+           "que A revient, prédire B.")
+o.append(f'<text x="{W / 2}" y="32" font-size="15" fill="{ENCRE}" text-anchor="middle" font-weight="600">Les têtes d\'induction{NB}: deux têtes d\'attention qui recopient</text>')
+o.append(f'<text x="{W / 2}" y="54" font-size="12" fill="{ENCRE_PALE}" text-anchor="middle">La règle{NB}: si «{NB}A B{NB}» est apparu plus tôt, et que A revient, prédire B.</text>')
+jetons = ["Le", "docteur", "Lavoie", "est", "arrivé", "tôt.", "…", "Plus", "tard,", "le", "docteur"]
+YJ, xs, x = 214, [], 30
+for t in jetons:
+    w = 14 + 7.6 * len(t)
+    xs.append((x, w))
+    x += w + 8
+CENTRE = lambda i: xs[i][0] + xs[i][1] / 2
+A1, B1, A2 = 1, 2, 10
+for i, t in enumerate(jetons):
+    x0, w = xs[i]
+    coul, fond, ep = AXE, FOND, 1
+    if i in (A1, A2):
+        coul, fond, ep = BLEU, "#e6eef6", 1.6
+    if i == B1:
+        coul, fond, ep = BRUN, "#f3e3d3", 1.6
+    o.append(f'<rect x="{x0}" y="{YJ - 17}" width="{w}" height="30" rx="5" fill="{fond}" stroke="{coul}" stroke-width="{ep}"/>')
+    o.append(f'<text x="{x0 + w / 2}" y="{YJ + 3}" font-size="12.5" fill="{ENCRE}" text-anchor="middle" font-style="italic">{t}</text>')
+# la prédiction
+PX = xs[-1][0] + xs[-1][1] + 44
+o.append(f'<line x1="{PX - 38}" y1="{YJ - 2}" x2="{PX - 6}" y2="{YJ - 2}" stroke="{GRIS}" stroke-width="1.6" marker-end="url(#p)"/>')
+o.append(f'<rect x="{PX}" y="{YJ - 19}" width="76" height="34" rx="6" fill="#f3e3d3" stroke="{BRUN}" stroke-width="2" stroke-dasharray="5 3"/>')
+o.append(f'<text x="{PX + 38}" y="{YJ + 3}" font-size="13" fill="{BRUN}" text-anchor="middle" font-weight="700" font-style="italic">Lavoie</text>')
+o.append(f'<text x="{PX + 38}" y="{YJ + 34}" font-size="10.5" fill="{ENCRE_PALE}" text-anchor="middle">la prédiction</text>')
+o.append(f'<text x="{CENTRE(A1)}" y="{YJ + 30}" font-size="11" fill="{BLEU}" text-anchor="middle" font-weight="700">A</text>')
+o.append(f'<text x="{CENTRE(B1)}" y="{YJ + 30}" font-size="11" fill="{BRUN}" text-anchor="middle" font-weight="700">B</text>')
+o.append(f'<text x="{CENTRE(A2)}" y="{YJ + 30}" font-size="11" fill="{BLEU}" text-anchor="middle" font-weight="700">A</text>')
+# tête 1, sous la phrase : chaque jeton regarde le précédent
+YB = YJ + 44
+for i in range(1, len(jetons)):
+    x1, x2 = CENTRE(i), CENTRE(i - 1)
+    fort = i == B1
+    coul, ep, op = (TEAL, 2.2, 1) if fort else (TEAL, 1.1, 0.35)
+    o.append(f'<path d="M{x1} {YB} Q{(x1 + x2) / 2} {YB + (34 if fort else 22)} {x2 + 4} {YB}" fill="none" stroke="{coul}" stroke-width="{ep}" opacity="{op}" marker-end="url(#pt)"/>')
+o.append(f'<rect x="30" y="{H - 106}" width="{W - 60}" height="40" rx="8" fill="{PANNEAU}" stroke="{TEAL}" stroke-width="1.2"/>')
+o.append(f'<text x="46" y="{H - 89}" font-size="12" fill="{TEAL}" font-weight="700">1. La tête du jeton précédent</text>')
+o.append(f'<text x="46" y="{H - 73}" font-size="11" fill="{ENCRE}">Chaque jeton regarde celui qui le précède. Le jeton «{NB}Lavoie{NB}» garde ainsi la trace d\'avoir suivi «{NB}docteur{NB}».</text>')
+# tête 2, au-dessus : depuis le dernier « docteur », chercher ce qui suivait « docteur »
+YH = YJ - 22
+x1, x2 = CENTRE(A2), CENTRE(B1)
+o.append(f'<path d="M{x1} {YH} C{x1 - 40} {YH - 100} {x2 + 50} {YH - 100} {x2 + 14} {YH - 1}" fill="none" stroke="{ROUGE}" stroke-width="2.4" marker-end="url(#pr)"/>')
+o.append(f'<path d="M{x2 - 12} {YH - 1} C{x2 - 20} {YH - 128} {PX + 38} {YH - 128} {PX + 38} {YH + 1}" fill="none" stroke="{BRUN}" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#p)"/>')
+o.append(f'<text x="{(x1 + x2) / 2}" y="{YH - 36}" font-size="11" fill="{ROUGE}" text-anchor="middle" font-weight="700">qui suivait «{NB}docteur{NB}»{NB}?</text>')
+o.append(f'<text x="{(x2 + PX + 38) / 2 + 60}" y="{YH - 108}" font-size="11" fill="{BRUN}" text-anchor="middle" font-weight="700">recopier «{NB}Lavoie{NB}»</text>')
+o.append(f'<rect x="30" y="{H - 58}" width="{W - 60}" height="40" rx="8" fill="{PANNEAU}" stroke="{ROUGE}" stroke-width="1.2"/>')
+o.append(f'<text x="46" y="{H - 41}" font-size="12" fill="{ROUGE}" font-weight="700">2. La tête d\'induction</text>')
+o.append(f'<text x="46" y="{H - 25}" font-size="11" fill="{ENCRE}">Depuis le dernier «{NB}docteur{NB}», elle cherche le jeton qui avait suivi «{NB}docteur{NB}», le trouve, et le recopie.</text>')
+o.append("</svg>")
+(OUT / "tetes-induction.svg").write_text("\n".join(o) + "\n")
+print("demeler-activation.svg, graphe-attribution.svg et tetes-induction.svg écrits")
