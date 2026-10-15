@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 620" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Les camps du débat sur l'IA</title>
+<desc>Une carte à deux axes. Horizontalement, l'ampleur attendue de l'IA, d'une technologie normale, à gauche, à une rupture, à droite. Verticalement, ce qu'il faut faire : accélérer, en bas ; encadrer les usages, au milieu ; freiner, voire arrêter, en haut. À gauche, au milieu, les sceptiques (Gary Marcus, Yann Le Cun). Un peu plus à droite et un peu plus bas, la technologie normale (Arvind Narayanan, Sayash Kapoor). Au-dessus, l'éthique de l'IA (Timnit Gebru, Emily Bender). En haut, au centre, les populistes (Steve Bannon, Bernie Sanders). En haut à droite, la sécurité (Geoffrey Hinton, Yoshua Bengio, Eliezer Yudkowsky). En bas à droite, les accélérationnistes (Marc Andreessen, David Sacks). Accélérationnistes et sécurité s'accordent sur l'ampleur de l'IA et s'opposent sur ce qu'il faut faire.</desc>
+<rect x="0" y="0" width="840" height="620" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<rect x="90" y="56" width="720" height="474" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<line x1="90" y1="293.0" x2="810" y2="293.0" stroke="#b8a888" stroke-dasharray="5 5"/>
+<line x1="450.0" y1="56" x2="450.0" y2="530" stroke="#b8a888" stroke-dasharray="5 5"/>
+<text x="450.0" y="36" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Les camps du débat sur l'IA</text>
+<text x="0" y="0" font-size="12" fill="#5b5249" text-anchor="middle" font-weight="700" transform="translate(34 293.0) rotate(-90)">Que faire ?</text>
+<text x="0" y="0" font-size="10.5" fill="#7a6f63" text-anchor="end" transform="translate(58 62) rotate(-90)">freiner, voire arrêter →</text>
+<text x="0" y="0" font-size="10.5" fill="#7a6f63" text-anchor="start" transform="translate(58 524) rotate(-90)">← accélérer</text>
+<text x="800" y="285.0" font-size="10.5" fill="#7a6f63" text-anchor="end">encadrer les usages</text>
+<text x="450.0" y="560" font-size="12" fill="#5b5249" text-anchor="middle" font-weight="700">L'ampleur attendue de l'IA</text>
+<text x="90" y="560" font-size="10.5" fill="#7a6f63">← une technologie normale</text>
+<text x="810" y="560" font-size="10.5" fill="#7a6f63" text-anchor="end">une rupture →</text>
+<text x="450.0" y="604" font-size="10" fill="#5b5249" text-anchor="middle" font-style="italic">Positions simplifiées : la plupart des gens empruntent à plusieurs camps.</text>
+<circle cx="190.8" cy="269.3" r="46" fill="#7a6f63" fill-opacity="0.14" stroke="#7a6f63" stroke-width="1.6"/>
+<text x="190.8" y="274.3" font-size="12" fill="#7a6f63" text-anchor="middle" font-weight="700">Sceptiques</text>
+<text x="190.8" y="331.3" font-size="10.5" fill="#3a3531" text-anchor="middle">Gary Marcus</text>
+<text x="190.8" y="345.3" font-size="10.5" fill="#3a3531" text-anchor="middle">Yann Le Cun</text>
+<circle cx="306.0" cy="340.4" r="46" fill="#2f6f6a" fill-opacity="0.14" stroke="#2f6f6a" stroke-width="1.6"/>
+<text x="306.0" y="338.4" font-size="12" fill="#2f6f6a" text-anchor="middle" font-weight="700">Technologie</text>
+<text x="306.0" y="352.4" font-size="12" fill="#2f6f6a" text-anchor="middle" font-weight="700">normale</text>
+<text x="306.0" y="402.4" font-size="10.5" fill="#3a3531" text-anchor="middle">Arvind Narayanan</text>
+<text x="306.0" y="416.4" font-size="10.5" fill="#3a3531" text-anchor="middle">Sayash Kapoor</text>
+<circle cx="306.0" cy="169.76" r="46" fill="#3a6ea5" fill-opacity="0.14" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="306.0" y="167.76" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">Éthique</text>
+<text x="306.0" y="181.76" font-size="12" fill="#3a6ea5" text-anchor="middle" font-weight="700">de l'IA</text>
+<text x="306.0" y="231.76" font-size="10.5" fill="#3a3531" text-anchor="middle">Timnit Gebru</text>
+<text x="306.0" y="245.76" font-size="10.5" fill="#3a3531" text-anchor="middle">Emily Bender</text>
+<circle cx="522.0" cy="122.36000000000001" r="46" fill="#7b5ea7" fill-opacity="0.14" stroke="#7b5ea7" stroke-width="1.6"/>
+<text x="522.0" y="127.36000000000001" font-size="12" fill="#7b5ea7" text-anchor="middle" font-weight="700">Populistes</text>
+<text x="522.0" y="184.36" font-size="10.5" fill="#3a3531" text-anchor="middle">Steve Bannon</text>
+<text x="522.0" y="198.36" font-size="10.5" fill="#3a3531" text-anchor="middle">Bernie Sanders</text>
+<circle cx="709.2" cy="150.8" r="46" fill="#c4564a" fill-opacity="0.14" stroke="#c4564a" stroke-width="1.6"/>
+<text x="709.2" y="155.8" font-size="12" fill="#c4564a" text-anchor="middle" font-weight="700">Sécurité</text>
+<text x="709.2" y="212.8" font-size="10.5" fill="#3a3531" text-anchor="middle">Geoffrey Hinton, Yoshua Bengio</text>
+<text x="709.2" y="226.8" font-size="10.5" fill="#3a3531" text-anchor="middle">Eliezer Yudkowsky</text>
+<circle cx="673.2" cy="458.9" r="46" fill="#9a5b33" fill-opacity="0.14" stroke="#9a5b33" stroke-width="1.6"/>
+<text x="673.2" y="456.9" font-size="12" fill="#9a5b33" text-anchor="middle" font-weight="700">Accélération-</text>
+<text x="673.2" y="470.9" font-size="12" fill="#9a5b33" text-anchor="middle" font-weight="700">nistes</text>
+<text x="673.2" y="520.9" font-size="10.5" fill="#3a3531" text-anchor="middle">Marc Andreessen</text>
+<text x="673.2" y="534.9" font-size="10.5" fill="#3a3531" text-anchor="middle">David Sacks</text>
+</svg>
