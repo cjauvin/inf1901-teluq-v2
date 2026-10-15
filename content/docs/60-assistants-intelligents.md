@@ -29,3 +29,16 @@ faire une capture d'écran du texte et la donner à ChatGPT, et poser ma questio
 expliquer avec une patience infinie :
 
 {{< image src="/images/exemple-chatgpt.png" alt="ChatGPT" title="ChatGPT" loading="lazy" >}}
+
+## Comment ce cours a été produit
+
+Ce cours applique lui-même ce conseil. Son auteur l'a rédigé avec l'aide d'un agent de
+programmation, Claude Code, du type présenté au chapitre
+« [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents) » du
+Module 4. Le cours est un ensemble de fichiers texte, au format Markdown, transformés
+en site Web par le programme Hugo et suivis par le logiciel de gestion de versions
+git. L'agent lit et modifie ces fichiers, écrit les petits programmes Python qui
+produisent les figures et les applets, vérifie qu'aucun lien n'est cassé, et fait
+vérifier en ligne les faits récents. L'auteur décide du plan et du contenu, relit
+chaque passage et valide chaque changement. Comme pour vos propres travaux, l'outil
+aide, mais la responsabilité du contenu reste humaine.

@@ -282,16 +282,8 @@ reste indispensable, justement pour pouvoir juger celui de l'agent. Ce que cela
 change à l'emploi et à l'apprentissage de la programmation est l'une des questions du
 [Module 5](docs/module5).
 
-## Ce cours, écrit avec un agent
-
-Ce cours en est lui-même un exemple. Son auteur l'a rédigé avec l'aide d'un agent de
-programmation, Claude Code. Le cours est un ensemble de fichiers texte, au format
-Markdown, transformés en site Web par le programme Hugo, et suivis par git. L'agent lit
-et modifie ces fichiers, écrit les petits programmes Python qui produisent les figures
-et les applets, lance un script qui vérifie qu'aucun lien n'est cassé, et enregistre
-chaque version avec git. Les faits récents, comme ceux de ce chapitre, sont vérifiés
-en ligne par des sous-agents. L'auteur décide du plan et du contenu, relit chaque
-passage et valide chaque changement. Le modèle propose, l'auteur dispose.
+Ce cours lui-même a été rédigé avec l'aide d'un agent de programmation, comme
+l'explique la page « [Usage de l'IA](docs/60-assistants-intelligents/#comment-ce-cours-a-été-produit) ».
 
 Les agents présentés jusqu'ici lisent et écrivent du texte. Le
 [chapitre suivant](docs/module4/90-mots-et-images) montre comment on a relié les mots
