@@ -103,7 +103,7 @@ qu'ils ratent.
 4. [*Des règles aux probabilités*](docs/module4/40-des-regles-aux-probabilites) :
    soixante-dix ans de traitement de la langue, les n-grammes, le lissage et la
    perplexité.
-5. [*Les outils statistiques*](docs/module4/42-les-outils-statistiques) : les
+5. [*Les outils statistiques*](docs/module4/42-les-outils-statistiques) (approfondissement) : les
    modèles de Markov cachés, la traduction statistique, les vecteurs de documents.
 6. [*Des mots aux nombres : jetons et plongements*](docs/module4/45-des-mots-aux-nombres) :
    découper un texte, et représenter le sens des mots par des vecteurs.
@@ -121,9 +121,9 @@ qu'ils ratent.
 11. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) : la
     boucle d'un agent de programmation, la culture des outils Unix, SWE-bench, les
     risques et le métier qui change.
-12. [*Démontrer*](docs/module4/87-demontrer) : les assistants de preuve, des
+12. [*Démontrer*](docs/module4/87-demontrer) (approfondissement) : les assistants de preuve, des
     Olympiades aux premiers résultats de recherche, et leurs limites.
-13. [*Le défi ARC*](docs/module4/88-le-defi-arc) : mesurer l'intelligence par des
+13. [*Le défi ARC*](docs/module4/88-le-defi-arc) (approfondissement) : mesurer l'intelligence par des
     tâches nouvelles, de 2019 à ARC-AGI-3.
 
 **Le texte et l'image, l'intérieur des modèles, et le bilan**
@@ -184,7 +184,9 @@ Au terme de ce module, vous devriez être en mesure de :
 
 ## Durée
 
-Quatre semaines, soit environ 36 heures.
+Quatre semaines, soit environ 36 heures. Trois chapitres, marqués « approfondissement »
+dans le parcours, sont facultatifs : *Les outils statistiques*, *Démontrer* et
+*Le défi ARC*. La suite du module et le travail noté ne les supposent pas.
 
 ## Évaluation
 

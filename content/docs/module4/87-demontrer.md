@@ -6,6 +6,11 @@ slug: demontrer
 
 # Démontrer
 
+{{% hint info %}}
+**Chapitre d'approfondissement.** Ce chapitre est facultatif. Il montre ce que les modèles de langage apportent aux mathématiques, mais
+la suite du module et le travail noté ne supposent pas de l'avoir lu.
+{{% /hint %}}
+
 Les chapitres précédents ont montré le rôle de la vérification : les modèles qui
 raisonnent sont entraînés par
 [renforcement à partir de récompenses vérifiables](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),

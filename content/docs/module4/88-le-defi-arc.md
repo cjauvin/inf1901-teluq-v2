@@ -6,6 +6,11 @@ slug: le-defi-arc
 
 # Le défi ARC
 
+{{% hint info %}}
+**Chapitre d'approfondissement.** Ce chapitre est facultatif. Il présente un test conçu pour mesurer l'intelligence par des tâches nouvelles, mais
+la suite du module et le travail noté ne supposent pas de l'avoir lu.
+{{% /hint %}}
+
 Les chapitres précédents ont présenté des modèles qui réussissent des examens de droit,
 des concours de mathématiques et des exercices de programmation. Le chapitre
 « [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#que-mesurent-les-scores) »

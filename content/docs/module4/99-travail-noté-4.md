@@ -14,6 +14,23 @@ utilisé pour **générer** du texte, en tirant chaque mot au hasard selon ces
 probabilités, comme le font, à une tout autre échelle, les grands modèles de langage.
 
 {{% hint info %}}
+**Un exercice simple, à dessein**
+
+Après les Transformer, les assistants, les agents et l'interprétabilité, un modèle à
+bigrammes construit dans un tableur peut sembler dérisoire. Il est pourtant choisi
+pour cette simplicité. Il isole, sans rien autour, l'idée sur laquelle reposent tous
+les grands modèles de langage : estimer, à partir d'un corpus, la probabilité de
+chaque mot d'après ceux qui le précèdent, puis générer un texte en tirant les mots un
+à un selon ces probabilités. Le modèle de ChatGPT ne fait pas autre chose. Ce qui
+change, c'est la façon de calculer ces probabilités : un
+[réseau de neurones](docs/module4/50-predire-le-mot-suivant/#généraliser-les-modèles-neuronaux),
+qui tient compte de milliers de jetons précédents au lieu d'un seul, et qui
+généralise à des suites jamais vues au lieu de compter des exemples. Le tableau
+« [Ce qui a changé, ce qui est resté](docs/module4/50-predire-le-mot-suivant/#ce-qui-a-changé-ce-qui-est-resté) »
+fait la liste de ces différences, et de ce qui n'a pas bougé depuis les n-grammes.
+{{% /hint %}}
+
+{{% hint info %}}
 **Avant de commencer**
 
 - Un modèle de langage n'est pas une description abstraite de la langue. C'est un

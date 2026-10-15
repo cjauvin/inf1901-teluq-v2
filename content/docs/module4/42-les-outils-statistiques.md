@@ -6,6 +6,11 @@ slug: les-outils-statistiques
 
 # Les outils statistiques
 
+{{% hint info %}}
+**Chapitre d'approfondissement.** Ce chapitre est facultatif. Il complète l'histoire du traitement de la langue commencée au chapitre précédent, mais
+la suite du module et le travail noté ne supposent pas de l'avoir lu.
+{{% /hint %}}
+
 Le chapitre « [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »
 a présenté le tournant statistique du traitement de la langue, et son premier outil,
 le modèle de langage à n-grammes. Des années 1970 au début des années 2010, d'autres
