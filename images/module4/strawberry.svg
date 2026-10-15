@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Combien de r dans strawberry ?</title>
+<desc>Trois rangées. En haut, ce que voit un humain : les dix lettres s, t, r, a, w, b, e, r, r, y, dont trois r, surlignés. Au milieu, ce que reçoit GPT-4o quand on lui pose la question « Combien de r dans strawberry ? » : sept jetons, Comb, ien, de, r, dans, strawberry et le point d'interrogation ; strawberry est un seul jeton, le numéro 101 830, où aucune lettre n'est visible. En bas, le mot épelé dans une chaîne de pensée, s-t-r-a-w-b-e-r-r-y : chaque lettre devient un jeton, et les trois jetons qui contiennent un r peuvent être comptés, un, deux, trois.</desc>
+<rect x="0" y="0" width="840" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Combien de <tspan font-style="italic">r</tspan> dans <tspan font-style="italic">strawberry</tspan> ?</text>
+<rect x="20" y="50" width="800" height="100" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="74" font-size="13" fill="#3a6ea5" font-weight="700">Ce que vous voyez</text>
+<text x="36" y="92" font-size="11" fill="#5b5249">dix lettres, dont trois r</text>
+<rect x="260" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="275" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">s</text>
+<rect x="294" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="309" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">t</text>
+<rect x="328" y="88" width="30" height="40" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.8"/>
+<text x="343" y="115" font-size="20" fill="#c4564a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="700">r</text>
+<rect x="362" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="377" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">a</text>
+<rect x="396" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="411" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">w</text>
+<rect x="430" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="445" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">b</text>
+<rect x="464" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="479" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">e</text>
+<rect x="498" y="88" width="30" height="40" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.8"/>
+<text x="513" y="115" font-size="20" fill="#c4564a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="700">r</text>
+<rect x="532" y="88" width="30" height="40" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.8"/>
+<text x="547" y="115" font-size="20" fill="#c4564a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="700">r</text>
+<rect x="566" y="88" width="30" height="40" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1"/>
+<text x="581" y="115" font-size="20" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-weight="400">y</text>
+<rect x="20" y="162" width="800" height="132" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="186" font-size="13" fill="#9a5b33" font-weight="700">Ce que reçoit GPT-4o</text>
+<text x="36" y="204" font-size="11" fill="#5b5249">la question, découpée en sept jetons</text>
+<rect x="200" y="216" width="50" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="225.0" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">Comb</text>
+<rect x="256" y="216" width="41" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="276.5" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">ien</text>
+<rect x="303" y="216" width="41" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="323.5" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">·de</text>
+<rect x="350" y="216" width="32" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="366.0" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">·r</text>
+<rect x="388" y="216" width="59" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="417.5" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">·dans</text>
+<rect x="453" y="216" width="113" height="30" rx="5" fill="#f3e3d3" stroke="#9a5b33" stroke-width="1.4"/>
+<text x="509.5" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">·strawberry</text>
+<rect x="572" y="216" width="32" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="588.0" y="236" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">·?</text>
+<text x="509.5" y="266" font-size="11.5" fill="#9a5b33" text-anchor="middle" font-weight="700">un seul jeton, le numéro 101 830</text>
+<text x="509.5" y="282" font-size="10.5" fill="#5b5249" text-anchor="middle">aucune lettre n'y est visible</text>
+<rect x="20" y="306" width="800" height="136" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="330" font-size="13" fill="#2f6f6a" font-weight="700">Épelé dans une chaîne de pensée</text>
+<text x="36" y="348" font-size="11" fill="#5b5249">chaque lettre devient un jeton, qu'on peut compter</text>
+<rect x="250" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="268.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">s</text>
+<rect x="292" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="310.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-t</text>
+<rect x="334" y="360" width="36" height="30" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.4"/>
+<text x="352.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-r</text>
+<circle cx="352.0" cy="408" r="9" fill="#c4564a"/>
+<text x="352.0" y="412" font-size="11" fill="#fbf7ee" text-anchor="middle" font-weight="700">1</text>
+<rect x="376" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="394.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-a</text>
+<rect x="418" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="436.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-w</text>
+<rect x="460" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="478.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-b</text>
+<rect x="502" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="520.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-e</text>
+<rect x="544" y="360" width="36" height="30" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.4"/>
+<text x="562.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-r</text>
+<circle cx="562.0" cy="408" r="9" fill="#c4564a"/>
+<text x="562.0" y="412" font-size="11" fill="#fbf7ee" text-anchor="middle" font-weight="700">2</text>
+<rect x="586" y="360" width="36" height="30" rx="5" fill="#f6dcd6" stroke="#c4564a" stroke-width="1.4"/>
+<text x="604.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-r</text>
+<circle cx="604.0" cy="408" r="9" fill="#c4564a"/>
+<text x="604.0" y="412" font-size="11" fill="#fbf7ee" text-anchor="middle" font-weight="700">3</text>
+<rect x="628" y="360" width="36" height="30" rx="5" fill="#efe7d3" stroke="#b8a888" stroke-width="1.4"/>
+<text x="646.0" y="380" font-size="14" fill="#3a3531" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">-y</text>
+<text x="680" y="380" font-size="12" fill="#2f6f6a" font-weight="700">trois r</text>
+<text x="420.0" y="462" font-size="10" fill="#5b5249" text-anchor="middle">Découpages réels de GPT-4o, obtenus avec la bibliothèque tiktoken ; le point · marque une espace.</text>
+</svg>
