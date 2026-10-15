@@ -168,7 +168,7 @@ façons.
   milliers de projets.
 - **Le compactage** (*compaction*). Quand le contexte approche de sa limite, le harnais demande au
   modèle de résumer la session jusque-là, puis repart de ce résumé.
-- **Les sous-agents** (*subagents*). L'agent peut confier une recherche à un autre agent, qui
+- **Les sous-agents**. L'agent peut confier une recherche à un autre agent, qui
   travaille dans son propre contexte, tout neuf, et ne lui rapporte qu'un résumé. Le
   contexte principal reste ainsi réservé à l'essentiel.
 

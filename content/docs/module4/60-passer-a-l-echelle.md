@@ -238,6 +238,37 @@ notamment par Aidan Gomez, l'un des auteurs de l'article de 2017 qui a présent�
 [Transformer](docs/module3/70-attention-transformer/#le-transformer), qu'il avait
 coécrit pendant un stage chez Google alors qu'il étudiait à l'Université de Toronto.
 
+## Ce que coûte une réponse
+
+L'entraînement se paie une fois ; l'utilisation, à chaque réponse. Les entreprises
+facturent leurs modèles au jeton, lu ou écrit. À sa sortie, en mars 2023, GPT-4
+coûtait 30 dollars par million de jetons lus. En juillet 2024, GPT-4o mini, un modèle
+plus petit et déjà très capable, en coûtait 15 cents. Selon Epoch AI, le prix pour
+obtenir un même niveau de performance baisse de dix à plusieurs centaines de fois par
+an selon la tâche. Plusieurs techniques y contribuent.
+
+- **Le mélange d'experts** (*mixture of experts*). Le modèle est découpé en de nombreux
+  sous-réseaux, les « experts », et un petit réseau d'aiguillage choisit pour chaque
+  jeton les quelques experts qui le traiteront. DeepSeek-V3, publié en décembre 2024,
+  compte 671 milliards de paramètres, mais n'en utilise que 37 milliards pour chaque
+  jeton. C'est l'une des raisons de son faible coût : environ 5,6 millions de dollars
+  pour son dernier entraînement, selon ses auteurs, sans compter les essais qui l'ont
+  précédé.
+- **La quantification** (*quantization*). Chaque paramètre est stocké avec moins de
+  précision, par exemple sur 4 bits au lieu de 16. Le modèle occupe alors quatre fois
+  moins de mémoire, et perd peu en qualité : un modèle de 7 milliards de paramètres
+  passe d'environ 14 à 4 gigaoctets, et tient dans un ordinateur portable.
+- **Les petits modèles.** Des modèles de quelques milliards de paramètres, souvent
+  obtenus par [distillation](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr)
+  d'un grand modèle, tournent directement sur un téléphone, comme celui qu'Apple
+  intègre à ses appareils en 2024, ou les plus petits modèles Llama de Meta.
+
+Cette baisse des prix rend possibles des usages qui consomment beaucoup de jetons,
+comme les [agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle)
+ou les modèles qui réfléchissent longtemps avant de répondre. Elle ne fait pas baisser
+pour autant la consommation totale d'énergie du secteur, puisque les usages se
+multiplient, une question que reprend le [Module 5](docs/module5).
+
 ## Jusqu'où ?
 
 Les lois d'échelle décrivent une tendance, pas une loi de la nature. À partir de 2024,
