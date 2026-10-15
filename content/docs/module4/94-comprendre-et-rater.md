@@ -57,9 +57,37 @@ chiffres, les noms et les références.
 Certaines erreurs montrent bien la différence entre ces modèles et une intelligence
 humaine.
 
-- **Les lettres.** Compter les *r* de *strawberry* a longtemps été difficile, parce
-  que le modèle reçoit des [jetons](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons),
-  pas des lettres.
+{{% hint info %}}
+**Combien de *r* dans *strawberry* ?**
+
+En 2024, la question devient célèbre : de nombreux modèles répondent « deux », alors
+que le mot en compte trois. La raison tient au
+[découpage en jetons](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons).
+Dans la question, GPT-4o reçoit *strawberry* comme un seul jeton, un simple numéro ;
+écrit seul, le mot est découpé en trois morceaux, *st*, *raw* et *berry*. Dans les deux
+cas, le modèle ne voit jamais les lettres elles-mêmes.
+
+Pourtant, si on lui demande d'épeler *strawberry*, il y parvient. Pendant son
+entraînement, il a lu d'innombrables textes où des mots sont épelés, et il connaît
+l'orthographe de ses jetons comme on connaît un fait par cœur, sans la voir. Compter
+les *r* lui demande donc de retrouver ce fait, puis de compter de tête, deux
+opérations où il peut se tromper.
+
+Deux remèdes, présentés dans d'autres chapitres, règlent le problème. Avec une
+[chaîne de pensée](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),
+le modèle écrit d'abord le mot lettre par lettre ; chaque lettre devient alors un
+jeton du contexte, qu'il peut compter. Avec un
+[outil](docs/module4/80-outils-et-agents/#le-harnais-et-lappel-doutils), il écrit une
+ligne de programme, `"strawberry".count("r")`, et obtient la réponse exacte. Les
+modèles de raisonnement apparus à partir de la fin de 2024 ne se trompent plus sur
+cette question. Elle reste un rappel utile : un modèle de langage ne voit pas le texte
+comme nous.
+{{% /hint %}}
+
+{{< image src="/images/module4/strawberry.svg" alt="Trois rangées. En haut, ce que voit un humain : les dix lettres s, t, r, a, w, b, e, r, r, y, dont trois r, surlignés. Au milieu, ce que reçoit GPT-4o quand on lui pose la question « Combien de r dans strawberry ? » : sept jetons, Comb, ien, de, r, dans, strawberry et le point d'interrogation ; strawberry est un seul jeton, le numéro 101 830, où aucune lettre n'est visible. En bas, le mot épelé dans une chaîne de pensée, s-t-r-a-w-b-e-r-r-y : chaque lettre devient un jeton, et les trois jetons qui contiennent un r peuvent être comptés, un, deux, trois." title="Combien de r dans strawberry ? Le modèle ne voit pas les lettres d'un mot, sauf s'il l'épelle lui-même. Découpages réels de GPT-4o." loading="lazy" >}}
+
+D'autres erreurs sont tout aussi révélatrices.
+
 - **L'inversion.** En 2023, une équipe de chercheurs montre qu'un modèle entraîné sur
   des phrases de la forme « A est B » n'en déduit pas « B est A ». Un modèle qui sait
   que la mère de l'acteur Tom Cruise s'appelle Mary Lee Pfeiffer répond sans peine à
