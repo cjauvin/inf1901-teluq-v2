@@ -10,7 +10,7 @@ Le chapitre
 « [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle) »
 a présenté les agents en général : un modèle de langage, un harnais qui le fait
 tourner en boucle, et des outils. C'est en programmation que cette idée a donné, à
-ce jour, ses résultats les plus spectaculaires. En quelques années, on est passé
+ce jour, ses résultats les plus aboutis. En quelques années, on est passé
 d'un modèle qui complète une ligne de code à des agents qui lisent un projet entier,
 le modifient, lancent ses tests et corrigent leurs propres erreurs. Ce chapitre
 explique comment ils fonctionnent, pourquoi le code s'y prête si bien, ce qu'ils
@@ -66,12 +66,9 @@ ou la compilation, lit les erreurs, et recommence, jusqu'à ce que les tests pas
 
 Les tests jouent ici un rôle central. Ils donnent à l'agent ce qu'un assistant qui
 répond à une question d'histoire n'a pas : un moyen de **vérifier son propre
-travail**, sans attendre le jugement d'un humain. C'est la même vérifiabilité que celle
-du [renforcement à partir de récompenses vérifiables](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),
-qui sert ici deux fois. Pendant l'entraînement, la vérification automatique décide
-quels essais renforcer. Pendant le travail, elle dit à l'agent s'il a réussi, et sinon
-où chercher. La section « [Pourquoi le code s'y prête si bien](#pourquoi-le-code-sy-prête-si-bien) »
-y revient.
+travail**, sans attendre le jugement d'un humain. Ils lui disent s'il a réussi, et
+sinon où chercher. La section « [Pourquoi le code s'y prête si bien](#pourquoi-le-code-sy-prête-si-bien) »
+montre que cette vérification sert aussi à l'entraînement des modèles.
 
 {{< image src="/images/module4/boucle-agent-code.svg" alt="Une boucle en quatre étapes autour d'une tâche : explorer le projet, avec ls, find, grep et cat ; modifier le code, en ajoutant par exemple deux lignes à la ligne 3 de notes.py ; vérifier, en lançant les tests ou la compilation, avec python -m pytest ou make ; lire le résultat, c'est-à-dire les messages d'erreur et le code de sortie, puis revenir à l'exploration. Quand les tests passent, l'agent sort de la boucle : il consulte git diff, résume ce qu'il a fait et, si on le lui permet, enregistre une version avec git commit. Une note rappelle que tout passe par du texte : commandes, résultats et erreurs." title="La boucle d'un agent de programmation. À chaque tour, le modèle écrit une commande, le harnais l'exécute, et le résultat, du texte, s'ajoute au contexte." loading="lazy" >}}
 
@@ -87,8 +84,9 @@ Les commandes de l'applet, `ls`, `grep`, `cat` ou `git`, ne datent pas des agent
 La plupart viennent d'**Unix**, le système d'exploitation créé à partir de 1969 par
 Ken Thompson et Dennis Ritchie, aux Bell Labs, dont descendent aujourd'hui Linux et
 macOS. En 1973, Doug McIlroy y ajoute le **tube** (*pipe*), qui envoie le texte produit
-par un programme à l'entrée du suivant. En 1978, il résume la philosophie d'Unix en
-trois conseils : écrire des programmes qui font une seule chose et la font bien,
+par un programme à l'entrée du suivant. Ses idées sur la philosophie d'Unix, formulées
+notamment en 1978, sont résumées en 1994 par Peter Salus, dans *A Quarter Century of Unix*, en trois
+conseils : écrire des programmes qui font une seule chose et la font bien,
 écrire des programmes qui travaillent ensemble, et leur faire échanger du texte,
 parce que le texte est une interface universelle.
 
@@ -112,7 +110,7 @@ langage, pour plusieurs raisons.
   les options de `grep` comme il connaît la grammaire. Et s'il hésite, la
   documentation est elle-même du texte, que la commande `man grep` affiche.
 - **Les verdicts sont exacts.** Un programme Unix signale sa réussite par un **code de
-  sortie**, 0 si tout va bien, un autre nombre sinon, et ses messages d'erreur
+  sortie** (*exit code*), 0 si tout va bien, un autre nombre sinon, et ses messages d'erreur
   indiquent souvent le fichier et la ligne en cause. Le modèle reçoit ainsi un signal
   précis, sans ambiguïté.
 
@@ -142,7 +140,7 @@ il écrit un petit programme de quelques lignes, l'exécute et lit le résultat.
 ainsi compter, convertir, analyser un fichier de données ou vérifier une hypothèse,
 avec l'exactitude d'un programme.
 
-**Git**, le système de gestion de versions créé par Linus Torvalds en 2005,
+**Git**, le système de gestion de versions (*version control*) créé par Linus Torvalds en 2005,
 enregistre l'historique complet d'un projet. Pour un agent, c'est à la fois une
 mémoire et un filet de sécurité. `git log` montre ce qui a été fait, et par qui ;
 `git diff` montre exactement ce que l'agent vient de changer, ce qui permet à un
@@ -168,9 +166,9 @@ façons.
   le modèle n'apprend rien d'une session à l'autre, mais ces notes, elles, restent.
   La convention `AGENTS.md`, publiée en 2025, est déjà utilisée par des dizaines de
   milliers de projets.
-- **Le compactage.** Quand le contexte approche de sa limite, le harnais demande au
+- **Le compactage** (*compaction*). Quand le contexte approche de sa limite, le harnais demande au
   modèle de résumer la session jusque-là, puis repart de ce résumé.
-- **Les sous-agents.** L'agent peut confier une recherche à un autre agent, qui
+- **Les sous-agents** (*subagents*). L'agent peut confier une recherche à un autre agent, qui
   travaille dans son propre contexte, tout neuf, et ne lui rapporte qu'un résumé. Le
   contexte principal reste ainsi réservé à l'essentiel.
 
@@ -216,7 +214,7 @@ Des ensembles plus difficiles et mieux protégés lui succèdent, comme SWE-benc
 dont une partie des projets n'est pas publique.
 
 Une autre mesure, proposée en mars 2025 par l'organisme METR, ne compte pas les
-problèmes résolus, mais la **durée des tâches** qu'un agent mène à bien. On mesure le
+problèmes résolus, mais la **durée des tâches** (*time horizon*) qu'un agent mène à bien. On mesure le
 temps qu'il faut à un programmeur humain pour chaque tâche, et l'on cherche la durée
 à laquelle l'agent réussit une fois sur deux. En mars 2025, elle est d'environ une
 heure. Elle double à peu près tous les sept mois depuis 2019, et plus vite encore
@@ -224,7 +222,7 @@ depuis 2024. Au début de 2026, elle dépasse une dizaine d'heures. En février 
 chercheur d'Anthropic fait écrire par seize agents travaillant en parallèle un
 compilateur pour le langage C, de 100 000 lignes, capable de compiler le noyau Linux,
 en deux semaines et pour environ 20 000 dollars de calcul. Le résultat a ses limites,
-mais il était impensable deux ans plus tôt.
+mais il montre l'ampleur des tâches qu'on peut désormais confier à des agents.
 
 ## Permissions, bac à sable et incidents
 
@@ -308,6 +306,6 @@ change à l'emploi et à l'apprentissage de la programmation est l'une des quest
 Ce cours lui-même a été rédigé avec l'aide d'un agent de programmation, comme
 l'explique la page « [Usage de l'IA](docs/60-assistants-intelligents/#comment-ce-cours-a-été-produit) ».
 
-Les agents présentés jusqu'ici lisent et écrivent du texte. Le
+Ces agents travaillent surtout sur du texte. Le
 [chapitre suivant](docs/module4/90-mots-et-images) montre comment on a relié les mots
 et les images.

@@ -6,14 +6,14 @@ slug: demontrer
 
 # Démontrer
 
-Le chapitre précédent s'achevait sur des modèles qui raisonnent, entraînés par
-[renforcement à partir de récompenses vérifiables](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
+Le chapitre « [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr) »
+s'achevait sur des modèles qui raisonnent, entraînés par renforcement à partir de
+récompenses vérifiables.
 Les mathématiques sont le terrain où cette idée va le plus loin, parce qu'une
 démonstration peut être vérifiée sans aucun doute possible, par un programme. Ce
 chapitre montre comment, en quelques années, des machines sont passées des problèmes
 d'olympiades aux premiers résultats de recherche, et ce que ces résultats disent, ou
-ne disent pas. La question de fond, celle de savoir si une machine qui démontre
-comprend ce qu'elle démontre, relève du [Module 5](docs/module5).
+ne disent pas.
 
 ## Vérifier une preuve
 
@@ -98,7 +98,7 @@ s'exposent à la [contamination](docs/module4/60-passer-a-l-echelle/#que-mesuren
 En novembre 2024, l'organisme Epoch AI publie **FrontierMath**, plusieurs centaines de
 problèmes inédits, rédigés par des mathématiciens, dont la réponse se vérifie
 automatiquement. À la publication, les meilleurs modèles en résolvent moins de 2 %.
-Un mois plus tard, on apprend qu'OpenAI, dont le modèle o3 vient d'atteindre 25 %, a
+Peu après, on apprend qu'OpenAI, dont le modèle o3 vient d'atteindre 25 %, a
 financé le banc d'essai et a accès à une grande partie des problèmes, ce que les
 mathématiciens qui les avaient rédigés ignoraient. L'épisode rappelle qu'un banc
 d'essai n'est fiable que si l'on sait qui en a vu les questions.
@@ -167,8 +167,8 @@ Pour juger un résultat annoncé, trois niveaux de confiance se distinguent :
 
 - une démonstration **vérifiée par Lean** est juste, pourvu que l'énoncé ait été bien
   traduit ;
-- un résultat **vérifié par des mathématiciens**, comme les deux contre-exemples de
-  2026, est aussi solide que les autres résultats publiés ;
+- un résultat **vérifié par des mathématiciens**, comme la conjecture réfutée et le
+  contre-exemple de 2026, est aussi solide que les autres résultats publiés ;
 - une **annonce d'entreprise**, non vérifiée, reste une annonce, comme l'a montré le
   faux départ de 2025.
 

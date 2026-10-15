@@ -25,7 +25,7 @@ Il s'appuie sur les jetons et les plongements présentés au chapitre
 En 2003, Yoshua Bengio, Réjean Ducharme, Pascal Vincent et Christian Jauvin, à
 l'Université de Montréal, publient un article intitulé « A Neural Probabilistic
 Language Model » (Christian Jauvin est l'auteur de ce cours). Ils remplacent le
-comptage par un réseau de neurones, avec une idée décisive : les
+comptage par un réseau de neurones, avec une idée centrale : les
 [plongements](docs/module4/45-des-mots-aux-nombres/#les-plongements) des mots ne
 sont pas calculés d'avance, ils sont **appris** par le réseau, en même temps que
 tout le reste.
@@ -80,9 +80,9 @@ familles de modèles en sont nées.
 |---|---|---|---|
 | encodeur et décodeur | les deux parties | le Transformer de 2017, T5 (Google, 2019) | transformer un texte en un autre : traduire, résumer |
 | encodeur seul | l'encodeur ; chaque mot voit toute la phrase | BERT (Google, 2018) | comprendre un texte : le classer, y chercher, calculer des [plongements contextuels](docs/module4/45-des-mots-aux-nombres/#le-même-mot-plusieurs-sens) |
-| décodeur seul | le décodeur, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langue | générer du texte, jeton après jeton |
+| décodeur seul | le décodeur, sans attention croisée | GPT (OpenAI, 2018) et les grands modèles de langage | générer du texte, jeton après jeton |
 
-{{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langue, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
+{{< image src="/images/module4/transformer-variantes.svg" alt="Trois silhouettes simplifiées du Transformer. Première : encodeur et décodeur, les deux colonnes reliées par l'attention croisée ; c'est le Transformer de 2017 et T5, pour traduire et résumer. Deuxième : encodeur seul, le décodeur est grisé ; l'encodeur donne un vecteur par mot ; c'est BERT, pour comprendre et classer. Troisième : décodeur seul, l'encodeur et l'attention croisée sont grisés ; le décodeur donne le mot suivant ; c'est GPT et les grands modèles de langage, pour générer du texte." title="Les mêmes pièces, assemblées de trois façons : on garde les deux colonnes, ou seulement l'une des deux." loading="lazy" >}}
 
 C'est la troisième qui l'a emporté, et c'est elle que décrit la suite de cette page.
 Un décodeur seul, dont l'[attention masquée](docs/module3/70-attention-transformer/#le-transformer)
@@ -197,7 +197,7 @@ souviendrons demain. Le modèle fait presque l'inverse.
 - Il dispose de chaque mot exact de la conversation, tant qu'elle tient dans sa
   fenêtre de contexte.
 - Il n'a rien d'autre : aucun souvenir de la veille, sauf si le harnais glisse
-  des notes dans le texte qu'elle lui présente.
+  des notes dans le texte qu'il lui présente.
 - Quand la conversation dépasse la fenêtre, les passages les plus anciens sont
   simplement retirés, et il les oublie d'un coup.
 
@@ -225,7 +225,9 @@ pas, il faut choisir les passages à y placer. C'est la
 
 Une grande fenêtre a toutefois un prix. Dans l'attention, chaque jeton est comparé à
 tous ceux qui le précèdent : doubler la longueur du texte multiplie à peu près par
-quatre ces calculs. Plus une conversation est longue, plus chaque réponse coûte cher.
+quatre ces calculs. C'est le
+[coût de l'auto-attention](docs/module3/70-attention-transformer/#pourquoi-il-a-tout-changé)
+déjà signalé au Module 3. Plus une conversation est longue, plus chaque réponse coûte cher.
 De plus, les modèles n'exploitent pas toute leur fenêtre aussi bien. En 2023, Nelson
 Liu et ses collègues, à Stanford, montrent qu'ils retrouvent mieux une information
 placée au début ou à la fin d'un long texte qu'au milieu (*lost in the middle*).
@@ -233,9 +235,9 @@ placée au début ou à la fin d'un long texte qu'au milieu (*lost in the middle
 {{% hint warning %}}
 **Deux idées à bien saisir**
 
-Ces deux idées méritent qu'on s'y arrête. Elles vont à l'encontre de l'intuition, et
-comptent parmi les aspects des grands modèles de langage les plus mal compris du
-grand public.
+Les deux idées suivantes vont à l'encontre de l'intuition. Elles comptent parmi les
+aspects des grands modèles de langage que le grand public comprend le plus souvent
+mal.
 
 1. **Une conversation avec un modèle de langage n'en est pas une, au sens
    habituel.** Le modèle ne suit pas l'échange. À chaque réplique, toute la
@@ -258,7 +260,8 @@ grand public.
 
 On pourrait imaginer un modèle qui continue d'ajuster ses paramètres après
 l'entraînement. Il intégrerait les nouvelles connaissances au fur et à mesure,
-retiendrait les corrections de ses utilisateurs, et n'aurait plus de date de coupure.
+retiendrait les corrections de ses utilisateurs, et n'aurait plus de date de coupure (*knowledge cutoff*), cette limite présentée au
+chapitre « [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents) ».
 C'est l'**apprentissage continu** (*continual learning*). Les humains apprennent ainsi
 toute leur vie, mais les réseaux de neurones y parviennent mal, pour plusieurs
 raisons.
@@ -276,8 +279,10 @@ raisons.
   (James Kirkpatrick et ses collègues, chez DeepMind, en 2017).
 - **Le coût.** Ajuster les paramètres demande la rétropropagation, plusieurs fois plus
   coûteuse que la simple prédiction. Surtout, un même modèle sert des millions de
-  personnes à la fois. Pour qu'il apprenne de chacune, il faudrait une copie de ses
-  centaines de milliards de paramètres par utilisateur.
+  personnes à la fois. Pour qu'il apprenne de chacune, il faudrait garder une version distincte
+  du modèle par utilisateur. Ce serait une copie de ses centaines de milliards de
+  paramètres, ou au moins d'une partie d'entre eux, puisqu'on sait adapter un modèle
+  en ne modifiant qu'une petite fraction de ses paramètres.
 - **La fiabilité.** Ce que les utilisateurs disent au modèle peut être faux, ou
   malveillant. En 2016, Microsoft met en ligne Tay, un robot conversationnel qui
   apprend de ses échanges sur Twitter. Des internautes lui font tenir des propos
@@ -317,14 +322,15 @@ d'une façon ou d'une autre, capter la grammaire, des connaissances sur le monde
 styles d'écriture et des formes de raisonnement. Certains chercheurs, comme Ilya
 Sutskever, cofondateur d'OpenAI, en concluent que bien prédire le texte demande une
 forme de compréhension. D'autres estiment que le modèle n'apprend que des régularités
-de surface, sans représentation du monde. Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) sur
-ce que les modèles de langage comprennent présente ce débat.
+de surface, sans représentation du monde. Le chapitre
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) »
+présente ce débat.
 
 Un modèle entraîné seulement à prédire le jeton suivant n'est pas encore un
 assistant. Si on lui écrit « Quelle est la capitale du Canada ? », il peut tout aussi
 bien continuer par une autre question, comme dans une liste de questions d'examen.
-Le passage de ce modèle à un assistant qui répond fait l'objet d'un chapitre
-ultérieur du [Module 4](docs/module4/70-du-modele-a-l-assistant). Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
+Le passage de ce modèle à un assistant qui répond fait l'objet du chapitre
+« [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant) ». Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
 d'abord ce qui s'est passé quand on a rendu ces modèles beaucoup plus grands.
 
 ## Pour voir le mécanisme en détail

@@ -23,9 +23,8 @@ limites.
 
 Ce chapitre présente les moyens qui ont été développés pour dépasser ces limites :
 bien formuler les requêtes, donner au modèle des documents à consulter, lui confier
-des outils, et enfin le laisser enchaîner lui-même les actions. Ces systèmes, des
-grands modèles de langage augmentés de capacités supplémentaires, comme l'usage
-d'outils, la consultation de documents ou une mémoire, s'appellent des **agents**.
+des outils. Il présente ensuite les systèmes qui enchaînent eux-mêmes les actions,
+en boucle, jusqu'à ce qu'une tâche soit accomplie : les **agents**.
 
 ## Formuler la requête
 
@@ -36,7 +35,7 @@ des requêtes (*prompt engineering*) repose sur quelques principes simples.
 - Préciser la tâche, le public visé et la forme attendue : « Explique la
   photosynthèse à un élève de 12 ans, en cinq phrases. »
 - Donner des exemples de ce qu'on attend, ce qui exploite
-  l'[apprentissage en contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte).
+  l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte).
 - Fournir les informations nécessaires plutôt que de compter sur la mémoire du
   modèle, par exemple en collant le texte à résumer.
 - Demander un raisonnement par étapes pour les problèmes difficiles, comme la
@@ -126,7 +125,7 @@ Les plongements ont aussi un point faible : ils saisissent le sens, mais distin
 mal un nom propre rare, un numéro de produit ou un code d'erreur. On combine donc
 souvent la recherche par vecteurs avec une recherche par mots-clés, héritière du
 [tf-idf](docs/module4/42-les-outils-statistiques/#représenter-des-documents) présenté
-au chapitre « Les outils statistiques ». C'est la **recherche hybride**.
+au chapitre « Les outils statistiques ». C'est la **recherche hybride** (*hybrid search*).
 
 Cette méthode a deux avantages. Le modèle s'appuie sur des sources à jour, sans être
 réentraîné, et il peut les citer, ce qui permet de vérifier sa réponse. Elle est
@@ -136,8 +135,8 @@ pas les erreurs : si la recherche trouve un mauvais passage, le modèle peut s'
 servir avec assurance.
 
 Une variante, présentée par Microsoft en 2024, organise d'abord les documents en un
-**graphe de connaissances** (*GraphRAG*), où les personnes, les lieux et les concepts
-sont reliés entre eux. On retrouve là les réseaux de concepts reliés de l'IA
+**graphe de connaissances** (*knowledge graph*), où les personnes, les lieux et les
+concepts sont reliés entre eux. Cette méthode s'appelle GraphRAG. On retrouve là les réseaux de concepts reliés de l'IA
 symbolique, dont le chapitre « [Les hivers et la bascule](docs/module1/60-hivers/#lhéritage-invisible) »
 du Module 1 montrait qu'ils structurent encore une grande partie du savoir sur le Web.
 Deux conceptions du savoir s'y rejoignent : le savoir organisé à la main, ou
@@ -148,8 +147,9 @@ partir du texte.
 
 Un modèle de langage ne peut qu'écrire du texte. Il ne peut ni consulter une base de
 données, ni faire un calcul exact, ni envoyer un courriel. Mais il peut écrire un texte
-qui **demande** une action, dans un format convenu à l'avance. Son harnais, le programme qui
-l'entoure, lit cette demande, l'exécute, et lui rapporte le résultat.
+qui **demande** une action, dans un format convenu à l'avance. Son harnais, présenté
+[plus haut](#la-requête-système-et-le-harnais), lit cette demande, l'exécute, et lui
+rapporte le résultat.
 C'est l'**appel d'outils** (*tool use*, ou *function calling*). Quand on dit qu'un
 modèle « décide d'appeler un outil », voici exactement ce qui se passe.
 
@@ -198,7 +198,7 @@ puis rouvre une réplique de l'assistant :
 Le modèle relit
 [tout le texte](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une),
 y compris le résultat, et écrit cette fois sa réponse : « Oui, nous l'avons en format
-poche, à 14,95 $, et il nous en reste trois exemplaires. »
+poche, à 14,95 \\$, et il nous en reste trois exemplaires. »
 
 {{< image src="/images/module4/appel-outil.svg" alt="Un diagramme en trois colonnes : le modèle, le harnais et l'outil, avec le temps qui s'écoule vers le bas. 1, le harnais envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, le harnais vérifie l'appel. 4, il interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, le harnais ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, il rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, le harnais l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois." title="Un appel d'outil, pas à pas. Le modèle passe deux fois : la première, il écrit l'appel ; la seconde, il lit le résultat et rédige sa réponse. Entre les deux, c'est le harnais qui agit." loading="lazy" >}}
 
@@ -215,8 +215,8 @@ sont des programmes ordinaires, écrits par des humains, comme ceux du
   accès au réseau, ni accès aux fichiers, ni horloge, et rien ne lui reste d'un appel
   à l'autre. Il ne sait même pas quels outils existent vraiment, seulement ce que leur
   description en dit.
-- **Le harnais** est un programme classique, écrit par exemple en Python ou en
-  JavaScript. Le mot vient de l'équipement qui relie la force d'un cheval à la
+- **Le harnais**, présenté [plus haut](#la-requête-système-et-le-harnais), est un
+  programme classique, écrit par exemple en Python ou en JavaScript. Le mot vient de l'équipement qui relie la force d'un cheval à la
   charrue : le modèle fournit la force, le harnais la dirige. C'est l'interface Web de
   ChatGPT, le robot conversationnel d'une banque, ou un assistant de programmation
   installé sur un ordinateur. Il tient la conversation, assemble le texte selon le

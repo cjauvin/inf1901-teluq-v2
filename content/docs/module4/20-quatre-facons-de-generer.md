@@ -69,10 +69,11 @@ Le discriminateur est un classificateur **discriminatif**, au sens du chapitre
 du Module 2. Il trace une frontière entre les vraies images et les fausses. Un GAN
 utilise donc un modèle discriminatif pour entraîner un modèle génératif.
 
-Les GAN ont dominé la génération d'images pendant plusieurs années. En 2014, ils
-produisaient des visages flous de quelques dizaines de pixels de côté. En 2019,
-StyleGAN produisait les visages photoréalistes présentés au
-[chapitre précédent](docs/module4/10-generer). Ils ont cependant deux défauts.
+Les GAN ont dominé la génération d'images pendant plusieurs années, des visages
+flous de 2014 aux visages photoréalistes de StyleGAN en 2019, une progression que
+retrace le chapitre
+« [Des images, des voix, des vidéos](docs/module4/30-images-voix-videos/#les-images) ».
+Ils ont cependant deux défauts.
 
 - Leur entraînement est **instable**. Les deux réseaux doivent progresser au même
   rythme. Si l'expert devient trop fort trop vite, le faussaire ne reçoit plus
@@ -92,25 +93,13 @@ Diederik Kingma et Max Welling, à l'Université d'Amsterdam. Comme l'autoencode
 [Module 3](docs/module3/40-apprentissage-profond/#apprendre-sans-étiquettes-lautoencodeur),
 c'est un réseau en sablier, avec un encodeur et un décodeur.
 
-**À quoi sert l'espace latent.** Rappelons l'idée du
-[chapitre précédent](docs/module4/10-generer/#lespace-latent). L'encodeur reçoit une image, c'est-à-dire un point de
-l'espace des pixels : 784 nombres pour un chiffre de MNIST, environ trois millions
-pour une photo en couleurs de 1 000 pixels de côté. Il la réduit à un point d'une
-carte qui n'a que **quelques dimensions**, l'espace latent : deux nombres dans
-l'applet, 512 pour le réseau qui a produit les visages du chapitre précédent.
-Passer de 784 nombres à deux, c'est une compression considérable.
-C'est une
-[réduction de dimension](docs/module2/80-trois-facons-d-apprendre/#réduire-la-dimension),
-comme la PCA du Module 2, mais faite par un réseau de neurones capable de suivre
-les courbes des données. L'image y perd
-presque tous ses détails, et n'en garde que ce qui permet de la reconstruire : la
-forme du chiffre, l'inclinaison et l'épaisseur du trait. Cette compression est
-possible parce que les vraies images se trouvent près d'une
-[variété de peu de dimensions](docs/module4/10-generer/#la-variété-des-vraies-images). Le
-décodeur fait l'inverse : on lui donne un point de la carte, et il en fait une
-image. Pour **générer**, on se passe de l'encodeur. On choisit un point au hasard
-sur la carte, et le décodeur en fait une image nouvelle. Tout repose donc sur une
-question : où tirer ce point ?
+**À quoi sert l'espace latent.** Le chapitre
+« [Générer : imiter une distribution](docs/module4/10-generer/#lespace-latent) » a
+présenté l'espace latent : l'encodeur réduit une image, 784 nombres pour un chiffre
+manuscrit, à un point d'une carte de **quelques dimensions**, deux dans l'applet, et le décodeur fait l'inverse, d'un point de la carte à une
+image. Pour **générer**, on se passe de l'encodeur, on choisit un point au hasard
+sur la carte, et le décodeur en fait une image nouvelle. Toute la question est de
+savoir où tirer ce point.
 
 **Le problème de l'autoencodeur ordinaire.** Un autoencodeur ordinaire n'a appris
 qu'une chose : reconstruire les images qu'on lui a montrées. Son encodeur calcule
@@ -155,20 +144,21 @@ est une ville.
 
 {{< image src="/images/module4/ae-et-vae.svg" alt="Deux rangées. En haut, l'autoencodeur ordinaire : un 7 manuscrit entre dans l'encodeur, qui le réduit à un point sur une petite carte de l'espace latent ; le décodeur reconstruit le 7 à partir de ce point. L'erreur de reconstruction compare l'entrée et la sortie. En bas, l'autoencodeur variationnel : l'encodeur donne deux sorties, le centre et la taille d'une zone floue, dessinée sur la carte comme une tache en forme de cloche ; un point est tiré au hasard dans cette zone, et le décodeur reconstruit le 7 à partir de ce point. Une pénalité ramène la zone vers le centre de la carte. Les éléments propres à l'autoencodeur variationnel sont en rouge." title="Le VAE garde le sablier de l'autoencodeur. Ce qui change est en rouge : l'encodeur donne une zone plutôt qu'un point, le décodeur reçoit un point tiré au hasard dans cette zone, et une pénalité ramène la zone vers le centre. Le 7, sa place sur la carte et les sorties viennent du réseau de l'applet du chapitre précédent." loading="lazy" >}}
 
-La règle de tirage est la même pour les deux réseaux. Chacun des deux nombres du
-code est tiré au hasard selon une **courbe en cloche** centrée sur zéro, la
+La figure ci-dessous compare deux réseaux entraînés sur les mêmes chiffres de
+MNIST, un autoencodeur ordinaire et le VAE de l'applet du
+[chapitre précédent](docs/module4/10-generer/#lespace-latent). Dans chaque carte,
+dix points ont été tirés selon la même règle, puis décodés en chiffres.
+
+Cette règle de tirage est la suivante. Chacun des deux nombres du code est tiré
+au hasard selon une **courbe en cloche** centrée sur zéro, la
 [gaussienne](docs/module2/60-classer/#renverser-le-problème-la-classification-bayésienne)
 du Module 2. Les valeurs proches de zéro sont les plus fréquentes, et les valeurs
 qui dépassent 2 ou −2 sont rares. Sur la carte, qui a deux dimensions, cette cloche
 devient une colline ronde, la plus haute au centre, le point (0, 0). Les points
 tirés s'y entassent près du centre, et se raréfient à mesure qu'on s'en éloigne. Le
 **cercle noir** de la figure entoure la zone où tombent 95 % des tirages : c'est là
-que le générateur ira chercher ses points. C'est aussi la région que la pénalité du
+que le décodeur ira chercher ses points. C'est aussi la région que la pénalité du
 VAE pousse ses chiffres à occuper.
-
-La figure ci-dessous compare deux réseaux entraînés sur les mêmes chiffres de
-MNIST, un autoencodeur ordinaire et le VAE de l'applet du chapitre précédent. Dans
-chaque carte, dix points ont été tirés selon cette règle, puis décodés en chiffres.
 
 {{< image src="/images/module4/ae-vae.png" alt="Deux cartes de l'espace latent, côte à côte, avec dessous les dix chiffres produits par chacun des deux décodeurs. À gauche, l'autoencodeur ordinaire : ses chiffres s'étalent sur une très grande surface, et le cercle de tirage, minuscule, ne couvre qu'un coin où se mêlent des 3, des 5 et des 9 ; les dix chiffres produits sont presque tous des 3, des 5 et des 9. À droite, le VAE : ses chiffres sont regroupés autour du centre, le cercle de tirage couvre presque toute la carte, et les dix chiffres produits sont variés (8, 2, 7, 5, 4, 3, 6)." title="Avec la même règle de tirage, l'autoencodeur ordinaire ne produit presque que des 3, des 5 et des 9, car ses chiffres ne sont pas rangés autour du centre. Le VAE produit des chiffres variés." loading="lazy" >}}
 
@@ -178,7 +168,8 @@ se ressemblent tous. Il faudrait connaître la forme exacte de sa carte pour sav
 où tirer. Le VAE, lui, a rangé ses chiffres là où l'on tire.
 
 Les VAE s'entraînent de façon stable, et leur espace latent est bien organisé. Leur
-défaut principal se voit dans l'applet du chapitre précédent : leurs images sont
+défaut principal se voit dans l'applet du
+[chapitre précédent](docs/module4/10-generer/#lespace-latent) : leurs images sont
 **floues**. Quand le décodeur hésite entre plusieurs images possibles, il produit
 une moyenne de ces images, et une moyenne d'images est floue.
 
@@ -232,9 +223,11 @@ Quelques manipulations à faire :
 L'idée de la diffusion a été publiée en 2015 par Jascha Sohl-Dickstein et ses
 collègues, à l'Université Stanford, qui s'inspiraient de la thermodynamique. Elle
 est devenue efficace en 2020, avec les travaux de Jonathan Ho, Ajay Jain et Pieter
-Abbeel, à l'Université de Californie à Berkeley. En 2022, les modèles de diffusion
-ont dépassé les GAN, avec DALL·E 2 (OpenAI) et Stable Diffusion (Stability AI et
-l'Université de Munich), qui produisent des images à partir d'une phrase.
+Abbeel, à l'Université de Californie à Berkeley. À partir de 2021, les modèles de
+diffusion ont dépassé les GAN, comme l'ont montré cette année-là Prafulla Dhariwal
+et Alex Nichol, d'OpenAI. En 2022, ils s'imposent avec DALL·E 2 (OpenAI) et Stable
+Diffusion (Stability AI et l'Université de Munich), qui produisent des images à
+partir d'une phrase.
 Midjourney, très populaire auprès du public, reposerait sur le même principe, bien
 que l'entreprise n'ait jamais publié les détails de son modèle. Ils
 s'entraînent de façon stable, et ils couvrent toute la diversité des données, sans
@@ -264,14 +257,21 @@ Cette dernière application est la plus importante. Le texte se prête naturelle
 l'autre. Les grands modèles de langage comme ceux de ChatGPT sont des modèles
 autorégressifs. Ils tirent chaque mot dans une distribution, avec la
 [température](docs/module4/10-generer/#la-température) présentée au chapitre
-précédent. Le reste du [Module 4](docs/module4) leur est consacré.
+précédent. Le reste du module leur est consacré, à partir du chapitre
+« [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) ».
 
 Les modèles autorégressifs s'entraînent de façon stable, et la probabilité qu'ils
 attribuent à chaque élément est calculée explicitement, ce qui permet de mesurer
 précisément leur qualité. Leur défaut est le même que celui de la diffusion, en
 plus marqué : générer élément par élément est lent, et une image de quelques
 millions de pixels demanderait autant de passages dans le réseau. C'est pourquoi
-cette méthode s'est imposée pour le texte, mais pas pour les images.
+la génération pixel par pixel a été abandonnée. La méthode est cependant revenue
+pour les images sous une autre forme. L'image est d'abord compressée en une courte
+suite de codes, des **jetons visuels**, et un modèle autorégressif génère ces jetons
+un par un, comme les mots d'un texte. C'est ce que fait DALL·E, d'OpenAI, en 2021,
+avec environ un millier de jetons par image, et c'est ainsi que des modèles
+multimodaux récents produisent des images, comme le montre le chapitre
+« [Des modèles qui voient, entendent et parlent](docs/module4/92-voir-entendre-parler/#générer-des-images-avec-un-modèle-de-langage) ».
 
 ## Générer sur demande
 
@@ -284,11 +284,11 @@ Les quatre familles le permettent. On donne au réseau, en plus du hasard, une
 information supplémentaire qu'il prend en compte à chaque étape : une étiquette,
 une image de départ, ou une phrase. On parle de génération **conditionnelle**
 (*conditional generation*). Un générateur d'images à partir de texte, comme
-DALL·E ou Stable Diffusion, est un modèle de diffusion conditionné par une phrase.
+DALL·E 2 ou Stable Diffusion, est un modèle de diffusion conditionné par une phrase.
 Pour cela, il faut traduire la phrase en nombres que le réseau comprend, ce qui
-demande de savoir représenter le sens d'un texte. Le chapitre du
-[Module 4](docs/module4/90-mots-et-images/#du-texte-à-limage) consacré aux modèles multimodaux y reviendra, une fois
-présentés les modèles de langage.
+demande de savoir représenter le sens d'un texte. Le chapitre
+« [Relier les mots et les images](docs/module4/90-mots-et-images/#du-texte-à-limage) »
+y reviendra, une fois présentés les modèles de langage.
 
 {{< image src="/images/module4/trois-consignes.svg" alt="Trois rangées, de gauche à droite : la consigne, sa traduction en nombres, le générateur qui reçoit aussi du hasard, et le résultat. Première rangée : une étiquette, « 7 », devient un code de dix cases dont une seule est allumée ; un VAE conditionnel produit un 7 manuscrit. Deuxième rangée : une image de départ, un dessin d'enfant d'une maison sous le soleil, est déjà faite de nombres ; un modèle de diffusion en fait un tableau qui reprend sa composition. Troisième rangée : une phrase, « un chat astronaute sur la lune », passe par un encodeur de textes, l'étape difficile, qui doit représenter le sens de la phrase ; un modèle de diffusion produit un chat en scaphandre sur la Lune." title="Trois sortes de consignes. Chacune est d'abord traduite en nombres ; pour une phrase, c'est l'étape la plus difficile. Les résultats sont réels : un VAE conditionnel entraîné sur MNIST, puis Stable Diffusion 1.5, à partir du dessin ou de la phrase (en anglais)." loading="lazy" >}}
 
@@ -327,8 +327,8 @@ de la colonne 3 sont penchés et fins.
 | Idée | un faussaire contre un expert | un espace latent rempli | retirer le bruit pas à pas | un élément après l'autre |
 | Première publication | 2014 | 2013 | 2015 (efficace en 2020) | bien plus ancienne pour le texte ; 2016 pour les images et les sons |
 | Points forts | images nettes, génération rapide | entraînement stable, espace latent organisé | qualité et diversité | entraînement stable, probabilités explicites |
-| Limites | entraînement instable, effondrement des modes | images floues | génération lente | génération très lente pour les images |
-| Exemples | StyleGAN | l'autoencodeur de Stable Diffusion | DALL·E 2, Stable Diffusion | WaveNet, GPT |
+| Limites | entraînement instable, effondrement des modes | images floues | génération lente | génération très lente pixel par pixel |
+| Exemples | StyleGAN | l'autoencodeur de Stable Diffusion | DALL·E 2, Stable Diffusion | WaveNet, GPT, DALL·E (2021) |
 
 Les systèmes actuels combinent souvent plusieurs de ces idées. Stable Diffusion,
 par exemple, ne débruite pas directement les pixels. Un autoencodeur réduit

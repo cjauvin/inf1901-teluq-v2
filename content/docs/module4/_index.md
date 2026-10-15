@@ -66,8 +66,10 @@ partie du texte et des images disponibles sur le Web.
 
 Trois précisions évitent des malentendus fréquents.
 
-- **Ce module ne demande aucune formule.** Les mécanismes sont expliqués par des
-  figures et des applets, dont plusieurs utilisent de vrais modèles : un
+- **Ce module demande peu de mathématiques.** Les quelques formules sont
+  expliquées en mots, et les plus techniques sont placées dans des encadrés que
+  l'on peut sauter. Les mécanismes sont surtout expliqués par des figures et des
+  applets, dont plusieurs utilisent de vrais modèles : un
   autoencodeur, un modèle de diffusion, de vrais plongements de mots, le découpage
   en jetons de GPT-4o, et CLIP.
 - **Ce module explique, il ne tranche pas les grands débats.** La question de savoir
@@ -83,7 +85,8 @@ Trois précisions évitent des malentendus fréquents.
 ## Le parcours du module
 
 Le module compte trois parties : l'IA générative en général, puis les grands
-modèles de langage, puis la rencontre du texte et de l'image.
+modèles de langage, puis la rencontre du texte et de l'image, qui se termine par
+un bilan de ce que ces modèles comprennent et de ce qu'ils ratent.
 
 **L'IA générative**
 
@@ -104,9 +107,10 @@ modèles de langage, puis la rencontre du texte et de l'image.
 6. [*Des mots aux nombres : jetons et plongements*](docs/module4/45-des-mots-aux-nombres) :
    découper un texte, et représenter le sens des mots par des vecteurs.
 7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
-   modèles neuronaux aux Transformers de GPT.
+   modèles neuronaux aux Transformers de GPT, la fenêtre de contexte, la
+   conversation, l'apprentissage continu, et ce que la prédiction exige.
 8. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
-   l'apprentissage en contexte, les coûts, les modèles ouverts.
+   l'apprentissage dans le contexte, les coûts, les modèles ouverts.
 9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
    l'ajustement, le renforcement à partir de préférences humaines, et les modèles
    qui raisonnent.
@@ -152,16 +156,22 @@ Au terme de ce module, vous devriez être en mesure de :
   ce que signifie tirer des exemples dans une distribution ;
 * décrire le principe des quatre grandes familles de modèles génératifs : GAN,
   autoencodeurs variationnels, diffusion et modèles autorégressifs ;
+* retracer l'histoire du traitement de la langue, des règles aux n-grammes, et
+  expliquer le lissage, la perplexité et les principaux outils statistiques ;
 * expliquer comment un texte est découpé en jetons, et comment des plongements
   représentent le sens des mots ;
 * expliquer ce qu'est un modèle de langage, et comment un Transformer génère un texte
   jeton après jeton ;
 * expliquer pourquoi la taille des modèles a tant compté, et ce que sont les lois
-  d'échelle et l'apprentissage en contexte ;
+  d'échelle et l'apprentissage dans le contexte ;
 * décrire les étapes qui transforment un modèle de base en assistant, et le rôle du
-  travail humain dans ces étapes ;
+    travail humain dans ces étapes ;
+* expliquer comment raisonnent les modèles entraînés par des récompenses
+  vérifiables, et ce qu'apporte une preuve vérifiée par une machine ;
 * expliquer ce qu'apportent les outils et les agents, et les risques qu'ils posent ;
+* décrire le fonctionnement d'un agent de programmation ;
 * expliquer comment des modèles relient les textes, les images et les sons ;
+* expliquer comment on tente de mesurer l'intelligence avec des tests comme ARC ;
 * identifier les principales limites de ces modèles, comme les hallucinations, et
   présenter les arguments du débat sur leur compréhension.
 

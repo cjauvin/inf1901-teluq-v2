@@ -59,10 +59,15 @@ Quelques manipulations à faire :
    jeton, un même texte coûte plus cher dans certaines langues que dans d'autres.
 2. Regardez le mot rare et le verbe « découpent ». Ils sont coupés en morceaux qui
    ne correspondent pas toujours aux syllabes ni aux préfixes.
-3. Choisissez l'exemple *strawberry*. Le mot est un seul jeton. Le modèle reçoit donc
-   un seul numéro, et non les dix lettres du mot. C'est l'une des raisons pour
-   lesquelles les modèles de langage ont longtemps eu du mal à répondre à la question
-   « combien de *r* y a-t-il dans *strawberry* ? ». Ils ne voient pas les lettres.
+3. Choisissez l'exemple *strawberry*. Dans la question *How many r's are in the
+   word strawberry?*, le mot, avec l'espace qui le précède, forme un seul jeton : le
+   modèle reçoit un seul numéro, et non les dix lettres du mot. Écrit seul, sans
+   espace devant, il serait découpé en trois jetons (*st*, *raw*, *berry*), qui ne
+   montrent pas davantage ses lettres. L'encadré « Combien de *r* dans
+   *strawberry* ? » du chapitre
+   « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices) »
+   explique ce que cela change quand on demande à un modèle de compter les lettres
+   d'un mot.
 4. Regardez les nombres. « 12 345 » et « 38 781,93 » sont coupés en groupes de
    chiffres, ce qui complique le calcul.
 
@@ -116,7 +121,7 @@ exemple, souvent repris en linguistique informatique, s'inspire d'une boisson
 réelle, une bière de maïs fabriquée au Mexique.
 {{% /hint %}}
 
-C'est l'**hypothèse distributionnelle** : des mots qui apparaissent dans les mêmes
+C'est l'**hypothèse distributionnelle** (*distributional hypothesis*) : des mots qui apparaissent dans les mêmes
 contextes ont des sens proches. Elle a été formulée dans les années 1950 par des
 linguistes, notamment l'Américain Zellig Harris en 1954. Le Britannique John Rupert
 Firth l'a résumée en 1957 par une formule souvent citée, « *You shall know a word by
@@ -156,8 +161,9 @@ Ces vecteurs ont pourtant deux défauts.
   les documents.
 
 La solution est celle de
-l'[analyse sémantique latente](docs/module4/42-les-outils-statistiques/#représenter-des-documents) :
-réduire ces listes à quelques centaines de nombres, en gardant l'essentiel de leurs
+l'[analyse sémantique latente](docs/module4/42-les-outils-statistiques/#représenter-des-documents),
+qui compte les mots de chaque document puis réduit le tableau obtenu. On réduit de
+même ces listes à quelques centaines de nombres, en gardant l'essentiel de leurs
 ressemblances. On obtient des vecteurs compacts, où chaque nombre résume une
 tendance de l'usage plutôt qu'un voisin précis.
 
@@ -177,7 +183,12 @@ rétropropagation ajuste les nombres de chaque mot. Deux mots qui apparaissent d
 les mêmes contextes, comme « chat » et « chien », finissent par recevoir des listes
 de nombres voisines. En 2014, Omer Levy et Yoav Goldberg ont d'ailleurs montré que
 word2vec revient, en pratique, à résumer un tableau de voisins pondéré : les deux
-approches se rejoignent.
+approches se rejoignent. L'idée d'apprendre les plongements par un réseau de
+neurones n'était cependant pas nouvelle. Le modèle de langage neuronal de 2003,
+présenté au chapitre
+« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#généraliser-les-modèles-neuronaux) »,
+apprenait déjà les siens en même temps que le reste de ses paramètres ; word2vec a
+rendu la méthode assez simple et rapide pour des milliards de mots.
 
 Chaque mot devient ainsi un point dans un espace de quelques centaines de
 dimensions, où la distance entre deux points correspond à la différence de sens. On
@@ -267,14 +278,15 @@ Cette idée a de nombreux usages.
 
 - **La recherche par le sens.** Un moteur de recherche qui compare des vecteurs de
   phrases trouve un document qui répond à une question, même s'il n'utilise aucun
-  des mots de la question. Le chapitre du [Module 4](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) sur les outils
-  et les agents y reviendra.
+  des mots de la question. Le chapitre
+  « [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#chercher-dabord-répondre-ensuite-rag) »
+  y reviendra.
 - **La recommandation.** Les plateformes de musique ou de vidéo représentent chaque
   morceau et chaque utilisateur par un vecteur, et proposent les morceaux proches.
 - **Les liens entre images et textes.** Si une image et sa légende reçoivent des
   vecteurs proches, on peut chercher une image avec une phrase, ou guider la
-  génération d'une image par un texte. C'est le sujet du chapitre du
-  [Module 4](docs/module4/90-mots-et-images) sur les mots et les images.
+  génération d'une image par un texte. C'est le sujet du chapitre
+  « [Relier les mots et les images](docs/module4/90-mots-et-images) ».
 
 Les mots sont maintenant des vecteurs, et le Transformer sait les modifier d'après
 leur contexte. Le [chapitre suivant](docs/module4/50-predire-le-mot-suivant) montre comment un modèle s'en

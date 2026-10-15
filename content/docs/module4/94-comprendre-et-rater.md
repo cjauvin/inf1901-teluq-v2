@@ -8,7 +8,9 @@ slug: comprendre-et-rater
 
 Les chapitres précédents ont présenté ce que font les grands modèles de langage :
 prédire le jeton suivant, à une échelle immense, puis être ajustés pour répondre,
-raisonner, utiliser des outils, voir et parler. Ce dernier chapitre du module pose la
+raisonner, utiliser des outils, voir et parler. Le chapitre
+« [Le défi ARC](docs/module4/93-le-defi-arc) » a montré ce qui leur résiste encore
+devant des problèmes nouveaux. Ce dernier chapitre du module pose la
 question que ces résultats rendent inévitable : ces modèles comprennent-ils ce qu'ils
 disent ? Il commence par leurs erreurs les plus connues, qui renseignent sur leur
 fonctionnement, puis il présente ce que les chercheurs ont découvert à l'intérieur des
@@ -62,7 +64,8 @@ humaine.
 
 En 2024, la question devient célèbre : de nombreux modèles répondent « deux », alors
 que le mot en compte trois. La raison tient au
-[découpage en jetons](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons).
+découpage en jetons, qu'on peut observer dans l'applet du chapitre
+« [Des mots aux nombres](docs/module4/45-des-mots-aux-nombres/#découper-le-texte-les-jetons) ».
 Dans la question, GPT-4o reçoit *strawberry* comme un seul jeton, un simple numéro ;
 écrit seul, le mot est découpé en trois morceaux, *st*, *raw* et *berry*. Dans les deux
 cas, le modèle ne voit jamais les lettres elles-mêmes.
@@ -79,7 +82,7 @@ le modèle écrit d'abord le mot lettre par lettre ; chaque lettre devient alo
 jeton du contexte, qu'il peut compter. Avec un
 [outil](docs/module4/80-outils-et-agents/#le-harnais-et-lappel-doutils), il écrit une
 ligne de programme, `"strawberry".count("r")`, et obtient la réponse exacte. Les
-modèles de raisonnement apparus à partir de la fin de 2024 ne se trompent plus sur
+modèles de raisonnement apparus à partir de septembre 2024 ne se trompent plus sur
 cette question. Elle reste un rappel utile : un modèle de langage ne voit pas le texte
 comme nous.
 {{% /hint %}}
@@ -100,21 +103,18 @@ D'autres erreurs sont tout aussi révélatrices.
   énoncé.
 
 Ce dernier résultat rejoint le problème présenté dans la section
-« [Que mesurent les scores ?](docs/module4/60-passer-a-l-echelle/#que-mesurent-les-scores) »
-du chapitre « Passer à l'échelle » : on ne sait jamais complètement si un modèle
-résout un problème ou s'il se souvient de sa solution, puisque les questions des
-bancs d'essai circulent sur le Web. Les chercheurs construisent donc régulièrement
-de nouveaux tests, comme *Humanity's Last Exam* (le « dernier examen de
-l'humanité »), publié en janvier 2025, qui rassemble des questions de spécialistes de
-nombreuses disciplines. Les modèles y progressent vite, et le débat recommence avec
-chaque nouveau test.
+« [Que mesurent les scores ?](docs/module4/60-passer-a-l-echelle/#que-mesurent-les-scores) » :
+on ne sait jamais complètement si un modèle résout un problème ou s'il se souvient de
+sa solution. De nouveaux tests tentent d'y répondre, comme *Humanity's Last Exam*
+(« le dernier examen de l'humanité »), publié en janvier 2025, ou ARC, présenté au
+chapitre « [Le défi ARC](docs/module4/93-le-defi-arc) », qui vise la capacité à faire
+face à du nouveau.
 
-Enfin, comme le montrait le chapitre
-« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle) », un
-modèle distingue mal les consignes de son utilisateur des textes qu'il lit. Les
-[exemples adverses](docs/module3/90-tromper-un-reseau/#se-défendre) du Module 3 ont
-ainsi leur équivalent pour les modèles de langage, qu'il s'agisse de formulations qui
-leur font ignorer leurs règles ou d'instructions cachées dans un document.
+Enfin, un modèle distingue mal les consignes de son utilisateur des textes qu'il lit,
+ce qui l'expose aux
+[injections d'instructions](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle),
+l'équivalent pour les modèles de langage des
+[exemples adverses](docs/module3/90-tromper-un-reseau/#se-défendre) du Module 3.
 
 ## Regarder à l'intérieur
 
@@ -122,13 +122,13 @@ Les poids d'un grand modèle sont des centaines de milliards de nombres, et ni s
 concepteurs ni personne d'autre ne peut les lire directement. Le chapitre
 « [Poser des questions : les arbres de décision](docs/module2/65-arbres-de-decision/#ce-quun-arbre-dit-et-ce-quil-tait) »
 du Module 2 opposait déjà la performance des modèles complexes à l'explicabilité des
-modèles simples. Avec les modèles de langage, cette opposition atteint son maximum.
+modèles simples. Avec les modèles de langage, cette opposition est encore plus marquée.
 Un domaine de recherche, l'**interprétabilité** (*interpretability*), tente pourtant
 d'ouvrir cette [boîte noire](docs/module3/90-tromper-un-reseau/#une-boîte-noire).
 
 - **Des caractéristiques lisibles.** Un même neurone d'un modèle réagit souvent à des
   concepts sans rapport entre eux. En 2024, des chercheurs d'Anthropic extraient de
-  leur modèle Claude des millions de « caractéristiques » plus lisibles, chacune liée
+  leur modèle Claude des millions de « caractéristiques » (*features*) plus lisibles, chacune liée
   à un concept, comme le pont du Golden Gate, le code informatique défectueux ou la
   flatterie. En amplifiant artificiellement la caractéristique du Golden Gate, ils
   obtiennent un modèle qui ramène toutes les conversations à ce pont, jusqu'à affirmer
@@ -225,10 +225,12 @@ souplesse, mais on ne peut ni le lire, ni le vérifier fait par fait, ni le corr
 simplement. Les systèmes actuels combinent souvent les deux, par exemple quand un
 modèle de langage consulte une base de faits avant de répondre.
 
-La question posée au Module 2, sur vingt maisons, prend ici sa forme la plus aiguë :
+La question posée au
+[Module 2](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu), sur
+vingt maisons, prend ici sa forme la plus aiguë :
 où finit la mémoire, et où commence la compréhension ? Pour un modèle qui a lu une
 grande partie de ce que l'humanité a écrit, la réponse n'est pas tranchée. Le
 [Module 5](docs/module5) reprend ces questions sous leur angle philosophique, avec
-l'argument de la chambre chinoise de John Searle, qui soutient qu'aucune manipulation
-de symboles, si habile soit-elle, ne suffit à produire du sens. Il aborde aussi les
+l'argument de la chambre chinoise de Searle, évoqué
+[plus haut](#perroquets-ou-modèles-du-monde). Il aborde aussi les
 conséquences de ces modèles pour la société.

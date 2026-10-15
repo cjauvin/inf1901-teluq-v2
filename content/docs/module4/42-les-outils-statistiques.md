@@ -8,13 +8,13 @@ slug: les-outils-statistiques
 
 Le chapitre « [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »
 a présenté le tournant statistique du traitement de la langue, et son premier outil,
-le modèle de langage à n-grammes. Entre 1980 et 2012, d'autres outils statistiques
-s'y ajoutent. Ils servent à étiqueter les mots, à transcrire la parole, à traduire,
+le modèle de langage à n-grammes. Des années 1970 au début des années 2010, d'autres
+outils statistiques s'y ajoutent. Ils servent à étiqueter les mots, à transcrire la parole, à traduire,
 à chercher des documents. Ce chapitre en présente quatre : les modèles de Markov
 cachés, la traduction statistique, la représentation des documents, et les modèles
 qui étiquettent les mots à partir de caractéristiques choisies à la main.
 
-Chacun a été remplacé, autour de 2015, par des réseaux de neurones. Mais chacun a
+Chacun a été remplacé par des réseaux de neurones au cours des années 2010. Mais chacun a
 laissé une idée que l'on retrouve dans les grands modèles de langage.
 
 ## Les modèles de Markov cachés
@@ -104,7 +104,9 @@ produit de deux probabilités :
 {{< image src="/images/module4/canal-bruite.svg" alt="En haut, le canal bruité : une phrase anglaise, « the house is small », traverse un canal qui la brouille et en sort en français, « la maison est petite ». Seule la phrase française est observée. Au milieu, les mots des deux phrases sont reliés par l'alignement que le modèle apprend sur le Hansard : la et the, maison et house, est et is, petite et small. En bas, la traduction consiste à retrouver la phrase anglaise e qui rend le produit P(e) × P(f | e) le plus grand : P(e), un modèle de langage de l'anglais, juge si la phrase est de l'anglais naturel ; P(f | e), le modèle de traduction, juge si la phrase française en est une traduction plausible." title="La traduction statistique d'IBM : un modèle de langage, qui juge si la phrase est naturelle, et un modèle de traduction, appris sur le Hansard, qui juge si elle correspond au texte d'origine." loading="lazy" >}}
 
 Le modèle de traduction s'apprend sur des textes déjà traduits, comme le Hansard
-canadien présenté au chapitre précédent. Personne n'y indique quel mot traduit quel
+canadien présenté au chapitre
+« [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites/#le-tournant-statistique) ».
+Personne n'y indique quel mot traduit quel
 mot. Le modèle le découvre seul, en remarquant que « maison » apparaît presque
 toujours dans les phrases anglaises qui contiennent « house ». Ces correspondances
 s'appellent l'**alignement** des mots. Les cinq « modèles IBM », publiés entre 1990
@@ -114,7 +116,8 @@ des mots et des mots qui se traduisent par plusieurs.
 À partir de 2003, la traduction par **segments** (*phrase-based*) aligne des groupes
 de mots plutôt que des mots isolés. C'est la technique de Google Traduction, lancé
 en 2006, et du logiciel libre Moses, publié en 2007. Ce sont ces systèmes que la
-[traduction neuronale](docs/module4/50-predire-le-mot-suivant) remplace à partir de
+[traduction neuronale](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis)
+présentée au Module 3 remplace à partir de
 2016.
 
 Le canal bruité a laissé une idée durable : combiner un modèle de langage, qui
@@ -202,9 +205,12 @@ trouvent ce qu'on cherche. Quatre limites demeurent pourtant.
   chaque langue, qui demandent des années de travail.
 - **Un modèle par tâche**, et des chaînes de traitement fragiles.
 
-Les réseaux de neurones vont lever ces quatre limites, une à une. Le
+Les réseaux de neurones vont s'attaquer à ces limites. Le
 [chapitre suivant](docs/module4/45-des-mots-aux-nombres) commence par la deuxième :
 donner aux mots des représentations qui se ressemblent quand leurs sens se
 ressemblent. Le chapitre
-« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présente les
-autres.
+« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présente
+ensuite les modèles de langage neuronaux. Ils apprennent eux-mêmes leurs
+représentations des mots au lieu de recevoir des caractéristiques choisies à la
+main, tiennent compte d'un contexte de plus en plus long, et un seul d'entre eux,
+entraîné à prédire le mot suivant, finit par accomplir de nombreuses tâches.

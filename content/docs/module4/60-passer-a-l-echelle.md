@@ -97,7 +97,7 @@ traduire. Les trois exemples placés dans le texte suffisent à lui faire compre
 tâche demandée, et il l'applique au quatrième mot.
 {{% /hint %}}
 
-Cette capacité s'appelle l'**apprentissage en contexte** (*in-context learning*). On
+Cette capacité s'appelle l'**apprentissage dans le contexte** (*in-context learning*). On
 distingue la requête sans exemple (*zero-shot*), avec un seul exemple (*one-shot*) et
 avec quelques exemples (*few-shot*). Elle est très différente de l'apprentissage
 présenté au [Module 2](docs/module2/50-entrainer-un-modele) : aucun poids du modèle
@@ -119,7 +119,7 @@ se trouvent dans la requête, et le modèle n'est pas entraîné du tout. Les de
 coexistent encore, et il faut souvent deviner, d'après le contexte, lequel un auteur
 emploie.
 
-L'apprentissage en contexte n'est qu'un point sur un spectre. Pour faire accomplir
+L'apprentissage dans le contexte n'est qu'un point sur un spectre. Pour faire accomplir
 une tâche à un modèle, on peut lui donner plus ou moins d'exemples, et modifier plus
 ou moins ses poids.
 
@@ -143,7 +143,7 @@ En 2022, Jason Wei et ses collègues, chez Google, décrivent des **capacités
 de plusieurs chiffres ou certaines énigmes, les petits modèles échouent presque
 complètement, puis, au-delà d'une certaine taille, les modèles réussissent soudain.
 La capacité semble apparaître d'un coup, sans avoir été annoncée par les modèles
-plus petits. L'idée a frappé les esprits, car elle suggère que des modèles plus
+plus petits. L'idée a beaucoup circulé, car elle suggère que des modèles plus
 grands pourraient acquérir des capacités imprévisibles.
 
 En 2023, Rylan Schaeffer et ses collègues, à l'Université Stanford, contestent cette
@@ -208,7 +208,7 @@ partie du texte disponible sur le Web, et les meilleurs textes, comme les livres
 articles scientifiques ou les encyclopédies, ne sont pas infinis. En 2024, l'institut
 de recherche Epoch AI estime que les modèles auront été entraînés sur l'équivalent de
 tout le texte humain public disponible quelque part entre 2026 et 2032. Les
-entreprises se tournent donc vers des **données synthétiques**, produites par d'autres
+entreprises se tournent donc vers des **données synthétiques** (*synthetic data*), produites par d'autres
 modèles, et vers des textes sous licence. Le recours aux textes protégés par le droit
 d'auteur fait l'objet de nombreux procès, comme celui que le *New York Times* a
 intenté à OpenAI et à Microsoft en décembre 2023. Le [Module 5](docs/module5) revient

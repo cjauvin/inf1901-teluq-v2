@@ -134,9 +134,9 @@ Le 20 décembre 2024, OpenAI présente o3, un
 [modèle de raisonnement](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
 Sur les tâches semi-privées d'ARC-AGI-1, il atteint 75,7 %, pour environ 26 dollars
 par tâche. En lui laissant environ 172 fois plus de calcul, soit plusieurs milliers de
-dollars par tâche, il atteint 87,5 %. C'est l'illustration la plus frappante du
-**calcul au moment de la réponse** : le même modèle, en réfléchissant plus longtemps,
-réussit beaucoup plus de tâches.
+dollars par tâche, il atteint 87,5 %. C'est une illustration nette du
+[calcul au moment de la réponse](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr) :
+le même modèle, en réfléchissant plus longtemps, réussit beaucoup plus de tâches.
 
 Chollet parle d'un saut réel et important, tout en mettant en garde : réussir ARC
 n'est pas atteindre l'intelligence artificielle générale, et o3 échoue encore à
@@ -195,7 +195,8 @@ pour bien jouer, il faut comprendre comment fonctionne le petit monde du jeu.
 
 Le score ne mesure pas seulement la réussite, mais l'**efficacité** : le nombre
 d'actions dont le système a besoin, comparé à celui d'un humain. Chaque jeu a été
-réussi du premier coup par au moins deux personnes, sur une dizaine. À la publication,
+essayé par une dizaine de personnes, et au moins deux l'ont réussi du premier coup.
+À la publication,
 les meilleurs modèles obtenaient moins de 1 %. Quelques mois plus tard, à
 l'automne 2026, les meilleurs systèmes dépassent 60 %, en dépensant toutefois des
 dizaines de milliers de dollars pour l'ensemble des jeux.

@@ -17,14 +17,12 @@ encore.
 
 ## Une image découpée en jetons
 
-En octobre 2020, une équipe de Google publie un article intitulé « *An Image is Worth
-16x16 Words* » (« une image vaut 16 × 16 mots »). Elle découpe chaque image en petits
-carreaux de 16 pixels de côté, transforme chaque carreau en vecteur, et donne la
-suite de ces vecteurs à un [Transformer](docs/module3/70-attention-transformer/#au-delà-du-texte),
-exactement comme une suite de mots. Ce **Vision Transformer** (ViT) atteint les
-performances des meilleurs réseaux convolutifs, à condition d'être entraîné sur assez
-d'images. Il montre qu'une même architecture peut traiter le texte et les images : il
-suffit de transformer les deux en suites de jetons.
+Le Module 3 a présenté le
+[*Vision Transformer*](docs/module3/70-attention-transformer/#au-delà-du-texte) (ViT),
+publié par Google en 2020 sous le titre « *An Image is Worth 16x16 Words* » (« une
+image vaut 16 × 16 mots »). Il découpe une image en carreaux de 16 pixels de côté et
+les traite comme les mots d'une phrase. Une même architecture peut donc traiter le
+texte et les images, à condition de transformer les deux en suites de jetons.
 
 L'applet ci-dessous découpe une photo de la même façon. Faites varier la taille des
 carreaux et observez le nombre de jetons obtenus.
@@ -45,7 +43,7 @@ Pour qu'un modèle de langage lise une image, on combine trois éléments.
 1. Un **encodeur d'images**, souvent un Vision Transformer préentraîné comme celui de
    CLIP, transforme l'image en une suite de vecteurs.
 2. Une **projection** convertit ces vecteurs en vecteurs de même forme que les
-   plongements des mots. Ce sont des **jetons visuels**.
+   plongements des mots. Ce sont des **jetons visuels** (*visual tokens*).
 3. Le **modèle de langage** reçoit les jetons visuels suivis des jetons de la question,
    et il prédit sa réponse jeton après jeton, comme d'habitude.
 
@@ -138,7 +136,7 @@ conversation humaine, et il peut rire, chanter ou changer d'intonation.
 ## Converser à voix haute
 
 Pour qu'un modèle de langage parle vraiment, il faut d'abord faire du son des jetons.
-Les **codecs audio neuronaux** s'en chargent : SoundStream, présenté par Google
+Les **codecs audio neuronaux** (*neural audio codecs*) s'en chargent : SoundStream, présenté par Google
 en 2021, puis EnCodec, présenté par Meta en 2022, compressent un enregistrement en une
 suite de jetons discrets, quelques dizaines par seconde, à partir desquels on peut
 reconstituer le son. Comme les jetons visuels, ce sont des morceaux de signal traités
@@ -147,7 +145,7 @@ partir de quelques secondes d'une voix, il continue la phrase avec la même voix
 même intonation, sans passer par aucun texte. Le principe de prédire le jeton suivant
 s'applique tel quel à la parole.
 
-Reste le tour de parole. Dans une conversation humaine, on ne s'attend pas en
+Reste le **tour de parole** (*turn-taking*). Dans une conversation humaine, on ne s'attend pas en
 silence : on se répond en général en moins d'un quart de seconde, comme l'a montré une
 étude menée en 2009 sur dix langues, on glisse des « mm-hmm » pendant que l'autre
 parle, et l'on s'interrompt. Les premiers modes vocaux, comme celui de GPT-4o à sa
@@ -170,26 +168,27 @@ le modèle ne garde rien d'une conversation à l'autre. Mais la voix change beau
 l'expérience, et ouvre des usages comme des risques.
 
 - **La traduction simultanée.** En février 2025, Kyutai présente Hibiki, qui traduit
-  en direct du français vers l'anglais en gardant la voix de la personne. Google
-  l'intègre à sa visioconférence Meet en mai 2025, et Apple à ses écouteurs en
-  septembre 2025.
+  en direct du français vers l'anglais en gardant la voix de la personne. Google, dans
+  sa visioconférence Meet en mai 2025, puis Apple, dans ses écouteurs AirPods en
+  septembre 2025, proposent ensuite leurs propres systèmes de traduction vocale
+  simultanée.
 - **L'illusion de comprendre.** Le ton, le rire et les hésitations renforcent
   l'[effet ELIZA](docs/module4/94-comprendre-et-rater/#lillusion-de-comprendre). Le
   13 mai 2024, pendant la présentation de GPT-4o, le patron d'OpenAI, Sam Altman,
   publie un seul mot, « her », allusion au film *Her* (Spike Jonze, 2013), où un
   homme tombe amoureux d'une voix artificielle. Une semaine plus tard, OpenAI suspend
-  l'une de ses voix, que l'actrice Scarlett Johansson, la voix du film, jugeait trop
-  semblable à la sienne, qu'elle avait refusé de prêter.
-- **Le clonage de voix.** En janvier 2023, le modèle VALL-E, de Microsoft, imite une
-  voix inconnue à partir de trois secondes d'enregistrement. Un an plus tard, des
-  électeurs du New Hampshire reçoivent un appel automatisé où une fausse voix de Joe
-  Biden les incite à ne pas voter, et l'autorité américaine des télécommunications
-  interdit les voix générées par l'IA dans ce genre d'appels. Le même mois, à Hong
-  Kong, un employé de la firme Arup vire 25 millions de dollars à des escrocs après une
-  visioconférence où tous les autres participants, voix et visages, étaient truqués.
-  C'est le versant sonore des
-  [hypertrucages](docs/module4/30-images-voix-videos/#les-hypertrucages) ; Kyutai a
-  d'ailleurs choisi de ne pas publier la capacité de clonage de ses modèles.
+  l'une de ses voix. L'actrice Scarlett Johansson, la voix du film, avait refusé de
+  prêter sa voix à OpenAI, et elle jugeait celle-ci trop semblable à la sienne.
+- **Le clonage de voix.** Le chapitre
+  « [Des images, des voix, des vidéos](docs/module4/30-images-voix-videos/#les-voix-et-la-musique) »
+  a présenté VALL-E, qui imite une voix à partir de quelques secondes
+  d'enregistrement, et les fraudes par
+  [hypertrucage](docs/module4/30-images-voix-videos/#les-hypertrucages), comme celle
+  qui a visé la firme Arup. En janvier 2024, des électeurs du New Hampshire reçoivent
+  un appel automatisé où une fausse voix de Joe Biden les incite à ne pas voter, et
+  l'autorité américaine des télécommunications interdit ensuite les voix générées par
+  l'IA dans ce genre d'appels. Kyutai a d'ailleurs choisi de ne pas publier la
+  capacité de clonage de ses modèles.
 
 ## Générer des images avec un modèle de langage
 
@@ -228,8 +227,11 @@ montrent qu'ils voient autrement.
   [injection d'instructions](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle),
   comme une page Web.
 
-Ces difficultés posent une question déjà rencontrée avec la vidéo : un modèle qui
-décrit si bien des images a-t-il une représentation du monde qu'elles montrent, ou
-reproduit-il les associations les plus fréquentes entre images et mots ? Le
-[chapitre suivant](docs/module4/94-comprendre-et-rater) aborde cette question pour l'ensemble des modèles de
-langage.
+Ces difficultés posent une question déjà rencontrée avec
+[la vidéo](docs/module4/30-images-voix-videos/#la-vidéo) : un modèle qui décrit si bien
+des images a-t-il une représentation du monde qu'elles montrent, ou reproduit-il les
+associations les plus fréquentes entre images et mots ? Le chapitre suivant,
+« [Le défi ARC](docs/module4/93-le-defi-arc) », aborde cette question avec un test
+conçu pour mesurer la capacité à faire face à une situation nouvelle. Le chapitre
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »
+la reprend ensuite pour l'ensemble des modèles de langage.

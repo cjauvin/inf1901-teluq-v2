@@ -18,8 +18,8 @@ sans exemples, et à les générer à partir d'un texte.
 
 Les réseaux convolutifs du Module 3 apprenaient à voir à partir de millions d'images
 étiquetées à la main, comme celles d'[ImageNet](docs/module3/40-apprentissage-profond/#2012-le-concours-imagenet).
-Cet étiquetage est long et coûteux. Peut-on apprendre de bonnes caractéristiques
-visuelles sans aucune étiquette ?
+Cet étiquetage est long et coûteux. Certaines méthodes permettent pourtant
+d'apprendre de bonnes caractéristiques visuelles sans aucune étiquette.
 
 En 2020, Ting Chen, Geoffrey Hinton et leurs collègues, chez Google, proposent une
 méthode simple, SimCLR. On prend une photo, et on en fabrique deux versions
@@ -38,12 +38,14 @@ Ce résultat rejoint le
 (*clustering*) du Module 2. Une fois le réseau entraîné, les photos d'une même catégorie se retrouvent
 proches les unes des autres dans l'espace des vecteurs, sans que personne lui ait dit
 ce qu'est un chat. Si l'on applique k-means à ces vecteurs, les groupes obtenus
-correspondent en bonne partie aux catégories qu'un humain aurait choisies. En 2018,
-Mathilde Caron et ses collègues, chez Facebook, font même du regroupement le moteur de
-l'apprentissage, avec DeepCluster. On regroupe les images par k-means, on se sert des
+correspondent en bonne partie aux catégories qu'un humain aurait choisies. Dès 2018,
+Mathilde Caron et ses collègues, chez Facebook, avaient fait du regroupement le moteur
+de l'apprentissage, avec DeepCluster. On regroupe les images par k-means, on se sert des
 numéros de groupe comme d'étiquettes provisoires pour entraîner le réseau, puis on
 recommence avec les nouveaux vecteurs. Ces méthodes illustrent l'**apprentissage de
-représentations** annoncé au Module 2 : découvrir sans étiquettes de bonnes
+représentations**
+[annoncé au Module 2](docs/module2/80-trois-facons-d-apprendre/#apprendre-sans-réponses-le-non-supervisé) :
+découvrir sans étiquettes de bonnes
 caractéristiques pour décrire les données.
 
 {{< image src="/images/module4/regrouper-sans-etiquettes.svg" alt="Deux panneaux, chacun formé de dix rangées : les dix groupes trouvés par k-means parmi 1 797 chiffres manuscrits, sans aucune étiquette. Chaque rangée montre neuf images du groupe tirées au hasard ; une image qui n'est pas le chiffre majoritaire du groupe est encadrée en rouge. À gauche, k-means appliqué directement aux pixels : deux groupes sont surtout faits de 1, aucun n'est fait de 8, et les 8 se retrouvent comme intrus dans d'autres groupes ; 79 % des images sont dans un groupe dominé par leur chiffre. À droite, k-means appliqué aux vecteurs appris par apprentissage contrastif, sans étiquettes : chaque chiffre a son groupe, et 90 % des images sont dans un groupe dominé par leur chiffre." title="Une petite expérience réelle. Un réseau apprend, sans aucune étiquette, à donner des vecteurs proches à deux versions modifiées d'un même chiffre. Regroupés par k-means, ses vecteurs retrouvent les dix chiffres mieux que les pixels bruts : à gauche, deux groupes de 1 et aucun de 8 ; à droite, un groupe par chiffre." loading="lazy" >}}
@@ -98,7 +100,7 @@ telles. Pour savoir si une image montre un chat, un chien ou un avion, on écrit
 phrases « une photo d'un chat », « une photo d'un chien » et « une photo d'un
 avion », et on choisit celle dont le vecteur est le plus proche de celui de l'image.
 Aucun exemple étiqueté n'est nécessaire. On parle de classification **sans exemple**
-(*zero-shot*), comme pour l'[apprentissage en contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte)
+(*zero-shot*), comme pour l'[apprentissage dans le contexte](docs/module4/60-passer-a-l-echelle/#apprendre-dans-le-contexte)
 des modèles de langage.
 
 Sur ImageNet, CLIP atteint ainsi environ 76 % de bonnes réponses, autant qu'un réseau
@@ -152,15 +154,13 @@ du bruit, puis les détails se précisent.
 
 {{< image src="/images/module4/stable-diffusion-etapes.jpg" alt="Cinq images côte à côte. La première n'est que du bruit coloré. Après 20 passages, on devine une silhouette claire au centre. Après 30 passages, un astronaute se dessine, avec une lune jaune à droite. Après 40 passages, on reconnaît un chat dans un scaphandre blanc, sur un sol gris, sous un ciel étoilé. Après 50 passages, l'image est nette : un chat astronaute dessiné, sur un sol lunaire, entouré d'étoiles." title="Les étapes du débruitage dans Stable Diffusion 1.5, pour la consigne « a cat astronaut on the moon, digital painting » (ce modèle ne comprend que l'anglais). À chaque étape, la grille latente en cours est décodée en image." loading="lazy" >}}
 
-On retrouve ici le
-[jeu de construction](docs/module3/42-materiel-et-outils/#un-jeu-de-construction) du
-Module 3 : un encodeur de textes entraîné par CLIP, un autoencodeur et un
-débruiteur, trois réseaux assemblés en un seul système.
+Le système complet réunit donc trois réseaux : un encodeur de
+textes entraîné par CLIP, un autoencodeur et un débruiteur.
 
 Un réglage permet de doser l'influence du texte. On estime le bruit à retirer deux
 fois, avec la phrase et sans elle, puis on amplifie la différence entre les deux.
 C'est le **guidage sans classificateur** (*classifier-free guidance*), présenté en
-2021 par Jonathan Ho et Tim Salimans. Plus l'**échelle de guidage** est forte, plus
+2021 par Jonathan Ho et Tim Salimans. Plus l'**échelle de guidage** (*guidance scale*) est forte, plus
 l'image respecte la phrase, au prix d'une moindre diversité et parfois d'un aspect
 artificiel. La plupart des générateurs d'images proposent ce réglage à leurs
 utilisateurs, comme les modèles de langage proposent la

@@ -15,9 +15,10 @@ contenus posent, en particulier les hypertrucages (*deepfakes*).
 
 Beaucoup de ces systèmes produisent un contenu à partir d'une phrase, comme « un
 chat sur la lune ». Leur fonctionnement demande de savoir représenter le sens d'un
-texte, ce qui sera présenté avec les modèles de langage. Les chapitres du
-[Module 4](docs/module4/90-mots-et-images) consacrés aux modèles multimodaux expliqueront comment le
-texte et l'image sont reliés.
+texte, ce qui sera présenté avec les
+[modèles de langage](docs/module4/45-des-mots-aux-nombres). Le chapitre
+« [Relier les mots et les images](docs/module4/90-mots-et-images) » expliquera
+comment le texte et l'image sont reliés.
 
 ## Les images
 
@@ -51,7 +52,7 @@ Les étapes principales sont les suivantes.
   le télécharger et le faire tourner sur un ordinateur personnel muni d'une bonne
   carte graphique, ce qui multiplie les usages et les variantes.
 - **2025** : les grands modèles de langage génèrent eux-mêmes des images, comme
-  GPT Image 1, intégré à ChatGPT en mars 2025. Ils suivent beaucoup mieux les
+  la génération d'images de GPT-4o, intégrée à ChatGPT en mars 2025. Ils suivent beaucoup mieux les
   consignes détaillées, comme le montre le dernier panneau de la figure.
 
 {{% hint info %}}
@@ -64,13 +65,13 @@ avec Midjourney, à partir d'au moins 624 consignes et retouches successives, pu
 l'a modifiée dans un logiciel de retouche. L'annonce provoque une vive polémique
 chez les artistes.
 
-{{< image src="/images/module4/theatre-opera-spatial.jpg" alt="Une scène de science-fiction aux tons dorés, dans le style d'une peinture : des personnages en longues robes se tiennent dans une salle immense, face à une ouverture circulaire qui donne sur un paysage lumineux." title="Théâtre D'opéra Spatial, Jason M. Allen avec Midjourney, 2022. Domaine public : le Bureau du droit d'auteur des États-Unis a refusé de l'enregistrer." loading="lazy" >}}
+{{< image src="/images/module4/theatre-opera-spatial.jpg" alt="Une scène de science-fiction aux tons dorés, dans le style d'une peinture : des personnages en longues robes se tiennent dans une salle immense, face à une ouverture circulaire qui donne sur un paysage lumineux." title="Théâtre D'opéra Spatial, Jason M. Allen avec Midjourney, 2022. Le Bureau du droit d'auteur des États-Unis a refusé d'en enregistrer les droits, un refus que l'auteur conteste en justice." loading="lazy" >}}
 
 Jason M. Allen a ensuite demandé à enregistrer les droits d'auteur de l'image. En
 septembre 2023, le Bureau du droit d'auteur des États-Unis (*U.S. Copyright
 Office*) a rejeté sa demande, au motif que la contribution humaine était trop
-faible par rapport à celle du générateur. C'est pour cette raison que l'image est
-reproduite ici. La question de savoir à qui appartient une œuvre générée reste
+faible par rapport à celle du générateur. En 2024, Jason M. Allen a contesté ce
+refus devant un tribunal fédéral du Colorado. La question de savoir à qui appartient une œuvre générée reste
 ouverte, et le [Module 5](docs/module5) y revient.
 {{% /hint %}}
 
@@ -103,10 +104,10 @@ pixels que l'appareil n'a jamais enregistrés.
 ## Les voix et la musique
 
 En 2016, [WaveNet](docs/module4/20-quatre-facons-de-generer/#un-élément-après-lautre-les-modèles-autorégressifs)
-produisait une voix de synthèse beaucoup plus naturelle que les méthodes
-précédentes. Les progrès suivants ont surtout porté sur l'**imitation** d'une voix
-particulière. En janvier 2023, Microsoft présente VALL-E, qui imite la voix d'une
-personne à partir d'un enregistrement de trois secondes, en reproduisant son
+produisait une voix de synthèse (*text-to-speech*) beaucoup plus naturelle que les
+méthodes précédentes. Les progrès suivants ont surtout porté sur le **clonage de
+voix** (*voice cloning*), l'imitation d'une voix particulière. En janvier 2023,
+Microsoft présente VALL-E, qui imite la voix d'une personne à partir d'un enregistrement de trois secondes, en reproduisant son
 timbre et même l'ambiance sonore de l'enregistrement. Ces outils permettent de
 rendre la voix à des personnes qui l'ont perdue, ou de doubler un film dans une
 autre langue avec la voix des acteurs. Ils permettent aussi des fraudes. En 2019,
@@ -115,12 +116,12 @@ d'une filiale britannique un virement de 220 000 euros.
 
 La génération de musique a suivi. En 2020, Jukebox, d'OpenAI, produisait des
 chansons avec des voix chantées, dans le style de musiciens connus, mais avec une
-qualité sonore médiocre. Fin 2023 et début 2024, Suno et Udio produisent des
-chansons complètes, avec paroles, voix et instruments, à partir d'une simple
-phrase. En avril 2023, une chanson intitulée *Heart on My Sleeve*, dont les voix
-imitent celles des musiciens canadiens Drake et The Weeknd, est publiée sur les
-plateformes d'écoute et y est écoutée des millions de fois avant d'être retirée
-à la demande de leur maison de disques. En 2024, les grandes maisons de disques
+qualité sonore médiocre. En avril 2023, une chanson intitulée *Heart on My
+Sleeve*, dont les voix imitent celles des musiciens canadiens Drake et The Weeknd,
+est publiée sur les plateformes d'écoute et y est écoutée des millions de fois
+avant d'être retirée à la demande de leur maison de disques. Fin 2023 et début
+2024, Suno et Udio produisent des chansons complètes, avec paroles, voix et
+instruments, à partir d'une simple phrase. En 2024, les grandes maisons de disques
 poursuivent Suno et Udio, qu'elles accusent d'avoir entraîné leurs modèles sur des
 enregistrements protégés.
 
@@ -153,7 +154,8 @@ importante. Pour produire une vidéo réaliste, un modèle doit-il comprendre le
 lois de la physique, ou lui suffit-il d'imiter l'apparence des vidéos qu'il a
 vues ? On retrouve la notion de
 [modèle du monde](docs/module1/40-representer-le-monde/#shrdlu-ou-le-sommet-de-lambition) présentée au Module 1.
-Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) sur ce que les modèles comprennent
+Le chapitre
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) »
 reprendra cette question.
 
 ## Au-delà des médias
@@ -168,7 +170,9 @@ sons.
   la nature, conçues pour accomplir une tâche précise, comme se fixer sur un virus.
   David Baker reçoit la moitié du prix Nobel de chimie 2024 pour la conception de
   protéines par ordinateur. L'autre moitié récompense AlphaFold, qui prédit la
-  forme des protéines existantes, et que le [Module 5](docs/module5) présentera.
+  forme des protéines existantes, et que présente le chapitre
+  « [L'attention et le Transformer](docs/module3/70-attention-transformer/#au-delà-du-texte) »
+  du Module 3.
 - **La météo.** En 2024, Google DeepMind publie GenCast, un modèle de diffusion qui
   génère plusieurs évolutions possibles du temps qu'il fera sur quinze jours. Sur la
   plupart des mesures, ses prévisions sont plus précises que celles du meilleur
@@ -177,7 +181,8 @@ sons.
 - **Les matériaux et les médicaments.** Des modèles génératifs proposent des
   molécules et des matériaux nouveaux, qui sont ensuite testés en laboratoire.
 - **Le code informatique.** Les programmes sont des textes. Leur génération relève
-  des modèles de langage, présentés dans la suite du [Module 4](docs/module4/50-predire-le-mot-suivant).
+  des modèles de langage et des agents présentés au chapitre
+  « [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents) ».
 
 Dans ces domaines, l'intérêt d'un modèle génératif est le même que pour les
 images : il propose rapidement un grand nombre de candidats plausibles, que l'on
@@ -216,8 +221,8 @@ défauts visibles, surtout dans le fond et les accessoires. Ceux des modèles
 récents n'en ont presque plus. Deux autres moyens sont donc à l'étude.
 
 - **Marquer les contenus générés.** SynthID, présenté par Google DeepMind en 2023,
-  insère dans les images, les sons et les textes générés une marque invisible,
-  qu'un logiciel peut détecter. La coalition C2PA, créée en 2021 par des
+  insère dans les images, les sons et les textes générés une marque invisible
+  (*watermark*), qu'un logiciel peut détecter. La coalition C2PA, créée en 2021 par des
   entreprises comme Adobe, Microsoft et la BBC, définit une façon d'attacher à
   chaque fichier l'historique de sa création et de ses modifications.
 - **Détecter automatiquement.** Des classificateurs sont entraînés à distinguer les
@@ -231,12 +236,9 @@ peuvent être effacés : une semaine après la sortie de Sora 2, des logiciels
 permettaient déjà de retirer la marque visible de ses vidéos. Les détecteurs se
 trompent, dans les deux sens.
 
-Enfin, ces modèles ont été entraînés sur des millions d'œuvres, souvent sans
-l'accord de leurs auteurs. En 2023, des illustratrices et la banque d'images Getty
-Images ont poursuivi Stability AI, l'entreprise qui diffuse Stable Diffusion, et
-d'autres procès ont suivi pour la musique et les textes. Le
-[Module 5](docs/module5) traite ces questions de droit d'auteur, de consentement et
-de confiance dans les contenus.
+Le [Module 5](docs/module5) traite ces questions de confiance dans les contenus,
+avec celles du droit d'auteur soulevées plus haut par le
+[prix d'art](#les-images) et les [procès contre Suno et Udio](#les-voix-et-la-musique).
 
 ## Le texte, au premier plan
 

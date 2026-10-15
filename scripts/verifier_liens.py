@@ -1,7 +1,7 @@
 """Vérifie les liens internes du cours : fichier cible existant et ancre présente.
 
 Les ancres sont lues dans les pages servies par le serveur local (port 1313),
-qui doit tourner. Sans argument, vérifie tous les .md des modules 1 à 3.
+qui doit tourner. Sans argument, vérifie tous les .md des modules 1 à 4.
 
     uv run scripts/verifier_liens.py [fichiers…]
 """

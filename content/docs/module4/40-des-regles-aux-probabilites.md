@@ -28,20 +28,23 @@ traduit instantanément tout ce qu'on entend.
 {{< image src="/images/module4/reves-langage.jpg" alt="Un panneau de deux images. À gauche, le panneau vertical de HAL 9000, l'ordinateur de 2001 : l'odyssée de l'espace : une plaque bleue et noire « HAL 9000 », un œil rouge lumineux dans un disque cerclé de métal, et une grille de haut-parleur. À droite, La Tour de Babel de Pieter Bruegel l'Ancien : une tour gigantesque et inachevée, en forme de cône à étages, aux arcades innombrables, s'élève jusqu'aux nuages au-dessus d'une ville et d'un port ; au premier plan, un roi et sa suite visitent les tailleurs de pierre." title="À gauche, HAL 9000, l'ordinateur qui converse avec l'équipage dans 2001 : l'odyssée de l'espace (1968) ; dessin de Tom Cowap, Wikimedia Commons, CC BY-SA 4.0. À droite, La Tour de Babel de Pieter Bruegel l'Ancien (1563), Kunsthistorisches Museum de Vienne : dans le récit biblique, les humains, qui parlent tous la même langue, bâtissent une tour qui doit atteindre le ciel ; leurs langues sont alors brouillées, et ils ne se comprennent plus. Domaine public, Wikimedia Commons." loading="lazy" >}}
 
 Ce rêve semble aujourd'hui en partie réalisé. Les grands modèles de langage
-paraissent pourtant apparus d'un coup, en 2022. Ils sont l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
+donnent l'impression d'être apparus d'un coup, en 2022. Ils sont pourtant
+l'aboutissement de soixante-dix ans de recherche en **traitement automatique de la
 langue** (*natural language processing*, NLP), le domaine qui cherche à faire lire,
 écrire, traduire ou transcrire la langue humaine par une machine. Cette recherche a
 connu trois grandes approches : écrire des **règles**, compter des **statistiques**
 dans de grandes collections de textes, puis entraîner des **réseaux de neurones**.
 
-Ce chapitre et le suivant présentent les deux premières. Les chapitres
+Ce chapitre et le suivant,
+« [Les outils statistiques](docs/module4/42-les-outils-statistiques) », présentent
+les deux premières. Les chapitres
 « [Des mots aux nombres](docs/module4/45-des-mots-aux-nombres) » et
 « [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) » présentent la
 troisième. Plusieurs idées nées bien avant les réseaux de neurones sont encore au
 cœur des LLM : le modèle de langage lui-même, la façon de le mesurer, et l'idée de
 produire la suite la plus probable d'un texte.
 
-{{< image src="/images/module4/frise-langage.svg" alt="Une frise chronologique verticale, de 1913 à 2022, avec trois ères qui se chevauchent, marquées par des bandes de couleur : les règles, d'environ 1950 à 1990 ; les statistiques, d'environ 1975 à 2014 ; les réseaux de neurones, depuis 2003. Les jalons : 1913, Markov compte les lettres d'Eugène Onéguine ; 1948, Shannon et le modèle de langage ; 1954, l'expérience Georgetown-IBM ; 1957, les grammaires de Chomsky ; 1966, le rapport ALPAC et ELIZA ; 1970, SHRDLU ; 1972, TF-IDF ; 1977, TAUM-MÉTÉO ; 1980, les HMM en reconnaissance vocale ; 1990, la traduction statistique d'IBM et la LSA ; 1993, le Penn Treebank ; 1995, le lissage de Kneser-Ney ; 2001, les CRF ; 2003, le modèle de langage neuronal ; 2006, Google Traduction statistique ; 2013, word2vec ; 2014, la traduction de séquence à séquence ; 2016, Google Traduction neuronal ; 2017, le Transformer ; 2018, BERT et GPT ; 2020, GPT-3 ; 2022, ChatGPT." title="Les trois ères du traitement de la langue. Les jalons sont présentés dans ce chapitre, le suivant et « Prédire le mot suivant »." loading="lazy" >}}
+{{< image src="/images/module4/frise-langage.svg" alt="Une frise chronologique verticale, de 1913 à 2022, avec trois ères qui se chevauchent, marquées par des bandes de couleur : les règles, d'environ 1950 à 1990 ; les statistiques, d'environ 1975 à 2014 ; les réseaux de neurones, depuis 2003. Les jalons : 1913, Markov compte les lettres d'Eugène Onéguine ; 1948, Shannon et le modèle de langage ; 1954, l'expérience Georgetown-IBM ; 1957, les grammaires de Chomsky ; 1966, le rapport ALPAC et ELIZA ; 1970, SHRDLU ; 1972, TF-IDF ; 1977, TAUM-MÉTÉO ; 1980, les HMM en reconnaissance vocale ; 1990, la traduction statistique d'IBM et la LSA ; 1993, le Penn Treebank ; 1995, le lissage de Kneser-Ney ; 2001, les CRF ; 2003, le modèle de langage neuronal ; 2006, Google Traduction statistique ; 2013, word2vec ; 2014, la traduction de séquence à séquence ; 2016, Google Traduction neuronal ; 2017, le Transformer ; 2018, BERT et GPT ; 2020, GPT-3 ; 2022, ChatGPT." title="Les trois ères du traitement de la langue. Les jalons sont présentés dans ce chapitre et les suivants de ce module, sauf la traduction de séquence à séquence, Google Traduction neuronal et le Transformer, présentés au Module 3." loading="lazy" >}}
 
 ## Les règles (1954-1980)
 
@@ -54,7 +57,7 @@ cinq ans. C'est la guerre froide, et traduire automatiquement les publications
 scientifiques soviétiques intéresse beaucoup le gouvernement américain.
 
 En 1957, le linguiste Noam Chomsky publie *Structures syntaxiques* (*Syntactic
-Structures*). Il y décrit une langue par une **grammaire générative** : un petit
+Structures*). Il y décrit une langue par une **grammaire générative** (*generative grammar*) : un petit
 ensemble de règles capable de produire toutes les phrases correctes de la langue, et
 seulement celles-là. Analyser une phrase avec ces règles produit un **arbre
 syntaxique** (*parse tree*), qui montre comment elle se décompose en groupes de
@@ -130,11 +133,10 @@ Un **modèle de langage** (*language model*) est un modèle qui donne, pour un d
 de texte, la probabilité de chaque mot qui pourrait venir ensuite. Après « Le chat
 dort sur le », il donne une probabilité élevée à « canapé », « lit » ou « tapis »,
 une probabilité faible à « toit », et une probabilité presque nulle à « démocratie ».
-C'est une [distribution](docs/module4/10-generer/#une-distribution-et-tirer-dedans),
-au sens du premier chapitre de ce module, et on peut y tirer des mots au hasard,
-chacun selon sa probabilité. C'est l'**échantillonnage** (*sampling*), présenté au
-chapitre « [Générer](docs/module4/10-generer/#une-distribution-et-tirer-dedans) » :
-les mots probables sortent souvent, les mots improbables rarement, mais aucun n'est
+C'est une distribution, au sens du chapitre
+« [Générer](docs/module4/10-generer/#une-distribution-et-tirer-dedans) », et on peut
+y tirer des mots au hasard, chacun selon sa probabilité. C'est l'échantillonnage
+présenté dans ce même chapitre : les mots probables sortent souvent, les mots improbables rarement, mais aucun n'est
 exclu d'avance.
 
 {{< image src="/images/module4/modele-de-langage.svg" alt="À gauche, le début de phrase « Le chat dort sur le » entre dans un modèle de langage. À droite, le modèle donne une probabilité à chaque mot qui pourrait suivre, sous forme de barres : canapé 28 %, lit 22 %, tapis 14 %, coussin 9 %, sol 7 %, fauteuil 6 %, d'autres mots 13,5 % au total, toit 0,5 %, et démocratie presque 0. En bas, on tire un mot selon ces probabilités, ici « lit », et la phrase devient « Le chat dort sur le lit »." title="Un modèle de langage donne une distribution sur le mot suivant. On y tire un mot, on l'ajoute au texte, et on recommence. Les probabilités sont données à titre d'illustration." loading="lazy" >}}
@@ -278,36 +280,46 @@ la redistribuer aux suites jamais vues. Plusieurs méthodes se sont succédé.
 - **Good et Turing.** Pendant la Seconde Guerre mondiale, à Bletchley Park, en
   [déchiffrant Enigma](docs/module1/10-turing/#le-moment), Alan Turing et son
   assistant I. J. Good mettent au point une façon d'estimer la probabilité de
-  rencontrer un élément jamais vu. Si $N_1$ est le nombre de suites vues une seule
-  fois, et $N$ le nombre total de suites observées, la probabilité que la
-  prochaine suite soit nouvelle vaut environ
-
-  $$P(\text{suite jamais vue}) \approx \frac{N_1}{N}$$
-
-  Si beaucoup de suites n'ont été vues qu'une fois, il en reste sans doute beaucoup
-  à découvrir. Good publie la méthode en 1953.
+  rencontrer un élément jamais vu, à partir du nombre d'éléments vus une seule
+  fois. Si beaucoup de suites n'ont été vues qu'une fois, il en reste sans doute
+  beaucoup à découvrir. Good publie la méthode en 1953.
 - **Le repli** (*backoff*, Slava Katz, 1987). Quand le contexte de trois mots n'a
-  jamais été vu, on se replie sur les deux derniers mots, puis sur le dernier :
-
-  $$P(w_i \mid w_{i-2}, w_{i-1}) = \begin{cases} P_3(w_i \mid w_{i-2}, w_{i-1}) & \text{si } C(w_{i-2}\, w_{i-1}\, w_i) > 0 \\ \alpha \cdot P(w_i \mid w_{i-1}) & \text{sinon} \end{cases}$$
-
-  où $P_3$ est l'estimation par comptage des trigrammes, et le facteur $\alpha$
-  redistribue la probabilité mise de côté. C'est ce que fait
-  l'applet ci-dessus.
+  jamais été vu, on se replie sur les deux derniers mots, puis sur le dernier.
+  C'est ce que fait l'applet de la [section précédente](#compter-les-n-grammes).
 - **Kneser et Ney** (1995). Leur méthode tient compte de la variété des contextes
   dans lesquels un mot apparaît. « Francisco » est un mot fréquent, mais il ne suit
   presque jamais autre chose que « San ». Dans un contexte inconnu, il doit donc
   recevoir une probabilité faible, alors que « lunettes », moins fréquent mais qui
   suit toutes sortes de mots, doit en recevoir une forte. Quand il faut se replier,
   la probabilité d'un mot ne dépend donc pas de sa fréquence, mais du nombre de
-  mots différents qui le précèdent :
-
-  $$P_{\text{KN}}(w) \propto \text{nombre de mots différents } v \text{ tels que } C(v\, w) > 0$$
-
-  Le symbole $\propto$ se lit « proportionnel à ». Cette méthode reste la meilleure
-  jusqu'à l'arrivée des réseaux de neurones.
+  mots différents qui le précèdent. Cette méthode reste la meilleure jusqu'à
+  l'arrivée des réseaux de neurones.
 
 {{< image src="/images/module4/kneser-ney.svg" alt="En haut, deux panneaux. À gauche, le mot « Francisco », vu 1 000 fois dans le corpus, mais toujours après le même mot, « San » : une seule flèche épaisse y mène. À droite, le mot « lunettes », vu 300 fois seulement, mais après 120 mots différents, comme mes, des, ses, les, nouvelles ou vos : une gerbe de flèches fines y mène. En bas, un contexte jamais vu, « Je ne vois rien sans mes », et deux façons d'estimer le mot suivant. Selon la fréquence, « Francisco » l'emporte sur « lunettes », ce qui est absurde. Selon la variété des contextes, l'idée de Kneser-Ney, « lunettes » l'emporte nettement." title="Dans un contexte jamais vu, Kneser-Ney ne demande pas combien de fois un mot a été vu, mais après combien de mots différents. Les nombres sont donnés à titre d'illustration." loading="lazy" >}}
+
+{{% details "Les formules du lissage (optionnel)" %}}
+
+**Good et Turing.** Si $N_1$ est le nombre de suites vues une seule fois, et $N$ le
+nombre total de suites observées, la probabilité que la prochaine suite soit
+nouvelle vaut environ
+
+$$P(\text{suite jamais vue}) \approx \frac{N_1}{N}$$
+
+**Le repli de Katz.** Pour un modèle à trigrammes :
+
+$$P(w_i \mid w_{i-2}, w_{i-1}) = \begin{cases} P_3(w_i \mid w_{i-2}, w_{i-1}) & \text{si } C(w_{i-2}\, w_{i-1}\, w_i) > 0 \\ \alpha \cdot P(w_i \mid w_{i-1}) & \text{sinon} \end{cases}$$
+
+où $P_3$ est l'estimation par comptage des trigrammes, et le facteur $\alpha$
+redistribue la probabilité mise de côté.
+
+**Kneser et Ney.** Quand il faut se replier, la probabilité d'un mot est
+proportionnelle au nombre de mots différents qui le précèdent dans le corpus :
+
+$$P_{\text{KN}}(w) \propto \text{nombre de mots différents } v \text{ tels que } C(v\, w) > 0$$
+
+Le symbole $\propto$ se lit « proportionnel à ».
+
+{{% /details %}}
 
 Le lissage permet aussi de répondre à Chomsky. En 2000, Fernando Pereira entraîne
 un modèle lissé qui regroupe les mots en classes de mots semblables. Ce modèle juge
@@ -319,8 +331,8 @@ C'est précisément ce que feront les modèles neuronaux du chapitre
 
 ## Mesurer un modèle : la perplexité
 
-Comment comparer deux modèles de langage ? Comme pour les classificateurs du
-Module 2, il faut une [métrique](docs/module2/75-bien-evaluer/#compter-juste-les-métriques),
+Pour comparer deux modèles de langage, il faut, comme pour les classificateurs du
+Module 2, une [métrique](docs/module2/75-bien-evaluer/#compter-juste-les-métriques),
 mesurée sur des données que le modèle n'a jamais vues, l'équivalent de
 l'[ensemble de test](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu).
 On présente donc aux modèles un texte mis de côté. Le taux de bonnes réponses

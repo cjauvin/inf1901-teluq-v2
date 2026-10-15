@@ -103,8 +103,9 @@ Pour une même distribution, un réglage modifie la façon de tirer. On l'appell
 La température est un réglage des modèles génératifs actuels. Dans un modèle de
 langage, une température basse donne des réponses prévisibles, qui conviennent à
 une question factuelle. Une température plus haute donne des textes plus variés,
-qui conviennent mieux à un poème ou à une liste d'idées. Le chapitre du [Module 4](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant)
-consacré aux modèles de langage reprendra ce réglage avec de vrais textes.
+qui conviennent mieux à un poème ou à une liste d'idées. Ce réglage revient avec de
+vrais textes dans l'applet du générateur entraîné sur Jules Verne, au chapitre
+« [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites/#compter-les-n-grammes) ».
 
 ## Le vrai problème : les grandes dimensions
 
@@ -132,19 +133,18 @@ modèle ne pourrait que les recopier.
 ## La variété des vraies images
 
 Les vraies images ne sont pas éparpillées au hasard dans cette portion infime.
-Partons d'un 7, et changeons-le très peu : on l'incline un peu, on épaissit son
-trait, on allonge sa barre. On obtient un autre 7, tout aussi plausible, et l'on
-peut continuer ainsi, par petits pas, sans jamais sortir des vrais chiffres. Les
-façons dont un chiffre peut varier sont peu nombreuses, quelques dizaines tout au
-plus, alors que l'espace des pixels compte 784 dimensions.
+Un 7 légèrement modifié, un peu incliné, d'un trait plus épais ou avec une
+barre plus longue, reste un 7 tout aussi plausible. On peut continuer ainsi, par
+petits pas, sans jamais sortir des vrais chiffres. Les façons dont un chiffre peut
+varier sont peu nombreuses, quelques dizaines tout au plus, alors que l'espace des pixels compte 784 dimensions.
 
 Les vraies images se trouvent donc près d'une surface de peu de dimensions, repliée
 sur elle-même dans l'immense espace des pixels. On l'appelle une **variété**
-(*manifold*). Pensez à une feuille de papier froissée au milieu d'une pièce. La
-pièce a trois dimensions, la feuille n'en a que deux, et chaque point de la feuille
-peut être repéré par deux nombres, même si elle est toute chiffonnée. L'idée que
-les données réelles, images, sons ou textes, se trouvent près d'une telle variété
-s'appelle l'**hypothèse de la variété** (*manifold hypothesis*). Elle n'est pas
+(*manifold*). Une feuille de papier froissée au milieu d'une pièce en donne une
+image. La pièce a trois dimensions, la feuille n'en a que deux, et chaque point
+de la feuille peut être repéré par deux nombres, même si elle est toute
+chiffonnée. L'idée que les données réelles, images, sons ou textes, se trouvent
+près d'une telle variété s'appelle l'**hypothèse de la variété** (*manifold hypothesis*). Elle n'est pas
 démontrée, mais elle explique pourquoi l'apprentissage reste possible dans des
 espaces aussi vastes.
 

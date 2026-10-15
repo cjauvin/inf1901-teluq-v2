@@ -187,7 +187,8 @@ partie s'il a gagné, sans savoir quels coups l'ont fait gagner.
 Cette différence a deux conséquences. D'abord, le modèle peut trouver des réponses
 meilleures que celles qu'on aurait su lui montrer, puisqu'il n'est plus limité à
 imiter. Ensuite, il peut aussi trouver des façons d'obtenir une bonne note sans donner
-une bonne réponse, en exploitant les défauts du modèle de récompense. C'est le bateau
+une bonne réponse, en exploitant les défauts du modèle de récompense. C'est le
+**détournement de la récompense** (*reward hacking*), comme le bateau
 du Module 3, qui [tournait en rond](docs/module3/80-renforcement-profond/#au-delà-des-jeux-et-les-limites)
 pour accumuler des points. Pour l'en empêcher, on le pénalise quand ses réponses
 s'éloignent trop de celles du modèle de départ.
@@ -197,9 +198,8 @@ collègues, chez OpenAI et DeepMind, l'utilisent pour apprendre à un robot simu
 faire un salto arrière, une tâche difficile à décrire par une règle mais facile à
 juger en regardant deux essais. OpenAI l'applique ensuite aux modèles de langage :
 c'est la troisième étape d'InstructGPT. Les évaluateurs préfèrent les réponses d'InstructGPT, qui compte
-1,3 milliard de paramètres, à celles de GPT-3, cent fois plus grand. Le
-30 novembre 2022, OpenAI ouvre au public ChatGPT, construit selon la même méthode. Le
-service atteint 100 millions d'utilisateurs en deux mois, un record à l'époque.
+1,3 milliard de paramètres, à celles de GPT-3, cent fois plus grand. ChatGPT est
+construit selon la même méthode.
 
 L'applet ci-dessous vous place dans le rôle d'un évaluateur. Pour chacune des six
 requêtes, choisissez la réponse que vous préférez. Le bilan montre ce que vos choix
@@ -277,8 +277,8 @@ humains décident des principes plutôt que de juger chaque réponse.
 Ces protections restent imparfaites. Des utilisateurs trouvent régulièrement des
 formulations qui amènent un assistant à ignorer ses consignes, comme les attaques
 présentées au chapitre « [Tromper un réseau](docs/module3/90-tromper-un-reseau/#se-défendre) »
-du Module 3. Le chapitre du [Module 4](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices) sur ce que les modèles ratent y
-revient.
+du Module 3. Le chapitre « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices) »
+y revient.
 
 ## Faire des choses avec des mots
 
@@ -370,7 +370,7 @@ milliers de raisonnements choisis ou rédigés, pour que le modèle adopte une f
 lisible, puis le renforcement prend le relais. Une fois entraîné, un modèle de
 raisonnement produit à son tour des chaînes de pensée en grande quantité. Elles
 servent de corpus pour ajuster des modèles plus petits, qui apprennent ainsi à
-raisonner par imitation. C'est la **distillation** (*distillation*).
+raisonner par imitation. C'est la **distillation**.
 
 En septembre 2024, OpenAI présente o1, le premier d'une série de **modèles de
 raisonnement** (*reasoning models*), qui « réfléchissent » parfois plusieurs minutes
@@ -393,12 +393,12 @@ moment de la réponse** (*test-time compute*). Le modèle ne change pas : il é
 seulement un raisonnement plus long. Ce levier a un prix, puisque chaque réponse coûte
 d'autant plus cher qu'elle est longue. Le chapitre
 « [Le défi ARC](docs/module4/93-le-defi-arc/#o3-et-le-calcul-au-moment-de-la-réponse) »
-en donne l'exemple le plus frappant.
+en donne un exemple.
 
 Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
 réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
-l'intérieur d'un modèle est une question ouverte, présentée au chapitre du
-[Module 4](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) sur ce que les modèles comprennent. Le
+l'intérieur d'un modèle est une question ouverte, présentée au chapitre
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) ». Le
 [chapitre suivant](docs/module4/75-demontrer) montre d'abord jusqu'où ces modèles vont
 en mathématiques, là où une démonstration peut être vérifiée par une machine.
