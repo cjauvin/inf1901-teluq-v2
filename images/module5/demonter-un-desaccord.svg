@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Démonter un désaccord</title>
+<desc>Deux personnes s'opposent. Camille conclut : « Il faut freiner l'IA. » Sacha conclut : « Surtout pas. » Sous ces conclusions, six plans, avec la position de chacune. Faits et prévisions : toutes deux attendent des IA plus capables que nous d'ici vingt ans, même avis. Concepts : toutes deux pensent que ces IA auront des buts propres, même avis. Valeurs : pour Camille, éviter une catastrophe, avant tout ; pour Sacha, guérir des maladies, avant tout. Pouvoir : des lois et des accords entre pays, contre la concurrence entre entreprises. Décider dans l'incertitude : dans le doute, ralentir, contre dans le doute, avancer et corriger. Stratégie : une pause puis un traité, contre aller vite pour ne pas perdre la course. Le désaccord ne porte pas sur les faits, mais sur les valeurs, le pouvoir et la façon de décider dans l'incertitude ; la stratégie en découle.</desc>
+<rect x="0" y="0" width="840" height="560" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="34" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Démonter un désaccord</text>
+<rect x="40.0" y="54" width="250" height="58" rx="10" fill="#fbf7ee" stroke="#c4564a" stroke-width="1.8"/>
+<text x="165" y="77" font-size="12" fill="#c4564a" text-anchor="middle" font-weight="700">Camille</text>
+<text x="165" y="99" font-size="13" fill="#3a3531" text-anchor="middle" font-style="italic">« Il faut freiner l'IA. »</text>
+<rect x="550.0" y="54" width="250" height="58" rx="10" fill="#fbf7ee" stroke="#9a5b33" stroke-width="1.8"/>
+<text x="675" y="77" font-size="12" fill="#9a5b33" text-anchor="middle" font-weight="700">Sacha</text>
+<text x="675" y="99" font-size="13" fill="#3a3531" text-anchor="middle" font-style="italic">« Surtout pas. »</text>
+<text x="420" y="82" font-size="11.5" fill="#5b5249" text-anchor="middle">la conclusion</text>
+<text x="420" y="98" font-size="11.5" fill="#5b5249" text-anchor="middle">visible</text>
+<text x="420" y="140" font-size="11.5" fill="#5b5249" text-anchor="middle" font-style="italic">ce qui la soutient, plan par plan</text>
+<rect x="40.0" y="158" width="250" height="42" rx="7" fill="#e3eeec" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="165" y="183" font-size="11.5" fill="#3a3531" text-anchor="middle">Des IA plus capables que nous d'ici 20 ans</text>
+<rect x="550.0" y="158" width="250" height="42" rx="7" fill="#e3eeec" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="675" y="183" font-size="11.5" fill="#3a3531" text-anchor="middle">Des IA plus capables que nous d'ici 20 ans</text>
+<text x="420" y="176" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Faits et prévisions</text>
+<text x="420" y="192" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">même avis</text>
+<rect x="40.0" y="214" width="250" height="42" rx="7" fill="#e3eeec" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="165" y="239" font-size="11.5" fill="#3a3531" text-anchor="middle">Ces IA auront des buts propres</text>
+<rect x="550.0" y="214" width="250" height="42" rx="7" fill="#e3eeec" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="675" y="239" font-size="11.5" fill="#3a3531" text-anchor="middle">Ces IA auront des buts propres</text>
+<text x="420" y="232" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Concepts</text>
+<text x="420" y="248" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">même avis</text>
+<rect x="40.0" y="270" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="165" y="295" font-size="11.5" fill="#3a3531" text-anchor="middle">Éviter une catastrophe, avant tout</text>
+<rect x="550.0" y="270" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="675" y="295" font-size="11.5" fill="#3a3531" text-anchor="middle">Guérir des maladies, avant tout</text>
+<text x="420" y="288" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Valeurs</text>
+<text x="420" y="304" font-size="11" fill="#c4564a" text-anchor="middle" font-weight="700">désaccord</text>
+<rect x="40.0" y="326" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="165" y="351" font-size="11.5" fill="#3a3531" text-anchor="middle">Des lois et des accords entre pays</text>
+<rect x="550.0" y="326" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="675" y="351" font-size="11.5" fill="#3a3531" text-anchor="middle">La concurrence entre entreprises</text>
+<text x="420" y="344" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Pouvoir</text>
+<text x="420" y="360" font-size="11" fill="#c4564a" text-anchor="middle" font-weight="700">désaccord</text>
+<rect x="40.0" y="382" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="165" y="407" font-size="11.5" fill="#3a3531" text-anchor="middle">Dans le doute, ralentir</text>
+<rect x="550.0" y="382" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="675" y="407" font-size="11.5" fill="#3a3531" text-anchor="middle">Dans le doute, avancer et corriger</text>
+<text x="420" y="400" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Décider dans l'incertitude</text>
+<text x="420" y="416" font-size="11" fill="#c4564a" text-anchor="middle" font-weight="700">désaccord</text>
+<line x1="40" y1="432" x2="800" y2="432" stroke="#d9cbac" stroke-dasharray="5 4"/>
+<rect x="40.0" y="438" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="165" y="463" font-size="11.5" fill="#3a3531" text-anchor="middle">Une pause, puis un traité</text>
+<rect x="550.0" y="438" width="250" height="42" rx="7" fill="#f6e1dd" stroke="#c4564a" stroke-width="1.2"/>
+<text x="675" y="463" font-size="11.5" fill="#3a3531" text-anchor="middle">Aller vite, pour ne pas perdre la course</text>
+<text x="420" y="456" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Stratégie</text>
+<text x="420" y="472" font-size="11" fill="#c4564a" text-anchor="middle" font-weight="700">désaccord</text>
+<text x="420.0" y="546" font-size="11" fill="#5b5249" text-anchor="middle">Les faits ne les séparent pas : les valeurs, le pouvoir et le rapport au risque, oui. La stratégie en découle.</text>
+</svg>

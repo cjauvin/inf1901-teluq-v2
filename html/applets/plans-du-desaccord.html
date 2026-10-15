@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : où portent nos désaccords sur l'IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .option { display: block; width: 100%; text-align: left; padding: 0.45rem 0.7rem; border: 1px solid #cbd5e1; border-radius: 0.5rem;
+                  background: #fff; font-size: 0.85rem; color: #334155; line-height: 1.3; }
+        .option:hover { border-color: #2f6f6a; }
+        .option.choisie { background: #2f6f6a; border-color: #2f6f6a; color: #fff; }
+        .point { width: 0.7rem; height: 0.7rem; border-radius: 9999px; border: 1.5px solid #94a3b8; background: #fff; }
+        .point.repondu { background: #94a3b8; }
+        .point.courant { border-color: #2f6f6a; box-shadow: 0 0 0 2px #2f6f6a55; }
+        .nav { padding: 0.3rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.8rem; color: #334155; }
+        .nav:disabled { opacity: 0.35; }
+        .titre { font-size: 0.72rem; font-weight: 700; color: #64748b; letter-spacing: 0.04em; text-transform: uppercase; }
+        table.grille { border-collapse: separate; border-spacing: 3px; width: 100%; }
+        table.grille th { font-size: 0.66rem; font-weight: 700; color: #5b5249; text-align: center; line-height: 1.1; padding-bottom: 2px; }
+        table.grille td.nom { font-size: 0.78rem; color: #3a3531; white-space: nowrap; padding-right: 4px; }
+        table.grille td.case { height: 1.35rem; border-radius: 4px; background: #ebe5d6; text-align: center; font-size: 0.72rem; color: #fff; }
+        table.grille td.case.oui { background: #2f6f6a; }
+        table.grille td.case.vide { background: #f4f1e8; }
+        table.grille td.score { font-size: 0.75rem; color: #5b5249; text-align: right; width: 2.2rem; }
+        table.grille tr.surligne td.nom { font-weight: 700; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+    <div class="flex flex-col md:flex-row gap-3">
+        <div class="md:w-5/12 rounded-lg p-3 bg-slate-50 border border-slate-200 flex flex-col" style="min-height:442px">
+            <div class="flex items-center justify-between mb-1">
+                <span id="numero" class="titre"></span>
+                <div id="points" class="flex gap-1"></div>
+            </div>
+            <div id="plan" class="text-xs font-bold mb-1" style="color:#9a5b33"></div>
+            <div id="question" class="font-bold text-slate-700 mb-2 leading-snug" style="min-height:2.6em"></div>
+            <div id="options" class="flex flex-col gap-1.5"></div>
+            <div class="flex justify-between mt-auto pt-3">
+                <button id="prec" class="nav" title="Question précédente">←</button>
+                <button id="recommencer" class="nav">Recommencer</button>
+                <button id="suiv" class="nav" title="Question suivante">→</button>
+            </div>
+        </div>
+        <div class="md:w-7/12 flex flex-col gap-2">
+            <div class="rounded-lg p-2" style="background:#fbf7ee;border:1px solid #d9cbac">
+                <div class="titre mb-1">Où vos réponses rejoignent chaque attitude</div>
+                <table class="grille"><thead id="entete"></thead><tbody id="corps"></tbody></table>
+            </div>
+            <div class="rounded-lg p-3 bg-slate-50 border border-slate-200 text-slate-700 leading-snug" style="min-height:146px" id="lecture"></div>
+        </div>
+    </div>
+    <div class="text-xs text-slate-500 text-center mt-2">
+        Une case verte : vous donnez la même réponse que cette attitude sur ce plan. Les réponses prêtées aux attitudes sont
+        simplifiées ; dans chaque attitude, les personnes réelles divergent.
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Six plans de désaccord, une question par plan. Chaque attitude reçoit une réponse typique à chaque question ; la grille
+ * montre, plan par plan, les attitudes qui donnent la même réponse que vous. L'idée : deux personnes peuvent arriver à la
+ * même conclusion pour des raisons différentes, ou s'opposer sur un seul plan.
+ */
+const PLANS = ['Faits', 'Concepts', 'Valeurs', 'Pouvoir', 'Incertitude', 'Stratégie'];
+const QUESTIONS = [
+    { plan: 'Faits et prévisions', q: "Une IA plus capable que les humains dans presque tous les domaines arrivera…", o: [
+        "…d'ici cinq ans.", "…d'ici une vingtaine d'années.", "…dans plus de quarante ans.", "…probablement jamais."] },
+    { plan: 'Concepts', q: "Un grand modèle de langage comprend-il ce qu'il dit ?", o: [
+        "Oui, en bonne partie.", "En partie, d'une façon différente de la nôtre.", "Non : il imite le langage sans le comprendre.",
+        "La question n'a pas de sens pour une machine."] },
+    { plan: 'Valeurs', q: "Ce qui doit peser le plus dans les décisions sur l'IA, ce sont…", o: [
+        "…les bienfaits qu'elle peut apporter : santé, science, richesse.", "…les torts qu'elle cause déjà : biais, surveillance, travail mal payé.",
+        "…les catastrophes possibles, même peu probables.", "…ce qui fait l'humain : le travail, la création, les liens entre les personnes."] },
+    { plan: 'Pouvoir', q: "Le développement de l'IA devrait être orienté surtout par…", o: [
+        "…les entreprises, par la concurrence.", "…mon pays, pour ne dépendre de personne.",
+        "…les lois des États démocratiques et des accords internationaux.", "…les citoyens, les travailleurs et les communautés concernées."] },
+    { plan: "Décider dans l'incertitude", q: "Quand on ne sait pas encore si une technologie est dangereuse…", o: [
+        "…on avance, et on corrige les problèmes à mesure.", "…on avance prudemment, en surveillant de près.",
+        "…on ralentit, le temps d'en savoir plus.", "…on s'arrête tant qu'on n'a pas montré qu'elle est sûre."] },
+    { plan: 'Stratégie', q: "La mesure la plus utile maintenant serait…", o: [
+        "…de laisser l'innovation aller vite, pour ne pas perdre la course.", "…d'encadrer les usages, domaine par domaine.",
+        "…d'encadrer les modèles les plus puissants et ceux qui les font.", "…une pause, ou un traité international."] },
+];
+// réponse typique de chaque attitude à chaque question (indice de l'option)
+const ATTITUDES = [
+    { nom: 'Enthousiasme', r: [0, 0, 0, 0, 0, 0] },
+    { nom: 'Construction prudente', r: [0, 1, 0, 2, 1, 2] },
+    { nom: 'Alarme', r: [1, 1, 2, 2, 3, 3] },
+    { nom: 'Torts présents', r: [2, 2, 1, 3, 2, 1] },
+    { nom: 'Scepticisme', r: [3, 2, 1, 2, 1, 1] },
+    { nom: 'Normalisation', r: [2, 1, 1, 2, 1, 1] },
+    { nom: 'Souveraineté', r: [1, 1, 0, 1, 0, 0] },
+    { nom: 'Protection', r: [1, 2, 3, 3, 2, 2] },
+    { nom: 'Refus', r: [2, 3, 3, 3, 3, 3] },
+    { nom: 'Usage pragmatique', r: [1, 1, 0, 2, 1, 1] },
+];
+
+const $ = id => document.getElementById(id);
+let rep = Array(QUESTIONS.length).fill(null), k = 0;
+
+function accords(a) { return a.r.reduce((n, v, i) => n + (rep[i] !== null && rep[i] === v ? 1 : 0), 0); }
+
+function dessinerQuestion() {
+    const Q = QUESTIONS[k];
+    $('numero').textContent = `Question ${k + 1} sur ${QUESTIONS.length}`;
+    $('plan').textContent = `Plan : ${Q.plan}`;
+    $('question').textContent = Q.q;
+    $('options').replaceChildren(...Q.o.map((texte, i) => {
+        const b = document.createElement('button');
+        b.className = 'option' + (rep[k] === i ? ' choisie' : '');
+        b.textContent = texte;
+        b.onclick = () => { rep[k] = i; if (k < QUESTIONS.length - 1) k++; maj(); };
+        return b;
+    }));
+    $('points').replaceChildren(...QUESTIONS.map((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'point' + (rep[i] !== null ? ' repondu' : '') + (i === k ? ' courant' : '');
+        d.title = `Question ${i + 1}`;
+        d.onclick = () => { k = i; maj(); };
+        return d;
+    }));
+    $('prec').disabled = k === 0;
+    $('suiv').disabled = k === QUESTIONS.length - 1;
+}
+
+function dessinerGrille() {
+    $('entete').innerHTML = '<tr><th></th>' + PLANS.map((p, i) => `<th style="${i === k ? 'color:#2f6f6a' : ''}">${p}</th>`).join('') + '<th></th></tr>';
+    const n = rep.filter(r => r !== null).length;
+    const tri = ATTITUDES.map(a => ({ a, s: accords(a) }));
+    const max = Math.max(...tri.map(t => t.s));
+    $('corps').innerHTML = tri.map(({ a, s }) => `<tr class="${n && s === max ? 'surligne' : ''}"><td class="nom">${a.nom}</td>` +
+        a.r.map((v, i) => `<td class="case ${rep[i] === null ? 'vide' : rep[i] === v ? 'oui' : ''}">${rep[i] !== null && rep[i] === v ? '✓' : ''}</td>`).join('') +
+        `<td class="score">${n ? s + '/' + n : ''}</td></tr>`).join('');
+}
+
+function dessinerLecture() {
+    const n = rep.filter(r => r !== null).length;
+    const L = $('lecture');
+    if (!n) { L.innerHTML = '<span class="text-slate-500">Répondez aux questions : la grille montre, plan par plan, les attitudes qui donnent la même réponse que vous.</span>'; return; }
+    const tri = ATTITUDES.map(a => ({ a, s: accords(a) })).sort((x, y) => y.s - x.s);
+    const proches = tri.filter(t => t.s === tri[0].s).map(t => `<b>${t.a.nom}</b>`);
+    let txt = `Vous rejoignez le plus souvent : ${proches.join(', ')} (${tri[0].s} plan${tri[0].s > 1 ? 's' : ''} sur ${n}).`;
+    // même stratégie, autres raisons
+    const S = 5, V = 2, F = 0;
+    if (rep[S] !== null) {
+        const memes = ATTITUDES.filter(a => a.r[S] === rep[S] && ((rep[V] !== null && a.r[V] !== rep[V]) || (rep[F] !== null && a.r[F] !== rep[F])));
+        if (memes.length) txt += ` Vous proposez la même mesure que <b>${memes.map(a => a.nom).join(', ')}</b>, mais pour d'autres raisons : vos réponses diffèrent sur les faits ou sur les valeurs.`;
+    }
+    if (n === QUESTIONS.length && tri[0].s < 4) txt += ' Aucune attitude ne vous résume : votre position combine plusieurs attitudes, comme celle de la plupart des gens.';
+    L.innerHTML = txt;
+}
+
+function maj() { dessinerQuestion(); dessinerGrille(); dessinerLecture(); }
+$('prec').onclick = () => { if (k > 0) { k--; maj(); } };
+$('suiv').onclick = () => { if (k < QUESTIONS.length - 1) { k++; maj(); } };
+$('recommencer').onclick = () => { rep = Array(QUESTIONS.length).fill(null); k = 0; maj(); };
+maj();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
