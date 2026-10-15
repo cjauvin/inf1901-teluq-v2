@@ -1,15 +1,16 @@
 ---
 title: "Démontrer"
-weight: 75
+weight: 87
 slug: demontrer
 ---
 
 # Démontrer
 
-Le chapitre « [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr) »
-s'achevait sur des modèles qui raisonnent, entraînés par renforcement à partir de
-récompenses vérifiables.
-Les mathématiques sont le terrain où cette idée va le plus loin, parce qu'une
+Les chapitres précédents ont montré le rôle de la vérification : les modèles qui
+raisonnent sont entraînés par
+[renforcement à partir de récompenses vérifiables](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),
+et les [agents de programmation](docs/module4/85-programmer-avec-des-agents) se
+guident sur le verdict des tests. Les mathématiques sont le terrain où cette idée va le plus loin, parce qu'une
 démonstration peut être vérifiée sans aucun doute possible, par un programme. Ce
 chapitre montre comment, en quelques années, des machines sont passées des problèmes
 d'olympiades aux premiers résultats de recherche, et ce que ces résultats disent, ou
@@ -179,5 +180,6 @@ qu'aucun système formel ne peut atteindre, et une machine ne fera donc jamais d
 vraies mathématiques. Des machines qui démontrent des théorèmes inédits donnent à ce
 débat une matière nouvelle, sans le trancher. Le [Module 5](docs/module5) le reprend.
 
-Le [chapitre suivant](docs/module4/80-outils-et-agents) revient aux assistants de tous
-les jours, et montre comment on leur donne des outils pour agir.
+Le [chapitre suivant](docs/module4/88-le-defi-arc) présente un test conçu pour
+mesurer autre chose que la maîtrise de problèmes connus : la capacité à faire face à
+du nouveau.

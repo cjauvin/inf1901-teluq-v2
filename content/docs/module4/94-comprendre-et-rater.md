@@ -8,8 +8,8 @@ slug: comprendre-et-rater
 
 Les chapitres précédents ont présenté ce que font les grands modèles de langage :
 prédire le jeton suivant, à une échelle immense, puis être ajustés pour répondre,
-raisonner, utiliser des outils, voir et parler. Le chapitre
-« [Le défi ARC](docs/module4/93-le-defi-arc) » a montré ce qui leur résiste encore
+raisonner, démontrer, utiliser des outils, voir et parler. Le chapitre
+« [Le défi ARC](docs/module4/88-le-defi-arc) » a montré ce qui leur résiste encore
 devant des problèmes nouveaux. Ce dernier chapitre du module pose la
 question que ces résultats rendent inévitable : ces modèles comprennent-ils ce qu'ils
 disent ? Il commence par leurs erreurs les plus connues, qui renseignent sur leur
@@ -107,7 +107,7 @@ Ce dernier résultat rejoint le problème présenté dans la section
 on ne sait jamais complètement si un modèle résout un problème ou s'il se souvient de
 sa solution. De nouveaux tests tentent d'y répondre, comme *Humanity's Last Exam*
 (« le dernier examen de l'humanité »), publié en janvier 2025, ou ARC, présenté au
-chapitre « [Le défi ARC](docs/module4/93-le-defi-arc) », qui vise la capacité à faire
+chapitre « [Le défi ARC](docs/module4/88-le-defi-arc) », qui vise la capacité à faire
 face à du nouveau.
 
 Enfin, un modèle distingue mal les consignes de son utilisateur des textes qu'il lit,
@@ -229,8 +229,44 @@ La question posée au
 [Module 2](docs/module2/70-generaliser/#un-modèle-se-juge-sur-ce-quil-na-jamais-vu), sur
 vingt maisons, prend ici sa forme la plus aiguë :
 où finit la mémoire, et où commence la compréhension ? Pour un modèle qui a lu une
-grande partie de ce que l'humanité a écrit, la réponse n'est pas tranchée. Le
-[Module 5](docs/module5) reprend ces questions sous leur angle philosophique, avec
+grande partie de ce que l'humanité a écrit, la réponse n'est pas tranchée.
+
+## Ce qu'il faut retenir du module
+
+Ce module a commencé sur un paradoxe : un mécanisme d'une simplicité déconcertante,
+prédire la suite d'un texte, et des capacités qui surprennent jusqu'à leurs auteurs.
+Les chapitres l'ont décomposé en quelques idées.
+
+1. **Générer, c'est imiter une distribution, puis y tirer des exemples.** C'est le
+   principe commun à tous les modèles génératifs, des images aux voix
+   (« [Générer : imiter une distribution](docs/module4/10-generer) »).
+2. **Un modèle de langage prédit le mot suivant.** L'idée a soixante-dix ans
+   d'histoire, des règles aux n-grammes, puis aux plongements et au Transformer
+   (« [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »,
+   « [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant) »).
+3. **L'échelle a tout changé, de façon en partie prévisible**
+   (« [Passer à l'échelle](docs/module4/60-passer-a-l-echelle) »).
+4. **Un modèle de base n'est pas un assistant.** L'ajustement, les préférences humaines
+   et les récompenses vérifiables en font un
+   (« [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant) »).
+5. **Le modèle ne fait que du texte ; son harnais fait le reste.** La mémoire
+   apparente, les outils et les actions viennent du programme qui l'entoure : le modèle
+   propose, le harnais dispose
+   (« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents) »).
+6. **La vérification fait la fiabilité.** Les tests guident les agents de
+   programmation, et une preuve acceptée par Lean n'a pas à être crue sur parole
+   (« [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents) »,
+   « [Démontrer](docs/module4/87-demontrer) »). Mesurer l'intelligence elle-même reste
+   difficile (« [Le défi ARC](docs/module4/88-le-defi-arc) »).
+7. **Les mêmes idées s'étendent aux images et aux sons**, devenus eux aussi des
+   jetons (« [Des modèles qui voient, entendent et parlent](docs/module4/92-voir-entendre-parler) »).
+8. **Ces modèles ont des limites caractéristiques** : ils hallucinent, ne voient pas
+   les lettres de leurs jetons, et n'apprennent rien de leurs conversations.
+
+Le mécanisme de départ n'a pas changé : prédire la suite. Ce qui a changé, c'est
+l'échelle à laquelle on l'applique, ce qu'on apprend aux modèles ensuite, et ce qu'on
+construit autour d'eux. Savoir si cela suffit pour comprendre reste une question
+ouverte. Le [Module 5](docs/module5) la reprend sous son angle philosophique, avec
 l'argument de la chambre chinoise de Searle, évoqué
-[plus haut](#perroquets-ou-modèles-du-monde). Il aborde aussi les
-conséquences de ces modèles pour la société.
+[plus haut](#perroquets-ou-modèles-du-monde), et aborde les conséquences de ces
+modèles pour la société.

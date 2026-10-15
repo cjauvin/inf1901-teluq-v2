@@ -1,6 +1,6 @@
 ---
 title: "Le défi ARC"
-weight: 93
+weight: 88
 slug: le-defi-arc
 ---
 
@@ -120,7 +120,7 @@ ARChitects, atteint 53,5 % ; l'équipe MindsAI obtient 55,5 %, mais n'est pas 
 faute d'avoir publié sa solution. Le grand prix n'est pas attribué. La plupart des
 meilleures équipes partagent une même idée : l'**entraînement au moment du test**
 (*test-time training*), présenté au chapitre
-« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#pourquoi-ne-pas-le-laisser-apprendre) ».
+« [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#pourquoi-ne-pas-le-laisser-apprendre) ».
 Pour chaque tâche, avant de répondre, on ajuste les poids d'un modèle de langage sur
 ses quelques paires d'exemples, multipliées par des transformations qui ne changent pas
 la règle : rotations, symétries, permutations de couleurs. Le modèle se spécialise un
@@ -227,6 +227,8 @@ demande pas seulement si un système réussit, mais à partir de combien d'exemp
 quel prix, là où un enfant y parvient en quelques secondes, avec trois exemples et
 très peu d'énergie.
 
-Le chapitre suivant, « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »,
+Le dernier chapitre du module,
+« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »,
 reprend ces questions à partir des erreurs des modèles et de ce que l'on découvre à
-l'intérieur.
+l'intérieur. Le [chapitre suivant](docs/module4/90-mots-et-images) quitte d'abord le
+texte, pour montrer comment on a relié les mots et les images.

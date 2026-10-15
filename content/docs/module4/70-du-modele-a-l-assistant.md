@@ -93,7 +93,7 @@ Utilisateur : Merci, je vais le commander dès demain !
 Le modèle a écrit la réponse de l'assistant, puis inventé la réaction de
 l'utilisateur, et ainsi de suite. Pour lui, il n'y a qu'un texte à continuer, comme
 le montre la section
-« [Une conversation qui n'en est pas une](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une) ».
+« [Une conversation qui n'en est pas une](docs/module4/80-outils-et-agents/#une-conversation-qui-nen-est-pas-une) ».
 Un assistant, lui, a appris à produire une marque spéciale de fin de réplique, qui
 rend la main à l'utilisateur.
 {{% /hint %}}
@@ -239,32 +239,18 @@ doit être **utile** (*helpful*), **honnête** (*honest*) et **inoffensif**
 tout est inoffensif mais inutile, et un assistant qui accepte tout est utile mais
 dangereux.
 
-Ces tensions rappellent les **trois lois de la robotique** imaginées par l'écrivain
-Isaac Asimov dans une nouvelle de 1942, puis reprises dans le recueil *Les Robots*
-(*I, Robot*, 1950) :
-
-1. un robot ne peut porter atteinte à un être humain ni, par son inaction, permettre
-   qu'un être humain soit exposé au danger ;
-2. un robot doit obéir aux ordres des êtres humains, sauf si ces ordres entrent en
-   conflit avec la première loi ;
-3. un robot doit protéger sa propre existence, tant que cela n'entre pas en conflit
-   avec les deux premières lois.
-
-On y reconnaît l'inoffensif (la première loi) et l'utile (la deuxième), avec un ordre
-de priorité explicite. Les nouvelles d'Asimov montrent surtout que ces lois, si
-claires en apparence, mènent à des impasses dès que la situation devient ambiguë :
-qu'est-ce que « nuire », et à qui ? Dans *Menteur !* (1941), un robot capable de lire
-les pensées ment à tous ceux qui l'interrogent, pour ne pas les blesser. Il préfère
-l'inoffensif à l'honnête, et dit à chacun ce qu'il veut entendre. C'est la
-[complaisance](#le-renforcement-à-partir-de-préférences-humaines-rlhf),
-quatre-vingts ans avant les assistants.
-
-La différence tient à la méthode. Les lois d'Asimov sont des règles, inscrites dans
-le robot et appliquées à la lettre, dans l'esprit de
+Ces tensions rappellent les **trois lois de la robotique** de l'écrivain Isaac Asimov
+(1942) : un robot ne doit pas nuire à un humain, doit lui obéir, et doit se protéger,
+dans cet ordre de priorité. On y reconnaît l'inoffensif et l'utile. Les nouvelles
+d'Asimov montrent surtout que ces lois mènent à des impasses dès que la situation
+devient ambiguë. Dans *Menteur !* (1941), un robot qui lit les pensées ment à chacun
+pour ne pas le blesser, et lui dit ce qu'il veut entendre : c'est la
+[complaisance](#le-renforcement-à-partir-de-préférences-humaines-rlhf), quatre-vingts
+ans avant les assistants. La différence tient à la méthode. Les lois d'Asimov sont des
+règles inscrites dans le robot, dans l'esprit de
 l'[IA symbolique](docs/module1/20-deux-paris/#le-premier-pari-lesprit-comme-logique)
-du Module 1. Les qualités d'un assistant, elles, ne sont écrites nulle part dans le
-modèle. Elles sont apprises à partir d'exemples et de préférences, et restent donc
-floues, comme ces exemples, avec les mêmes zones grises qu'Asimov explorait.
+du Module 1 ; les qualités d'un assistant ne sont écrites nulle part, mais apprises à
+partir d'exemples, avec les mêmes zones grises.
 
 Le travail qui consiste à faire en sorte que le comportement d'un modèle corresponde
 aux intentions et aux valeurs de ceux qui l'utilisent s'appelle l'**alignement**
@@ -380,7 +366,7 @@ réponse finale. Les auteurs observent que le modèle apprend de lui-même à v�
 ses calculs, à revenir en arrière et à essayer une autre approche. En juillet 2025,
 des modèles de raisonnement d'OpenAI et de Google DeepMind obtiennent un score de
 médaille d'or aux Olympiades internationales de mathématiques. Le chapitre
-« [Démontrer](docs/module4/75-demontrer) » en raconte la suite. Ces machines qui
+« [Démontrer](docs/module4/87-demontrer) » en raconte la suite. Ces machines qui
 raisonnent sans aucune règle de logique écrite à la main avaient été annoncées au
 chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » du Module 1.
 
@@ -392,7 +378,7 @@ temps de réflexion accordé au modèle au moment de répondre. On parle de **ca
 moment de la réponse** (*test-time compute*). Le modèle ne change pas : il écrit
 seulement un raisonnement plus long. Ce levier a un prix, puisque chaque réponse coûte
 d'autant plus cher qu'elle est longue. Le chapitre
-« [Le défi ARC](docs/module4/93-le-defi-arc/#o3-et-le-calcul-au-moment-de-la-réponse) »
+« [Le défi ARC](docs/module4/88-le-defi-arc/#o3-et-le-calcul-au-moment-de-la-réponse) »
 en donne un exemple.
 
 Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
@@ -400,5 +386,5 @@ réellement effectué par le réseau. Un modèle peut écrire un raisonnement pl
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
 l'intérieur d'un modèle est une question ouverte, présentée au chapitre
 « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) ». Le
-[chapitre suivant](docs/module4/75-demontrer) montre d'abord jusqu'où ces modèles vont
-en mathématiques, là où une démonstration peut être vérifiée par une machine.
+[chapitre suivant](docs/module4/80-outils-et-agents) montre comment on donne à ces
+assistants des outils pour agir.

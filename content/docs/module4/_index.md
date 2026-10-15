@@ -107,33 +107,34 @@ un bilan de ce que ces modèles comprennent et de ce qu'ils ratent.
 6. [*Des mots aux nombres : jetons et plongements*](docs/module4/45-des-mots-aux-nombres) :
    découper un texte, et représenter le sens des mots par des vecteurs.
 7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
-   modèles neuronaux aux Transformers de GPT, la fenêtre de contexte, la
-   conversation, l'apprentissage continu, et ce que la prédiction exige.
+   modèles neuronaux aux Transformers de GPT, la fenêtre de contexte, et ce que la
+   prédiction exige.
 8. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
    l'apprentissage dans le contexte, les coûts, les modèles ouverts.
 9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
    l'ajustement, le renforcement à partir de préférences humaines, et les modèles
    qui raisonnent.
-10. [*Démontrer*](docs/module4/75-demontrer) : les assistants de preuve, des
+10. [*Des outils, un harnais et des agents*](docs/module4/80-outils-et-agents) : la
+    conversation qui n'en est pas une, le harnais qui entoure le modèle, la recherche
+    augmentée, l'appel d'outils, les agents et leurs risques.
+11. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) : la
+    boucle d'un agent de programmation, la culture des outils Unix, SWE-bench, les
+    risques et le métier qui change.
+12. [*Démontrer*](docs/module4/87-demontrer) : les assistants de preuve, des
     Olympiades aux premiers résultats de recherche, et leurs limites.
-11. [*Des outils, un harnais et des agents*](docs/module4/80-outils-et-agents) : la recherche
-    augmentée, l'appel d'outils, le harnais qui entoure le modèle, les agents et leurs
-    risques.
-12. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) : la boucle
-    d'un agent de programmation, la culture des outils Unix, SWE-bench, les risques
-    et le métier qui change.
+13. [*Le défi ARC*](docs/module4/88-le-defi-arc) : mesurer l'intelligence par des
+    tâches nouvelles, de 2019 à ARC-AGI-3.
 
 **Le texte et l'image, et le bilan**
 
-13. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
-   classification sans exemple, et la génération d'images à partir d'une phrase.
-14. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
+14. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
+    classification sans exemple, et la génération d'images à partir d'une phrase.
+15. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
     les modèles multimodaux, la lecture du texte dans les images (OCR) et la
     conversation à voix haute.
-15. [*Le défi ARC*](docs/module4/93-le-defi-arc) : mesurer l'intelligence par
-    des tâches nouvelles, de 2019 à ARC-AGI-3.
 16. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
-    hallucinations, interprétabilité, perroquets ou modèles du monde.
+    hallucinations, interprétabilité, perroquets ou modèles du monde, et le bilan du
+    module.
 
 Le module compte treize applets, dont un espace latent à explorer, un modèle de
 diffusion qui redessine une feuille d'érable, un test pour distinguer une vraie

@@ -162,7 +162,7 @@ façons.
   `CLAUDE.md` ou `AGENTS.md`, décrit le projet, ses conventions et les commandes à
   lancer pour le tester. Le harnais le place au début du contexte à chaque session.
   Ce sont les « notes glissées dans le contexte » du chapitre
-  « [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une) » :
+  « [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents/#une-conversation-qui-nen-est-pas-une) » :
   le modèle n'apprend rien d'une session à l'autre, mais ces notes, elles, restent.
   La convention `AGENTS.md`, publiée en 2025, est déjà utilisée par des dizaines de
   milliers de projets.
@@ -306,6 +306,7 @@ change à l'emploi et à l'apprentissage de la programmation est l'une des quest
 Ce cours lui-même a été rédigé avec l'aide d'un agent de programmation, comme
 l'explique la page « [Usage de l'IA](docs/60-assistants-intelligents/#comment-ce-cours-a-été-produit) ».
 
-Ces agents travaillent surtout sur du texte. Le
-[chapitre suivant](docs/module4/90-mots-et-images) montre comment on a relié les mots
-et les images.
+Les tests donnent à un agent de programmation un verdict exact. Le
+[chapitre suivant](docs/module4/87-demontrer) montre jusqu'où va cette idée de
+vérification, en mathématiques, où une démonstration peut être vérifiée par une
+machine.

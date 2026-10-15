@@ -162,7 +162,7 @@ questions difficiles à un modèle plus lent, qui raisonne en arrière-plan.
 
 {{< image src="/images/module4/duplex.svg" alt="Six secondes d'une conversation à voix haute, sur une ligne du temps. En haut, la voix de la personne : « Je cherche un livre pour ma mère, elle aime les romans… ». Pendant qu'elle parle, le modèle glisse un « mm-hmm », sans l'interrompre. Environ deux cents millisecondes après la fin de sa phrase, il répond : « Je vous suggère Kamouraska, d'An… ». La personne l'interrompt, « Ah, elle l'a déjà lu ! », et le modèle s'arrête aussitôt, puis propose autre chose. En bas, deux rangées de petits carrés : les jetons audio de la personne, que le modèle écoute, et ses propres jetons, qu'il produit, un toutes les 80 millisecondes, en même temps ; les silences sont aussi des jetons." title="Une conversation en duplex intégral. Le modèle ne reçoit pas des répliques, mais deux flux continus de jetons audio ; à chaque pas, il décide de parler ou de se taire." loading="lazy" >}}
 
-Le mécanisme reste celui d'[une conversation qui n'en est pas une](docs/module4/50-predire-le-mot-suivant/#une-conversation-qui-nen-est-pas-une) :
+Le mécanisme reste celui d'[une conversation qui n'en est pas une](docs/module4/80-outils-et-agents/#une-conversation-qui-nen-est-pas-une) :
 tout s'accumule dans le contexte, sous forme de jetons audio plutôt que de texte, et
 le modèle ne garde rien d'une conversation à l'autre. Mais la voix change beaucoup
 l'expérience, et ouvre des usages comme des risques.
@@ -230,8 +230,6 @@ montrent qu'ils voient autrement.
 Ces difficultés posent une question déjà rencontrée avec
 [la vidéo](docs/module4/30-images-voix-videos/#la-vidéo) : un modèle qui décrit si bien
 des images a-t-il une représentation du monde qu'elles montrent, ou reproduit-il les
-associations les plus fréquentes entre images et mots ? Le chapitre suivant,
-« [Le défi ARC](docs/module4/93-le-defi-arc) », aborde cette question avec un test
-conçu pour mesurer la capacité à faire face à une situation nouvelle. Le chapitre
-« [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »
-la reprend ensuite pour l'ensemble des modèles de langage.
+associations les plus fréquentes entre images et mots ? Le
+[chapitre suivant](docs/module4/94-comprendre-et-rater) aborde cette question pour
+l'ensemble des modèles de langage.
