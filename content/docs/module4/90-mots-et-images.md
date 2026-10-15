@@ -33,6 +33,21 @@ en opposant des paires semblables et des paires différentes. Les caractéristiq
 apprises de cette façon se révèlent presque aussi bonnes que celles d'un réseau
 entraîné sur des images étiquetées.
 
+Ce résultat rejoint le
+[regroupement](docs/module2/80-trois-facons-d-apprendre/#apprendre-sans-réponses-le-non-supervisé)
+du Module 2. Une fois le réseau entraîné, les photos d'une même catégorie se retrouvent
+proches les unes des autres dans l'espace des vecteurs, sans que personne lui ait dit
+ce qu'est un chat. Si l'on applique k-means à ces vecteurs, les groupes obtenus
+correspondent en bonne partie aux catégories qu'un humain aurait choisies. En 2018,
+Mathilde Caron et ses collègues, chez Facebook, font même du regroupement le moteur de
+l'apprentissage, avec DeepCluster. On regroupe les images par k-means, on se sert des
+numéros de groupe comme d'étiquettes provisoires pour entraîner le réseau, puis on
+recommence avec les nouveaux vecteurs. Ces méthodes illustrent l'**apprentissage de
+représentations** annoncé au Module 2 : découvrir sans étiquettes de bonnes
+caractéristiques pour décrire les données.
+
+{{< image src="/images/module4/regrouper-sans-etiquettes.svg" alt="Deux panneaux, chacun formé de dix rangées : les dix groupes trouvés par k-means parmi 1 797 chiffres manuscrits, sans aucune étiquette. Chaque rangée montre neuf images du groupe tirées au hasard ; une image qui n'est pas le chiffre majoritaire du groupe est encadrée en rouge. À gauche, k-means appliqué directement aux pixels : deux groupes sont surtout faits de 1, aucun n'est fait de 8, et les 8 se retrouvent comme intrus dans d'autres groupes ; 79 % des images sont dans un groupe dominé par leur chiffre. À droite, k-means appliqué aux vecteurs appris par apprentissage contrastif, sans étiquettes : chaque chiffre a son groupe, et 90 % des images sont dans un groupe dominé par leur chiffre." title="Une petite expérience réelle. Un réseau apprend, sans aucune étiquette, à donner des vecteurs proches à deux versions modifiées d'un même chiffre. Regroupés par k-means, ses vecteurs retrouvent les dix chiffres mieux que les pixels bruts : à gauche, deux groupes de 1 et aucun de 8 ; à droite, un groupe par chiffre." loading="lazy" >}}
+
 ## CLIP : images et légendes dans un même espace
 
 En janvier 2021, OpenAI présente CLIP (*Contrastive Language-Image Pre-training*), qui
