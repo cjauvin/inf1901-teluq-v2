@@ -110,20 +110,25 @@ modèles de langage, puis la rencontre du texte et de l'image.
 9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :
    l'ajustement, le renforcement à partir de préférences humaines, et les modèles
    qui raisonnent.
-I. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) : la boucle
+10. [*Démontrer*](docs/module4/75-demontrer) : les assistants de preuve, des
+    Olympiades aux premiers résultats de recherche, et leurs limites.
+11. [*Des outils, un harnais et des agents*](docs/module4/80-outils-et-agents) : la recherche
+    augmentée, l'appel d'outils, le harnais qui entoure le modèle, les agents et leurs
+    risques.
+12. [*Programmer avec des agents*](docs/module4/85-programmer-avec-des-agents) : la boucle
     d'un agent de programmation, la culture des outils Unix, SWE-bench, les risques
     et le métier qui change.
 
 **Le texte et l'image, et le bilan**
 
-12. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
+13. [*Relier les mots et les images*](docs/module4/90-mots-et-images) : CLIP, la
    classification sans exemple, et la génération d'images à partir d'une phrase.
-13. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
+14. [*Des modèles qui voient, entendent et parlent*](docs/module4/92-voir-entendre-parler) :
     les modèles multimodaux, la lecture du texte dans les images (OCR) et la
     conversation à voix haute.
-14. [*Le défi ARC*](docs/module4/93-le-defi-arc) : mesurer l'intelligence par
+15. [*Le défi ARC*](docs/module4/93-le-defi-arc) : mesurer l'intelligence par
     des tâches nouvelles, de 2019 à ARC-AGI-3.
-15. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
+16. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
     hallucinations, interprétabilité, perroquets ou modèles du monde.
 
 Le module compte treize applets, dont un espace latent à explorer, un modèle de

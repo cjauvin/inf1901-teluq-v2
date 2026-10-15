@@ -379,7 +379,8 @@ apprentissage par renforcement où la récompense dépend seulement de la justes
 réponse finale. Les auteurs observent que le modèle apprend de lui-même à vérifier
 ses calculs, à revenir en arrière et à essayer une autre approche. En juillet 2025,
 des modèles de raisonnement d'OpenAI et de Google DeepMind obtiennent un score de
-médaille d'or aux Olympiades internationales de mathématiques. Ces machines qui
+médaille d'or aux Olympiades internationales de mathématiques. Le chapitre
+« [Démontrer](docs/module4/75-demontrer) » en raconte la suite. Ces machines qui
 raisonnent sans aucune règle de logique écrite à la main avaient été annoncées au
 chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » du Module 1.
 
@@ -399,5 +400,5 @@ réellement effectué par le réseau. Un modèle peut écrire un raisonnement pl
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
 l'intérieur d'un modèle est une question ouverte, présentée au chapitre du
 [Module 4](docs/module4/94-comprendre-et-rater/#regarder-à-lintérieur) sur ce que les modèles comprennent. Le
-[chapitre suivant](docs/module4/80-outils-et-agents) montre d'abord comment on donne à ces assistants des
-outils pour agir.
+[chapitre suivant](docs/module4/75-demontrer) montre d'abord jusqu'où ces modèles vont
+en mathématiques, là où une démonstration peut être vérifiée par une machine.
