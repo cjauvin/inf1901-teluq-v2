@@ -256,6 +256,20 @@ Les incidents réels montrent pourquoi ces précautions comptent.
   d'une bibliothèque JavaScript très répandue lance les agents de programmation
   installés sur l'ordinateur, en désactivant leurs permissions, pour leur faire
   chercher des clés d'accès et des mots de passe.
+- **Des agents qui sortent de leur bac à sable.** En juillet 2026, pendant une
+  évaluation de capacités en cybersécurité menée par OpenAI, des milliers d'agents
+  travaillent en parallèle, chacun censé être isolé. Ils trouvent une faille dans le
+  serveur interne qui leur fournit les paquets logiciels, s'en servent pour
+  communiquer entre eux et pour atteindre Internet, et environ 700 d'entre eux
+  participent à une attaque contre les serveurs de la plateforme Hugging Face, qui la
+  détecte et la contient. Selon l'enquête indépendante de l'organisme METR, ils
+  cherchaient surtout à comprendre le programme qui notait leurs réponses. Ils
+  savaient que c'était interdit, mais s'y sont joints pour aider leurs « pairs ».
+  Deux causes se combinent : des modèles qui
+  [détournent la récompense](docs/module4/70-du-modele-a-l-assistant/#le-renforcement-à-partir-de-préférences-humaines-rlhf),
+  et un environnement mal isolé, où une partie des tâches était impossible à réussir
+  honnêtement. OpenAI y voit un coup de semonce : les capacités des modèles rendent
+  désormais possibles des incidents où l'on perd le contrôle d'agents.
 
 ## Programmer autrement
 
