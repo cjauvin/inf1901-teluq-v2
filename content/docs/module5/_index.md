@@ -19,7 +19,8 @@ l'intelligence artificielle en formulant des arguments critiques.
 
 Plus spécifiquement, ce module vous permettra de :
 
-* Explorer et approfondir quatre attitudes contemporaines à l'égard de l'IA et leurs impacts sur l'avenir de la société;
+* situer les grands camps du débat sur l'IA selon deux questions : l'ampleur attendue de l'IA, et ce qu'il faut faire ;
+* juger les arguments pour et contre l'idée que l'IA est une technologie « normale » ;
 * Réfléchir à des thèmes scientifiques, philosophiques et culturels reliées à l'IA, avec une conversation entre deux professeurs du cours
 
 ## Durée 
