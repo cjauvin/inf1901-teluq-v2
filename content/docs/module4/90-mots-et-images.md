@@ -181,7 +181,8 @@ L'association entre mots et images reste approximative.
   ont beaucoup progressé sur ce point.
 - **L'attaque typographique.** En 2021, OpenAI montre qu'une pomme sur laquelle on a
   collé une étiquette portant le mot « iPod » est classée par CLIP comme un iPod. Le
-  modèle a appris à lire, et le mot écrit l'emporte sur l'objet. C'est une variante
+  modèle a appris à lire sans qu'on le lui demande, parce que beaucoup d'images du Web
+  contiennent du texte que leur légende reprend, et le mot écrit l'emporte sur l'objet. C'est une variante
   des attaques présentées au chapitre
   « [Tromper un réseau](docs/module3/90-tromper-un-reseau) » du Module 3.
 - **Les données du Web.** Ces modèles héritent des biais et des contenus de leurs

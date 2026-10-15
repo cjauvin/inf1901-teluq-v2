@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 500" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Deux façons de lire une image</title>
+<desc>Deux rangées. En haut, l'OCR classique, une chaîne de quatre pièces : repérer les lignes de texte sur la page ; isoler les caractères du mot verre, chacun dans une petite boîte ; reconnaître chaque caractère, ce qui donne v, c, r, r, e, avec une erreur, un c à la place du e ; puis corriger avec un modèle de langage, qui remplace vcrre par verre, beaucoup plus probable. Erreur typique : une lettre fausse. En bas, un modèle multimodal : l'image de la page devient des jetons visuels, que le modèle de langage lit d'un coup ; il écrit le texte, « Un verre d'eau, s'il vous plaît », et comprend en même temps la mise en page et le sens. Erreur typique : un mot ou une ligne plausible, inventé, qui ne figure pas dans l'image.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="500" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Deux façons de lire le texte d'une image</text>
+<rect x="20" y="50" width="800" height="200" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="72" font-size="13" fill="#9a5b33" font-weight="700">L'OCR classique : une chaîne de pièces</text>
+<rect x="36" y="84" width="176" height="132" rx="8" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="124.0" y="101" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="700">1. repérer les lignes</text>
+<rect x="66" y="112" width="116" height="92" fill="#fffdf6" stroke="#d9cbac"/>
+<rect x="74" y="124" width="92" height="6" rx="1" fill="#9c958a"/>
+<rect x="71" y="120" width="98" height="14" fill="none" stroke="#3a6ea5" stroke-width="1.2"/>
+<rect x="74" y="140" width="100" height="6" rx="1" fill="#9c958a"/>
+<rect x="71" y="136" width="106" height="14" fill="none" stroke="#3a6ea5" stroke-width="1.2"/>
+<rect x="74" y="156" width="70" height="6" rx="1" fill="#9c958a"/>
+<rect x="71" y="152" width="76" height="14" fill="none" stroke="#3a6ea5" stroke-width="1.2"/>
+<rect x="74" y="172" width="96" height="6" rx="1" fill="#9c958a"/>
+<rect x="71" y="168" width="102" height="14" fill="none" stroke="#3a6ea5" stroke-width="1.2"/>
+<rect x="74" y="188" width="84" height="6" rx="1" fill="#9c958a"/>
+<rect x="71" y="184" width="90" height="14" fill="none" stroke="#3a6ea5" stroke-width="1.2"/>
+<rect x="234" y="84" width="176" height="132" rx="8" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="322.0" y="101" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="700">2. isoler les caractères</text>
+<rect x="264" y="136" width="20" height="30" fill="none" stroke="#3a6ea5" stroke-width="1.3"/>
+<text x="274" y="158" font-size="24" fill="#4a453f" text-anchor="middle" font-family="Courier New, Courier, monospace">v</text>
+<rect x="288" y="136" width="20" height="30" fill="none" stroke="#3a6ea5" stroke-width="1.3"/>
+<text x="298" y="158" font-size="24" fill="#4a453f" text-anchor="middle" font-family="Courier New, Courier, monospace">e</text>
+<rect x="312" y="136" width="20" height="30" fill="none" stroke="#3a6ea5" stroke-width="1.3"/>
+<text x="322" y="158" font-size="24" fill="#4a453f" text-anchor="middle" font-family="Courier New, Courier, monospace">r</text>
+<rect x="336" y="136" width="20" height="30" fill="none" stroke="#3a6ea5" stroke-width="1.3"/>
+<text x="346" y="158" font-size="24" fill="#4a453f" text-anchor="middle" font-family="Courier New, Courier, monospace">r</text>
+<rect x="360" y="136" width="20" height="30" fill="none" stroke="#3a6ea5" stroke-width="1.3"/>
+<text x="370" y="158" font-size="24" fill="#4a453f" text-anchor="middle" font-family="Courier New, Courier, monospace">e</text>
+<circle cx="298" cy="148" r="3" fill="#8a847a" opacity="0.8"/>
+<text x="322.0" y="200" font-size="10" fill="#5b5249" text-anchor="middle">une tache sur le premier « e »</text>
+<rect x="432" y="84" width="176" height="132" rx="8" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="520.0" y="101" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="700">3. reconnaître chacun</text>
+<rect x="462" y="136" width="20" height="30" rx="3" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="472" y="157" font-size="18" fill="#3a3531" text-anchor="middle" font-family="Courier New, Courier, monospace" font-weight="700">v</text>
+<rect x="486" y="136" width="20" height="30" rx="3" fill="#c4564a" stroke="#c4564a" stroke-width="1.2"/>
+<text x="496" y="157" font-size="18" fill="#fbf7ee" text-anchor="middle" font-family="Courier New, Courier, monospace" font-weight="700">c</text>
+<rect x="510" y="136" width="20" height="30" rx="3" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="520" y="157" font-size="18" fill="#3a3531" text-anchor="middle" font-family="Courier New, Courier, monospace" font-weight="700">r</text>
+<rect x="534" y="136" width="20" height="30" rx="3" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="544" y="157" font-size="18" fill="#3a3531" text-anchor="middle" font-family="Courier New, Courier, monospace" font-weight="700">r</text>
+<rect x="558" y="136" width="20" height="30" rx="3" fill="#e6eef6" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="568" y="157" font-size="18" fill="#3a3531" text-anchor="middle" font-family="Courier New, Courier, monospace" font-weight="700">e</text>
+<text x="520.0" y="200" font-size="10" fill="#5b5249" text-anchor="middle">un « c » lu à la place du « e »</text>
+<rect x="630" y="84" width="176" height="132" rx="8" fill="#efe7d3" stroke="#b8a888" stroke-width="1.2"/>
+<text x="718.0" y="101" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="700">4. corriger</text>
+<text x="718.0" y="118" font-size="10" fill="#5b5249" text-anchor="middle">avec un modèle de langage</text>
+<text x="658" y="148" font-size="15" fill="#3a3531" font-family="Courier New, Courier, monospace">vcrre</text>
+<text x="790" y="148" font-size="10.5" fill="#c4564a" text-anchor="end">✗ improbable</text>
+<text x="658" y="176" font-size="15" fill="#3a3531" font-family="Courier New, Courier, monospace" font-weight="700">verre</text>
+<text x="790" y="176" font-size="10.5" fill="#2f6f6a" text-anchor="end">✓ probable</text>
+<text x="718.0" y="200" font-size="10" fill="#5b5249" text-anchor="middle">le modèle de langage arbitre</text>
+<line x1="214" y1="150.0" x2="232" y2="150.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="412" y1="150.0" x2="430" y2="150.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<line x1="610" y1="150.0" x2="628" y2="150.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="36" y="240" font-size="11.5" fill="#9a5b33"><tspan font-weight="700">erreur typique :</tspan> une lettre fausse, que l'on repère facilement</text>
+<rect x="20" y="268" width="800" height="212" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36" y="290" font-size="13" fill="#2f6f6a" font-weight="700">Un modèle multimodal : tout d'un coup</text>
+<rect x="40" y="304" width="150" height="120" fill="#fffdf6" stroke="#d9cbac"/>
+<text x="52" y="330" font-size="10.5" fill="#4a453f" font-family="Courier New, Courier, monospace">Au serveur :</text>
+<text x="52" y="352" font-size="10.5" fill="#4a453f" font-family="Courier New, Courier, monospace">Un verre d'eau,</text>
+<text x="52" y="368" font-size="10.5" fill="#4a453f" font-family="Courier New, Courier, monospace">s'il vous plaît.</text>
+<rect x="52" y="384" width="110" height="5" fill="#bdb6aa"/><rect x="52" y="396" width="84" height="5" fill="#bdb6aa"/>
+<text x="115" y="442" font-size="10" fill="#5b5249" text-anchor="middle">la page, en image</text>
+<line x1="194" y1="364" x2="232" y2="364" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<text x="290" y="312" font-size="11" fill="#3a3531" text-anchor="middle" font-weight="700">jetons visuels</text>
+<rect x="240" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.35"/>
+<rect x="257" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.44999999999999996"/>
+<rect x="274" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.55"/>
+<rect x="291" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.65"/>
+<rect x="308" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.75"/>
+<rect x="325" y="322" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.85"/>
+<rect x="240" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.35"/>
+<rect x="257" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.44999999999999996"/>
+<rect x="274" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.55"/>
+<rect x="291" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.65"/>
+<rect x="308" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.75"/>
+<rect x="325" y="339" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.85"/>
+<rect x="240" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.35"/>
+<rect x="257" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.44999999999999996"/>
+<rect x="274" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.55"/>
+<rect x="291" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.65"/>
+<rect x="308" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.75"/>
+<rect x="325" y="356" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.85"/>
+<rect x="240" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.35"/>
+<rect x="257" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.44999999999999996"/>
+<rect x="274" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.55"/>
+<rect x="291" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.65"/>
+<rect x="308" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.75"/>
+<rect x="325" y="373" width="14" height="14" rx="2" fill="#2f6f6a" opacity="0.85"/>
+<text x="290" y="408" font-size="10" fill="#5b5249" text-anchor="middle">des morceaux d'image,</text>
+<text x="290" y="421" font-size="10" fill="#5b5249" text-anchor="middle">comme des mots</text>
+<line x1="346" y1="364" x2="384" y2="364" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="388" y="334" width="136" height="60" rx="10" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2"/>
+<text x="456" y="360" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">modèle</text>
+<text x="456" y="376" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">de langage</text>
+<line x1="528" y1="364" x2="566" y2="364" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#p)"/>
+<rect x="570" y="310" width="240" height="108" rx="8" fill="#efe7d3" stroke="#b8a888"/>
+<text x="582" y="332" font-size="11.5" fill="#3a3531" font-family="Courier New, Courier, monospace">« Au serveur : Un verre</text>
+<text x="582" y="348" font-size="11.5" fill="#3a3531" font-family="Courier New, Courier, monospace">d'eau, s'il vous plaît. »</text>
+<text x="582" y="374" font-size="11" fill="#5b5249">et, en même temps, il comprend</text>
+<text x="582" y="389" font-size="11" fill="#5b5249">la mise en page et le sens : c'est</text>
+<text x="582" y="404" font-size="11" fill="#5b5249">une demande polie</text>
+<text x="36" y="464" font-size="11.5" fill="#2f6f6a"><tspan font-weight="700">erreur typique :</tspan> un mot ou une ligne plausible, inventé, qui ne figure pas dans l'image, plus difficile à repérer</text>
+</svg>

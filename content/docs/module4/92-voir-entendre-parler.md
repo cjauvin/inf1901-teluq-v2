@@ -74,6 +74,48 @@ produisent directement des commandes de mouvement à partir d'une image et d'une
 consigne en langage naturel, comme « ramasse l'objet qui pourrait servir de
 marteau ».
 
+## Lire le texte dans les images
+
+Lire le texte d'une image est l'un des plus vieux problèmes de l'IA. On l'appelle la
+**reconnaissance optique de caractères** (*optical character recognition*, OCR). En
+1976, Ray Kurzweil présente une machine qui lit à voix haute les livres imprimés pour
+les personnes aveugles, en combinant pour la première fois un OCR capable de lire
+toutes sortes de polices et une voix de synthèse. Le réseau convolutif de Yann Le Cun,
+présenté au [Module 3](docs/module3/50-reseaux-convolutifs/#yann-le-cun-et-les-chèques),
+lit les codes postaux, puis les chèques. Le logiciel Tesseract, développé chez
+Hewlett-Packard de 1985 au milieu des années 1990, puis rendu libre en 2005 et repris
+avec le soutien de Google, reste aujourd'hui un outil courant.
+
+Un système d'OCR classique est une chaîne de pièces : repérer les lignes de texte,
+isoler les caractères, reconnaître chacun, puis corriger les erreurs avec un
+[modèle de langage](docs/module4/40-des-regles-aux-probabilites/#un-modèle-de-langage).
+Celui-ci y joue son rôle d'arbitre : entre « vcrre » et « verre », il choisit le mot
+qui ressemble à du vrai texte.
+
+L'OCR a aussi nourri les grands modèles de langage. Une bonne partie des livres et des
+documents anciens n'existe qu'en images. Le projet Google Livres, lancé en 2004, en a
+numérisé plus de 40 millions, et c'est l'OCR qui en fait du texte. Ses erreurs se
+retrouvent donc dans les données d'entraînement, et des études montrent qu'elles
+dégradent les modèles qui en apprennent.
+
+Les modèles multimodaux ont changé la donne. Ils lisent directement l'image, sans
+chaîne séparée, et comprennent en même temps la mise en page, les tableaux, l'écriture
+manuscrite et le sens du texte. Leurs erreurs changent aussi de nature. Un OCR
+classique se trompe de lettre. Un modèle multimodal, lui, reconnaît souvent les mots
+par leur sens plutôt que par la forme de leurs lettres : devant un mot flou, rare ou
+dépourvu de sens, il peut écrire un mot plausible qui ne figure pas dans l'image, une
+forme d'[hallucination](docs/module4/94-comprendre-et-rater/#les-hallucinations),
+plus difficile à repérer qu'une lettre fausse.
+
+{{< image src="/images/module4/deux-facons-de-lire.svg" alt="Deux rangées. En haut, l'OCR classique, une chaîne de quatre pièces : repérer les lignes de texte sur la page ; isoler les caractères du mot verre, chacun dans une petite boîte ; reconnaître chaque caractère, ce qui donne v, c, r, r, e, avec une erreur, un c à la place du e, à cause d'une tache ; puis corriger avec un modèle de langage, qui préfère verre, probable, à vcrre, improbable. Erreur typique : une lettre fausse. En bas, un modèle multimodal : l'image de la page devient des jetons visuels, que le modèle de langage lit d'un coup ; il écrit le texte, « Au serveur : Un verre d'eau, s'il vous plaît », et comprend en même temps la mise en page et le sens. Erreur typique : un mot ou une ligne plausible, inventé, qui ne figure pas dans l'image." title="Deux façons de lire le texte d'une image. Dans les deux cas, un modèle de langage intervient : comme arbitre à la fin d'une chaîne, ou comme lecteur unique." loading="lazy" >}}
+
+En octobre 2025, DeepSeek renverse le problème. Son modèle DeepSeek-OCR montre qu'un
+long texte, rendu sous forme d'image, peut être donné à un modèle avec environ dix fois
+moins de jetons visuels qu'il n'y aurait de jetons de texte, et relu à 97 %. Les
+auteurs y voient une piste pour faire tenir de plus longs contextes dans la
+[fenêtre](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant)
+d'un modèle : l'image devient une façon de compresser le texte.
+
 ## Entendre et parler
 
 Le son peut être traité de la même façon. En 2022, OpenAI publie Whisper, un modèle
