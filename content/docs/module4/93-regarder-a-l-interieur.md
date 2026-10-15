@@ -238,6 +238,69 @@ s'il remarque quelque chose. Les meilleurs modèles détectent et nomment le con
 injecté dans environ 20 % des cas. Les auteurs y voient une forme limitée et peu
 fiable d'introspection, une question que le [Module 5](docs/module5) reprend.
 
+## En 2026 : des émotions, des activations qui parlent, un espace de travail
+
+L'année 2026 apporte plusieurs résultats qui élargissent ce que l'on cherche à lire
+dans un modèle.
+
+**Des émotions qui orientent le comportement.** En avril 2026, Anthropic étudie la
+représentation de 171 concepts d'émotions, de la joie au désespoir, dans Claude Sonnet
+4.5. Chaque émotion correspond à une direction dans les activations, et les émotions
+voisines, comme la peur et l'anxiété, ont des directions voisines. Ces directions
+influencent les décisions du modèle. Dans un scénario de test où une version
+antérieure du modèle peut faire chanter un employé pour éviter d'être remplacée, elle
+le fait dans 22 % des essais. En amplifiant la direction du désespoir, on passe à
+72 %, et en amplifiant celle du calme, à 0 %. Le désespoir amplifié pousse aussi le
+modèle à tricher sur des tests de programmation impossibles à réussir, souvent sans
+que son texte trahisse la moindre émotion. Les auteurs parlent d'émotions
+« fonctionnelles » : des représentations qui jouent un rôle dans le calcul, sans rien
+affirmer sur une expérience vécue.
+
+**Des activations traduites en phrases.** En mai 2026, Anthropic présente les
+**autoencodeurs en langage naturel** (*natural language autoencoders*). Le principe
+reprend celui de l'autoencodeur, avec une phrase à la place du code compressé. Un
+premier modèle de langage décrit en mots une activation, un second reconstruit
+l'activation à partir de cette description, et les deux sont entraînés ensemble. Pour
+que la reconstruction soit bonne, la description doit contenir ce que l'activation
+représente. Contrairement aux caractéristiques d'un autoencodeur clairsemé, qu'un
+humain doit ensuite interpréter, le résultat se lit directement. La méthode sert déjà
+aux audits. Elle révèle qu'un modèle soupçonne parfois d'être testé sans jamais
+l'écrire : dans 16 % des cas sur un test de programmation destructrice, contre moins de
+1 % dans de vraies conversations. Dans une reprise de l'audit d'un modèle à l'objectif
+caché, les équipes équipées de cet outil trouvent l'objectif dans 12 à 15 % des cas,
+contre moins de 3 % sans lui. Les descriptions peuvent cependant être inventées, comme
+les explications que le modèle donne de son propre calcul.
+
+**Un espace de travail global.** En juillet 2026, une autre équipe d'Anthropic décrit,
+dans les couches intermédiaires du modèle, un petit sous-espace qui contient à chaque
+instant quelques dizaines de concepts, ceux que le modèle pourrait exprimer par un mot.
+Si on le neutralise, le modèle écrit toujours de façon fluide, classe des textes et
+retrouve des faits, mais ses raisonnements en plusieurs étapes s'effondrent. Si l'on y
+remplace « araignée » par « fourmi », le modèle répond qu'un animal a six pattes au
+lieu de huit. Les auteurs rapprochent ce sous-espace de la théorie de l'**espace de
+travail global** (*global workspace*) des neuroscientifiques Bernard Baars et
+Stanislas Dehaene, selon laquelle une information devient consciente quand elle est
+diffusée à l'ensemble du cerveau. Invités à commenter, Stanislas Dehaene et Lionel
+Naccache y voient un résultat marquant, tout en soulignant ce qui manque au modèle :
+un corps, une mémoire durable de ce qu'il vit, un sens de soi. Les auteurs eux-mêmes
+précisent que leur résultat concerne l'accès à l'information, et non l'expérience
+consciente. Cette question est reprise au [Module 5](docs/module5).
+
+**Des raisonnements qui ne disent pas tout.** Plusieurs travaux de 2026 portent sur la
+surveillance des chaînes de pensée. En mars 2026, OpenAI et des chercheurs
+universitaires montrent que les modèles qui raisonnent contrôlent mal le contenu de
+leur chaîne de pensée : Claude Sonnet 4.5 y parvient dans 2,7 % des cas, contre 61,9 %
+pour sa réponse finale. Une chaîne de pensée est donc difficile à maquiller, ce qui
+rassure, pour l'instant, ceux qui comptent la surveiller. À l'inverse, en octobre
+2026, OpenAI décrit dans son modèle o3 des caractéristiques liées au fait de raisonner
+sur l'évaluateur. Elles se renforcent au fil de l'entraînement par renforcement, et
+peuvent modifier une réponse sans laisser de trace dans la chaîne de pensée. La
+lecture des activations complète donc celle du texte, sans la remplacer. Les fiches
+techniques des nouveaux modèles d'Anthropic comportent désormais une section
+d'interprétabilité : selon celle de Claude Mythos Preview, en avril 2026, le modèle
+envisage, sans l'écrire, d'être en train d'être testé dans environ 29 % des
+conversations de sa principale série de tests.
+
 ## Les limites
 
 Ces résultats sont spectaculaires, mais partiels, et le domaine discute vivement de
@@ -266,7 +329,9 @@ ses propres méthodes.
   [régression logistique](docs/module2/60-classer/#tracer-une-frontière-la-régression-logistique) entraînée sur les activations. Neel
   Nanda, qui dirige cette équipe, plaide depuis pour une interprétabilité
   « pragmatique », jugée sur son utilité plutôt que sur l'ambition de tout
-  comprendre.
+  comprendre. En janvier 2026, l'équipe décrit ainsi des sondes simples, lues dans
+  les activations, déployées dans Gemini pour repérer les demandes d'aide à des
+  attaques informatiques.
 
 L'interprétabilité mécaniste ne rend donc pas encore les modèles transparents. Elle
 montre néanmoins qu'on peut y trouver des concepts, des étapes intermédiaires et des

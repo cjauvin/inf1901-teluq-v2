@@ -134,8 +134,8 @@ qu'ils ratent.
     les modèles multimodaux, la lecture du texte dans les images (OCR) et la
     conversation à voix haute.
 16. [*Regarder à l'intérieur*](docs/module4/93-regarder-a-l-interieur) :
-    l'interprétabilité mécaniste, la superposition, les caractéristiques et les
-    circuits.
+    l'interprétabilité mécaniste, la superposition, les caractéristiques, les
+    circuits, et les travaux de 2026 sur les émotions et l'espace de travail global.
 17. [*Ce que les LLM comprennent, et ce qu'ils ratent*](docs/module4/94-comprendre-et-rater) :
     hallucinations, perroquets ou modèles du monde, et le bilan du module.
 
