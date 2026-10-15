@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démonstration interactive : la superposition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; user-select: none; }
+        .choix { padding: 0.25rem 0.6rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; background: #fff; font-size: 0.8rem; color: #334155; }
+        .choix.actif { color: #fff; }
+        .titre { font-size: 0.72rem; font-weight: 700; color: #64748b; letter-spacing: 0.04em; text-transform: uppercase; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-slate-800">
+<div class="max-w-4xl w-full">
+<div class="bg-white p-3 rounded-xl shadow-xl border border-slate-200 text-sm">
+
+    <div class="flex flex-wrap items-center gap-3 mb-2">
+        <span class="font-bold text-slate-700">Rareté des concepts :</span>
+        <span class="text-xs text-slate-500">fréquents</span>
+        <input id="rarete" type="range" min="0" max="7" step="1" value="0" class="w-56 accent-teal-700">
+        <span class="text-xs text-slate-500">rares</span>
+        <span id="densite" class="text-xs text-slate-600 ml-1"></span>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-3">
+        <div class="md:w-1/2 rounded-lg p-2" style="background:#fbf7ee;border:1px solid #d9cbac">
+            <div class="titre mb-1">Les cinq concepts, rangés dans l'espace des deux neurones</div>
+            <svg id="plan" viewBox="0 0 360 330" class="w-full"></svg>
+        </div>
+        <div class="md:w-1/2 flex flex-col gap-2">
+            <div class="rounded-lg p-2 bg-slate-50 border border-slate-200">
+                <div class="titre">Concepts représentés</div>
+                <div id="nombre" class="text-2xl font-bold" style="color:#2f6f6a"></div>
+                <div id="resume" class="text-xs text-slate-600 leading-5" style="min-height:60px"></div>
+            </div>
+            <div class="rounded-lg p-2 bg-slate-50 border border-slate-200">
+                <div class="titre mb-1">À quoi réagit chaque neurone</div>
+                <svg id="neurones" viewBox="0 0 380 150" class="w-full"></svg>
+            </div>
+            <div class="rounded-lg p-2 bg-slate-50 border border-slate-200">
+                <div class="flex flex-wrap items-center gap-1 mb-1">
+                    <span class="titre mr-1">Activer un concept :</span>
+                    <div id="boutons" class="flex flex-wrap gap-1"></div>
+                </div>
+                <svg id="sortie" viewBox="0 0 380 100" class="w-full"></svg>
+                <div id="note-sortie" class="text-xs text-slate-500" style="min-height:4.4em"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-xs text-slate-500 text-center mt-2">
+        Un petit réseau doit faire passer cinq concepts par deux neurones seulement, puis les reconstruire.
+        Il a été entraîné d'avance pour chaque niveau de rareté ; c'est le modèle jouet d'Anthropic (2022).
+    </div>
+</div>
+</div>
+
+<script>
+/**
+ * Le modèle jouet de la superposition : h = W x (deux neurones), x' = ReLU(Wᵀ h + b). Les poids viennent de
+ * scripts/gen_superposition.py, entraînés pour huit niveaux de rareté. Chaque colonne de W est la direction d'un concept
+ * dans le plan des deux neurones ; on fait tourner chaque configuration pour que le premier concept pointe vers le haut.
+ */
+const NOMS = ['chat', 'Paris', 'violon', 'pluie', 'Python'];
+const COUL = ['#2f6f6a', '#3a6ea5', '#9a5b33', '#7b5ea7', '#c4564a'];
+let D = [], k = 0, actif = 0;
+const $ = id => document.getElementById(id);
+const ns = 'http://www.w3.org/2000/svg';
+function el(svg, tag, attrs, texte) {
+    const e = document.createElementNS(ns, tag);
+    for (const [a, v] of Object.entries(attrs)) e.setAttribute(a, v);
+    if (texte !== undefined) e.textContent = texte;
+    svg.appendChild(e); return e;
+}
+
+function tournee(W) {                 // tourner pour que le concept le plus long parmi les premiers pointe vers le haut
+    const a = Math.atan2(W[1][0], W[0][0]);
+    const r = Math.PI / 2 - a, c = Math.cos(r), s = Math.sin(r);
+    return [W[0].map((x, i) => c * x - s * W[1][i]), W[0].map((x, i) => s * x + c * W[1][i])];
+}
+
+function dessinerPlan(W) {
+    const svg = $('plan'); svg.replaceChildren();
+    const cx = 180, cy = 160, R = 110;
+    el(svg, 'defs', {}).innerHTML = COUL.map((c, i) => `<marker id="m${i}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${c}"/></marker>`).join('');
+    el(svg, 'circle', { cx, cy, r: R, fill: 'none', stroke: '#d9cbac', 'stroke-dasharray': '4 4' });
+    el(svg, 'line', { x1: cx - R - 14, y1: cy, x2: cx + R + 14, y2: cy, stroke: '#b8a888' });
+    el(svg, 'line', { x1: cx, y1: cy - R - 14, x2: cx, y2: cy + R + 14, stroke: '#b8a888' });
+    el(svg, 'text', { x: cx + R + 12, y: cy + 16, 'font-size': 10, fill: '#7a6f63', 'text-anchor': 'end' }, 'neurone 1');
+    el(svg, 'text', { x: cx + 6, y: cy - R - 4, 'font-size': 10, fill: '#7a6f63' }, 'neurone 2');
+    let absents = 0;
+    for (let i = 0; i < 5; i++) {
+        const x = W[0][i], y = W[1][i], n = Math.hypot(x, y);
+        if (n < 0.3) {
+            el(svg, 'text', { x: 12, y: 316 - absents * 14, 'font-size': 11, fill: '#94a3b8', 'font-style': 'italic' }, `« ${NOMS[i]} » : pas représenté`);
+            absents++; continue;
+        }
+        const ex = cx + x / 1.2 * R, ey = cy - y / 1.2 * R;
+        el(svg, 'line', { x1: cx, y1: cy, x2: ex, y2: ey, stroke: COUL[i], 'stroke-width': i === actif ? 4 : 2.6, 'marker-end': `url(#m${i})` });
+        const lx = cx + x / n * (R + 24), ly = cy - y / n * (R + 24) + 4;
+        el(svg, 'text', { x: lx, y: ly, 'font-size': 12.5, fill: COUL[i], 'text-anchor': 'middle', 'font-weight': 700 }, NOMS[i]);
+    }
+}
+
+function dessinerNeurones(W) {
+    const svg = $('neurones'); svg.replaceChildren();
+    for (let j = 0; j < 2; j++) {
+        const y0 = 6 + j * 70;
+        el(svg, 'text', { x: 0, y: y0 + 32, 'font-size': 11, fill: '#334155', 'font-weight': 700 }, `neurone ${j + 1}`);
+        el(svg, 'line', { x1: 228, y1: y0, x2: 228, y2: y0 + 60, stroke: '#cbd5e1' });
+        for (let i = 0; i < 5; i++) {
+            const v = W[j][i], w = Math.abs(v) / 1.2 * 120;
+            const yy = y0 + i * 12;
+            el(svg, 'text', { x: 168, y: yy + 8.5, 'font-size': 10, fill: COUL[i], 'text-anchor': 'end' }, NOMS[i]);
+            el(svg, 'rect', { x: v >= 0 ? 228 : 228 - w, y: yy, width: Math.max(w, 0.5), height: 9, rx: 1.5, fill: COUL[i], opacity: Math.abs(v) < 0.15 ? 0.25 : 0.9 });
+        }
+    }
+    el(svg, 'text', { x: 228, y: 148, 'font-size': 9, fill: '#94a3b8', 'text-anchor': 'middle' }, 'poids négatif ← 0 → poids positif');
+}
+
+function dessinerSortie(W, b) {
+    const svg = $('sortie'); svg.replaceChildren();
+    const h = [W[0][actif], W[1][actif]];
+    const xr = b.map((bi, i) => Math.max(0, W[0][i] * h[0] + W[1][i] * h[1] + bi));
+    el(svg, 'text', { x: 0, y: 11, 'font-size': 10, fill: '#64748b' }, `Reconstruction quand seul « ${NOMS[actif]} » est présent (valeur 1) :`);
+    for (let i = 0; i < 5; i++) {
+        const x0 = 14 + i * 74, H = 56, v = Math.min(xr[i], 1.3);
+        el(svg, 'rect', { x: x0, y: 22, width: 46, height: H, fill: '#f1f5f9', stroke: '#e2e8f0' });
+        el(svg, 'rect', { x: x0, y: 22 + H - v / 1.3 * H, width: 46, height: v / 1.3 * H, fill: COUL[i], opacity: i === actif ? 0.95 : 0.6 });
+        el(svg, 'text', { x: x0 + 23, y: 90, 'font-size': 9.5, fill: COUL[i], 'text-anchor': 'middle', 'font-weight': 700 }, NOMS[i]);
+        el(svg, 'text', { x: x0 + 23, y: 19, 'font-size': 9, fill: '#475569', 'text-anchor': 'middle' }, xr[i].toFixed(2).replace('.', ','));
+    }
+}
+
+function maj() {
+    const d = D[k], W = tournee(d.W);
+    const n = W[0].filter((x, i) => Math.hypot(x, W[1][i]) >= 0.3).length;
+    const dens = Math.round((1 - d.rarete) * 100);
+    $('densite').textContent = `chaque concept est présent dans ${dens} % des exemples`;
+    $('nombre').textContent = `${n} sur 5`;
+    $('resume').textContent = n === 2
+        ? "Les concepts sont fréquents : le réseau n'en garde que deux, à angle droit, un par neurone. Les trois autres sont perdus."
+        : n < 5
+        ? "Le réseau range plus de concepts que de neurones, par paires opposées. Deux concepts rarement présents en même temps peuvent partager une direction sans trop se gêner."
+        : "Les concepts sont rares : le réseau les range tous les cinq, en pentagone. C'est la superposition : chaque neurone réagit à plusieurs concepts, au prix d'un peu d'interférence.";
+    dessinerPlan(W);
+    dessinerNeurones(W);
+    dessinerSortie(W, d.b);
+    $('note-sortie').textContent = n < 5
+        ? "Un concept non représenté reçoit toujours la même valeur, sa moyenne : le réseau ne sait rien de lui."
+        : "Avec cinq concepts pour deux neurones, activer l'un d'eux peut en faire réagir un autre : c'est l'interférence. Le réseau l'efface en partie, grâce à la fonction ReLU qui coupe les petites valeurs.";
+    document.querySelectorAll('#boutons button').forEach((bt, i) => {
+        bt.classList.toggle('actif', i === actif);
+        bt.style.background = i === actif ? COUL[i] : ''; bt.style.borderColor = i === actif ? COUL[i] : '';
+    });
+}
+
+fetch('data/superposition.json').then(r => r.json()).then(d => {
+    D = d;
+    NOMS.forEach((nom, i) => {
+        const bt = document.createElement('button');
+        bt.className = 'choix'; bt.textContent = nom;
+        bt.onclick = () => { actif = i; maj(); };
+        $('boutons').appendChild(bt);
+    });
+    $('rarete').oninput = e => { k = +e.target.value; maj(); };
+    maj();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
