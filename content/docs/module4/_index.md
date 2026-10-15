@@ -106,9 +106,9 @@ un bilan de ce que ces modèles comprennent et de ce qu'ils ratent.
    modèles de Markov cachés, la traduction statistique, les vecteurs de documents.
 6. [*Des mots aux nombres : jetons et plongements*](docs/module4/45-des-mots-aux-nombres) :
    découper un texte, et représenter le sens des mots par des vecteurs.
-7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : des
-   modèles neuronaux aux Transformers de GPT, la fenêtre de contexte, et ce que la
-   prédiction exige.
+7. [*Prédire le mot suivant*](docs/module4/50-predire-le-mot-suivant) : du
+   modèle neuronal de 2003 au Transformer, le préentraînement, GPT, la fenêtre de
+   contexte, ce que la prédiction exige, et ce qui reste des idées classiques.
 8. [*Passer à l'échelle*](docs/module4/60-passer-a-l-echelle) : les lois d'échelle,
    l'apprentissage dans le contexte, les coûts, les modèles ouverts.
 9. [*Du modèle à l'assistant*](docs/module4/70-du-modele-a-l-assistant) :

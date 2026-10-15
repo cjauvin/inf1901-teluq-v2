@@ -61,12 +61,29 @@ de l'apprentissage profond.
 
 {{< image src="/images/module4/plongements-rapprochent.svg" alt="Trois panneaux reliés par des flèches. 1, le corpus : le chat et le chien mangent, courent, jouent, sautent, boivent et grandissent ; seul le chat dort ; « le chien dort » n'a jamais été vu. Le camion et le tracteur partagent eux aussi six verbes. 2, une carte des plongements à deux dimensions : chaque mot part d'une position tirée au hasard, marquée par un cercle vide, et suit une flèche en pointillés jusqu'à sa position finale, marquée par un point plein. La distance entre chat et chien passe de 2,2 à 0,6 ; celle entre camion et tracteur, de 2,8 à 0,4 ; les deux paires restent éloignées l'une de l'autre. 3, la conséquence : la probabilité de « dort » après « le chat », une suite présente dans le corpus, vaut 8 % ; après « le chien », une suite jamais vue, 7 % ; après « le tracteur », 0 %. Un modèle à n-grammes donnerait 0 % à « le chien dort »." title="Une petite expérience réelle : un modèle du même type que celui de 2003, avec des plongements à deux dimensions, entraîné sur un corpus jouet où chat et chien partagent six verbes, et où seul le chat « dort ». Parce que les deux mots apparaissent dans les mêmes contextes, l'entraînement rapproche leurs plongements ; et parce que chien est placé près de chat, le modèle prête au chien ce qu'il a appris sur le chat." loading="lazy" >}}
 
-Les [réseaux récurrents](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis)
-présentés au Module 3 ont ensuite permis de tenir compte d'un contexte plus long,
-en résumant tout le texte déjà lu dans leur mémoire. Autour de 2015, les meilleurs
-modèles de langage et de traduction sont des réseaux récurrents. Ils ont cependant
-deux défauts : leur mémoire s'efface sur les longs textes, et ils lisent un mot après
-l'autre, ce qui rend leur entraînement lent.
+## De 2003 à 2017 : des réseaux récurrents à l'attention
+
+Le modèle de 2003 ne regardait qu'une courte fenêtre fixe de mots. En 2010, Tomáš
+Mikolov, qui créera word2vec trois ans plus tard, remplace ce réseau par un
+[réseau récurrent](docs/module3/60-reseaux-recurrents/#une-boucle-la-mémoire), présenté
+au Module 3. Sa mémoire résume tout le texte déjà lu, sans limite fixe, et ses
+modèles de langage font nettement mieux que les meilleurs n-grammes de l'époque.
+
+En 2014, deux idées transforment la traduction automatique. Ilya Sutskever, Oriol
+Vinyals et Quoc Le, chez Google, relient deux réseaux récurrents : le premier lit la
+phrase d'origine, le second écrit la traduction, un mot après l'autre. C'est le
+modèle **séquence à séquence** (*sequence-to-sequence*, ou *seq2seq*). La même année,
+à Montréal, Dzmitry Bahdanau, Kyunghyun Cho et Yoshua Bengio lui ajoutent
+l'[attention](docs/module3/70-attention-transformer/#lattention-dans-la-traduction) :
+pour écrire chaque mot, le second réseau va chercher dans la phrase d'origine les
+mots dont il a besoin. En 2016, Google Traduction adopte la traduction neuronale,
+comme le raconte le chapitre
+« [Les réseaux récurrents](docs/module3/60-reseaux-recurrents/#ce-que-les-réseaux-récurrents-ont-permis) ».
+
+Ces réseaux ont cependant deux défauts : leur mémoire s'efface sur les longs textes,
+et ils lisent un mot après l'autre, ce qui rend leur entraînement lent. En 2017, le
+[Transformer](docs/module3/70-attention-transformer/#le-transformer) garde l'attention
+et abandonne la récurrence : tous les mots d'un texte se regardent en même temps.
 
 ## Trois façons d'assembler le Transformer
 
@@ -132,6 +149,15 @@ Mais là où un modèle à n-grammes ne gardait que les deux ou trois derniers m
 le modèle de 2003 une courte fenêtre fixe, GPT tient compte de tout le texte qu'il
 peut lire d'un coup. Ce qui change, c'est la façon de calculer la distribution.
 
+Le *P* de GPT désigne une idée qui s'impose cette année-là. En 2018, coup sur coup,
+ULMFiT, ELMo, GPT et BERT montrent qu'on peut **préentraîner** un modèle une seule
+fois, sur une grande quantité de texte et sans aucune étiquette, en lui faisant
+prédire des mots, puis l'**ajuster** à peu de frais pour chaque tâche : classer des
+avis, répondre à des questions, reconnaître des noms propres. C'est
+l'[apprentissage par transfert](docs/module3/50-reseaux-convolutifs/#réutiliser-un-réseau-lapprentissage-par-transfert)
+du Module 3, appliqué à la langue. Les modèles suivants iront plus loin : à partir de
+GPT-2, un modèle assez grand accomplit beaucoup de tâches sans même être ajusté.
+
 {{< image src="/images/module4/llm-jeton-apres-jeton.svg" alt="Un schéma en cinq étapes, de haut en bas. 1 : le texte « Le capitaine Nemo » est découpé en trois jetons. 2 : chaque jeton est remplacé par son plongement, une colonne de nombres. 3 : les plongements traversent les couches d'un Transformer, où chaque jeton ne peut regarder que les jetons qui le précèdent. 4 : à la sortie, le modèle donne une probabilité pour chacun des jetons du vocabulaire, par exemple 18 % pour « regarda », 11 % pour « sortit ». 5 : on tire un jeton, ici « regarda », on l'ajoute au texte, et on recommence avec le texte allongé." title="Comment un grand modèle de langage écrit : un jeton à la fois, en recommençant chaque fois avec le texte allongé." loading="lazy" >}}
 
 1. Le texte est découpé en jetons, et chaque jeton est remplacé par son plongement.
@@ -193,6 +219,27 @@ bien continuer par une autre question, comme dans une liste de questions d'exame
 Le passage de ce modèle à un assistant qui répond fait l'objet du chapitre
 « [Du modèle à l'assistant](docs/module4/70-du-modele-a-l-assistant) ». Le [chapitre suivant](docs/module4/60-passer-a-l-echelle) montre
 d'abord ce qui s'est passé quand on a rendu ces modèles beaucoup plus grands.
+
+## Ce qui a changé, ce qui est resté
+
+Les chapitres « [Des règles aux probabilités](docs/module4/40-des-regles-aux-probabilites) »
+et « [Les outils statistiques](docs/module4/42-les-outils-statistiques) » annonçaient
+que les idées de l'ère statistique survivent dans les grands modèles de langage. Le
+tableau suivant les met côte à côte.
+
+| Notion classique | Ce qu'elle devient dans un grand modèle de langage |
+|---|---|
+| le [modèle de langage](docs/module4/40-des-regles-aux-probabilites/#un-modèle-de-langage), la probabilité du mot suivant | inchangé : c'est exactement ce qu'estime GPT |
+| l'hypothèse de Markov : deux ou trois mots de contexte | la fenêtre de contexte : des milliers, voire des millions de jetons |
+| le [lissage](docs/module4/40-des-regles-aux-probabilites/#les-suites-jamais-vues-le-lissage), pour les suites jamais vues | la généralisation par les plongements : des mots voisins partagent ce qu'on sait d'eux |
+| la [perplexité](docs/module4/40-des-regles-aux-probabilites/#mesurer-un-modèle-la-perplexité) | la mesure d'erreur que l'entraînement fait baisser, l'entropie croisée (*cross-entropy*), dont elle est l'exponentielle |
+| le [canal bruité](docs/module4/42-les-outils-statistiques/#la-traduction-comme-un-canal-bruité), où le modèle de langage arbitre | un seul modèle, qui écrit directement la traduction ou la réponse |
+| les [vecteurs de documents](docs/module4/42-les-outils-statistiques/#représenter-des-documents) et la LSA | les plongements, appris plutôt que comptés |
+| les [caractéristiques faites à la main](docs/module4/42-les-outils-statistiques/#étiqueter-avec-des-caractéristiques-faites-à-la-main) | les représentations que le réseau apprend lui-même |
+| les chaînes de pièces : étiqueter, analyser, traduire, corriger | un seul modèle, entraîné de bout en bout |
+
+Le but n'a donc pas changé depuis Shannon et Markov : estimer la probabilité de la
+suite d'un texte. Ce qui a changé, c'est la façon de l'estimer, et l'échelle.
 
 ## Pour voir le mécanisme en détail
 
