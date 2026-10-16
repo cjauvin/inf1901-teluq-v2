@@ -170,6 +170,20 @@ que sur les poumons du patient.
 
 {{< image src="/images/module3/saillance-7.svg" alt="Deux grilles de 28 pixels sur 28. À gauche, l'image d'un 7. À droite, sa carte de saillance : en vert, les pixels qui ont poussé le classifieur vers la réponse « 7 », surtout les extrémités de la barre horizontale et le haut du trait vertical ; en rouge, ceux qui l'ont poussé vers « 2 », sa deuxième réponse, surtout le bas du trait." title="La carte de saillance d'un 7, calculée sur le classifieur de l'applet : en vert ce qui plaide pour « 7 », en rouge ce qui plaide pour « 2 »." loading="lazy" >}}
 
+Une autre démarche consiste à ouvrir le réseau lui-même, neurone par neurone. En
+2020, Chris Olah et ses collègues, alors chez OpenAI, étudient de petits groupes de
+neurones reliés entre eux, qu'ils appellent des **circuits** (*circuits*). Ils
+montrent comment des neurones qui détectent des courbes, dans différentes
+orientations, sont assemblés à partir de neurones qui détectent de simples contours.
+Ce circuit est assez bien compris pour que l'équipe en réécrive ensuite les poids à
+la main, et obtienne des détecteurs de courbes qui fonctionnent. Beaucoup d'autres
+neurones semblent cependant réagir à plusieurs choses sans rapport entre elles :
+l'un d'eux s'active devant des têtes de chats et devant l'avant des voitures. On les
+dit **polysémantiques** (*polysemantic*). Cette démarche, l'**interprétabilité
+mécaniste** (*mechanistic interpretability*), est reprise pour les modèles de langage
+au chapitre « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur) » du
+Module 4.
+
 Ces méthodes donnent des indices, pas une explication complète. La question de
 savoir ce qu'un réseau a vraiment appris reste en grande partie ouverte. Le
 [Module 5](docs/module5) reviendra sur ses conséquences : peut-on confier une

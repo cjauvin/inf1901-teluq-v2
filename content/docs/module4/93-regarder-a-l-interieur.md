@@ -30,23 +30,14 @@ calcul, peut être lu, modifié, et le calcul relancé autant de fois qu'on le v
 difficulté n'est donc pas l'accès, mais le sens. Un grand modèle compte des centaines
 de milliards de nombres, et aucun d'eux, pris isolément, ne signifie quoi que ce soit.
 
-Les premiers travaux portent sur les réseaux qui reconnaissent des images. Le
-[Module 3](docs/module3/40-apprentissage-profond/#une-hiérarchie-de-caractéristiques)
-présentait les images de Chris Olah et de ses collègues, chez Google, qui montrent ce
-que cherche chaque neurone d'un réseau convolutif. En 2020, Olah et son équipe
-publient « *Zoom In* », un article qui va plus loin. Ils étudient de petits groupes de
-neurones reliés entre eux, qu'ils appellent des **circuits** (*circuits*). Ils
-montrent, par exemple, comment des neurones qui détectent des courbes, dans
-différentes orientations, sont assemblés à partir de neurones qui détectent de simples
-contours. Ce circuit est assez bien compris pour que l'équipe en réécrive ensuite les
-poids à la main, et obtienne des détecteurs de courbes qui fonctionnent.
-
-Le même article fait une observation moins encourageante. Beaucoup de neurones
-réagissent à plusieurs choses sans rapport entre elles. L'un d'eux, dans le réseau
-étudié, s'active devant des têtes de chats, des pattes de chats et l'avant des
-voitures. On dit de ces neurones qu'ils sont **polysémantiques** (*polysemantic*).
-Dans les modèles de langage, ils sont la règle plutôt que l'exception, et lire les
-neurones un par un ne mène nulle part.
+Les premiers travaux, présentés au chapitre
+« [Tromper un réseau](docs/module3/90-tromper-un-reseau/#une-boîte-noire) » du
+Module 3, portent sur des réseaux qui reconnaissent des images. Ils y trouvent des
+**circuits**, comme celui des détecteurs de courbes, assez bien compris pour qu'on en
+réécrive les poids à la main, mais aussi des neurones **polysémantiques**, qui semblent
+réagir à plusieurs choses sans rapport entre elles, comme des têtes de chats et l'avant
+des voitures. Dans les modèles de langage, ces neurones semblent la règle plutôt que
+l'exception, et lire les neurones un par un a longtemps paru sans issue.
 
 ## Plus de concepts que de neurones : la superposition
 
@@ -98,6 +89,29 @@ Quelques observations à faire :
 
 Le résultat suggère qu'un grand modèle de langage est rempli de concepts superposés,
 et qu'il faut d'abord les démêler pour pouvoir les lire.
+
+{{% hint warning %}}
+**Une hypothèse contestée**
+
+En octobre 2026, Nick Cammarata, l'un des auteurs des travaux de 2020 sur les circuits,
+aujourd'hui chercheur chez Goodfire, publie un essai qui remet en cause ce récit. Son
+titre résume sa thèse : « *Neural Networks Are Already Clean* » (les réseaux de neurones
+sont déjà propres). Selon lui, la plupart des neurones polysémantiques des premiers
+travaux s'expliquaient par des outils imparfaits : mieux visualisé, le neurone « chats
+et voitures » détecte une forme en V, présente dans les deux. Ce qui ressemblait à de la
+superposition serait plutôt une **généralisation en cascade** : un neurone part d'un
+motif, puis l'étend de proche en proche à des cas voisins. Dans un audit préliminaire
+d'un modèle de langage ouvert, Qwen3-32B, il estime qu'environ 90 % des neurones ont une
+seule fonction principale. Il en conclut qu'il vaut mieux étudier directement les
+neurones et les circuits du réseau, plutôt que de passer par des autoencodeurs
+clairsemés, qui, dans ses expériences, ne retrouvent pas de concepts que les neurones
+n'avaient pas déjà.
+
+L'auteur présente lui-même son texte comme une hypothèse de travail, dont plusieurs
+chiffres reposent sur de petits échantillons, et annonce un article technique. Si sa
+thèse se confirme, le phénomène du modèle jouet resterait réel, mais il serait rare dans
+les vrais réseaux, et l'interprétabilité serait plus abordable qu'on le pensait.
+{{% /hint %}}
 
 ## Démêler les concepts : les autoencodeurs clairsemés
 
@@ -318,7 +332,10 @@ ses propres méthodes.
   une autre. Il n'existe donc pas une liste unique des concepts d'un modèle, et ce que
   l'on trouve dépend en partie de la façon dont on le cherche. Des autoencodeurs
   entraînés sur des réseaux aux poids aléatoires produisent même des caractéristiques
-  d'apparence lisible, qui reflètent les données plutôt que le modèle.
+  d'apparence lisible, qui reflètent les données plutôt que le modèle. En 2026, un des
+  pionniers du domaine va plus loin et doute que la superposition soit répandue dans
+  les vrais réseaux (voir l'encadré de la section
+  « [Plus de concepts que de neurones](#plus-de-concepts-que-de-neurones-la-superposition) »).
 - **Des graphes qui n'expliquent pas tout.** Selon leurs propres auteurs, les graphes
   d'attribution de 2025 donnent une explication satisfaisante pour environ une requête
   sur quatre, et chaque graphe demande des heures d'analyse humaine.
