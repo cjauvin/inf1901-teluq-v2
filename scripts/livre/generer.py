@@ -195,6 +195,19 @@ def preparer(html: str, site: Path, conv: Path) -> tuple[str, str]:
                 bloc.replace_with(pre)
                 pre.insert_after(note)
 
+        # tableaux larges → largeurs de colonnes explicites ; sans elles, pandoc donne à
+        # LaTeX des colonnes qui ne replient pas le texte, et le tableau sort de la page
+        for tableau in sec.find_all("table"):
+            lignes = [[c.get_text(" ", strip=True) for c in tr.find_all(["td", "th"])] for tr in tableau.find_all("tr")]
+            ncol = max((len(l) for l in lignes), default=0)
+            longueurs = [max((len(l[j]) for l in lignes if j < len(l)), default=0) for j in range(ncol)]
+            if ncol and sum(longueurs) > 70 and not tableau.find("colgroup"):
+                poids = [min(max(n, 8), 70) for n in longueurs]
+                groupe = soup.new_tag("colgroup")
+                for p in poids:
+                    groupe.append(soup.new_tag("col", attrs={"style": f"width: {100 * p / sum(poids):.0f}%"}))
+                tableau.insert(0, groupe)
+
         # images du shortcode (case à cocher d'agrandissement) → figure avec légende
         for label in sec.find_all("label", class_="book-image"):
             img = label.find("img")
