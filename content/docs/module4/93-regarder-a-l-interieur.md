@@ -219,6 +219,74 @@ l'entraînement, et que l'on découvre par l'observation et l'expérience. En ma
 les outils qui produisent ces graphes sont publiés en code ouvert, pour des modèles
 ouverts.
 
+## Un calcul entièrement compris : le grokking
+
+Le chapitre « [Apprentissage profond](docs/module3/40-apprentissage-profond/#plus-de-paramètres-que-dexemples) »
+du Module 3 a présenté le **grokking** : sur de petites tâches d'arithmétique, un réseau
+apprend d'abord ses exemples par cœur, puis, bien plus tard, se met soudain à
+généraliser. L'équipe d'OpenAI qui l'a observé en 2022 l'a découvert par hasard : selon
+le récit qu'en a fait l'une de ses chercheuses, Alethea Power, un membre de l'équipe
+était parti en vacances sans arrêter un entraînement, qui avait continué bien après le
+moment où l'on aurait jugé qu'il n'y avait plus rien à apprendre. Le phénomène a d'abord
+semblé mystérieux.
+
+En 2023, Neel Nanda et ses collègues ouvrent un réseau qui « grokke ». La tâche est
+l'**addition modulaire** : additionner deux nombres de 0 à 112, et ne garder que le
+reste de la division par 113, comme une horloge revient à 1 après 12. Le réseau, un
+Transformer d'une seule couche, voit 30 % des 12 769 additions possibles pendant son
+entraînement. Il ne reçoit aucune notion de nombre : pour lui, chaque nombre n'est
+qu'un jeton, un symbole sans structure.
+
+Les chercheurs découvrent que le réseau a réinventé l'horloge. Il représente chaque
+nombre par des angles sur cinq cercles, qui tournent à des vitesses différentes.
+Additionner deux nombres revient alors à faire tourner l'un d'un angle donné par
+l'autre, et le réseau effectue cette rotation à l'aide d'une identité trigonométrique
+apprise au secondaire, celle du cosinus d'une somme. Il lit enfin la réponse à l'endroit
+où les cinq cercles s'accordent. L'explication est complète, et vérifiable : si l'on
+supprime ces cinq fréquences, le réseau répond au hasard ; si l'on supprime toutes les
+autres, il fonctionne un peu mieux.
+
+{{< image src="/images/module4/grokking-horloge.svg" alt="À gauche, une horloge de 12 heures : une aiguille bleue pointe sur 9 ; un arc vert avance de 5 heures et arrive sur 2, en rouge : 9 + 5 = 14, soit 2 sur l'horloge. Additionner, c'est faire tourner l'aiguille. À droite, ce que fait le réseau pour l'addition modulo 113 : trois petits cercles, qui tournent à des vitesses différentes, fréquences 14, 35 et 41. Sur chacun, le nombre 9 est un point bleu, et l'ajout de 5 le fait tourner jusqu'au point rouge, la position de 14. Le réseau combine les angles par une identité trigonométrique, puis lit la réponse là où tous les cercles s'accordent." title="L'arithmétique de l'horloge, telle que le réseau l'a réinventée : chaque nombre devient un angle sur quelques cercles, et additionner revient à tourner. Trois des cinq cercles du réseau étudié." loading="lazy" >}}
+
+L'étude explique aussi le saut de la généralisation, qui n'est qu'apparent.
+L'entraînement passe par trois temps.
+
+1. **La mémorisation.** En moins de 1 400 époques, le réseau apprend ses exemples par
+   cœur, et répond au hasard sur les autres.
+2. **La formation du circuit.** Pendant des milliers d'époques, le circuit des horloges
+   se construit peu à peu, alors que rien ne change dans les scores : le réseau répond
+   déjà juste à ses exemples, et toujours au hasard aux autres.
+3. **Le nettoyage.** Le *weight decay*, la
+   [régularisation](docs/module3/30-entrainer-un-reseau/#lentraînement-en-pratique) qui
+   pénalise les poids trop grands, efface peu à peu la mémorisation, devenue inutile
+   puisque le circuit fait le même travail avec des poids plus petits. C'est seulement
+   alors que la précision sur les exemples nouveaux bondit.
+
+{{< image src="/images/module4/grokking-trois-temps.svg" alt="Un graphique de l'entraînement, en époques, de 0 à 16 000. La précision sur les exemples d'entraînement monte à 100 % avant 1 400 époques : c'est la mémorisation. La précision sur les exemples nouveaux reste presque nulle jusqu'à environ 9 400 époques, puis monte d'un coup jusqu'à 100 % avant 14 000 époques. Une courbe pointillée montre la part du calcul confiée au circuit des horloges : elle grandit régulièrement pendant la formation du circuit, bien avant le saut. Trois bandes marquent les trois temps : mémorisation, formation du circuit, nettoyage." title="Les trois temps du grokking : le circuit se forme en silence, bien avant que la généralisation n'apparaisse dans les scores." loading="lazy" >}}
+
+Sans régularisation, le réseau ne grokke pas. Et avec l'**arrêt précoce** présenté au
+Module 3, qui interrompt l'entraînement quand l'erreur sur des exemples mis de côté
+cesse de diminuer, on aurait arrêté au milieu du deuxième temps, sans jamais voir la
+généralisation. La leçon dépasse ce petit réseau : un score qui ne bouge pas peut cacher
+un apprentissage en cours, ce qui éclaire le débat sur les
+[capacités qui semblent apparaître](docs/module4/60-passer-a-l-echelle/#des-capacités-qui-apparaissent)
+d'un coup dans les grands modèles.
+
+Des représentations géométriques du même genre apparaissent dans les grands modèles. En
+octobre 2025, une équipe d'Anthropic étudie comment Claude 3.5 Haiku décide où couper
+une ligne dans un texte de largeur fixe. Le modèle compte les caractères déjà écrits sur
+la ligne, mais il ne représente pas ce nombre par des chiffres : il le représente par une
+position sur une courbe enroulée, une sorte d'hélice, dans un espace de six dimensions.
+Des têtes d'attention font ensuite tourner cette courbe pour la comparer à la largeur de
+la ligne, ce qui rend la décision de couper presque immédiate. Les chercheurs ont même
+fabriqué des « illusions », des suites de caractères qui trompent ce compteur.
+
+La vidéo suivante, de la chaîne Welch Labs (décembre 2025), raconte cette histoire en
+détail, de la découverte du grokking jusqu'aux formes trouvées dans Claude, avec des
+animations du réseau qui calcule sur des horloges. Elle est en anglais.
+
+{{< youtube D8GOeCFFby4 >}}
+
 ## À quoi sert l'interprétabilité
 
 L'interprétabilité est d'abord une science : elle cherche à comprendre des systèmes

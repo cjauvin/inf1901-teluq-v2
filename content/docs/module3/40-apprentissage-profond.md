@@ -329,7 +329,9 @@ aucune erreur sur eux, mais répond au hasard sur les nouveaux. Si l'on poursuit
 l'entraînement bien au-delà, parfois des milliers d'étapes plus tard, il se met
 soudain à généraliser presque parfaitement. Les chercheurs ont appelé ce phénomène
 ***grokking***, d'après un mot inventé par l'écrivain Robert Heinlein, qui signifie
-« comprendre en profondeur ».
+« comprendre en profondeur ». Le chapitre
+« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#un-calcul-entièrement-compris-le-grokking) »
+du Module 4 montre ce qui se passe dans le réseau pendant ce long plateau.
 
 ## Apprendre sans étiquettes : l'autoencodeur
 
