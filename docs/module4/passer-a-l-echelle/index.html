@@ -1,0 +1,220 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Passer à l’échelle Le chapitre « Prédire le mot suivant » a présenté le principe des grands modèles de langage : un Transformer entraîné à prédire le jeton suivant d’un texte. Ce principe n’a presque pas changé depuis le premier GPT, en 2018. Ce qui a changé, c’est la taille : la taille des modèles, la quantité de textes sur lesquels ils sont entraînés, et la quantité de calcul consacrée à leur entraînement. Ce chapitre présente cette course à la taille, ce qu’elle a produit, et ce qu’elle coûte.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Passer à l'échelle"><meta property="og:description" content="Passer à l’échelle Le chapitre « Prédire le mot suivant » a présenté le principe des grands modèles de langage : un Transformer entraîné à prédire le jeton suivant d’un texte. Ce principe n’a presque pas changé depuis le premier GPT, en 2018. Ce qui a changé, c’est la taille : la taille des modèles, la quantité de textes sur lesquels ils sont entraînés, et la quantité de calcul consacrée à leur entraînement. Ce chapitre présente cette course à la taille, ce qu’elle a produit, et ce qu’elle coûte."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Passer à l'échelle"><meta itemprop=description content="Passer à l’échelle Le chapitre « Prédire le mot suivant » a présenté le principe des grands modèles de langage : un Transformer entraîné à prédire le jeton suivant d’un texte. Ce principe n’a presque pas changé depuis le premier GPT, en 2018. Ce qui a changé, c’est la taille : la taille des modèles, la quantité de textes sur lesquels ils sont entraînés, et la quantité de calcul consacrée à leur entraînement. Ce chapitre présente cette course à la taille, ce qu’elle a produit, et ce qu’elle coûte."><meta itemprop=wordCount content="2751"><title>Passer à l'échelle • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.2548c1ebfb3b3e76768a3447705a7e9e1d636bcd685def8976854bdf784d3d5b.css integrity="sha256-JUjB6/s7PnZ2ijRHcFp+nh1ja81oXe+JdoVL33hNPVs=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.14a1764f940795ea0fbc5b0d00169e7611a8c6ac180fce4d017dc7c746c88408.js integrity="sha256-FKF2T5QHleoPvFsNABaedhGoxqwYD85NAX3Hx0bIhAg=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><input type=checkbox id=section-ad65b8547fe18e1e59e616b5d251eca3 class=toggle checked>
+<label for=section-ad65b8547fe18e1e59e616b5d251eca3 class=flex><a href=/inf1901-teluq-v2/docs/module4/>Module 4 - IA générative et grands modèles de langage</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module4/generer/>Générer : imiter une distribution</a></li><li><a href=/inf1901-teluq-v2/docs/module4/quatre-facons-de-generer/>Quatre façons de générer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/>Des images, des voix, des vidéos</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>Des règles aux probabilités</a></li><li><a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/>Les outils statistiques</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/>Des mots aux nombres : jetons et plongements</a></li><li><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/ class=active>Passer à l'échelle</a></li><li><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>Du modèle à l'assistant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>Des outils, un harnais et des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>Le défi ARC</a></li><li><a href=/inf1901-teluq-v2/docs/module4/mots-et-images/>Relier les mots et les images</a></li><li><a href=/inf1901-teluq-v2/docs/module4/voir-entendre-parler/>Des modèles qui voient, entendent et parlent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l'intérieur</a></li><li><a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/>Ce que les LLM comprennent, et ce qu'ils ratent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/travail-not%C3%A9-4/>Travail noté 4</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Passer à l'échelle</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#de-gpt-à-gpt-4>De GPT à GPT-4</a></li><li><a href=#des-lois-déchelle>Des lois d&rsquo;échelle</a></li><li><a href=#apprendre-dans-le-contexte>Apprendre dans le contexte</a></li><li><a href=#des-capacités-qui-apparaissent>Des capacités qui apparaissent ?</a></li><li><a href=#que-mesurent-les-scores>Que mesurent les scores ?</a></li><li><a href=#le-prix-de-la-taille>Le prix de la taille</a></li><li><a href=#modèles-fermés-modèles-ouverts>Modèles fermés, modèles ouverts</a></li><li><a href=#ce-que-coûte-une-réponse>Ce que coûte une réponse</a></li><li><a href=#jusquoù>Jusqu&rsquo;où ?</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=passer-à-léchelle>Passer à l&rsquo;échelle<a class=anchor href=#passer-%c3%a0-l%c3%a9chelle></a></h1><p>Le chapitre « <a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a> » a
+présenté le principe des grands modèles de langage : un Transformer entraîné à
+prédire le jeton suivant d&rsquo;un texte. Ce principe n&rsquo;a presque pas changé depuis le
+premier GPT, en 2018. Ce qui a changé, c&rsquo;est la <strong>taille</strong> : la taille des modèles,
+la quantité de textes sur lesquels ils sont entraînés, et la quantité de calcul
+consacrée à leur entraînement. Ce chapitre présente cette course à la taille, ce
+qu&rsquo;elle a produit, et ce qu&rsquo;elle coûte.</p><h2 id=de-gpt-à-gpt-4>De GPT à GPT-4<a class=anchor href=#de-gpt-%c3%a0-gpt-4></a></h2><p>Chaque nouvelle version des modèles d&rsquo;OpenAI a multiplié la taille de la précédente.</p><ul><li><strong>GPT</strong> (juin 2018) compte 117 millions de paramètres. Il est entraîné sur environ
+7 000 livres.</li><li><strong>GPT-2</strong> (février 2019) compte 1,5 milliard de paramètres, entraînés sur 8 millions
+de pages Web. OpenAI annonce d&rsquo;abord ne pas publier le modèle complet, par crainte
+qu&rsquo;il serve à produire de fausses nouvelles en masse, puis le publie par étapes
+jusqu&rsquo;en novembre 2019. Ses textes sont souvent cohérents sur plusieurs
+paragraphes, ce qui surprend à l&rsquo;époque.</li><li><strong>GPT-3</strong> (mai 2020) compte 175 milliards de paramètres, entraînés sur environ
+300 milliards de jetons.</li><li><strong>GPT-4</strong> (mars 2023) est beaucoup plus performant, mais OpenAI ne publie plus sa
+taille. Selon Sam Altman, le directeur d&rsquo;OpenAI, son entraînement a coûté plus de
+100 millions de dollars.</li></ul><p>D&rsquo;autres entreprises ont publié des modèles du même ordre de grandeur, comme Google,
+Anthropic ou Meta. La figure ci-dessous rassemble quelques modèles dont la taille est
+connue. Les barres sont dessinées sur une échelle logarithmique : chaque graduation
+vaut dix fois la précédente.</p><label class=book-image for=book-image-toggle-2c499623af3e><input class="hidden toggle" type=checkbox id=book-image-toggle-2c499623af3e>
+<img src=/inf1901-teluq-v2/images/module4/taille-des-modeles.svg alt="Deux diagrammes à barres sur une échelle logarithmique, où chaque graduation vaut dix fois la précédente. À gauche, le nombre de paramètres : 117 millions pour GPT-1 en 2018, 1,5 milliard pour GPT-2 en 2019, 175 milliards pour GPT-3 en 2020, 70 milliards pour Chinchilla en 2022, 405 milliards pour Llama 3.1 en 2024. À droite, le nombre de jetons d'entraînement : 300 milliards pour GPT-3, 1 400 milliards pour Chinchilla, 15 000 milliards pour Llama 3.1." loading=lazy title="En six ans, le nombre de paramètres a été multiplié par plus de 3 000, et la quantité de texte d'entraînement a suivi." width=700 height=444 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-2c499623af3e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=des-lois-déchelle>Des lois d&rsquo;échelle<a class=anchor href=#des-lois-d%c3%a9chelle></a></h2><p>Pourquoi les entreprises ont-elles investi des sommes croissantes dans des modèles
+toujours plus grands ? En partie parce que le résultat était prévisible.</p><p>En janvier 2020, Jared Kaplan et ses collègues, chez OpenAI, publient une étude sur
+des centaines de modèles de tailles différentes. Ils mesurent l&rsquo;erreur de chaque
+modèle sur des textes qu&rsquo;il n&rsquo;a jamais vus, c&rsquo;est-à-dire sa capacité à prédire le
+jeton suivant. Cette erreur diminue de façon très régulière quand on augmente le
+nombre de paramètres, la quantité de données ou la quantité de calcul. Sur un
+graphique à échelles logarithmiques, les points s&rsquo;alignent sur une droite. On parle
+de <strong>lois d&rsquo;échelle</strong> (<em>scaling laws</em>).</p><label class=book-image for=book-image-toggle-1549ce4bdab7><input class="hidden toggle" type=checkbox id=book-image-toggle-1549ce4bdab7>
+<img src=/inf1901-teluq-v2/images/module4/loi-d-echelle.svg alt="Un schéma. L'axe horizontal donne la quantité de calcul utilisée pour l'entraînement, l'axe vertical l'erreur du modèle sur des textes qu'il n'a jamais vus, tous deux sur une échelle logarithmique. Des points, un par modèle entraîné, s'alignent sur une droite qui descend régulièrement. La droite est prolongée en pointillé vers la droite : on peut prédire l'erreur d'un modèle plus grand avant de l'entraîner." loading=lazy title="Le principe d'une loi d'échelle (schéma) : en prolongeant la droite, on prévoit l'erreur d'un modèle plus grand avant de l'entraîner." width=700 height=360 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-1549ce4bdab7"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces lois ont une conséquence pratique. Avant de dépenser des dizaines de millions de
+dollars pour entraîner un très grand modèle, on peut entraîner une série de petits
+modèles, tracer la droite, et prévoir le résultat. Elles confirment aussi la
+<a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/#la-le%c3%a7on-am%c3%a8re>leçon amère</a> de Richard
+Sutton, présentée au Module 3 : les méthodes générales qui tirent parti d&rsquo;une
+quantité croissante de calcul finissent par l&rsquo;emporter. Elles prolongent enfin
+l&rsquo;énigme présentée au chapitre
+« <a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/#plus-de-param%c3%a8tres-que-dexemples>L&rsquo;apprentissage profond</a> » :
+ces modèles ont des milliards de paramètres, et pourtant ils généralisent de mieux
+en mieux à mesure qu&rsquo;ils grandissent.</p><p>En mars 2022, une équipe de DeepMind corrige la recette. Pour un budget de calcul
+donné, il ne sert à rien d&rsquo;agrandir le modèle si on ne lui donne pas assez de textes.
+Leur modèle Chinchilla, avec 70 milliards de paramètres entraînés sur
+1 400 milliards de jetons, dépasse des modèles quatre fois plus grands entraînés sur
+moins de données. La règle qui en est tirée, environ vingt jetons d&rsquo;entraînement par
+paramètre, a guidé les modèles suivants. Ceux-ci vont d&rsquo;ailleurs bien au-delà : un
+modèle plus petit, entraîné plus longtemps, coûte moins cher à utiliser ensuite.</p><h2 id=apprendre-dans-le-contexte>Apprendre dans le contexte<a class=anchor href=#apprendre-dans-le-contexte></a></h2><p>L&rsquo;article qui présente GPT-3 en 2020 s&rsquo;intitule « <em>Language Models are Few-Shot
+Learners</em> » (« les modèles de langage apprennent à partir de quelques exemples »). Il
+décrit une capacité que personne n&rsquo;avait programmée.</p><blockquote class="book-hint info"><p><strong>Quelques exemples dans la requête</strong></p><p>L&rsquo;article donne à GPT-3 le texte suivant, et lui demande de le continuer. La consigne
+de la première ligne était en anglais ; elle est traduite ici.</p><pre tabindex=0><code>Traduire de l&#39;anglais vers le français :
+sea otter =&gt; loutre de mer
+peppermint =&gt; menthe poivrée
+plush girafe =&gt; girafe peluche
+cheese =&gt;</code></pre><p>Le modèle complète par « fromage ». Il n&rsquo;a jamais été entraîné spécialement à
+traduire. Les trois exemples placés dans le texte suffisent à lui faire comprendre la
+tâche demandée, et il l&rsquo;applique au quatrième mot.</p></blockquote><p>Cette capacité s&rsquo;appelle l&rsquo;<strong>apprentissage dans le contexte</strong> (<em>in-context learning</em>). On
+distingue la requête sans exemple (<em>zero-shot</em>), avec un seul exemple (<em>one-shot</em>) et
+avec quelques exemples (<em>few-shot</em>). Elle est très différente de l&rsquo;apprentissage
+présenté au <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Module 2</a> : aucun poids du modèle
+n&rsquo;est modifié. Le modèle reconnaît la tâche dans le texte qu&rsquo;on lui donne, et ses
+performances augmentent avec sa taille. GPT-3 réussit de nombreuses tâches de cette
+façon, alors que les modèles plus petits n&rsquo;y parviennent presque pas. La rédaction des
+requêtes (<em>prompting</em>) est devenue une compétence à part entière, présentée au chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/#formuler-la-requ%c3%aate>Des outils, un harnais et des agents</a> ».</p><p>Ces mots existaient avant les grands modèles de langage, avec un autre sens. En
+apprentissage automatique, l&rsquo;<strong>apprentissage à partir de quelques exemples</strong>
+(<em>few-shot learning</em>) désignait la capacité d&rsquo;apprendre une catégorie nouvelle, un
+oiseau ou un visage jamais vus, à partir d&rsquo;une poignée d&rsquo;exemples étiquetés, en
+ajustant les poids d&rsquo;un modèle déjà entraîné. L&rsquo;apprentissage <strong>sans exemple</strong>
+(<em>zero-shot learning</em>) désignait la reconnaissance d&rsquo;une catégorie qu&rsquo;on n&rsquo;a jamais
+vue, à partir de sa seule description, par exemple « un oiseau au bec rouge et à la
+queue fourchue ». Avec GPT-3, les mêmes mots ont pris un sens nouveau : les exemples
+se trouvent dans la requête, et le modèle n&rsquo;est pas entraîné du tout. Les deux sens
+coexistent encore, et il faut souvent deviner, d&rsquo;après le contexte, lequel un auteur
+emploie.</p><p>L&rsquo;apprentissage dans le contexte n&rsquo;est qu&rsquo;un point sur un spectre. Pour faire accomplir
+une tâche à un modèle, on peut lui donner plus ou moins d&rsquo;exemples, et modifier plus
+ou moins ses poids.</p><table><thead><tr><th>Façon de faire</th><th>Exemples nécessaires</th><th>Les poids changent-ils ?</th></tr></thead><tbody><tr><td>requête sans exemple (<em>zero-shot</em>)</td><td>aucun, seulement une consigne</td><td>non</td></tr><tr><td>requête avec quelques exemples (<em>few-shot</em>)</td><td>de un à quelques dizaines, placés dans la requête</td><td>non</td></tr><tr><td><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#imiter-de-bonnes-r%c3%a9ponses>ajustement</a> (<em>fine-tuning</em>)</td><td>des centaines à des milliers</td><td>oui, un peu</td></tr><tr><td><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>entraînement complet</a></td><td>des milliers à des milliards</td><td>oui, entièrement</td></tr></tbody></table><p>Plus on descend dans le tableau, plus il faut de données et de calcul, mais plus le
+modèle se spécialise. En pratique, on essaie d&rsquo;abord la requête, qui ne coûte presque
+rien, et on n&rsquo;ajuste le modèle que si elle ne suffit pas. Jusqu&rsquo;en 2020, presque tout
+se faisait dans les deux dernières rangées. La surprise de GPT-3 est que les deux
+premières suffisent souvent.</p><h2 id=des-capacités-qui-apparaissent>Des capacités qui apparaissent ?<a class=anchor href=#des-capacit%c3%a9s-qui-apparaissent></a></h2><p>En 2022, Jason Wei et ses collègues, chez Google, décrivent des <strong>capacités
+émergentes</strong> (<em>emergent abilities</em>). Sur certaines tâches, comme l&rsquo;addition de nombres
+de plusieurs chiffres ou certaines énigmes, les petits modèles échouent presque
+complètement, puis, au-delà d&rsquo;une certaine taille, les modèles réussissent soudain.
+La capacité semble apparaître d&rsquo;un coup, sans avoir été annoncée par les modèles
+plus petits. L&rsquo;idée a beaucoup circulé, car elle suggère que des modèles plus
+grands pourraient acquérir des capacités imprévisibles.</p><p>En 2023, Rylan Schaeffer et ses collègues, à l&rsquo;Université Stanford, contestent cette
+interprétation. Selon eux, l&rsquo;apparition soudaine vient souvent de la façon de mesurer.
+Si l&rsquo;on compte une addition comme réussie seulement quand tous les chiffres sont
+exacts, la note passe brusquement de 0 à 1. Si l&rsquo;on compte les chiffres exacts un par
+un, le progrès est régulier. Le débat n&rsquo;est pas tranché : certaines capacités semblent
+bien apparaître de façon abrupte, d&rsquo;autres sont des effets de mesure.</p><h2 id=que-mesurent-les-scores>Que mesurent les scores ?<a class=anchor href=#que-mesurent-les-scores></a></h2><p>Toutes ces mesures supposent une chose : que le modèle n&rsquo;ait jamais vu les questions
+du test. C&rsquo;est la règle fondamentale du Module 2 :
+<a href=/inf1901-teluq-v2/docs/module2/generaliser/#un-mod%c3%a8le-se-juge-sur-ce-quil-na-jamais-vu>un modèle se juge sur ce qu&rsquo;il n&rsquo;a jamais vu</a>,
+et la moindre
+<a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/#le-score-trop-beau-pour-%c3%aatre-vrai-la-fuite-de-donn%c3%a9es>fuite de données</a>
+rend le score trop beau pour être vrai.</p><p>Avec les grands modèles de langage, cette règle devient presque impossible à
+respecter. On les compare sur des <strong>bancs d&rsquo;essai</strong> (<em>benchmarks</em>), des tests
+standardisés de questions et de problèmes. Or ces modèles sont entraînés sur une
+grande partie du Web, où circulent aussi ces questions : les énoncés sont publiés en
+ligne, discutés sur des forums, accompagnés de leurs solutions. Plus le corpus est
+grand, plus il est probable qu&rsquo;une question du test, ou une variante proche, s&rsquo;y
+trouve. Et comme les entreprises publient rarement la liste exacte de leurs données
+d&rsquo;entraînement, on ne peut même pas le vérifier. C&rsquo;est la <strong>contamination</strong> des bancs
+d&rsquo;essai (<em>benchmark contamination</em>) : la contamination du Module 2, à l&rsquo;échelle du
+Web.</p><p>Deux observations montrent que le problème est réel.</p><ul><li>En 2023, des utilisateurs remarquent que GPT-4 résout des problèmes de
+programmation du site Codeforces publiés avant la fin de ses données
+d&rsquo;entraînement, mais presque aucun des problèmes de même difficulté publiés après.</li><li>En 2024, une équipe de l&rsquo;entreprise Scale AI rédige GSM1k, mille nouveaux
+problèmes de mathématiques de même niveau que ceux de GSM8k, un banc d&rsquo;essai très
+utilisé. Plusieurs modèles y perdent jusqu&rsquo;à 13 points : ils avaient en partie
+appris le banc d&rsquo;essai lui-même.</li></ul><p>S&rsquo;y ajoute un effet plus subtil, résumé par la <strong>loi de Goodhart</strong> : quand une mesure
+devient un objectif, elle cesse d&rsquo;être une bonne mesure. Comme les entreprises se
+comparent sur les mêmes bancs d&rsquo;essai, elles ont intérêt à y optimiser leurs
+modèles, consciemment ou non. Les chercheurs répondent de plusieurs façons : des
+tests gardés secrets, des tests rédigés après la date de fin des données
+d&rsquo;entraînement, et des évaluations où des humains comparent deux réponses sans
+savoir de quel modèle elles viennent. Aucune n&rsquo;est parfaite. Savoir ce qu&rsquo;un grand
+modèle sait vraiment faire, au-delà de ce qu&rsquo;il a vu, reste l&rsquo;une des questions les
+plus difficiles du domaine.</p><blockquote class="book-hint info"><p><strong>Un pélican à vélo</strong></p><p>Fin octobre 2024, le programmeur et blogueur Simon Willison commence à soumettre les
+nouveaux modèles à un test de son invention : « <em>Generate an SVG of a pelican riding
+a bicycle</em> », dessiner en SVG un pélican qui fait du vélo. Le SVG est un format
+d&rsquo;image écrit sous forme de code. Le modèle doit donc décrire chaque cercle et chaque
+trait par ses coordonnées, sans jamais voir le résultat. La tâche est plus difficile
+qu&rsquo;elle n&rsquo;en a l&rsquo;air : un vélo est difficile à dessiner de mémoire, un pélican aussi,
+et un pélican n&rsquo;a pas la forme qu&rsquo;il faut pour pédaler. Surtout, la scène est assez
+absurde pour qu&rsquo;aucun dessin de ce genre ne circule sur le Web, et le modèle ne peut
+pas en recopier un.</p><label class=book-image for=book-image-toggle-b35b12e6cfea><input class="hidden toggle" type=checkbox id=book-image-toggle-b35b12e6cfea>
+<img src=/inf1901-teluq-v2/images/module4/pelicans-willison.svg alt="Quatre dessins produits à partir de la même demande, dessiner en SVG un pélican qui fait du vélo. GPT-4o mini, octobre 2024 : deux disques noirs pour les roues, deux traits pour le cadre, un oiseau gris posé dessus. GPT-5, août 2025 : un vrai vélo, avec rayons et pédalier, et un oiseau au long bec orange assis sur la selle. Gemini 3 Pro, novembre 2025 : un pélican blanc à la poche orange sur un vélo rouge, une aile tendue vers le guidon. Claude Fable 5.1, septembre 2026 : une illustration soignée, un pélican casqué qui pédale sur une plage, un poisson dans le panier." loading=lazy title="La même demande, faite à quatre modèles successifs, de 2024 à 2026. Images de Simon Willison, simonwillison.net." width=840 height=732 style=--largeur-plafond:803px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-b35b12e6cfea"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le test devient célèbre. En mai 2025, un pélican à vélo apparaît dans la grande
+conférence annuelle de Google, et en octobre 2025, une équipe d&rsquo;Anthropic s&rsquo;en sert
+pour <a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>regarder à l&rsquo;intérieur</a> d&rsquo;un modèle qui
+dessine : elle y trouve des caractéristiques qui représentent les roues, le vélo ou
+les yeux de l&rsquo;oiseau. Willison se demande alors si les laboratoires ne finiront pas
+par entraîner leurs modèles sur ce test précis, comme le prévoit la loi de Goodhart.
+Il garde donc en réserve des variantes secrètes, d&rsquo;autres animaux sur d&rsquo;autres
+véhicules : un modèle qui dessinerait un excellent pélican et un mauvais flamant rose
+sur un monocycle se trahirait. En avril 2026, un petit modèle ouvert, qui tourne sur
+son ordinateur portable, dessine un meilleur pélican que Claude Opus 4.7. Méfiant,
+Willison sort l&rsquo;une de ses variantes. En juillet 2026, il rappelle lui-même que le
+test a commencé comme une plaisanterie, et que la qualité d&rsquo;un pélican ne dit plus
+grand-chose de celle d&rsquo;un modèle.</p><p>Le modèle qui a aidé à rédiger ce cours (voir
+« <a href=/inf1901-teluq-v2/docs/assistants-intelligents/#comment-ce-cours-a-%c3%a9t%c3%a9-produit>Comment ce cours a été produit</a> »)
+s&rsquo;est prêté au jeu en octobre 2026, en un seul essai, sans voir son dessin avant de
+l&rsquo;avoir terminé.</p><label class=book-image for=book-image-toggle-e198cb4abee1><input class="hidden toggle" type=checkbox id=book-image-toggle-e198cb4abee1>
+<img src=/inf1901-teluq-v2/images/module4/pelican-opus-5-5.svg alt="Un pélican blanc à la poche orange, assis sur la selle d'un vélo vert, une aile tendue vers le guidon, une patte sur chaque pédale, sur fond de ciel bleu pâle et de sol beige. Le soleil, en haut à droite, touche le bout du bec." loading=lazy title="Le pélican de Claude Opus 5.5, dessiné en octobre 2026 au premier essai, sans voir le résultat, et gardé tel quel : le soleil touche le bout du bec, et la chaîne du vélo est approximative." width=800 height=600 style=--largeur-plafond:800px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-e198cb4abee1"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script></blockquote><h2 id=le-prix-de-la-taille>Le prix de la taille<a class=anchor href=#le-prix-de-la-taille></a></h2><p>Entraîner un grand modèle demande des dizaines de milliers de
+<a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/#les-processeurs-graphiques>processeurs graphiques</a>
+qui fonctionnent pendant des semaines ou des mois. Les entreprises construisent pour
+cela des centres de données géants, qui consomment autant d&rsquo;électricité qu&rsquo;une ville
+et de grandes quantités d&rsquo;eau pour leur refroidissement. Les coûts se comptent en
+centaines de millions de dollars par modèle, et les investissements annuels du
+secteur en centaines de milliards.</p><p>Les données posent un autre problème. Les modèles sont entraînés sur une grande
+partie du texte disponible sur le Web, et les meilleurs textes, comme les livres, les
+articles scientifiques ou les encyclopédies, ne sont pas infinis. En 2024, l&rsquo;institut
+de recherche Epoch AI estime que les modèles auront été entraînés sur l&rsquo;équivalent de
+tout le texte humain public disponible quelque part entre 2026 et 2032. Les
+entreprises se tournent donc vers des <strong>données synthétiques</strong> (<em>synthetic data</em>), produites par d&rsquo;autres
+modèles, et vers des textes sous licence. Le recours aux textes protégés par le droit
+d&rsquo;auteur fait l&rsquo;objet de nombreux procès, comme celui que le <em>New York Times</em> a
+intenté à OpenAI et à Microsoft en décembre 2023. Le <span title="Ce module sera publié plus tard">Module 5</span> revient
+sur ces coûts environnementaux et juridiques.</p><h2 id=modèles-fermés-modèles-ouverts>Modèles fermés, modèles ouverts<a class=anchor href=#mod%c3%a8les-ferm%c3%a9s-mod%c3%a8les-ouverts></a></h2><p>Les modèles les plus puissants, ceux d&rsquo;OpenAI, de Google ou d&rsquo;Anthropic, sont
+<strong>fermés</strong> : on peut les utiliser, mais leurs poids ne sont pas publiés, et on ne
+connaît ni leur taille exacte ni leurs données d&rsquo;entraînement. D&rsquo;autres entreprises
+publient les poids de leurs modèles, que chacun peut télécharger, étudier, ajuster et
+faire tourner sur ses propres machines. On parle alors de modèles <strong>ouverts</strong>
+(<em>open-weight models</em>).</p><ul><li>En février 2023, Meta publie LLaMA, puis plusieurs versions successives, jusqu&rsquo;à
+Llama 3.1 et ses 405 milliards de paramètres en juillet 2024.</li><li>En avril 2023, trois chercheurs français fondent Mistral AI, à Paris, qui publie
+plusieurs modèles ouverts.</li><li>En janvier 2025, l&rsquo;entreprise chinoise DeepSeek publie R1, un modèle ouvert dont les
+performances approchent celles des meilleurs modèles fermés, pour un coût
+d&rsquo;entraînement annoncé bien plus faible. Le 27 janvier, la valeur boursière de
+Nvidia, le principal fabricant de processeurs graphiques, recule de près de
+600 milliards de dollars en une journée.</li></ul><p>Le Canada a aussi son entreprise du domaine. Cohere est fondée à Toronto en 2019,
+notamment par Aidan Gomez, l&rsquo;un des auteurs de l&rsquo;article de 2017 qui a présenté le
+<a href=/inf1901-teluq-v2/docs/module3/attention-transformer/#le-transformer>Transformer</a>, qu&rsquo;il avait
+coécrit pendant un stage chez Google alors qu&rsquo;il étudiait à l&rsquo;Université de Toronto.</p><h2 id=ce-que-coûte-une-réponse>Ce que coûte une réponse<a class=anchor href=#ce-que-co%c3%bbte-une-r%c3%a9ponse></a></h2><p>L&rsquo;entraînement se paie une fois ; l&rsquo;utilisation, à chaque réponse. Les entreprises
+facturent leurs modèles au jeton, lu ou écrit. À sa sortie, en mars 2023, GPT-4
+coûtait 30 dollars par million de jetons lus. En juillet 2024, GPT-4o mini, un modèle
+plus petit et déjà très capable, en coûtait 15 cents. Selon Epoch AI, le prix pour
+obtenir un même niveau de performance baisse de dix à plusieurs centaines de fois par
+an selon la tâche. Plusieurs techniques y contribuent.</p><ul><li><strong>Le mélange d&rsquo;experts</strong> (<em>mixture of experts</em>). Le modèle est découpé en de nombreux
+sous-réseaux, les « experts », et un petit réseau d&rsquo;aiguillage choisit pour chaque
+jeton les quelques experts qui le traiteront. DeepSeek-V3, publié en décembre 2024,
+compte 671 milliards de paramètres, mais n&rsquo;en utilise que 37 milliards pour chaque
+jeton. C&rsquo;est l&rsquo;une des raisons de son faible coût : environ 5,6 millions de dollars
+pour son dernier entraînement, selon ses auteurs, sans compter les essais qui l&rsquo;ont
+précédé.</li><li><strong>La quantification</strong> (<em>quantization</em>). Chaque paramètre est stocké avec moins de
+précision, par exemple sur 4 bits au lieu de 16. Le modèle occupe alors quatre fois
+moins de mémoire, et perd peu en qualité : un modèle de 7 milliards de paramètres
+passe d&rsquo;environ 14 à 4 gigaoctets, et tient dans un ordinateur portable.</li><li><strong>Les petits modèles.</strong> Des modèles de quelques milliards de paramètres, souvent
+obtenus par <a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#des-mod%c3%a8les-qui-raisonnent-rlvr>distillation</a>
+d&rsquo;un grand modèle, tournent directement sur un téléphone, comme celui qu&rsquo;Apple
+intègre à ses appareils en 2024, ou les plus petits modèles Llama de Meta.</li></ul><p>Cette baisse des prix rend possibles des usages qui consomment beaucoup de jetons,
+comme les <a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle>agents</a>
+ou les modèles qui réfléchissent longtemps avant de répondre. Elle ne fait pas baisser
+pour autant la consommation totale d&rsquo;énergie du secteur, puisque les usages se
+multiplient, une question que reprend le <span title="Ce module sera publié plus tard">Module 5</span>.</p><h2 id=jusquoù>Jusqu&rsquo;où ?<a class=anchor href=#jusquo%c3%b9></a></h2><p>Les lois d&rsquo;échelle décrivent une tendance, pas une loi de la nature. À partir de 2024,
+plusieurs observateurs constatent que les gains obtenus en agrandissant seulement les
+modèles diminuent, et que les données de qualité se raréfient. Les entreprises
+explorent alors une autre direction : consacrer davantage de calcul non plus à
+l&rsquo;entraînement, mais au moment de répondre, en laissant le modèle « réfléchir » plus
+longtemps avant de donner sa réponse. Ces modèles de raisonnement sont présentés au
+<a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>chapitre suivant</a>, qui montre aussi comment un modèle qui complète du
+texte devient un assistant qui répond.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Prédire le mot suivant</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/ class="flex align-center"><span>Du modèle à l'assistant</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#de-gpt-à-gpt-4>De GPT à GPT-4</a></li><li><a href=#des-lois-déchelle>Des lois d&rsquo;échelle</a></li><li><a href=#apprendre-dans-le-contexte>Apprendre dans le contexte</a></li><li><a href=#des-capacités-qui-apparaissent>Des capacités qui apparaissent ?</a></li><li><a href=#que-mesurent-les-scores>Que mesurent les scores ?</a></li><li><a href=#le-prix-de-la-taille>Le prix de la taille</a></li><li><a href=#modèles-fermés-modèles-ouverts>Modèles fermés, modèles ouverts</a></li><li><a href=#ce-que-coûte-une-réponse>Ce que coûte une réponse</a></li><li><a href=#jusquoù>Jusqu&rsquo;où ?</a></li></ul></nav></div></aside></main></body></html>

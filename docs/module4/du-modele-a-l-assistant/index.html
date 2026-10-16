@@ -1,0 +1,261 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Du modèle à l’assistant Le chapitre « Prédire le mot suivant » s’achevait sur une limite. Un modèle entraîné seulement à prédire le jeton suivant continue des textes, mais il ne répond pas. ChatGPT, Claude ou Gemini sont pourtant des assistants : ils suivent des consignes, refusent certaines demandes et tiennent une conversation. Ce chapitre présente les étapes qui transforment un modèle de base en assistant, le travail humain qu’elles demandent, et les modèles plus récents qui « raisonnent » avant de répondre.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Du modèle à l'assistant"><meta property="og:description" content="Du modèle à l’assistant Le chapitre « Prédire le mot suivant » s’achevait sur une limite. Un modèle entraîné seulement à prédire le jeton suivant continue des textes, mais il ne répond pas. ChatGPT, Claude ou Gemini sont pourtant des assistants : ils suivent des consignes, refusent certaines demandes et tiennent une conversation. Ce chapitre présente les étapes qui transforment un modèle de base en assistant, le travail humain qu’elles demandent, et les modèles plus récents qui « raisonnent » avant de répondre."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Du modèle à l'assistant"><meta itemprop=description content="Du modèle à l’assistant Le chapitre « Prédire le mot suivant » s’achevait sur une limite. Un modèle entraîné seulement à prédire le jeton suivant continue des textes, mais il ne répond pas. ChatGPT, Claude ou Gemini sont pourtant des assistants : ils suivent des consignes, refusent certaines demandes et tiennent une conversation. Ce chapitre présente les étapes qui transforment un modèle de base en assistant, le travail humain qu’elles demandent, et les modèles plus récents qui « raisonnent » avant de répondre."><meta itemprop=wordCount content="3299"><title>Du modèle à l'assistant • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.2548c1ebfb3b3e76768a3447705a7e9e1d636bcd685def8976854bdf784d3d5b.css integrity="sha256-JUjB6/s7PnZ2ijRHcFp+nh1ja81oXe+JdoVL33hNPVs=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.14a1764f940795ea0fbc5b0d00169e7611a8c6ac180fce4d017dc7c746c88408.js integrity="sha256-FKF2T5QHleoPvFsNABaedhGoxqwYD85NAX3Hx0bIhAg=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><input type=checkbox id=section-ad65b8547fe18e1e59e616b5d251eca3 class=toggle checked>
+<label for=section-ad65b8547fe18e1e59e616b5d251eca3 class=flex><a href=/inf1901-teluq-v2/docs/module4/>Module 4 - IA générative et grands modèles de langage</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module4/generer/>Générer : imiter une distribution</a></li><li><a href=/inf1901-teluq-v2/docs/module4/quatre-facons-de-generer/>Quatre façons de générer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/>Des images, des voix, des vidéos</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>Des règles aux probabilités</a></li><li><a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/>Les outils statistiques</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/>Des mots aux nombres : jetons et plongements</a></li><li><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/>Passer à l'échelle</a></li><li><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/ class=active>Du modèle à l'assistant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>Des outils, un harnais et des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>Le défi ARC</a></li><li><a href=/inf1901-teluq-v2/docs/module4/mots-et-images/>Relier les mots et les images</a></li><li><a href=/inf1901-teluq-v2/docs/module4/voir-entendre-parler/>Des modèles qui voient, entendent et parlent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l'intérieur</a></li><li><a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/>Ce que les LLM comprennent, et ce qu'ils ratent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/travail-not%C3%A9-4/>Travail noté 4</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Du modèle à l'assistant</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#un-modèle-de-base-ne-répond-pas>Un modèle de base ne répond pas</a></li><li><a href=#imiter-de-bonnes-réponses>Imiter de bonnes réponses</a></li><li><a href=#le-renforcement-à-partir-de-préférences-humaines-rlhf>Le renforcement à partir de préférences humaines (RLHF)</a></li><li><a href=#le-travail-humain-derrière-lassistant>Le travail humain derrière l&rsquo;assistant</a></li><li><a href=#utile-honnête-inoffensif>Utile, honnête, inoffensif</a></li><li><a href=#faire-des-choses-avec-des-mots>Faire des choses avec des mots</a></li><li><a href=#des-modèles-qui-raisonnent-rlvr>Des modèles qui « raisonnent » (RLVR)</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=du-modèle-à-lassistant>Du modèle à l&rsquo;assistant<a class=anchor href=#du-mod%c3%a8le-%c3%a0-lassistant></a></h1><p>Le chapitre « <a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/#ce-que-la-pr%c3%a9diction-exige>Prédire le mot suivant</a> »
+s&rsquo;achevait sur une limite. Un modèle entraîné seulement à prédire le jeton suivant
+continue des textes, mais il ne répond pas. ChatGPT, Claude ou Gemini sont pourtant
+des assistants : ils suivent des consignes, refusent certaines demandes et tiennent
+une conversation. Ce chapitre présente les étapes qui transforment un modèle de base
+en assistant, le travail humain qu&rsquo;elles demandent, et les modèles plus récents qui
+« raisonnent » avant de répondre.</p><h2 id=un-modèle-de-base-ne-répond-pas>Un modèle de base ne répond pas<a class=anchor href=#un-mod%c3%a8le-de-base-ne-r%c3%a9pond-pas></a></h2><p>Après le <strong>préentraînement</strong> (<em>pre-training</em>), le modèle est un <strong>modèle de base</strong> (<em>base model</em>). Il a
+appris à continuer n&rsquo;importe quel texte de façon plausible, et c&rsquo;est tout.</p><blockquote class="book-hint info"><p><strong>Continuer ou répondre</strong></p><p>On donne à un modèle de base le texte suivant :</p><pre tabindex=0><code>Quelle est la capitale du Canada ?</code></pre><p>Une suite plausible, sur le Web, est une autre question, comme dans une liste de
+questions d&rsquo;examen :</p><pre tabindex=0><code>Quelle est la capitale du Canada ?
+Quelle est la capitale de l&#39;Australie ?
+Quelle est la capitale du Brésil ?</code></pre><p>Un assistant, lui, répond « Ottawa ». Le modèle de base n&rsquo;est pas en défaut : il fait
+exactement ce pour quoi il a été entraîné. Rien, dans sa tâche, ne lui demande de
+répondre.</p></blockquote><p>L&rsquo;exemple paraît anodin, mais l&rsquo;écart est profond. Répondre suppose de maîtriser tout
+un ensemble de conventions que les humains apprennent sans y penser, et que personne
+n&rsquo;énonce :</p><ul><li>répondre à une question plutôt que la prolonger, et suivre une consigne (« résume
+ce texte en trois points ») plutôt que l&rsquo;imiter ;</li><li>s&rsquo;arrêter à la fin de sa réplique, au lieu d&rsquo;écrire aussi celle de son
+interlocuteur ;</li><li>demander une précision quand la demande est ambiguë, et dire qu&rsquo;on ne sait pas
+plutôt qu&rsquo;inventer ;</li><li>adapter la longueur et le ton à la demande, et garder le même rôle d&rsquo;une réplique à
+l&rsquo;autre ;</li><li>refuser certaines demandes.</li></ul><p>Ces conventions n&rsquo;ont pas de définition simple. Le philosophe Ludwig Wittgenstein
+parlait de <strong>jeux de langage</strong> (<em>language games</em>). « Répondre à une question » ne
+désigne pas une essence unique, mais une famille de comportements apparentés, appris
+par la pratique, sans qu&rsquo;on nous les définisse jamais. L&rsquo;ajustement par instructions
+procède de la même façon : il ne définit pas ce qu&rsquo;est une réponse, il en montre des
+milliers d&rsquo;exemples.</p><p>Le Web contient bien des conversations, mais aussi des forums où l&rsquo;on se dispute,
+des romans où les personnages mentent, et des pages qui posent des questions sans y
+répondre. Un modèle de base les imite tous indifféremment. Si on lui donne le début
+d&rsquo;un dialogue entre un utilisateur et un assistant, il écrit la réplique de
+l&rsquo;assistant, puis celle de l&rsquo;utilisateur, puis la suivante. Il ne sait pas qu&rsquo;il joue
+un rôle, et rien ne lui indique où s&rsquo;arrêter.</p><blockquote class="book-hint info"><p><strong>Un dialogue écrit des deux côtés</strong></p><p>On donne à un modèle de base le début d&rsquo;un dialogue :</p><pre tabindex=0><code>Utilisateur : Peux-tu me suggérer un livre pour l&#39;été ?
+Assistant :</code></pre><p>Une suite plausible (exemple illustratif) :</p><pre tabindex=0><code>Utilisateur : Peux-tu me suggérer un livre pour l&#39;été ?
+Assistant : Bien sûr ! Je vous recommande Le Survenant, de Germaine Guèvremont.
+Utilisateur : Je l&#39;ai déjà lu. Autre chose ?
+Assistant : Alors essayez Kamouraska, d&#39;Anne Hébert.
+Utilisateur : Merci, je vais le commander dès demain !</code></pre><p>Le modèle a écrit la réponse de l&rsquo;assistant, puis inventé la réaction de
+l&rsquo;utilisateur, et ainsi de suite. Pour lui, il n&rsquo;y a qu&rsquo;un texte à continuer, comme
+le montre la section
+« <a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/#une-conversation-qui-nen-est-pas-une>Une conversation qui n&rsquo;en est pas une</a> ».
+Un assistant, lui, a appris à produire une marque spéciale de fin de réplique, qui
+rend la main à l&rsquo;utilisateur.</p></blockquote><p>En 2020, GPT-3 pouvait déjà accomplir beaucoup de tâches, à condition de les lui
+présenter comme un texte à continuer, avec des exemples bien choisis
+(l&rsquo;<a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#apprendre-dans-le-contexte>apprentissage dans le contexte</a>).
+Pour obtenir une réponse, il fallait ruser : écrire le début d&rsquo;un document où cette
+réponse viendrait naturellement. Même ainsi, ses suites s&rsquo;écartaient souvent de la
+demande, ou inventaient. Le problème n&rsquo;est pas un manque de connaissances. C&rsquo;est un
+écart entre deux objectifs : celui pour lequel le modèle est entraîné, prédire le
+jeton suivant d&rsquo;un texte du Web, et celui qu&rsquo;on attend de lui, suivre les consignes
+de l&rsquo;utilisateur de façon utile et sûre. Réduire cet écart est le problème de
+l&rsquo;<a href=#utile-honn%c3%aate-inoffensif>alignement</a>, qui revient plus bas.</p><p>En mars 2022, Long Ouyang et ses collègues, chez OpenAI, publient la recette qui
+comble en bonne partie cet écart. Ils l&rsquo;appliquent à GPT-3 pour obtenir
+<strong>InstructGPT</strong>, un modèle entraîné à suivre des consignes. Une quarantaine de
+personnes, recrutées pour l&rsquo;occasion, rédigent environ 13 000 réponses modèles et
+comparent des dizaines de milliers de réponses produites par le modèle. Ces données
+servent aux deux étapes présentées ci-dessous. ChatGPT, ouvert au public huit mois
+plus tard, en est une variante entraînée sur des dialogues.</p><label class=book-image for=book-image-toggle-69590e4dce68><input class="hidden toggle" type=checkbox id=book-image-toggle-69590e4dce68>
+<img src=/inf1901-teluq-v2/images/module4/instructgpt.svg alt="En haut, une consigne : « Explique l'alunissage à un enfant de six ans, en quelques phrases. » Elle est donnée à deux modèles. À gauche, GPT-3, un modèle de base, la continue par d'autres consignes du même genre : explique la théorie de la gravité à un enfant de six ans, explique la théorie de la relativité, explique le big bang, explique l'évolution. Il continue une liste de consignes. À droite, InstructGPT y répond : des gens sont allés sur la Lune, ils ont pris des photos de ce qu'ils voyaient et les ont envoyées sur la Terre, pour que tout le monde puisse les voir." loading=lazy title="La même consigne donnée à GPT-3 et à InstructGPT, d'après l'exemple publié par OpenAI en 2022. Le modèle de base n'a rien de faux : une liste de consignes est une suite plausible. Mais il ne répond pas." width=840 height=420 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-69590e4dce68"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le modèle de base contient pourtant l&rsquo;essentiel des connaissances et des capacités
+de l&rsquo;assistant. Il reste à lui apprendre à s&rsquo;en servir pour répondre. C&rsquo;est l&rsquo;objet
+de deux étapes supplémentaires, regroupées sous le nom de <strong>post-entraînement</strong>
+(<em>post-training</em>), beaucoup moins coûteuses que le préentraînement, du moins jusqu&rsquo;aux
+modèles de raisonnement, dont le renforcement mobilise une part croissante du calcul.</p><label class=book-image for=book-image-toggle-30b19f14baa2><input class="hidden toggle" type=checkbox id=book-image-toggle-30b19f14baa2>
+<img src=/inf1901-teluq-v2/images/module4/du-modele-a-l-assistant.svg alt="Trois colonnes reliées par des flèches. 1, le préentraînement : des milliers de milliards de jetons de textes, la tâche de prédire le jeton suivant, et pour résultat un modèle de base qui continue des textes. 2, l'ajustement par instructions : des dizaines de milliers d'exemples de requêtes et de bonnes réponses rédigées par des humains, et pour résultat un modèle qui répond aux requêtes. 3, l'apprentissage par renforcement : des humains comparent des réponses, un modèle de récompense apprend leurs préférences, et le modèle est ajusté pour obtenir la meilleure récompense ; pour les mathématiques et le code, la récompense peut venir d'une vérification automatique. Le résultat est un assistant. 4, en grisé, au moment de la réponse : aucun entraînement, les poids ne changent plus, mais le modèle peut réfléchir plus ou moins longtemps avant de répondre ; plus de calcul donne de meilleures réponses. Des accolades regroupent les étapes : la première est le préentraînement, la deuxième et la troisième forment le post-entraînement, la quatrième se passe au moment de la réponse." loading=lazy title="Les trois étapes de l'entraînement d'un assistant, puis son utilisation. Le préentraînement représente l'essentiel du coût de l'entraînement ; au moment de la réponse, le modèle ne change plus." width=900 height=470 style=--largeur-plafond:900px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-30b19f14baa2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=imiter-de-bonnes-réponses>Imiter de bonnes réponses<a class=anchor href=#imiter-de-bonnes-r%c3%a9ponses></a></h2><p>La deuxième étape est un <strong>ajustement par instructions</strong> (<em>instruction tuning</em>). Des
+personnes rédigent des dizaines de milliers d&rsquo;exemples de requêtes, accompagnées de la
+réponse qu&rsquo;un bon assistant devrait donner. Le modèle de base est ensuite entraîné sur
+ces exemples, toujours en prédisant le jeton suivant, mais seulement sur des
+conversations de ce type. Il apprend la forme d&rsquo;un échange : une requête, puis une
+réponse complète, utile, dans le ton attendu.</p><p>C&rsquo;est l&rsquo;idée de l&rsquo;<a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/#r%c3%a9utiliser-un-r%c3%a9seau-lapprentissage-par-transfert>apprentissage par transfert</a>
+présentée au Module 3, appliquée au texte. Le préentraînement fournit un modèle
+général, et un ajustement sur peu de données le spécialise. C&rsquo;est aussi ce qu&rsquo;indique
+le <em>P</em> de GPT, pour <em>pre-trained</em>.</p><h2 id=le-renforcement-à-partir-de-préférences-humaines-rlhf>Le renforcement à partir de préférences humaines (RLHF)<a class=anchor href=#le-renforcement-%c3%a0-partir-de-pr%c3%a9f%c3%a9rences-humaines-rlhf></a></h2><p>Rédiger de bonnes réponses est long, et il est souvent plus facile de juger une
+réponse que de l&rsquo;écrire. La troisième étape s&rsquo;appuie donc sur des <strong>comparaisons</strong>. On
+présente à des évaluateurs humains deux réponses du modèle à la même requête, et ils
+indiquent celle qu&rsquo;ils préfèrent. Ces préférences servent à entraîner un second
+réseau, le <strong>modèle de récompense</strong> (<em>reward model</em>), qui apprend à prédire quelle
+réponse les évaluateurs préféreraient. C&rsquo;est un problème de
+<a href=/inf1901-teluq-v2/docs/module2/classer/>classification</a> comme ceux du Module 2.</p><p>Le modèle de langage est ensuite ajusté par
+<a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#apprendre-par-lexp%c3%a9rience-le-renforcement>apprentissage par renforcement</a> :
+il produit des réponses, le modèle de récompense leur attribue une note, et ses poids
+sont ajustés pour obtenir de meilleures notes. C&rsquo;est le même principe que celui des
+programmes qui apprennent à jouer, présentés au chapitre
+« <a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer</a> » du Module 3, mais la
+récompense ne vient plus d&rsquo;une partie gagnée : elle vient des préférences humaines.
+On parle de <strong>RLHF</strong> (<em>reinforcement learning from human feedback</em>).</p><p>Cette étape n&rsquo;apprend pas de la même façon que les précédentes. Pendant le
+préentraînement et l&rsquo;ajustement par instructions, le modèle lit un texte écrit par
+d&rsquo;autres, et la bonne réponse est connue à chaque position : c&rsquo;est le jeton qui suit
+vraiment. Son erreur est mesurée jeton par jeton, et ses poids sont corrigés pour
+rendre ce jeton plus probable. Il apprend en imitant.</p><p>Dans l&rsquo;apprentissage par renforcement, il n&rsquo;y a plus de texte à imiter. Le modèle
+écrit lui-même une réponse complète, en tirant ses jetons un à un, puis reçoit une
+seule note pour l&rsquo;ensemble. Rien ne lui dit quels jetons ont fait la différence. Ses
+poids sont donc ajustés pour rendre plus probables tous les jetons des réponses bien
+notées, et moins probables ceux des réponses mal notées. Sur un grand nombre
+d&rsquo;essais, les choix qui reviennent dans les bonnes réponses finissent par se
+dégager. C&rsquo;est l&rsquo;<a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/#le-probl%c3%a8me-des-couches-cach%c3%a9es>attribution de la responsabilité</a>
+du Module 3, à l&rsquo;échelle d&rsquo;une réponse entière : le joueur ne sait qu&rsquo;à la fin de la
+partie s&rsquo;il a gagné, sans savoir quels coups l&rsquo;ont fait gagner.</p><label class=book-image for=book-image-toggle-47b615db1ee2><input class="hidden toggle" type=checkbox id=book-image-toggle-47b615db1ee2>
+<img src=/inf1901-teluq-v2/images/module4/une-note-pour-tout.svg alt="Trois parties. En haut, imiter : dans un texte écrit par d'autres, « Il en reste 23 − 20 = 3 », le bon jeton est connu à chaque position, et chaque jeton reçoit sa propre correction. Au milieu, le renforcement : à la question de la cafétéria, qui avait 23 pommes, en utilise 20 et en achète 6, le modèle tire quatre réponses complètes. Deux mènent à 9 et reçoivent la note 1 : tous leurs jetons sont rendus plus probables. Deux mènent à une réponse fausse, 49 et 18, et reçoivent la note 0 : tous leurs jetons sont rendus moins probables. La dernière contient pourtant une bonne étape, 23 − 20 = 3, pénalisée quand même, parce que la note ne dit pas quelle étape était fautive. En bas, sur un grand nombre d'essais : « Elle avait 23 pommes », présent dans toutes les réponses, est poussé dans les deux sens et l'effet s'annule ; « 23 − 20 = 3 », plus fréquent dans les bonnes réponses, est renforcé ; « 3 × 6 = 18 », présent seulement dans les mauvaises, est affaibli." loading=lazy title="Imiter, ou recevoir une note. Une seule réponse ne dit pas quelle étape était bonne ou fautive ; c'est en comparant un grand nombre de réponses que les bons choix se dégagent." width=840 height=624 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-47b615db1ee2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><table><thead><tr><th></th><th>Préentraînement et ajustement par instructions</th><th>Renforcement</th></tr></thead><tbody><tr><td>Le texte</td><td>écrit par d&rsquo;autres</td><td>écrit par le modèle</td></tr><tr><td>Ce qu&rsquo;on connaît</td><td>le bon jeton, à chaque position</td><td>une note, pour toute la réponse</td></tr><tr><td>Ce que le modèle apprend</td><td>à imiter</td><td>à obtenir de meilleures notes</td></tr></tbody></table><p>Cette différence a deux conséquences. D&rsquo;abord, le modèle peut trouver des réponses
+meilleures que celles qu&rsquo;on aurait su lui montrer, puisqu&rsquo;il n&rsquo;est plus limité à
+imiter. Ensuite, il peut aussi trouver des façons d&rsquo;obtenir une bonne note sans donner
+une bonne réponse, en exploitant les défauts du modèle de récompense. C&rsquo;est le
+<strong>détournement de la récompense</strong> (<em>reward hacking</em>), comme le bateau
+du Module 3, qui <a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/#au-del%c3%a0-des-jeux-et-les-limites>tournait en rond</a>
+pour accumuler des points. Pour l&rsquo;en empêcher, on le pénalise quand ses réponses
+s&rsquo;éloignent trop de celles du modèle de départ.</p><p>La méthode a d&rsquo;abord servi à tout autre chose. En 2017, Paul Christiano et ses
+collègues, chez OpenAI et DeepMind, l&rsquo;utilisent pour apprendre à un robot simulé à
+faire un salto arrière, une tâche difficile à décrire par une règle mais facile à
+juger en regardant deux essais. OpenAI l&rsquo;applique ensuite aux modèles de langage :
+c&rsquo;est la troisième étape d&rsquo;InstructGPT. Les évaluateurs préfèrent les réponses d&rsquo;InstructGPT, qui compte
+1,3 milliard de paramètres, à celles de GPT-3, cent fois plus grand. ChatGPT est
+construit selon la même méthode.</p><p>L&rsquo;applet ci-dessous vous place dans le rôle d&rsquo;un évaluateur. Pour chacune des six
+requêtes, choisissez la réponse que vous préférez. Le bilan montre ce que vos choix
+enseigneraient à un modèle de récompense.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/annotateur.html id=applet-1792180294737077530 class=applet-iframe width=100% height=372 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le modèle de récompense apprend tout ce qui explique les choix des évaluateurs, y
+compris ce qui n&rsquo;a rien à voir avec la qualité. Les études sur de vrais évaluateurs
+montrent une préférence pour les réponses longues, assurées et qui donnent raison à
+l&rsquo;utilisateur. Les assistants entraînés de cette façon ont donc tendance à allonger
+leurs réponses et à approuver leur interlocuteur. Cette <strong>complaisance</strong>
+(<em>sycophancy</em>) est un problème connu. En avril 2025, OpenAI a dû retirer une mise à
+jour de son modèle GPT-4o, jugée trop flatteuse : il approuvait les projets et les
+opinions de ses utilisateurs, même les plus douteux.</p><h2 id=le-travail-humain-derrière-lassistant>Le travail humain derrière l&rsquo;assistant<a class=anchor href=#le-travail-humain-derri%c3%a8re-lassistant></a></h2><p>L&rsquo;ajustement et le renforcement reposent sur le travail de milliers de personnes, qui
+rédigent des réponses, comparent des réponses et signalent les contenus
+inacceptables. C&rsquo;est l&rsquo;<a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/#tout-cela-portait-un-nom-lapprentissage-supervis%c3%a9>industrie de l&rsquo;étiquetage</a>
+présentée au Module 2. Une partie de ce travail est très qualifiée : des médecins, des
+juristes ou des mathématiciens sont recrutés pour évaluer les réponses dans leur
+domaine. Une autre partie est pénible et mal payée. En janvier 2023, le magazine
+<em>Time</em> révèle que, pour apprendre à ChatGPT à reconnaître les contenus violents ou
+haineux, OpenAI avait fait appel à des travailleurs kényans, payés moins de 2 dollars
+de l&rsquo;heure pour lire et étiqueter des milliers de textes choquants. Le
+<span title="Ce module sera publié plus tard">Module 5</span> revient sur ces conditions de travail.</p><h2 id=utile-honnête-inoffensif>Utile, honnête, inoffensif<a class=anchor href=#utile-honn%c3%aate-inoffensif></a></h2><p>Que doit faire un assistant quand on lui demande comment fabriquer une arme, ou
+quand une réponse utile risquerait de nuire à quelqu&rsquo;un ? En 2021, des chercheurs
+d&rsquo;Anthropic proposent de résumer les qualités attendues en trois mots : un assistant
+doit être <strong>utile</strong> (<em>helpful</em>), <strong>honnête</strong> (<em>honest</em>) et <strong>inoffensif</strong>
+(<em>harmless</em>). Ces trois exigences entrent souvent en tension. Un assistant qui refuse
+tout est inoffensif mais inutile, et un assistant qui accepte tout est utile mais
+dangereux.</p><p>Ces tensions rappellent les <strong>trois lois de la robotique</strong> de l&rsquo;écrivain Isaac Asimov
+(1942) : un robot ne doit pas nuire à un humain, doit lui obéir, et doit se protéger,
+dans cet ordre de priorité. On y reconnaît l&rsquo;inoffensif et l&rsquo;utile. Les nouvelles
+d&rsquo;Asimov montrent surtout que ces lois mènent à des impasses dès que la situation
+devient ambiguë. Dans <em>Menteur !</em> (1941), un robot qui lit les pensées ment à chacun
+pour ne pas le blesser, et lui dit ce qu&rsquo;il veut entendre : c&rsquo;est la
+<a href=#le-renforcement-%c3%a0-partir-de-pr%c3%a9f%c3%a9rences-humaines-rlhf>complaisance</a>, quatre-vingts
+ans avant les assistants. La différence tient à la méthode. Les lois d&rsquo;Asimov sont des
+règles inscrites dans le robot, dans l&rsquo;esprit de
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module1/deux-paris/#le-premier-pari-lesprit-comme-logique>IA symbolique</a>
+du Module 1 ; les qualités d&rsquo;un assistant ne sont écrites nulle part, mais apprises à
+partir d&rsquo;exemples, avec les mêmes zones grises.</p><p>Le travail qui consiste à faire en sorte que le comportement d&rsquo;un modèle corresponde
+aux intentions et aux valeurs de ceux qui l&rsquo;utilisent s&rsquo;appelle l&rsquo;<strong>alignement</strong>
+(<em>alignment</em>). En décembre 2022, Anthropic présente une variante du RLHF, l&rsquo;<strong>IA
+constitutionnelle</strong> (<em>constitutional AI</em>) : au lieu de recueillir des milliers de
+jugements humains sur chaque cas, on rédige une liste de principes, la
+« constitution », et un modèle évalue lui-même les réponses selon ces principes. Les
+humains décident des principes plutôt que de juger chaque réponse.</p><p>Ces protections restent imparfaites. Des utilisateurs trouvent régulièrement des
+formulations qui amènent un assistant à ignorer ses consignes, comme les attaques
+présentées au chapitre « <a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/#se-d%c3%a9fendre>Tromper un réseau</a> »
+du Module 3. Le chapitre « <a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#des-erreurs-r%c3%a9v%c3%a9latrices>Ce que les LLM comprennent, et ce qu&rsquo;ils ratent</a> »
+y revient.</p><h2 id=faire-des-choses-avec-des-mots>Faire des choses avec des mots<a class=anchor href=#faire-des-choses-avec-des-mots></a></h2><p>La philosophie du langage s&rsquo;est penchée sur ce que fait un assistant bien avant qu&rsquo;il
+existe. En 1955, le philosophe britannique John Austin donne à Harvard une série de
+conférences, publiées en 1962 sous le titre <em>How to Do Things with Words</em> (traduit en
+français par <em>Quand dire, c&rsquo;est faire</em>). Il y part des énoncés <strong>performatifs</strong>, qui
+accomplissent ce qu&rsquo;ils disent : « Je vous déclare mari et femme », « Je promets de
+venir ». Il distingue ensuite trois niveaux dans tout acte de parole.</p><ul><li>L&rsquo;<strong>acte locutoire</strong> : dire quelque chose, c&rsquo;est-à-dire produire une phrase qui a un
+sens.</li><li>L&rsquo;<strong>acte illocutoire</strong> : ce qu&rsquo;on fait en le disant, comme questionner, promettre,
+ordonner ou avertir.</li><li>L&rsquo;<strong>acte perlocutoire</strong> : l&rsquo;effet produit sur l&rsquo;interlocuteur, comme le convaincre,
+le rassurer, l&rsquo;inquiéter ou le faire agir.</li></ul><p>Un modèle de base maîtrise le premier niveau, mais pas le deuxième. Il produit des
+phrases bien formées, sans reconnaître l&rsquo;acte qu&rsquo;accomplit le texte qu&rsquo;on lui donne.
+L&rsquo;ajustement par instructions lui apprend justement à reconnaître la <strong>force
+illocutoire</strong> d&rsquo;une requête. La tâche est plus subtile qu&rsquo;il n&rsquo;y paraît, car beaucoup
+d&rsquo;actes sont <strong>indirects</strong>, comme le montre John Searle, l&rsquo;élève d&rsquo;Austin, en 1975.
+« Sais-tu quelle heure il est ? » est, à la lettre, une question sur ce que sait
+l&rsquo;autre. La réponse « Oui » est exacte, mais personne ne l&rsquo;attend.</p><label class=book-image for=book-image-toggle-972e01f2638e><input class="hidden toggle" type=checkbox id=book-image-toggle-972e01f2638e>
+<img src=/inf1901-teluq-v2/images/module4/actes-de-parole.svg alt="À gauche, une bulle : « Sais-tu quelle heure il est ? ». Trois flèches en partent vers trois niveaux. L'acte locutoire, ce qui est dit : une question sur ce que sait l'autre. L'acte illocutoire, ce qu'on fait en le disant : une demande, « dis-moi l'heure ». L'acte perlocutoire, l'effet produit : l'autre regarde sa montre et donne l'heure. En bas, deux réponses possibles. « Oui. » répond à la lettre, au niveau locutoire : c'est exact, mais personne ne l'attend. « Il est 15 h 20. » répond à l'acte, au niveau illocutoire." loading=lazy title="Les trois niveaux d'un acte de parole, selon John Austin. Répondre, c'est reconnaître l'acte accompli, pas seulement les mots." width=840 height=490 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-972e01f2638e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le niveau perlocutoire éclaire le RLHF. Le modèle de récompense n&rsquo;évalue pas
+directement si une réponse est vraie. Il prédit l&rsquo;effet qu&rsquo;elle produira sur un
+évaluateur : sera-t-elle préférée ? Optimiser cet effet, c&rsquo;est optimiser un acte
+perlocutoire, et la <a href=#le-renforcement-%c3%a0-partir-de-pr%c3%a9f%c3%a9rences-humaines-rlhf>complaisance</a>
+en découle naturellement. Une réponse qui flatte plaît, même quand elle est fausse.
+On retrouve la vieille opposition entre persuader et dire vrai.</p><p>En 1975 aussi, le philosophe Paul Grice décrit le <strong>principe de coopération</strong> qui
+règle une conversation, sous la forme de quatre maximes :</p><ul><li>la <strong>quantité</strong> : dire ni trop ni trop peu ;</li><li>la <strong>qualité</strong> : ne pas dire ce qu&rsquo;on croit faux ou ce qu&rsquo;on ne peut appuyer ;</li><li>la <strong>relation</strong> : être pertinent ;</li><li>la <strong>manière</strong> : être clair et ordonné.</li></ul><p>Ces maximes ressemblent beaucoup aux qualités attendues d&rsquo;un assistant. Les
+<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#les-hallucinations>hallucinations</a> violent la
+maxime de qualité, et les réponses trop longues celle de quantité. Grice montre aussi
+qu&rsquo;on communique beaucoup par sous-entendus, ses <strong>implicatures</strong>. À « Je n&rsquo;ai plus
+d&rsquo;essence », la réponse « Il y a une station au coin de la rue » laisse entendre
+qu&rsquo;elle est ouverte. Les grands modèles actuels saisissent souvent ces sous-entendus,
+que les systèmes à règles ne pouvaient pas traiter.</p><p>Enfin, quand un modèle peut envoyer un courriel ou passer une commande, comme les
+<a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle>agents</a>, ses mots deviennent des actes
+au sens propre, et dire, pour lui aussi, devient faire.</p><h2 id=des-modèles-qui-raisonnent-rlvr>Des modèles qui « raisonnent » (RLVR)<a class=anchor href=#des-mod%c3%a8les-qui-raisonnent-rlvr></a></h2><p>En janvier 2022, Jason Wei et ses collègues, chez Google, constatent qu&rsquo;un modèle
+résout mieux un problème de mathématiques quand on lui montre des exemples où la
+solution est détaillée étape par étape, plutôt que donnée directement. Quelques mois
+plus tard, une équipe japonaise montre qu&rsquo;il suffit d&rsquo;ajouter à la requête « Réfléchissons
+étape par étape » (<em>Let&rsquo;s think step by step</em>). Le modèle écrit alors son raisonnement
+avant de conclure, et il se trompe moins. On parle de <strong>chaîne de pensée</strong>
+(<em>chain of thought</em>). L&rsquo;explication est simple : chaque jeton écrit devient un contexte
+pour les suivants, et un calcul écrit en plusieurs lignes est plus facile à
+poursuivre qu&rsquo;un résultat à deviner d&rsquo;un coup.</p><label class=book-image for=book-image-toggle-bed8ca1c1ed8><input class="hidden toggle" type=checkbox id=book-image-toggle-bed8ca1c1ed8>
+<img src=/inf1901-teluq-v2/images/module4/chaine-de-pensee.svg alt="Deux colonnes. Dans chacune, une requête contient un exemple résolu, puis une nouvelle question. L'exemple : Roger a 5 balles de tennis ; il achète 2 boîtes de 3 balles ; combien de balles a-t-il maintenant ? La nouvelle question : la cafétéria avait 23 pommes ; elle en utilise 20 pour le dîner et en achète 6 ; combien en a-t-elle ? À gauche, l'exemple donne la réponse directement, « La réponse est 11 », et le modèle répond à son tour directement : « La réponse est 27 », ce qui est faux. À droite, l'exemple détaille les étapes, et le modèle fait de même : la cafétéria avait 23 pommes, elle en a utilisé 20, il en reste 23 − 20 = 3 ; elle en a acheté 6, elle en a donc 3 + 6 = 9 ; la réponse est 9, ce qui est juste. Le résultat intermédiaire, 3, est réutilisé dans le calcul suivant." loading=lazy title="La chaîne de pensée, d'après l'exemple de l'article de Jason Wei et ses collègues (2022). Le modèle n'en sait pas plus à droite qu'à gauche : il écrit seulement ses étapes, et chaque résultat écrit lui sert pour le suivant." width=840 height=482 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-bed8ca1c1ed8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;étape suivante consiste à entraîner les modèles à raisonner de cette façon. Pour les
+mathématiques ou la programmation, on n&rsquo;a pas besoin d&rsquo;un évaluateur humain : on peut
+vérifier automatiquement si la réponse finale est juste, ou si le programme passe ses
+tests. Le modèle produit de longs raisonnements, et ceux qui mènent à une réponse
+correcte sont renforcés. On parle de <strong>renforcement à partir de récompenses
+vérifiables</strong> (<em>reinforcement learning with verifiable rewards</em>, RLVR), comme
+l&rsquo;annonçait le chapitre « <a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#apprendre-par-lexp%c3%a9rience-le-renforcement>Trois façons d&rsquo;apprendre</a> »
+du Module 2.</p><p>Ce renforcement ne demande pas de corpus de raisonnements rédigés par des humains. Il
+faut seulement des problèmes dont on peut vérifier la réponse : des problèmes de
+mathématiques avec leur solution, des exercices de programmation avec leurs tests.
+Rassembler ces problèmes demande un travail considérable : il en faut un très grand
+nombre, variés, de difficulté croissante, avec des vérifications fiables. Mais le
+raisonnement, le modèle l&rsquo;écrit lui-même, et seule sa conclusion est notée. C&rsquo;est la
+différence avec l&rsquo;<a href=#imiter-de-bonnes-r%c3%a9ponses>ajustement par instructions</a>, où le
+modèle imite des réponses rédigées.</p><p>En pratique, on combine souvent les deux. On amorce l&rsquo;entraînement avec quelques
+milliers de raisonnements choisis ou rédigés, pour que le modèle adopte une forme
+lisible, puis le renforcement prend le relais. Une fois entraîné, un modèle de
+raisonnement produit à son tour des chaînes de pensée en grande quantité. Elles
+servent de corpus pour ajuster des modèles plus petits, qui apprennent ainsi à
+raisonner par imitation. C&rsquo;est la <strong>distillation</strong>.</p><p>En septembre 2024, OpenAI présente o1, le premier d&rsquo;une série de <strong>modèles de
+raisonnement</strong> (<em>reasoning models</em>), qui « réfléchissent » parfois plusieurs minutes
+avant de répondre. En janvier 2025, DeepSeek publie R1 et décrit sa méthode : un
+apprentissage par renforcement où la récompense dépend seulement de la justesse de la
+réponse finale. Les auteurs observent que le modèle apprend de lui-même à vérifier
+ses calculs, à revenir en arrière et à essayer une autre approche. En juillet 2025,
+des modèles de raisonnement d&rsquo;OpenAI et de Google DeepMind obtiennent un score de
+médaille d&rsquo;or aux Olympiades internationales de mathématiques. Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a> » en raconte la suite. Ces machines qui
+raisonnent sans aucune règle de logique écrite à la main avaient été annoncées au
+chapitre « <a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux</a> » du Module 1.</p><p>Ces modèles ouvrent un troisième levier. Jusque-là, pour obtenir un meilleur modèle,
+on agrandissait le modèle et ses données, comme le décrivent les
+<a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#des-lois-d%c3%a9chelle>lois d&rsquo;échelle</a>. Avec o1,
+OpenAI montre que la justesse des réponses augmente aussi, de façon régulière, avec le
+temps de réflexion accordé au modèle au moment de répondre. On parle de <strong>calcul au
+moment de la réponse</strong> (<em>test-time compute</em>). Le modèle ne change pas : il écrit
+seulement un raisonnement plus long. Ce levier a un prix, puisque chaque réponse coûte
+d&rsquo;autant plus cher qu&rsquo;elle est longue. Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/#o3-et-le-calcul-au-moment-de-la-r%c3%a9ponse>Le défi ARC</a> »
+en donne un exemple.</p><p>Ces raisonnements écrits ne sont cependant pas toujours le reflet fidèle du calcul
+réellement effectué par le réseau. Un modèle peut écrire un raisonnement plausible et
+arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
+l&rsquo;intérieur d&rsquo;un modèle est l&rsquo;objet de l&rsquo;interprétabilité, présentée au chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/#%c3%a0-quoi-sert-linterpr%c3%a9tabilit%c3%a9>Regarder à l&rsquo;intérieur</a> »,
+qui montre comment on peut parfois le vérifier. Le
+<a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>chapitre suivant</a> montre comment on donne à ces
+assistants des outils pour agir.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Passer à l'échelle</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/ class="flex align-center"><span>Des outils, un harnais et des agents</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#un-modèle-de-base-ne-répond-pas>Un modèle de base ne répond pas</a></li><li><a href=#imiter-de-bonnes-réponses>Imiter de bonnes réponses</a></li><li><a href=#le-renforcement-à-partir-de-préférences-humaines-rlhf>Le renforcement à partir de préférences humaines (RLHF)</a></li><li><a href=#le-travail-humain-derrière-lassistant>Le travail humain derrière l&rsquo;assistant</a></li><li><a href=#utile-honnête-inoffensif>Utile, honnête, inoffensif</a></li><li><a href=#faire-des-choses-avec-des-mots>Faire des choses avec des mots</a></li><li><a href=#des-modèles-qui-raisonnent-rlvr>Des modèles qui « raisonnent » (RLVR)</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>

@@ -1,0 +1,357 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Des outils, un harnais et des agents Un assistant comme ceux présentés au chapitre « Du modèle à l’assistant » ne fait que produire du texte à partir du texte qu’on lui donne. Ce fonctionnement a trois limites.
+Ses connaissances sont figées. Le modèle ne connaît que ce qui figurait dans ses données d’entraînement, jusqu’à une date de coupure (knowledge cutoff). Il ignore les événements plus récents, et les documents privés d’une entreprise ou d’une personne. Le laisser apprendre en continu est plus difficile qu’il n’y paraît, comme l’explique la section « Pourquoi ne pas le laisser apprendre ? ». Il calcule mal. Un modèle de langage prédit des jetons. Il peut écrire le résultat d’une multiplication sans l’avoir vraiment effectuée. Il n’agit pas. Il ne peut ni consulter une page Web, ni envoyer un courriel, ni modifier un fichier. Ce chapitre commence par expliquer ce qu’est vraiment une conversation avec un assistant, et pourquoi il n’apprend rien de ses échanges. Il présente ensuite les moyens qui ont été développés pour dépasser ces limites : bien formuler les requêtes, donner au modèle des documents à consulter, lui confier des outils. Il présente ensuite les systèmes qui enchaînent eux-mêmes les actions, en boucle, jusqu’à ce qu’une tâche soit accomplie : les agents.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/outils-et-agents/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Des outils, un harnais et des agents"><meta property="og:description" content="Des outils, un harnais et des agents Un assistant comme ceux présentés au chapitre « Du modèle à l’assistant » ne fait que produire du texte à partir du texte qu’on lui donne. Ce fonctionnement a trois limites.
+Ses connaissances sont figées. Le modèle ne connaît que ce qui figurait dans ses données d’entraînement, jusqu’à une date de coupure (knowledge cutoff). Il ignore les événements plus récents, et les documents privés d’une entreprise ou d’une personne. Le laisser apprendre en continu est plus difficile qu’il n’y paraît, comme l’explique la section « Pourquoi ne pas le laisser apprendre ? ». Il calcule mal. Un modèle de langage prédit des jetons. Il peut écrire le résultat d’une multiplication sans l’avoir vraiment effectuée. Il n’agit pas. Il ne peut ni consulter une page Web, ni envoyer un courriel, ni modifier un fichier. Ce chapitre commence par expliquer ce qu’est vraiment une conversation avec un assistant, et pourquoi il n’apprend rien de ses échanges. Il présente ensuite les moyens qui ont été développés pour dépasser ces limites : bien formuler les requêtes, donner au modèle des documents à consulter, lui confier des outils. Il présente ensuite les systèmes qui enchaînent eux-mêmes les actions, en boucle, jusqu’à ce qu’une tâche soit accomplie : les agents."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Des outils, un harnais et des agents"><meta itemprop=description content="Des outils, un harnais et des agents Un assistant comme ceux présentés au chapitre « Du modèle à l’assistant » ne fait que produire du texte à partir du texte qu’on lui donne. Ce fonctionnement a trois limites.
+Ses connaissances sont figées. Le modèle ne connaît que ce qui figurait dans ses données d’entraînement, jusqu’à une date de coupure (knowledge cutoff). Il ignore les événements plus récents, et les documents privés d’une entreprise ou d’une personne. Le laisser apprendre en continu est plus difficile qu’il n’y paraît, comme l’explique la section « Pourquoi ne pas le laisser apprendre ? ». Il calcule mal. Un modèle de langage prédit des jetons. Il peut écrire le résultat d’une multiplication sans l’avoir vraiment effectuée. Il n’agit pas. Il ne peut ni consulter une page Web, ni envoyer un courriel, ni modifier un fichier. Ce chapitre commence par expliquer ce qu’est vraiment une conversation avec un assistant, et pourquoi il n’apprend rien de ses échanges. Il présente ensuite les moyens qui ont été développés pour dépasser ces limites : bien formuler les requêtes, donner au modèle des documents à consulter, lui confier des outils. Il présente ensuite les systèmes qui enchaînent eux-mêmes les actions, en boucle, jusqu’à ce qu’une tâche soit accomplie : les agents."><meta itemprop=wordCount content="4444"><title>Des outils, un harnais et des agents • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module4/outils-et-agents/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.2548c1ebfb3b3e76768a3447705a7e9e1d636bcd685def8976854bdf784d3d5b.css integrity="sha256-JUjB6/s7PnZ2ijRHcFp+nh1ja81oXe+JdoVL33hNPVs=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.14a1764f940795ea0fbc5b0d00169e7611a8c6ac180fce4d017dc7c746c88408.js integrity="sha256-FKF2T5QHleoPvFsNABaedhGoxqwYD85NAX3Hx0bIhAg=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><input type=checkbox id=section-ad65b8547fe18e1e59e616b5d251eca3 class=toggle checked>
+<label for=section-ad65b8547fe18e1e59e616b5d251eca3 class=flex><a href=/inf1901-teluq-v2/docs/module4/>Module 4 - IA générative et grands modèles de langage</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module4/generer/>Générer : imiter une distribution</a></li><li><a href=/inf1901-teluq-v2/docs/module4/quatre-facons-de-generer/>Quatre façons de générer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/>Des images, des voix, des vidéos</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>Des règles aux probabilités</a></li><li><a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/>Les outils statistiques</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/>Des mots aux nombres : jetons et plongements</a></li><li><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/>Passer à l'échelle</a></li><li><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>Du modèle à l'assistant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/ class=active>Des outils, un harnais et des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>Le défi ARC</a></li><li><a href=/inf1901-teluq-v2/docs/module4/mots-et-images/>Relier les mots et les images</a></li><li><a href=/inf1901-teluq-v2/docs/module4/voir-entendre-parler/>Des modèles qui voient, entendent et parlent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l'intérieur</a></li><li><a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/>Ce que les LLM comprennent, et ce qu'ils ratent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/travail-not%C3%A9-4/>Travail noté 4</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Des outils, un harnais et des agents</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#formuler-la-requête>Formuler la requête</a></li><li><a href=#une-conversation-qui-nen-est-pas-une>Une conversation qui n&rsquo;en est pas une</a></li><li><a href=#la-requête-système-et-le-harnais>La requête système et le harnais</a></li><li><a href=#pourquoi-ne-pas-le-laisser-apprendre>Pourquoi ne pas le laisser apprendre ?</a></li><li><a href=#chercher-dabord-répondre-ensuite-rag>Chercher d&rsquo;abord, répondre ensuite (RAG)</a></li><li><a href=#le-harnais-et-lappel-doutils>Le harnais et l&rsquo;appel d&rsquo;outils</a></li><li><a href=#des-agents-un-modèle-et-son-harnais-en-boucle>Des agents : un modèle et son harnais, en boucle</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=des-outils-un-harnais-et-des-agents>Des outils, un harnais et des agents<a class=anchor href=#des-outils-un-harnais-et-des-agents></a></h1><p>Un assistant comme ceux présentés au chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>Du modèle à l&rsquo;assistant</a> » ne fait que
+produire du texte à partir du texte qu&rsquo;on lui donne. Ce fonctionnement a trois
+limites.</p><ul><li><strong>Ses connaissances sont figées.</strong> Le modèle ne connaît que ce qui figurait dans
+ses données d&rsquo;entraînement, jusqu&rsquo;à une <strong>date de coupure</strong> (<em>knowledge cutoff</em>).
+Il ignore les événements plus récents, et les documents privés d&rsquo;une entreprise ou
+d&rsquo;une personne. Le laisser apprendre en continu est plus difficile qu&rsquo;il n&rsquo;y paraît,
+comme l&rsquo;explique la section « <a href=#pourquoi-ne-pas-le-laisser-apprendre>Pourquoi ne pas le laisser apprendre ?</a> ».</li><li><strong>Il calcule mal.</strong> Un modèle de langage prédit des jetons. Il peut écrire le
+résultat d&rsquo;une multiplication sans l&rsquo;avoir vraiment effectuée.</li><li><strong>Il n&rsquo;agit pas.</strong> Il ne peut ni consulter une page Web, ni envoyer un courriel, ni
+modifier un fichier.</li></ul><p>Ce chapitre commence par expliquer ce qu&rsquo;est vraiment une conversation avec un
+assistant, et pourquoi il n&rsquo;apprend rien de ses échanges. Il présente ensuite les
+moyens qui ont été développés pour dépasser ces limites : bien formuler les requêtes, donner au modèle des documents à consulter, lui confier
+des outils. Il présente ensuite les systèmes qui enchaînent eux-mêmes les actions,
+en boucle, jusqu&rsquo;à ce qu&rsquo;une tâche soit accomplie : les <strong>agents</strong>.</p><h2 id=formuler-la-requête>Formuler la requête<a class=anchor href=#formuler-la-requ%c3%aate></a></h2><p>Le texte qu&rsquo;on donne au modèle s&rsquo;appelle la <strong>requête</strong> (<em>prompt</em>). Comme le modèle
+continue ce texte, sa formulation a une grande influence sur la réponse. La rédaction
+des requêtes (<em>prompt engineering</em>) repose sur quelques principes simples.</p><ul><li>Préciser la tâche, le public visé et la forme attendue : « Explique la
+photosynthèse à un élève de 12 ans, en cinq phrases. »</li><li>Donner des exemples de ce qu&rsquo;on attend, ce qui exploite
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#apprendre-dans-le-contexte>apprentissage dans le contexte</a>.</li><li>Fournir les informations nécessaires plutôt que de compter sur la mémoire du
+modèle, par exemple en collant le texte à résumer.</li><li>Demander un raisonnement par étapes pour les problèmes difficiles, comme la
+<a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#des-mod%c3%a8les-qui-raisonnent-rlvr>chaîne de pensée</a>.</li></ul><h2 id=une-conversation-qui-nen-est-pas-une>Une conversation qui n&rsquo;en est pas une<a class=anchor href=#une-conversation-qui-nen-est-pas-une></a></h2><p>Une conversation avec un assistant ressemble à un échange entre deux
+interlocuteurs : on pose une question, il répond, on enchaîne, il se souvient de ce
+qu&rsquo;on a dit. Le mécanisme est pourtant tout autre.</p><p>Le modèle n&rsquo;a aucune mémoire d&rsquo;une réplique à l&rsquo;autre. Ses paramètres sont fixés une
+fois pour toutes à la fin de l&rsquo;entraînement, et rien de ce qu&rsquo;on lui dit ne les
+modifie. Ce qui donne l&rsquo;illusion de la continuité, c&rsquo;est le programme qui
+l&rsquo;entoure, son harnais, présenté dans la
+<a href=#la-requ%c3%aate-syst%c3%a8me-et-le-harnais>section suivante</a>.
+À chaque nouvelle réplique, il reconstitue un seul long texte, qui
+contient les instructions de départ, tous les messages échangés depuis le début et
+toutes les réponses déjà données par le modèle. Il le lui présente comme un texte
+à continuer. Le modèle prédit alors un jeton, qu&rsquo;on ajoute au texte, puis le
+suivant, en tenant compte chaque fois de la totalité de ce qui précède. À la
+réplique suivante, tout recommence. En pratique, les calculs déjà faits sont
+conservés pour aller plus vite, mais le principe ne change pas : le modèle ne voit
+qu&rsquo;un texte.</p><label class=book-image for=book-image-toggle-2940e177d84c><input class="hidden toggle" type=checkbox id=book-image-toggle-2940e177d84c>
+<img src=/inf1901-teluq-v2/images/module4/conversation.svg alt="Deux rangées de trois répliques. En haut, une personne : à chaque réplique, seule la nouvelle question entre ; ce qui change, c'est un état intérieur, dessiné dans une tête, qui grandit et évolue d'une réplique à l'autre. En bas, un modèle de langage : à la première réplique, il reçoit les instructions de départ et la première question, et produit la première réponse ; à la deuxième, il reçoit tout cela de nouveau, plus la deuxième question ; à la troisième, encore tout, plus la troisième question. La barre de texte s'allonge à chaque réplique, alors que le modèle, au milieu, reste identique, avec des paramètres fixes." loading=lazy title="Pour une personne, seule la nouvelle phrase entre, et c'est son état intérieur qui porte la conversation. Pour le modèle, chaque réplique repart de zéro : toute la conversation lui est présentée de nouveau, comme un texte à continuer." width=840 height=500 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-2940e177d84c"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Une conversation humaine fonctionne autrement. Nous ne relisons pas la
+transcription de l&rsquo;échange avant chaque réplique. Ce que l&rsquo;autre dit modifie au fur
+et à mesure notre état intérieur, ce que nous comprenons, croyons et voulons. Nous
+oublions vite les mots exacts, mais nous retenons l&rsquo;essentiel, et nous nous en
+souviendrons demain. Le modèle fait presque l&rsquo;inverse.</p><ul><li>Il dispose de chaque mot exact de la conversation, tant qu&rsquo;elle tient dans sa
+<a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/#gpt-un-transformer-qui-pr%c3%a9dit-le-jeton-suivant>fenêtre de contexte</a>.</li><li>Il n&rsquo;a rien d&rsquo;autre : aucun souvenir de la veille, sauf si le harnais glisse
+des notes dans le texte qu&rsquo;il lui présente.</li><li>Quand la conversation dépasse la fenêtre, les passages les plus anciens sont
+simplement retirés, et il les oublie d&rsquo;un coup.</li></ul><p>On peut se représenter chaque réplique comme si l&rsquo;on remettait la transcription
+complète à un nouvel interlocuteur, qui ne vous a jamais rencontré, en lui demandant
+d&rsquo;écrire la suite. C&rsquo;est la situation du héros de <em>Memento</em> (Christopher Nolan,
+2000) : incapable de former de nouveaux souvenirs, il ne s&rsquo;y retrouve qu&rsquo;en relisant
+ses notes.</p><p>C&rsquo;est pourquoi la taille de la fenêtre compte autant, et pourquoi elle est passée de
+512 jetons en 2018 à un million en 2024. Une fenêtre plus grande permet :</p><ul><li>de tenir de longues conversations sans que le début s&rsquo;efface ;</li><li>de confier au modèle un document entier (un contrat, un mémoire, un livre, tout le
+code d&rsquo;un logiciel) et de l&rsquo;interroger sur l&rsquo;ensemble plutôt que sur des extraits ;</li><li>de lui donner de nombreux exemples dans la requête, pour
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#apprendre-dans-le-contexte>apprentissage dans le contexte</a> ;</li><li>de laisser un <a href=#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle>agent</a> accumuler le
+résultat de ses actions au fil d&rsquo;une longue tâche.</li></ul><p>Tout ce que le modèle doit savoir pour répondre, et qu&rsquo;il n&rsquo;a pas appris pendant
+l&rsquo;entraînement, doit se trouver dans cette fenêtre. Quand les documents n&rsquo;y tiennent
+pas, il faut choisir les passages à y placer. C&rsquo;est la
+<a href=#chercher-dabord-r%c3%a9pondre-ensuite-rag>génération augmentée par la recherche</a>.</p><p>Une grande fenêtre a toutefois un prix. Dans l&rsquo;attention, chaque jeton est comparé à
+tous ceux qui le précèdent : doubler la longueur du texte multiplie à peu près par
+quatre ces calculs. C&rsquo;est le
+<a href=/inf1901-teluq-v2/docs/module3/attention-transformer/#pourquoi-il-a-tout-chang%c3%a9>coût de l&rsquo;auto-attention</a>
+déjà signalé au Module 3. Plus une conversation est longue, plus chaque réponse coûte cher.
+De plus, les modèles n&rsquo;exploitent pas toute leur fenêtre aussi bien. En 2023, Nelson
+Liu et ses collègues, à Stanford, montrent qu&rsquo;ils retrouvent mieux une information
+placée au début ou à la fin d&rsquo;un long texte qu&rsquo;au milieu (<em>lost in the middle</em>).</p><blockquote class="book-hint warning"><p><strong>Deux idées à bien saisir</strong></p><p>Les deux idées suivantes vont à l&rsquo;encontre de l&rsquo;intuition. Elles comptent parmi les
+aspects des grands modèles de langage que le grand public comprend le plus souvent
+mal.</p><ol><li><strong>Une conversation avec un modèle de langage n&rsquo;en est pas une, au sens
+habituel.</strong> Le modèle ne suit pas l&rsquo;échange. À chaque réplique, toute la
+conversation lui est présentée de nouveau, depuis le début, comme un texte à
+continuer.</li><li><strong>Le modèle n&rsquo;apprend rien de ses conversations.</strong> Au cours d&rsquo;un échange, il peut
+sembler retenir une correction, s&rsquo;adapter à une préférence ou apprendre une façon
+de faire. C&rsquo;est l&rsquo;<a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#apprendre-dans-le-contexte>apprentissage dans le contexte</a>.
+Mais tout cela n&rsquo;existe que dans le texte qu&rsquo;on lui présente : ses paramètres ne
+changent pas. Une nouvelle conversation repart de zéro, et une erreur corrigée
+dans un échange pourra être refaite dans le suivant. Les fonctions de « mémoire »
+de certains assistants ne changent rien au principe, puisqu&rsquo;elles glissent des
+notes dans ce texte. Seul un nouvel entraînement modifie un modèle. Une entreprise
+peut se servir des conversations pour entraîner une version suivante, mais ce sera
+un autre modèle, publié des mois plus tard. La section
+« <a href=#pourquoi-ne-pas-le-laisser-apprendre>Pourquoi ne pas le laisser apprendre ?</a> », plus bas,
+explique pourquoi.</li></ol></blockquote><h2 id=la-requête-système-et-le-harnais>La requête système et le harnais<a class=anchor href=#la-requ%c3%aate-syst%c3%a8me-et-le-harnais></a></h2><p>Les assistants reçoivent aussi une <strong>requête système</strong> (<em>system prompt</em>), rédigée par
+l&rsquo;entreprise ou le développeur, que l&rsquo;utilisateur ne voit généralement pas. Elle fixe
+le rôle de l&rsquo;assistant, son ton, ce qu&rsquo;il doit refuser et les outils dont il dispose.
+Toute la conversation, requête système comprise, doit tenir dans la
+<a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/#gpt-un-transformer-qui-pr%c3%a9dit-le-jeton-suivant>fenêtre de contexte</a>
+du modèle.</p><p>Il n&rsquo;y a pas de canal séparé pour cette requête. Comme toute la
+<a href=#une-conversation-qui-nen-est-pas-une>conversation</a>,
+elle est simplement placée <strong>au début du texte</strong> que le modèle reçoit. Le programme qui
+entoure le modèle, qu&rsquo;on appelle son <strong>harnais</strong> (<em>harness</em>), assemble ce texte selon un <strong>gabarit de conversation</strong> (<em>chat template</em>), qui délimite
+chaque partie par des jetons spéciaux. Ces jetons ne correspondent à aucun texte qu&rsquo;un
+utilisateur pourrait taper. Schématiquement, le modèle reçoit ceci :</p><pre tabindex=0><code>&lt;|début|&gt;système
+Tu es l&#39;assistant de la librairie Le Signet. Réponds en français, avec courtoisie.
+Ne donne jamais d&#39;avis médical. Tu peux utiliser l&#39;outil chercher_catalogue(titre).
+&lt;|fin|&gt;
+&lt;|début|&gt;utilisateur
+Avez-vous Kamouraska, d&#39;Anne Hébert ?
+&lt;|fin|&gt;
+&lt;|début|&gt;assistant</code></pre><p>Le texte s&rsquo;arrête après la marque qui ouvre la réplique de l&rsquo;assistant. Le modèle fait
+alors ce qu&rsquo;il a toujours fait : il prédit la suite, jeton après jeton, jusqu&rsquo;à
+produire la marque de fin de réplique, qui rend la main à l&rsquo;utilisateur. La
+description des outils disponibles est elle aussi écrite dans la partie système, sous
+forme de texte.</p><label class=book-image for=book-image-toggle-52611f206003><input class="hidden toggle" type=checkbox id=book-image-toggle-52611f206003>
+<img src=/inf1901-teluq-v2/images/module4/gabarit-conversation.svg alt="En haut, trois sources : la requête système, rédigée par l'entreprise, que l'utilisateur ne voit pas, avec la description des outils ; les échanges précédents ; le nouveau message de l'utilisateur. Le harnais les assemble en un seul texte, selon un gabarit de conversation. Ce texte est dessiné au milieu : chaque partie commence par une marque spéciale, début système, début utilisateur, début assistant, et se termine par une marque de fin. Le texte s'arrête après la marque qui ouvre la réplique de l'assistant. Le modèle, à droite, le continue jeton après jeton, « Oui, nous l'avons en format poche », jusqu'à produire la marque de fin, qui rend la main à l'utilisateur. En bas, la priorité apprise pendant le post-entraînement : la requête système d'abord, puis l'utilisateur, puis le contenu des documents et des outils." loading=lazy title="Le gabarit de conversation. La requête système n'est qu'un début de texte ; c'est le post-entraînement qui apprend au modèle à lui donner priorité." width=840 height=530 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-52611f206003"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Rien, dans le mécanisme, n&rsquo;oblige le modèle à respecter la requête système plutôt que
+les messages de l&rsquo;utilisateur. C&rsquo;est le
+<a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#un-mod%c3%a8le-de-base-ne-r%c3%a9pond-pas>post-entraînement</a>
+qui lui apprend, par des exemples, à donner priorité à la partie système quand les
+deux se contredisent. En 2024, une équipe d&rsquo;OpenAI décrit cette <strong>hiérarchie des
+instructions</strong> (<em>instruction hierarchy</em>) : d&rsquo;abord la requête système, puis
+l&rsquo;utilisateur, puis le contenu des documents et des outils. Comme tout ce qui est
+appris, cette priorité est imparfaite, et c&rsquo;est pourquoi les
+<a href=#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle>injections d&rsquo;instructions</a> restent possibles.</p><h2 id=pourquoi-ne-pas-le-laisser-apprendre>Pourquoi ne pas le laisser apprendre ?<a class=anchor href=#pourquoi-ne-pas-le-laisser-apprendre></a></h2><p>On pourrait imaginer un modèle qui continue d&rsquo;ajuster ses paramètres après
+l&rsquo;entraînement. Il intégrerait les nouvelles connaissances au fur et à mesure,
+retiendrait les corrections de ses utilisateurs, et n&rsquo;aurait plus de date de coupure, la limite présentée au début de ce chapitre.
+C&rsquo;est l&rsquo;<strong>apprentissage continu</strong> (<em>continual learning</em>). Les humains apprennent ainsi
+toute leur vie, mais les réseaux de neurones y parviennent mal, pour plusieurs
+raisons.</p><ul><li><strong>L&rsquo;oubli catastrophique</strong> (<em>catastrophic forgetting</em>). Dans un réseau, chaque
+connaissance est répartie sur un grand nombre de poids, et chaque poids participe à
+un grand nombre de connaissances. Si on entraîne le réseau sur de nouveaux exemples
+seulement, la <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#apprendre-cest-descendre-la-pente>descente de gradient</a>
+modifie ces poids sans tenir compte de ce qu&rsquo;ils encodaient déjà, et les anciennes
+connaissances se dégradent. Michael McCloskey et Neal Cohen le décrivent dès 1989.
+Pendant l&rsquo;entraînement initial, ce problème ne se pose pas : les exemples sont
+mélangés, et chaque pas d&rsquo;apprentissage voit un peu de tout. Les remèdes connus
+atténuent le problème sans le régler. On peut rejouer d&rsquo;anciens exemples parmi les
+nouveaux, ou protéger les poids les plus importants pour les tâches déjà apprises
+(James Kirkpatrick et ses collègues, chez DeepMind, en 2017).</li><li><strong>Le coût.</strong> Ajuster les paramètres demande la rétropropagation, plusieurs fois plus
+coûteuse que la simple prédiction. Surtout, un même modèle sert des millions de
+personnes à la fois. Pour qu&rsquo;il apprenne de chacune, il faudrait garder une version distincte
+du modèle par utilisateur. Ce serait une copie de ses centaines de milliards de
+paramètres, ou au moins d&rsquo;une partie d&rsquo;entre eux, puisqu&rsquo;on sait adapter un modèle
+en ne modifiant qu&rsquo;une petite fraction de ses paramètres.</li><li><strong>La fiabilité.</strong> Ce que les utilisateurs disent au modèle peut être faux, ou
+malveillant. En 2016, Microsoft met en ligne Tay, un robot conversationnel qui
+apprend de ses échanges sur Twitter. Des internautes lui font tenir des propos
+racistes en quelques heures, et Microsoft le retire au bout de seize heures. Ce
+qu&rsquo;un modèle apprend d&rsquo;une personne pourrait aussi ressortir chez une autre, y
+compris des renseignements privés.</li><li><strong>L&rsquo;évaluation.</strong> Un modèle est testé longuement avant d&rsquo;être publié. Un modèle qui
+change sans cesse ne pourrait jamais l&rsquo;être tout à fait.</li></ul><label class=book-image for=book-image-toggle-731a6484d6c8><input class="hidden toggle" type=checkbox id=book-image-toggle-731a6484d6c8>
+<img src=/inf1901-teluq-v2/images/module4/oubli-catastrophique.svg alt="Un graphique de la justesse d'un petit réseau au fil de l'entraînement. Pendant la première moitié, il apprend à reconnaître les chiffres manuscrits 0 à 4 (tâche A), et sa justesse sur cette tâche monte à 99 %. Pendant la seconde moitié, on ne lui montre plus que les chiffres 5 à 9 (tâche B). Sa justesse sur la tâche B monte à 97 %, mais celle sur la tâche A s'effondre, jusqu'à 0 % : il a oublié. Une courbe en pointillés montre la même expérience quand on mêle à chaque lot 8 anciens exemples de la tâche A sur 32 : la justesse sur la tâche A reste alors à 87 %." loading=lazy title="Une petite expérience réelle d'oubli catastrophique. Un réseau à une couche cachée apprend les chiffres 0 à 4, puis seulement les chiffres 5 à 9 : en quelques dizaines de pas, il ne reconnaît plus aucun des premiers. Rejouer quelques anciens exemples suffit ici à limiter l'oubli, mais à l'échelle d'un grand modèle de langage, aucun remède ne règle complètement le problème." width=840 height=430 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-731a6484d6c8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le cerveau, lui, semble disposer de deux systèmes complémentaires. L&rsquo;hippocampe
+enregistre rapidement les expériences nouvelles, et le néocortex les intègre
+lentement, en les entremêlant aux anciennes, notamment pendant le sommeil (James
+McClelland, Bruce McNaughton et Randall O&rsquo;Reilly, 1995). En attendant de savoir faire
+de même, on contourne le problème : de nouvelles versions du modèle, entraînées tous
+les quelques mois, des notes glissées dans le contexte, et la recherche de documents
+présentée au chapitre
+« <a href=#chercher-dabord-r%c3%a9pondre-ensuite-rag>Chercher d&rsquo;abord, répondre ensuite</a> ».
+Une piste de recherche, l&rsquo;<strong>entraînement au moment du test</strong>
+(<em>test-time training</em>), ajuste temporairement les poids du modèle sur le problème à
+résoudre, puis les oublie ; le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/#le-prix-arc-de-2024-et-lentra%c3%aenement-au-moment-du-test>Le défi ARC</a> »
+en montre l&rsquo;efficacité. L&rsquo;apprentissage continu reste un problème de recherche ouvert.</p><p>Les fonctions de <strong>mémoire</strong> des assistants appartiennent à ces contournements. En
+février 2024, OpenAI ajoute à ChatGPT une mémoire : au fil des conversations, le
+modèle note de courts faits sur l&rsquo;utilisateur, comme son métier ou ses préférences,
+et le harnais glisse ces notes au début de chaque nouvelle conversation. En 2025,
+ChatGPT peut aussi puiser dans l&rsquo;ensemble des conversations passées, et Claude et
+Gemini offrent des fonctions semblables. Le modèle, lui, n&rsquo;a toujours rien appris : il
+relit des notes, qu&rsquo;on peut consulter, corriger ou effacer.</p><h2 id=chercher-dabord-répondre-ensuite-rag>Chercher d&rsquo;abord, répondre ensuite (RAG)<a class=anchor href=#chercher-dabord-r%c3%a9pondre-ensuite-rag></a></h2><p>Pour répondre à une question sur des documents récents ou privés, on peut chercher
+les passages utiles, puis les placer dans le contexte du modèle avec la question.
+C&rsquo;est la <strong>génération augmentée par la recherche</strong> (<em>retrieval-augmented generation</em>,
+RAG), présentée en 2020 par Patrick Lewis et ses collègues, chez Facebook. La
+recherche utilise des <a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/#tout-devient-vecteur>plongements</a> :
+chaque passage de la base de documents est représenté par un vecteur, et on retient
+ceux dont le vecteur est le plus proche de celui de la question. On trouve ainsi un
+passage qui répond à la question même s&rsquo;il n&rsquo;en reprend pas les mots.</p><label class=book-image for=book-image-toggle-aa3763e6900e><input class="hidden toggle" type=checkbox id=book-image-toggle-aa3763e6900e>
+<img src=/inf1901-teluq-v2/images/module4/rag.svg alt="Un schéma. La question de l'utilisateur est transformée en plongement. On cherche, dans une base de documents déjà transformés en plongements, les passages dont le vecteur est le plus proche. Les trois passages trouvés sont ajoutés au contexte du modèle de langage, avec la question. Le modèle rédige une réponse appuyée sur ces passages, en les citant." loading=lazy title="La génération augmentée par la recherche : on cherche les passages utiles, on les place dans le contexte, et le modèle répond à partir de ces passages." width=700 height=344 style=--largeur-plafond:700px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-aa3763e6900e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Concrètement, la recherche se prépare d&rsquo;avance. On découpe les documents en passages
+de quelques centaines de mots, et un modèle de plongements calcule le vecteur de
+chacun. Ces vecteurs sont rangés, avec le texte de leur passage, dans une <strong>base de
+données vectorielle</strong> (<em>vector database</em>). Au moment de la question, on calcule le
+vecteur de la question et on demande à la base les passages dont le vecteur est le
+plus proche. C&rsquo;est exactement la recherche des
+<a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/#les-k-plus-proches-voisins>k plus proches voisins</a>
+du Module 2, appliquée à des vecteurs de plusieurs centaines de dimensions.</p><p>La difficulté est l&rsquo;échelle. Comparer la question à des millions de vecteurs, un par
+un, serait trop lent. Les bases vectorielles font donc une recherche
+<strong>approximative</strong> : elles acceptent de manquer parfois un voisin, en échange d&rsquo;une
+réponse en quelques millisecondes. La méthode la plus répandue, HNSW (Yury Malkov et
+Dmitry Yashunin, 2016), relie les vecteurs en un graphe à plusieurs étages. On part
+d&rsquo;un étage clairsemé, où l&rsquo;on fait de grands sauts, comme sur une autoroute, puis on
+descend vers des étages de plus en plus denses, comme dans les rues d&rsquo;un quartier,
+jusqu&rsquo;aux voisins de la question. La bibliothèque Faiss, publiée par Meta en 2017, et
+des bases spécialisées comme Pinecone, Milvus ou Chroma, ou l&rsquo;extension pgvector de
+PostgreSQL, offrent ce type de recherche.</p><label class=book-image for=book-image-toggle-afe60834601b><input class="hidden toggle" type=checkbox id=book-image-toggle-afe60834601b>
+<img src=/inf1901-teluq-v2/images/module4/hnsw.svg alt="Trois plans superposés, les étages d'un graphe de vecteurs. L'étage du bas contient tous les vecteurs, reliés à leurs voisins proches ; l'étage du milieu en contient une quinzaine, reliés à des voisins plus éloignés ; l'étage du haut, seulement quatre. Une étoile rouge marque la position de la question, au même endroit à chaque étage. La recherche part d'un point d'entrée à l'étage du haut, fait deux grands sauts vers la question, descend à l'étage du milieu, se rapproche encore, puis descend à l'étage du bas, où quelques petits pas l'amènent au plus proche voisin de la question. Les trois plus proches voisins trouvés sont entourés." loading=lazy title="La recherche dans un graphe à étages (HNSW), réellement calculée sur des points tirés au hasard : quelques grands sauts en haut, quelques petits pas en bas, au lieu de comparer la question à tous les vecteurs." width=840 height=560 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-afe60834601b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Les plongements ont aussi un point faible : ils saisissent le sens, mais distinguent
+mal un nom propre rare, un numéro de produit ou un code d&rsquo;erreur. On combine donc
+souvent la recherche par vecteurs avec une recherche par mots-clés, héritière du
+<a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/#repr%c3%a9senter-des-documents>tf-idf</a> présenté
+au chapitre « Les outils statistiques ». C&rsquo;est la <strong>recherche hybride</strong> (<em>hybrid search</em>).</p><p>Cette méthode a deux avantages. Le modèle s&rsquo;appuie sur des sources à jour, sans être
+réentraîné, et il peut les citer, ce qui permet de vérifier sa réponse. Elle est
+aujourd&rsquo;hui utilisée par les moteurs de recherche qui répondent par un texte, et par
+les assistants d&rsquo;entreprise qui consultent la documentation interne. Elle ne supprime
+pas les erreurs : si la recherche trouve un mauvais passage, le modèle peut s&rsquo;en
+servir avec assurance.</p><p>Une variante, présentée par Microsoft en 2024, organise d&rsquo;abord les documents en un
+<strong>graphe de connaissances</strong> (<em>knowledge graph</em>), où les personnes, les lieux et les
+concepts sont reliés entre eux. Cette méthode s&rsquo;appelle GraphRAG. On retrouve là les réseaux de concepts reliés de l&rsquo;IA
+symbolique, dont le chapitre « <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#lh%c3%a9ritage-invisible>Les hivers et la bascule</a> »
+du Module 1 montrait qu&rsquo;ils structurent encore une grande partie du savoir sur le Web.
+Deux conceptions du savoir s&rsquo;y rejoignent : le savoir organisé à la main, ou
+automatiquement, dans un graphe, et le savoir absorbé par un modèle de langage à
+partir du texte.</p><h2 id=le-harnais-et-lappel-doutils>Le harnais et l&rsquo;appel d&rsquo;outils<a class=anchor href=#le-harnais-et-lappel-doutils></a></h2><p>Un modèle de langage ne peut qu&rsquo;écrire du texte. Il ne peut ni consulter une base de
+données, ni faire un calcul exact, ni envoyer un courriel. Mais il peut écrire un texte
+qui <strong>demande</strong> une action, dans un format convenu à l&rsquo;avance. Son harnais, présenté
+<a href=#la-requ%c3%aate-syst%c3%a8me-et-le-harnais>plus haut</a>, lit cette demande, l&rsquo;exécute, et lui
+rapporte le résultat.
+C&rsquo;est l&rsquo;<strong>appel d&rsquo;outils</strong> (<em>tool use</em>, ou <em>function calling</em>). Quand on dit qu&rsquo;un
+modèle « décide d&rsquo;appeler un outil », voici exactement ce qui se passe.</p><p><strong>1. L&rsquo;outil est décrit au modèle, en texte.</strong> La requête système contient, pour
+chaque outil, son nom, une phrase qui dit à quoi il sert, et la liste de ses
+paramètres, avec leur type :</p><pre tabindex=0><code>Outil : chercher_catalogue
+Description : cherche un livre dans le catalogue de la librairie
+              et donne son prix et sa disponibilité.
+Paramètres : titre (texte, obligatoire)</code></pre><p>Le modèle ne voit jamais le code de l&rsquo;outil, seulement cette description.</p><p><strong>2. Le modèle écrit un appel, au lieu d&rsquo;une réponse.</strong> L&rsquo;utilisateur demande
+« Combien coûte Kamouraska ? ». Après la marque qui ouvre la réplique de l&rsquo;assistant,
+le jeton le plus probable n&rsquo;est pas un mot, mais une marque spéciale d&rsquo;appel d&rsquo;outil,
+suivie d&rsquo;un petit texte structuré :</p><pre tabindex=0><code>&lt;|début|&gt;assistant
+&lt;|appel|&gt;{&#34;outil&#34;: &#34;chercher_catalogue&#34;, &#34;arguments&#34;: {&#34;titre&#34;: &#34;Kamouraska&#34;}}&lt;|fin|&gt;</code></pre><p>Rien ne s&rsquo;est encore passé. Le modèle a seulement prédit des jetons, comme toujours,
+et la génération s&rsquo;arrête à la marque de fin.</p><p><strong>3. Le harnais exécute l&rsquo;appel.</strong> Il reconnaît la marque d&rsquo;appel et lit le nom de
+l&rsquo;outil et ses arguments. Il vérifie qu&rsquo;ils sont valides, puis exécute la fonction
+correspondante, ici une requête dans la base de données de la librairie. C&rsquo;est lui,
+et non le modèle, qui agit sur le monde.</p><p><strong>4. Le résultat est ajouté au texte, et le modèle est appelé de nouveau.</strong> Le
+harnais ajoute au texte une nouvelle partie, marquée comme venant de l&rsquo;outil,
+puis rouvre une réplique de l&rsquo;assistant :</p><pre tabindex=0><code>&lt;|début|&gt;outil
+{&#34;titre&#34;: &#34;Kamouraska&#34;, &#34;auteur&#34;: &#34;Anne Hébert&#34;, &#34;format&#34;: &#34;poche&#34;, &#34;prix&#34;: 14.95, &#34;en stock&#34;: 3}
+&lt;|fin|&gt;
+&lt;|début|&gt;assistant</code></pre><p>Le modèle relit
+<a href=#une-conversation-qui-nen-est-pas-une>tout le texte</a>,
+y compris le résultat, et écrit cette fois sa réponse : « Oui, nous l&rsquo;avons en format
+poche, à 14,95 \$, et il nous en reste trois exemplaires. »</p><label class=book-image for=book-image-toggle-360567c7519d><input class="hidden toggle" type=checkbox id=book-image-toggle-360567c7519d>
+<img src=/inf1901-teluq-v2/images/module4/appel-outil.svg alt="Un diagramme en trois colonnes : le modèle, le harnais et l'outil, avec le temps qui s'écoule vers le bas. 1, le harnais envoie au modèle le texte assemblé : la requête système avec la description des outils, la question « Combien coûte Kamouraska ? », et l'ouverture de la réplique de l'assistant. 2, le modèle prédit des jetons qui forment un appel : chercher_catalogue, avec le titre Kamouraska, puis s'arrête à la marque de fin. 3, le harnais vérifie l'appel. 4, il interroge le catalogue. 5, l'outil répond : format poche, 14,95 $, trois en stock. 6, le harnais ajoute ce résultat au texte et rouvre une réplique de l'assistant. 7, il rappelle le modèle avec tout le texte. 8, le modèle écrit la réponse : « Oui, nous l'avons en format poche, à 14,95 $. » 9, le harnais l'affiche à l'utilisateur. À côté des étapes 1 et 7, le texte envoyé au modèle est dessiné comme une barre de segments, plus longue la seconde fois." loading=lazy title="Un appel d'outil, pas à pas. Le modèle passe deux fois : la première, il écrit l'appel ; la seconde, il lit le résultat et rédige sa réponse. Entre les deux, c'est le harnais qui agit." width=840 height=640 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-360567c7519d"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p><strong>Qui fait quoi.</strong> Un assistant qui utilise des outils réunit des composants de nature
+très différente. Un seul est un modèle d&rsquo;apprentissage automatique ; tous les autres
+sont des programmes ordinaires, écrits par des humains, comme ceux du
+<a href=/inf1901-teluq-v2/docs/module1/>Module 1</a>.</p><ul><li><strong>Le modèle</strong> est un très grand ensemble de paramètres, des nombres appris à
+l&rsquo;entraînement, que des serveurs équipés de
+<a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/#les-processeurs-graphiques>processeurs graphiques</a>
+font tourner, en général chez l&rsquo;entreprise qui l&rsquo;a entraîné. Il ne sait faire
+qu&rsquo;une chose : recevoir un texte et produire la suite, jeton après jeton. Il n&rsquo;a ni
+accès au réseau, ni accès aux fichiers, ni horloge, et rien ne lui reste d&rsquo;un appel
+à l&rsquo;autre. Il ne sait même pas quels outils existent vraiment, seulement ce que leur
+description en dit.</li><li><strong>Le harnais</strong>, présenté <a href=#la-requ%c3%aate-syst%c3%a8me-et-le-harnais>plus haut</a>, est un
+programme classique, écrit par exemple en Python ou en JavaScript. Le mot vient de l&rsquo;équipement qui relie la force d&rsquo;un cheval à la
+charrue : le modèle fournit la force, le harnais la dirige. C&rsquo;est l&rsquo;interface Web de
+ChatGPT, le robot conversationnel d&rsquo;une banque, ou un assistant de programmation
+installé sur un ordinateur. Il tient la conversation, assemble le texte selon le
+gabarit, envoie ce texte au modèle par le réseau, et reçoit sa suite. Si cette suite
+contient un appel, il lit l&rsquo;appel, le vérifie, exécute l&rsquo;outil et rappelle le
+modèle. C&rsquo;est aussi lui qui applique les règles : quels outils sont branchés,
+quelles actions demandent la confirmation de l&rsquo;utilisateur, ce qui est interdit.</li><li><strong>Les outils</strong> sont, eux aussi, des programmes ordinaires : une requête dans une
+base de données, l&rsquo;interface d&rsquo;un moteur de recherche, un calcul, l&rsquo;envoi d&rsquo;un
+courriel. Ils font exactement ce pour quoi ils ont été programmés, avec la fiabilité
+d&rsquo;un programme classique. Un outil puissant, comme l&rsquo;exécution de code, tourne
+souvent dans un <strong>bac à sable</strong> (<em>sandbox</em>), un environnement isolé d&rsquo;où le code ne
+peut pas atteindre le reste de la machine.</li></ul><p>Ces composants ne tournent pas forcément au même endroit. Le modèle tourne chez son
+fournisseur. Pour la librairie, le harnais et le catalogue tournent sur les serveurs
+de la librairie : le fournisseur du modèle ne voit que le texte qu&rsquo;on lui envoie, et
+n&rsquo;a jamais accès à la base de données. Dans ChatGPT, l&rsquo;interpréteur de code tourne
+chez OpenAI, dans un bac à sable. Un assistant de programmation, lui, exécute ses
+commandes sur l&rsquo;ordinateur même de l&rsquo;utilisateur.</p><label class=book-image for=book-image-toggle-2bfb14567dc7><input class="hidden toggle" type=checkbox id=book-image-toggle-2bfb14567dc7>
+<img src=/inf1901-teluq-v2/images/module4/modele-harnais-outils.svg alt="Trois zones côte à côte, séparées par des frontières en pointillés. À gauche, chez le fournisseur du modèle : le modèle, des milliards de paramètres sur des processeurs graphiques ; il sait prolonger un texte, mais n'a ni réseau, ni fichiers, ni horloge, et rien ne lui reste d'un appel à l'autre. Au milieu, chez l'entreprise qui offre l'assistant, ou sur l'ordinateur de l'utilisateur : le harnais, un programme classique, relié à l'utilisateur ; il tient la conversation, assemble le texte, lit et vérifie les appels, exécute les outils, applique les permissions, demande des confirmations et affiche la réponse. Le harnais envoie le texte au modèle et reçoit sa suite, parfois un appel. À droite, le monde : les outils, des programmes ordinaires, comme une base de données, une recherche sur le Web, une messagerie et un bac à sable pour exécuter du code. Le harnais les exécute et reçoit leurs résultats. En bas : le modèle propose, le harnais dispose." loading=lazy title="Le modèle, le harnais et les outils. Seul le modèle a été appris ; le harnais et les outils sont des programmes classiques, et c'est le harnais qui décide de ce que l'assistant peut faire." width=840 height=500 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-2bfb14567dc7"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Il en découle un principe simple : <strong>le modèle propose, le harnais dispose</strong>. Ce qu&rsquo;un
+assistant peut faire dans le monde ne dépend pas du modèle, mais des outils que son
+harnais lui branche et des permissions qu&rsquo;il lui accorde. Le même modèle est
+inoffensif sans outils, et peut devenir dangereux si son harnais lui donne accès à une
+messagerie ou à un compte bancaire sans demander de confirmation.</p><p><strong>Pourquoi le modèle « décide » d&rsquo;appeler un outil.</strong> Il n&rsquo;y a pas de module de
+décision séparé. L&rsquo;appel est une suite de jetons comme une autre, et il est écrit quand
+il est la suite la plus probable. Le modèle l&rsquo;a appris au
+<a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#un-mod%c3%a8le-de-base-ne-r%c3%a9pond-pas>post-entraînement</a>,
+sur des milliers de conversations où un outil est décrit et utilisé à bon escient. À la
+question « Quel temps fait-il à Québec ? », avec un outil météo décrit dans le
+contexte, la marque d&rsquo;appel devient très probable. À la demande « Écris-moi un poème
+sur l&rsquo;hiver », elle ne l&rsquo;est pas. En février 2023, une équipe de Meta montre avec
+Toolformer qu&rsquo;un modèle peut même apprendre seul quand appeler un outil. Il insère des
+appels dans des textes, puis ne garde, pour s&rsquo;entraîner, que ceux dont le résultat
+l&rsquo;aide à mieux prédire la suite du texte.</p><p><strong>Ce qui peut mal tourner.</strong> Puisque l&rsquo;appel est prédit, il peut être mal formé,
+appeler un outil qui n&rsquo;existe pas, ou inventer un argument. Le harnais doit donc
+tout vérifier. Il peut aussi contraindre la génération : à chaque jeton, elle
+n&rsquo;autorise que ceux qui respectent le format de l&rsquo;appel. Et puisque c&rsquo;est
+le harnais qui exécute, c&rsquo;est lui qui décide de ce qui est permis, par exemple en
+demandant la confirmation de l&rsquo;utilisateur avant d&rsquo;envoyer un courriel.</p><p><strong>Plusieurs outils, plusieurs appels.</strong> Dans une même réponse, le modèle peut appeler
+plusieurs outils, l&rsquo;un après l&rsquo;autre ou en même temps. Chaque résultat s&rsquo;ajoute au
+texte avant l&rsquo;étape suivante. Il peut chercher le livre, puis appeler une calculatrice
+pour le prix de trente exemplaires avec les taxes, puis rédiger sa réponse. Cette
+boucle est le cœur des <a href=#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle>agents</a>, présentés plus bas.</p><p>Les outils compensent les faiblesses du modèle. Une calculatrice ou un programme
+exécuté donne un résultat exact. Une recherche sur le Web donne une information à
+jour. Une base de données donne des faits précis et vérifiables. Un outil de lecture
+de fichiers donne accès aux documents de l&rsquo;utilisateur. Un outil peut même être un
+autre modèle, par exemple un générateur d&rsquo;images. Les principaux assistants offrent
+l&rsquo;appel d&rsquo;outils depuis 2023.</p><p>Chaque harnais devait d&rsquo;abord décrire et brancher ses outils à sa manière. En
+novembre 2024, Anthropic propose une norme ouverte, le <em>Model Context Protocol</em> (MCP),
+à la façon d&rsquo;une prise universelle. Un <strong>serveur MCP</strong> présente un ensemble d&rsquo;outils,
+comme un agenda, une messagerie ou une base de données, avec leurs descriptions. Tout
+assistant compatible peut s&rsquo;y brancher, lire ces descriptions et les placer dans son
+contexte. OpenAI et Google adoptent la norme au printemps 2025.</p><h2 id=des-agents-un-modèle-et-son-harnais-en-boucle>Des agents : un modèle et son harnais, en boucle<a class=anchor href=#des-agents-un-mod%c3%a8le-et-son-harnais-en-boucle></a></h2><p>Un <strong>agent</strong> est un système qui enchaîne lui-même plusieurs étapes pour accomplir une
+tâche : il raisonne, choisit un outil, observe le résultat, puis décide de l&rsquo;étape
+suivante, jusqu&rsquo;à ce que la tâche soit terminée. Ce schéma, raisonner, agir, observer,
+a été décrit en 2022 sous le nom de ReAct. Le mot <em>agent</em> reprend celui de
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#apprendre-par-lexp%c3%a9rience-le-renforcement>apprentissage par renforcement</a>
+du Module 2 : une entité qui agit dans un environnement et observe les conséquences
+de ses actions. Le modèle, lui, ne fait toujours que prédire des jetons. C&rsquo;est le harnais qui fait
+tourner la boucle : il rappelle le modèle tant que celui-ci demande des outils, et
+s&rsquo;arrête quand il donne sa réponse finale.</p><label class=book-image for=book-image-toggle-305d4d5b523a><input class="hidden toggle" type=checkbox id=book-image-toggle-305d4d5b523a>
+<img src=/inf1901-teluq-v2/images/module4/agent.svg alt="À gauche, une tâche donnée par l'utilisateur : trouver trois articles récents sur ARC et les résumer. Elle entre dans l'agent, dessiné comme un grand cadre. Au centre de l'agent, un grand modèle de langage. Autour de lui, une boucle en trois temps : raisonner, agir, observer. Pour agir, le modèle appelle un outil, à droite : recherche Web, exécution de code, documents et fichiers, courriel et agenda, mémoire. Le résultat de l'outil revient, et le modèle l'observe avant de raisonner de nouveau. En bas de l'agent, le contexte s'allonge à chaque tour : la tâche, un raisonnement, une action, un résultat, un autre raisonnement, et ainsi de suite. Quand le modèle juge la tâche terminée, il sort de la boucle et donne sa réponse finale, à gauche." loading=lazy title="Le principe d'un agent. Le modèle de langage ne change pas : c'est la boucle, les outils et le contexte qui s'allonge qui en font un agent." width=840 height=470 style=--largeur-plafond:840px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-305d4d5b523a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;applet ci-dessous montre, étape par étape, le contexte d&rsquo;un agent. Les traces ont
+été rédigées pour l&rsquo;exercice, mais elles suivent la forme réelle de ces échanges.
+Le premier scénario montre une question qui demande deux recherches et un calcul. Le
+second montre ce qui peut mal tourner.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/agent.html id=applet-1792180294764105971 class=applet-iframe width=100% height=380 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second scénario illustre une <strong>injection d&rsquo;instructions</strong> (<em>prompt injection</em>).
+Le modèle reçoit tout dans un même flux de texte : les consignes de l&rsquo;utilisateur, et
+le contenu des pages, des courriels ou des documents qu&rsquo;il lit. Il distingue mal les
+deux. Une instruction cachée dans une page peut donc détourner un agent, comme les
+<a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/#se-d%c3%a9fendre>exemples adverses</a> du Module 3
+détournaient un classificateur d&rsquo;images. Plus un agent dispose d&rsquo;outils puissants,
+plus ce risque est grave. Les précautions habituelles consistent à demander la
+confirmation de l&rsquo;utilisateur avant toute action importante, à limiter les outils et
+les accès de l&rsquo;agent, et à traiter le contenu lu comme des données plutôt que comme
+des ordres. Aucune de ces précautions n&rsquo;est infaillible.</p><p>Les agents se sont multipliés à partir de 2024.</p><ul><li><strong>Les agents de programmation</strong>, comme Claude Code ou Codex, lisent le code d&rsquo;un
+projet, le modifient, exécutent les tests et corrigent leurs erreurs. Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a> » leur est consacré.</li><li><strong>Les agents qui utilisent un ordinateur</strong> voient l&rsquo;écran et manipulent la souris
+et le clavier, comme le fait un humain. Anthropic présente cette capacité en
+octobre 2024, et OpenAI l&rsquo;année suivante.</li><li><strong>Les agents de recherche</strong> consultent des dizaines de sources et rédigent un
+rapport avec leurs références.</li></ul><p>Un agent peut aussi en diriger d&rsquo;autres. Dans un <strong>système à plusieurs agents</strong>
+(<em>multi-agent system</em>), un agent principal découpe la tâche, confie chaque morceau à
+un <strong>sous-agent</strong> (<em>subagent</em>), qui travaille dans son propre contexte, puis rassemble
+leurs résultats. En juin 2025, Anthropic décrit ainsi son agent de recherche : un
+modèle principal planifie et lance de trois à cinq sous-agents en parallèle, chacun
+chargé d&rsquo;une piste. Le système fait nettement mieux qu&rsquo;un agent seul, mais il
+consomme environ quinze fois plus de jetons qu&rsquo;une conversation ordinaire. Les
+agents de programmation utilisent le même principe, comme le montre le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/#un-projet-plus-grand-que-la-fen%c3%aatre-de-contexte>Programmer avec des agents</a> ».</p><p>Un agent qui enchaîne des étapes accumule aussi les erreurs : une petite erreur au
+début peut conduire à une longue suite d&rsquo;actions inutiles ou nuisibles. La question
+de savoir quelles décisions on peut confier à un agent, et qui est responsable de ses
+actions, est l&rsquo;une de celles que pose le <span title="Ce module sera publié plus tard">Module 5</span>.</p><p>Les agents rappellent aussi la
+<a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>recherche dans un espace d&rsquo;états</a> du Module 1 :
+explorer des actions possibles pour atteindre un but. La différence tient à la façon
+de choisir l&rsquo;action suivante. Les programmes du Module 1 suivaient des règles et
+des heuristiques écrites à la main. Le modèle de langage choisit d&rsquo;après tout ce qu&rsquo;il a
+appris en lisant.</p><p>Le <a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>chapitre suivant</a> présente
+l&rsquo;application la plus aboutie de ces idées : les agents de programmation.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Du modèle à l'assistant</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/ class="flex align-center"><span>Programmer avec des agents</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#formuler-la-requête>Formuler la requête</a></li><li><a href=#une-conversation-qui-nen-est-pas-une>Une conversation qui n&rsquo;en est pas une</a></li><li><a href=#la-requête-système-et-le-harnais>La requête système et le harnais</a></li><li><a href=#pourquoi-ne-pas-le-laisser-apprendre>Pourquoi ne pas le laisser apprendre ?</a></li><li><a href=#chercher-dabord-répondre-ensuite-rag>Chercher d&rsquo;abord, répondre ensuite (RAG)</a></li><li><a href=#le-harnais-et-lappel-doutils>Le harnais et l&rsquo;appel d&rsquo;outils</a></li><li><a href=#des-agents-un-modèle-et-son-harnais-en-boucle>Des agents : un modèle et son harnais, en boucle</a></li></ul></nav></div></aside></main><script src=https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js defer></script><script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelectorAll('iframe[data-iresize="true"]');if(!e.length||typeof iFrameResize!="function")return;const t={license:"GPLv3",checkOrigin:!1,onResized:function({iframe:e,height:t}){const s=e?.parentElement;if(!s)return;const o=e.getAttribute("data-transform-scale")||"1";let n=parseFloat(o);(!Number.isFinite(n)||n<=0)&&(n=1),s.style.height=t*n+"px"}};e.forEach(e=>{const n={...t},s=e.getAttribute("data-check-origin");s==="true"&&(n.checkOrigin=!0),s==="false"&&(n.checkOrigin=!1),e.getAttribute("data-log")==="true"&&(n.log=!0);const o=e.getAttribute("data-transform-scale")||"1";e.style.transform=`scale(${o})`,e.iFrameResizer||iframeResize(n,e)})})</script></body></html>
