@@ -1,6 +1,7 @@
 ---
 title: "Une technologie normale, ou non ?"
 weight: 15
+draft: true
 slug: technologie-normale
 ---
 

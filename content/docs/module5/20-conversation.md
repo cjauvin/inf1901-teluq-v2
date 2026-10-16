@@ -1,6 +1,6 @@
 ---
 title: "Conversation synoptique autour de l'IA"
-weight: 20
+weight: 95
 slug: conversation
 ---
 

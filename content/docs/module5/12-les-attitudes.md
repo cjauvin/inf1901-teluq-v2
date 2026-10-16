@@ -1,6 +1,7 @@
 ---
 title: "Les attitudes devant l'IA"
 weight: 12
+draft: true
 slug: les-attitudes
 ---
 
