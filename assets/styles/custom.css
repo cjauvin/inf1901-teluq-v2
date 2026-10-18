@@ -44,6 +44,15 @@ p {
   margin-right: auto;
 }
 
+/* Icônes dans une cellule de tableau (M5, familles de problèmes) : sans taille */
+/* fixe, `max-width: 100%` les écrase dans une colonne ajustée au contenu. */
+.markdown td img[src*="/icones/"] {
+  max-width: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  vertical-align: middle;
+}
+
 /* Sélecteur de thème (voir layouts/_partials/docs/inject/menu-before.html) */
 .theme-switch {
   display: flex;
