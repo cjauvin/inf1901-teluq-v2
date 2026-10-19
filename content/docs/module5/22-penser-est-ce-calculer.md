@@ -176,6 +176,5 @@ arguments formels n'ont pas convaincu la plupart des logiciens, et la physique q
 supposent n'a pas été observée.
 
 Pour la plupart des chercheurs en IA, l'hypothèse du calcul reste un pari, celui sur lequel la discipline s'est fondée [en 1956](docs/module1/20-deux-paris/#le-moment-lété-1956-à-dartmouth), et que ses progrès rendent de plus en plus
-plausible sans le démontrer. Elle rejoint la question, plus difficile encore, de la
-conscience : Penrose lie la compréhension à la conscience, et sa théorie Orch-OR est
+plausible sans le démontrer. Elle rejoint la question, plus difficile encore, de la [conscience](docs/module5/24-une-machine-peut-elle-etre-consciente) : Penrose lie la compréhension à la conscience, et sa théorie Orch-OR est
 d'abord une théorie de la conscience.

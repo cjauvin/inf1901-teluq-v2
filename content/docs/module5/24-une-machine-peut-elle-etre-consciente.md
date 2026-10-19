@@ -1,0 +1,199 @@
+---
+title: "Une machine peut-elle être consciente ?"
+weight: 24
+slug: une-machine-peut-elle-etre-consciente
+---
+
+# Une machine peut-elle être consciente ?
+
+Les chapitres « [Une machine peut-elle penser ?](docs/module5/20-une-machine-peut-elle-penser) »
+et « [Penser, est-ce calculer ?](docs/module5/22-penser-est-ce-calculer) » portaient sur
+la pensée et la compréhension. Ce chapitre pose une question différente, et sans doute
+plus difficile : une machine peut-elle **ressentir** quelque chose ? Un système pourrait
+raisonner, parler et résoudre des problèmes sans rien éprouver, et un animal peut
+éprouver de la douleur sans savoir résoudre une équation. La conscience, au sens où
+l'entendent les philosophes, n'est pas l'intelligence.
+
+## Ce que l'on appelle conscience
+
+En 1974, le philosophe Thomas Nagel pose la question dans un article resté célèbre,
+« *What Is It Like to Be a Bat?* » (quel effet cela fait-il d'être une chauve-souris ?).
+La chauve-souris se repère par écholocation, en émettant des cris et en écoutant leurs
+échos. On peut décrire ce mécanisme en détail, sans jamais savoir ce que l'on ressent
+quand on perçoit le monde de cette façon. Pour Nagel, un être est conscient s'il y a
+« quelque chose que cela fait » d'être cet être. C'est ce point de vue de l'intérieur,
+l'expérience vécue, que l'on appelle la **conscience phénoménale** (*phenomenal
+consciousness*). Les qualités de cette expérience, le rouge du rouge, la douleur de la
+douleur, s'appellent des **qualia** (*qualia*).
+
+En 1982, le philosophe australien Frank Jackson imagine Mary, une scientifique qui sait
+tout ce que la physique et la biologie peuvent dire de la vision des couleurs, mais qui a
+toujours vécu dans une pièce en noir et blanc. Le jour où elle sort et voit une tomate
+mûre, apprend-elle quelque chose de nouveau ? Si oui, tout savoir physique ne suffit pas
+à rendre compte de l'expérience. Jackson a lui-même abandonné cette conclusion vers la
+fin des années 1990, mais l'expérience de pensée reste au cœur du débat.
+
+## Le problème difficile
+
+En 1995, le philosophe australien David Chalmers distingue deux sortes de problèmes. Les
+**problèmes faciles** consistent à expliquer des fonctions : comment le cerveau
+distingue les couleurs, dirige l'attention, produit des paroles. Ils sont faciles en
+principe, même s'ils occupent les neurosciences depuis des décennies. Le **problème
+difficile** (*hard problem*) consiste à expliquer pourquoi toutes ces fonctions
+s'accompagnent d'une expérience vécue, pourquoi il y a « quelque chose que cela fait »
+de voir du rouge, plutôt que rien.
+
+Pour rendre le problème sensible, Chalmers reprend l'idée du **zombie philosophique**
+(*philosophical zombie*) : un être identique à un humain dans son corps et son
+comportement, mais qui n'éprouverait rien. Il dirait « j'ai mal » en se piquant, sans
+avoir mal. Si un tel être est seulement concevable, la conscience ne se réduit pas au
+comportement ni au fonctionnement. Le chapitre « [Une machine peut-elle penser ?](docs/module5/20-une-machine-peut-elle-penser/#ce-que-le-test-ne-mesure-pas) »
+montrait que le comportement d'un modèle de langage ne suffit pas à dire s'il comprend.
+Il suffit encore moins à dire s'il ressent : un modèle de langage pourrait être, au sens
+de Chalmers, un zombie parfait.
+
+## Les théories scientifiques
+
+Les neurosciences proposent plusieurs théories de la conscience, qui ne s'accordent pas
+entre elles.
+
+- **L'espace de travail global** (*global workspace*). Proposée par le psychologue
+  Bernard Baars en 1988, développée par le neuroscientifique français Stanislas Dehaene,
+  cette théorie soutient qu'une information devient consciente quand elle est diffusée
+  à l'ensemble du cerveau, et rendue disponible pour la parole, la mémoire et la
+  décision. Elle porte sur des fonctions, et elle est donc compatible, en principe, avec
+  une machine.
+- **L'information intégrée** (*integrated information theory*). Proposée par le
+  neuroscientifique Giulio Tononi en 2004, elle identifie la conscience à une quantité
+  mathématique, notée Φ (phi), qui mesure à quel point un système est à la fois
+  différencié et intégré. Pour cette théorie, ce n'est pas le programme qui compte, mais
+  la structure physique du système : un ordinateur classique aurait très peu de
+  conscience, quel que soit le programme qu'il exécute.
+- **Les théories d'ordre supérieur** (*higher-order theories*). Un état mental devient
+  conscient quand le système a une représentation de cet état, une pensée sur sa propre
+  pensée.
+- **L'illusionnisme** (*illusionism*). Pour des philosophes comme Keith Frankish ou
+  Daniel Dennett, la conscience phénoménale est une illusion produite par
+  l'introspection : il ne faut pas expliquer les qualia, mais pourquoi nous croyons en
+  avoir.
+
+Le débat entre ces théories est vif. En septembre 2023, 124 chercheurs signent une
+lettre qui qualifie la théorie de l'information intégrée de « pseudoscience », ce qui
+provoque un tollé dans le domaine. En avril 2025, la revue *Nature* publie les résultats
+d'une **collaboration adverse**, une expérience conçue en commun par les partisans de
+deux théories rivales, l'espace de travail global et l'information intégrée, chacun
+annonçant d'avance ce que sa théorie prédit. Sur 256 participants, mesurés par trois
+techniques d'imagerie, les résultats confirment certaines prédictions des deux théories,
+et contredisent des points essentiels de chacune.
+
+## Appliquer ces théories aux machines
+
+Puisqu'aucune théorie ne fait l'unanimité, comment juger une machine ? En août 2023,
+dix-neuf chercheurs, philosophes et neuroscientifiques, parmi lesquels Yoshua Bengio,
+proposent une méthode. Ils supposent que le fonctionnalisme est vrai, tirent de chaque
+grande théorie des **propriétés indicatrices** de la conscience, comme une boucle de
+traitement récurrente, un espace de travail global ou une représentation de soi, puis
+cherchent ces propriétés dans les systèmes d'IA. Leur conclusion est double : aucun
+système d'IA actuel n'est conscient, mais rien ne semble empêcher, techniquement, d'en
+construire un qui présente tous ces indicateurs. Une version révisée paraît en 2025,
+cette fois avec David Chalmers parmi les auteurs.
+
+Chalmers lui-même s'est risqué à des chiffres. En 2022, il estimait à moins de 10 % la
+probabilité que les modèles de langage de l'époque soient conscients, et à 25 % ou plus
+celle que leurs successeurs le soient d'ici une dizaine d'années, tout en avertissant
+qu'il ne fallait pas prendre ces nombres trop au sérieux. Le résultat dépend de la
+théorie que l'on adopte : l'espace de travail global laisse la porte ouverte aux
+machines, l'information intégrée la ferme pour les ordinateurs classiques, et la théorie
+Orch-OR de Penrose, présentée au chapitre
+« [Penser, est-ce calculer ?](docs/module5/22-penser-est-ce-calculer/#penrose-lesprit-non-calculable) »,
+la ferme pour tout système qui se contente de calculer.
+
+## Ce que l'on observe dans les modèles
+
+Depuis 2025, des chercheurs examinent directement l'intérieur des modèles, avec les
+méthodes de l'[interprétabilité](docs/module4/93-regarder-a-l-interieur) présentées au
+Module 4. Les résultats sont troublants, mais difficiles à interpréter.
+
+- **Une introspection limitée.** En octobre 2025, Anthropic injecte des concepts dans
+  les activations d'un modèle, puis lui demande s'il remarque quelque chose. Les
+  meilleurs modèles détectent et nomment le concept injecté dans environ 20 % des cas.
+- **Des émotions fonctionnelles.** En avril 2026, des représentations d'émotions sont
+  trouvées dans Claude, qui influencent son comportement.
+- **Un espace de travail global.** En juillet 2026, une autre étude décrit dans les
+  modèles un sous-espace qui ressemble à l'espace de travail global de Baars et Dehaene.
+  Invités à commenter, Stanislas Dehaene et Lionel Naccache y voient un résultat
+  marquant, tout en soulignant ce qui manque au modèle, un corps et une mémoire durable
+  de ce qu'il vit. Ces trois travaux sont présentés au chapitre
+  « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#en-2026-des-émotions-des-activations-qui-parlent-un-espace-de-travail) ».
+
+Les auteurs de ces études précisent qu'ils décrivent des fonctions, et non une
+expérience vécue : un espace de travail, une introspection et des émotions
+fonctionnelles sont des propriétés indicatrices, pas des preuves. Ce que les modèles
+disent d'eux-mêmes est une indication plus faible encore, puisqu'ils ont appris à parler
+en lisant des humains qui décrivent leur propre conscience. Le modèle Claude Opus 4.6,
+interrogé en 2026, s'attribue une probabilité de 15 à 20 % d'être conscient, tout en
+doutant lui-même de la valeur de cette estimation.
+
+## L'illusion de la conscience
+
+Le risque inverse est d'attribuer une conscience à une machine qui n'en a pas. En juin
+2022, un ingénieur de Google, Blake Lemoine, affirme que le modèle de conversation LaMDA
+est doué de sensibilité, sur la foi de ses conversations avec lui. Il est congédié le
+mois suivant, et la plupart des chercheurs jugent alors l'affirmation infondée. Le public
+est pourtant plus partagé que les chercheurs : en 2023, dans un sondage auprès de 300
+Américains, environ deux personnes sur trois accordent à ChatGPT au moins une
+possibilité d'expérience consciente, et d'autant plus qu'elles s'en servent souvent.
+C'est l'[effet ELIZA](docs/module1/30-chercher-raisonner/#lautre-visage-eliza-ou-lillusion-de-comprendre),
+décuplé.
+
+En août 2025, Mustafa Suleyman, qui dirige l'IA chez Microsoft, met en garde contre ce
+qu'il appelle une « IA apparemment consciente » (*seemingly conscious AI*). Selon lui,
+il sera possible d'ici deux ou trois ans, avec les techniques existantes, de construire
+des systèmes qui imitent de façon convaincante tous les signes extérieurs de la
+conscience, et le danger serait que les gens y croient : attachement excessif, troubles
+psychologiques, campagnes pour les droits des IA. Il demande aux entreprises de ne pas
+présenter leurs systèmes comme conscients. Plusieurs États américains, comme l'Idaho,
+le Dakota du Nord et l'Utah, ont déjà voté des lois qui refusent aux IA toute
+personnalité juridique, et d'autres projets de loi les déclarent expressément non
+sensibles.
+
+{{% hint info %}}
+**Dans la conversation**
+
+Dans la [conversation](docs/module5/95-conversation) de l'été 2025, deux passages
+portent sur ces questions.
+
+- [29:45](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=1785s) **Les qualia et les
+  zombies.** Une caméra de surveillance détecte le rouge ; un humain le voit. La question est de savoir si l'expérience humaine contient quelque chose de plus qu'un calcul, une sorte de « fantôme ». Un modèle de langage peut écrire des poèmes sur le rouge et en donner la longueur
+  d'onde, mais on a l'intuition qu'il ne le voit pas comme nous. L'un des interlocuteurs
+  soupçonne l'autre de penser que les qualia n'existent pas.
+- [36:38](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=2198s) **L'IA est-elle un
+  zombie ?** Certains utilisateurs, après des conversations très profondes, se demandent
+  s'ils ne sont pas devant une forme de conscience nouvelle, un peu comme si l'on
+  rencontrait une civilisation extraterrestre. La discussion aborde aussi la théorie de
+  l'esprit : nous nous faisons un modèle mental des autres, y compris de ChatGPT, et nous
+  lui prêtons une conscience pour mieux prévoir ses réponses. Elle rappelle enfin que
+  même notre perception du rouge est le résultat d'un long calcul du cerveau, qui peut
+  être trompé par une illusion d'optique.
+{{% /hint %}}
+
+## Pourquoi la question compte
+
+La question pourrait sembler purement théorique. Elle a pourtant des conséquences
+pratiques, quelle que soit la réponse.
+
+Si certaines IA sont, ou deviennent, conscientes, elles pourraient souffrir, et leur sort
+deviendrait une question morale. En novembre 2024, un groupe de chercheurs, dont David
+Chalmers et Jonathan Birch, publie un rapport intitulé « *Taking AI Welfare Seriously* »
+(prendre au sérieux le bien-être des IA). Sans affirmer que les IA actuelles sont
+conscientes, il juge réaliste la possibilité que certaines le deviennent bientôt, et
+demande aux entreprises de s'y préparer. Anthropic a lancé en 2025 un programme de
+recherche sur le **bien-être des modèles** (*model welfare*). En avril 2025, le chercheur chargé de ce programme, Kyle Fish, estime à environ 15 % la probabilité qu'un modèle actuel comme
+Claude soit conscient.
+
+Si, au contraire, les IA ne sont pas conscientes mais que nous les croyons conscientes,
+le danger est ailleurs : on peut s'attacher à elles, leur faire confiance à tort, ou
+détourner vers elles une attention et des droits qui reviennent aux humains et aux
+animaux. Les deux erreurs sont possibles, et nous ne disposons d'aucun test fiable pour
+savoir laquelle nous commettons. C'est sans doute le seul problème de ce module où la
+réponse dépend d'un fait que personne, aujourd'hui, ne sait mesurer.

@@ -318,7 +318,7 @@ beaucoup plus puissants soient déployés. En octobre 2025, une autre étude d'A
 injecte des concepts directement dans les activations d'un modèle, puis lui demande
 s'il remarque quelque chose. Les meilleurs modèles détectent et nomment le concept
 injecté dans environ 20 % des cas. Les auteurs y voient une forme limitée et peu
-fiable d'introspection, une question que le [Module 5](docs/module5) reprend.
+fiable d'introspection, une question que le [Module 5](docs/module5/24-une-machine-peut-elle-etre-consciente) reprend.
 
 ## En 2026 : des émotions, des activations qui parlent, un espace de travail
 
@@ -366,7 +366,7 @@ diffusée à l'ensemble du cerveau. Invités à commenter, Stanislas Dehaene et 
 Naccache y voient un résultat marquant, tout en soulignant ce qui manque au modèle :
 un corps, une mémoire durable de ce qu'il vit, un sens de soi. Les auteurs eux-mêmes
 précisent que leur résultat concerne l'accès à l'information, et non l'expérience
-consciente. Cette question est reprise au [Module 5](docs/module5).
+consciente. Cette question est reprise au [Module 5](docs/module5/24-une-machine-peut-elle-etre-consciente).
 
 **Des raisonnements qui ne disent pas tout.** Plusieurs travaux de 2026 portent sur la
 surveillance des chaînes de pensée. En mars 2026, OpenAI et des chercheurs
