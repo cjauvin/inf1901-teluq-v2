@@ -1,8 +1,16 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["fonttools"]
+# ///
 """Module 5, « Une machine peut-elle penser ? » : la chambre chinoise de Searle (1980), et le même schéma appliqué à un
-modèle de langage. Les caractères chinois sont dessinés comme des formes abstraites (les « squiggles » et « squoggles » de
-Searle), pour ne dépendre d'aucune police."""
+modèle de langage. La question et la réponse sont de vrais caractères chinois, convertis en tracés à partir de la police
+Hiragino Sans GB de macOS, pour que la figure s'affiche partout sans police chinoise :
+    « 你会说中文吗？ » (Parles-tu chinois ?) et « 会，说得很好。 » (Oui, très bien.)"""
 import random
 from pathlib import Path
+from fontTools.ttLib import TTCollection
+from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.pens.transformPen import TransformPen
 
 OUT = Path(__file__).resolve().parent.parent / "static" / "images" / "module5" / "chambre-chinoise.svg"
 FOND, BORD, ENCRE, ENCRE_PALE, GRIS, TEAL, BRUN, ROUGE, BLEU, AXE, PANNEAU = (
@@ -11,26 +19,32 @@ NB = " "
 rng = random.Random(7)
 
 
-def glyphe(x, y, t=16, coul=ENCRE):
-    """Un pseudo-caractère : trois ou quatre traits dans un carré de côté t."""
-    traits = []
-    for _ in range(rng.randint(3, 4)):
-        genre = rng.random()
-        if genre < 0.4:
-            yy = y + rng.uniform(0.15, 0.85) * t
-            traits.append(f"M{x + rng.uniform(0, .3) * t:.1f} {yy:.1f} H{x + rng.uniform(.7, 1) * t:.1f}")
-        elif genre < 0.75:
-            xx = x + rng.uniform(0.2, 0.8) * t
-            traits.append(f"M{xx:.1f} {y + rng.uniform(0, .3) * t:.1f} V{y + rng.uniform(.7, 1) * t:.1f}")
-        else:
-            traits.append(f"M{x + .1 * t:.1f} {y + .9 * t:.1f} Q{x + .5 * t:.1f} {y + rng.uniform(.2, .5) * t:.1f} {x + .9 * t:.1f} {y + .8 * t:.1f}")
-    return f'<path d="{" ".join(traits)}" fill="none" stroke="{coul}" stroke-width="1.6" stroke-linecap="round"/>'
+POLICE = TTCollection("/System/Library/Fonts/Hiragino Sans GB.ttc").fonts[0]
+CMAP, GLYPHES, UPM = POLICE.getBestCmap(), POLICE.getGlyphSet(), POLICE["head"].unitsPerEm
 
 
-def carte(x, y, n, coul):
-    o.append(f'<rect x="{x}" y="{y}" width="{n * 21 + 10}" height="30" rx="4" fill="#ffffff" stroke="{coul}" stroke-width="1.4"/>')
-    for k in range(n):
-        o.append(glyphe(x + 7 + k * 21, y + 7))
+def chinois(texte, x, y, taille, coul=ENCRE):
+    """Écrit le texte en tracés SVG, la ligne de base en y ; renvoie la largeur."""
+    k, dx, chemins = taille / UPM, 0, []
+    for c in texte:
+        nom = CMAP[ord(c)]
+        pen = SVGPathPen(GLYPHES)
+        GLYPHES[nom].draw(TransformPen(pen, (k, 0, 0, -k, x + dx, y)))
+        chemins.append(pen.getCommands())
+        dx += GLYPHES[nom].width * k
+    o.append(f'<path d="{" ".join(chemins)}" fill="{coul}"/>')
+    return dx
+
+
+def largeur(texte, taille):
+    return sum(GLYPHES[CMAP[ord(c)]].width for c in texte) * taille / UPM
+
+
+def carte(x, y, texte, coul, taille=13.5):
+    w = largeur(texte, taille) + 14
+    o.append(f'<rect x="{x}" y="{y}" width="{w:.1f}" height="30" rx="4" fill="#ffffff" stroke="{coul}" stroke-width="1.4"/>')
+    chinois(texte, x + 7, y + 20.5, taille)
+    return w
 
 
 def fleche(x1, y1, x2, y2, coul=GRIS):
@@ -42,9 +56,9 @@ o = ['<?xml version="1.0" encoding="UTF-8"?>',
      f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">',
      "<title>La chambre chinoise, et un modèle de langage</title>",
      "<desc>Deux panneaux. À gauche, la chambre chinoise imaginée par John Searle en 1980 : une personne enfermée dans une pièce, "
-     "qui ne connaît pas le chinois, reçoit par une fente des questions écrites en caractères chinois. Elle consulte un gros livre "
+     "qui ne connaît pas le chinois, reçoit par une fente une question écrite en chinois, « 你会说中文吗？ » (Parles-tu chinois ?). Elle consulte un gros livre "
      "de règles, écrit dans sa langue, qui lui dit quels caractères renvoyer selon ceux qu'elle reçoit, et glisse sa réponse par une "
-     "autre fente. De l'extérieur, les réponses sont parfaites ; à l'intérieur, personne ne comprend le chinois. À droite, le même "
+     "autre fente : « 会，说得很好。 » (Oui, très bien.). De l'extérieur, les réponses sont parfaites ; à l'intérieur, personne ne comprend le chinois. À droite, le même "
      "schéma pour un modèle de langage : des jetons entrent, d'autres sortent, et entre les deux il n'y a que des milliards de "
      "nombres, les poids du modèle. Personne n'a écrit ces règles : elles ont été apprises.</desc>",
      f'<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">'
@@ -54,7 +68,7 @@ o = ['<?xml version="1.0" encoding="UTF-8"?>',
 # ── panneau gauche : la chambre ──
 o.append(f'<rect x="20" y="50" width="470" height="{H - 70}" rx="10" fill="{PANNEAU}" stroke="{BORD}"/>')
 o.append(f'<text x="255" y="76" font-size="12.5" fill="{BRUN}" text-anchor="middle" font-weight="700">La chambre chinoise (Searle, 1980)</text>')
-RX, RY, RW, RH = 150, 100, 210, 210
+RX, RY, RW, RH = 165, 100, 185, 210
 o.append(f'<rect x="{RX}" y="{RY}" width="{RW}" height="{RH}" rx="6" fill="{FOND}" stroke="{BRUN}" stroke-width="3"/>')
 # les deux fentes
 o.append(f'<rect x="{RX - 2}" y="146" width="5" height="22" fill="{PANNEAU}"/>')
@@ -72,12 +86,12 @@ o.append(f'<text x="290" y="290" font-size="10" fill="{ENCRE_PALE}" text-anchor=
 o.append(f'<text x="215" y="126" font-size="10.5" fill="{ENCRE}" text-anchor="middle">ne connaît pas</text>')
 o.append(f'<text x="215" y="140" font-size="10.5" fill="{ENCRE}" text-anchor="middle">le chinois</text>')
 # entrée et sortie
-carte(36, 142, 4, BLEU)
-fleche(132, 157, 160, 157)
-o.append(f'<text x="80" y="192" font-size="10.5" fill="{BLEU}" text-anchor="middle" font-weight="700">une question</text>')
-o.append(f'<text x="80" y="206" font-size="10.5" fill="{BLEU}" text-anchor="middle">en chinois</text>')
-fleche(RX + RW - 6, 247, RX + RW + 26, 247)
-carte(RX + RW + 30, 232, 3, TEAL)
+carte(28, 142, "你会说中文吗？", BLEU, 13)
+fleche(141, 157, RX + 10, 157)
+o.append(f'<text x="82" y="192" font-size="10.5" fill="{BLEU}" text-anchor="middle" font-weight="700">une question</text>')
+o.append(f'<text x="82" y="206" font-size="10.5" fill="{BLEU}" text-anchor="middle">en chinois</text>')
+fleche(RX + RW - 6, 247, RX + RW + 22, 247)
+carte(RX + RW + 26, 232, "会，说得很好。", TEAL, 13)
 o.append(f'<text x="428" y="282" font-size="10.5" fill="{TEAL}" text-anchor="middle" font-weight="700">une réponse</text>')
 o.append(f'<text x="428" y="296" font-size="10.5" fill="{TEAL}" text-anchor="middle">parfaite</text>')
 o.append(f'<text x="255" y="{H - 52}" font-size="11.5" fill="{ENCRE}" text-anchor="middle">De l\'extérieur, la chambre semble comprendre le chinois.</text>')
