@@ -127,6 +127,15 @@ Harnad, les symboles d'un système doivent être ancrés quelque part, dans la p
 et l'action, pour avoir un sens qui leur soit propre, et non un sens emprunté à ceux
 qui les lisent.
 
+Un grand modèle de langage est le cas le plus pur de ce dictionnaire. Il n'a jamais rien
+vu, entendu, touché ni goûté : il n'a connu que des textes. Pour lui, chaque mot n'est
+défini que par ses relations avec d'autres mots, dans des milliards de phrases. Les
+[plongements](docs/module4/45-des-mots-aux-nombres/#les-plongements) du Module 4 le montrent
+concrètement : le vecteur du mot « chat » se forme à partir de ses voisinages avec
+« miauler », « griffe » ou « chien », jamais à partir d'un chat. Un humain apprend le mot
+« chat » en voyant des chats ; un modèle de langage l'apprend en lisant ce que des humains
+ont écrit à leur sujet. Si le problème de Harnad se pose quelque part, c'est bien là.
+
 {{% hint info %}}
 **La pieuvre de Bender et Koller**
 
@@ -143,6 +152,29 @@ intuition que celle des
 [perroquets stochastiques](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde),
 publiée l'année suivante par Bender et ses coautrices.
 {{% /hint %}}
+
+Trois réponses sont proposées à cette objection.
+
+- **Un ancrage emprunté.** Les textes ont été écrits par des humains, eux-mêmes ancrés
+  dans le monde. Le modèle hériterait de cet ancrage de seconde main, un peu comme nous
+  savons beaucoup de choses sur des pays où nous ne sommes jamais allés, ou sur des
+  événements que nous n'avons pas vécus, par ce que d'autres en ont dit. Reste à savoir
+  si un ancrage de seconde main en est encore un.
+- **Un ancrage par les relations causales.** En 2023, les philosophes Dimitri Coelho
+  Mollo et Raphaël Millière reformulent la question pour les modèles de langage, sous le
+  nom de **problème de l'ancrage des vecteurs** (*vector grounding problem*). Selon eux,
+  ce qui compte est l'ancrage de la **référence** : le lien entre une représentation et ce
+  qu'elle désigne dans le monde. Ce lien n'exige pas de percevoir. Il suffit que les
+  états internes du système soient reliés au monde par une chaîne causale, ici celle qui
+  va des choses aux textes qui en parlent, et que l'entraînement leur ait donné la fonction
+  de porter cette information. Ils concluent qu'un modèle de langage peut ainsi avoir des
+  représentations ancrées, même sans images ni corps.
+- **Un ancrage par les sens et l'action.** Les modèles récents ne lisent plus seulement du
+  texte : ils [voient, entendent et parlent](docs/module4/92-voir-entendre-parler), et les
+  [agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle)
+  agissent sur le monde réel et en reçoivent les effets. C'est en partie ce que demandait
+  la réponse du robot à Searle. Pour Harnad et Searle, ces images, ces sons et ces actions
+  ne seraient pourtant que d'autres symboles, transmis à la machine sous forme de nombres.
 
 ## La chambre chinoise à l'ère des modèles de langage
 
@@ -168,10 +200,6 @@ Les deux situations diffèrent pourtant sur des points qui nourrissent le débat
   [plongements](docs/module4/45-des-mots-aux-nombres/#on-reconnaît-un-mot-à-ses-fréquentations)
   capturent justement. Dans cette lecture, la référence au monde n'est pas la seule
   source du sens.
-- **L'ancrage par les sens.** Les modèles récents ne lisent plus seulement du texte :
-  ils [voient, entendent et parlent](docs/module4/92-voir-entendre-parler), ce qui
-  répond en partie à la réponse du robot, et au problème de l'ancrage. Pour Harnad et
-  Searle, ces images et ces sons ne seraient pourtant que d'autres symboles.
 
 L'auteur de ce cours propose une autre façon de poser le problème dans un court
 billet, « [Est-ce que ChatGPT sait ce qu'est une question ?](https://cjauvin.github.io/posts/llm-question-reponse/) ».
