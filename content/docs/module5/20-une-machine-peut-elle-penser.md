@@ -238,5 +238,4 @@ de la pensée humaine, déclarait en 2023 que les progrès des modèles de langa
 « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde) ».
 Penser et comprendre ne sont d'ailleurs pas les seules capacités en jeu. Une autre
 objection, plus ancienne encore, soutient que l'esprit humain dépasse par principe tout
-calcul : celle que Roger Penrose a tirée du
-[théorème de Gödel](docs/module1/10-turing/#lombre-de-gödel).
+calcul : celle que Roger Penrose a tirée du [théorème de Gödel](docs/module1/10-turing/#lombre-de-gödel), présentée au chapitre « [Penser, est-ce calculer ?](docs/module5/22-penser-est-ce-calculer) ».

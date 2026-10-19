@@ -183,7 +183,7 @@ Restent les questions de fond. Le Module 1 présentait, dans
 physicien Roger Penrose : selon lui, l'esprit humain voit des vérités mathématiques
 qu'aucun système formel ne peut atteindre, et une machine ne fera donc jamais de
 vraies mathématiques. Des machines qui démontrent des théorèmes inédits donnent à ce
-débat une matière nouvelle, sans le trancher. Le [Module 5](docs/module5) le reprend.
+débat une matière nouvelle, sans le trancher. Le [Module 5](docs/module5/22-penser-est-ce-calculer) le reprend.
 
 Le [chapitre suivant](docs/module4/88-le-defi-arc) présente un test conçu pour
 mesurer autre chose que la maîtrise de problèmes connus : la capacité à faire face à

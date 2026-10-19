@@ -243,7 +243,7 @@ Les chapitres l'ont décomposé en quelques idées.
 Le mécanisme de départ n'a pas changé : prédire la suite. Ce qui a changé, c'est
 l'échelle à laquelle on l'applique, ce qu'on apprend aux modèles ensuite, et ce qu'on
 construit autour d'eux. Savoir si cela suffit pour comprendre reste une question
-ouverte. Le [Module 5](docs/module5) la reprend sous son angle philosophique, avec
+ouverte. Le [Module 5](docs/module5/20-une-machine-peut-elle-penser) la reprend sous son angle philosophique, avec
 l'argument de la chambre chinoise de Searle, évoqué
 [plus haut](#perroquets-ou-modèles-du-monde), et aborde les conséquences de ces
 modèles pour la société.

@@ -95,7 +95,7 @@ matériel qui réalise lui aussi une certaine organisation. Si l'esprit est une
 silicium aussi bien que sur des neurones. C'est ce qui permet de considérer l'IA
 comme un projet sérieux. Nous reviendrons sur cette idée, et sur sa critique la
 plus célèbre, la *Chambre chinoise* (*Chinese room*) du philosophe John Searle, au
-[Module 5](docs/module5).
+[Module 5](docs/module5/20-une-machine-peut-elle-penser/#la-chambre-chinoise).
 {{% /details %}}
 
 {{% hint warning %}}
@@ -236,7 +236,7 @@ capables de voir qu'un tel énoncé est vrai, alors que la machine ne le peut pa
 Si notre esprit saisit une vérité qu'aucun système formel ne peut prouver, c'est
 qu'il ne se réduit **pas** à un système formel, autrement dit que penser ne se
 ramène pas à du calcul. Nous reviendrons en détail sur cette thèse au
-[**Module 5**](docs/module5), avec celle d'un autre critique connu de l'IA, le
+[**Module 5**](docs/module5/22-penser-est-ce-calculer), avec celle d'un autre critique connu de l'IA, le
 philosophe John Searle.
 
 **Seconde lecture : le théorème est une source.** Pour le penseur américain
