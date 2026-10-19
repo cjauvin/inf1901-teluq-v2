@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 430" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La chambre chinoise, et un modèle de langage</title>
+<desc>Deux panneaux. À gauche, la chambre chinoise imaginée par John Searle en 1980 : une personne enfermée dans une pièce, qui ne connaît pas le chinois, reçoit par une fente des questions écrites en caractères chinois. Elle consulte un gros livre de règles, écrit dans sa langue, qui lui dit quels caractères renvoyer selon ceux qu'elle reçoit, et glisse sa réponse par une autre fente. De l'extérieur, les réponses sont parfaites ; à l'intérieur, personne ne comprend le chinois. À droite, le même schéma pour un modèle de langage : des jetons entrent, d'autres sortent, et entre les deux il n'y a que des milliards de nombres, les poids du modèle. Personne n'a écrit ces règles : elles ont été apprises.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="430" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">La chambre chinoise, et un modèle de langage</text>
+<rect x="20" y="50" width="470" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="255" y="76" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">La chambre chinoise (Searle, 1980)</text>
+<rect x="150" y="100" width="210" height="210" rx="6" fill="#efe7d3" stroke="#9a5b33" stroke-width="3"/>
+<rect x="148" y="146" width="5" height="22" fill="#fbf7ee"/>
+<rect x="357" y="236" width="5" height="22" fill="#fbf7ee"/>
+<circle cx="215" cy="196" r="13" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<path d="M193 246 Q193 214 215 214 Q237 214 237 246" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<rect x="250" y="214" width="80" height="44" rx="3" fill="#9a5b33" fill-opacity="0.2" stroke="#9a5b33" stroke-width="1.8"/>
+<line x1="290" y1="214" x2="290" y2="258" stroke="#9a5b33" stroke-width="1.4"/>
+<line x1="256" y1="224" x2="284" y2="224" stroke="#9a5b33" stroke-width="1"/>
+<line x1="296" y1="224" x2="324" y2="224" stroke="#9a5b33" stroke-width="1"/>
+<line x1="256" y1="234" x2="284" y2="234" stroke="#9a5b33" stroke-width="1"/>
+<line x1="296" y1="234" x2="324" y2="234" stroke="#9a5b33" stroke-width="1"/>
+<line x1="256" y1="244" x2="284" y2="244" stroke="#9a5b33" stroke-width="1"/>
+<line x1="296" y1="244" x2="324" y2="244" stroke="#9a5b33" stroke-width="1"/>
+<text x="290" y="276" font-size="10.5" fill="#9a5b33" text-anchor="middle" font-weight="700">le livre de règles</text>
+<text x="290" y="290" font-size="10" fill="#5b5249" text-anchor="middle">écrit dans sa langue</text>
+<text x="215" y="126" font-size="10.5" fill="#3a3531" text-anchor="middle">ne connaît pas</text>
+<text x="215" y="140" font-size="10.5" fill="#3a3531" text-anchor="middle">le chinois</text>
+<rect x="36" y="142" width="94" height="30" rx="4" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.4"/>
+<path d="M44.6 163.4 Q51.0 154.1 57.4 161.8 M43.5 160.6 H57.0 M44.6 163.4 Q51.0 153.2 57.4 161.8 M44.2 156.1 H56.8" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M65.6 163.4 Q72.0 152.8 78.4 161.8 M68.5 158.4 H78.0 M64.2 162.3 H79.3" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M93.4 151.7 V162.9 M89.2 151.7 V161.1 M87.7 159.4 H99.2 M93.3 152.7 V162.4" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M106.9 154.2 H120.9 M108.4 154.8 H118.8 M115.0 149.4 V162.7 M110.5 155.2 H119.2" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="132" y1="157" x2="160" y2="157" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="80" y="192" font-size="10.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">une question</text>
+<text x="80" y="206" font-size="10.5" fill="#3a6ea5" text-anchor="middle">en chinois</text>
+<line x1="354" y1="247" x2="386" y2="247" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="390" y="232" width="73" height="30" rx="4" fill="#ffffff" stroke="#2f6f6a" stroke-width="1.4"/>
+<path d="M398.6 253.4 Q405.0 245.0 411.4 251.8 M398.6 253.4 Q405.0 243.7 411.4 251.8 M405.9 241.8 V252.4" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M419.6 253.4 Q426.0 244.5 432.4 251.8 M421.8 242.4 V253.3 M419.6 253.4 Q426.0 246.1 432.4 251.8" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M450.7 240.7 V254.7 M441.4 248.2 H451.2 M440.9 249.7 H454.6 M443.8 240.9 V251.5" fill="none" stroke="#3a3531" stroke-width="1.6" stroke-linecap="round"/>
+<text x="428" y="282" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">une réponse</text>
+<text x="428" y="296" font-size="10.5" fill="#2f6f6a" text-anchor="middle">parfaite</text>
+<text x="255" y="378" font-size="11.5" fill="#3a3531" text-anchor="middle">De l'extérieur, la chambre semble comprendre le chinois.</text>
+<text x="255" y="396" font-size="11.5" fill="#3a3531" text-anchor="middle">À l'intérieur, personne ne le comprend.</text>
+<rect x="506" y="50" width="314" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="663" y="76" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">Un modèle de langage</text>
+<rect x="590" y="110" width="146" height="180" rx="8" fill="#efe7d3" stroke="#2f6f6a" stroke-width="2.4"/>
+<text x="663" y="140" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">-0,73 -0,14 +0,10</text>
+<text x="663" y="160" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">+0,41 +0,97 +0,37</text>
+<text x="663" y="180" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">-0,24 -0,54 -0,83</text>
+<text x="663" y="200" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">-0,70 +0,32 -0,98</text>
+<text x="663" y="220" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">+0,66 -0,64 -0,44</text>
+<text x="663" y="240" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">-0,71 +0,07 +0,22</text>
+<text x="663" y="260" font-size="10" fill="#7a6f63" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">-0,36 -0,75 +0,72</text>
+<text x="663" y="306" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">des milliards de poids</text>
+<text x="663" y="320" font-size="10" fill="#5b5249" text-anchor="middle">appris, non écrits</text>
+<rect x="522" y="140" width="44" height="18" rx="3" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="544" y="153" font-size="9.5" fill="#3a6ea5" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">17 233</text>
+<rect x="522" y="165" width="44" height="18" rx="3" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="544" y="178" font-size="9.5" fill="#3a6ea5" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">4 501</text>
+<rect x="522" y="190" width="44" height="18" rx="3" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="544" y="203" font-size="9.5" fill="#3a6ea5" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">902</text>
+<line x1="568" y1="175" x2="588" y2="175" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<line x1="738" y1="200" x2="758" y2="200" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="762" y="191" width="44" height="18" rx="3" fill="#ffffff" stroke="#2f6f6a" stroke-width="1.2"/>
+<text x="784" y="204" font-size="9.5" fill="#2f6f6a" text-anchor="middle" font-family="ui-monospace, Menlo, monospace">88 016</text>
+<text x="544" y="224" font-size="10" fill="#3a6ea5" text-anchor="middle">jetons</text>
+<text x="784" y="226" font-size="10" fill="#2f6f6a" text-anchor="middle">jeton</text>
+<text x="663" y="378" font-size="11.5" fill="#3a3531" text-anchor="middle">Le même schéma : des symboles entrent,</text>
+<text x="663" y="396" font-size="11.5" fill="#3a3531" text-anchor="middle">d'autres sortent, selon des règles.</text>
+</svg>
