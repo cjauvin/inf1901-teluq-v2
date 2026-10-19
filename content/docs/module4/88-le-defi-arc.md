@@ -202,9 +202,12 @@ Le score ne mesure pas seulement la réussite, mais l'**efficacité** : le nomb
 d'actions dont le système a besoin, comparé à celui d'un humain. Chaque jeu a été
 essayé par une dizaine de personnes, et au moins deux l'ont réussi du premier coup.
 À la publication,
-les meilleurs modèles obtenaient moins de 1 %. Quelques mois plus tard, à
-l'automne 2026, les meilleurs systèmes dépassent 60 %, en dépensant toutefois des
-dizaines de milliers de dollars pour l'ensemble des jeux.
+les meilleurs modèles obtenaient moins de 1 %. Quelques mois plus tard, à l'automne 2026, les meilleurs systèmes dépassent 60 %, en dépensant toutefois des
+dizaines de milliers de dollars pour l'ensemble des jeux. En septembre 2026, GPT-6
+Astra obtient 62,7 % dans les conditions standard du test. Équipé d'un
+[harnais](docs/module4/80-outils-et-agents) conçu pour lui, il atteint presque 100 %, et
+utilise moins d'actions qu'un humain médian sur 96 % des niveaux. La fondation ARC
+Prize précise qu'elle ne prétend pas pour autant qu'il s'agit d'une IA générale.
 
 Les jeux publics d'ARC-AGI-3 se jouent dans un navigateur, sur le site d'ARC Prize. Le
 jeu [ls20](https://arcprize.org/tasks/ls20) permet d'en faire l'expérience : quelques
