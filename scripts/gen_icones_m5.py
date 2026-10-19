@@ -32,8 +32,9 @@ ICONES = {
     # une personne et un cœur
     "humaine": (ROUGE, f'<circle cx="19" cy="14" r="5" {T}/><path d="M9 38 Q9 24 19 24 Q24 24 26.5 27" {T}/>'
                        f'<path d="M34 38 Q26 32 26 27.5 Q26 24 29.5 24 Q32 24 34 27 Q36 24 38.5 24 Q42 24 42 27.5 Q42 32 34 38 Z" {T}/>'),
-    # un triangle d'avertissement
-    "risques": (ROUGE, f'<path d="M24 8 L42 39 H6 Z" {T}/><path d="M24 19 V29" {T}/><circle cx="24" cy="34" r="1.7" fill="{{c}}"/>'),
+    # un trombone, celui du « maximiseur de trombones » de Bostrom
+    "risques": (ROUGE, f'<path transform="rotate(38 24 24) translate(24 24) scale(0.92) translate(-24 -24)" '
+                       f'd="M21 17 V32 A4 4 0 0 0 29 32 V13 A6 6 0 0 0 17 13 V35 A7 7 0 0 0 31 35 V19" {T}/>'),
 }
 
 OUT.mkdir(parents=True, exist_ok=True)
