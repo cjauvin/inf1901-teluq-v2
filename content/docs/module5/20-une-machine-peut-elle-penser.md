@@ -185,6 +185,30 @@ d'usages qu'on apprend en participant à la vie d'une communauté. Si comprendre
 savoir jouer ces jeux, la question devient moins « que se passe-t-il à l'intérieur ? »
 que « que sait-il faire avec les mots ? ».
 
+{{% hint info %}}
+**Dans la conversation**
+
+La [conversation](docs/module5/95-conversation) entre Daniel Lemire et Christian
+Jauvin, enregistrée à l'été 2025, aborde plusieurs questions de ce chapitre.
+
+- [23:46](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=1426s) **Le test de Turing.** Longtemps tenu pour le critère ultime de
+  l'intelligence, il est désormais « à toutes fins pratiques » dépassé, ce qui illustre
+  les objectifs qui se déplacent. La discussion porte aussi sur l'impression de parler
+  à quelqu'un, qui varie selon les personnes : certaines traitent un robot
+  conversationnel comme un compagnon, d'autres comme une intelligence « désincarnée ».
+- [28:15](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=1695s) **La philosophie de l'esprit.** Les grands modèles de langage
+  relancent des questions posées par la philosophie de l'esprit et du langage depuis
+  plus d'un siècle.
+- [46:37](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=2797s) **Chomsky.** Sa thèse d'un langage fait de règles formelles,
+  inscrites dans le cerveau, est fortement ébranlée par des modèles qui maîtrisent la
+  langue sans ces règles. Restent des erreurs déroutantes, comme celle du
+  [*strawberry*](docs/module4/94-comprendre-et-rater/#des-erreurs-révélatrices).
+- [50:50](https://www.youtube.com/watch?v=R8sqq_gJbUI&t=3050s) **Wittgenstein.** Compter, raconter une histoire, programmer :
+  autant de jeux de langage différents. Un modèle peut en maîtriser certains bien mieux
+  que d'autres, et écrire un programme qui compte les voyelles d'un mot plutôt que de
+  les compter lui-même.
+{{% /hint %}}
+
 ## Un débat ouvert
 
 Les chercheurs eux-mêmes sont partagés, presque à parts égales. En 2022, avant même

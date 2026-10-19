@@ -1,0 +1,2920 @@
+[00:00] Bienvenue dans cette conversation pas
+[00:02] comme les autres où l'intelligence
+[00:04] artificielle devient un terrain de jeu
+[00:07] pour la pensée critique, la science, la
+[00:10] philosophie et l'imaginaire.
+[00:13] À travers cette discussion, je vous
+[00:15] invite à débattre sur des questions qui
+[00:18] agitent aujourd'hui tant les chercheurs
+[00:20] que le grand public.
+[00:22] Débutons sans plus tarder. Pourquoi
+[00:25] certaines tâches qui sont si faciles
+[00:28] pour nous comme la motricité, la
+[00:31] reconnaissance faciale semble si
+[00:34] difficiles à reproduire pour des
+[00:35] machines alors qu'elles excèent dans des
+[00:37] tâches complexes comme manipuler des
+[00:40] bases de données ? Est-ce que cette
+[00:42] difficulté peut s'expliquer par la
+[00:44] manière dont on réfléchit ou plutôt par
+[00:47] la manière dont on conçoit les
+[00:49] intelligences artificielles ?
+[00:52] Oui. Euh, on commence par une question
+[00:54] vraiment profonde. En fait, il se trouve
+[00:57] que ce ce problème là en fait un nom. Ça
+[01:01] s'appelle le paradoxe de mort avec ça.
+[01:04] Certains types de de tâches sont
+[01:06] fondamentalement
+[01:08] plus semblent être plus faciles que
+[01:10] d'autres. Comme par exemple, on
+[01:12] imaginerait que que l'intelligence
+[01:14] artificielle euh pourrait euh fournir un
+[01:18] un produire un robot qui nettoirait la
+[01:22] qui ferait la vaisselle ou le ménage
+[01:23] chez soi. On imaginerait
+[01:27] a priori, de manière intuitive que c'est
+[01:29] plus facile de faire ça que de que de
+[01:33] jouer aux échecs ou de faire de
+[01:35] mathématiques ou de de de composer un un
+[01:39] un roman. historique. Qu'est-ce qu'on
+[01:41] observe dans les faits quand la
+[01:43] technologie essaie de de d'attaquer ce
+[01:46] problème là, on se rend compte qu'en
+[01:48] fait en fait on a simplement observé
+[01:50] autour de nous, est-ce que juste faire
+[01:52] l'observation, est-ce qu'on a des de
+[01:54] telles machines de nos jours ? Oui, on a
+[01:56] des machines qui lavent la vaisselle. On
+[01:58] a un lave-vaisselle mais ce que j'aurais
+[02:01] en tête, c'est plus un robot général qui
+[02:04] euh qui est capable de de laver de la
+[02:06] vaisselle et faire toutes sortes
+[02:07] d'autres choses dans la maison. Ça, on
+[02:09] observe qu'on a pas ça. Ça semble être
+[02:11] difficile. Il y a une difficulté
+[02:13] fondamentale. Peut-être peut-être une
+[02:15] hypothèse qui explique c cet effet là,
+[02:18] c'est que donc évidemment ça aurait été
+[02:21] surprenant là si on au début du 20e
+[02:24] siècle si on avait dit aux gens on va
+[02:27] créer des blue là. Donc un ordinateur
+[02:30] qui est capable de battre les meilleurs
+[02:33] êtres humains aux échecs, mais on sera
+[02:35] pas capable de faire un robot capable de
+[02:38] marcher, d'ouvrir une porte dans une
+[02:40] maison.
+[02:42] Il peut-être une explication potentielle
+[02:45] à ce parent paradoxe là, c'est un
+[02:48] problème de données. C'est assez facile
+[02:51] même dans le cas des échecs d'aller
+[02:53] chercher ou de générer énormément de
+[02:55] données. Les données, le le modèle est
+[02:59] très accessible. C'est beaucoup plus
+[03:02] difficile de d'aller chercher beaucoup
+[03:04] de données sur comment un robot peut se
+[03:08] déplacer dans une maison en particulier.
+[03:11] Euh et là, on est en train de voir ce
+[03:14] paradoxe là un peu euh s'effondrer dans
+[03:18] un sens où euh la compagnie Tesla fait
+[03:22] des voitures qui se conduisent toutes
+[03:24] seules. Euh euh
+[03:27] même en fait par exemple, il y avait pas
+[03:30] accès aux données en Chine pour toutes
+[03:31] sortes de raisons, mais les ils se
+[03:33] rendent compte que même en Chine, là où
+[03:36] il y avait pas de données, les Tesla
+[03:37] sont capables de de de de
+[03:42] finalement naviguer facilement dans les
+[03:44] rues. Mais c'est quoi la la différence ?
+[03:46] c'est que Tesla enregistre énormément de
+[03:50] données depuis plusieurs années. là, ils
+[03:53] ont été capable de développer euh donc
+[03:56] si on avait si on accrochait
+[04:00] si on s'accrochait si on se mettait des
+[04:03] casquettes
+[04:04] avec une caméra puis on filmait tout ce
+[04:07] qu'on fait dans la vie de tous les jours
+[04:10] et s'il y avait des millions d'êtres
+[04:11] humains qui faisaient ça constamment
+[04:13] puis qu'on accumulé énormément de
+[04:14] données, là peut-être qu'on pourrait en
+[04:16] fait résoudre ce problème là et aller
+[04:18] chercher suffisamment de données pour
+[04:20] finalement
+[04:22] faire le robot qui fait la vaisselle
+[04:24] puis qui place la vaisselle dans dans
+[04:26] les dans les armoires mais
+[04:28] puis qui fait aussi toutes sortes
+[04:29] d'autres choses d'autres choses mais on
+[04:30] n pas on n pas ces données là donc si si
+[04:33] un chercheur qui demain matin voudrait
+[04:35] ben il y en a qui travaillent là-dessus
+[04:37] mais
+[04:38] c'est quoi les données d'entraînement
+[04:41] on n pas énormément de données
+[04:42] d'entraînement sur comment plier des des
+[04:45] chemises là c'est pas
+[04:46] tu as absolument raison et je veux juste
+[04:49] accrocher. tu dis, tu présentes le
+[04:51] problème comme si le jeu d'échec parce
+[04:54] qu'on observe que le jeu d'échec lui, il
+[04:56] a été résolu dans l'histoire de
+[04:59] l'informatique. Il y a eu des le jeu il
+[05:02] y a eu des des
+[05:04] évidemment pas de pas un des blue qui
+[05:06] joue aux échecs de manière suprahumaine.
+[05:09] Ça ça a pris du temps, c'est 97.
+[05:12] Mais on a eu un jeu d'échec des une
+[05:14] programme pour jouer aux échecs
+[05:16] probablement dans les années 50 60. il y
+[05:19] avait déjà quelque chose qui était
+[05:21] capable de jouer aux échecs puis
+[05:22] probablement qu'il serait capable de
+[05:24] nous de nous battre possiblement ou en
+[05:26] tout cas un joueur pas très pas doué
+[05:29] puis tu tu dis il y a plus de données
+[05:32] pour jouer aux échecs. C'est vrai mais
+[05:35] je voudrais juste faire la remarque que
+[05:37] la manière originale de résoudre le jeu
+[05:40] d'échec ça a pas été de de le résoudre à
+[05:44] l'aide des données. Ça c'est un
+[05:46] paradigme moderne en fait. C'est le
+[05:48] paradigme de l'apprentissage automatique
+[05:50] de dire essentiellement la façon de
+[05:53] d'apprendre c'est de ramasser un gros
+[05:56] paquet de données et de bâtir un modèle
+[05:58] statistique d'apprentissage. Mais la
+[06:01] vision originale de l'intelligence
+[06:02] artificielle telle qu'elle a émergé dans
+[06:04] les années 50
+[06:07] et qui a permis très rapidement de
+[06:09] d'avoir un programme qui joue aux
+[06:10] échecs, c'était une vision complètement
+[06:12] différente qui était pas basée sur les
+[06:14] données en fait qui était basé sur la
+[06:17] logique, sur les règles, sur une
+[06:19] formalisation de ce que de ce qu'est
+[06:22] l'intelligence qui était
+[06:24] qui était pas particulièrement basé sur
+[06:26] les données en fait. Et il y avait
+[06:28] vraiment une espèce de vision idéalisée,
+[06:30] une vision euh
+[06:33] une vision très mathématique, très
+[06:34] philosophique en fait qui avait un
+[06:36] héritage assez ancien parce que ces
+[06:38] idées-là sont pas apparues dans les
+[06:39] années 50. C'était probablement euh
+[06:42] plusieurs centaines de d'années euh
+[06:45] précédent, il y avait dans la dans la
+[06:47] culture scientifique et mathématique, il
+[06:48] y avait cette idée que ce serait
+[06:51] probablement possible avec les bons
+[06:52] outils conceptuels de
+[06:56] prendre l'intelligence, de la comprendre
+[06:58] et de la formaliser dans un langage,
+[07:00] dans une série de règles relativement
+[07:03] compacts
+[07:05] puis que l'ordinateur serait capable de
+[07:08] de de prendre puis de manipuler
+[07:10] évidemment avec sa vitesse supérieure
+[07:12] puis son sa profondeur fait que c'est
+[07:14] c'est ça qui a mené au jeu d'échec dans
+[07:17] ce cas-là euh
+[07:20] modéliser un jeu d'échec
+[07:23] euh
+[07:25] c'est relative mathématiquement de façon
+[07:28] formelle c'est aisé pour un
+[07:31] informaticien ou un mathématicien
+[07:34] euh modéliser
+[07:38] la cuisine de Dolores
+[07:40] avec ses ses là où place ses assiettes
+[07:44] et puis ses tasses puis euh comment
+[07:47] préfère qu'il soit placé puis comment il
+[07:49] faut se déplacer dans sa cuisine. C'est
+[07:52] substantiement plus difficile comme
+[07:54] modèle. On pourrait presque dire que
+[07:55] c'est impossible parce que la cuisine de
+[07:57] Dolores là on parle d'un truc qui
+[07:59] devrait évidemment on dit la cuisine de
+[08:00] Dolores mais on voudrait un truc général
+[08:02] qui serait bon pour ma cuisine ta
+[08:04] cuisine mais on a le problème que ma
+[08:06] cuisine est différente de ta cuisine.
+[08:08] Fait que donc comment on modélise ça ?
+[08:10] Alors qu'il y a un seul jeu d'échec. Ça
+[08:11] c'est la beauté du jeu d'échec, c'est
+[08:13] qu'en fait non seulement il y a un seul
+[08:14] jeu, mais il y a très peu de règles. On
+[08:16] peut apprendre un enfant de 5 ans les
+[08:18] règles très rapidement. Mais une mais
+[08:20] une cuisine évidemment c'est un truc qui
+[08:22] est mathématiquement pas du tout clair.
+[08:24] Fait comme tu dis c'est deux problèmes
+[08:27] complètement fondamentalement
+[08:28] différents. Mais vraiment l'intuition
+[08:31] continue de de de l'intuition est
+[08:35] inconfortable avec cette idéelà.
+[08:36] L'intuition humaine, notre intuition
+[08:39] aurait envie de dire "Mais il semble que
+[08:41] laver la vaisselle, ça devrait
+[08:44] qu'est-ce qu'est-ce qu'est-ce que c'est
+[08:46] la difficulté ?" On je veux dire, on a
+[08:47] des robots, on sait comment faire des
+[08:50] mécanismes pour ouvrir une main qui est
+[08:52] capable d'ouvrir une porte. Qu'est-ce
+[08:54] que c'est la difficulté fondamentale ?
+[08:55] L'intuition aime pas cette idée-là, mais
+[08:57] c'est quand même ce qu'on observe.
+[09:01] de 10 blue justement les échecs
+[09:03] jusqu'aux récentes. Chaque avancée nous
+[09:06] amène à revoir ce que l'on entend par
+[09:09] intelligence artificielle.
+[09:12] Est-ce cela une manifestation du
+[09:14] phénomène du moving goal post ? Euh j'ai
+[09:18] j'ai demandé hier à Chat GPT un bon une
+[09:22] bonne traduction pour ça. Il m'a dit
+[09:24] objectif changeant ou objectif j'ai j'ai
+[09:28] en fait il m'a dit objectif changeant ou
+[09:29] quelque chose du genre et j'ai dit ah
+[09:31] objectif dynamique en fait ça me
+[09:33] semblerait une traduction potable pour
+[09:35] ça. Mais les anglophones parlent
+[09:37] toujours de moving goal post. Et c'est
+[09:41] intéressant parce que c'est devenu une
+[09:42] sorte de vocable en fait. C'est comme en
+[09:45] fait c'est devenu un même euh je pense
+[09:47] que c'est un bon exemple de même au sens
+[09:49] de la de la mémétique. Tu dis moving
+[09:52] goal post dans un certain cercle
+[09:56] académique, les gens qui connaissent
+[09:58] l'intelligence artificielle, ils vont
+[09:59] tout de suite automatiquement savoir de
+[10:01] ce dont tu parles. C'est ça comme tu dis
+[10:05] de l'ores. Bon en 97 des blue finalement
+[10:09] triomphent de de Casparov et et c'est
+[10:14] c'est historique
+[10:16] cette chose là. On peut je pense qu'il y
+[10:17] a des vidéos qui montrent que Kasparov
+[10:20] non seulement a perdu mais qu'il était
+[10:22] fâché puis troublé puis émotif. Et
+[10:24] c'était un grand moment dans l'histoire.
+[10:26] Il faut absolument pas sous-estimer à
+[10:28] quel point le fait que Casparov soit
+[10:30] battu par un ordinateur euh sous c'est
+[10:34] un moment important. Soitdite en passant
+[10:36] euh Dave Blue qui est IBM, l'ordinateur
+[10:40] qui a battu Kasparov, c'était euh à ma
+[10:42] connaissance, c'était pas du de
+[10:44] l'apprentissage automatique au sens au
+[10:47] sens de maintenant. Euh c'était autre
+[10:49] chose. Mais bon, tout ça pour dire que
+[10:51] des Blue a battu la machine et euh la
+[10:54] réaction euh scientifique ou une
+[10:57] réaction euh à ça, c'est de dire bon ben
+[11:00] voilà, vous avez vous avez maintenant
+[11:03] euh la preuve, on a un ordinateur qui b
+[11:06] le le meilleur joueur d'échec. Qu'est-ce
+[11:07] que dans un certain sens, qu'est-ce que
+[11:09] ça vous prend de plus ? Tu sais, vous
+[11:12] vous avez vous avez une preuve de de de
+[11:14] d'un comportement euh intelligent et la
+[11:17] la réponse scientifique ou la réponse un
+[11:21] peu culturelle à Debou, c'est de dire
+[11:23] "Ah oui, mais en fait c'est pas
+[11:25] exactement ça qu'on avait en tête en
+[11:27] parlant d'intelligence. En fait, ça
+[11:29] c'est une intelligence extrêmement
+[11:31] spécifique qui résout un problème
+[11:33] extrêmement spécifique dans un domaine
+[11:35] extrêmement étroit. Donc évidemment,
+[11:38] oui, c'est très impressionnant
+[11:40] techniquement
+[11:41] euh mais c'est pas de l'intelligence
+[11:44] comme on avait en tête. Nous, on avait
+[11:45] en tête autre chose. On avait en tête un
+[11:47] truc plus général, plus c'est J'ai j'ai
+[11:50] j'ai bon exemple de ça.
+[11:55] La semaine passée, j'étais euh avec un
+[11:57] collègue informaticien
+[11:59] euh et puis ma conjointe qui est pas
+[12:01] informaticienne et
+[12:05] euh
+[12:06] mon collègue l'informaticien, bon, on
+[12:08] discutait de l'a et il initia un peu une
+[12:12] crainte qu'on que les gens allaient
+[12:15] finalement pour déterminer ce qui est
+[12:17] vrai ou faux, s'en remettre plus ou
+[12:19] moins à l'a et dire bah Lia a dit X un
+[12:24] peu comme tu faisais tu all tu es allé
+[12:25] voir Chat GPT puis Chat GPT dit ça alors
+[12:28] tu dis bah ça doit être ça la traduction
+[12:32] et là pour faire un peu une blague je
+[12:34] marchais avec ma conjointe et puis
+[12:36] évidemment on utilise tous euh euh
+[12:39] Google Maps ou plan donc des des outils
+[12:42] qui nous disent où tourner où aller.
+[12:45] Alors je disais ben tu vois moi je me je
+[12:47] me je me je me fie à Lia donc Lia me dit
+[12:50] de d'aller jusque là et de tourner à
+[12:51] droite. Donc je me fie aveuglément à
+[12:53] Lia.
+[12:54] Et là dit mais pourquoi tuappelles ça ma
+[12:57] conjointe ?
+[12:58] Oui.
+[12:59] OK mais il est absolument certain qu'en
+[13:03] 1970 Google mais je fais pas publicité
+[13:05] pas Google mais Google Maps ou plan sur
+[13:08] Apple
+[13:10] clair que tout le monde aurait dit c'est
+[13:12] de ça
+[13:13] 100 % clair. Ouais
+[13:14] c'est absolument clair. Là maintenant
+[13:16] personne considère que c'est
+[13:17] Ouais. Oui, considère que c'est
+[13:20] essentiellement un algorithme que c'est
+[13:23] mais mais certainement pas un truc
+[13:25] général. En fait, je pense que dans
+[13:27] l'esprit des gens, tuas chat GPT d'un
+[13:29] côté qui ressemble à quelque chose de
+[13:31] général. Tu as Google Maps de l'autre
+[13:34] qui puis Google Maps ressemble plus au
+[13:36] jeux d'échec dans ce sensl dans le sens
+[13:38] que je l'écrivais. Puis pourtant, par
+[13:40] exemple, c'était une compétence
+[13:42] cognitive
+[13:44] importante des euh par exemple des
+[13:46] chauffeurs de taxi à à Londres, il
+[13:48] devait passer des examens assez pour
+[13:51] pouvoir faire connaître toutes les rues
+[13:52] et cetera, pouvoir faire les trajets.
+[13:55] Euh euh bon, puis maintenant, un
+[13:58] ordinateur fait probablement mieux que
+[14:00] la plupart des êtres humains trouver
+[14:01] chemins plus courts et cetera. Euh
+[14:03] surtout s'il y a des embouteillages
+[14:04] parce que lui peut même savoir où sont
+[14:06] les embouteillages alors que pas c'est
+[14:08] difficile pour l'être humain. Euh euh
+[14:10] mais c'est un peu mais c'est ça c'est
+[14:11] exactement la
+[14:12] c'est la même idée. Puis en fait je
+[14:14] pense c'est un thème vraiment
+[14:15] intéressant. On peut peut-être euh
+[14:19] continuer un peu sur ça parce que même
+[14:21] parce que là bah en fait là on a dit li
+[14:23] a en fait c'est comme un espèce de de
+[14:26] concept presque un peu mystique en fait.
+[14:29] Qu'est-ce que parce que en fait pour
+[14:31] revenir au moving post, on a comme c'est
+[14:33] comme si le concept idéal qu'on aimerait
+[14:36] atteindre nous échappe tout le temps. Il
+[14:37] y a comme à chaque fois qu'on y arrive
+[14:39] concrètement, on dit "Ah, finalement,
+[14:41] c'est pas exactement ça que j'avais en
+[14:43] tête."
+[14:43] Et je lisais ce matin en fait euh un un
+[14:48] un texte d'un d'un blogueur qui disait
+[14:50] que le le la l'apprentissage automatique
+[14:54] fait que là on est beaucoup plus proche
+[14:55] de ce que de ce qu'on entend par IA. Euh
+[14:59] on on est dans les années 2010. OK. Euh
+[15:02] le le blogueur disait expliquait que les
+[15:05] les hôpitaux, les médecins euh
+[15:07] utilisaient dans les années 2000 avant
+[15:10] CHGPT en fait utilisait toutes sortes de
+[15:13] de modèles statistiques qui sont
+[15:15] vraiment considérés comme de la de
+[15:16] l'apprentissage machine. On est vraiment
+[15:18] dans l'Agressions linéaires, des
+[15:20] régressions logistiques, des trucs de ce
+[15:22] genre-là qui sont de du maintenant
+[15:25] considérés comme de l'apprentissage
+[15:26] automatique plus classique. OK, mais cet
+[15:29] usage là c'est jamais généralisé. les
+[15:31] gens, il y a pas eu de révolution à la
+[15:33] chat GPT, les hôpitaux se sont pas mis à
+[15:37] implanter ce genre de système là de
+[15:41] manière Non, en fait le l'implantation a
+[15:44] été plus spécifique. Certaines certaines
+[15:47] certains endroits l'utilisent, d'autres
+[15:48] non. Et en fait ce qui arrive c'est que
+[15:51] euh au contraire les apparemment ce que
+[15:54] j'ai lu c'est que euh il y a de des il y
+[15:57] a beaucoup de de spécialistes des
+[15:58] médecins euh qui utilisent en fait
+[16:00] carrément Chat GPT euh évidemment pas de
+[16:03] manière officielle mais ils vont
+[16:04] utiliser ces outils-là. Pourquoi ? Parce
+[16:07] que
+[16:08] contrairement à un outil comme une
+[16:10] régression linéaire qui est pas
+[16:11] particulièrement complexe
+[16:13] conceptuellement mais qui est quand même
+[16:14] plus technique, mais chat GPT c'est pas
+[16:16] un outil technique. Chat GPT c'est un
+[16:18] c'est un outil un peu comme Google Maps,
+[16:20] c'est un outil général, c'est un outil
+[16:22] d'usage euh de d'usage quotidien que que
+[16:26] tu as carrément dans ta poche. Tu peux
+[16:27] poser une question vocale. Euh et et
+[16:31] c'est c'est vraiment ça la différence.
+[16:32] Je pense queil y a une énorme différence
+[16:35] de de qui est qui est pas qui est pas
+[16:37] particulièrement technique ou
+[16:38] scientifique. C'est une question
+[16:39] d'interface. C'est une question de
+[16:41] comment cet outil là s'intègre dans ta
+[16:43] vie. Google Map c'est c'est un
+[16:45] excellent. Moi maintenant je quand je
+[16:47] même quand je vais au Costco que je dont
+[16:50] je connais le le chemin exactement par
+[16:52] cœur, je vais quand même mettre mon mon
+[16:55] GPS dans l'auto. Pourquoi ? parce que je
+[16:57] me dis "Ah mais tout d'un coup qu' a qu'
+[16:59] a une route barrée ou qu' a un accident,
+[17:02] ben le GPS va le savoir puis il va
+[17:04] intelligemment euh euh me me permettre
+[17:08] de tu sais fait." Donc c'est ça, c'est
+[17:09] il y a vraiment une une une un usage
+[17:12] quotidien de plus en plus profond de ces
+[17:15] outilslà.
+[17:17] Christian, tu mentionnais
+[17:19] de Blue est une ce qu'on appelle une
+[17:22] intelligence artificielle étroite,
+[17:24] c'est-à-dire elle incarne une
+[17:26] intelligence artificielle étroite,
+[17:28] c'est-à-dire spécialisée dans une tâche.
+[17:31] Ici, le jeu d'échec
+[17:34] avec l'avènement des grands modèles de
+[17:37] langage et leur leur capacité. Penses-tu
+[17:40] que nous sommes en train d'entrer dans
+[17:43] une ère de l'intelligence artificielle
+[17:46] générale
+[17:48] ou reste-t-il des étapes à franchir
+[17:52] avant d'y parvenir ?
+[17:55] La question maintenant par rapport à
+[17:57] chat GPT, c'est
+[18:00] est-ce qu'on y est ? Est-ce que est-ce
+[18:02] que ben cette question là a plusieurs
+[18:04] formes dont on va pouvoir discuter, mais
+[18:06] est-ce que est-ce que c'est le paradigme
+[18:09] les modèles de les grands modèles de
+[18:10] langage ? Est-ce que enfin après toutes
+[18:13] ces explorations là dans dans l'univers
+[18:15] des des des possibilités d'algorithme
+[18:18] d'apprentissage intelligent puis
+[18:20] d'intelligence artificielle, est-ce
+[18:21] qu'on a un peu accidentellement euh buté
+[18:26] sur la bonne formule et est-ce que CHGPT
+[18:29] constitue un truc qui est intelligent
+[18:33] d'une manière générale ? Puis là, ce
+[18:35] qu'on aura en tête évidemment c'est
+[18:37] est-ce que ça devrait si ce bidule là
+[18:40] est effectivement intelligent, il
+[18:42] devrait être capable de jouer aux
+[18:43] échecs, il devrait être capable de de
+[18:47] composer un poème, il devrait être
+[18:49] capable de résoudre des problèmes de de
+[18:52] mathématiques de du secondaire 5. Il
+[18:53] devrait être capable de faire toutes ces
+[18:54] choseslà.
+[18:56] C'est à peu près ce qu'on observe. Mais
+[18:58] évidemment, on va aussi observer qu'on
+[19:00] peut que ça aurait pas de sens de
+[19:01] demander à Chat GPT de faire la
+[19:03] vaisselle parce qu'il y a une question
+[19:04] de modalité là-dedans. Évidemment, le on
+[19:07] reconnaît que la que la substance de
+[19:10] chat GPT, c'est d'être un modèle de
+[19:12] langage. Et donc ce qui ce qu'il fait,
+[19:14] c'est essentiellement manipuler
+[19:16] des des des manipule langage. Mais il se
+[19:20] trouve qu'on semble avoir un rapport
+[19:23] vraiment extrêmement étroit puis
+[19:25] extrêmement,
+[19:28] j' envie de dire anthropologiquement
+[19:30] profond avec le langage parce que le
+[19:32] fait de nous donner un outil qui dont
+[19:34] dont l'usage est linguistique,
+[19:36] l'interface est linguistique, ça nous on
+[19:40] a vraiment l'impression d'être en
+[19:41] présence de d'un truc qui est mais c'est
+[19:45] un c'est un énorme débat en ce moment.
+[19:47] C'est un débat extrêmement intéressant.
+[19:49] la question de savoir est-ce que euh
+[19:52] est-ce que est-ce que est-ce que c'est
+[19:53] ça ou est-ce que c'est encore une forme
+[19:56] d'intelligence étroite un peu comme un
+[19:58] jeu d'échec mais plus sophistiqué un
+[20:00] engin de jeux d'échec des blue mais pour
+[20:03] le langage. Est-ce est-ce que
+[20:06] mais peut-être peut-être peut-être que
+[20:08] la question
+[20:10] bon
+[20:12] la est-ce que l'intelligence c'est
+[20:13] quelque chose de bien défini ? C'est
+[20:15] quand même difficile de définir tu sais.
+[20:18] On peut aller dans le dictionnaire. Puis
+[20:20] l'intelligence générale, qu'est-ce que
+[20:21] ça veut dire exactement ? Euh
+[20:25] euh c'est c'est c'est pas des concepts
+[20:28] qui sont très bien définis. Une façon de
+[20:30] voir les choses, c'est que
+[20:34] évidemment euh si j'étais en 1970, je me
+[20:38] dis je vais créer un ordinateur qui est
+[20:40] capable de jouer aux échecs mieux que
+[20:43] n'importe quel être humain. Euh ce que
+[20:46] je vais avoir créé est intelligent.
+[20:48] Après ça, on se rend compte bon mais le
+[20:51] langage c'est bon c'est peut-être plus
+[20:55] général que de jouer aux échecs mais
+[20:58] c'est quand même spécifique he il y a
+[21:00] des il y a des il y a des animaux que je
+[21:02] considère intelligents comme un chien.
+[21:05] Ça parle pas un chien mais c'est quand
+[21:07] même intelligent. C'est capable de un
+[21:09] chien, ça peut s'entraîner, ça peut
+[21:11] faire des tours, ça peut attraper une
+[21:12] balle au bon euh d'une façon que
+[21:17] des êtres humains seraient pas capables
+[21:18] de faire. Il y a des a des animaux qui
+[21:20] font des choses qu'on n'est pas capable
+[21:22] de faire, qui sont capables de d'une
+[21:26] agilité de de prouesse qu'on n'est pas
+[21:28] capable de faire. Moi, je je suis pas
+[21:30] capable de sauter de d'arbre en arbre et
+[21:33] puis il y a une forme d'intelligence.
+[21:35] C'est pas juste de motricité.
+[21:38] Euh
+[21:40] euh donc dans donc donc moi je pense que
+[21:44] le le problème fondamental dans la
+[21:46] question de de Laorz, c'est c'est
+[21:49] qu'est-ce qu'on veut dire par
+[21:51] l'intelligence générale ?
+[21:56] La plupart des êtres humains sont pas
+[21:58] capables de multiplier euh deux chiffres
+[22:00] avec 15 euh
+[22:05] avec 15 nombres et euh
+[22:09] dans dans on n'est pas capable de
+[22:11] multiplier des des grands chiffres
+[22:13] ensemble et alors que c'est trivial pour
+[22:17] un circuit électronique comme une
+[22:19] calculatrice l'affaire. Donc est-ce que
+[22:21] même l'être humain a une intelligence
+[22:24] générale ou est-ce que l'être humain
+[22:26] dans un sens a une intelligence euh qui
+[22:30] est quand même spécialisé ? Par exemple,
+[22:31] on sait que c'est assez difficile pour
+[22:33] êtres humains de faire des mathématiques
+[22:34] formelles. Ça nous demande beaucoup
+[22:36] d'efforts. Clairement, on n pas eu notre
+[22:39] cerveau a pas euh nos ancêtres faisaient
+[22:43] pas de de preuves formelles. C'est
+[22:45] quelque chose qui nous demande beaucoup
+[22:46] d'efforts dans la savane dans les
+[22:48] savanes.
+[22:49] C'est extrêmement récent. Ouais. Donc on
+[22:51] peut pas imaginer qu'il y a rien dans
+[22:53] l'évolution qui aurait qui pourrait
+[22:55] aider
+[22:57] le le fait d'être bon à faire des
+[22:58] mathématique formel parce que c'est trop
+[23:00] récent
+[23:00] et on voit à quel point ça prend
+[23:02] énormément de formation pour y arriver.
+[23:04] C'est pas quelque chose qui est naturel.
+[23:07] Euh c'est très la plupart des gens qui
+[23:10] essayent de faire des preuves formelles,
+[23:11] même simples, font des plein d'erreurs
+[23:13] aussi. Euh donc peut-être que la réponse
+[23:16] c'est qu'il y en a pas d'intelligence
+[23:18] générale puis que c'est toujours juste
+[23:20] des intelligences
+[23:22] un peu spécialisé puis que l'être humain
+[23:24] a sa propre forme d'intelligence qui va
+[23:27] toujours être distinct de celle qu'on
+[23:29] peut créer par par la machine parce que
+[23:32] la nôtre a sa propre caractéristique
+[23:34] comme par exemple je peux j'ai pas
+[23:36] l'intelligence d'un chien puis un chien
+[23:38] peut pas avoir mon intelligence mais ça
+[23:39] veut pas dire que le chien est stupide
+[23:41] il y a des chiens très intelligents Il
+[23:43] ont pas la même forme d'intelligence que
+[23:45] nous.
+[23:46] Selon vous,
+[23:49] qu'est-ce qui fait qu'on peut dire
+[23:50] qu'une machine est intelligente ? ing
+[23:54] par exemple penser qu'une machine qui
+[23:57] sait tenir une conversation
+[24:00] identique à celle d'un homme pourrait
+[24:03] être intelligente.
+[24:05] Pensez-vous qu'aujourd'hui on peut
+[24:07] encore faire confiance à ce genre de
+[24:09] texte alors que les intelligences
+[24:12] artificielles évoluent constamment ?
+[24:18] La connexion logique est encore une fois
+[24:20] est grande parce que oui le test de
+[24:22] Turing c'est le la c'est un peu le je
+[24:25] sais pas c'est quoi l'expression
+[24:26] exactement c'était le le lytus le test
+[24:29] de l'Mnus en tout cas c'était pendant
+[24:31] plusieurs décennies considéré comme la
+[24:34] la le critère en fait ultime pour
+[24:37] déterminer l'intelligence puis pour le
+[24:39] l'expliquer brièvement euh pour les gens
+[24:41] qui écoutent euh parce qu'il y a
+[24:44] différentes versions, mais c'est
+[24:45] essentiellement ce qu'une machine
+[24:48] puisse euh
+[24:50] converser de manière suffisamment fluide
+[24:55] euh et convaincante de manière à tromper
+[24:58] carrément un interlocuteur, un
+[25:01] interlocuteur humain. Et donc
+[25:02] l'interlocuteur humain parle une machine
+[25:05] ou un humain à travers une interface
+[25:08] quelconque
+[25:10] pourrait serait pas en mesure de
+[25:12] distinguer en fait est-ce que je parle à
+[25:13] un humain à un autre être humain ou
+[25:16] est-ce que je parle à une à un
+[25:18] ordinateur ? Puis ça je pense c'est je
+[25:19] sais pas c'est probablement quelque
+[25:21] chose comme les années 40 50 c'est assez
+[25:23] ancien
+[25:24] mais je pense qu'il décrit dans un
+[25:25] papier en 1950
+[25:27] puis qui prédit que ça va prendre 50 ans
+[25:30] peu près là il fait le calcul en terme
+[25:33] du nombre de paramètres il dit ça
+[25:35] prendrait
+[25:37] si si on a une machine capable de
+[25:38] traiter x nombre de paramètres là il
+[25:42] estime à peu près ce qui donc plaçait
+[25:45] les choses à peu près l'an 2000 ce qui
+[25:47] est quand même vraiment impressionnant
+[25:49] parce que c'est à peu près ce qui est
+[25:52] arrivé en fait, ce qui arrive
+[25:54] maintenant. Mais encore là, il y a il y
+[25:56] a un effet de de moving goal post, un
+[25:59] peu de de d'objectif dynamique ou
+[26:02] changeant parce que parce qu'en fait on
+[26:04] arrive là, on arrive vraiment avec Chat
+[26:05] GPT à un à un programme qui est capable
+[26:09] de passer le test de Turing à peu près.
+[26:11] Je sais pas exactement les détails mais
+[26:13] je sais que ça serait en mesure. C'est
+[26:15] certainement le cas en ce moment. sûr
+[26:17] c'est
+[26:17] il est passé le test de Turing est passé
+[26:19] c'est donc le le test de Turing est à
+[26:21] toute fin pratique rendu caduc c'est en
+[26:24] fait c'est un truc c'est un un appareil
+[26:26] conceptuel qui qui est qui est désuet
+[26:28] dans un certain sens mais il reste quand
+[26:31] même que il y a lieu il y a lieu de se
+[26:33] demander en tout cas toi de ton
+[26:35] expérience quand tu parles à chat GPT
+[26:38] moi c'est mon expérience j'ai je peux je
+[26:40] peux quand même pas prétendre que j'ai
+[26:42] l'impression de parler à une entité
+[26:46] Je veux dire, je suis parfaitement
+[26:47] conscient dans mes interactions de des
+[26:49] des limitations. J'ai pas l'impression
+[26:51] que que chat a des sentiments ou une
+[26:54] conscience. J'ai l'impression. Mais mais
+[26:56] encore là, c'est super intéressant parce
+[26:57] que ça varie selon les individus. Il y a
+[27:00] des individus qui utilisent les robots
+[27:02] conversationnels pour carrément
+[27:06] en en guise de de compagnons virtuel. Il
+[27:09] y a des gens qui font ça puis il y a des
+[27:11] gens bah moi c'est plus mon style
+[27:13] d'utilisation. Moi je dirais mon style
+[27:15] d'utilisation de chat GPT, c'est une
+[27:17] intelligence complètement désincarnée.
+[27:19] C'est-à-dire que j'ai l'impression de de
+[27:22] m'adresser à une sorte de dieu euh
+[27:26] omniscient qui sait beaucoup de choses
+[27:28] mais j'ai pas l'impression de de
+[27:30] m'adresser.
+[27:31] On sait que c'est des anecdotes mais il
+[27:33] y a plein de gens qui
+[27:35] essaient d'être poli avec Chat GPT.
+[27:38] Ils sont poli avec remerci chat GPT. Ben
+[27:41] moi en fait, je peux pas je peux pas euh
+[27:43] nier le fait que je vais avoir souvent
+[27:46] tendance à ajouter par exemple, je vais
+[27:48] dire euh est-ce que tu peux s'il vous
+[27:49] plaît euh faire telle chose ? Euh
+[27:51] pourquoi ? Bah premièrement, c'est
+[27:53] amusant, mais aussi c'est que j'ai lu
+[27:55] que apparemment que si tu comprends un
+[27:58] peu le le le le fonctionnement de chat
+[28:00] GPT, ça a du sens en fait. C'est
+[28:03] plausible que le fait d'ajouter s'il
+[28:05] vous plaît ou merci améliore un peu les
+[28:07] résultats parce que si tu comprends
+[28:09] comment ch fonctionne
+[28:12] au au sens statistique bah ça a du sens.
+[28:15] Y a-t-il un lien entre la philosophie de
+[28:18] l'esprit et l'intelligence artificielle
+[28:21] ?
+[28:23] l'époque dans laquelle on vit le le
+[28:25] l'avènement des grands modèles de
+[28:27] langage en fait fait en sorte de
+[28:30] d'amener beaucoup d'eau au moulin euh de
+[28:34] au moulin de
+[28:36] des grandes questions philosophiques.
+[28:40] philosophie de l'esprit, j'inclurais
+[28:42] peut-être un peu comme un nuage quand
+[28:44] même philosophie analytique, philosophie
+[28:46] du langage, les questions
+[28:49] des philosophes qui ont précédé de
+[28:52] plusieurs décennies. Là, on parle de je
+[28:54] sais pas, je quelque chose comme dans ça
+[28:56] a commencé probablement à la fin de du
+[28:58] 19e siècle, les gens qui ont commencé à
+[29:02] à penser à qu'est-ce que qu'est-ce que
+[29:05] c'est l'esprit,
+[29:07] qu'est-ce que c'est l'intelligence,
+[29:08] est-ce que ce serait possible de de
+[29:10] formaliser ces choses-là avec les avec
+[29:13] les Est-ce que c'est possible de penser
+[29:15] à l'intelligence et l'esprit euh de
+[29:17] manière scientifique en fait ? et
+[29:19] beaucoup de philosophes, de
+[29:21] mathématiciens ont commencé à réfléchir
+[29:23] à ça. Puis puis essentiellement à
+[29:26] travers l'histoire, ils ont posé les
+[29:28] briques
+[29:30] l'appareil conceptuel qui a mené
+[29:32] éventuellement à l'informatique, à
+[29:34] l'ordinateur
+[29:36] puis à puis plus tard maintenant à
+[29:40] l'intelligence artificielle au sens
+[29:41] moderne. Mais mais il y a des liens, il
+[29:44] y a clairement des liens à faire. Euh
+[29:46] j'ai j'ai vu souvent en fait
+[29:48] l'expression zombie philosophique
+[29:51] revenir à travers mes lectures.
+[29:53] Pourriez-vous m'expliquer c'est quoi un
+[29:55] zombie philosophique ?
+[29:58] Plus tard, on va parler de de d'un
+[30:00] personnage assez croustillant qui
+[30:02] s'appelle
+[30:04] Elizer Yudkovski. On va parler plus tard
+[30:07] de lui dans la conversation. Je me suis
+[30:08] rendu compte hier que un ce ce gars-là
+[30:11] écrit plusieurs livres puis un de ces
+[30:14] livres c'est euh il le le titre du livre
+[30:17] ça s'appelle Rationality
+[30:20] from AI to zombies. et euh et ça m'a
+[30:24] frappé en fait, j'avais oublié le ce
+[30:26] livre-là, mais en fait donc clairement
+[30:28] euh oui, il y a il y a il y a il y a des
+[30:30] liens entre entre ces sujets-là et euh
+[30:34] et certaines personnes sont préoccupées
+[30:36] par ça. Euh en gros euh qu'est-ce que
+[30:39] c'est l'idée d'un d'un zombie
+[30:41] philosophique ? Mais supposons qu'on
+[30:43] prend le l'exemple qui qui est souvent
+[30:46] utilisé, qui qui est souvent discuté,
+[30:48] c'est c'est l'exemple du rouge de la du
+[30:50] fait de percevoir
+[30:52] la la couleur rouge. Est-ce qu'il y a
+[30:55] une différence fondamentale profonde
+[30:58] entre l'expérience humaine ou disons
+[31:01] animale de la perception du rouge
+[31:06] et une caméra
+[31:10] par exemple une caméra de surveillance,
+[31:12] une caméra de sécurité qui détecterait
+[31:15] du rouge
+[31:17] et qui serait en mesure de dire voici
+[31:20] une lumière rouge ou voici il y a du
+[31:22] rouge. Je détecte de manière
+[31:24] algorithmique le rouge.
+[31:26] Est-ce qu'il y a dans l'expérience
+[31:28] subjective du rouge d'un être humain
+[31:30] quelque chose qui est qui va au-delà
+[31:33] de la de la question algorithmique
+[31:37] ou fonctionnelle de dire voilà, il y a
+[31:39] un mécanisme euh il y a un ordinateur
+[31:43] euh en chair et en os en fait en
+[31:47] cellules et en un un un cerveau en fait
+[31:50] qui a fait un un un un calcul
+[31:54] et qui a déterminé qu'il y a du rouge
+[31:56] Est-ce qu'il y a quelque chose d'autre
+[31:58] en fait ? Est-ce qu'il y a comme une
+[31:59] sorte de Est-ce qu'il y a une espèce de
+[32:01] fantôme là-dedans ? Est-ce qu'il y a
+[32:02] quelque chose de plus profond ? Et ça ce
+[32:06] que j'essaie tant bien que mal de
+[32:07] décrire parce que c'est un sujet qui est
+[32:08] difficile à essayer de
+[32:13] définir. Ça ça a un nom ce sujet-là. Ce
+[32:16] ce cette chose là c'est la c'est la
+[32:18] question c'est un quali en fait. les
+[32:19] gens, les philosophes de l'esprit
+[32:24] discutent depuis longtemps de la
+[32:26] question de savoir est-ce qu'il y a
+[32:28] quelque chose que qui est un qualia et
+[32:31] dans le cas du rouge, est-ce qu'il y a
+[32:33] un qualia
+[32:34] pour le rouge ? Est-ce qu'il y a une
+[32:36] sorte d'objet à l'intérieur de la
+[32:38] conscience qui correspond
+[32:41] au fait de reconnaître du rouge ? Puis
+[32:44] là, la question là, j'en arrive à la
+[32:45] connexion avec Lia, parce que parce que
+[32:47] clairement euh il y a si il y a euh les
+[32:52] êtres humains ont quelque chose de plus
+[32:53] et qui se passe quelque chose de plus
+[32:55] profond au moment de la reconnaissance
+[32:56] du rouge ou de la perception du rouge,
+[32:59] ben on aurait un peu envie de dire que
+[33:01] Chat GPT, lui par euh par comparaison,
+[33:06] il a nécessairement pas ce mécanisme là
+[33:09] parce que peu importe, Chat GPT est très
+[33:11] bon, très adepte pour parler du rouge,
+[33:14] il peut composer des poèmes sur avec la
+[33:16] couleur rouge, il peut parler de toutes
+[33:18] sortes de considérations scientifiques,
+[33:20] la longueur d' toutes sortes de de
+[33:22] choses par rapport au rouge. Il peut
+[33:24] probablement même prendre une photo puis
+[33:26] dire ça c'est rouge, ça c'est vert. Mais
+[33:29] on aurait quand même encore là
+[33:31] intuitivement envie de dire ou de
+[33:33] ressentir que probablement que il y a
+[33:35] que le rouge pour chic
+[33:37] particulièrement viscérale.
+[33:40] Et donc pour faire la connexion logique
+[33:42] avec ta question initiale, il y a des
+[33:43] philosophes qui posent la question
+[33:45] est-ce qu'il y a quelque chose là ou
+[33:47] est-ce que tout ça n'est que de la
+[33:49] poudre aux yeux puis que est-ce que les
+[33:51] qualias existe ou est-ce que c'est une
+[33:53] sorte de fiction euh en fait une sorte
+[33:57] de mécanisme un peu inutile qui sert à
+[34:00] rien ? Moi, j'aurais tendance à penser
+[34:01] Daniel toi, j'ai j'aurais vraiment
+[34:05] tendance à penser a priori si on me
+[34:06] demandait est-ce que Daniel pense que
+[34:07] les quali existent oui ou non ? Je suis
+[34:09] pas mal certain que tu dirais non. Les
+[34:12] co c'est ça ça peut pas exister, c'est
+[34:14] une fiction.
+[34:16] Qu'est-ce que tu penses de la notion ?
+[34:20] Mais en fait la question originale, la
+[34:22] question que moi je poserais c'est la
+[34:24] question originale de de Laurence
+[34:27] portait sur les zombies. H
+[34:28] ouais. Ah oui oui oui j'étais pas
+[34:31] oui ouais je m'excuse. Tu as absolument
+[34:32] raison. Oui tu as absolument raison. Euh
+[34:34] oui, parce que là, j'avais besoin en
+[34:36] fait, j'avais besoin des qualias pour
+[34:37] les zombies parce que je pouvais pas
+[34:38] tout de suite bon, qu'est-ce que c'est
+[34:40] un zombie maintenant qu'on re pendant 5
+[34:42] minutes, j'ai essayé d'expliquer
+[34:43] qu'est-ce que qualia est un zombie,
+[34:46] c'est vraiment une expérience de pensée
+[34:48] intéressante parce que c'est
+[34:49] essentiellement ça, c'est une expérience
+[34:51] de pensée. Un zombie, c'est un être, une
+[34:55] entité, par exemple, un être humain qui
+[34:57] se comporte de manière parfaitement
+[35:00] identique à nous trois,
+[35:03] mais qui à l'intérieur
+[35:06] a rien en fait. C'est comme un
+[35:08] simulacre. C'est un c'est comme une
+[35:11] poupée en fait qui euh est reproduit
+[35:15] parfaitement le comport le comportement
+[35:17] humain qui parle euh dans le cadre d'une
+[35:20] en fait, ce serait rigoureusement
+[35:22] impossible de distinguer un zombie d'un
+[35:24] non zombie parce qu'il y aurait
+[35:26] absolument aucun critère extérieur
+[35:29] superficiel qui permettrait de
+[35:31] déterminer
+[35:33] où on où on se trouve. Mais la question
+[35:35] c'est OK, premièrement, c'est une idée
+[35:37] troublante. C'est pas agréable. Il y a
+[35:38] certains films qui je pense qui qui qui
+[35:41] ont cette notion là. Mais donc je sais
+[35:43] pas si j'ai été clair, un zombie c'est
+[35:45] essentiellement
+[35:46] un une sorte de copie, une sorte de
+[35:49] mécanisme qui se comporte exactement
+[35:51] comme un être humain, mais qui pour qui
+[35:53] à l'intérieur il se passe rien. Il y a
+[35:55] aucun quali, il y a pas d'aucune
+[35:57] sensation particulière de rouge, il y a
+[36:00] pas de d'émotion particulière, il y a
+[36:02] juste d'une il y a juste un comportement
+[36:05] externe. Il y a rien à l'intérieur.
+[36:08] C'est ça la notion de zombie. Puis la
+[36:10] question c'est est-ce que il y a deux
+[36:12] questions. Premièrement, est-ce que ça a
+[36:13] du sens comme notion ? Est-ce que est-ce
+[36:14] que on peut imaginer que ça que c'est
+[36:17] que c'est possible, que c'est
+[36:18] logiquement possible ? Probablement pas
+[36:20] physiquement possible, mais est-ce que
+[36:22] c'est logiquement possible ? Puis deux,
+[36:24] est-ce que les I, parce que c'est ça
+[36:25] évidemment le sous-texte, est-ce que
+[36:27] l'IA constitue un zombie ?
+[36:30] C'est c'est ça le le un peu le la le
+[36:33] questionnement philosophique qui est
+[36:35] intéressant avec les onglis. Euh
+[36:38] et justement à ton avis, est-ce que les
+[36:40] intelligences artificielles sont des
+[36:42] zombies philosophiques ? Elles semble
+[36:44] agir de manière intelligente, mais
+[36:47] ont-elles une conscience ?
+[36:51] Ouais, ben c'est c'est important de de
+[36:52] de dire que c'est un débat ouvert puis
+[36:55] que il le il y a comme tout un un un
+[36:57] arc-en-ciel de de d'opinion puis de
+[37:01] ressenti par rapport à ça. Il y a des
+[37:02] gens qui auraient en fait, je connais
+[37:04] des gens qui ont des conversations
+[37:07] extrêmement profondes avec des des IA et
+[37:10] qui eux prétendent
+[37:12] en fait, ils sont pas convaincus à 100
+[37:14] %, c'est pas complètement des gens
+[37:16] illuminés qui veulent
+[37:18] mais les gens ont c'est les gens que
+[37:22] j'ai en tête se posent des questions,
+[37:23] ils disent "Mais étant donné que j'ai
+[37:25] ces conversations là, la teneur des
+[37:28] conversations étant donné ça, ce que
+[37:30] j'observe, ce que ce que je vie en fait,
+[37:33] est-ce que je devrais pas commencer à à
+[37:35] penser que je pourrais changer mon fusil
+[37:38] d'épaule puis peut-être imaginer que
+[37:39] j'étais en présence d'une nouvelle forme
+[37:42] de conscience qui émerge euh qui
+[37:45] évidemment que personne n'avait vu venir
+[37:48] ou en tout cas c'était pas 100 % clair.
+[37:52] Tu sais, c'est un en fait, il y aurait
+[37:54] des parallèles à faire, tu sais, avec je
+[37:56] sais pas si on rencontrait une
+[37:58] civilisation
+[38:00] extraterrestre et on était en présence
+[38:03] d'un d'une d'une nouvelle sorte d'entité
+[38:06] qui pense d'une manière complètement
+[38:08] différente, qui qui a probablement un
+[38:11] corps complètement différent, qui
+[38:12] peut-être qu'il aurait euh qui
+[38:15] fonctionnerait pas sur les mêmes
+[38:17] principes de la biologie de de de la
+[38:20] terre. Bon, mais comment on se sentirait
+[38:21] par rapport à ça ? Est-ce qu'on est-ce
+[38:23] qu'on les Est-ce qu'on l'accepterait en
+[38:25] tant que est-ce qu'on lui est-ce qu'on
+[38:28] lui tendrait la main ou est-ce qu'on
+[38:29] aurait l'impression qu'on a à faire un
+[38:31] truc inconnu un peu menaçant que
+[38:35] Ouais,
+[38:40] il y a un peu le je peux faire moi je
+[38:43] fais un lien le fait que pourquoi les
+[38:46] êtres humains ont un un cerveau aussi
+[38:49] développé
+[38:54] les les êtres humains euh bon euh
+[38:57] on on ont clairement à certains points
+[39:00] de vue une intelligence qui peut être
+[39:02] vue comme supérieure à celle
+[39:06] des animaux ou des autres animaux selon
+[39:08] son point de vue.
+[39:10] Puis
+[39:13] une des explications dans les sciences
+[39:15] cognitives qui est avancé pour ça, c'est
+[39:17] que on on a un cerveau très évolué afin
+[39:21] justement de modéliser
+[39:24] les autres êtres vivants. Donc j'ai une
+[39:29] simulation dans ma cerveau qui tourne de
+[39:32] ce que pense de l'orè, de ce que toi tu
+[39:35] penses.
+[39:36] Ce qui me permet d'anticiper, hein. On a
+[39:39] de l'empathie. L'empathie, ça demande du
+[39:40] calcul. Euh donc si tu te levais
+[39:45] brusquement puis tu quittais ton siège
+[39:48] et puis tu t'en avais, ben euh ça me
+[39:51] surprendrait parce que j'ai pas j'ai un
+[39:54] modèle de ce que tu vas faire dans les
+[39:55] prochaines minutes qui correspond pas à
+[39:57] ça.
+[39:57] Ça en fait ça ça constiterait une une
+[40:00] une énorme surprise à ton modèle si je
+[40:03] faisais quoi que ce soit d'autre que de
+[40:05] d'être assis de continuer la
+[40:06] conversation. Donc on a on a cette
+[40:09] représentation là de donc si on
+[40:11] rencontrait donc on est capable avec des
+[40:13] animaux si on rencontre un chien
+[40:16] on on arrive surtout on connaît un mieux
+[40:19] hein on connait bien le chien on est
+[40:20] capable un peu d'anticiper comment il va
+[40:23] fonctionner bon qu'est-ce qui se
+[40:25] passerait avec des extraterrestres euh
+[40:28] peut-être que on aurait des problèmes.
+[40:32] Euh ce qui est intéressant c'est que on
+[40:35] est capable avec par exemple, je pense
+[40:37] que les gens sont capables avec chat GPT
+[40:39] d'apprendre à le connaître et d'arriver
+[40:41] à anticiper en fait. Et puis là on parle
+[40:43] chatt un exemple
+[40:46] mais euh les gens ils deviennent ils
+[40:49] apprennent à le connaître puis ils se
+[40:50] font comme un modèle mental de comment
+[40:51] il va répondre et il apprennent
+[40:53] évidemment à ce que tu disais l'exemple
+[40:56] tu essayes d'être poli alors tu demandes
+[40:59] s'il vous plaît parce que tu as un
+[41:00] modèle mental en fait du fait que ça va
+[41:03] ça va ça ça ça va l'aider euh
+[41:09] donc ça ça ça je vois un peu euh
+[41:16] le
+[41:18] c'est de répondre à la question
+[41:19] philosophique originale, mais ce qu'on
+[41:21] peut certainement
+[41:23] euh dire c'est que les gens ils
+[41:25] s'adaptent à chat GPT
+[41:28] en
+[41:29] don ou en accordant une conscience à
+[41:32] Chat GPT, je pense. Mais est-ce que tu
+[41:34] penses que ça c'est entièrement
+[41:38] le fait que l'interface de chat dup est
+[41:41] linguistique ? parce que si l'interface
+[41:43] était
+[41:46] autre que linguistique, je lisais j'ai a
+[41:49] je lisais sur Twitter hier sur X
+[41:51] quelqu'un qui disait qui parlait du fait
+[41:54] que parce qu'on on considère depuis
+[41:56] longtemps que pas qu'on on considère on
+[41:59] sait que l'intelligence humaine en
+[42:02] particulier elle est profondément
+[42:04] visuelle. OK ? A je sais pas combien
+[42:06] c'est quoi le pourcentage de l'esprit
+[42:08] qui est consacré au processing visuel ?
+[42:12] C'est super important dans
+[42:14] l'intelligence.
+[42:16] Par exemple, dans ta discussion
+[42:17] précédente,
+[42:19] quand tu dis voir le rouge, en fait on
+[42:23] voit pas le rouge. C'est tes yeux ont
+[42:26] une certaine perception qui est très
+[42:27] limitée qui sera jusqu'au cerveau. Et
+[42:30] là, il y a un modèle ton cerveau calcule
+[42:33] un fait fait un modèle
+[42:36] complètement calculé. Et dans ce modèle
+[42:38] là, le rouge apparaît. Mais tes yeux
+[42:41] directement ne perçoivent pas le rouge.
+[42:43] Mes yeux perçoivent les pixels, les
+[42:46] longueurs d'onde de la réalité.
+[42:48] Ça et ça c'est c'est
+[42:49] il y a un pipeline extrêmement complex
+[42:52] et c'est pour ça qu'en fait tu peux voir
+[42:53] du rouge là où il y en a pas dans le cas
+[42:55] d'illusion optique
+[42:58] où ton cerveau est trompé et là tu vas
+[43:00] dire bah c'est rouge. Puis là on va te
+[43:02] dire non regarde comme il faut c'est pas
+[43:03] rouge du tout. Mais tu es tu es d'accord
+[43:06] que dans dans le contexte d'un système
+[43:08] informatique quelconque qui je sais pas
+[43:13] un un algorithme de classification qui
+[43:15] ou une je sais pas un truc qui qui qui
+[43:18] détermine si une lumière est rouge
+[43:20] ouverte la notion de du rouge ou de la
+[43:23] couleur ça va être essentiellement en
+[43:25] quelque part un symbole pourrait même
+[43:27] réduire ça à un bit en quelque part
+[43:29] rouge pas rouge ça sera un bit donc pour
+[43:31] l'ordinateur
+[43:34] en bout de ligne, c'est un symbole. en
+[43:35] bout de ligne, c'est rien en fait. C'est
+[43:37] c'est un truc mécanique. Alors que là on
+[43:40] revient un peu à la discussion des des
+[43:42] quali mais alors que pour quelqu'un qui
+[43:44] perçoit du rouge pour moi toi de l'orise
+[43:46] quand tu vois du rouge ou quand tu
+[43:49] regardes le ciel bleu et tu tu regardes
+[43:52] le ciel tu es tu tu t'abîmes dans la
+[43:55] contemplation du ciel tu as pas
+[43:57] l'impression que c'est que tu que tu es
+[43:59] en train de lire une série de
+[44:02] dans ton dans ton appareillage mental tu
+[44:05] as l'impression il y a quelque chose ce
+[44:07] que je veux dire c'est qu'il y a quelque
+[44:08] chose de viscéral dans le bleu, tu
+[44:10] aurais comme envie de dire il y a
+[44:12] nécessairement une différence entre ma
+[44:14] perception, la couleur puis la
+[44:16] perception d'une machine. tu as envie de
+[44:19] dire ça mais en même temps ton ton ta
+[44:21] ton modèle prédictif, ton modèle
+[44:24] scientifique te dit non probablement que
+[44:27] même la sensation que tu as, même les
+[44:29] affaires viscérales que tu invoques,
+[44:31] même les qualias, toutes ces chosesl
+[44:33] probablement que tout ça est pas
+[44:34] nécessairement une illusion mais ça
+[44:36] aussi c'est une forme de calcul en fait
+[44:39] puis que finalement au final tu pourrais
+[44:41] imaginer une machine qui reproduirait
+[44:44] ces choseslà tu pourrais imaginer une
+[44:46] machine qui qui contemplerait aurait le
+[44:48] bleu du ciel puis qui aurait des des
+[44:51] sensations similaires au n parce que en
+[44:53] fait c'est ça c'est la question du
+[44:55] réductionnisme. Est-ce que tout est
+[44:56] juste une manipulation de de bit ou
+[44:59] est-ce qu'il y a euh quelque chose de
+[45:02] plus profond ? Il y a des gens sérieux
+[45:03] comme monsieur Pen Rose, le
+[45:05] mathématicien anglais,
+[45:08] tu sais, je dis tout ça pour dire qu'il
+[45:10] y a des gens vraiment intelligents et
+[45:11] sérieux qui disent non, l'esprit c'est
+[45:14] il y a pas juste l'aspect computationnel
+[45:17] puis fonctionnel, il y a aussi des
+[45:19] choses plus profondes qui se passent. Je
+[45:20] pense que Pen Rose finit. J'ai jamais
+[45:23] exactement compris c'est quoi sa ligne
+[45:25] d'argumentation, mais je pense que Pen
+[45:26] Rose finit par invoquer des trucs qui
+[45:29] sont euh presque dans la mécanique
+[45:31] quantique pour dire il y a des trucs
+[45:33] dans l'esprit que si on fait pas
+[45:35] intervenir la mécanique quantique, on n
+[45:37] pas un modèle suffisamment profond. Bon,
+[45:40] si c'est le cas, ben mais j'ai juste
+[45:42] pour préciser donc lui ce qui ce qui
+[45:44] puis là c'est quand même assez ancien
+[45:46] ça. Je sais pas si est encore en vie.
+[45:48] Je pense je pense qu' Ouais. OK, donc
+[45:51] c'est quand même très ancien, mais lui
+[45:52] en fait sa thèse c'est que on peut pas
+[45:54] réduire le cerveau humain à un
+[45:57] ordinateur électronique euh parce que il
+[46:01] y a une il y a a il y a une il y a une
+[46:04] composante. Bon lui il fait appel
+[46:06] mécanique quantique mais il y a une
+[46:07] composante en fait qui a pourrait le
+[46:10] dire comme ça. il dira pas comme ça mais
+[46:11] une composante spirituelle finalement il
+[46:14] y a une il y a une âme.
+[46:16] Ouais évidemment il va non il va il se
+[46:19] il se protégerait il ser il dirait non
+[46:20] mais non ce que j'ai lui il va quand
+[46:22] même vouloir fournir une il va quand
+[46:24] même vouloir il va avoir une explication
+[46:25] scientifique mais ce qu' dit plus il y a
+[46:29] plus que juste des des calculs
+[46:31] électroniques dans le cerveau.
+[46:32] Je pense c'est intéressant là maintenant
+[46:34] qu'on est sur ce sujet là on peut juste
+[46:36] connecter un peu les points. Tu sais,
+[46:38] Chomski dans un certain sens, c'est un
+[46:41] peu la le faire de lance de Chomski qui
+[46:43] Chomski qui est un grand linguiste euh
+[46:46] qui qui est hyper important euh à la
+[46:49] fois bon pour toutes sortes de sujets
+[46:51] qui était important. Ben et ouais, avec
+[46:53] l'avènement de Chat GPT, Chomski dans un
+[46:55] certain sens la thèse de de Chomski est
+[46:58] un peu pas invalidée, mais en tout cas
+[47:00] elle est fortement attaqué par la le
+[47:02] simple avènement des grands modèles de
+[47:05] langage. Le je mentionne Chomski, bon
+[47:08] c'est différent de Pen Rose mais il il y
+[47:10] a des liens à faire puis j'aurais en
+[47:11] tête de
+[47:12] Mais mais là c'est ça. Donc Chski
+[47:16] c'est un linguiste donc
+[47:19] euh donc lui sa thèse c'était que le
+[47:23] langage en fait euh
+[47:27] c'est constitu ensemble de règles si on
+[47:32] peut donc des règles formelles qu'on
+[47:34] pourrait énoncer et donc qui sont en
+[47:36] quelque sorte
+[47:38] euh euh encodé ou
+[47:40] encodé dans le cerveau humain
+[47:43] et que si Si on peut trouver ces règles
+[47:45] là, ben on va comprendre le langage et
+[47:47] et c'est le domaine de la linguistique
+[47:50] est beaucoup axé là-dessus. on a ça
+[47:52] évolué, il ont trouvé des règles, des
+[47:55] des des tout ça qui qui permettent de de
+[47:58] de ça part de la grammaire ultimement
+[48:02] et donc la thèse c'est comme ça qu'on va
+[48:08] modéliser le langage et avec des
+[48:11] ensembles de règles. Donc les chercheurs
+[48:13] ont passé des décennies là-dessus, ça
+[48:15] donnait des résultats
+[48:17] relativement médiacles parce qu'il y a
+[48:19] pas de mise à l'échelle. Et là, Chat GPT
+[48:21] arrive et maîtrise parfaitement le
+[48:23] langage sans avoir sans avoir trouvé ces
+[48:26] règles là. Ce qui invalide en fait la
+[48:28] thèse de Chy.
+[48:29] Oui oui oui, absolument. ou en tout cas
+[48:31] qui qui constitue un bémol vraiment
+[48:33] important de de euh Oui. Parce que
+[48:36] ben la réponse de Chumski à Chat Jipt,
+[48:38] ça a été qu'en fait que Chat Jipt
+[48:41] maîtrise pas le langage mais ce que à
+[48:43] peu près vrai tous les êtres humains
+[48:45] peuvent constater que non chat de PT
+[48:48] maîtrise le langage mieux en fait que
+[48:51] bien des êtres humains.
+[48:52] Ouais. Oui. Oui. Tout à fait. Mais mais
+[48:54] quand même de manière paradoxale ça sa
+[48:56] maîtrise supérieure qui est indéniable
+[48:59] mais il reste quand même qu' un paquet
+[49:00] de contrexemples. Tu connais les
+[49:02] contrexemples ? Tu sais comme là
+[49:03] j'imagine c'est plus d'actualité mais tu
+[49:05] sais encore récemment tu demandais à
+[49:07] Chat GPT euh dans le mot strawberry
+[49:10] combien il y a de R euh de combien il y
+[49:14] a de fois la la lettre R et Chat GPT
+[49:16] systématiquement était pas capable de
+[49:18] répondre à cette questionlà. Bon là
+[49:22] probablement que là maintenant c'est
+[49:23] réglé, ils ont réglé ce bug là et mais
+[49:25] mais tu sais ça c'est intéressant parce
+[49:27] que ça ça si tu dis tu dis le ton
+[49:29] mécanisme oui il il maîtrise le langage
+[49:32] c'est réglé il c'est c'est un problème
+[49:35] réglé mais en même temps tu lui tu
+[49:38] montres un failure mode vraiment évident
+[49:41] et là la question qui qui vraiment qui
+[49:43] tombe sous le sens la question de
+[49:45] vraiment de monsieur et madame tout le
+[49:46] monde en fait ma question au au
+[49:47] quotidien Comment tu peux prétendre ou
+[49:50] comment tu peux imaginer que ce bidule
+[49:52] là est intelligent de manière générale,
+[49:54] de manière fiable et tout si il fait une
+[49:56] erreur aussi stupide et
+[50:00] a quelque chose il y a quelque chose qui
+[50:01] dérange l'intuition. pas sûr que chez
+[50:03] les êtres humains, c'est dans toutes les
+[50:05] cultures euh
+[50:08] mais je pense que toutes les cultures
+[50:10] humaines on ont on une forme de langage
+[50:13] depuis longtemps. C'est ça qui
+[50:15] caractérise en quelque sorte l'être
+[50:17] humain. Mais je suis pas sûr que toutes
+[50:19] les cultures savent compter.
+[50:23] Moi moi je pense là je suis pas un
+[50:24] expert, je pense qu'il y a des cultures
+[50:26] où c'est il ont le concept de il y a
+[50:28] rien h
+[50:30] il y en a un h
+[50:32] peut-être deux puis le reste c'est
+[50:34] plusieurs. Donc compter c'est distinct
+[50:37] du langage. C'est pas parce que tu c'est
+[50:39] pas parce que tu sais parler que tu sais
+[50:41] compter.
+[50:42] Euh en fait il est pas grand que ça pas
+[50:45] calculer le pourvoir là.
+[50:48] C'est c'est une excellente en fait c'est
+[50:49] une excellente objection. J'aime
+[50:51] beaucoup ton objection parce qu'en fait
+[50:53] ça me permet de connecter un autre
+[50:54] philosophe que que j'aime beaucoup que
+[50:57] qui est Witgenstein et Vitgenstein
+[50:59] dirait exactement ce que tu disais il y
+[51:02] a pas premièrement il y a pas une notion
+[51:03] générale de ce que c'est il y a pas un
+[51:06] langage il y a des en fait lui sa notion
+[51:08] pour laquelle il est connu c'est la
+[51:10] notion de jeu de langage. Il y a une une
+[51:13] jungle de jeu de langage. Lui dirait
+[51:16] compter c'est un jeu de langage.
+[51:19] Raconter une histoire à un enfant, c'est
+[51:21] un autre jeu de langage. Jouer aux
+[51:23] échecs, c'est un autre jeu de langage.
+[51:24] Et en fait, ce qu'on appelle
+[51:25] l'intelligence, c'est une constellation
+[51:27] ou en ce qu'on appelle le langage, c'est
+[51:29] une constellation de jeu de langage qui
+[51:31] ont pas nécessairement de lien logique
+[51:35] entre eux. C'est-à-dire que quand tu es
+[51:37] en train de, je sais pas, de d'écrire
+[51:40] ton CV, euh tu es en train d'exercer ton
+[51:44] intelligence euh d'une certaine manière
+[51:46] qui a pas beaucoup à voir euh avec celle
+[51:49] que tu utilises quand tu es en train de
+[51:51] programmer un ordinateur. Et donc, je
+[51:54] pense que ton objection en fait, je
+[51:55] l'aime beaucoup. Euh c'est comme si dans
+[51:57] le fond on pourrait dire euh Chat GPT
+[52:00] maîtrise très très bien certains jeux de
+[52:02] langage au sens de Witgenstein mais
+[52:04] certains autres moins bien. Et pourquoi
+[52:07] ça c'est bon en fait on pourrait aussi
+[52:10] la question de pourquoi probablement
+[52:11] parce que le le les données
+[52:13] d'entraînement de chat GPT
+[52:16] couvre plus certains jeux de langage que
+[52:18] que d'autres
+[52:20] mais paradoxalement Chat GPT va être
+[52:22] capable de de de te faire un si tu
+[52:25] demandes un programme informatique qui
+[52:27] compte le nombre de voyelles dans un mot
+[52:31] et il va te faire un code informatique
+[52:33] capable de le faire en langage
+[52:35] informatique que tu Absolument.
+[52:36] Ce que la plupart des êtres humains sont
+[52:38] pas capables de faire. Hm
+[52:39] hm hm hm. Ce qui est ce qui est ce qui
+[52:41] est très paradoxal euh puis qui est très
+[52:44] puissant puis qui impressionne beaucoup
+[52:46] les informaticiens en fait. La plupart
+[52:48] des informaticiens en ce moment euh sont
+[52:51] complètement subjugués par le fait que
+[52:53] non seulement ce bidule, je dis bidule
+[52:55] chat GPT et compagnie euh
+[52:58] parle en fait mais aussi il s'est codé
+[53:01] en fait non seulement il s'est codé mais
+[53:03] il s'est très bien codé qui est une
+[53:05] forme de langage
+[53:05] ce qui ce qui est absolument une forme
+[53:07] de langage qui
+[53:08] mais qui ressemble plus en fait c'est
+[53:10] comme s'il était bon en il est aussi
+[53:11] très très bon en mathématiques en fait
+[53:13] il est très bon en raisonnement
+[53:15] quantitatif ce genre de choses là fait
+[53:17] donc c'est jeux jeu de langage là, il
+[53:19] les maîtrise très très bien. Puis ça
+[53:21] aussi c'est c'est vraiment intéressant
+[53:23] en fait de la on fait on peut comme
+[53:26] examiner la distinction un problème
+[53:28] difficile par exemple je sais pas
+[53:30] estimer
+[53:33] tout ce qui me vient en tête je mettons
+[53:34] estimer le nombre de de boules de de
+[53:37] billard qui pourraient entrer dans la
+[53:39] salle en ce moment. Bon, ce genre de de
+[53:41] problème là euh au lieu de le résoudre,
+[53:45] si tu lui poses cette questionlà ou une
+[53:47] question apparentée, euh ce que tu vas
+[53:50] peut-être obtenir au lieu de la réponse,
+[53:53] c'est euh un programme en fait qui fait
+[53:56] donc dans un certain sens, il y a il y a
+[53:58] les deux modalités possibles. soit qui
+[54:00] te donne la réponse parce que son
+[54:02] intelligence lui permet de la de la de
+[54:05] la cogiter ou de de la de la faire
+[54:08] apparaître juste en vertu de son
+[54:09] intelligence supérieure ou s'il te donne
+[54:12] un programme dans un certain sens, il te
+[54:14] dit
+[54:16] je sais pas la réponse mais je sais
+[54:18] comment calculer la réponse.
+[54:21] Ça c'est une autre modalité de
+[54:22] l'intelligence. Nous aussi, on a
+[54:24] beaucoup ça évidemment toute la plupart
+[54:26] de la science moderne telle qu'elle est
+[54:28] faite. Si quelqu'un trouve par exemple
+[54:31] un remède pour le cancer la semaine
+[54:34] prochaine, c'est absolument certain, peu
+[54:36] importe la ce que ça va être, que ça
+[54:39] émergera pas. Ça ça probablement que le
+[54:41] remède pour le cancer viendra pas d'un
+[54:43] rêve que qu'un qu'un scientifique aura
+[54:45] fait pendant la nuit. Non, ça va
+[54:47] probablement être le résultat d'un
+[54:49] programme qui va avoir exécuté euh
+[54:53] qui va avoir fait un énorme calcul en
+[54:55] fait. Fait que donc est-ce qu'on dit que
+[54:56] c'est est-ce que c'est le programme qui
+[54:58] qui a qui a trouvé le le remède pour le
+[55:01] cancer ou c'est ou c'est la personne qui
+[55:05] je me gare un peu ?
+[55:09] Euh les films de science-fiction
+[55:13] regorge d'histoire autour de l'IA.
+[55:17] Pensez-vous que la façon dont on montre
+[55:19] Lia dans ces films influence nos peurs,
+[55:23] nos espoirs ?
+[55:27] Je pense que ça a carrément défini euh
+[55:31] ce qu'on ce qui constitue l'IA dans
+[55:34] l'imaginaire collectif, la notion même
+[55:37] d'un ordinateur intelligent euh de ce
+[55:40] que ça veut dire. Je pense que non
+[55:44] seulement les films ont influencé, mais
+[55:46] je pense carrément j'irai plus loin. Je
+[55:47] dirais que les films ont induit ça. Moi
+[55:50] je pense ça vient de là en fait puis que
+[55:53] si on avait pas eu cette culture là, si
+[55:55] on avait pas eu à 9000 dans 2001 au de
+[55:58] l'espace, j'ose prétendre que que le
+[56:02] discours
+[56:04] euh que le discours qu'on a en ce moment
+[56:06] par rapport à chat GPT puis par rapport
+[56:08] à l'IA dans dans le dans la sphère
+[56:11] publique, je pense qu'il serait
+[56:12] différent. Je pense que ces ces filmsl
+[56:14] sont extrêmement fondateurs.
+[56:17] As-tu euh as-tu des des tuas
+[56:21] certainement
+[56:22] un film de science-fiction préféré que
+[56:25] OK dans dans dans donc donc dans l'é de
+[56:28] l'espace là pour les les gens qui nous
+[56:30] l'ont pas vu parce que c'est quand même
+[56:31] un film assez âgé.
+[56:33] Donc l'idée c'est qu'il y a un
+[56:34] ordinateur qui est plus ou moins en
+[56:36] contrôle du vaisseau spatial
+[56:40] et euh et euh bon donc il des êtres
+[56:45] humains dans le vaisseau et puis euh
+[56:50] le le sans vendre le punch du film le
+[56:55] l'intelligence artificielle a son propre
+[56:58] agenda, son propre son son sa propre
+[57:01] mission. Hm hm.
+[57:02] ses propres consignes qui sont pas
+[57:04] nécessairement celles à l'être humain.
+[57:07] Et donc arrive à un moment donné où euh
+[57:09] en fait euh euh Al décide de plus en
+[57:14] fait collaborer euh avec les êtres
+[57:17] humains et donc là il y a un conflit
+[57:19] entre l'intelligence artificielle et euh
+[57:22] les êtres humains. qui est exactement en
+[57:27] fait euh c'est c'est la crainte. La part
+[57:31] des gens ont pas vu ce film là, je pense
+[57:33] là parce qu'il est trop mais c'est un
+[57:36] excellent film même aujourd'hui. Mais je
+[57:38] pense que ça fait c'est ça ça chez
+[57:42] plusieurs personnes, ça ça marque une
+[57:45] espèce de crainte parce que c'est je
+[57:47] vais donner à ces ordinateurs là le
+[57:50] contrôle et un jour euh cet ordinateur
+[57:53] là va refuser de m'obéir là. Euhov,
+[57:58] les les trois les trois lois, je me
+[58:00] rappelle plus par c'était quoi les trois
+[58:02] lois ?
+[58:03] Euh le Ouais. Le fait de Ah oui, de
+[58:07] devoir protéger un être humain en
+[58:09] danger. Le fait devoir
+[58:12] empêcher quelqu'un d'autre de faire du
+[58:14] mal à un être humain puis aussi se
+[58:16] protéger soi-même. Mais le fait de se
+[58:18] protéger soi-même ne devait pas. Et là
+[58:20] l'idée l'idée c'était la même obsession
+[58:22] qu'il faut protéger en fait faut faire
+[58:24] en sorte que les machines
+[58:26] puissent pas faire de mal mais
+[58:28] finalement on peut contourner ces doigts
+[58:30] là et et quand même avoir des problèmes.
+[58:33] Donc tout toutes ces idéesl
+[58:37] d' don on perd le contrôle. Ben, c'est
+[58:39] sûr, au moment où on voit en Ukraine en
+[58:42] ce moment, il y a une guerre qui se fait
+[58:44] par drones.
+[58:46] Euh bon, des drones qui parfois sont
+[58:49] contrôlés à distance, mais qui ont quand
+[58:51] même une certaine certain degré
+[58:53] d'autonomie quand même là. Puis euh donc
+[58:56] on est dans littéralement la la gard des
+[58:59] drones
+[59:02] littéralement. Et donc il a on sait là,
+[59:05] ça c'est la
+[59:07] réalité le militaire. On va avoir des
+[59:10] des drones qui vont être lancé autonome
+[59:12] qui vont attaquer
+[59:15] euh des êtres humains. En fait, ça se
+[59:17] fait déjà en ce moment. Euh mais là
+[59:19] évidemment le danger c'est trop c'est
+[59:22] pas trop mal s'il attaque tes ennemis.
+[59:24] Mais est-ce que le les drones peuvent se
+[59:26] retourner contre toi aussi là ?
+[59:30] Donc oui, ben c'est c'est sûr que
+[59:32] l'intelligence artificielle
+[59:34] euh est influencé probement est
+[59:37] influencé par la culture. On a
+[59:38] l'intelligence artificielle qu'on a à
+[59:40] cause de la la culture qu'on a
+[59:45] euh
+[59:45] mais la l'espèce de paranoïa profonde
+[59:48] qu'il y a dans dans
+[59:50] 2001 de l'espace. Évidemment, on voit en
+[59:52] pas le punch. Mais oui, ça fait partie
+[59:56] de de l'histoire cette paranoï là. Ben,
+[59:59] on je sais pas si elle existait avant
+[60:02] 2000, je sais pas si en 1965 avant le
+[60:05] film, cette notion là existait, mais
+[60:07] certainement le 2001, l'ordinateur Al en
+[60:11] 2001 a introduit cette notion là et
+[60:13] c'est resté. Euh ensuite si tu vas plus
+[60:18] dans les années 80, tu sais Terminator
+[60:22] euh
+[60:24] Terminator puis Blade Runner, moi
+[60:27] c'était les les exemples que que je en
+[60:29] fait moi c'est ceux que que j'aime
+[60:30] surtout surtout Blade Runner en fait qui
+[60:33] qui est qui est super philosophique en
+[60:35] fait. Blade Runner pose Blade Runner je
+[60:37] 82 ou 83 là tu es moins dans le
+[60:43] le l'ordinateur de de de de 2001 au 17
+[60:46] de l'espace. Moi ce que je trouve
+[60:47] intéressant, c'est que bah c'est c'est
+[60:49] les années 60, mais tu sens aussi que
+[60:52] c'est vraiment la la conception de
+[60:54] l'époque. En fait, l'ordinateur va avec
+[60:57] cette époque-là et va avec la conception
+[60:59] d'intelligence artificielle qu'ils
+[61:01] avaient dans ces dans ces années-là.
+[61:03] fait donc euh c'est un comme bah
+[61:05] premièrement il est plus scientifique,
+[61:07] il est plus il quand il parle même si
+[61:10] évidemment il est personnalisé, il a une
+[61:11] voix, il y a une personnalité mais il
+[61:13] parle puis tu as plus l'impression que
+[61:15] c'est comme un tu imagines comme un
+[61:16] scientifique sérieux comme c'est euh
+[61:20] comme quel un peu comme la vérité
+[61:22] incarnée, un truc qui calcule euh d'une
+[61:26] manière qui qui est un qui est vraiment
+[61:29] notre notre conception du du cerveau qui
+[61:32] qui qui qui va 1000 fois plus rapide que
+[61:34] nous, qui est plus intelligent juste en
+[61:35] vertu du fait que c'est que c'est une
+[61:38] conscience artificielle. Quand tu vas
+[61:40] plus dans les années 80 avec bah surtout
+[61:43] avec Blade Runner là tu deviens plus ça
+[61:46] la perspective change un peu parce que
+[61:49] ben là en fait là tu es plus capable de
+[61:51] distinguer les robots de Blade Runner.
+[61:53] En fait, ils sont tellement euh parfait,
+[61:56] ils sont des robots tellement
+[61:57] sophistiqués euh qui puis c'est très
+[61:59] difficile de les distinguer entre un un
+[62:01] être un vrai être humain et un un robot.
+[62:05] Pour ceux qui pour ceux qui ont pas vu
+[62:06] le film là, c'est ça, il y a des entités
+[62:08] euh
+[62:11] il y a des robots mais des des
+[62:13] répliquants répliquants donc qui ont qui
+[62:16] sont très difficiles à distinguer des
+[62:18] êtres humains. Ils sont vraiment très
+[62:19] très difficiles. Et donc, mais il ont
+[62:22] bon dans ce caslà, il ont une durée de
+[62:24] vie,
+[62:24] il ont une durée de vie limitée qui fait
+[62:26] en sorte que ça ça les distingue de
+[62:28] manière
+[62:28] et le le donc donc là l'objet du film
+[62:32] c'est bon vraiment
+[62:35] il faut un peu capturer parce qu'ils
+[62:38] sont sauvés parce qu'il essaie en fait
+[62:40] de de de de trouver un moyen de de vivre
+[62:43] plus longtemps et puis là on essaie de
+[62:46] les arrêter. Oui.
+[62:48] Et et et c'est intéressant dans ce film
+[62:51] là en particulier dans Blade Runner de
+[62:52] de un des grands pourquoi le le le film
+[62:55] est considéré comme profond puis
+[62:57] philosophique, c'est que les robots
+[62:59] eux-mêmes
+[63:01] finissent on finisse par se poser des
+[63:03] questions existentielles. des robots
+[63:04] disent "Mais OK, je suis un robot parce
+[63:06] qu'ils le savent qu'ils sont des robots
+[63:07] mais ils revendiquent un peu leur droit,
+[63:10] ils disent "Mais je suis un robot mais
+[63:12] je j'ai j'existe sais puis je je ressens
+[63:15] des choses parce qu'évidemment ils ont
+[63:17] un corps et tout." Ça c'est pas une
+[63:18] notion que tu avais. C'est c'est comme
+[63:20] une nouvelle couche qui était introduite
+[63:22] au-dessus. Il y avait pas ça dans 2001
+[63:24] au de l'espace. Le le l'ordinateur dans
+[63:26] Odysseé de l'espace, il est euh
+[63:28] entièrement désincarné.
+[63:31] Évidemment, il y a une personnalité puis
+[63:33] une voix et tout, mais il est il est
+[63:34] plus une sorte d'entité abstraite dans
+[63:37] Blade Runner et d'autres film de ce
+[63:39] genre-là. Et c'est plus c'est plus réel.
+[63:41] Mais je pense qu'il y a un lien à faire
+[63:43] avec
+[63:46] que bon, tu parles bon,
+[63:49] tu fais référence à bon
+[63:53] est-ce que cette crainte là existait
+[63:54] avant ? Moi, je pense que il y a un
+[63:56] événement historique important, c'est la
+[63:58] 2uxè guerre mondiale.
+[64:03] La la 2è guerre mondiale a créé un
+[64:05] traumatisme
+[64:07] et euh une raison évidente euh mais la
+[64:12] deuxème guerre mondiale c'était plus que
+[64:16] tout autre c'était le déploiement de
+[64:18] technologie
+[64:21] meurtrière à très grande échelle
+[64:23] incluant la bombe atomique bien entendu
+[64:26] mais mais mais plein plein plein plein
+[64:28] d'armes. là. Donc
+[64:31] et ça en fait hein, ça ça crée euh ça
+[64:36] ancre dans la psychée humaine euh ça
+[64:40] ancre euh le fait que la la technologie
+[64:45] euh
+[64:46] peut devenir
+[64:48] évidemment il y a pas de gu euh dans la
+[64:51] deuxème guerre mondiale mais c'est c'est
+[64:53] c'est cette crainte là OK qui c'est
+[64:55] après ça est devenue la la crainte du
+[64:58] nucléaire qui qui existe encore de nos
+[65:00] jours. C'est ça ça ça fait comme un ça
+[65:03] établit un un cadre de référence.
+[65:08] Quand quand quand certaines personnes
+[65:10] disent crain l'
+[65:13] je je pense que c'est associé ben
+[65:15] d'ailleurs c'est explicite dans dans
+[65:18] Terminator il y a un lien le nucléaire
+[65:23] et le nucléaire lui-même nous ramène à
+[65:24] la deuxème guerre mondiale
+[65:31] un lien assez évident par exemple
+[65:34] peut-être qu'onenir làdessus mais il y a
+[65:36] Et
+[65:38] on on veut stopper la prolifération de
+[65:40] Lia. Il y a des gens qui veulent en fait
+[65:43] limiter qui pourrait avoir accès à l'IA.
+[65:47] Ça c'est tirer directement de la non
+[65:50] prolifération nucléaire. H
+[65:52] donc on veut pas que par exemple on veut
+[65:54] pas en ce moment que l'Iran euh acquare
+[65:58] capacité des balas nucléaire et ça ça
+[66:03] vient directement en fait le le ça tire
+[66:06] ça ça vient de la deuxème guerre
+[66:08] mondiale puis en fait de tout ce qui est
+[66:09] suivi après ça pris cessence là je pense
+[66:13] mais c'est intéressant je j'avais
+[66:16] évidemment les parallèles entre l'IA et
+[66:18] euh et les la menace nucléaire Ben, il y
+[66:22] a comme un comment dire, il y a des gens
+[66:24] qui il y a différents niveaux. Il y a
+[66:25] des gens qui disent "Ah oui, c'est du
+[66:28] même ordre." Il y a des gens qui disent
+[66:29] "Non, c'est complètement une
+[66:31] exagération. C'est pas du même ordre.
+[66:33] C'est Mais mais ce que je trouve
+[66:35] intéressant de de ton de ce que tu dis,
+[66:38] j'avais jamais réalisé que dans le fond,
+[66:40] dans un certain sens, ces deux
+[66:41] technologies là, c'est des technologies
+[66:44] de la guerre froide. Euh c'est
+[66:46] technologie puis la guerre froide, c'est
+[66:48] vraiment le c'est la c'est
+[66:49] l'introduction dans la l'espèce de
+[66:52] psyché globale d'un d'un environnement
+[66:54] de paranoïa. Puis dans les deux cas,
+[66:57] c'est une technologie qui est
+[66:58] fondamentalement qui peut servir à
+[67:01] mais mais mais l' aux États-Unis, ça a
+[67:04] beaucoup été développé comme tu dis. En
+[67:06] fait, il y avait une course aux
+[67:07] armements avec l'Union Soviétique.
+[67:11] Évidemment, l'informatique
+[67:13] était vu comme une technologie. Et là
+[67:15] maintenant évidemment bon l'adversaire
+[67:17] ben on craint peut-être un petit peu
+[67:19] moins le ben il y a plus d'Union
+[67:21] soviétique mais mais il y a la Chine
+[67:23] la Chine qui est l'adversaire et de donc
+[67:26] par exemple le président Donald Trump a
+[67:30] annoncé récemment un plan I qui est vu
+[67:33] en fait en opposition
+[67:35] avec
+[67:38] une certaine menace
+[67:41] chinoise technologique.
+[67:43] qu'on veut. Et on a fait on a fait euh
+[67:47] euh ça c'est c'est sous la présidence de
+[67:50] de Biden, il y a eu par exemple on a on
+[67:53] a interdit aux Chinois l'accès à
+[67:55] certaines au processeurs Nvidé ainsi de
+[67:57] suite pour essayer en fait de les euh de
+[68:00] les stopper. Donc une forme donc une
+[68:02] forme de guerre froide en fait en Iran.
+[68:05] Absolument. Ouais. ou non ou carrément
+[68:07] c'est comme si la guerre froide se
+[68:09] continuait en fait qu'elle avait pas
+[68:11] qu'elle qu'elle prenait des nouvelles
+[68:13] donc l'a est vu littéralement comme un
+[68:17] enjeu euh militaire.
+[68:20] Hm hm.
+[68:20] C'est c'est littéralement un enjeu
+[68:22] militaire. Donc c'est un peu normal
+[68:25] euh c'est un peu normal que euh puisque
+[68:30] c'est vu comme
+[68:33] pas juste potentiellement, mais c'est vu
+[68:34] comme un un outil vraiment euh
+[68:37] militaire, ben que ça suscite certaines
+[68:39] craintes un peu comme le les les armes
+[68:42] et cetera parce qu'on sait que c'est
+[68:44] utilisé par exemple, il y a palentir aux
+[68:46] États-Unis là qui utilise l'IA pour euh
+[68:51] par exemple dans les euh dans des des
+[68:53] situations de combat pour euh éidement
+[68:56] coordonner
+[68:57] euh des attaques et cetera.
+[69:01] il y a des technologies de qui sont
+[69:02] utilisées là de façon
+[69:04] mais est-ce que leur branding à palentir
+[69:07] par exemple est-ce que est-ce qu'ils
+[69:08] vont vraiment prétendre parce que
+[69:10] évidemment il utilise tout sortes de
+[69:11] technologies mais est-ce qu'ils vont
+[69:12] dire de manière aussi ouverte puis aussi
+[69:15] triomphale
+[69:16] euh on utilise l'op c'est pour ça qu'on
+[69:18] est meilleur j'ai l'impression que il
+[69:21] pas dit ça mais il ont ils ont fait des
+[69:24] sais ils font des des des jeux de guerre
+[69:26] pour démontrer là que on pourrait
+[69:29] contrecarer un ennemi en utilisant et là
+[69:32] et là le le parallèle est très très
+[69:34] clair avec Terminator, c'est-à-dire
+[69:37] qu'on on met on donne à le contrôle des
+[69:39] des armes puis on lui dit "OK, va te
+[69:41] battre contre unemi, tu vas pas réagir
+[69:43] plus vite, prendre des meilleures
+[69:45] décisions qu'un être humain." Euh et là
+[69:49] et là et là tu étais vraiment très très
+[69:51] proche du film Terminator. C'est un peu
+[69:53] c'est c'est drôle parce que justement
+[69:54] hier, j'écoutais le film euh War Games
+[69:57] en fait 1983. Oui,
+[70:00] avec euh j'ai rien à parler. C'est
+[70:02] c'est c'est c'est exactement cette
+[70:03] idée-là en fait euh de de l'ordinateur
+[70:06] là-dedans. C'est en fait, il s'appelle
+[70:09] en fait, c'est comme une blague de de
+[70:11] l'appeler euh c'est les lettres W. Et en
+[70:15] fait, tout ce qu'il fait lui, cet
+[70:16] ordinateur là, si j'ai bien compris,
+[70:17] c'est qu'
+[70:20] il fait des simulations militaires de
+[70:23] guerre thermonucléaire en permanence.
+[70:26] Ouais. dans le film, c'est ça. Il y a un
+[70:27] jeune un jeune homme qui est est chez
+[70:30] lui puis a un ordinateur et puis il se
+[70:34] branche avec son son modèle donc il
+[70:36] avant l'internet. Donc il se branche à
+[70:38] le numéro de téléphone, je me rappelle
+[70:39] plus comment.
+[70:40] Euh ouais en fait je pense qu'il appelle
+[70:42] des numéros au hasard. app et là il
+[70:44] tombe comme ça sur l' euh l' du
+[70:48] militaire qui contrôle les missiles
+[70:50] therm le norador
+[70:54] il contrôle et et là il se met à
+[70:56] échanger il pense que c'est un jeu donc
+[70:57] il joue au tic tac chose comme ça lia
+[71:01] est très gentil ça va bien
+[71:03] jusqu'à ce qu'il comprennent que
+[71:04] finalement il a il y a il a
+[71:06] accidentellement initié
+[71:09] euh euh un compte à robot là et là faut
+[71:11] qu'il a trouvé le le chercheur en euh
+[71:16] le professeur, je sais pas si tu à la
+[71:18] retraite ou je sais pas, faut qu'il le
+[71:20] trouver pour dire non, faut que tu
+[71:21] viennes avec moi nous aider à stopper
+[71:23] cette machine. Euh
+[71:25] c'est exactement dans ces thèmes là, tu
+[71:26] tu as vraiment tout là-dedans. Tu bah
+[71:28] tout ce qu'on ce qu'on discute, c'est
+[71:30] guerre froide alors que on était
+[71:32] terrorisé par l'idée de des missiles
+[71:36] intercontinentaux. Moi je me souviens
+[71:38] quand j'étais petit, j'avais peur de ça.
+[71:39] Maintenant on a encore peur de ça, mais
+[71:41] c'est un peu plus c'est c'est comme un
+[71:43] peu moins vif comme préoccupation. Tu as
+[71:46] l'a tu as le tuas tu as tout dans dans
+[71:49] les films de de cette époque là. Ben
+[71:51] 1900 je pense Wargam c'est 1983, c'est
+[71:54] la même la même année que Blade Runner.
+[71:57] Ouais.
+[71:58] Euh la communauté des rationalistes est
+[72:01] assez présente euh dans les débats
+[72:04] autour de de l'intelligence
+[72:06] artificielle, notamment avec autour de
+[72:09] ses réflexions sur euh comment éviter
+[72:12] qu'une intelligence artificielle ne
+[72:14] devienne dangereuse ou qu'elle fasse des
+[72:17] choses imprévues. Dans un premier temps,
+[72:20] j'aimerais savoir selon vous, est-ce que
+[72:23] leur manière d'aborder en fait ces
+[72:26] risques et les dérives potentielles
+[72:30] ont une influence sur nos chercheurs ou
+[72:33] nos décideurs ?
+[72:37] les rationalistes. Oui, la communauté
+[72:41] des rationalistes qui est un phénomène
+[72:44] pas si facile à définir qui est
+[72:46] clairement un une sous-culture
+[72:50] euh qui vient de l'internet en fait qui
+[72:54] a émergé en ligne euh
+[72:58] qui je crois au départ euh était centré
+[73:02] autour des blogs de deux blogs en fait
+[73:04] fameux euh le blogess Rong
+[73:09] de Elizer Yudkovski dont on a parlé il y
+[73:12] a 1 heure
+[73:14] et aussi le blog Overcoming Bias je
+[73:17] crois de Robin Nanson
+[73:20] et il y avait qui est un économiste
+[73:24] un économiste américain assez connu qui
+[73:27] qui est un comment comment on comment on
+[73:30] appelle quelqu'un qui touche à plusieurs
+[73:32] sujets un polymat
+[73:33] euh qui est vraiment un iconoclastte
+[73:36] polymat qui et donc ces gens-là ces
+[73:40] blogs là en fait ont servi de comment
+[73:42] dire de de de racine ou de noyau une
+[73:46] sorte de communauté en ligne qui est
+[73:48] apparu probablement autour des du début
+[73:50] des années 2000
+[73:53] et euh
+[73:57] et oui ces personnages là sont devenus
+[73:59] euh de de plus en plus influ
+[74:04] mais mais je je pense que la raison
+[74:06] qu'elle s'appelle des rationalistes,
+[74:08] c'est l'idée si on veut mieux à
+[74:15] on va arriver à la la vérité de façon
+[74:17] plus efficace que de la façon dont on le
+[74:20] fait habituellement avec tous les biens
+[74:22] qu'on connaît culturel et cetera, c'est
+[74:24] de passer outre.
+[74:26] Je pense qu' peu
+[74:26] Oui oui oui tout à fait. C'est c'est dur
+[74:29] à définir mais c'est comme en fait il y
+[74:30] a il y a un peu un aspect c'est presque
+[74:31] un culte dans un sens. C'est c'est des
+[74:33] gens qui vous une admiration ou une
+[74:38] ils ont vraiment la foi que le la
+[74:42] rationalité, la la pensée scientifique,
+[74:45] la pensée mathématique,
+[74:47] l'utilisation de modèle probabilistes
+[74:50] pour penser à toutes sortes de choses,
+[74:53] ils ont vraiment la foi profonde que ça
+[74:56] que ça doit être amplifié en fait, que
+[74:59] ça doit que ça doit être en fait, ils
+[75:01] reconnaissent que c'est déjà le qui a
+[75:03] déjà la science qui a que toutes ces
+[75:05] chosesl existent déjà mais les
+[75:08] rationalistes dans leur leur façon de
+[75:11] voir les choses voudrait que ce soit euh
+[75:14] généralisé, que ce soit encore plus que
+[75:17] ça soit comme une sorte de religion
+[75:19] généralisée
+[75:22] globale en fait. Fait que donc ils sont
+[75:23] vraiment
+[75:24] eux ils appellent pas ça une religion.
+[75:26] Non non certainement. Oui, parce que
+[75:27] dans le dans le fait de d'appeler ça une
+[75:29] religion, il y a comme quelque chose de
+[75:31] de paradoxal dans un certain sens. une
+[75:33] religion, c'est presque le quand on
+[75:35] pense à un phénomène culturel qui est
+[75:38] pas rationnel, qui est pas scientifique
+[75:40] en général, c'est à la religion qu'on va
+[75:42] penser que
+[75:44] mais mais la religion en tant que
+[75:46] système de comment dire en tant ben
+[75:49] premièrement en tant que communauté de
+[75:51] gens qui pensent d'une manière
+[75:53] similaire, qui sont apparentés, dans ce
+[75:57] sens-là, c'est une sorte de de de
+[75:58] religion, une sorte de de communauté euh
+[76:02] Et et eux en fait les rationalistes là
+[76:05] ils jouent un rôle important dans le
+[76:07] dans le discours actuel ambiant sur l'IA
+[76:10] parce que leur point de vue, leurs idées
+[76:13] sont fortes.
+[76:15] Leur leur point de vue particuliers, le
+[76:18] leurs idées sont souvent même à la
+[76:20] limite choquantes.
+[76:23] Yovski dont on peut parler un peu, c'est
+[76:26] c'est un personnage
+[76:28] surprenant en fait euh qui qui dérange
+[76:32] en fait, tu sais. Euh c'est par exemple,
+[76:36] c'est un gars qui est clairement une
+[76:39] sorte de surdoué euh qui est extrêmement
+[76:41] intelligent mais qui je crois a pas
+[76:43] terminé son secondaire. Bon,
+[76:46] probablement pour toutes sortes de
+[76:47] bonnes raisons euh intéressantes qui qui
+[76:49] le concernent, mais tu sais euh on a
+[76:52] c'est déjà là, il y a comme quelque
+[76:53] chose qui euh qui va un peu à l'encontre
+[76:55] de de la l'espèce de de sagesse euh
+[77:00] ambiante que en général, on on pense à
+[77:04] un lui notamment lui en fait il
+[77:07] préconise qu'on stoppe
+[77:10] euh l' euh parce que c'est dangereux.
+[77:14] Oui,
+[77:14] quitte à
+[77:17] l'angre
+[77:19] et bombarder euh les gens qui utilisent
+[77:22] essentiellement.
+[77:23] J'ai la la question du bombardement, je
+[77:26] sais pas, je l'impression qu'il dirait
+[77:27] au non vous il faut pas me mal me citer,
+[77:31] tu sais. Je pense que il fallait
+[77:34] attaquer les les si par exemple
+[77:36] c'est pas une figure de style.
+[77:37] Je pense pas. Non, je pense que si par
+[77:39] exemple parce que pour l'arrêter, il
+[77:41] faudrait
+[77:43] euh en en fait en fait je veux revenir à
+[77:46] technologie nucléaire.
+[77:49] Si on veut arriver à la non
+[77:51] prolifération nucléaire,
+[77:54] il faut être prêt à l'angre, c'est ce
+[77:55] qui se passe avec l'Iran.
+[77:57] On envoie des des missiles sur l'Iran
+[78:00] pour les arrêter. Parce que si on fait
+[78:01] juste dire à au gouvernement iranien
+[78:04] s'il vous plaît ne développez pas le la
+[78:07] technologie nucléaire
+[78:08] bon
+[78:09] mais ouais ça fonctionne dans certaines
+[78:11] mesures mais pas pas autant au bout d'un
+[78:13] certain au bout d'un certain au bout
+[78:15] d'un certain temps il faut pas le choix
+[78:18] donc je pense c'est la même idée c'est
+[78:19] que là dans le fond l'IA est comme une
+[78:21] technologie qui crée une menace qui est
+[78:23] comparable même qui est comparable à la
+[78:26] technologie nucléaire c'està dire ça
+[78:28] peut mener à la fin des Hm hm. Lui en
+[78:30] particulier, ce gars-là, il est il est
+[78:34] en fait, c'est intéressant de considérer
+[78:35] sa trajectoire parce que il a commencer
+[78:38] par être un enthousiaste en fait. Je
+[78:40] pense qu'il voulait être un chercheur en
+[78:42] IA. Il s'intéressait à l'IA depuis son
+[78:45] jeune âge. Euh, il a commencé par avoir
+[78:47] un arc probablement positif. Euh je
+[78:51] pense qu'il y a pas particulièrement eu
+[78:53] de succès en matière tu sais de
+[78:55] recherche académique. Il s'est tourné
+[78:57] vers la question de l'alignement.
+[79:00] Apparemment c'est lui qui a inventé le
+[79:02] le concept de de friendly AI. C'est lui
+[79:04] qui a vraiment popularisé cette idée-là.
+[79:07] Si on fait une IA, on doit absolument
+[79:09] faire en sorte que l'IA soit alignée. En
+[79:12] fait, c'est toujours le terme qui est
+[79:13] utilisé, qu'elle soit amicale. C'est
+[79:16] extrêmement important de penser à ces
+[79:18] choses-là. Euh avant de même de penser
+[79:23] euh à toutes les questions techniques
+[79:24] scientifiques par rapport à Lia, il faut
+[79:26] penser à la question de est-ce que Lia
+[79:28] va nous être euh est-ce qu'elle va être
+[79:31] gentille avec nous ? lui, il a été un
+[79:33] apôtre longtemps de de ce genre de de
+[79:35] questionnement là, ce genre d'angle là
+[79:38] et de ma compréhension personnelle de de
+[79:42] de ce personnage là dans les dans les
+[79:46] derniers temps, dans les dernières
+[79:47] années, là, il a pris un tournoi encore
+[79:49] plus radical. Là, c'est vraiment extrême
+[79:52] où il dit carrément, on peut on peut
+[79:54] l'entendre sur YouTube dans des vidéos
+[79:56] dire de manière très très claire, on va
+[80:00] tous mourir. Euh en fait, je pense qu'il
+[80:02] puis en fait c'est même pas il fait
+[80:04] cette prédiction là de manière sans
+[80:05] aucune ambiguité. On va tous mourir. On
+[80:08] est c'est euh on est enligné vers euh il
+[80:12] y a on est sur un train qui mène à la la
+[80:14] destruction totale. Et là évidemment ça
+[80:17] fait réagir un paquet de de personnes,
+[80:20] de spécialistes parce que même les gens
+[80:21] même bon nous nous on est des
+[80:23] informaticiens euh c'est tu as un peu
+[80:26] envie de réagir quand tu sais un peu
+[80:28] comment l'IA fonctionne, quand tu as un
+[80:30] peu étudié ces choses-là. Euh j'imagine
+[80:34] peut-être le quelqu'un qui aurait étudié
+[80:36] le les virus ou la virologie. Euh si
+[80:39] quelqu'un euh prend le micro demain
+[80:41] matin et dit euh le le la prochaine la
+[80:43] prochaine grippe va tous nous tuer, on
+[80:46] tu aurais envie de réagir en tant que
+[80:47] spécialiste. fait que je pense qu'une
+[80:49] partie de la logique làdedans cette
+[80:51] crainte là si on veut l'expliquer, c'est
+[80:54] un peu comme de puis il pas il est pas
+[80:57] le seul à à représenter ça comme ça mais
+[80:59] tu as tuas tuas tuas tu as un
+[81:04] une espèce de tu pourrais faire un
+[81:05] graphique où tu montres l'accroissement
+[81:08] de l'intelligence de la machine puis là
+[81:11] tu as par exemple l'être humain qui est
+[81:12] ici h
+[81:13] et là l'idée c'est qu'arrive à un point
+[81:15] où la machine est tellement intelligente
+[81:18] que nous sommes l'équivalent de fourmis
+[81:20] h
+[81:21] et bien entendu, on tue des fourmis. Bon
+[81:24] euh
+[81:26] pas tout le monde qui tue volontairement
+[81:27] des fourmis, mais si tu tu marches, bon,
+[81:30] tuécrases une fourmie, bon tu tu la
+[81:33] plottoir
+[81:36] éviter les fourmis là parce que on on se
+[81:38] considère largement supérieur à la
+[81:40] fourmie.
+[81:42] Euh peut-être moins que les chiens, on
+[81:43] va peut-être moins mais clairement les
+[81:46] fourmis, on les considère comme
+[81:47] suffisamment inférieur que on cherche
+[81:50] pas à sauver la vie de chacune des
+[81:51] fourmis. Et là l'idée évidemment c'est
+[81:53] que on cette explosion là va faire en
+[81:56] sorte que l' va nous considérer comme
+[82:00] comme comme des comme des fourmis. Ouais
+[82:02] c'est c'est la crainte en fait. Pu dans
+[82:04] ce que tu dis euh cette espèce d'idée
+[82:08] d'explosion euh exponentielle ou
+[82:11] récursive, ça ça a différents noms mais
+[82:14] en général c'est la c'est la
+[82:15] singularité. euh cette idée-là de d'une
+[82:18] explosion d'intelligence, ça fait partie
+[82:21] de la de la crainte en fait parce que si
+[82:23] le modèle euh si le l'évolution de
+[82:27] l'intelligence artificielle était euh
+[82:29] fondamentalement un modèle de lenteur
+[82:32] puis de où on prend notre temps, je
+[82:34] pense la plupart des gens auraient pas
+[82:36] de de crainte particulière parce qu'il
+[82:39] dirait ben de toute façon c'est lent tu
+[82:41] sais mais dans le dans la crainte
+[82:44] fondamentale des gens
+[82:46] comme Yudovski et les gens qui ont peur
+[82:49] en fait qui disent qu'il y a un danger.
+[82:51] Je pense que la plupart de ce que les de
+[82:54] ce que ces gens-là ont en tête implique
+[82:56] une notion de d'explosion.
+[83:00] parce que sinon en fait ce qu'on a en ce
+[83:02] moment c'est ça c'est ça c'est ce qu'on
+[83:04] observe si tu tu regardes chat GPT en ce
+[83:07] moment en 2025 été tu sens pas tu te
+[83:10] sens pas particulièrement menacé tu tuas
+[83:12] pas l'impression que ça peut prendre le
+[83:14] contrôle et des gens qui disent oui mais
+[83:17] là on est juste au début de la courbe en
+[83:19] fait on est là là où la courbe se met à
+[83:22] vraiment augmenter de manière
+[83:23] exponentielle donc vous avez rien vu et
+[83:26] c'est très difficile d'extrapoler un peu
+[83:28] le même genre l'argument que les gens
+[83:30] par rapport au aux pandémies puis des
+[83:32] choses comme ça, quand il y a une
+[83:33] évolution euh euh exponentiel d'un
+[83:37] phénomène, l'intuition humaine est pas
+[83:39] très bonne. C'est c'est la Ouais, c'est
+[83:42] donc c'est la même logique. par exemple,
+[83:44] même si on voit pas euh de chômage
+[83:47] technologique autour de nous, euh
+[83:52] les gens disent "Oui oui, mais là ça va
+[83:54] exploser là, il y aura plus l'emploi
+[83:56] parce que l'IA va euh c'est c'est c'est
+[83:59] une crainte similaire. C'est ça suggère
+[84:01] qu'il va y avoir une exposion. On n'est
+[84:04] pas là mais bientôt à cause de
+[84:06] l'accroissement, on va passer un point
+[84:09] de non retour ou ben là c'est ça. Donc
+[84:12] une des craintes qui aura plus d'emploi
+[84:13] pour personne parce que chat GPT va tout
+[84:15] faire euh ou chat GPT va devenir
+[84:19] tellement intelligente qu'elle va
+[84:20] vouloir me tuer. Ça c'est est-ce que tu
+[84:23] dirais dans parce que ça aussi c'est le
+[84:25] paradoxe de ces craintes là parce que tu
+[84:27] as à la fois l'utopie puis la dystopie
+[84:29] qui sont dans le même sac un peu de tuas
+[84:32] tuas l'utopie de du bidul d'un espèce de
+[84:37] dieu technologique qui fait en sorte que
+[84:39] que tu as plus besoin personne n' plus
+[84:41] besoin de travailler. Là, c'est pas
+[84:43] évident. Qu'est-ce qui arriverait à
+[84:44] l'économie ? Qu'est-ce qui arriverait au
+[84:46] commun des mortels si c'était le cas ?
+[84:48] Mais c'est assez facile d'imaginer que
+[84:49] ça serait une sorte d'utopie.
+[84:52] Puis ça c'est une extrémité. Fait que là
+[84:54] donc tuas tout ton temps pour écrire le
+[84:57] roman que tu voulais écrire mais que tu
+[84:58] as jamais le temps d'écrire ou de faire
+[85:01] tout ce que tu veux, tu vas pouvoir le
+[85:02] faire parce que maintenant toute la
+[85:04] réalité va être gérée par mieux que ça
+[85:07] parce qu'en fait ça va guérir toutes les
+[85:08] maladies. Et ça va guérir. Ouais, c'est
+[85:09] ça. On va donc vivre jusqu'à 500 ans. Il
+[85:12] y aura plus de problème économique. Là,
+[85:13] évidemment, ça va régler les changements
+[85:16] climatiques. Ça va à peu près tout
+[85:17] régler.
+[85:20] Ça c'est la vision utopique. Puis à
+[85:22] l'autre extrémité, tuas la tu as un peu
+[85:24] la vision, tuas la tuas la fourmie en
+[85:27] fait, tuas la dystopie où là ce truc là,
+[85:30] oui, tu es un dieu omniscient,
+[85:32] omnipotent, mais qui pour des raisons
+[85:35] qu'on pourra discuter, il y a différents
+[85:37] types de modèles ou d'idées, mais en
+[85:39] gros ce truclà considère que tu es que
+[85:42] tu es un que tu es un microbe et donc tu
+[85:46] la vie humaine a plus d'importance et et
+[85:48] c'est c'est c'est ça le danger. Puis là
+[85:51] la la grande question c'est pourquoi on
+[85:53] construit un mécanisme c'est comme une
+[85:55] bifurcuation là dans la tradition
+[85:58] chrétienne c'est que tu vas en enfer ou
+[86:01] au paradis. Il y a des il y a des
+[86:03] parallèles intéressants à faire avec ça.
+[86:06] Il y a à la fois les deux en fait. Tu
+[86:10] euh Ouais, effectivement c'est très
+[86:13] différent. Évidemment, la seule chose
+[86:14] réelle, la seule chose qui est qu'on a,
+[86:16] c'est ce qui se passe en ce moment.
+[86:17] C'est ni le paradis ni l'enfer.
+[86:20] Clairement, c'est entre les deux, c'est
+[86:22] ce qu'on connaît. Mais oui,
+[86:23] effectivement, dans la tradition, il y a
+[86:25] comme ces deux extrêmes là qui
+[86:26] cohabitent euh puis qui sont euh
+[86:31] c'est difficile de de de départager en
+[86:33] fait.
+[86:35] Euh, tu as évoqué tout à l'heure,
+[86:36] Christian, le concept d'aliment, ça
+[86:38] signifie quoi concrètement ? Une IA
+[86:41] alignée
+[86:43] aux valeurs fondamentales.
+[86:47] Ouais, je pense que c'est pas si
+[86:48] évident. euh à définir. Mais moi ma
+[86:51] compréhension c'est que l'alignement
+[86:53] d'une IA c'est la préoccupation
+[86:56] scientifique technique
+[86:59] de faire en sorte que
+[87:03] l'IA qui va le le système qui va
+[87:05] résulter de ton apprentissage.
+[87:08] L'apprentissage du Nia, c'est un
+[87:09] processus extrêmement coûteux,
+[87:11] extrêmement techniquement
+[87:14] complexe, qui qui est très long, très
+[87:17] coûteux, qui demande toutes sortes de
+[87:19] d'un énorme calcul. Le résultat de ça,
+[87:23] euh tu devrais prendre en compte
+[87:25] l'alignement et tu devrais faire en
+[87:27] sorte de
+[87:30] maximiser les chances que le l'IA qui va
+[87:33] résulter de de ton processus
+[87:36] d'entraînement soit sympathique à ta
+[87:37] cause. On pourrait dire entre guillemets
+[87:40] qu'il qu'il t'aime en fait, qu'il soit
+[87:43] qu'il te considère comme comme une
+[87:45] entité amicale pour éviter que tu te
+[87:48] retrouves dans une situation comme
+[87:49] Daniel décrivait où tu où tu apparais
+[87:52] comme une fourmie Alia qui euh voudrait
+[87:57] simplement t'utiliser en fait pas
+[87:59] nécessairement de manière cruelle en
+[88:01] fait. Euh Lia pourrait simplement euh te
+[88:04] t'utiliser euh
+[88:07] et te te broyer dans l'espèce de machine
+[88:09] euh industriel euh que que que l'a
+[88:13] pourrait euh pourrait être euh mais pas
+[88:16] nécessairement dans un sens de cruauté.
+[88:18] Euh simplement euh mais on veut éviter
+[88:20] ça en fait. Donc le problème de
+[88:22] l'alignement c'est de penser à ça
+[88:24] d'avance ou de manière
+[88:26] puis l'enseign des enes de ça c'est les
+[88:29] lois de la robotique d'imovis
+[88:32] qui donne des consignes donc par exemple
+[88:34] il faut que tu peux pas tu peux pas
+[88:37] faire de mal à un être humain
+[88:39] Ouais en fait tu as raison de d'invoquer
+[88:43] parce que je pense que c'est le meilleur
+[88:44] modèle mental pour penser à ça dans le
+[88:46] fonctionnement d'un robot à la à la
+[88:49] azimov dans je sais plus quel livre
+[88:51] livre qu'il a écrit le fonctionnement la
+[88:54] le fonctionnement ces loislà sont
+[88:57] encodées dans disons le le hardware du
+[89:02] de dans la réalité matérielle du robot.
+[89:04] Ça fait partie de ces un peu bon une
+[89:07] comparaison qu'on pourrait faire le fait
+[89:09] de ressentir de l'empathie ou si
+[89:12] quelqu'un a des un accident sur sur le
+[89:16] bord de la route, on va ressentir
+[89:20] une émotion. on va probablement la
+[89:22] plupart des gens vont vouloir aider euh
+[89:24] la personne. Euh et ça c'est un c'est
+[89:27] une composante. C'est pas un quand quand
+[89:31] cette émotionlà s'empare de nous, c'est
+[89:33] pas le résultat d'un calcul ou c'est
+[89:35] probablement pas particulièrement dû à
+[89:38] l'éducation. C'est un truc euh c'est
+[89:41] c'est une composante fondamentale de
+[89:43] d'être un être humain en fait si
+[89:45] quelqu'un est en difficulté ou si c'est
+[89:48] le résultat de notre évolution. Donc si
+[89:49] tu vois un bébé, tu veux protéger le la
+[89:52] plupart des gens vont protéger
+[89:54] un bébé, même si c'est pas leur bébé,
+[89:56] ils vont essayer de
+[89:59] Donc l'alignement donc l'alignement
+[90:01] c'est l'équivalent informatique de cette
+[90:03] de cette qualité là qu'on qu'on décrit.
+[90:07] Actuellement, beaucoup d'experts
+[90:09] critiquent les intelligences actuelles.
+[90:12] Donc on entend des critiques sur le
+[90:14] manque de régulation,
+[90:16] le manque de transparence, l'opacité au
+[90:19] niveau des algorithmes. Est-ce que vous
+[90:21] pensez que ces critiques sont justifiées
+[90:24] ?
+[90:26] Et donc euh la juste pour préciser, donc
+[90:29] la critique que tu as en tête, c'est une
+[90:31] critique euh c'est pas une critique
+[90:33] technique sur la le potentiel de
+[90:36] En fait, il y a C'est une bonne
+[90:38] question. Il y a plusieurs niveaux. Il y
+[90:39] a aussi au niveau du potentiel, c'est il
+[90:42] y a il y a plusieurs experts qui mettent
+[90:44] en évidence que en fait tant qu'on
+[90:47] ajoute de la puissance de calculer des
+[90:50] données, ben les grands modèles de
+[90:52] langage s'améliorent mais qu'à un moment
+[90:54] donné ils vont comme aller droit dans le
+[90:57] mur. Il va y avoir une limite. Donc
+[90:59] est-ce que cette critique est justifiée
+[91:02] ou au contraire est-ce qu'on n' pas
+[91:04] encore vu tout ce que les modèles de les
+[91:06] grands modèles de langage étaient
+[91:07] capables d'accomplir ? Puis après, il y
+[91:09] a un deuxième niveau en fait où on met
+[91:13] en évidence le manque de régulation,
+[91:16] l'opacité, le manque de transparence en
+[91:18] fait au niveau des algorithmes.
+[91:21] Donc toutes ces critiques, est-ce
+[91:22] qu'elles sont justifiées ? Est-ce qu'on
+[91:25] elles sont exacerbées ? Je je vais je
+[91:28] vais me concentrer sur la la première
+[91:30] partie de ta question, la question de
+[91:33] euh la les Oui, il y a des critiques euh
+[91:36] qui sont faites à l'endroit du de de
+[91:41] l'intelligence artificielle euh telle
+[91:43] qu'elle est euh faite euh implantée euh
+[91:47] en ce moment. disons, prenons chat GPT
+[91:48] comme exemple, les grands modèles de
+[91:50] langue, euh ce genre de technologie.
+[91:53] Moi, je trouve que personnellement c'est
+[91:55] une question scientifique
+[91:58] vraiment profondément fascinante parce
+[92:00] que la réponse c'est qu'on ne le sait
+[92:02] pas.
+[92:03] Euh, il y a des gens qui disent oui, il
+[92:05] y a des gens qui disent non. Il y a un
+[92:08] grand une grande plage de d'opinion par
+[92:11] rapport à cette question là. Euh, on a
+[92:14] un peu envie de dire que
+[92:15] Mais quand tu dis on sait pas, on sait
+[92:17] pas quoi
+[92:18] on on sait pas si euh le paradigme de
+[92:23] des modèles de langage constitue euh
+[92:28] le le chemin royal vers l'intelligence
+[92:32] artificielle, tu sais. Est-ce que est-ce
+[92:34] que c'est tout ce que ça va prendre au
+[92:36] final et que si on se téléporte dans 20
+[92:41] ans ? Alors on on est on sa c'est assez
+[92:44] facile d'imaginer que peu importe ce qui
+[92:46] va arriver dans 20 ans, ce qu'on va
+[92:48] avoir va être plus évolué que ce qu'on a
+[92:50] maintenant. Ça ça c'est ça ça apparaît
+[92:52] en fait. ça serait difficile d'imaginer
+[92:54] qu'on régresse. Ça c'est assez facile.
+[92:56] C'est assez évident qu'on va progresser.
+[92:58] Mais la question est-ce que est-ce qu'il
+[93:00] va y avoir eu un changement de paradigme
+[93:02] du même ordre par exemple que le
+[93:04] changement de paradigme qu'il a eu entre
+[93:06] l'intelligence artificielle classique
+[93:09] qui était pas de nature statistique, qui
+[93:12] était pas de l'apprentissage
+[93:14] automatique. Puis graduellement à
+[93:16] travers
+[93:19] les l'évolution des 70 dernières années,
+[93:22] il y a eu un changement de paradig vers
+[93:24] le le l'intelligence artificielle
+[93:27] statistique, l'apprentissage
+[93:28] automatique. Est-ce que on va rester
+[93:31] dans cette voie là ou il va y avoir
+[93:35] un autre est-ce que ça va demander un
+[93:38] autre changement de parad par dans
+[93:41] par exemple
+[93:44] le président d'Oracle a
+[93:48] ça la compagnie informatique a beaucoup
+[93:50] investi dans dans l'a et une il fait
+[93:54] partie de ceux donc une de ses
+[93:55] prétentions mais c'est pas le seul c'est
+[93:58] qu' finalement
+[94:00] l' tel qu'on tel qu'on la développe en
+[94:03] ce moment va guérir tout va guérir pas
+[94:06] juste le cancer doit guérir toutes les
+[94:08] maladies. En fait, il y a plusieurs il y
+[94:11] a plusieurs éminents chercheurs là
+[94:15] euh
+[94:16] et et des gens influents qui ont cette
+[94:18] prétention là.
+[94:20] C'est quand même pas mal, je sais pas si
+[94:23] on pourrait parler d'un consensus
+[94:25] par rapport à cette question là, mais on
+[94:27] sent que le niveau d'enthousiasme puis
+[94:29] le niveau de croyance dans le fait que
+[94:31] ch c'est nécessairement
+[94:34] une sorte de
+[94:38] bonne de bonne idée. En fait, c'est un
+[94:40] peu ça la question qu'on a monté.
+[94:42] vraiment sauf qu'en 2022 puis 2025, on n
+[94:48] pas vu il y a pas de maladies qui ont
+[94:50] été euh il y a pas eu de à ma
+[94:52] connaissance, il y a pas eu de progrès
+[94:54] dans le
+[94:55] dans la lutte contre le cancer à cause
+[94:57] de ces
+[94:58] ça ça constitue quand même un
+[95:00] contreargument.
+[95:02] Moi personnellement, ce
+[95:03] contreargument-là me trouble quand je le
+[95:05] constate. Je me dis OK, oui, en quelque
+[95:07] part en novembre 2022, chat euh chat JPT
+[95:11] apparaît, ça change tout clairement. Je
+[95:14] pense qu'il y a un peu une notion
+[95:15] généralisée que ça a tout changé. Mais
+[95:18] après ça, c'est capable de lire toute la
+[95:19] littérature,
+[95:21] de montrer une bonne compréhension de
+[95:23] toute la littérature scientifique. On
+[95:24] peut lui donner des articles
+[95:26] scientifiques demander des expliquer
+[95:29] quand même relativement crédible.
+[95:31] ce que un être humain est pas capable de
+[95:33] faire, un être humain est pas capable de
+[95:35] lire des milliers d'articles
+[95:36] scientifiques, pouvoir tout tous les
+[95:38] résumé, mais ça mène pas
+[95:41] ça ça a pas mené,
+[95:43] ça a pas mené et ouais, ça c'est une
+[95:45] observation, je me souviens quand j'ai
+[95:48] entendu cette cette objection, cette cet
+[95:51] argument là, ça m'est apparu comme un
+[95:52] argument quand même très fort. Et si le
+[95:55] bidule a lu la totalité de des articles
+[95:58] en fait ou en tout lu une quantité
+[96:00] infiniment plus grande que moi et toi,
+[96:02] est-ce qu'on devrait pas s'attendre à
+[96:05] une sorte de saut quantique en quelque
+[96:07] part ? Est-ce qu'on devrait pas observer
+[96:09] justement une découverte ou quoi que ce
+[96:12] soit ? Ça pourrait prendre n'importe
+[96:13] quelle forme. Ça pourrait être par
+[96:14] exemple, je sais pas, améliorer de 20 %
+[96:18] l'efficacité énergétique de des des
+[96:21] moteurs
+[96:23] des des moteurs électriques. Ça pourrait
+[96:24] être si c'était le cas, si une menait à
+[96:28] une innovation euh clairement
+[96:31] quantifiable de ce genre-là,
+[96:34] l'effet serait vraiment profond. Mais il
+[96:36] y a pas ça. Euh je pense que Robin
+[96:38] Manson a une sorte de eu son sa manière
+[96:41] de réfléchir à ça, c'est est-ce que euh
+[96:44] est-ce que est-ce qu'on observe un
+[96:46] changement une influence de 5 % sur le
+[96:50] sur le GDP sur le le
+[96:52] le produit intérieur brut de de de pays,
+[96:55] tu sais ? Est-ce que est-ce qu'on est
+[96:57] dans cet ordre de grandeur là ? Oui ou
+[97:00] non ? Bah apparemment non. On n'est pas
+[97:02] du tout
+[97:03] non. Je pense les économistes il
+[97:04] estiment que la technologie actuelle, ce
+[97:08] que j'ai vu là c'est on parle de
+[97:09] peut-être point 5 % ou 1 % donc des des
+[97:14] différences à peine qui sont pas nules
+[97:16] mais à peine perceptibles.
+[97:18] Ce qui constitue quand même un comme un
+[97:21] bémol important dans le dans dans
+[97:24] l'enthousiasme actuel. que là on il y a
+[97:27] comme un c'est c'est paradoxal en fait
+[97:29] d'un côté il y a énormément
+[97:30] d'enthousiasme
+[97:31] de par rapport aux outils de
+[97:33] programmation moi je suis beaucoup ce
+[97:35] domaine là il y a un enthousiasme
+[97:36] fabuleux en ce moment par rapport à à
+[97:39] l'effet que Lia a sur le le en tant que
+[97:44] outil pour le développement logiciel
+[97:45] c'est ça change tout c'est un effet
+[97:48] extrêmement profond
+[97:50] c'est assez indéniable le niveau
+[97:52] d'enthousiasme est très très élevé mais
+[97:54] est-ce que en contrepartie ça va est-ce
+[97:57] que ça va tout changer ? Est-ce que ça
+[97:58] va faire en sorte que maintenant
+[98:01] Windows va ou MacOS vont être infiniment
+[98:06] supérieur et plus performant parce que
+[98:09] les programmes vont maintenant être
+[98:10] développés par UNIA ? C'est pas du tout
+[98:12] clair et puis c'est pas du tout ce qu'on
+[98:14] observe.
+[98:16] En fait, les gens ont ont souvent la
+[98:18] peur inverse et souvent mentionné l'idée
+[98:22] que l'IA va tellement produire de
+[98:25] en fait va polluer la culture avec une
+[98:28] avec une très très grande quantité de
+[98:30] mauvais programmes, de mauvais textes,
+[98:32] de mauvais de mauvaises choses en fait
+[98:35] cette idé de mauvaise sciences
+[98:36] de mauvaise sciences en fait de sciences
+[98:38] approximatives, de sciences de choses
+[98:40] fausses. Ça c'est une crainte en fait
+[98:42] qui est beaucoup moins spectaculaire que
+[98:45] les craintes dystopiques
+[98:47] que Lia va va va tous nous nous tuer.
+[98:52] C'est c'est moins spectaculaire, mais
+[98:53] c'est un autre type de crainte qui à mon
+[98:55] avis est quand même probablement plus
+[98:57] réaliste de de faire en sorte que
+[98:58] l'internet devienne essentiellement
+[99:01] inutilisable
+[99:02] parce que l'internet serait complètement
+[99:05] submergé par une quantité fabuleusement
+[99:09] euh
+[99:11] phénoménal de de de mauvaises choses. En
+[99:14] fait, probablement que c'est en train
+[99:16] d'arriver. En fait, c'est c'est
+[99:18] probablement en train d'arriver. et et
+[99:20] comment comment la société va réagir à
+[99:22] ça. En fait, c'est pas du tout clair.
+[99:24] C'est c'est c'est assez désagréable comm
+[99:26] mais c'est globalement c'est assez
+[99:28] difficile d'identifier des problèmes
+[99:30] sociux qu'on connaît qui ont été réglés
+[99:34] au-delà de la santé. Tout ça c'est c'est
+[99:36] pour pourtant on a un outil qui
+[99:40] bien des points de vue une intelligence
+[99:41] importante mais on n pas encore vu. Ça
+[99:43] veut pas dire que ça va pas se passer
+[99:44] comme tu dis mais peu importe c'est quoi
+[99:46] les problèmes de la société la pauvreté
+[99:50] euh peu importe là euh la violence et
+[99:54] cetera, c'est pas clair que ça ça règle
+[99:57] ça règle des problèmes de façon
+[99:59] importante. Puis puis puis c'est je
+[100:01] pense que de simplement faire l'exercice
+[100:03] l'expérience de pensée de ce que ça
+[100:05] pourrait avoir l'air, c'est difficile.
+[100:07] Ça aurait l'air de quoi ? Par exemple,
+[100:09] une solution à la à la pauvreté offerte
+[100:11] par l'intelligence artificielle, ça
+[100:13] aurait l'air de quoi ? Est-ce que ce
+[100:15] serait une équation miraculeuse ? Est-ce
+[100:17] que ce serait un texte
+[100:20] qui serait comme les comme un texte
+[100:23] biblique qui révélerait tu faisais
+[100:26] allusion par exemple ? C'est l'invention
+[100:29] de nouvelles techniques qui permet de
+[100:31] réduire les coûts de bon production.
+[100:34] Ouais. Ça ça ça aurait l'avantage d'être
+[100:36] vraiment parfaitement clair en fait.
+[100:38] Sais admettons si demain matin tu as un
+[100:40] remède tuas un remède pour le cancer
+[100:43] qui qui sauve la vie de 75 % des gens
+[100:47] qui ont le cancer, ça on s'entend, il y
+[100:49] a aucune ambiguïté par rapport à ça. Ça
+[100:51] là là tu aurais en fait si ça arrivait
+[100:54] ça ferait un bon scénario de
+[100:55] science-fiction. Si cette chose là
+[100:56] arrive instantanément
+[100:59] on encore pris donc on a par exemple
+[101:02] dans certaines études on voit que CHP
+[101:04] est capable de battre les les meilleurs
+[101:07] médecins dans le du moins sur papier
+[101:11] dans les tâches contrôlées de faire des
+[101:14] déposer des diagnostics
+[101:18] capable de bon ça marche aussi dans
+[101:20] plein de domaines en finances en droit
+[101:22] et cetera
+[101:24] mais du moins au Québec
+[101:26] Ça a clairement pas réglé de de
+[101:29] personnel de santé qu'on qu'on connaît.
+[101:31] Ça ça fait on peut pas donc est-ce que
+[101:34] c'est parce que il y a une question
+[101:36] d'innovation technologique et que ça va
+[101:38] venir on va voir l'outil va être
+[101:42] suffisant ou bien si ça prend c'est la
+[101:44] question de est-ce que ça va prendre
+[101:46] d'autres avancées avant qu'on y arrive
+[101:50] donc dans le fond que pass intelligent
+[101:55] par soi-même
+[101:56] par soême que c'est pas suffisant
+[101:59] Ouais,
+[102:01] c'est c'est une question ouverte.
+[102:04] Euh Joshua Benjo, on l'entend souvent
+[102:09] dans des débats en fait sur des
+[102:11] questions éthiques. Il s'engage pour une
+[102:15] intelligence
+[102:17] artificielle respectueuse des valeurs
+[102:19] humaines. Il prenne plus de régulation.
+[102:24] Euh, peux-tu me parler ? Pouvez-vous me
+[102:26] parler davantage de ce personnage ?
+[102:28] Qu'est-ce qu'il Qu'est-ce qui le
+[102:30] caractérise ? Qu'est-ce qui fait aussi
+[102:32] qu'il ait contribué à faire de Montréal
+[102:34] un pôle IA ? Hm
+[102:36] hm.
+[102:37] Un pôle mondial sur l'IA.
+[102:41] Yoshua c'est il est considéré comme un
+[102:44] des trois pères fondateurs de
+[102:48] l'apprentissage automatique en fait
+[102:51] parce que l'IA c'est plus général, c'est
+[102:53] plus ancien aussi mais l'apprentissage
+[102:55] automatique et la saveur
+[102:58] en fait ça aussi c'est c'est
+[102:59] relativement ancien mais c'est plus
+[103:01] récent puis c'est la saveur qui domine
+[103:03] en ce moment. Euh et dans
+[103:05] l'apprentissage automatique, il y a
+[103:07] plein de choses en fait euh plein de de
+[103:09] techniques, plein d'idées, mais il y en
+[103:11] a une en particulier euh qui est depuis
+[103:14] euh depuis longtemps euh au cœur des
+[103:17] préoccupations de Yoshua. En fait, c'est
+[103:19] son idée fétiche, c'est le le le réseau
+[103:24] de neuron euh qui est vraiment un
+[103:27] algorithme d'apprentissage
+[103:29] parmi d'autres, mais c'est celui qui
+[103:31] dans les euh 20 dernières années euh a
+[103:36] vraiment émergé du lot en fait puis qui
+[103:39] est devenu le la technique dominante en
+[103:41] fait. euh chat GPT qui est notre sujet
+[103:44] euh préféré euh dans cette conversation
+[103:46] et est un réseau de neuron en fait et
+[103:48] fait en dans ça dans ses fondements.
+[103:51] C'est c'est un réseau de neurone, un
+[103:52] Transformer en fait pour être plus
+[103:54] spécifique.
+[103:56] Et Yoshua lui euh il euh il c'est comme
+[103:59] s'il avait cru au réseau neuron euh
+[104:03] depuis longtemps en fait. Et euh non
+[104:05] seulement il croit il croit en en la
+[104:08] technologie des réseaux neurones, il la
+[104:11] mais à des moments où les réseaux
+[104:13] neurones avaient moins la côte était
+[104:14] moins populaire en fait et d'autres
+[104:16] algorithmes d'apprentissage étaient euh
+[104:18] plus populaires et Yos a toujours
+[104:21] conservé euh cette cette foi en en les
+[104:26] réseaux de neuron qui a fini par par
+[104:30] être dans un certain sens. C'est
+[104:31] difficile de savoir est-ce que elle
+[104:33] est-ce que c'est parce que euh elle
+[104:36] est-ce
+[104:38] que c'est l'œuf ou la poule en fait ?
+[104:39] Est-ce que c'est euh le fait que d'avoir
+[104:42] voulu euh absolument démontrer euh à la
+[104:45] communauté scientifique que les réseaux
+[104:46] neurones étaient une bonne idée qui a
+[104:48] fini fait en sorte que ça a donné ça
+[104:50] comme résultat ou est-ce que c'était
+[104:53] parce que les réseaux neurones sont de
+[104:54] manière inhérente une bonne idée ?
+[104:58] C'est peut-être c'est pas si clair pour
+[105:00] moi, mais en tout cas dans les faits,
+[105:02] les réseaux neurones, c'est le paradigme
+[105:03] qui domine. Yoshua a de l'ensemble de sa
+[105:08] carrière a joué un rôle extrêmement
+[105:11] important dans le le développement des
+[105:13] réseaux neurones. Euh il y a plusieurs
+[105:15] idées fondatrices et en particulier, il
+[105:17] y a il y a il y a une composante des
+[105:19] Transformers qui s'appelle la tension
+[105:22] euh qui est un mécanisme assez complexe,
+[105:26] difficile à expliquer, qui est un
+[105:27] essentiellement un mécanisme
+[105:29] mathématique qui fait partie de de
+[105:30] comment du fonctionnement de chatt et ça
+[105:33] vient de ça a été inventé, pensé à
+[105:36] Montréal dans dans le laboratoire de
+[105:38] Yoshua. Euh et il a le
+[105:43] le le rôle de Yoshua a été reconnu par
+[105:45] la communauté. Euh il a il a c'est le
+[105:49] prix Turing en fait qu'il a gagné avec
+[105:51] euh C'est ça le
+[105:52] Oui.
+[105:53] Bon donc ça ça l'équivalent du prix
+[105:55] Nobel des
+[105:57] Ouais c'est euh donc son rôle est est
+[106:01] vraiment important et euh on peut pas le
+[106:05] le le le le le le sous-estimer.
+[106:08] Mais avec le temps, je je je crois que
+[106:11] Yoshua
+[106:13] une caractéristique intéressante de
+[106:15] Joshua, c'est qu'il a toujours
+[106:18] résisté à la à l'appel des des grands
+[106:21] joueurs
+[106:24] de l'internet, en particulier, Google,
+[106:26] Facebook. Euh ces compagniesl sont
+[106:30] extrêmement depuis longtemps euh
+[106:35] investi dans l'IA. En fait, l'A fait
+[106:37] partie de l'ADN de ces en particulier de
+[106:40] Google et de Facebook mais il y en a
+[106:41] d'autres. Amazon aussi probablement. Lia
+[106:43] fait partie de l'ADN de ces compagniesl
+[106:45] ces compagniesl elles ont été fondées
+[106:47] sur le on pourrait dans un certain sens
+[106:51] que Google c'est dans un sens une
+[106:53] compagnie de l'IA. Et il y avait donc
+[106:57] énormément de sciences. La science de le
+[107:00] modèle transformer de chat GPT a été
+[107:05] inventé. euh chez Google en fait le
+[107:07] papier l'article original c'est des
+[107:10] chercheurs de Google et euh c'est de là
+[107:13] que c'est parti. Et Yoshua a évidemment
+[107:16] toujours été dans cet écosystème-là.
+[107:19] Euh et je crois qu'il a euh dans un
+[107:22] certain sens résister probablement à la
+[107:24] tentation de
+[107:27] d'aller euh travailler dans ces
+[107:30] compagnieslà comme d'autres chercheurs
+[107:31] l'ont fait en particulier Hinton. Jeffon
+[107:35] de l'université de Toronto, je crois.
+[107:37] travaillé chez Google pendant quelques
+[107:39] années. Euh il y a le euh le cun leun
+[107:43] qui est euh aussi un des c'est ça c'est
+[107:46] les trois les trois personnages les plus
+[107:48] importants par rapport au réseau neuron
+[107:49] puis à euh euh à l'a moderne. Et euh
+[107:54] Yoshua lui a a résisté à la tentation et
+[107:56] toujours resté dans un certain sens pur,
+[107:59] il est resté dans le monde académique
+[108:00] mais en fait il a quand même créé une
+[108:02] entreprise.
+[108:04] Ah oui, c'est vrai. qui l'a cofondé
+[108:07] Element à Montréal.
+[108:10] C'est vrai dans le but de faire la
+[108:13] compétition à au grands joueurs. En
+[108:16] fait, je crois que dans les fondements,
+[108:19] dans l'espoir que représentait Element,
+[108:23] il y avait la notion de faire
+[108:25] éventuellement d'être une compétition
+[108:28] euh québécoise
+[108:31] en matière de
+[108:33] ça pas ça pas tellement fonctionné en
+[108:34] fait. Ça a été racheté maintenant par
+[108:36] une entreprise américaine.
+[108:37] Ouais. Ça ça a duré quelques années, ça
+[108:40] a pas particulièrement bien fonctionné,
+[108:43] je crois. Euh ça pas produit de de de
+[108:49] résultats probants. Il y a pas de de
+[108:52] produits particulièrement euh
+[108:55] convaincant qui est qui est sorti de là.
+[108:57] Ce qui est quand même intéressant, c'est
+[108:58] que beaucoup des avancées récentes
+[109:00] incluant open
+[109:04] qui est encré de beaucoup de
+[109:06] technologies développé chez Google euh
+[109:10] c'est ça ça vient en fait du secteur
+[109:12] privé américain principalement là ou en
+[109:15] fait presque entièrement toutes ces
+[109:17] technologies là. Euh donc il y a pas
+[109:21] beaucoup d'équivalent universitaire qui
+[109:24] a été développé et euh et c'est ça on se
+[109:27] retrouve au Québec avec pas vraiment euh
+[109:32] pas vraiment en fait d'entreprises qui
+[109:34] sont en en compétition dans le domaine
+[109:36] on sait bon euh
+[109:38] alors qu'on qu'on devrait parce qu'on
+[109:40] fait que l'idée qu'on entend toujours
+[109:42] c'est on a les cerveaux on a ça vient
+[109:44] d'ici pas évidemment pas exclusivement
+[109:46] mais il beaucoup de de l'ADN puis des
+[109:49] idées viennent d'ici fait. Donc on on
+[109:51] dit ben étant donné qu'on a les idées
+[109:54] puis le cerveau, on
+[109:56] nécessairement il y aura un chemin
+[109:58] logique pour qu'on aussi qu'on fasse le
+[110:00] le développement.
+[110:01] Alors là alors là on entre dans le le le
+[110:03] modèle linéaire là de l'innovation. Le
+[110:06] modèle linéaire de l'innovation, c'est
+[110:07] l'hypothèse selon lequel les idées se
+[110:09] développent d'abord dans les
+[110:10] universités, ils vont ensuite dans
+[110:12] l'industrie et après ça il se retrouve
+[110:14] chez les consommateurs. Euh en fait ce
+[110:17] modèle là est un peu naïf là parce que
+[110:19] c'est la réalité beaucoup plus complexe.
+[110:21] C'est extrêmement difficile de partir en
+[110:23] fait d'une idée dans une université d'en
+[110:26] faire une entreprise. Euh la plupart des
+[110:29] des ça ça fonctionne généralement pas
+[110:32] bien. Euh Google, c'est essentiellement
+[110:35] ce qui est arrivé en fait. Page rank, je
+[110:37] pense l'algor l'algorithme original, ça
+[110:40] a été développé pendant qu'ils étaient à
+[110:42] Stanford et ils étaient euh en train de
+[110:46] faire leur leur probablement leur
+[110:48] doctorat et ça a mené le le le la
+[110:52] comment la side le la
+[110:56] graine
+[110:59] commencé dans un
+[110:59] Ouais, mais là ça c'est un peu compliqué
+[111:01] parce que bon page rank on sait pas si
+[111:03] s'il y a une partie marketing là-dedans.
+[111:05] On sait pas jusqu'à quel point en bon
+[111:09] l'histoire c'est qu' les moteurs de
+[111:11] recherche il y avait Altavista qui était
+[111:12] complètement en panne. Euh bon il y a
+[111:15] quelques jeunes avec un peu de
+[111:17] financement il on il ont lancé quelque
+[111:18] chose qui était largement supérieur mais
+[111:23] jusqu'à quel point en fait c'était le
+[111:25] résultat de recherche universitaire ça
+[111:27] c'est un peu moins clair là. Je sais pas
+[111:29] quel je sais pas quel page rank
+[111:32] moi ce que je ce que j'avais cru que ce
+[111:36] que je croyais c'est que c'était
+[111:37] essentiellement leur leur leurs travaux
+[111:40] universitair leur thèse de doctorat
+[111:42] qui était devenu un produit
+[111:43] c'est pas clair c'est pas clair en fait
+[111:44] que page rank a jamais vraiment été
+[111:47] utilisé l'idée pour pour le résumé c'est
+[111:50] page rank l'idée c'est que si une page
+[111:52] reçoit plus de liens elle est probement
+[111:55] plus importante
+[111:56] mais puis là tu peux on peut former ça
+[111:58] un algorithme qui est un peu compliqué à
+[112:00] mettre en œuvre mais c'est pas clair si
+[112:02] vraiment il ont mis c cet algorithme en
+[112:04] œuvre. Mais donc on arrive avec cette
+[112:06] difficulté là au Québec où on a euh on a
+[112:11] les les cerveaux comme tu dis, on a les
+[112:12] gens mais on on a du mal un petit peu à
+[112:16] développer ça. Et là pour revenir à la
+[112:18] question de Laise, l'orientation
+[112:20] actuelle de Penjo, ça semble pas aller
+[112:23] dans ce sens-là. Ça sent pas aller dans
+[112:26] le sens. Donc il semble pas s'il y a des
+[112:29] entreprises qui sont créées, ça sera
+[112:31] probablement ça viendra pas euh de de
+[112:34] Benj parce qu'il semble plutôt vouloir
+[112:36] en fait aller
+[112:39] plus du côté de la régulation comme je
+[112:42] disais et euh euh des des des mises en
+[112:47] œuvre qui visent en fait à à protéger
+[112:50] plutôt qu'à qu'à qu'à créer des
+[112:52] nouvelles entreprises qui peuvent être
+[112:53] compétitives avec Open Hm hm.
+[112:58] Oui, j'imagine que euh parce qu'il y a
+[113:01] il y a aussi la la question des médias
+[113:03] sociaux qui est qui est
+[113:06] en filigrane de ça parce que les en fait
+[113:09] les gros joueurs, il y a il y a
+[113:11] clairement un lien entre l'intelligence
+[113:13] artificielle, académique,
+[113:16] commerciale et les les médias sociaux.
+[113:20] Euh les compagnies Facebook et Google en
+[113:23] particulier sont à la fois des
+[113:25] compagnies d'intelligence artificielle
+[113:27] et de et de de médias sociaux.
+[113:30] Et probablement, je sais pas, je l'ai
+[113:32] pas entendu, mais je l'ai pas entendu le
+[113:35] le dire
+[113:36] verbine, mais je je pourrais facilement
+[113:39] imaginer que Yoshua euh
+[113:43] aurait l'opinion que les médias sociaux,
+[113:46] par exemple, ont fait énormément de tort
+[113:50] à la société dans les 20 les deux
+[113:53] dernières décennies. Euh et j'aurais
+[113:55] comme
+[113:58] l'idée de que euh qu'étant donné qu'il
+[114:02] perçoit ces produits technologiques là,
+[114:05] en fait, je pense qu'il est il est comme
+[114:06] un peu probablement il il est devenu il
+[114:09] il s'est- placé dans un endroit
+[114:12] extrêmement paradoxal. C'est ça que je
+[114:14] veux dire, c'est qu'il est euh il il
+[114:20] est un peu la source, l'origine de la
+[114:23] technologie qui a mené indirectement et
+[114:26] directement à des choses qu'il qui qui
+[114:28] je crois il il les déplore ces chosesl.
+[114:30] Je pense qu'il est il est pas heureux de
+[114:32] ce que de ce que de ce que Google et et
+[114:35] Facebook ont fini par faire.
+[114:38] Mais lui son espèce d'idéal, c'est un
+[114:40] idéal scientifique, c'est un
+[114:41] mathématicien, c'est c'est un gars de
+[114:43] d'idée. Euh et je crois qu'il se
+[114:47] retrouve un peu entre l'arbre et
+[114:49] l'écorce. Ça en tout cas ça serait
+[114:51] difficile pour moi d'imaginer qu'il
+[114:53] qu'il finisse par avoir une une attitude
+[114:57] où il dirait
+[114:59] on va on va essayer de de faire comme
+[115:02] Open AI, tu sais de créer
+[115:05] parce qu'en fait ce que Open AI en fait
+[115:07] Open AI dans un certain sense. C'est la
+[115:09] compagnie la plus extrême. Euh
+[115:13] c'est vraiment eux qui qui ont eu
+[115:15] l'attitude la plus extrême dans un
+[115:17] certain sens. Eux, ils ont pris
+[115:19] essentiellement une idée qui était
+[115:22] qui était une nouvelle idée et ils ont
+[115:24] eu l'audace vraiment extrême de dire non
+[115:28] seulement on croit en cette idée-là,
+[115:30] mais on va en faire on va en faire une
+[115:32] compagnie, on va en faire un produit.
+[115:34] Alors que je pense que le consensus
+[115:36] général à la fois euh scientifique,
+[115:39] académique, mais aussi commercial, c'est
+[115:41] de dire il y a aucune chance que tu
+[115:43] puisses avec un modèle de langue faire
+[115:46] un produit. C'était en fait c'était
+[115:49] fabuleusement audacieux le le ce que ce
+[115:52] que ce que Open AI la thèse la thèse de
+[115:55] de Open AI et euh et et je c j'ai
+[115:59] vraiment de la difficulté à imaginer que
+[116:02] dans le le ter l'ambiance
+[116:05] la culture
+[116:07] technologique de Montréal actuelle telle
+[116:10] qu'elle est en ce moment son son ADN sa
+[116:12] logique j'ai j'ai de la difficulté à
+[116:14] imaginer que qu'une qu'une une
+[116:17] entreprise aussi audacieuse qu'open
+[116:20] puisse émerger ou un truc
+[116:24] comparable en fait même Element TI
+[116:27] c'était un truc extrêmement audacieux
+[116:29] qui a reçu qui avait qui qui était
+[116:32] extrêmement prometteur mais la thèse de
+[116:35] Open AI première de pardon de Element AI
+[116:38] la thèse fondamentale sur laquelle
+[116:40] c'était fondé était pas aussi bien
+[116:42] définie en fait c'est moi moi quant à
+[116:43] moi c'était un peu un de leur problèm
+[116:45] c'est que c'était pas particulièrement
+[116:47] bien défini qu'est-ce que qu'est-ce que
+[116:49] vous voulez faire exactement quel quel
+[116:51] genre de produit ça a jamais été clair
+[116:53] en fait puis probablement que ça a joué
+[116:55] un certain rôle dans leur dans leur
+[116:57] éventuel
+[116:59] insuccès euh tandis que à l'autre
+[117:03] extrémité open et eux c'est vraiment le
+[117:07] je sais pas ils ont vraiment eu l'audace
+[117:09] un peu. Je sais pas, je fais je me bien
+[117:11] une comparaison. Tu sais par exemple A
+[117:14] Osborne quand il a il y a plusieurs
+[117:17] décennies quand il a inventé le levé
+[117:21] métal,
+[117:23] il y avait pas de métal. Il y avait ce
+[117:25] son là existait pas. Cette attitude là,
+[117:27] cette esthétique là existait pas. Et euh
+[117:29] et tu as un gars comme Osborne qui
+[117:31] arrive qui dit "Non, je moi je vais je
+[117:34] vais inventer ça. Je vais euh je vais je
+[117:38] vais je vais je vais introduire cette
+[117:40] idée-là puis qui m'aime me suivre. En
+[117:43] gros, euh il y a vraiment je pense c'est
+[117:45] ça il y a moi qu à moi, il y a un
+[117:47] parallèle à faire entre Asie Osborne et
+[117:50] et open dans l'audace, tu sais. Hm hm.
+[117:53] Puis ici euh
+[117:58] il a c'est plus difficile à peut-être
+[118:01] qu'il y en a de à Montréal quelque part
+[118:04] mais on connait pas en ce moment.
+[118:06] C'est c'est très possible. C'est très
+[118:08] possible.
+[118:09] Donc merci Christian merci Daniel pour
+[118:13] cette conversation.
+[118:14] Merci. Ça a été un grand plaisir.
