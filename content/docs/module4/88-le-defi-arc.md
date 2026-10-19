@@ -230,7 +230,9 @@ du Module 1 : dès qu'une machine réussit, on se demande si la tâche mesurait
 l'intelligence. ARC a toutefois le mérite de poser la question avec précision. Il ne
 demande pas seulement si un système réussit, mais à partir de combien d'exemples, et à
 quel prix, là où un enfant y parvient en quelques secondes, avec trois exemples et
-très peu d'énergie.
+très peu d'énergie. Le chapitre
+« [Qu'est-ce que l'intelligence ?](docs/module5/26-qu-est-ce-que-l-intelligence) » du
+Module 5 replace ARC parmi les autres façons de définir l'intelligence.
 
 Le dernier chapitre du module,
 « [Ce que les LLM comprennent, et ce qu'ils ratent](docs/module4/94-comprendre-et-rater) »,
