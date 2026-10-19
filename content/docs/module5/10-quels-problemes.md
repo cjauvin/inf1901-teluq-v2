@@ -35,15 +35,15 @@ un argument philosophique, une expérience scientifique, un jugement moral, une 
 
 |  | Famille | Quelques questions |
 |---|---|---|
-| ![](/images/module5/icones/philosophique.svg) | **Philosophique** | Une machine peut-elle penser, comprendre, être consciente ? Qu'est-ce que l'intelligence ? Penser, est-ce calculer ? |
-| ![](/images/module5/icones/scientifique.svg) | **Scientifique** | Que peut apporter l'IA à la science ? Peut-on se fier à un modèle qui prédit sans expliquer ? |
-| ![](/images/module5/icones/morale.svg) | **Morale** | Qui est responsable d'une décision prise par une machine ? Une décision automatisée peut-elle être juste ? Sur quelles valeurs aligner l'IA ? Une IA peut-elle avoir un statut moral ? |
-| ![](/images/module5/icones/economique.svg) | **Économique** | L'IA va-t-elle supprimer des emplois, en créer, en transformer ? Qui profitera de la richesse qu'elle produit ? |
-| ![](/images/module5/icones/juridique.svg) | **Juridique** | À qui appartient une œuvre générée ? A-t-on le droit d'entraîner un modèle sur des œuvres protégées ? |
-| ![](/images/module5/icones/sociale.svg) | **Sociale et politique** | L'IA menace-t-elle la vérité et la démocratie ? La vie privée ? Qui contrôle la technologie, et quels pays ? |
-| ![](/images/module5/icones/environnementale.svg) | **Environnementale** | Combien d'énergie, d'eau et de matériaux l'IA consomme-t-elle ? Peut-elle aider à protéger l'environnement ? |
-| ![](/images/module5/icones/humaine.svg) | **Humaine** | Que fait l'IA à notre façon de penser, d'apprendre, de créer, de nous lier aux autres ? |
-| ![](/images/module5/icones/risques.svg) | **Risques extrêmes** | Pourrait-on perdre le contrôle de systèmes plus capables que nous ? L'IA pourrait-elle servir à une catastrophe ? |
+| ![](/images/module5/icones/philosophique.svg) | **Philosophique** | Une machine peut-elle penser, comprendre, être consciente ? Qu'est-ce que l'intelligence ? Penser, est-ce calculer ? |
+| ![](/images/module5/icones/scientifique.svg) | **Scientifique** | Que peut apporter l'IA à la science ? Peut-on se fier à un modèle qui prédit sans expliquer ? |
+| ![](/images/module5/icones/morale.svg) | **Morale** | Qui est responsable d'une décision prise par une machine ? Une décision automatisée peut-elle être juste ? Sur quelles valeurs aligner l'IA ? Une IA peut-elle avoir un statut moral ? |
+| ![](/images/module5/icones/economique.svg) | **Économique** | L'IA va-t-elle supprimer des emplois, en créer, en transformer ? Qui profitera de la richesse qu'elle produit ? |
+| ![](/images/module5/icones/juridique.svg) | **Juridique** | À qui appartient une œuvre générée ? A-t-on le droit d'entraîner un modèle sur des œuvres protégées ? |
+| ![](/images/module5/icones/sociale.svg) | **Sociale et politique** | L'IA menace-t-elle la vérité et la démocratie ? La vie privée ? Qui contrôle la technologie, et quels pays ? |
+| ![](/images/module5/icones/environnementale.svg) | **Environnementale** | Combien d'énergie, d'eau et de matériaux l'IA consomme-t-elle ? Peut-elle aider à protéger l'environnement ? |
+| ![](/images/module5/icones/humaine.svg) | **Humaine** | Que fait l'IA à notre façon de penser, d'apprendre, de créer, de nous lier aux autres ? |
+| ![](/images/module5/icones/risques.svg) | **Risques extrêmes** | Pourrait-on perdre le contrôle de systèmes plus capables que nous ? L'IA pourrait-elle servir à une catastrophe ? |
 
 Aucune de ces familles n'est nouvelle pour vous. Chacune a été annoncée, au moins une
 fois, dans les modules précédents.
@@ -125,7 +125,6 @@ tranche pas : le but est de vous donner de quoi juger par vous-même.
 
 Au fil des chapitres, des façons typiques de réagir à l'IA se dessinent : on retrouve
 souvent les mêmes personnes, les mêmes groupes et les mêmes arguments d'un problème à
-l'autre. Plutôt que de les présenter d'avance comme des camps, le module les laisse
-apparaître, et les rassemble dans une synthèse finale : ces attitudes s'expliquent en
+l'autre. Plutôt que de les présenter d'avance comme des camps, le module les laisse apparaître, et les rassemble dans une [synthèse finale](docs/module5/90-les-attitudes-devant-l-ia) : ces attitudes s'expliquent en
 grande partie par les problèmes que chacun juge les plus importants, et par ce qu'il
 croit sur les faits.

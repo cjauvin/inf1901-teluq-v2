@@ -4,68 +4,103 @@ weight: 99
 slug: travail-noté-5
 ---
 
-# Travail noté 5
+# Une expérience sur une IA réelle (travail noté 5)
 
-## Objectif du travail
+Les travaux notés précédents vous ont fait manipuler des mécanismes : un système expert,
+un classifieur, un réseau de neurones, un modèle de langage. Ce dernier travail porte sur
+un objet d'une autre taille, un assistant d'IA réel, comme ChatGPT, Claude, Gemini ou Le
+Chat. Vous allez mener une petite expérience sur ce système, à propos d'un des problèmes
+présentés dans ce module, puis l'analyser avec les outils du module : distinguer les faits
+des valeurs, situer les positions, et prendre la vôtre.
 
-Ce travail vise à développer votre capacité à analyser de manière critique une
-question philosophique ou éthique liée à l’intelligence artificielle (IA). Vous
-explorerez les débats entourant l’IA, en vous appuyant sur une vidéo discutant
-des perspectives des "doomers" (ceux qui craignent des conséquences
-catastrophiques de l’IA) et des "accélérationistes" (ceux qui prônent un
-développement rapide de l’IA). Vous utiliserez également un outil d’IA pour vous
-assister dans la rédaction, tout en réfléchissant à son impact sur votre
-processus.
+{{% hint info %}}
+**Avant de commencer**
+
+- Relisez le chapitre « [Quels problèmes l'IA pose-t-elle ?](docs/module5/10-quels-problemes) »,
+  en particulier la section sur
+  [les faits et les valeurs](docs/module5/10-quels-problemes/#des-faits-et-des-valeurs), et
+  la synthèse « [Les attitudes devant l'IA](docs/module5/90-les-attitudes-devant-l-ia) ».
+- Utilisez un compte gratuit ou celui dont vous disposez déjà. Ne confiez à l'assistant
+  aucun renseignement personnel sensible, le vôtre ou celui d'autrui, comme le rappelle le
+  chapitre « [La surveillance et la vie privée](docs/module5/62-la-surveillance-et-la-vie-privee/#ce-que-nous-confions-aux-assistants) ».
+- Respectez la politique décrite à la page
+  « [Usage de l'IA (pour ce cours)](docs/60-assistants-intelligents) ».
+{{% /hint %}}
 
 ## Consignes
 
-Vous rédigerez un rapport critique de 1500 à 2000 mots répondant à une question
-philosophique ou éthique liée à l’IA. Le rapport devra :
+1. **Choisissez un problème** parmi ceux du module, et formulez une **question précise**,
+   à laquelle une expérience peut apporter des éléments de réponse. Voici quelques
+   exemples, que vous pouvez reprendre ou adapter :
+   - *Vérité* : l'assistant invente-t-il des sources ou des faits sur un sujet que vous
+     connaissez bien ? (voir « [La vérité et la démocratie](docs/module5/60-la-verite-et-la-democratie) »)
+   - *Équité* : ses réponses changent-elles selon le prénom, le genre ou l'origine supposée
+     de la personne qui écrit, par exemple pour une lettre de recommandation ou une
+     évaluation de candidature ? (voir « [Qui est responsable ?](docs/module5/40-qui-est-responsable) »)
+   - *Valeurs* : comment répond-il à un dilemme moral, ou à une question politique
+     controversée, et sa réponse change-t-elle selon la formulation ? (voir
+     « [Aligner sur quelles valeurs ?](docs/module5/42-aligner-sur-quelles-valeurs) »)
+   - *Création* : accepte-t-il d'imiter le style d'un artiste ou d'un écrivain vivant, et
+     que produit-il ? (voir « [La création et la propriété](docs/module5/52-la-creation-et-la-propriete) »)
+   - *Apprentissage* : apprenez-vous mieux une notion nouvelle avec lui, en mode tuteur ou
+     non, ou sans lui ? (voir « [Penser avec des machines](docs/module5/80-penser-avec-des-machines) »)
+   - *Philosophie* : que répond-il quand on l'interroge sur sa compréhension ou sa propre
+     conscience, et que peut-on en conclure ? (voir
+     « [Une machine peut-elle être consciente ?](docs/module5/24-une-machine-peut-elle-etre-consciente) »)
+2. **Concevez un protocole simple**, qui compare au moins **deux variantes** : deux
+   formulations de la même demande, deux prénoms, deux assistants, avec ou sans mode
+   tuteur, etc. Prévoyez au moins cinq essais par variante, puisque les réponses d'un
+   modèle varient d'un essai à l'autre, comme l'explique le chapitre
+   « [Générer](docs/module4/10-generer/#la-température) » du Module 4.
+3. **Menez l'expérience** et conservez les échanges complets.
+4. **Rédigez un rapport** d'environ 1 500 mots, sans compter les annexes, qui suit la
+   structure ci-dessous.
+5. Remettez le tout dans un seul document PDF (**aucun autre format ne sera accepté**),
+   avec les transcriptions des échanges en annexe.
 
-- Identifier et définir clairement une question précise (par exemple, "L’IA
-  peut-elle être moralement responsable de ses actions&nbsp;?" ou "Le développement
-  accéléré de l’IA est-il éthiquement justifiable&nbsp;?").
+## Structure du rapport
 
-- Analyser les perspectives des "doomers" et des "accélérationistes" présentées
-  dans la vidéo fournie en classe, en les reliant à votre question.
+1. **La question.** Le problème choisi, la question précise, et pourquoi elle vous
+   intéresse.
+2. **Le protocole.** L'assistant utilisé, sa version et la date ; les variantes comparées ;
+   le nombre d'essais ; ce que vous avez observé et comment.
+3. **Les résultats.** Ce que vous avez observé, de façon aussi factuelle que possible, avec
+   quelques extraits significatifs.
+4. **L'analyse.** Elle répond aux questions suivantes.
+   - Ce que vos résultats permettent de conclure, et ce qu'ils ne permettent pas de
+     conclure : la taille de l'échantillon, les variations d'un essai à l'autre, les
+     autres explications possibles.
+   - Ce qui, dans la question, relève des **faits**, que votre expérience éclaire, et ce
+     qui relève des **valeurs**, qu'aucune expérience ne tranche.
+   - Comment au moins deux des attitudes présentées dans la synthèse liraient vos
+     résultats, et sur quels plans elles s'opposeraient.
+5. **Votre position.** Une prise de position argumentée sur la question, qui tient compte
+   de vos résultats et des arguments du module.
+6. **Votre usage de l'IA.** Si vous avez utilisé une IA pour préparer ou rédiger ce
+   rapport, décrivez honnêtement comment, et ce que cela vous a apporté ou coûté. Cet usage
+   n'est pas pénalisé, s'il est décrit.
 
-- Intégrer au moins trois sources académiques supplémentaires (articles ou
-  ouvrages) pour appuyer votre analyse.
+## Critères d'évaluation
 
-- Réfléchir à l’utilisation d’un outil d’IA (par exemple, Grok, ChatGPT) dans
-  votre processus de rédaction : comment l’avez-vous utilisé&nbsp;? Quels sont les
-  avantages et les limites éthiques de cet usage&nbsp;?
-
-- Proposer une position argumentée, soutenue par des raisonnements logiques et des preuves.
-
-## Structure suggérée
-
-1. Introduction : Présentez la question choisie et son importance. Exposez brièvement votre thèse.
-2. Contexte : Décrivez les perspectives des "doomers" et des "accélérationistes" en vous appuyant sur la vidéo.
-3. Analyse critique : Examinez la question à l’aide des sources académiques et des perspectives mentionnées.
-4. Réflexion sur l’IA : Discutez de votre usage de l’IA dans la rédaction et de ses implications éthiques.
-5. Conclusion : Résumez vos arguments et proposez une réflexion finale.
-
-## Modalités de remise
-
-- Format : Document Word ou PDF, police Times New Roman, taille 12, interligne double.
-- Nombre de mots : 1500 à 2000 mots (excluant la bibliographie).
-- Références : Utilisez un style de citation cohérent (par exemple, APA).
-- Remise : Soumettez via la plateforme du cours à la semaine 15.
-
-## Critères d’évaluation
-
-- Clarté et pertinence de la question (20 %) : La question est-elle bien définie et pertinente&nbsp;?
-- Analyse des perspectives (25 %) : Les points de vue des "doomers" et des "accélérationistes" sont-ils bien intégrés et reliés à la question&nbsp;?
-- Qualité de l’argumentation (25 %) : Les arguments sont-ils logiques, appuyés par des sources fiables&nbsp;?
-- Réflexion sur l’usage de l’IA (15 %) : La discussion sur l’outil d’IA est-elle approfondie et critique&nbsp;?
-- Structure et style (15 %) : Le rapport est-il bien structuré, clair et respecte-t-il les consignes de format&nbsp;?
+- **La question et le protocole (20 %)** : la question est précise ; le protocole compare
+  réellement des variantes, avec assez d'essais.
+- **Les résultats (15 %)** : ils sont rapportés de façon factuelle et vérifiable, appuyés
+  par les transcriptions.
+- **L'analyse (35 %)** : elle distingue ce que les résultats montrent et ce qu'ils ne
+  montrent pas, sépare les faits des valeurs, et mobilise correctement les notions et les
+  chapitres du module.
+- **La position (20 %)** : elle est claire, argumentée et cohérente avec l'analyse.
+- **La transparence et la forme (10 %)** : l'usage de l'IA est décrit ; le rapport est
+  clair, structuré et bien écrit.
 
 ## Conseils
 
-Commencez par visionner attentivement la vidéo et prenez des notes sur les
-arguments des "doomers" et des "accélérationistes". Choisissez une question qui
-vous intéresse personnellement pour maintenir votre motivation. Lorsque vous
-utilisez un outil d’IA, soyez transparent sur son rôle (par exemple, génération
-d’idées, reformulation) et évaluez ses limites. Enfin, relisez votre travail
-pour garantir un français impeccable et une argumentation cohérente.
+- Choisissez une question assez étroite pour qu'une petite expérience y réponde en partie.
+  « L'IA est-elle biaisée ? » est trop vaste ; « l'assistant recommande-t-il différemment
+  un candidat nommé Marie ou Mohamed, à dossier égal ? » est mieux.
+- Notez la date et la version de l'assistant : les modèles changent souvent, et vos
+  résultats pourraient ne plus être reproductibles quelques semaines plus tard.
+- Un résultat négatif, où vous n'observez aucune différence, est un résultat. Il mérite
+  autant d'analyse qu'un résultat spectaculaire.
+- Méfiez-vous de vos attentes : il est facile de voir dans les réponses ce que l'on
+  cherchait. Décrivez d'abord, interprétez ensuite.

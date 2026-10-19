@@ -39,5 +39,5 @@ note finale.*
 
 ## Module 5
 
-[Rapport critique](/docs/module5/99-travail-noté-5) sur une question philosophique ou éthique reliée à l’IA.
+[Expérience sur une IA réelle](/docs/module5/99-travail-noté-5), à propos d'un des problèmes du module, suivie d'une analyse et d'une prise de position argumentée.
 *Pondération : 25% de la note finale.*
