@@ -64,6 +64,10 @@ transposé à l'économie.
 Personne ne sait si l'IA est une bulle. Les conséquences possibles d'un éclatement, en
 revanche, se laissent décrire, et elles dépassent de loin le secteur de la technologie.
 
+{{< image src="/images/module5/krach-1929.jpg" alt="Une foule dense d'hommes en chapeau dans Wall Street, devant la Bourse de New York, le 24 octobre 1929, surveillée par des policiers." title="La foule devant la Bourse de New York le 24 octobre 1929, le « jeudi noir » qui ouvre le krach de 1929." loading="lazy" >}}
+
+<p class="image-credit">La foule devant la Bourse de New York le 24 octobre 1929, le « jeudi noir » qui ouvre le krach de 1929. Photo : Associated Press, domaine public, via Wikimedia Commons.</p>
+
 - **Une économie qui en dépend.** En 2026, les dix plus grandes entreprises de l'indice
   boursier américain S&P 500, presque toutes liées à l'IA, en représentent environ 39 %, une
   concentration inédite depuis les années 1960, et Nvidia seule environ 8 %. Une chute de
@@ -109,6 +113,8 @@ celui de la société.
   chemins de fer pousse le Parlement à autoriser des centaines de lignes, puis les cours
   s'effondrent à partir de 1847. Un tiers des lignes autorisées ne sont jamais
   construites ; celles qui le sont forment pour longtemps le réseau du pays.
+
+{{< image src="/images/module5/nasdaq-bulle-internet.svg" alt="Courbe de l'indice boursier Nasdaq de 1995 à 2016. L'indice passe d'environ 750 points en 1995 à un sommet de 5 048 points le 10 mars 2000, puis s'effondre jusqu'à 1 114 points le 9 octobre 2002, une baisse de 78 %. Il remonte lentement, rechute pendant la crise financière de 2008, et ne retrouve son sommet de 2000 qu'en avril 2015." title="La bulle Internet. L'indice Nasdaq perd 78 % de sa valeur entre mars 2000 et octobre 2002, et met quinze ans à retrouver son sommet." loading="lazy" >}}
 
 D'où l'idée, défendue en octobre 2025 par Jeff Bezos, le fondateur d'Amazon, que l'IA
 connaît une bulle « industrielle », où l'on finance « les bonnes idées comme les

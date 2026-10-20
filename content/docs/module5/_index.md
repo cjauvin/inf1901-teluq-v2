@@ -35,7 +35,8 @@ ignore encore et ce qui relève d'un choix.
    bien-être des modèles.
 5. [*Qu'est-ce que l'intelligence ?*](docs/module5/26-qu-est-ce-que-l-intelligence) :
    les définitions, le paradoxe de Moravec, l'effet IA, l'intelligence en dents de
-   scie, les objections de Yann Le Cun et les modèles du monde, l'IA générale.
+   scie, les objections de Yann Le Cun et les modèles du monde, Gary Marcus et l'IA
+   neurosymbolique, l'IA générale.
 
 **Les problèmes scientifiques**
 

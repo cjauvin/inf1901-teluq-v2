@@ -259,6 +259,47 @@ passe par une compréhension du monde physique, qui manque aux modèles de langa
 question reste ouverte, puisque les modèles de langage, de plus en plus capables de voir
 et d'agir, pourraient aussi acquérir cette compréhension par d'autres voies.
 
+## Gary Marcus et le retour du symbolique
+
+L'autre grand critique des modèles de langage, Gary Marcus, professeur émérite de
+psychologie à l'Université de New York, part d'une tout autre tradition. Spécialiste de
+l'acquisition du langage chez l'enfant, élève de Steven Pinker, il défend depuis les
+années 1990 l'idée que l'esprit humain manipule des symboles et des règles, et que les
+réseaux de neurones, si doués soient-ils pour reconnaître des formes, généralisent mal
+dès qu'on sort de ce qu'ils ont vu.
+
+{{< image src="/images/module5/portraits/marcus.jpg" alt="Portrait de Gary Marcus." title="Gary Marcus en 2022." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Gary Marcus en 2022. Photo : Web Summit, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
+En 2018, dans « *Deep Learning: A Critical Appraisal* », il dresse la liste des
+faiblesses de l'apprentissage profond : un besoin énorme de données, une incapacité à
+raisonner de façon fiable, une fragilité devant les cas inhabituels, une boîte noire. En
+2022, il publie un article au titre provocateur, « *Deep Learning Is Hitting a Wall* »
+(l'apprentissage profond se heurte à un mur), quelques mois avant la sortie de ChatGPT.
+Depuis, il recense sur son blogue chaque
+[hallucination](docs/module4/94-comprendre-et-rater/#les-hallucinations) et chaque erreur
+de raisonnement des modèles, et chaque promesse non tenue de leurs concepteurs, au point
+d'être devenu, pour beaucoup, le critique attitré de l'industrie. En mai 2023, il témoigne
+devant le Sénat américain aux côtés de Sam Altman, et réclame une agence chargée de
+contrôler les modèles avant leur mise en service.
+
+Sa proposition est l'**IA neurosymbolique** (*neurosymbolic AI*) : associer les réseaux
+de neurones, qui apprennent à reconnaître, à des systèmes symboliques, qui représentent
+des connaissances et raisonnent selon des règles. C'est une façon de réconcilier les
+[deux paris](docs/module1/20-deux-paris) du Module 1, l'IA symbolique et l'apprentissage,
+que Marcus juge complémentaires plutôt que rivaux. En 2026, il voit sa thèse confirmée
+dans l'évolution des assistants eux-mêmes : les meilleurs résultats viennent désormais de
+modèles qui écrivent et exécutent du code et qui appellent des outils, c'est-à-dire de
+modèles associés à des systèmes symboliques. Ses détracteurs lui reprochent de déplacer sans cesse la cible, à
+mesure que les modèles réussissent ce qu'il les disait incapables de faire.
+
+Marcus et Le Cun s'opposent sur presque tout le reste : Le Cun rejette le symbolique et
+mise sur l'apprentissage de modèles du monde, Marcus juge les risques de l'IA bien réels
+et réclame une réglementation stricte. Ils partagent pourtant le même diagnostic, celui
+d'une impasse des modèles de langage seuls, ce qui rappelle que la critique de ces
+modèles ne forme pas un camp, mais plusieurs.
+
 ## L'intelligence comme apprentissage
 
 En 2019, François Chollet propose une autre définition, présentée au chapitre
