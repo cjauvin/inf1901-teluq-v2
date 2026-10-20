@@ -13,6 +13,10 @@ s'accélère. Ce chapitre, consacré à la famille des
 cherche à mesurer ce coût, sans l'exagérer ni le minimiser, et à le comparer à ce que l'IA
 peut apporter à l'environnement.
 
+{{< image src="/images/module5/serveurs-cern.jpg" alt="Une vaste salle aux rangées de baies de serveurs alignées sous un plafond éclairé." title="La salle des serveurs du centre de calcul du CERN, à Genève, en 2009." loading="lazy" >}}
+
+<p class="image-credit">La salle des serveurs du centre de calcul du CERN, à Genève, en 2009. Photo : Florian Hirzinger, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.</p>
+
 ## L'électricité
 
 Le Module 4 a présenté, dans « [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#le-prix-de-la-taille) »,
@@ -27,6 +31,10 @@ de grandeur sont les suivants.
 - Aux États-Unis, qui comptent pour près de la moitié du total, les centres de données
   consommaient 4,4 % de l'électricité du pays en 2023, et pourraient en consommer de 6,7 à
   12 % en 2028.
+
+{{< image src="/images/module5/centres-ashburn.jpg" alt="Vue d'avion de dizaines de grands bâtiments blancs et plats, des centres de données, au milieu de routes et de zones commerciales." title="Des centres de données dans le comté de Loudoun, près d'Ashburn, en Virginie, en 2025, la plus forte concentration de centres de données au monde." loading="lazy" >}}
+
+<p class="image-credit">Des centres de données dans le comté de Loudoun, près d'Ashburn, en Virginie, en 2025, la plus forte concentration de centres de données au monde. Photo : Theodore Christopher, domaine public (CC0), via Wikimedia Commons.</p>
 
 ## Le coût d'une requête
 
@@ -58,6 +66,10 @@ environ 700 000 litres d'eau douce. Ils prévoient que l'IA pourrait prélever, 
 réellement consommée, le reste retournant aux cours d'eau. Le problème est d'abord local :
 un centre de données installé dans une région déjà sèche entre en concurrence avec les
 habitants et l'agriculture.
+
+{{< image src="/images/module5/centre-council-bluffs.jpg" alt="Vue aérienne au coucher du soleil d'un long bâtiment gris entouré de rangées d'équipements techniques, au milieu des champs." title="Le centre de données de Google à Council Bluffs, en Iowa, en 2017, et ses rangées d'équipements de refroidissement et d'alimentation." loading="lazy" >}}
+
+<p class="image-credit">Le centre de données de Google à Council Bluffs, en Iowa, en 2017, et ses rangées d'équipements de refroidissement et d'alimentation. Photo : Chad Davis, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
 
 ## Des engagements climatiques qui reculent
 
