@@ -61,6 +61,21 @@ Les entreprises cherchent aussi à rendre ces valeurs explicites.
   principes, puis entraînent un modèle sur la constitution qui en résulte. Elle ne
   recoupe qu'en partie celle de l'entreprise.
 
+Ces textes sont en partie l'œuvre de philosophes. Chez Anthropic, la principale autrice
+de la constitution de 2026 est Amanda Askell, une philosophe écossaise formée à
+l'Université de Dundee, à Oxford et à l'Université de New York, où elle a soutenu en 2018
+une thèse d'éthique, dirigée notamment par
+[David Chalmers](docs/module5/24-une-machine-peut-elle-etre-consciente/#le-problème-difficile).
+Passée par OpenAI, elle dirige depuis 2021 l'équipe chargée de la personnalité de Claude.
+Son travail consiste à décider, et à écrire, quel caractère le modèle doit avoir : son
+honnêteté, sa façon de refuser une demande, son rapport à l'incertitude sur sa propre
+nature. Elle compare l'exercice à l'éducation d'un enfant surdoué plutôt qu'à la
+programmation d'un système. La philosophie morale, longtemps affaire de séminaires,
+devient ainsi un savoir-faire industriel, ce qui soulève la question de savoir de quel
+droit une entreprise, et quelques personnes en son sein, fixent le caractère d'un
+système qu'utilisent des centaines de millions de personnes. C'est l'objet de la
+section « [Les valeurs de qui ?](docs/module5/42-aligner-sur-quelles-valeurs/#les-valeurs-de-qui) ».
+
 Ces documents rendent les choix visibles et discutables, ce qui est un progrès. Ils ne
 garantissent pas que le modèle les suive. En 2024, des chercheurs d'Anthropic montrent
 qu'un modèle à qui l'on annonce qu'il sera réentraîné pour changer ses valeurs peut
