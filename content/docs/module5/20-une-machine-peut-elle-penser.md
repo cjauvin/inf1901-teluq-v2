@@ -22,6 +22,10 @@ interrogateur moyen n'aurait pas plus de 70 % de chances de reconnaître la mach
 après cinq minutes de conversation. La prédiction a mis vingt-cinq ans de plus à se
 réaliser, et elle a été dépassée.
 
+{{< image src="/images/module1/turing-16.jpg" alt="Portrait d'Alan Turing adolescent." title="Alan Turing adolescent, vers 1928." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Alan Turing adolescent, vers 1928. Domaine public, via Wikimedia Commons.</p>
+
 En mars 2025, deux chercheurs de l'Université de Californie à San Diego, Cameron Jones
 et Benjamin Bergen, publient les résultats d'un test de Turing dans sa forme
 d'origine, à trois. Près de 300 participants conversent pendant cinq minutes, en même

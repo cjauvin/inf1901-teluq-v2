@@ -40,6 +40,10 @@ de Kurt Gödel (1931) : tout système formel cohérent, assez riche pour faire 
 l'arithmétique, contient un énoncé vrai qu'il ne peut pas démontrer, une phrase qui dit
 en substance « je ne suis pas démontrable ».
 
+{{< image src="/images/module1/godel-1925.jpg" alt="Portrait de Kurt Gödel jeune, étudiant." title="Kurt Gödel étudiant, vers 1925." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Kurt Gödel étudiant, vers 1925. Domaine public, via Wikimedia Commons.</p>
+
 En 1961, le philosophe britannique John Lucas en tire un argument contre l'IA, dans un
 article dont la première phrase annonce la thèse : le théorème de Gödel prouverait que
 « le mécanisme est faux », c'est-à-dire que les esprits ne peuvent pas être expliqués
