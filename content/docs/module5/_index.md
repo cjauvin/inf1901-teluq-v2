@@ -73,17 +73,19 @@ ignore encore et ce qui relève d'un choix.
 16. [*Le coût écologique de l'IA*](docs/module5/70-le-cout-ecologique) : l'électricité,
     l'eau, l'effet rebond.
 17. [*Penser avec des machines*](docs/module5/80-penser-avec-des-machines) :
-    l'apprentissage, la perte de compétences, l'intégrité académique.
-18. [*Des machines pour compagnie*](docs/module5/82-des-machines-pour-compagnie) : les
+    l'apprentissage, l'effort, la perte de compétences.
+18. [*L'IA dans l'éducation*](docs/module5/81-l-ia-dans-l-education) : le tuteur pour
+    chacun, les enseignants, les politiques, l'évaluation.
+19. [*Des machines pour compagnie*](docs/module5/82-des-machines-pour-compagnie) : les
     compagnons artificiels, leurs bienfaits et leurs risques.
-19. [*Peut-on perdre le contrôle ?*](docs/module5/85-peut-on-perdre-le-controle) : les
+20. [*Peut-on perdre le contrôle ?*](docs/module5/85-peut-on-perdre-le-controle) : les
     risques extrêmes, la technologie normale ou la rupture.
 
 **La synthèse**
 
-20. [*Les attitudes devant l'IA*](docs/module5/90-les-attitudes-devant-l-ia) : les plans
+21. [*Les attitudes devant l'IA*](docs/module5/90-les-attitudes-devant-l-ia) : les plans
     de désaccord, les principales attitudes, les imaginaires.
-21. [*La conversation*](docs/module5/95-conversation) : la conversation de deux heures
+22. [*La conversation*](docs/module5/95-conversation) : la conversation de deux heures
     entre Daniel Lemire et Christian Jauvin, enregistrée à l'été 2025, dont des extraits
     accompagnent les chapitres.
 

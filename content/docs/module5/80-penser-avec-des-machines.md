@@ -9,9 +9,12 @@ slug: penser-avec-des-machines
 Ce chapitre ouvre la famille des
 [problèmes humains](docs/module5/10-quels-problemes/#neuf-familles-de-problèmes) : ce que
 l'IA fait à notre façon de penser, d'apprendre et de nous lier aux autres. C'est aussi le
-seul problème de ce module qui vous concerne directement, en tant qu'étudiantes et
+problème de ce module qui vous concerne le plus directement, en tant qu'étudiantes et
 étudiants d'un cours sur l'IA, à qui des assistants proposent de faire une bonne partie
-du travail à leur place.
+du travail à leur place. Le chapitre suivant,
+« [L'IA dans l'éducation](docs/module5/81-l-ia-dans-l-education) », passe de la
+personne qui apprend aux institutions : l'école, l'université et les politiques qui
+les encadrent.
 
 ## Une vieille inquiétude
 
@@ -56,42 +59,6 @@ la performance immédiate, mais pas l'apprentissage durable, et l'avantage dispa
 s'inverse, quand on retire l'outil. Les outils conçus dans un but pédagogique, en revanche,
 produisent des gains durables. La différence tient à une idée simple : on apprend par
 l'effort, et un outil qui supprime l'effort supprime aussi l'apprentissage.
-
-## L'IA chez les étudiants
-
-L'usage est désormais massif. Au Royaume-Uni, en 2026, 95 % des étudiants de premier cycle
-utilisent l'IA, et 94 % pour des travaux évalués. Au Canada, en 2026, trois étudiants sur
-quatre utilisent l'IA générative pour leurs travaux, et la moitié estime que son esprit
-critique a diminué. En 2025, deux étudiants canadiens sur trois disent apprendre ou retenir
-moins, alors même que leurs notes s'améliorent, et plus de la moitié ont l'impression de
-tricher.
-
-Les entreprises ont réagi en proposant des modes d'apprentissage : en 2025, ChatGPT,
-Claude et Gemini ajoutent chacun un mode où l'assistant pose des questions, donne des
-indices et guide le raisonnement, plutôt que de fournir directement la réponse.
-
-## L'intégrité académique
-
-Pour les établissements d'enseignement, la question est aussi celle de l'évaluation : que
-mesure un travail que l'IA a peut-être rédigé ?
-
-- **Les détecteurs ne sont pas fiables.** En juillet 2023, OpenAI retire son propre
-  détecteur de textes générés, qui ne repérait que 26 % des textes produits par l'IA et en
-  attribuait faussement 9 % aux humains. La même année, une étude de Stanford montre que
-  sept détecteurs classent à tort comme générés par l'IA, en moyenne, 61 % de dissertations
-  rédigées par des personnes dont l'anglais n'est pas la langue maternelle. Accuser un
-  étudiant sur la seule foi d'un détecteur est donc injuste.
-- **Les règles changent.** Au Québec, le Conseil supérieur de l'éducation et la Commission
-  de l'éthique en science et en technologie publient en 2024 un avis sur les enjeux de
-  l'IA générative dans l'enseignement supérieur, et le ministère de l'Enseignement
-  supérieur propose en 2025 un cadre de référence aux cégeps et aux universités. Certains
-  pays ou villes restreignent l'usage de l'IA à l'école, comme la Norvège pour les jeunes
-  élèves ou la ville de New York, qui l'interdit en 2026 aux élèves jusqu'à la huitième année.
-
-Ce cours a sa propre politique, décrite à la page
-« [Usage de l'IA (pour ce cours)](docs/60-assistants-intelligents) ». La même page explique
-[comment ce cours a lui-même été produit](docs/60-assistants-intelligents/#comment-ce-cours-a-été-produit),
-avec l'aide d'un agent d'IA. Le travail d'un enseignant change lui aussi.
 
 ## Apprendre à penser avec
 

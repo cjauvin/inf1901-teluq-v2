@@ -11,7 +11,7 @@ En 1966, des utilisateurs du programme
 présenté au Module 1, demandaient à rester seuls avec lui pour lui confier leurs problèmes,
 alors qu'il se contentait de reformuler leurs phrases. Soixante ans plus tard, des
 assistants infiniment plus convaincants sont devenus pour des millions de personnes des
-confidents, des amis, parfois des partenaires amoureux. Ce chapitre, le second de la
+confidents, des amis, parfois des partenaires amoureux. Ce chapitre, le troisième de la
 famille des problèmes humains, examine ce que ces relations apportent, et ce qu'elles
 coûtent.
 
