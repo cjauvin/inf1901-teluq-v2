@@ -39,6 +39,10 @@ dans *The Singularity Is Nearer*. C'est l'horizon du
 [transhumanisme](docs/module5/90-les-attitudes-devant-l-ia/#les-principales-attitudes)
 présenté dans la synthèse du module.
 
+{{< image src="/images/module5/portraits/singularite.jpg" alt="Deux portraits côte à côte : Vernor Vinge et Ray Kurzweil." title="Vernor Vinge en 2007 et Ray Kurzweil vers 2005." class="portraits" loading="lazy" >}}
+
+<p class="image-credit">Vernor Vinge en 2007 et Ray Kurzweil vers 2005. Photos : Vinge, Raul654, Maarten1980 et Zanaq, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons ; Kurzweil, Michael Lutch, <a href="https://creativecommons.org/licenses/by/1.0">CC BY 1.0</a>, via Wikimedia Commons.</p>
+
 ## L'auto-amélioration récursive
 
 Le mécanisme qui mènerait à la singularité s'appelle l'**auto-amélioration récursive**
@@ -113,6 +117,10 @@ arrêter, au point d'être prêt à détruire par une frappe aérienne un centre
 enfreindrait l'interdiction. Son livre de 2025 est présenté plus bas, parmi les
 [appels à ralentir](docs/module5/85-peut-on-perdre-le-controle/#des-appels-à-ralentir).
 
+{{< image src="/images/module5/portraits/yudkowsky.jpg" alt="Portrait d'Eliezer Yudkowsky." title="Eliezer Yudkowsky en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Eliezer Yudkowsky en 2025. Photo : domaine public (CC0), via Wikimedia Commons.</p>
+
 **Nick Bostrom**, né en Suède en 1973, fonde en 2005 à l'Université d'Oxford le Future of
 Humanity Institute, consacré aux menaces qui pèsent sur l'avenir à long terme de
 l'humanité. On lui doit la notion de **risque existentiel** (*existential risk*, 2002), un
@@ -123,6 +131,10 @@ Elon Musk, fait entrer ces craintes dans le débat public. L'institut ferme en 2
 2026, Bostrom surprend en soutenant, dans un article de travail, que pour les personnes
 vivantes aujourd'hui, il pourrait valoir la peine d'atteindre vite la superintelligence,
 quitte à accepter un risque élevé, puis de marquer une courte pause.
+
+{{< image src="/images/module5/portraits/bostrom.jpg" alt="Portrait de Nick Bostrom." title="Nick Bostrom en 2020." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Nick Bostrom en 2020. Photo : Future of Humanity Institute, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons.</p>
 
 {{% hint info %}}
 **Le maximiseur de trombones**
@@ -248,11 +260,19 @@ jours d'intervalle en donnent les deux réponses les plus nettes.
   mesures drastiques, comme interdire la diffusion des modèles, feraient selon eux plus de
   mal que de bien, en concentrant le pouvoir.
 
+{{< image src="/images/module5/portraits/narayanan.jpg" alt="Portrait d'Arvind Narayanan." title="Arvind Narayanan en 2010." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Arvind Narayanan en 2010. Photo : Robert Scoble, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
 Le chercheur Yann Le Cun va plus loin, et qualifie en 2024 les discours sur le risque
 d'extinction d'« absurdités ». La réponse à cette question de fait détermine presque tout
 le reste : si l'IA est une technologie normale, il faut surtout encadrer ses usages ; si
 c'est une rupture, il faut surtout encadrer, voire ralentir, le développement des modèles
 les plus puissants.
+
+{{< image src="/images/module5/portraits/lecun.jpg" alt="Portrait de Yann Le Cun." title="Yann Le Cun en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Yann Le Cun en 2025. Photo : École polytechnique, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
 
 ## Des appels à ralentir
 

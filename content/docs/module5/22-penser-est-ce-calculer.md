@@ -86,6 +86,10 @@ connaît la fiabilité ne peut faire. Penrose en tire une conséquence physique�
 le cerveau est un objet physique, il doit s'y produire un processus physique non
 calculable, qu'aucun ordinateur ne peut simuler.
 
+{{< image src="/images/module5/portraits/penrose.jpg" alt="Portrait de Roger Penrose." title="Roger Penrose en 2011." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Roger Penrose en 2011. Photo : Biswarup Ganguly, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons.</p>
+
 Pour situer ce processus, Penrose s'associe au médecin anesthésiste Stuart Hameroff.
 Leur théorie, appelée **Orch-OR** (*orchestrated objective reduction*), publiée en
 1996, situe l'origine de la conscience dans les **microtubules**, de minuscules tubes de

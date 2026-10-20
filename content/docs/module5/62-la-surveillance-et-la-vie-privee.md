@@ -36,6 +36,10 @@ téléphone à l'identification de suspects, et posent deux problèmes distincts
   infligent chacune une amende de 20 millions d'euros, et les Pays-Bas une amende de
   30,5 millions.
 
+{{< image src="/images/module5/portraits/gender-shades.jpg" alt="Deux portraits côte à côte : Joy Buolamwini et Timnit Gebru." title="Joy Buolamwini et Timnit Gebru, en 2018." class="portraits" loading="lazy" >}}
+
+<p class="image-credit">Joy Buolamwini et Timnit Gebru, en 2018. Photos : Buolamwini, Niccolò Caranti, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons ; Gebru, TechCrunch, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
 Les deux problèmes se combinent : un système imparfait est dangereux pour ceux qu'il
 identifie à tort, et un système parfait est dangereux pour tous, puisqu'il rend
 l'anonymat impossible dans l'espace public.

@@ -25,6 +25,10 @@ quand on perçoit le monde de cette façon. Pour Nagel, un être est conscient s
 l'expérience vécue, que l'on appelle la **conscience phénoménale** (*phenomenal
 consciousness*).
 
+{{< image src="/images/module5/portraits/nagel.jpg" alt="Portrait de Thomas Nagel." title="Thomas Nagel en 1978." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Thomas Nagel en 1978. Photo : Nagelt, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 {{< image src="/images/module5/nagel-chauve-souris.svg" alt="Deux panneaux. À gauche, ce que l'on peut décrire : une chauve-souris émet des cris très aigus, qui rebondissent sur un papillon de nuit, et écoute leurs échos pour situer sa proie. À droite, ce qui échappe à la description : une personne imagine, dans une bulle de pensée, ce que vit la chauve-souris, mais la bulle ne contient qu'un point d'interrogation." title="La question de Nagel (1974). On peut décrire l'écholocation en détail, mesurer chaque cri et chaque écho, sans savoir ce que cela fait, pour la chauve-souris, de percevoir le monde ainsi." loading="lazy" >}}
 
 Les qualités de cette expérience, le rouge du rouge, la douleur de la
@@ -53,6 +57,10 @@ principe, même s'ils occupent les neurosciences depuis des décennies. Le **pro
 difficile** (*hard problem*) consiste à expliquer pourquoi toutes ces fonctions
 s'accompagnent d'une expérience vécue, pourquoi il y a « quelque chose que cela fait »
 de voir du rouge, plutôt que rien.
+
+{{< image src="/images/module5/portraits/chalmers.jpg" alt="Portrait de David Chalmers." title="David Chalmers en 2021." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">David Chalmers en 2021. Photo : DannyGolcman, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 Pour rendre le problème sensible, Chalmers reprend l'idée du **zombie philosophique**
 (*philosophical zombie*) : un être identique à un humain dans son corps et son
@@ -87,6 +95,10 @@ entre elles.
   Daniel Dennett, la conscience phénoménale est une illusion produite par
   l'introspection : il ne faut pas expliquer les qualia, mais pourquoi nous croyons en
   avoir.
+
+{{< image src="/images/module5/portraits/dennett.jpg" alt="Portrait de Daniel Dennett." title="Daniel Dennett en 2012." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Daniel Dennett en 2012. Photo : Dmitry Rozhkov, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.</p>
 
 Le débat entre ces théories est vif. En septembre 2023, 124 chercheurs signent une
 lettre qui qualifie la théorie de l'information intégrée de « pseudoscience », ce qui
@@ -160,6 +172,10 @@ sous des formes plus précises.
   n'exclut que les mécanismes biologiques qui réalisent les calculs soient nécessaires à
   l'expérience. Si c'est le cas, une IA pourrait ne jamais être consciente, alors que des
   animaux très simples le seraient.
+
+{{< image src="/images/module5/portraits/seth.jpg" alt="Portrait d'Anil Seth." title="Anil Seth en 2019." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Anil Seth en 2019. Photo : Carlos Figueroa Rojas, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 La frontière entre le vivant et la machine devient d'ailleurs moins nette. En 2022,
 l'entreprise australienne Cortical Labs montre que des neurones cultivés sur une puce
@@ -246,6 +262,10 @@ présenter leurs systèmes comme conscients. Plusieurs États américains, comme
 le Dakota du Nord et l'Utah, ont déjà voté des lois qui refusent aux IA toute
 personnalité juridique, et d'autres projets de loi les déclarent expressément non
 sensibles.
+
+{{< image src="/images/module5/portraits/suleyman.jpg" alt="Portrait de Mustafa Suleyman." title="Mustafa Suleyman en 2024." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Mustafa Suleyman en 2024. Photo : Christopher Wilson, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 {{% hint info %}}
 **Dans la conversation**

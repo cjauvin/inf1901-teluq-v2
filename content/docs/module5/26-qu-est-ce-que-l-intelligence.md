@@ -145,6 +145,10 @@ au départ et de l'expérience dont il a disposé. Un système qui a besoin de m
 d'exemples pour apprendre ce qu'un enfant saisit en trois est compétent, mais peu
 intelligent.
 
+{{< image src="/images/module5/portraits/chollet.jpg" alt="Portrait de François Chollet." title="François Chollet en 2020." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">François Chollet en 2020. Photo : Ramosset, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 Les tests ARC, construits sur cette définition, suivent eux-mêmes le cycle de l'effet
 IA. ARC-AGI-3, publié en mars 2026, propose de petits jeux sans consignes, dont chacun a été réussi par des humains, et où les meilleurs modèles obtiennent moins de 1 % à leur
 sortie. En septembre 2026, GPT-6 Astra atteint 62,7 % dans les conditions standard du

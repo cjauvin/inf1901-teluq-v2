@@ -55,6 +55,10 @@ productivité. Les gains de l'informatique sont venus, mais une dizaine d'année
 C'est le débat sur la [technologie normale](docs/module5/85-peut-on-perdre-le-controle/#une-technologie-normale-ou-une-rupture),
 transposé à l'économie.
 
+{{< image src="/images/module5/portraits/acemoglu.jpg" alt="Portrait de Daron Acemoglu." title="Daron Acemoglu en 2024." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Daron Acemoglu en 2024. Photo : Jennifer 8. Lee, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 ## Et si la bulle éclatait ?
 
 Personne ne sait si l'IA est une bulle. Les conséquences possibles d'un éclatement, en
@@ -231,6 +235,10 @@ l'équivalent de 340 millions de dollars canadiens, mais peine à vendre ses pro
 elle est vendue en 2020 à l'américaine ServiceNow pour environ 230 millions de dollars
 américains. La Caisse de dépôt et placement et le gouvernement du Québec récupèrent à peu
 près leur mise ; les fondateurs et les employés perdent la valeur de leurs actions.
+
+{{< image src="/images/module5/portraits/bengio.jpg" alt="Portrait de Yoshua Bengio." title="Yoshua Bengio en 2019." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Yoshua Bengio en 2019. Photo : Maryse Boyce, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons.</p>
 
 {{% hint info %}}
 **Dans la conversation**

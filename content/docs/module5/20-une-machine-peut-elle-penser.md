@@ -69,6 +69,10 @@ Searle, mort en septembre 2025. Dans un article de 1980, « *Minds, Brains, an
 Programs* », il imagine l'expérience de pensée de la **chambre chinoise** (*Chinese
 room*).
 
+{{< image src="/images/module5/portraits/searle.jpg" alt="Portrait de John Searle." title="John Searle en 2015." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">John Searle en 2015. Photo : FranksValli, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 Searle, qui ne connaît pas un mot de chinois, est enfermé dans une pièce. Par une fente,
 on lui glisse des questions écrites en caractères chinois. Il dispose d'un gros livre
 de règles, écrit en anglais, qui lui indique, pour chaque suite de caractères reçue,
@@ -136,6 +140,10 @@ Harnad, les symboles d'un système doivent être ancrés quelque part, dans la p
 et l'action, pour avoir un sens qui leur soit propre, et non un sens emprunté à ceux
 qui les lisent.
 
+{{< image src="/images/module5/portraits/harnad.jpg" alt="Portrait de Stevan Harnad." title="Stevan Harnad en 2013." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Stevan Harnad en 2013. Photo : Simon Villeneuve, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.</p>
+
 Un grand modèle de langage est le cas le plus pur de ce dictionnaire. Il n'a jamais rien
 vu, entendu, touché ni goûté : il n'a connu que des textes. Pour lui, chaque mot n'est
 défini que par ses relations avec d'autres mots, dans des milliards de phrases. Les
@@ -163,6 +171,10 @@ intuition que celle des
 [perroquets stochastiques](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde),
 publiée l'année suivante par Bender et ses coautrices.
 {{% /hint %}}
+
+{{< image src="/images/module5/portraits/bender.jpg" alt="Portrait d'Emily M. Bender." title="Emily M. Bender en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Emily M. Bender en 2025. Photo : King of Hearts, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 Trois réponses sont proposées à cette objection.
 
@@ -258,6 +270,10 @@ non. En 2023, Melanie Mitchell et David Krakauer, de l'Institut de Santa Fe, con
 leur revue du débat en suggérant que ces modèles comprennent peut-être d'une autre
 façon que nous, avec d'autres forces et d'autres limites, et qu'il faudrait une
 nouvelle science de l'intelligence pour comparer ces formes de compréhension.
+
+{{< image src="/images/module5/portraits/mitchell.jpg" alt="Portrait de Melanie Mitchell." title="Melanie Mitchell en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Melanie Mitchell en 2025. Photo : Xuthoria, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 Les positions se répartissent à peu près ainsi.
 
