@@ -145,7 +145,14 @@ blocs à la fois.
 
 En mai 2025, Google présente Veo 3, qui génère aussi le son synchronisé avec
 l'image : les dialogues, les bruits et l'ambiance. En septembre 2025, OpenAI
-présente Sora 2, qui fait de même.
+présente Sora 2, qui fait de même. Six mois plus tard, en mars 2026, OpenAI
+annonce l'arrêt de Sora, l'application comme l'accès pour les développeurs. Générer
+de la vidéo demande énormément de calcul, et l'entreprise préfère réserver ses
+processeurs à d'autres produits ; l'équipe de Sora se consacre désormais à la
+simulation du monde physique, au service de la robotique. Cette fermeture met
+aussi fin à un accord avec Disney, dont traite le chapitre
+« [La création et la propriété](docs/module5/52-la-creation-et-la-propriete/#des-procès-aux-contrats) »
+du Module 5.
 
 Ces vidéos restent imparfaites. Les objets s'y comportent parfois d'une façon
 physiquement impossible : un verre qui tombe ne se brise pas correctement, une
