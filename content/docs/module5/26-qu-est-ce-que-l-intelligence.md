@@ -137,6 +137,128 @@ l'intelligence des machines peu fiables.
 
 {{< image src="/images/module5/dents-de-scie.svg" alt="Deux panneaux. À gauche, la frontière en dents de scie : six tâches de difficulté comparable pour un humain sont placées sur un même cercle pointillé. La frontière des capacités d'un modèle de langage, une forme hérissée, passe au-delà de certaines tâches, que le modèle réussit (résumer un article, écrire un programme, traduire un texte), et en deçà d'autres, qu'il rate (compter les r de « strawberry », comparer 9,11 et 9,9, la tâche piège de l'étude BCG). À droite, un profil de capacités schématique sur huit tâches : le profil d'un humain est régulier, celui d'un modèle est hérissé." title="L'intelligence en dents de scie. À gauche, des tâches également difficiles pour un humain tombent de part et d'autre de la frontière des capacités du modèle (d'après l'étude BCG de 2023 et les schémas d'Ethan Mollick). À droite, un profil schématique : régulier chez un humain, hérissé chez un modèle de langage, qui excelle là où un humain peine et échoue là où un enfant réussit." loading="lazy" >}}
 
+## Les objections de Yann Le Cun
+
+Yann Le Cun, le pionnier des
+[réseaux convolutifs](docs/module3/50-reseaux-convolutifs/#yann-le-cun-et-les-chèques)
+présenté au Module 3, lauréat du prix Turing 2018 avec Geoffrey Hinton et Yoshua Bengio,
+est l'un des critiques les plus constants des grands modèles de langage, et l'un des plus
+écoutés, puisqu'il a dirigé la recherche en IA de Meta de 2013 à 2025. Ses critiques
+tiennent en quelques thèses.
+
+{{< image src="/images/module5/portraits/lecun.jpg" alt="Portrait de Yann Le Cun." title="Yann Le Cun en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Yann Le Cun en 2025. Photo : École polytechnique, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
+
+- **Des erreurs qui s'accumulent.** En mars 2023, lors d'un débat à l'Université de New
+  York, il affirme que les modèles autorégressifs, qui
+  [génèrent un jeton après l'autre](docs/module4/10-generer), sont « condamnés ». Si
+  chaque jeton a une petite probabilité *e* de faire sortir la réponse de l'ensemble des
+  réponses correctes, la probabilité qu'une réponse de *n* jetons reste correcte vaut
+  (1 − *e*)<sup>*n*</sup>, et diminue donc de façon exponentielle avec la longueur.
+  L'argument est contesté : il suppose des erreurs indépendantes, de probabilité
+  constante, et dont on ne se relève jamais, alors que les modèles qui raisonnent savent
+  revenir sur leurs pas.
+- **Trop peu de données.** Un enfant de quatre ans a passé environ 16 000 heures
+  éveillé. Selon les calculs de Le Cun, son nerf optique lui a transmis pendant ce temps
+  au moins autant de données que tout le texte sur lequel on entraîne les plus grands
+  modèles. L'essentiel de ce que nous savons du monde ne s'apprend pas dans les livres.
+- **Moins qu'un chat.** Un enfant de dix ans apprend en quelques minutes à desservir la
+  table et à remplir le lave-vaisselle, et un jeune de dix-sept ans apprend à conduire en
+  une vingtaine d'heures. Aucun robot n'en est capable. C'est le
+  [paradoxe de Moravec](docs/module5/26-qu-est-ce-que-l-intelligence/#le-paradoxe-de-moravec),
+  et Le Cun prédit que l'on obtiendra une IA du niveau d'un chat, puis d'un chien, avant
+  une IA de niveau humain.
+- **Pas d'intelligence générale.** Pour lui, l'expression même d'« intelligence
+  générale » n'a pas de sens, puisque l'intelligence humaine est très spécialisée et ne
+  sait faire qu'une infime partie des tâches possibles. Il préfère parler
+  d'« intelligence machine avancée », AMI selon le sigle anglais, un clin d'œil au mot
+  français. En décembre 2025, Demis Hassabis lui répond publiquement qu'il confond
+  intelligence générale et intelligence universelle, et Le Cun juge le désaccord en
+  grande partie affaire de mots.
+
+Il manque selon lui aux modèles de langage quatre capacités : comprendre le monde
+physique, une mémoire durable, raisonner et planifier. En janvier 2025, à Davos, il
+prédit que le paradigme actuel a une durée de vie de trois à cinq ans. En mars 2025, il
+déclare ne plus s'intéresser aux modèles de langage, de simples « générateurs de
+jetons ». Ses positions sur les risques de l'IA sont présentées au chapitre
+« [Peut-on perdre le contrôle ?](docs/module5/85-peut-on-perdre-le-controle/#une-technologie-normale-ou-une-rupture) ».
+
+## Les modèles du monde
+
+Ce que Le Cun propose à la place est un **modèle du monde** (*world model*). La notion
+n'est pas neuve. Au Module 1,
+[SHRDLU](docs/module1/40-representer-le-monde/#shrdlu-ou-le-sommet-de-lambition)
+maintenait une représentation explicite de son monde de blocs, écrite à la main, et le
+Module 4 a montré qu'un petit modèle entraîné sur des parties d'Othello se
+[construisait de lui-même une représentation du plateau](docs/module4/94-comprendre-et-rater/#perroquets-ou-modèles-du-monde).
+Au sens de Le Cun, un modèle du monde est un réseau qui apprend, en observant, à prédire
+comment le monde évolue, en particulier sous l'effet de ses propres actions. Il peut
+alors planifier, c'est-à-dire imaginer les conséquences de plusieurs actions avant
+d'agir.
+
+En 2022, dans « *A Path Towards Autonomous Machine Intelligence* », Le Cun décrit une
+architecture complète, organisée autour d'un tel modèle : un module de perception, un
+modèle du monde, un coût qui mesure si une situation est bonne ou mauvaise, un acteur qui
+cherche les actions qui minimisent ce coût, et une mémoire. Un système qui agit pour
+atteindre des objectifs explicites, encadrés par des garde-fous, serait selon lui
+contrôlable par construction, et non par un réglage après coup.
+
+La pièce centrale de cette architecture est le **JEPA** (*Joint Embedding Predictive
+Architecture*, une architecture prédictive dans l'espace des représentations). Un modèle
+génératif prédit l'image suivante d'une vidéo pixel par pixel, ou le mot suivant d'un
+texte, y compris tout ce qui est imprévisible, comme le mouvement de chaque feuille d'un
+arbre. Un JEPA transforme d'abord les images en
+[représentations](docs/module4/45-des-mots-aux-nombres/#les-plongements) abstraites, puis
+prédit seulement la représentation de l'image suivante. Il peut ainsi ignorer les
+détails imprévisibles et se concentrer sur l'essentiel.
+
+{{< image src="/images/module5/generatif-contre-jepa.svg" alt="Deux panneaux. À gauche, un modèle génératif reçoit une image, une balle près d'un arbre, et doit prédire l'image suivante pixel par pixel. Comme il ne peut pas savoir où iront la balle et chaque feuille, il produit une image floue, comparée pixel par pixel à la vraie image suivante. À droite, un JEPA : un encodeur transforme chaque image en une représentation abstraite, une courte rangée de nombres ; un prédicteur prédit la représentation de l'image suivante à partir de celle de l'image actuelle, et la comparaison se fait entre représentations." title="Modèle génératif contre JEPA. Le modèle génératif doit prédire chaque pixel, même imprévisible, et sa prédiction devient floue. Le JEPA ne prédit que la représentation abstraite de l'image suivante, et la compare à celle de la vraie image." loading="lazy" >}}
+
+Meta en publie plusieurs versions : I-JEPA pour les images en 2023, V-JEPA pour la vidéo
+en 2024, puis V-JEPA 2 en juin 2025, entraîné sur plus d'un million d'heures de vidéo.
+Après moins de 62 heures de vidéos de robots, V-JEPA 2 permet à des bras robotisés de
+saisir et de déplacer des objets dans des laboratoires où ils n'ont jamais été
+entraînés. Le Cun pousse la logique jusqu'au bout dans une diapositive restée célèbre,
+qui recommande d'abandonner les modèles génératifs, les modèles probabilistes et
+l'[apprentissage par renforcement](docs/module3/80-renforcement-profond), ce dernier
+n'étant à utiliser qu'en dernier recours.
+
+En novembre 2025, Le Cun annonce son départ de Meta, qui vient de réorganiser sa
+recherche autour de la course à la superintelligence. Il fonde à Paris AMI Labs, dirigé
+par Alexandre LeBrun, avec des bureaux à New York, à Montréal et à Singapour. En mars
+2026, l'entreprise lève 1,03 milliard de dollars, la plus grosse levée de démarrage de
+l'histoire européenne, sans produit ni revenus prévus avant plusieurs années. Ses
+premiers résultats, publiés en 2026, comprennent des modèles du monde assez petits pour
+s'entraîner sur un seul processeur graphique.
+
+Le Cun n'est pas seul à miser sur les modèles du monde.
+
+- **Apprendre en rêvant.** En 2018, David Ha et Jürgen Schmidhuber entraînent un agent
+  « dans son propre rêve » : un modèle du monde appris d'un jeu vidéo lui sert de
+  simulateur, et la stratégie apprise dans ce rêve fonctionne ensuite dans le vrai jeu.
+  En avril 2025, l'agent DreamerV3, qui suit le même principe, devient le premier à
+  trouver des diamants dans Minecraft sans aucune donnée humaine.
+- **Des mondes interactifs.** En août 2025, Google DeepMind présente Genie 3, qui génère
+  en temps réel des mondes que l'on peut explorer pendant quelques minutes, et dont
+  l'entreprise Waymo se sert en 2026 pour simuler des situations de conduite.
+- **Pour les robots.** Nvidia diffuse depuis 2025 ses modèles Cosmos, destinés à la
+  robotique et aux voitures autonomes.
+- **L'intelligence spatiale.** World Labs, l'entreprise de l'informaticienne Fei-Fei Li,
+  lance en novembre 2025 Marble, qui crée des mondes en trois dimensions à partir d'un
+  texte ou d'une image. En septembre 2026, AMD annonce son rachat pour environ
+  8,2 milliards de dollars.
+- **Des simulateurs du monde.** OpenAI présentait dès 2024 ses modèles vidéo comme des
+  « simulateurs du monde », et l'équipe de Sora, après la fermeture du service en mars
+  2026, se consacre à la simulation du monde pour la robotique, comme le rappelle la
+  [section sur la vidéo](docs/module4/30-images-voix-videos/#la-vidéo) du Module 4.
+
+Ces systèmes ne suivent pas tous la voie de Le Cun : Genie, Cosmos et Sora sont
+génératifs, et prédisent bel et bien des pixels. Mais tous parient que l'intelligence
+passe par une compréhension du monde physique, qui manque aux modèles de langage. La
+question reste ouverte, puisque les modèles de langage, de plus en plus capables de voir
+et d'agir, pourraient aussi acquérir cette compréhension par d'autres voies.
+
 ## L'intelligence comme apprentissage
 
 En 2019, François Chollet propose une autre définition, présentée au chapitre

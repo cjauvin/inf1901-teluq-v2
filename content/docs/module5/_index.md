@@ -34,7 +34,8 @@ ignore encore et ce qui relève d'un choix.
    le problème difficile, les théories de la conscience, le problème du substrat, le
    bien-être des modèles.
 5. [*Qu'est-ce que l'intelligence ?*](docs/module5/26-qu-est-ce-que-l-intelligence) :
-   les définitions, le paradoxe de Moravec, l'effet IA, l'IA générale.
+   les définitions, le paradoxe de Moravec, l'effet IA, l'intelligence en dents de
+   scie, les objections de Yann Le Cun et les modèles du monde, l'IA générale.
 
 **Les problèmes scientifiques**
 

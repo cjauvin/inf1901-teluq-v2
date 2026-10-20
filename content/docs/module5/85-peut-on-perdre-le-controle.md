@@ -265,14 +265,18 @@ jours d'intervalle en donnent les deux réponses les plus nettes.
 <p class="image-credit">Arvind Narayanan en 2010. Photo : Robert Scoble, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
 
 Le chercheur Yann Le Cun va plus loin, et qualifie en 2024 les discours sur le risque
-d'extinction d'« absurdités ». La réponse à cette question de fait détermine presque tout
+d'extinction d'« absurdités ». En juin 2023, il défend déjà cette position avec Melanie
+Mitchell lors d'un débat public à Toronto, face à Yoshua Bengio et Max Tegmark. Pour
+lui, une IA conçue pour atteindre des objectifs explicites, encadrés par des
+garde-fous, est sûre par construction, l'intelligence n'implique aucun désir de
+dominer, et les modèles doivent rester ouverts pour ne pas laisser quelques entreprises
+contrôler la culture mondiale. En octobre 2026, il dit n'avoir « aucune inquiétude » au
+sujet d'une extinction, et juge que les avertissements de Dario Amodei relèvent de
+l'illusion. Ses critiques des modèles de langage et ses propositions sont présentées au
+chapitre « [Qu'est-ce que l'intelligence ?](docs/module5/26-qu-est-ce-que-l-intelligence/#les-objections-de-yann-le-cun) ». La réponse à cette question de fait détermine presque tout
 le reste : si l'IA est une technologie normale, il faut surtout encadrer ses usages ; si
 c'est une rupture, il faut surtout encadrer, voire ralentir, le développement des modèles
 les plus puissants.
-
-{{< image src="/images/module5/portraits/lecun.jpg" alt="Portrait de Yann Le Cun." title="Yann Le Cun en 2025." class="portrait" loading="lazy" >}}
-
-<p class="image-credit">Yann Le Cun en 2025. Photo : École polytechnique, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
 
 ## Des appels à ralentir
 
