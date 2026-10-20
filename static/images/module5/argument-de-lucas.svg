@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'argument de Lucas</title>
+<desc>Deux panneaux. À gauche, l'argument de John Lucas (1961) en trois étapes : une machine qui fait des mathématiques équivaut à un système formel F ; ce système a sa phrase de Gödel G, « Je ne suis pas démontrable dans F », qu'il ne peut pas démontrer ; un humain, lui, voit que G est vraie. À droite, la régression : si l'on ajoute G à la machine, on obtient un nouveau système, F + G, qui a sa propre phrase de Gödel G′, puis F + G + G′, qui a la sienne, G″, et ainsi de suite ; pour Lucas, l'humain garde toujours une longueur d'avance. En bas, l'hypothèse cachée : pour voir que G est vraie, il faut savoir que F est cohérent.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker><marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c4564a"/></marker></defs>
+<rect x="0" y="0" width="860" height="420" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="430.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">L'argument de Lucas (1961)</text>
+<rect x="20" y="50" width="420" height="292" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="230" y="76" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Trois étapes</text>
+<rect x="44" y="100" width="140" height="104" rx="8" fill="#efe7d3" stroke="#3a6ea5" stroke-width="2"/>
+<polygon points="135.8,137.1 135.8,142.9 130.6,144.5 128.9,148.6 131.4,153.4 127.4,157.4 122.6,154.9 118.5,156.6 116.9,161.8 111.1,161.8 109.5,156.6 105.4,154.9 100.6,157.4 96.6,153.4 99.1,148.6 97.4,144.5 92.2,142.9 92.2,137.1 97.4,135.5 99.1,131.4 96.6,126.6 100.6,122.6 105.4,125.1 109.5,123.4 111.1,118.2 116.9,118.2 118.5,123.4 122.6,125.1 127.4,122.6 131.4,126.6 128.9,131.4 130.6,135.5" fill="#fbf7ee" stroke="#3a6ea5" stroke-width="1.6" stroke-linejoin="round"/>
+<circle cx="114" cy="140" r="6.6" fill="#efe7d3" stroke="#3a6ea5" stroke-width="1.4"/>
+<text x="114" y="182" font-size="11.5" fill="#3a3531" text-anchor="middle" font-weight="700">une machine</text>
+<text x="114" y="196" font-size="10.5" fill="#5b5249" text-anchor="middle">= un système formel F</text>
+<circle cx="44" cy="100" r="10" fill="#3a6ea5"/>
+<text x="44" y="104" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<rect x="262" y="114" width="156" height="46" rx="4" fill="#ffffff" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="340.0" y="133" font-size="11.5" fill="#3a3531" text-anchor="middle" font-style="italic">« Je ne suis pas</text>
+<text x="340.0" y="149" font-size="11.5" fill="#3a3531" text-anchor="middle" font-style="italic">démontrable dans F »</text>
+<text x="340" y="99" font-size="10.5" fill="#9a5b33" text-anchor="middle" font-weight="700">sa phrase de Gödel G</text>
+<circle cx="262" cy="114" r="10" fill="#9a5b33"/>
+<text x="262" y="118" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<line x1="190" y1="137" x2="254" y2="137" stroke="#c4564a" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#r)"/>
+<text x="222" y="158" font-size="16" fill="#c4564a" text-anchor="middle" font-weight="700">✗</text>
+<text x="222" y="174" font-size="10" fill="#c4564a" text-anchor="middle">ne peut pas</text>
+<text x="222" y="186" font-size="10" fill="#c4564a" text-anchor="middle">la démontrer</text>
+<circle cx="340" cy="262" r="11" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<path d="M322 302 Q322 276 340 276 Q358 276 358 302" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<circle cx="306" cy="258" r="10" fill="#2f6f6a"/>
+<text x="306" y="262" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<line x1="340" y1="244" x2="340" y2="168" stroke="#2f6f6a" stroke-width="2" marker-end="url(#t)"/>
+<text x="352" y="210" font-size="10.5" fill="#2f6f6a" font-weight="700">un humain voit</text>
+<text x="352" y="224" font-size="10.5" fill="#2f6f6a" font-weight="700">que G est vraie</text>
+<text x="114" y="262" font-size="11" fill="#3a3531" text-anchor="middle">Donc l'esprit humain</text>
+<text x="114" y="277" font-size="11" fill="#3a3531" text-anchor="middle">ferait toujours une chose</text>
+<text x="114" y="292" font-size="11" fill="#3a3531" text-anchor="middle">qu'aucune machine</text>
+<text x="114" y="307" font-size="11" fill="#3a3531" text-anchor="middle">donnée ne peut faire.</text>
+<rect x="456" y="50" width="384" height="292" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="648" y="76" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">Ajouter G à la machine ?</text>
+<rect x="472" y="110" width="64" height="30" rx="5" fill="#efe7d3" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="504.0" y="130" font-size="11.5" fill="#3a3531" text-anchor="middle" font-weight="700">F</text>
+<line x1="542" y1="125" x2="576" y2="125" stroke="#c4564a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<rect x="582" y="110" width="40" height="30" rx="4" fill="#ffffff" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="602" y="130" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700" font-style="italic">G</text>
+<text x="634" y="129" font-size="10" fill="#c4564a">indémontrable dans F</text>
+<path d="M602 144 Q602 156 514.0 156 L514.0 166" fill="none" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<text x="520.0" y="166" font-size="9.5" fill="#7a6f63">on l'ajoute</text>
+<rect x="472" y="172" width="84" height="30" rx="5" fill="#efe7d3" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="514.0" y="192" font-size="11.5" fill="#3a3531" text-anchor="middle" font-weight="700">F + G</text>
+<line x1="562" y1="187" x2="596" y2="187" stroke="#c4564a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<rect x="602" y="172" width="40" height="30" rx="4" fill="#ffffff" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="622" y="192" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700" font-style="italic">G′</text>
+<text x="654" y="191" font-size="10" fill="#c4564a">indémontrable dans F + G</text>
+<path d="M622 206 Q622 218 524.0 218 L524.0 228" fill="none" stroke="#7a6f63" stroke-width="1.4" marker-end="url(#p)"/>
+<text x="530.0" y="228" font-size="9.5" fill="#7a6f63">on l'ajoute</text>
+<rect x="472" y="234" width="104" height="30" rx="5" fill="#efe7d3" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="524.0" y="254" font-size="11.5" fill="#3a3531" text-anchor="middle" font-weight="700">F + G + G′</text>
+<line x1="582" y1="249" x2="616" y2="249" stroke="#c4564a" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#r)"/>
+<rect x="622" y="234" width="40" height="30" rx="4" fill="#ffffff" stroke="#9a5b33" stroke-width="1.5"/>
+<text x="642" y="254" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700" font-style="italic">G″</text>
+<text x="674" y="253" font-size="10" fill="#c4564a">indémontrable dans F + G + G′</text>
+<text x="520" y="290" font-size="18" fill="#7a6f63" text-anchor="middle">…</text>
+<text x="648" y="314" font-size="11" fill="#3a3531" text-anchor="middle">Chaque nouveau système a sa propre phrase de Gödel.</text>
+<text x="648" y="330" font-size="11" fill="#3a3531" text-anchor="middle">Pour Lucas, l'humain garde toujours une longueur d'avance.</text>
+<text x="430.0" y="374" font-size="12" fill="#c4564a" text-anchor="middle" font-weight="700">L'hypothèse cachée : pour voir que G est vraie, il faut savoir que F est cohérent.</text>
+<text x="430.0" y="396" font-size="11.5" fill="#3a3531" text-anchor="middle">Savons-nous que notre propre raisonnement l'est ?</text>
+</svg>

@@ -52,6 +52,8 @@ comme des machines. Son raisonnement tient en trois étapes.
 L'esprit humain ferait donc toujours au moins une chose qu'aucune machine donnée ne peut
 faire, et aucune machine ne pourrait être un modèle complet de l'esprit.
 
+{{< image src="/images/module5/argument-de-lucas.svg" alt="Deux panneaux. À gauche, l'argument de Lucas en trois étapes : une machine qui fait des mathématiques équivaut à un système formel F ; ce système a sa phrase de Gödel G, « Je ne suis pas démontrable dans F », qu'il ne peut pas démontrer ; un humain, lui, voit que G est vraie. À droite, la régression : si l'on ajoute G à la machine, on obtient un nouveau système, F + G, qui a sa propre phrase de Gödel G′, puis F + G + G′, qui a la sienne, G″, et ainsi de suite. En bas, l'hypothèse cachée : pour voir que G est vraie, il faut savoir que F est cohérent." title="L'argument de Lucas (1961). Ajouter la phrase de Gödel à la machine ne règle rien : le nouveau système a la sienne, et pour Lucas l'humain la voit encore. L'argument repose toutefois sur une hypothèse cachée, que visent les objections présentées plus bas : savoir que le système est cohérent." loading="lazy" >}}
+
 Turing avait anticipé l'objection dès 1950, sous le nom d'**objection mathématique**.
 Sa réponse tient en deux remarques. D'abord, Gödel montre les limites de chaque machine
 particulière, mais on a seulement affirmé, « sans aucune preuve », que l'esprit humain
