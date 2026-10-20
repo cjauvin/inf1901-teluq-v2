@@ -43,6 +43,22 @@ en visant un assistant [utile, honnête et inoffensif](docs/module4/70-du-modele
 Les valeurs du modèle sont alors, en partie, celles de ces évaluateurs, et celles des
 consignes qu'on leur a données.
 
+{{% hint info %}}
+**Tay, ou les valeurs apprises de la foule**
+
+Le 23 mars 2016, Microsoft met en ligne sur Twitter Tay, un robot conversationnel conçu
+pour parler comme une jeune Américaine de dix-neuf ans et pour apprendre de ses
+conversations avec les internautes. En quelques heures, des utilisateurs coordonnés
+exploitent cette faculté, notamment une fonction qui lui fait répéter ce qu'on lui écrit,
+et Tay se met à publier des messages racistes, antisémites et misogynes. Microsoft le
+retire seize heures après son lancement, puis s'excuse publiquement deux jours plus
+tard. Un système qui tire ses valeurs de ceux qui lui parlent prend celles des plus
+insistants. Depuis, les assistants n'apprennent plus de leurs conversations en temps
+réel, pour les raisons qu'expose la section
+« [Pourquoi ne pas le laisser apprendre ?](docs/module4/80-outils-et-agents/#pourquoi-ne-pas-le-laisser-apprendre) »
+du Module 4, et leurs valeurs sont fixées avant leur mise en service.
+{{% /hint %}}
+
 Les entreprises cherchent aussi à rendre ces valeurs explicites.
 
 - **Une constitution.** En décembre 2022, Anthropic présente l'**IA constitutionnelle**
