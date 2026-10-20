@@ -145,6 +145,8 @@ concrètement : le vecteur du mot « chat » se forme à partir de ses vois
 « chat » en voyant des chats ; un modèle de langage l'apprend en lisant ce que des humains
 ont écrit à leur sujet. Si le problème de Harnad se pose quelque part, c'est bien là.
 
+{{< image src="/images/module5/ancrage-des-symboles.svg" alt="Trois panneaux, construits sur le même petit réseau de cinq mots : chat, animal, miauler, poil, compagnie, reliés par des flèches qui vont de chaque mot aux mots qui le définissent. À gauche, le dictionnaire unilingue : les mots sont en chinois, les flèches tournent en rond, et aucune ne rejoint le monde, représenté en bas par un chat. Au centre, un humain : le même réseau en français, mais les mots « chat » et « miauler » sont reliés directement au chat du monde, par la vue et par l'ouïe. À droite, un modèle de langage : chaque mot est un vecteur de nombres, défini par d'autres vecteurs ; aucun lien direct ne descend vers le monde, mais un chemin en pointillé y mène, en passant par des textes écrits par des humains, marqué d'un point d'interrogation." title="Le problème de l'ancrage des symboles. Dans le dictionnaire unilingue de Harnad, les définitions tournent en rond. Chez un humain, quelques mots s'ancrent dans la perception, et les autres s'appuient sur eux. Un modèle de langage ne rejoint le monde que par le détour des textes écrits par des humains : on peut y voir un ancrage emprunté, ou pas d'ancrage du tout." loading="lazy" >}}
+
 {{% hint info %}}
 **La pieuvre de Bender et Koller**
 
