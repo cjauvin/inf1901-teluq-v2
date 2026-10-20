@@ -89,29 +89,38 @@ Searle ne prétend pas qu'une machine ne pourra jamais penser : le cerveau est 
 une machine, biologique. Il soutient que la pensée dépend des propriétés physiques du
 cerveau, et non du seul programme qu'il exécute.
 
-## Les réponses à Searle
+## Les objections à Searle
 
-L'article de 1980 a été publié avec près de trente commentaires de philosophes et de chercheurs, et le débat dure depuis. Les principales réponses, et ce que Searle leur
-oppose, sont les suivantes.
+L'article de 1980 a été publié avec près de trente commentaires de philosophes et de
+chercheurs, et le débat dure depuis. La plupart de ces commentaires sont des
+**contre-arguments** : ils cherchent à montrer que l'argument de Searle échoue, et que
+quelque chose, dans la chambre ou au-delà, pourrait bien comprendre le chinois. Les
+anglophones les appellent les *replies* (les réponses). Searle a répliqué à chacun.
+Voici les quatre principaux, suivis de sa réplique.
 
-- **La réponse du système.** La personne ne comprend pas le chinois, mais le système
-  entier, la personne avec son livre, ses feuilles et ses crayons, le comprend.
-  Searle répond qu'il suffit d'imaginer qu'il apprenne tout le livre par cœur et fasse
-  les calculs de tête : il serait alors le système entier, et ne comprendrait toujours
-  pas le chinois.
-- **La réponse du robot.** Il faudrait relier la chambre au monde, par des caméras et
-  des bras, pour que les symboles désignent des choses. Searle répond que les images
-  des caméras ne seraient pour lui que d'autres symboles à manipuler.
-- **La réponse du simulateur de cerveau.** Un programme qui reproduirait, neurone par
-  neurone, le cerveau d'un locuteur chinois comprendrait. Searle imagine alors un
-  système de tuyaux et de robinets qui imiterait les neurones : il ne comprendrait rien
-  non plus.
-- **La réponse des autres esprits.** Nous ne savons que les autres humains comprennent
-  qu'en observant leur comportement. Refuser cette preuve à une machine serait
-  incohérent. Searle répond que la question n'est pas de savoir comment on sait qu'un
-  être comprend, mais ce qu'on lui attribue quand on dit qu'il comprend.
+- **L'objection du système.**\
+  *Le contre-argument :* la personne ne comprend pas le chinois, mais le système entier,
+  la personne avec son livre, ses feuilles et ses crayons, le comprend.\
+  *La réplique de Searle :* il suffit d'imaginer qu'il apprenne tout le livre par cœur
+  et fasse les calculs de tête. Il serait alors le système entier, et ne comprendrait
+  toujours pas le chinois.
+- **L'objection du robot.**\
+  *Le contre-argument :* il faudrait relier la chambre au monde, par des caméras et des
+  bras, pour que les symboles désignent des choses.\
+  *La réplique de Searle :* les images des caméras ne seraient pour lui que d'autres
+  symboles à manipuler.
+- **L'objection du simulateur de cerveau.**\
+  *Le contre-argument :* un programme qui reproduirait, neurone par neurone, le cerveau
+  d'un locuteur chinois comprendrait.\
+  *La réplique de Searle :* imaginons un système de tuyaux et de robinets qui imiterait
+  les neurones. Il ne comprendrait rien non plus.
+- **L'objection des autres esprits.**\
+  *Le contre-argument :* nous ne savons que les autres humains comprennent qu'en
+  observant leur comportement. Refuser cette preuve à une machine serait incohérent.\
+  *La réplique de Searle :* la question n'est pas de savoir comment on sait qu'un être
+  comprend, mais ce qu'on lui attribue quand on dit qu'il comprend.
 
-Beaucoup de philosophes jugent que la réponse du système n'a jamais été vraiment
+Beaucoup de philosophes jugent que l'objection du système n'a jamais été vraiment
 réfutée : notre intuition qu'« il n'y a personne qui comprend » vaut peut-être pour la
 personne dans la chambre, sans valoir pour l'ensemble. D'autres tiennent l'argument de
 Searle pour décisif. Plus de quarante ans plus tard, aucun camp n'a convaincu l'autre.
@@ -173,7 +182,7 @@ Trois réponses sont proposées à cette objection.
   texte : ils [voient, entendent et parlent](docs/module4/92-voir-entendre-parler), et les
   [agents](docs/module4/80-outils-et-agents/#des-agents-un-modèle-et-son-harnais-en-boucle)
   agissent sur le monde réel et en reçoivent les effets. C'est en partie ce que demandait
-  la réponse du robot à Searle. Pour Harnad et Searle, ces images, ces sons et ces actions
+  l'objection du robot à Searle. Pour Harnad et Searle, ces images, ces sons et ces actions
   ne seraient pourtant que d'autres symboles, transmis à la machine sous forme de nombres.
 
 ## La chambre chinoise à l'ère des modèles de langage
