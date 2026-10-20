@@ -53,6 +53,10 @@ existent, plus il devient facile, pour quelqu'un pris en faute, de faire passer 
 vidéo ou un vrai enregistrement pour un faux. La simple possibilité du faux affaiblit la
 valeur de preuve de toutes les images.
 
+{{< image src="/images/module5/portraits/citron.jpg" alt="Portrait de Danielle Citron." title="Danielle Citron en 2015." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Danielle Citron en 2015. Photo : Fourandsixty, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 ## Une persuasion à grande échelle
 
 Les modèles de langage sont aussi de redoutables interlocuteurs.

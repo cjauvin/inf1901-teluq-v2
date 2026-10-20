@@ -25,9 +25,9 @@ du Module 3. Le prix de chimie récompense pour moitié David Baker, pour la con
 protéines par ordinateur, et pour l'autre moitié Demis Hassabis et John Jumper, de
 Google DeepMind, pour la prédiction de la structure des protéines.
 
-{{< image src="/images/module5/portraits/nobel-2024.jpg" alt="Trois portraits côte à côte : Geoffrey Hinton, Demis Hassabis et John Jumper." title="Trois lauréats des prix Nobel de 2024 : Geoffrey Hinton (physique), Demis Hassabis et John Jumper (chimie)." class="portraits" loading="lazy" >}}
+{{< image src="/images/module5/portraits/nobel-2024.jpg" alt="Cinq portraits côte à côte : John Hopfield, Geoffrey Hinton, David Baker, Demis Hassabis et John Jumper." title="Les lauréats des prix Nobel de 2024 liés à l'IA : John Hopfield et Geoffrey Hinton (physique), David Baker, Demis Hassabis et John Jumper (chimie)." class="portraits" loading="lazy" >}}
 
-<p class="image-credit">Trois lauréats des prix Nobel de 2024 : Geoffrey Hinton (physique), Demis Hassabis et John Jumper (chimie). Photos : Hinton et Jumper, Arthur Petron, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons ; Hassabis, John Sears, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+<p class="image-credit">Les lauréats des prix Nobel de 2024 liés à l'IA : John Hopfield et Geoffrey Hinton (physique), David Baker, Demis Hassabis et John Jumper (chimie). Photos : Hopfield, Hinton et Jumper, Arthur Petron ; Baker et Hassabis, John Sears ; <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 {{% hint info %}}
 **AlphaFold**

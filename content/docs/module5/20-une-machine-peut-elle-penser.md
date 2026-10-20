@@ -240,6 +240,10 @@ d'usages qu'on apprend en participant à la vie d'une communauté. Si comprendre
 savoir jouer ces jeux, la question devient moins « que se passe-t-il à l'intérieur ? »
 que « que sait-il faire avec les mots ? ».
 
+{{< image src="/images/module5/portraits/wittgenstein.jpg" alt="Portrait de Ludwig Wittgenstein." title="Ludwig Wittgenstein en 1930." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Ludwig Wittgenstein en 1930. Photo : Moritz Nähr, domaine public, via Wikimedia Commons.</p>
+
 {{% hint info %}}
 **Dans la conversation**
 
@@ -263,6 +267,10 @@ Jauvin, enregistrée à l'été 2025, aborde plusieurs questions de ce chapitre.
   que d'autres, et écrire un programme qui compte les voyelles d'un mot plutôt que de
   les compter lui-même.
 {{% /hint %}}
+
+{{< image src="/images/module5/portraits/chomsky.jpg" alt="Portrait de Noam Chomsky." title="Noam Chomsky en 2015." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Noam Chomsky en 2015. Photo : Augusto Starita / Ministerio de Cultura de la Nación, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
 
 ## Un débat ouvert
 

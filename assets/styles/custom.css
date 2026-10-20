@@ -177,7 +177,7 @@ p {
     border-radius: 6px;
   }
   .book-image input:not(:checked) + img.portraits {
-    max-width: min(100%, 520px);
+    max-width: min(100%, 680px);
     border-radius: 6px;
   }
 }

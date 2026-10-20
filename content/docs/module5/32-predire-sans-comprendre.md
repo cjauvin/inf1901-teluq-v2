@@ -22,6 +22,10 @@ corrélation suffit », écrit-il ; les nombres parlent d'eux-mêmes. Il cit
 Traduction, qui traduisait sans rien savoir de la grammaire, ou le séquençage massif de
 l'ADN, qui découvrait de nouvelles espèces sans rien savoir de leur biologie.
 
+{{< image src="/images/module5/portraits/anderson.jpg" alt="Portrait de Chris Anderson." title="Chris Anderson en 2011." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Chris Anderson en 2011. Photo : Campus Party Brasil, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
+
 L'idée n'était pas neuve. En 2001, le statisticien Leo Breiman opposait déjà **deux
 cultures** de la modélisation. La première, majoritaire chez les statisticiens,
 suppose un modèle des données, une équation qui décrit comment elles sont produites, et

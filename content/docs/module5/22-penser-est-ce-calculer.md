@@ -137,6 +137,10 @@ critique.
   Gödel n'est pas une limite des machines, mais le modèle de ce qu'est un esprit : une
   [boucle étrange](docs/module1/10-turing/#lombre-de-gödel).
 
+{{< image src="/images/module5/portraits/hofstadter.jpg" alt="Portrait de Douglas Hofstadter." title="Douglas Hofstadter en 2002." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Douglas Hofstadter en 2002. Photo : Maurizio Codogno, <a href="https://creativecommons.org/licenses/by/2.5">CC BY 2.5</a>, via Wikimedia Commons.</p>
+
 Ces objections ne prouvent pas que l'esprit est un calcul. Elles montrent que le théorème
 de Gödel ne prouve pas le contraire.
 

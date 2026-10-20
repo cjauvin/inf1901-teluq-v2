@@ -112,6 +112,10 @@ ce module a présentés.
   machines qui pourraient être
   [conscientes](docs/module5/24-une-machine-peut-elle-etre-consciente/#pourquoi-la-question-compte).
 
+{{< image src="/images/module5/portraits/leon-xiv.jpg" alt="Portrait du pape Léon XIV." title="Le pape Léon XIV en 2025." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Le pape Léon XIV en 2025. Photo : Ricardo Stuckert, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 ## Des attitudes qui se combinent
 
 Aucune personne réelle ne se réduit à une de ces attitudes. On peut être enthousiaste pour

@@ -96,6 +96,10 @@ divisé chaque année par dix ou plus, sous la pression, notamment, des
 [modèles ouverts chinois](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif),
 vendus pour quelques centimes par million de jetons.
 
+{{< image src="/images/module5/portraits/jevons.jpg" alt="Portrait de William Stanley Jevons." title="William Stanley Jevons vers 1880." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">William Stanley Jevons vers 1880. Photo : A. Brothers, domaine public, via Wikimedia Commons.</p>
+
 ## Le Québec
 
 Le Québec, qui produit une électricité abondante, peu chère et presque entièrement

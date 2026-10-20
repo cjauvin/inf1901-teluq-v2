@@ -232,6 +232,10 @@ Module 4. Les résultats sont troublants, mais difficiles à interpréter.
   de ce qu'il vit. Ces trois travaux sont présentés au chapitre
   « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#en-2026-des-émotions-des-activations-qui-parlent-un-espace-de-travail) ».
 
+{{< image src="/images/module5/portraits/dehaene.jpg" alt="Portrait de Stanislas Dehaene." title="Stanislas Dehaene en 2014." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Stanislas Dehaene en 2014. Photo : Per Henning / NTNU, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
 Les auteurs de ces études précisent qu'ils décrivent des fonctions, et non une
 expérience vécue : un espace de travail, une introspection et des émotions
 fonctionnelles sont des propriétés indicatrices, pas des preuves. Ce que les modèles

@@ -21,6 +21,10 @@ fonctionnement une fois lancée, mieux vaut être tout à fait sûr que le but q
 donne est bien celui que l'on désire vraiment. Le problème est que l'on dit rarement
 exactement ce que l'on veut.
 
+{{< image src="/images/module5/portraits/wiener.jpg" alt="Portrait de Norbert Wiener." title="Norbert Wiener vers 1960." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Norbert Wiener vers 1960. Photo : Konrad Jacobs, <a href="https://creativecommons.org/licenses/by-sa/2.0/de/deed.en">CC BY-SA 2.0 DE</a>, via Wikimedia Commons.</p>
+
 Le Module 3 en a donné un exemple avec un agent de jeu vidéo qui
 [détournait sa récompense](docs/module3/80-renforcement-profond/#au-delà-des-jeux-et-les-limites) :
 un bateau de course qui tourne en rond pour ramasser des bonus au lieu de finir la

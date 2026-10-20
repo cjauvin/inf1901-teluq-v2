@@ -34,6 +34,10 @@ quintuple, selon la méthode.
   29 % des emplois très exposés mais complémentaires, où l'IA aiderait plutôt qu'elle ne
   remplacerait.
 
+{{< image src="/images/module5/portraits/frey.jpg" alt="Portrait de Carl Benedikt Frey." title="Carl Benedikt Frey en 2016." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Carl Benedikt Frey en 2016. Photo : Adam Blomfield, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
 « Exposé » ne veut pas dire « remplacé ». Une tâche qu'une IA peut accomplir peut aussi
 être accomplie plus vite par un humain qui s'en sert. Tout dépend de ce que font les
 entreprises de ce gain de temps.

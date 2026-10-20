@@ -30,6 +30,10 @@ semaines, jamais reproduites, où une partie de l'effet tenait aux tests répét
 correction des erreurs plutôt qu'au tutorat lui-même. Les synthèses de nombreuses études
 trouvent un effet réel du tutorat, mais d'environ un tiers d'écart type, six fois moins.
 
+{{< image src="/images/module5/portraits/khan.jpg" alt="Portrait de Sal Khan." title="Sal Khan en 2011." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Sal Khan en 2011. Photo : Steve Jurvetson, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
 Les premiers essais rigoureux des tuteurs fondés sur l'IA donnent des résultats variés.
 
 - **Au Nigeria.** En 2024, la Banque mondiale offre à des élèves du secondaire de l'État
