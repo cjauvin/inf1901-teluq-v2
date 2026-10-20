@@ -79,7 +79,8 @@ ignore encore et ce qui relève d'un choix.
 19. [*Des machines pour compagnie*](docs/module5/82-des-machines-pour-compagnie) : les
     compagnons artificiels, leurs bienfaits et leurs risques.
 20. [*Peut-on perdre le contrôle ?*](docs/module5/85-peut-on-perdre-le-controle) : les
-    risques extrêmes, la technologie normale ou la rupture.
+    risques extrêmes, la singularité et l'auto-amélioration récursive, la technologie
+    normale ou la rupture.
 
 **La synthèse**
 

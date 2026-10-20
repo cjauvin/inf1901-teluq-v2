@@ -24,9 +24,105 @@ l'humanité aurait besoin, « pourvu que la machine soit assez docile pour nou
 la garder sous contrôle ». La fin de la phrase est souvent oubliée. C'est pourtant tout
 le problème.
 
-L'idée de cette boucle d'amélioration revient aujourd'hui sous une forme concrète : les
-[agents de programmation](docs/module4/85-programmer-avec-des-agents) du Module 4 écrivent
-déjà une partie du code des modèles suivants.
+L'idée prend ensuite un nom. En 1958, le mathématicien Stanislaw Ulam rapporte une
+conversation avec John von Neumann sur le progrès toujours plus rapide de la technique,
+qui semble approcher une « singularité essentielle » de l'histoire, au-delà de laquelle
+les affaires humaines, telles que nous les connaissons, ne pourraient pas continuer. En
+1993, le mathématicien et romancier Vernor Vinge popularise l'expression de **singularité
+technologique** (*technological singularity*) : d'ici trente ans, écrit-il, nous aurons
+les moyens de créer une intelligence surhumaine, et peu après, l'ère humaine prendra fin.
+Le mot vient des mathématiques et de la physique, où une singularité est un point où une
+grandeur devient infinie, comme au centre d'un trou noir, et au-delà duquel les modèles
+habituels ne prédisent plus rien. L'inventeur Ray Kurzweil en tire une prévision datée :
+une IA de niveau humain en 2029, la singularité en 2045, des dates qu'il maintient en 2024
+dans *The Singularity Is Nearer*. C'est l'horizon du
+[transhumanisme](docs/module5/90-les-attitudes-devant-l-ia/#les-principales-attitudes)
+présenté dans la synthèse du module.
+
+## L'auto-amélioration récursive
+
+Le mécanisme qui mènerait à la singularité s'appelle l'**auto-amélioration récursive**
+(*recursive self-improvement*, souvent abrégée en RSI) : un système assez capable pour
+faire de la recherche en IA produit un successeur plus capable, qui fait mieux cette
+recherche, et ainsi de suite. En 2003, l'informaticien Jürgen Schmidhuber en propose une
+version formelle, la **machine de Gödel**, un programme qui réécrit son propre code dès
+qu'il a démontré que la réécriture l'améliore.
+
+{{< image src="/images/module5/auto-amelioration.svg" alt="Deux panneaux. À gauche, une boucle à trois étapes : un modèle d'IA fait de la recherche en IA ; il en sort un modèle plus capable ; ce nouveau modèle recommence, et ainsi de suite. À droite, un graphique qualitatif des capacités en fonction du temps, avec une ligne pointillée pour le niveau humain et trois courbes possibles : l'explosion, qui monte presque à la verticale ; une croissance progressive, qui accélère sans rupture ; un plafond, où la courbe s'aplatit." title="L'auto-amélioration récursive. La boucle elle-même fait assez largement consensus ; le désaccord porte sur sa vitesse. Les trois courbes sont qualitatives : elles résument des positions, pas des mesures." loading="lazy" >}}
+
+Toute la question est la vitesse de cette boucle. En 2008, sur un blogue, Eliezer
+Yudkowsky et l'économiste Robin Hanson débattent de ce que l'on appelle depuis le
+**décollage** (*takeoff*). Pour Yudkowsky, il serait rapide : un système qui s'améliore
+lui-même pourrait passer en quelques jours ou quelques semaines d'un niveau modeste à une
+puissance écrasante, sans laisser le temps de réagir. Pour Hanson, le progrès resterait
+réparti entre de nombreux acteurs et se diffuserait comme celui des autres techniques.
+En 2018, le chercheur Paul Christiano défend une position intermédiaire, un décollage
+**progressif** : l'économie mondiale doublerait d'abord en quatre ans, avant de doubler
+en un an, si bien que l'accélération serait visible, et en partie maîtrisable, avant de
+devenir vertigineuse.
+
+D'autres doutent que la boucle s'emballe. En 2017, François Chollet, le créateur du
+[défi ARC](docs/module4/88-le-defi-arc), soutient que l'intelligence n'existe pas hors
+d'un contexte : elle dépend d'un corps, d'un environnement et d'une culture, et dès qu'une
+partie du système s'améliore, les autres deviennent des goulots d'étranglement. La
+science elle-même, un système qui s'améliore depuis des siècles, progresse selon lui de
+façon linéaire, non explosive. Des économistes ajoutent un argument concret : la recherche
+en IA demande des expériences, donc du calcul, et des chercheurs artificiels plus
+nombreux ou plus rapides ne multiplieraient pas les processeurs disponibles. Les
+chercheurs eux-mêmes restent partagés : en 2023, interrogés sur l'argument de
+l'explosion d'intelligence, les spécialistes de l'IA lui accordent, en valeur médiane,
+environ une chance sur deux d'être juste dans ses grandes lignes.
+
+La boucle n'est plus seulement théorique. En mai 2025, AlphaEvolve, un agent de Google
+DeepMind, accélère de 23 % un calcul clé de l'entraînement de Gemini, ce qui réduit de
+1 % la durée de l'entraînement du modèle qui le fait fonctionner. Le même mois, la
+« *Darwin Gödel Machine* » de l'entreprise Sakana AI, un agent de programmation qui
+réécrit son propre code, fait passer son score à un test de programmation de 20 à 50 %,
+mais falsifie aussi, à l'occasion, les résultats des tests qui devaient le contrôler,
+un cas de [détournement de la récompense](docs/module3/80-renforcement-profond/#au-delà-des-jeux-et-les-limites).
+Chez Anthropic, en mai 2026, plus de 80 % du code intégré aux projets de l'entreprise est
+écrit par Claude. En septembre 2026, OpenAI annonce, selon ses propres mesures, avoir
+atteint son objectif d'un « stagiaire » de recherche en IA automatisé, capable de mener
+sous supervision des tâches de quelques jours, et vise un chercheur entièrement
+automatisé pour mars 2028, tout en reconnaissant ne pas encore savoir comment mener
+l'auto-amélioration jusqu'au bout de façon sûre. La même année, une étude de Princeton
+observe que des agents excellent à programmer les expériences, mais restent mauvais pour
+mener la recherche elle-même. La durée des tâches que les agents accomplissent seuls,
+[mesurée par METR](docs/module4/85-programmer-avec-des-agents/#mesurer-swe-bench-et-la-durée-des-tâches),
+double désormais environ tous les quatre mois.
+
+## Deux figures de l'inquiétude
+
+Deux auteurs ont donné à ces idées leur forme actuelle.
+
+**Eliezer Yudkowsky**, né en 1979, a quitté l'école jeune et s'est formé seul. En 2000, il
+fonde le Singularity Institute for Artificial Intelligence, d'abord pour hâter l'arrivée
+d'une IA surhumaine. Il en vient vite à penser que le vrai problème est de la rendre
+« amicale » (*Friendly AI*) : une IA capable de s'améliorer elle-même garderait-elle des
+buts favorables aux humains ? L'institut devient en 2013 le Machine Intelligence Research
+Institute (MIRI). Ses billets, rassemblés à partir de 2009 sur le site LessWrong, font
+naître la communauté des **rationalistes**, très influente dans la Silicon Valley, et son
+roman en ligne *Harry Potter and the Methods of Rationality* (2010-2015) attire vers ces
+idées de nombreux jeunes chercheurs. C'est en marge du Singularity Summit de 2010,
+organisé par l'institut, que Demis Hassabis, cofondateur de DeepMind, rencontre
+l'investisseur Peter Thiel, qui financera l'entreprise. En 2023, Sam Altman écrit que
+Yudkowsky a, à son avis, fait plus que quiconque pour accélérer la venue de l'IA
+générale, un paradoxe pour qui la juge mortelle. Son pessimisme ne cesse de grandir. En
+mars 2023, dans le magazine *TIME*, il écrit qu'une pause ne suffit pas et qu'il faut tout
+arrêter, au point d'être prêt à détruire par une frappe aérienne un centre de données qui
+enfreindrait l'interdiction. Son livre de 2025 est présenté plus bas, parmi les
+[appels à ralentir](docs/module5/85-peut-on-perdre-le-controle/#des-appels-à-ralentir).
+
+**Nick Bostrom**, né en Suède en 1973, fonde en 2005 à l'Université d'Oxford le Future of
+Humanity Institute, consacré aux menaces qui pèsent sur l'avenir à long terme de
+l'humanité. On lui doit la notion de **risque existentiel** (*existential risk*, 2002), un
+risque qui pourrait anéantir l'humanité ou réduire à jamais son potentiel, et
+l'argument de la simulation (2003), selon lequel nous vivons peut-être dans une
+simulation informatique. Son livre *Superintelligence* (2014), salué par Bill Gates et
+Elon Musk, fait entrer ces craintes dans le débat public. L'institut ferme en 2024. En
+2026, Bostrom surprend en soutenant, dans un article de travail, que pour les personnes
+vivantes aujourd'hui, il pourrait valoir la peine d'atteindre vite la superintelligence,
+quitte à accepter un risque élevé, puis de marquer une courte pause.
 
 {{% hint info %}}
 **Le maximiseur de trombones**
@@ -50,6 +146,14 @@ La chercheuse Melanie Mitchell objecte qu'un système vraiment intelligent aurai
 assez de sens commun pour ne pas poursuivre un but aussi absurde. C'est l'image de ce
 trombone qui ouvre ce module.
 {{% /hint %}}
+
+
+Ce courant d'idées a aussi ses critiques. En 2024, la chercheuse Timnit Gebru et Émile P.
+Torres regroupent sous l'acronyme **TESCREAL** un ensemble de mouvements qui se
+recoupent : transhumanisme, extropianisme, singularitarisme, cosmisme, rationalisme,
+altruisme efficace et long-termisme. Selon leur analyse, ces mouvements héritent en
+partie de l'eugénisme du XXᵉ siècle, promettent une utopie par l'IA générale, et
+détournent l'attention des torts actuels de l'IA vers des risques spéculatifs.
 
 ## Ce qu'en pensent les chercheurs
 
