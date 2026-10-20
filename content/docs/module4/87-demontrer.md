@@ -145,6 +145,21 @@ mathématiciens.
   projet humain dans le même but. Ce n'est pas un résultat
   nouveau, mais la vérification complète d'une démonstration célèbre.
 
+Un dernier cas, annoncé en septembre 2026, n'est pas encore vérifié. OpenAI affirme qu'un
+système de milliers d'agents a résolu en 88 heures l'un des sept **problèmes du
+millénaire**, pour lesquels l'Institut Clay offre un million de dollars chacun : celui
+des **équations de Navier-Stokes** (*Navier-Stokes equations*), qui décrivent
+l'écoulement des fluides. Selon la démonstration, longue de 166 pages, un fluide
+parfaitement lisse peut, en un temps fini, voir sa vitesse devenir infinie en un point,
+si une force extérieure bien choisie agit sur lui. L'Institut Clay juge le problème
+« apparemment réglé », mais attend une publication dans une revue scientifique pour se
+prononcer. Une version en Lean accompagne la démonstration, mais en octobre, des
+chercheurs soutiennent qu'elle ne traduit pas fidèlement la démonstration écrite, et deux
+mathématiciens qui travaillaient sur un problème voisin contestent la priorité
+d'OpenAI. Le chapitre
+« [Penser, est-ce calculer ?](docs/module5/22-penser-est-ce-calculer/#des-machines-qui-démontrent) »
+du Module 5 revient sur ce cas.
+
 Les mathématiciens ont aussi construit leurs propres tests. En février 2026, onze
 d'entre eux, dont le médaillé Fields Martin Hairer, publient **First Proof**, dix
 lemmes tirés de leurs travaux en cours, dont les réponses restent secrètes une
@@ -161,7 +176,8 @@ un assistant qui fait gagner plus de temps qu'il n'en fait perdre, mais pas enco
 comme un pair. Ses usages sont désormais réels : chercher dans la littérature, essayer
 des pistes, vérifier des calculs, traduire une démonstration en Lean.
 
-Ces progrès inquiètent aussi. En septembre 2026, vingt-cinq médaillés Fields, dont
+Ces progrès inquiètent aussi. En septembre 2026, trois jours après l'annonce d'OpenAI,
+vingt-cinq médaillés Fields, dont
 Peter Scholze et Maryna Viazovska, signent une déclaration publiée par Terence Tao,
 « *A Severe Misalignment of AI in Mathematics* ». Pour eux, résoudre des problèmes
 n'est qu'un moyen, et un indicateur, au service de ce qui compte vraiment en
