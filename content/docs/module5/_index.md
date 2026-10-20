@@ -31,7 +31,8 @@ ignore encore et ce qui relève d'un choix.
 3. [*Penser, est-ce calculer ?*](docs/module5/22-penser-est-ce-calculer) (approfondissement) :
    Gödel, Lucas et Penrose, et les machines qui démontrent.
 4. [*Une machine peut-elle être consciente ?*](docs/module5/24-une-machine-peut-elle-etre-consciente) :
-   le problème difficile, les théories de la conscience, le bien-être des modèles.
+   le problème difficile, les théories de la conscience, le problème du substrat, le
+   bien-être des modèles.
 5. [*Qu'est-ce que l'intelligence ?*](docs/module5/26-qu-est-ce-que-l-intelligence) :
    les définitions, le paradoxe de Moravec, l'effet IA, l'IA générale.
 

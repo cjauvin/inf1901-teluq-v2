@@ -86,11 +86,90 @@ annonçant d'avance ce que sa théorie prédit. Sur 256 participants, mesurés p
 techniques d'imagerie, les résultats confirment certaines prédictions des deux théories,
 et contredisent des points essentiels de chacune.
 
+## Le problème du substrat
+
+Ces théories se divisent sur une question qui décide de tout pour les machines : la
+conscience dépend-elle seulement de ce que fait un système, ou aussi de ce dont il est
+fait ? Un cerveau est fait de cellules vivantes, un ordinateur de silicium. C'est le
+**problème du substrat** (*substrate problem*).
+
+Pour le **fonctionnalisme computationnel** (*computational functionalism*), une position
+majoritaire mais contestée, seule compte l'organisation : effectuer les bons calculs
+suffit pour être conscient, quel que soit le matériau qui les effectue. On parle
+d'**indépendance du substrat** (*substrate independence*). C'est le
+[fonctionnalisme](docs/module1/10-turing/#le-jeu-de-limitation) présenté au Module 1,
+appliqué cette fois à l'expérience vécue plutôt qu'à la pensée.
+
+Son meilleur argument est une expérience de pensée publiée par Chalmers en 1995.
+Imaginons qu'on remplace les neurones d'un cerveau un à un par des puces de silicium,
+chacune faisant exactement le même travail que le neurone qu'elle remplace. À chaque
+étape, la personne se comporte de la même façon, et continue de dire qu'elle voit une
+tomate rouge. Si la conscience disparaissait d'un coup, ce serait au remplacement d'un
+seul neurone, ce qui paraît absurde. Si elle s'estompait peu à peu, ses **qualia
+s'estomperaient** (*fading qualia*) sans que la personne s'en aperçoive ni le dise, ce
+qui paraît tout aussi étrange. Chalmers en conclut que deux systèmes qui ont la même
+organisation fine ont la même expérience, quel que soit leur substrat.
+
+{{< image src="/images/module5/remplacement-neurones.svg" alt="Quatre cerveaux schématiques, de gauche à droite. Le premier est fait uniquement de neurones ; dans le deuxième, un tiers des neurones ont été remplacés par des puces de silicium qui font exactement le même travail ; dans le troisième, deux tiers ; le dernier n'est plus fait que de puces. À chaque étape, la personne répond de la même façon : « Je vois une tomate rouge. » La question posée en bas : la conscience reste-t-elle, s'estompe-t-elle peu à peu, ou s'éteint-elle d'un coup ?" title="L'expérience de pensée du remplacement graduel (Chalmers, 1995). Le comportement ne change à aucune étape ; pour Chalmers, la conscience ne change pas non plus. Ses adversaires répondent qu'aucune puce ne ferait exactement le même travail qu'un neurone." loading="lazy" >}}
+
+Searle, dont la [chambre chinoise](docs/module5/20-une-machine-peut-elle-penser/#la-chambre-chinoise)
+visait déjà le fonctionnalisme, défend la position inverse, le **naturalisme biologique**
+(*biological naturalism*) : la conscience est produite par des processus biologiques du
+cerveau, comme la digestion par l'estomac. Personne, écrit-il en 1980, ne croit qu'une
+simulation informatique d'un orage va nous tremper. En 1990, il résume l'argument en une
+formule : la simulation n'est pas la reproduction. Un ordinateur qui simule un cerveau
+n'a pas plus de conscience qu'un estomac simulé ne digère une pizza.
+
+Longtemps minoritaire chez les chercheurs, cette position revient en force depuis 2025,
+sous des formes plus précises.
+
+- **La conscience liée à la vie.** En 2025, le neuroscientifique britannique Anil Seth
+  soutient, dans la revue *Behavioral and Brain Sciences*, que la conscience pourrait
+  dépendre du fait d'être un organisme vivant. Le cerveau ne sert pas d'abord à calculer,
+  mais à garder le corps en vie, en prédisant et en régulant sans cesse ses états
+  internes, et l'on ne peut pas y séparer proprement un logiciel d'un matériel, comme dans
+  un ordinateur. Une IA consciente lui paraît donc peu probable dans la voie actuelle,
+  plus plausible si les machines devenaient un jour plus semblables au vivant. Son essai
+  « *The Mythology of Conscious AI* » (la mythologie de l'IA consciente) remporte en
+  janvier 2026 le prix d'essai de l'institut Berggruen.
+- **Ce que le réseau ne dit pas.** Le philosophe australien Peter Godfrey-Smith, qui
+  étudie l'esprit des animaux, conteste l'expérience du remplacement graduel : aucune
+  puce ne ferait exactement le même travail qu'un neurone, et les petites différences de
+  rythme, de bruit et d'adaptation finiraient par s'accumuler. Surtout, le cerveau a deux
+  sortes d'activité. Les influx que les neurones s'envoient forment un réseau, qu'un
+  ordinateur peut reproduire. Mais des ions qui traversent les membranes des cellules
+  produisent aussi de lents rythmes électriques d'ensemble, ceux que mesure
+  l'électroencéphalogramme, liés au sommeil, à l'anesthésie et à l'attention jusque chez
+  les mouches, les abeilles et les pieuvres. Un ordinateur peut calculer ces rythmes,
+  pas les avoir. Il faudrait, pour cela, un nouveau type de matériel.
+- **Seules les machines de chair ?** En octobre 2025, le philosophe américain Ned Block
+  publie un article intitulé « *Can only meat machines be conscious?* » (seules les
+  machines de chair peuvent-elles être conscientes ?). Il ne tranche pas, mais montre que
+  les théories actuelles de la conscience sont toutes neutres sur ce point : rien en elles
+  n'exclut que les mécanismes biologiques qui réalisent les calculs soient nécessaires à
+  l'expérience. Si c'est le cas, une IA pourrait ne jamais être consciente, alors que des
+  animaux très simples le seraient.
+
+La frontière entre le vivant et la machine devient d'ailleurs moins nette. En 2022,
+l'entreprise australienne Cortical Labs montre que des neurones cultivés sur une puce
+apprennent à jouer au jeu vidéo *Pong*. En mars 2025, elle commercialise le CL1, présenté
+comme le premier ordinateur biologique, fait de neurones humains vivants sur une puce de
+silicium, pour environ 35 000 dollars. L'entreprise suisse FinalSpark loue de son côté
+un accès à distance à des organoïdes, de petits amas de neurones humains cultivés en
+laboratoire. Si le substrat compte, ces systèmes posent la question de la conscience des
+machines par l'autre bout.
+
+L'enjeu est considérable. Si le fonctionnalisme a raison, la conscience des machines est
+une question empirique, que l'on peut espérer trancher en cherchant les bonnes
+propriétés. Si le substrat compte, aucun modèle de langage, si perfectionné soit-il, ne
+sera conscient tant qu'il tournera sur des puces ordinaires.
+
 ## Appliquer ces théories aux machines
 
 Puisqu'aucune théorie ne fait l'unanimité, comment juger une machine ? En août 2023,
 dix-neuf chercheurs, philosophes et neuroscientifiques, parmi lesquels Yoshua Bengio,
-proposent une méthode. Ils supposent que le fonctionnalisme est vrai, tirent de chaque
+proposent une méthode. Ils supposent, par commodité, que le fonctionnalisme
+computationnel est vrai et que le substrat ne compte pas, tirent de chaque
 grande théorie des **propriétés indicatrices** de la conscience, comme une boucle de
 traitement récurrente, un espace de travail global ou une représentation de soi, puis
 cherchent ces propriétés dans les systèmes d'IA. Leur conclusion est double : aucun
