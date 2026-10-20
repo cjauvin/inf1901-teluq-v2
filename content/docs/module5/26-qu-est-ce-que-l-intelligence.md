@@ -135,6 +135,8 @@ d'un mot, comme le montrait l'exemple de
 Module 4. L'intelligence humaine n'a pas ce profil, ce qui rend nos intuitions sur
 l'intelligence des machines peu fiables.
 
+{{< image src="/images/module5/dents-de-scie.svg" alt="Deux panneaux. À gauche, la frontière en dents de scie : six tâches de difficulté comparable pour un humain sont placées sur un même cercle pointillé. La frontière des capacités d'un modèle de langage, une forme hérissée, passe au-delà de certaines tâches, que le modèle réussit (résumer un article, écrire un programme, traduire un texte), et en deçà d'autres, qu'il rate (compter les r de « strawberry », comparer 9,11 et 9,9, la tâche piège de l'étude BCG). À droite, un profil de capacités schématique sur huit tâches : le profil d'un humain est régulier, celui d'un modèle est hérissé." title="L'intelligence en dents de scie. À gauche, des tâches également difficiles pour un humain tombent de part et d'autre de la frontière des capacités du modèle (d'après l'étude BCG de 2023 et les schémas d'Ethan Mollick). À droite, un profil schématique : régulier chez un humain, hérissé chez un modèle de langage, qui excelle là où un humain peine et échoue là où un enfant réussit." loading="lazy" >}}
+
 ## L'intelligence comme apprentissage
 
 En 2019, François Chollet propose une autre définition, présentée au chapitre

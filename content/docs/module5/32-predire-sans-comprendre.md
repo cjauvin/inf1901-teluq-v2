@@ -49,6 +49,10 @@ Le chercheur Judea Pearl, prix Turing 2011 pour ses travaux sur le
 [raisonnement probabiliste et causal](docs/module2/60-classer/#raisonner-sous-incertitude-les-réseaux-bayésiens),
 propose en 2018 une **échelle de la causalité** à trois barreaux.
 
+{{< image src="/images/module5/portraits/pearl.jpg" alt="Judea Pearl, lunettes et cravate, parle devant une affiche scientifique couverte de graphes causaux." title="Judea Pearl en 2013, devant une affiche sur les modèles graphiques et les données manquantes." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Judea Pearl en 2013, devant une affiche sur les modèles graphiques et les données manquantes. Photo : Better Than Bacon, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons.</p>
+
 1. **L'association** : observer que deux choses vont ensemble. C'est ce que fait la
    prédiction.
 2. **L'intervention** : savoir ce qui arrive si l'on agit. C'est ce que mesure une
