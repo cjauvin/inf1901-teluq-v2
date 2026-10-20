@@ -20,11 +20,14 @@ soutient au contraire que l'esprit humain dépasse par principe tout calcul.
 L'idée qu'un esprit puisse être un calcul suppose de savoir ce que « calculer » veut
 dire. La réponse classique est la **thèse de Church-Turing** (*Church-Turing thesis*),
 formulée en 1936 par Alonzo Church et Alan Turing : tout ce qui peut être calculé par une
-procédure mécanique, étape par étape, peut l'être par une machine de Turing. Ce n'est pas
+procédure mécanique, étape par étape, peut l'être par une
+[machine de Turing](docs/module1/10-turing/#la-pensée-comme-calcul). Ce n'est pas
 un théorème, puisque l'idée de « procédure mécanique » n'a pas de définition précise en
 dehors de cette thèse, mais personne n'a jamais trouvé de contre-exemple. En 1985, le
 physicien David Deutsch en propose une version physique : tout système physique
 réalisable pourrait être simulé par une machine de calcul universelle.
+
+{{< image src="/images/module1/machine-de-turing.svg" alt="Schéma d'une machine de Turing : un ruban de cases, une tête de lecture/écriture, un état courant et une règle de transition." title="Rappel du Module 1 : une machine de Turing lit un symbole sur son ruban, en écrit un autre, se déplace d'une case et change d'état, selon une table de règles. Toute procédure mécanique se ramène à ces quelques opérations." loading="lazy" >}}
 
 Si cette version physique est vraie, et si le cerveau est un système physique, un
 ordinateur pourrait en principe simuler le cerveau, et donc tout ce qu'il fait. C'est
