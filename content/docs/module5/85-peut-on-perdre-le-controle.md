@@ -225,7 +225,7 @@ agent de programmation pour travailler sur une roquette guidée et un missile ba
 Les cyberattaques automatisées, la fabrication d'armes et la désinformation de masse sont
 les mésusages les plus redoutés.
 
-Les modèles ouverts compliquent ce problème. Les protections d'Anthropic ou d'OpenAI
+Les [modèles ouverts](docs/module4/60-passer-a-l-echelle/#ouvert-mais-jusquoù) compliquent ce problème. Les protections d'Anthropic ou d'OpenAI
 fonctionnent parce que leurs modèles restent sur leurs serveurs : l'entreprise peut
 refuser une demande, surveiller les usages et retirer un modèle. Un modèle dont les poids
 sont publiés échappe à tout cela. Ses garde-fous peuvent être retirés par un ajustement, il

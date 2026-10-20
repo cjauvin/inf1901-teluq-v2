@@ -280,6 +280,66 @@ notamment par Aidan Gomez, l'un des auteurs de l'article de 2017 qui a présent�
 [Transformer](docs/module3/70-attention-transformer/#le-transformer), qu'il avait
 coécrit pendant un stage chez Google alors qu'il étudiait à l'Université de Toronto.
 
+## Ouvert, mais jusqu'où ?
+
+L'expression « open source » vient du logiciel. En 1983, le programmeur Richard Stallman
+lance le projet GNU, qui vise un système d'exploitation entièrement **libre** : chacun
+doit pouvoir l'utiliser, l'étudier, le modifier et le redistribuer, ce qui suppose
+l'accès à son **code source**, le texte du programme lisible par un humain. En 1991,
+Linus Torvalds annonce le noyau Linux, héritier de la
+[culture Unix](docs/module4/85-programmer-avec-des-agents/#la-culture-unix-des-outils-faits-pour-le-texte)
+présentée plus loin dans ce module. En 1998, des partisans de ce mouvement adoptent
+l'expression **code source ouvert** (*open source*), plus acceptable pour les entreprises,
+et fondent l'Open Source Initiative, qui fixe dix critères qu'une licence doit remplir.
+Le principe est simple : quiconque reçoit un logiciel ouvert peut le reconstruire et le
+modifier à partir de son code source.
+
+Un modèle d'IA ne se laisse pas décrire aussi simplement. Ses poids sont le résultat de
+l'entraînement, pas sa recette. Publier les poids sans les données ni le code qui ont
+servi à les produire, c'est un peu comme publier un programme déjà compilé sans son code
+source : on peut s'en servir et l'ajuster, mais pas le refaire, ni vérifier vraiment ce
+qu'il a appris. L'ouverture d'un modèle est donc une affaire de degrés.
+
+- **Des poids, sous condition.** Les modèles Llama de Meta sont publiés avec une licence
+  maison. Les entreprises de plus de 700 millions d'utilisateurs mensuels doivent obtenir
+  une autorisation, que Meta accorde ou non, une politique d'usage interdit certaines
+  applications, et depuis septembre 2024, les versions qui traitent les images sont
+  refusées aux entreprises et aux personnes établies dans l'Union européenne. L'Open
+  Source Initiative répète depuis 2023 que ces licences ne sont pas des licences libres.
+- **Des poids vraiment libres.** D'autres publient leurs poids sous des licences libres
+  classiques, comme Apache 2.0 ou MIT, qui autorisent tous les usages : de nombreux
+  modèles de Mistral, de Qwen et de DeepSeek, et même deux modèles d'OpenAI, publiés en
+  août 2025, ses premiers modèles ouverts depuis GPT-2. Les données et le code
+  d'entraînement restent toutefois secrets.
+- **Tout est publié.** Quelques modèles publient tout, les poids, le code et les données
+  d'entraînement : la série OLMo de l'Allen Institute for AI, depuis 2024, ou Apertus,
+  publié en septembre 2025 par les écoles polytechniques fédérales de Lausanne et de
+  Zurich, entraîné sur des données dont les propriétaires pouvaient demander le retrait.
+  Ce sont des modèles plus modestes que ceux des grands laboratoires, mais n'importe
+  quel chercheur peut refaire leur entraînement.
+
+En octobre 2024, l'Open Source Initiative publie une définition de l'**IA à code source
+ouvert** (*open source AI*). Elle exige les poids, le code complet de l'entraînement, et
+une description assez détaillée des données pour qu'une personne compétente puisse
+entraîner un système équivalent, sans exiger les données elles-mêmes. Ce compromis est
+critiqué par une partie du mouvement, pour qui un modèle sans ses données n'est pas
+vraiment ouvert. Selon les essais de l'organisme, OLMo et Pythia satisfont la
+définition ; Llama 2, Grok et Mixtral, non.
+
+Le mot « ouvert » est devenu un argument de vente, au point que des chercheurs parlent
+d'**ouverture de façade** (*open washing*) : présenter comme ouverts des modèles qui ne
+le sont qu'en partie. L'enjeu n'est pas seulement d'image. L'AI Act européen allège
+certaines obligations pour les modèles publiés sous une licence libre, à condition que
+leurs poids soient publics, mais pas pour les modèles assez puissants pour présenter un
+risque systémique. Et la tendance est plutôt au repli. Selon l'indice de transparence de
+l'Université Stanford, la transparence moyenne des grands développeurs recule nettement
+en 2025. En avril 2026, Meta, longtemps champion des modèles ouverts, sort Muse Spark,
+son premier grand modèle dont les poids ne sont pas publiés, et d'autres laboratoires,
+comme Alibaba avec Qwen, gardent désormais fermés leurs modèles les plus puissants tout
+en ouvrant les autres. Le Module 5 revient sur ce que l'ouverture change pour
+l'[économie](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif) et
+pour les [risques de mésusage](docs/module5/85-peut-on-perdre-le-controle/#le-mésusage).
+
 ## Ce que coûte une réponse
 
 L'entraînement se paie une fois ; l'utilisation, à chaque réponse. Les entreprises
