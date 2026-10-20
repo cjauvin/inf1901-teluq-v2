@@ -137,12 +137,36 @@ de Gödel ne prouve pas le contraire.
 Le débat a longtemps été purement théorique. Il a changé de nature depuis que des
 machines font des mathématiques de haut niveau, comme l'a montré le chapitre
 « [Démontrer](docs/module4/87-demontrer) » du Module 4. En 2025, des modèles obtiennent
-le score d'une médaille d'or aux Olympiades internationales de mathématiques. En 2026,
-ils résolvent un problème ouvert posé par Paul Erdős, réfutent une de ses conjectures
-de 1946, et des agents rédigent la première démonstration complète du dernier théorème
-de Fermat dans le langage de preuve Lean.
+le score d'une [médaille d'or](docs/module4/87-demontrer/#les-olympiades-de-la-géométrie-à-lor)
+aux Olympiades internationales de mathématiques. En 2026, ils
+[résolvent un problème ouvert](docs/module4/87-demontrer/#vers-la-recherche) posé par
+Paul Erdős, réfutent une de ses conjectures de 1946, et des agents rédigent la première
+démonstration complète du dernier théorème de Fermat dans
+[Lean](docs/module4/87-demontrer/#vérifier-une-preuve), un langage où chaque étape d'une
+preuve est vérifiée par la machine.
 
-Ces résultats ne réfutent pas, à strictement parler, l'argument de Penrose. Celui-ci ne
+Le cas le plus spectaculaire est aussi le plus disputé. Le 8 septembre 2026, OpenAI
+annonce qu'un de ses systèmes a résolu l'un des sept **problèmes du millénaire**, pour
+lesquels l'Institut Clay offre depuis 2000 un million de dollars chacun : celui des
+**équations de Navier-Stokes** (*Navier-Stokes equations*), qui décrivent l'écoulement des
+fluides, de l'eau dans un tuyau à l'air autour d'une aile d'avion. La question est de
+savoir si ces équations ont toujours une solution régulière, ou si un fluide parti d'un
+état parfaitement lisse peut, en un temps fini, développer une singularité, un point où
+sa vitesse deviendrait infinie. Le système d'OpenAI, des milliers d'agents qui ont
+travaillé pendant 88 heures, produit une démonstration de 166 pages, accompagnée d'une
+version en Lean : la singularité peut se produire si une force extérieure bien choisie
+agit sur le fluide, l'une des formes de réponse que prévoit l'énoncé officiel du
+problème. Le résultat reste à vérifier. L'Institut Clay juge que le problème « a
+apparemment été réglé », mais n'attribuera le prix qu'après une publication dans une
+revue scientifique. En octobre, des chercheurs soutiennent que la version en Lean ne
+traduit pas fidèlement la démonstration écrite. Deux mathématiciens, Tristan Buckmaster
+et Levent Alpöge, qui travaillaient depuis un an sur un problème voisin, accusent de plus
+OpenAI d'avoir pu profiter de leurs travaux, ce que l'entreprise conteste. Le cas montre
+jusqu'où vont désormais les machines, mais aussi ce que devient la vérification d'une
+démonstration que presque personne ne peut lire en entier.
+
+Ces résultats ne réfutent pas, à strictement parler,
+[l'argument de Penrose](docs/module5/22-penser-est-ce-calculer/#penrose-lesprit-non-calculable). Celui-ci ne
 dit pas que les machines ne peuvent pas démontrer de théorèmes, mais qu'aucune ne peut
 voir la vérité de sa propre phrase de Gödel. Ils affaiblissent pourtant l'intuition sur
 laquelle il repose. L'argument supposait que la compréhension mathématique, cette
