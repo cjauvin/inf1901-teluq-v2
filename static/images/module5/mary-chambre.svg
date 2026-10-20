@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La chambre de Mary (Jackson, 1982)</title>
+<desc>Deux panneaux. À gauche, tout en gris : Mary, une scientifique, dans une pièce en noir et blanc, devant un écran qui affiche le spectre de la lumière, avec la longueur d'onde du rouge, 700 nanomètres, et une pile de livres d'optique, de neurologie et de physique : elle sait tout ce que la science dit de la vision des couleurs. Une flèche indique qu'elle sort. À droite, en couleurs : Mary voit pour la première fois une tomate mûre, d'un rouge vif. La question posée : apprend-elle quelque chose de nouveau ?</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">La chambre de Mary (Jackson, 1982)</text>
+<rect x="20" y="50" width="365" height="260" rx="10" fill="#e4e4e2" stroke="#bdbdbb"/>
+<text x="202" y="76" font-size="12.5" fill="#4a4a48" text-anchor="middle" font-weight="700">Dans sa pièce en noir et blanc</text>
+<rect x="44" y="98" width="150" height="96" rx="5" fill="#ffffff" stroke="#4a4a48" stroke-width="1.6"/>
+<polyline points="54,179.5 57,179.2 60,178.9 63,178.4 66,177.7 69,176.8 72,175.6 75,174.1 78,172.1 81,169.8 84,167.0 87,163.7 90,160.0 93,155.7 96,151.2 99,146.3 102,141.4 105,136.4 108,131.7 111,127.4 114,123.8 117,120.9 120,119.0 123,118.1 126,118.2 129,119.5 132,121.8 135,124.9 138,128.8 141,133.2 144,138.0 147,143.0 150,148.0 153,152.7 156,157.2 159,161.3 162,164.9 165,168.0 168,170.6 171,172.8 174,174.6 177,176.0 180,177.1 183,177.9" fill="none" stroke="#4a4a48" stroke-width="1.8"/>
+<line x1="54" y1="181" x2="186" y2="181" stroke="#8c8c8a" stroke-width="1"/>
+<line x1="166" y1="112" x2="166" y2="181" stroke="#8c8c8a" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="162" y="110" font-size="9.5" fill="#4a4a48" text-anchor="end">700 nm</text>
+<rect x="112" y="194" width="14" height="14" fill="#8c8c8a"/><rect x="96" y="208" width="46" height="5" rx="2" fill="#8c8c8a"/>
+<rect x="209.0" y="186" width="98" height="18" rx="2" fill="#bdbdbb" stroke="#4a4a48" stroke-width="1.2"/>
+<text x="258" y="199" font-size="10" fill="#4a4a48" text-anchor="middle">physique</text>
+<rect x="204.0" y="166" width="108" height="18" rx="2" fill="#d2d2d0" stroke="#4a4a48" stroke-width="1.2"/>
+<text x="258" y="179" font-size="10" fill="#4a4a48" text-anchor="middle">neurologie</text>
+<rect x="212.0" y="146" width="92" height="18" rx="2" fill="#bdbdbb" stroke="#4a4a48" stroke-width="1.2"/>
+<text x="258" y="159" font-size="10" fill="#4a4a48" text-anchor="middle">optique</text>
+<circle cx="352" cy="170" r="12" fill="#f2f2f0" stroke="#4a4a48" stroke-width="2"/>
+<path d="M332 214 Q332 186 352 186 Q372 186 372 214" fill="#f2f2f0" stroke="#4a4a48" stroke-width="2"/>
+<text x="202" y="270" font-size="11.5" fill="#4a4a48" text-anchor="middle">Mary sait tout ce que la science</text>
+<text x="202" y="288" font-size="11.5" fill="#4a4a48" text-anchor="middle">dit de la vision des couleurs.</text>
+<line x1="392" y1="180" x2="448" y2="180" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<text x="420" y="168" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">elle sort</text>
+<rect x="455" y="50" width="365" height="260" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="637" y="76" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">Elle voit une tomate mûre</text>
+<ellipse cx="585" cy="168" rx="52" ry="46" fill="#c4564a"/>
+<ellipse cx="567" cy="150" rx="12" ry="7" fill="#ffffff" fill-opacity="0.35" transform="rotate(-30 567 150)"/>
+<polygon points="585.0,113.0 588.5,121.3 604.0,120.6 590.7,125.0 596.8,132.9 585.0,127.3 573.2,132.9 579.3,125.0 566.0,120.6 581.5,121.3" fill="#4f7d3a"/>
+<path d="M585 120 Q587 108 593 104" fill="none" stroke="#4f7d3a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="728" cy="170" r="12" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<path d="M708 214 Q708 186 728 186 Q748 186 748 214" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<text x="754" y="152" font-size="26" fill="#c4564a" text-anchor="middle" font-weight="700">!</text>
+<text x="637" y="270" font-size="11.5" fill="#c4564a" text-anchor="middle" font-weight="700">Apprend-elle quelque chose de nouveau ?</text>
+<text x="637" y="288" font-size="11.5" fill="#3a3531" text-anchor="middle">Si oui, le savoir physique ne dit pas tout.</text>
+</svg>

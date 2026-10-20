@@ -23,8 +23,17 @@ La chauve-souris se repère par écholocation, en émettant des cris et en écou
 quand on perçoit le monde de cette façon. Pour Nagel, un être est conscient s'il y a
 « quelque chose que cela fait » d'être cet être. C'est ce point de vue de l'intérieur,
 l'expérience vécue, que l'on appelle la **conscience phénoménale** (*phenomenal
-consciousness*). Les qualités de cette expérience, le rouge du rouge, la douleur de la
-douleur, s'appellent des **qualia** (*qualia*).
+consciousness*).
+
+{{< image src="/images/module5/nagel-chauve-souris.svg" alt="Deux panneaux. À gauche, ce que l'on peut décrire : une chauve-souris émet des cris très aigus, qui rebondissent sur un papillon de nuit, et écoute leurs échos pour situer sa proie. À droite, ce qui échappe à la description : une personne imagine, dans une bulle de pensée, ce que vit la chauve-souris, mais la bulle ne contient qu'un point d'interrogation." title="La question de Nagel (1974). On peut décrire l'écholocation en détail, mesurer chaque cri et chaque écho, sans savoir ce que cela fait, pour la chauve-souris, de percevoir le monde ainsi." loading="lazy" >}}
+
+Les qualités de cette expérience, le rouge du rouge, la douleur de la
+douleur, s'appellent des **qualia** (*qualia*). Ce sont elles que la science semble ne pas
+atteindre : on peut décrire toute la chaîne qui va de la lumière au cerveau sans dire ce
+que cela fait de voir du rouge. En 1983, le philosophe américain Joseph Levine a appelé ce
+manque le **fossé explicatif** (*explanatory gap*).
+
+{{< image src="/images/module5/qualia-rouge.svg" alt="Deux panneaux séparés par un point d'interrogation. À gauche, ce que la science décrit quand on voit du rouge : une onde lumineuse de 700 nanomètres entre dans l'œil, active des cônes de la rétine, qui envoient des influx nerveux jusqu'au cortex visuel. À droite, ce que l'on vit : une tache rouge, le rouge tel qu'on le voit. Entre les deux, le fossé explicatif." title="Les qualia. La chaîne physique de la vision se mesure de l'extérieur ; le rouge tel qu'on le voit n'est accessible que de l'intérieur. Rien, dans la chaîne, ne dit pourquoi elle s'accompagne de cette expérience : c'est ce que l'on appelle le fossé explicatif (explanatory gap)." loading="lazy" >}}
 
 En 1982, le philosophe australien Frank Jackson imagine Mary, une scientifique qui sait
 tout ce que la physique et la biologie peuvent dire de la vision des couleurs, mais qui a
@@ -32,6 +41,8 @@ toujours vécu dans une pièce en noir et blanc. Le jour où elle sort et voit u
 mûre, apprend-elle quelque chose de nouveau ? Si oui, tout savoir physique ne suffit pas
 à rendre compte de l'expérience. Jackson a lui-même abandonné cette conclusion vers la
 fin des années 1990, mais l'expérience de pensée reste au cœur du débat.
+
+{{< image src="/images/module5/mary-chambre.svg" alt="Deux panneaux. À gauche, tout en gris : Mary, une scientifique, dans une pièce en noir et blanc, devant un écran qui affiche le spectre de la lumière, avec la longueur d'onde du rouge, 700 nanomètres, et une pile de livres d'optique, de neurologie et de physique. Une flèche indique qu'elle sort. À droite, en couleurs : Mary voit pour la première fois une tomate mûre, d'un rouge vif." title="L'expérience de pensée de Frank Jackson (1982). Mary sait tout ce que la science dit de la couleur rouge ; si, en voyant sa première tomate, elle apprend ce que cela fait de voir du rouge, le savoir physique ne dit pas tout." loading="lazy" >}}
 
 ## Le problème difficile
 
