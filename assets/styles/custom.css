@@ -173,7 +173,7 @@ p {
    centrée, et non une figure pleine colonne. */
 @media screen {
   .book-image input:not(:checked) + img.portrait {
-    max-width: min(100%, 220px);
+    max-width: min(100%, 320px);
     border-radius: 6px;
   }
   .book-image input:not(:checked) + img.portraits {

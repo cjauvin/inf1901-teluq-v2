@@ -235,7 +235,7 @@ def preparer(html: str, site: Path, conv: Path) -> tuple[str, str]:
             if "logo-mono" in (img.get("class") or []):
                 img["width"] = "35%"
             if "portrait" in (img.get("class") or []):
-                img["width"] = "28%"
+                img["width"] = "38%"
             if "portraits" in (img.get("class") or []):
                 img["width"] = "62%"
             src = urllib.parse.unquote(img["src"])
