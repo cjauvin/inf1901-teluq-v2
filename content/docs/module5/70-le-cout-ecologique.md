@@ -91,7 +91,10 @@ DeepSeek, beaucoup moins coûteux, le dirigeant de Microsoft, Satya Nadella, l'i
 lui-même : plus l'IA deviendra efficace et accessible, plus on s'en servira. Le chapitre
 « [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#ce-que-coûte-une-réponse) » du
 Module 4 en a donné un exemple : le prix d'une réponse s'effondre, et la consommation
-totale augmente.
+totale augmente. Selon diverses estimations, le prix d'une réponse de qualité donnée est
+divisé chaque année par dix ou plus, sous la pression, notamment, des
+[modèles ouverts chinois](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif),
+vendus pour quelques centimes par million de jetons.
 
 ## Le Québec
 

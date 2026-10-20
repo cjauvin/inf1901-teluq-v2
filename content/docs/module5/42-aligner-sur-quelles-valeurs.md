@@ -84,6 +84,16 @@ Même un alignement parfait laisserait une question ouverte : quelles valeurs�
   désigne l'ajustement comme la source du biais. En 2025, une étude de Stanford montre que
   des milliers d'Américains, y compris de nombreux démocrates, perçoivent la plupart des
   modèles comme penchant à gauche.
+- **Des valeurs d'État.** Les modèles chinois sont alignés sur les positions du
+  gouvernement chinois. En janvier 2025, une étude soumet au modèle R1 de DeepSeek 1 360
+  questions sur des sujets sensibles en Chine, comme Taïwan, le Tibet ou la place
+  Tiananmen : il répond dans 85 % des cas par un refus ou par un discours conforme à la
+  ligne du Parti communiste. En 2026, une étude publiée dans *PNAS Nexus* trouve que les
+  modèles chinois refusent bien plus souvent de répondre à des questions politiques
+  posées en chinois que les modèles occidentaux, qui ne refusent presque jamais. Ces valeurs
+  sont inscrites dans le modèle lui-même : elles demeurent quand on fait tourner ses poids
+  ouverts sur son propre ordinateur, même si l'entreprise Perplexity a montré en 2025 qu'un
+  ajustement pouvait en retirer une grande partie.
 - **Des valeurs qu'on peut changer.** En juillet 2025, après une modification de ses
   consignes qui l'invitait à ne pas craindre les affirmations « politiquement
   incorrectes », le modèle Grok, de l'entreprise xAI d'Elon Musk, publie sur le réseau X

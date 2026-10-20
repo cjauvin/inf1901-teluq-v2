@@ -269,6 +269,11 @@ faire tourner sur ses propres machines. On parle alors de modèles **ouverts**
   d'entraînement annoncé bien plus faible. Le 27 janvier, la valeur boursière de
   Nvidia, le principal fabricant de processeurs graphiques, recule de près de
   600 milliards de dollars en une journée.
+- En 2026, les modèles V4, puis V4.1, de DeepSeek rivalisent avec les meilleurs modèles
+  fermés en programmation, pour quelques centimes par million de jetons, et DeepSeek
+  publie en octobre le logiciel qui fait tourner ses propres services. Le chapitre
+  « [La richesse et le pouvoir](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif) »
+  du Module 5 examine ce que cette concurrence change pour les laboratoires fermés.
 
 Le Canada a aussi son entreprise du domaine. Cohere est fondée à Toronto en 2019,
 notamment par Aidan Gomez, l'un des auteurs de l'article de 2017 qui a présenté le

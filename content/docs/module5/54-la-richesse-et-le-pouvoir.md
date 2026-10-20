@@ -77,17 +77,73 @@ Même si les gains arrivent, leur répartition reste une question ouverte.
   ont eu plus de liberté dans leurs choix d'emploi et ont davantage aidé leurs proches,
   mais les effets sur leur santé se sont estompés après la première année.
 
-## Les modèles ouverts
+## Y a-t-il un fossé défensif ?
 
-Le Module 4 a présenté les [modèles ouverts](docs/module4/60-passer-a-l-echelle/#modèles-fermés-modèles-ouverts),
-dont les poids sont publiés et que chacun peut utiliser. Ils sont un contrepoids à la
-concentration. Le 27 janvier 2025, la sortie du modèle ouvert chinois DeepSeek R1, presque
-aussi bon que les meilleurs modèles américains pour une fraction du coût annoncé, fait
-perdre à Nvidia près de 590 milliards de dollars en bourse en une journée, la plus forte
-perte jamais enregistrée par une entreprise. En 2025, les modèles chinois Qwen deviennent
-les plus téléchargés sur la plateforme Hugging Face. Les modèles ouverts répartissent le
-pouvoir, mais ils posent aussi des questions de sécurité, puisqu'on ne peut plus les
-retirer une fois publiés.
+En économie, on appelle **fossé défensif** (*moat*) ce qui protège une entreprise de ses
+concurrents, comme les douves autour d'un château fort : un brevet, une marque, un réseau
+d'utilisateurs, un savoir-faire difficile à copier. Les sommes investies dans les grands
+laboratoires supposent qu'ils en ont un. Rien n'est moins sûr.
+
+En mai 2023, une note interne d'un ingénieur de Google, qui fuite sur Internet, résume le
+problème dans son titre : « *We Have No Moat, And Neither Does OpenAI* » (nous n'avons pas
+de fossé défensif, et OpenAI non plus). Depuis que les poids du modèle LLaMA de Meta ont
+circulé, explique-t-il, une communauté de chercheurs et d'amateurs améliore ces modèles
+ouverts à une vitesse que les grandes entreprises ne peuvent pas suivre.
+
+Le laboratoire chinois DeepSeek a donné à cette inquiétude une forme spectaculaire.
+
+- **Un coût d'entraînement réduit.** En décembre 2024, DeepSeek-V3 est entraîné, selon
+  l'entreprise, pour environ 5,6 millions de dollars de calcul, un chiffre qui ne compte
+  que la dernière étape de l'entraînement, mais qui frappe les esprits, comme le présente
+  le chapitre « [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#ce-que-coûte-une-réponse) »
+  du Module 4.
+- **Un modèle de raisonnement ouvert.** Le 20 janvier 2025, DeepSeek publie R1, sous une
+  licence libre, à un prix environ vingt-sept fois inférieur à celui du modèle de
+  raisonnement d'OpenAI. Le 27 janvier, Nvidia perd près de 590 milliards de dollars en
+  bourse en une journée, la plus forte perte jamais enregistrée par une entreprise.
+- **Des outils, puis des modèles de pointe.** En février 2025, DeepSeek publie en libre
+  accès plusieurs des logiciels qui lui servent à entraîner et à faire tourner ses modèles.
+  En 2026, ses modèles V4, puis V4.1, rivalisent avec les meilleurs modèles américains en
+  programmation, tout en restant derrière eux pour les raisonnements les plus difficiles,
+  pour quelques centimes par million de jetons.
+- **Le moteur de production.** Le 20 octobre 2026, DeepSeek publie sous licence libre
+  DeepInfer, le logiciel qui fait tourner ses propres services, capable de fonctionner sur
+  les puces américaines de Nvidia comme sur les puces chinoises Ascend de Huawei. N'importe
+  quel hébergeur peut désormais offrir ses modèles à bas prix, avec les mêmes optimisations
+  que DeepSeek.
+
+Les modèles ouverts chinois sont devenus massivement utilisés : en 2025, les modèles Qwen
+d'Alibaba deviennent les plus téléchargés de la plateforme Hugging Face, et la part des
+modèles chinois dans les jetons consommés sur la plateforme OpenRouter passe d'environ 1 %
+à la fin de 2024 à près de 30 % certaines semaines de 2025. Selon le rapport annuel de
+Stanford sur l'IA, l'écart de performance entre les meilleurs modèles américains et chinois
+n'est plus, en mars 2026, que de quelques pour cent.
+
+## Ce qui protège encore les laboratoires fermés
+
+Si le modèle lui-même ne protège plus guère, l'avantage des laboratoires américains se
+déplace ailleurs.
+
+- **L'avance sur les modèles les plus puissants**, qui reste de quelques mois, et que les
+  laboratoires financent par des sommes que leurs concurrents ne peuvent pas égaler : en
+  2025, les investissements privés dans l'IA atteignent 286 milliards de dollars aux
+  États-Unis, contre 12 milliards en Chine, selon Stanford.
+- **Les produits et les habitudes.** ChatGPT compte des centaines de millions
+  d'utilisateurs, qui ne changent pas facilement d'outil. Les agents de programmation,
+  présentés au chapitre « [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents) »
+  du Module 4, sont devenus une source majeure de revenus : Claude Code, celui d'Anthropic, dépasse à lui seul, en février 2026, 2,5 milliards de dollars de revenus annualisés.
+- **La confiance.** Les entreprises et les gouvernements occidentaux hésitent à confier
+  leurs données à un modèle chinois, ou à dépendre de lui. Le 20 octobre 2026, une ordonnance du ministère américain de la Sécurité intérieure, publiée ce jour-là, oblige les agences fédérales civiles à cesser d'utiliser tout produit de DeepSeek, y compris les services construits sur ses modèles.
+
+La concurrence des modèles ouverts a aussi un effet bien concret : elle fait baisser les
+prix. Selon diverses estimations, le prix d'une réponse de qualité donnée est divisé
+chaque année par dix ou plus. Les utilisateurs y gagnent ; les laboratoires, dont les
+revenus dépendent largement de la vente de jetons, doivent vendre toujours plus pour
+rembourser des investissements toujours plus grands. C'est l'une des raisons des craintes
+de bulle évoquées plus haut. Les modèles ouverts répartissent ainsi le pouvoir, mais
+posent aussi des questions de sécurité, puisqu'on ne peut plus les retirer une fois
+publiés, comme le rappelle le chapitre
+« [Peut-on perdre le contrôle ?](docs/module5/85-peut-on-perdre-le-controle/#le-mésusage) ».
 
 ## Le Québec, entre recherche et industrie
 

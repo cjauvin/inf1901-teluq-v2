@@ -109,6 +109,18 @@ agent de programmation pour travailler sur une roquette guidée et un missile ba
 Les cyberattaques automatisées, la fabrication d'armes et la désinformation de masse sont
 les mésusages les plus redoutés.
 
+Les modèles ouverts compliquent ce problème. Les protections d'Anthropic ou d'OpenAI
+fonctionnent parce que leurs modèles restent sur leurs serveurs : l'entreprise peut
+refuser une demande, surveiller les usages et retirer un modèle. Un modèle dont les poids
+sont publiés échappe à tout cela. Ses garde-fous peuvent être retirés par un ajustement, il
+ne peut plus être rappelé, et des logiciels comme DeepInfer, que DeepSeek publie en octobre
+2026, permettent à n'importe qui de le faire tourner efficacement. Les défenseurs des
+modèles ouverts répondent qu'ils permettent aux chercheurs indépendants d'étudier les
+modèles, qu'ils évitent de concentrer un pouvoir immense entre quelques entreprises, comme
+le montre le chapitre « [La richesse et le pouvoir](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif) »,
+et que les capacités dangereuses se trouvent d'abord dans les modèles fermés les plus
+puissants.
+
 ## Une technologie normale, ou une rupture ?
 
 Le désaccord porte en grande partie sur un fait encore inconnu : à quelle vitesse les

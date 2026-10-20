@@ -29,8 +29,12 @@ se joue d'abord sur les puces.
   nationales, et leur demande, à l'automne 2025, de cesser d'acheter certaines puces de
   Nvidia. Ses laboratoires misent sur l'efficacité et les modèles ouverts : la sortie de
   DeepSeek R1, en janvier 2025, puis la domination des modèles Qwen sur les plateformes de
-  modèles ouverts montrent que les restrictions n'ont pas empêché la Chine de rester dans
-  la course.
+  modèles ouverts montrent que les restrictions n'ont pas empêché la Chine de rester dans la course. En
+  2026, Huawei annonce que les modèles V4 de DeepSeek fonctionnent entièrement sur ses
+  puces Ascend, qui ont servi à une partie de l'entraînement de l'un d'eux, et le moteur
+  DeepInfer, que DeepSeek publie en octobre, tourne aussi bien sur ces puces que sur celles
+  de Nvidia. Le pari américain, contrôler l'IA chinoise en contrôlant les puces, en devient
+  plus incertain.
 - **Les autres.** Les pays du Golfe, comme l'Arabie saoudite et les Émirats arabes unis,
   investissent massivement dans des centres de données, en échange de garanties qu'ils ne
   céderont pas la technologie américaine à la Chine. L'Union européenne annonce en 2025

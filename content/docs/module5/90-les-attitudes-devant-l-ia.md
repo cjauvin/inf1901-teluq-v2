@@ -93,6 +93,9 @@ ce module a présentés.
   américaine, mais aussi, sous d'autres formes, celle de l'Europe, du Canada et du Québec,
   soucieux de ne pas dépendre de deux puissances, et de protéger leur langue, comme le
   montre le chapitre « [La géopolitique et la réglementation](docs/module5/64-la-geopolitique-et-la-reglementation) ».
+  Elle recoupe la question des modèles ouverts, que certains défendent comme un contrepoids
+  aux géants et un gage d'indépendance, et que d'autres redoutent comme un risque pour la
+  sécurité, d'autant que les plus utilisés sont souvent, depuis DeepSeek, chinois.
 - **La protection et le refus.** Il faut protéger ce que l'IA menace : les emplois, les
   [créateurs](docs/module5/52-la-creation-et-la-propriete), les enfants, des valeurs.
   Cette attitude traverse les clivages politiques, de Steve Bannon à Bernie Sanders, des

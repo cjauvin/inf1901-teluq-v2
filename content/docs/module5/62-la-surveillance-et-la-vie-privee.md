@@ -97,6 +97,20 @@ conversations ne sont pas aussi privées qu'elles le paraissent.
 - **Une mémoire.** Les assistants qui se souviennent des conversations précédentes, comme
   le décrit le chapitre « [Des outils, un harnais et des agents](docs/module4/80-outils-et-agents) »,
   accumulent un portrait de plus en plus précis de leurs utilisateurs.
+- **Des données envoyées à l'étranger.** Quand on utilise un assistant en ligne, ses
+  conversations sont stockées chez son fournisseur, et soumises aux lois de son pays. En
+  janvier 2025, l'autorité italienne de protection des données bloque l'application de
+  DeepSeek, dont les données sont conservées en Chine. La Corée du Sud suspend son
+  téléchargement, l'Australie, Taïwan et plusieurs administrations américaines l'interdisent
+  sur les appareils de l'État, et le gouvernement fédéral canadien la bloque sur une partie
+  de ses téléphones.
+
+Les [modèles ouverts](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif)
+offrent ici une solution : un modèle dont les poids sont publiés peut tourner sur ses
+propres machines, sans qu'aucune donnée ne quitte l'organisation. En 2024, la Commission
+nationale de l'informatique et des libertés, en France, recommande ainsi de privilégier des
+systèmes locaux et sécurisés pour déployer une IA générative. Un modèle local garde
+toutefois les valeurs et les biais qu'il a appris.
 
 ## Ce que dit la loi
 
