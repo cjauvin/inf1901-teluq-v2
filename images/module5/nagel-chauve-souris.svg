@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 840 330" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Quel effet cela fait-il d'être une chauve-souris ?</title>
+<desc>Deux panneaux. À gauche, ce que l'on peut décrire : une chauve-souris émet des cris très aigus, représentés par des arcs, qui rebondissent sur un papillon de nuit ; elle écoute leurs échos, représentés par des arcs en pointillé qui reviennent vers elle, et en déduit la position de sa proie. À droite, ce qui échappe à la description : une personne imagine, dans une bulle de pensée, ce que vit la chauve-souris, mais la bulle ne contient qu'un point d'interrogation.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="840" height="330" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="420.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Quel effet cela fait-il d'être une chauve-souris ?</text>
+<rect x="20" y="50" width="520" height="260" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="280" y="76" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">Ce que l'on peut décrire : l'écholocation</text>
+<path d="M116.0 169.0 Q140.0 145.0 180.0 153.0 Q170.0 173.0 162.0 181.0 Q152.0 173.0 144.0 185.0 Q134.0 177.0 118.0 185.0 Z M104.0 169.0 Q80.0 145.0 40.0 153.0 Q50.0 173.0 58.0 181.0 Q68.0 173.0 76.0 185.0 Q86.0 177.0 102.0 185.0 Z" fill="#3a3531"/>
+<ellipse cx="110" cy="177.0" rx="9.0" ry="14.0" fill="#3a3531"/>
+<circle cx="110" cy="163.0" r="7.5" fill="#3a3531"/>
+<path d="M107.0 158.0 L102.0 148.0 L102.5 162.0 Z" fill="#3a3531"/>
+<circle cx="107.0" cy="162.0" r="1.3" fill="#fbf7ee"/>
+<path d="M113.0 158.0 L118.0 148.0 L117.5 162.0 Z" fill="#3a3531"/>
+<circle cx="113.0" cy="162.0" r="1.3" fill="#fbf7ee"/>
+<path d="M208.1 131.4 A95 95 0 0 1 208.1 202.6" fill="none" stroke="#3a6ea5" stroke-width="2" stroke-linecap="round"/>
+<path d="M231.3 122.0 A120 120 0 0 1 231.3 212.0" fill="none" stroke="#3a6ea5" stroke-width="2" stroke-linecap="round"/>
+<path d="M254.4 112.7 A145 145 0 0 1 254.4 221.3" fill="none" stroke="#3a6ea5" stroke-width="2" stroke-linecap="round"/>
+<path d="M277.6 103.3 A170 170 0 0 1 277.6 230.7" fill="none" stroke="#3a6ea5" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="442" cy="154" rx="9" ry="7" fill="#9a5b33" fill-opacity="0.75" transform="rotate(25 442 154)"/>
+<ellipse cx="443" cy="166" rx="6" ry="5" fill="#9a5b33" fill-opacity="0.6" transform="rotate(-25 443 166)"/>
+<ellipse cx="458" cy="154" rx="9" ry="7" fill="#9a5b33" fill-opacity="0.75" transform="rotate(-25 458 154)"/>
+<ellipse cx="457" cy="166" rx="6" ry="5" fill="#9a5b33" fill-opacity="0.6" transform="rotate(25 457 166)"/>
+<ellipse cx="450" cy="160" rx="2.2" ry="10" fill="#3a3531"/>
+<path d="M412.5 174.7 A34 34 0 0 1 412.5 149.3" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<path d="M388.4 184.5 A60 60 0 0 1 388.4 139.5" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<path d="M364.3 194.2 A86 86 0 0 1 364.3 129.8" fill="none" stroke="#2f6f6a" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="262" y="106" font-size="11" fill="#3a6ea5" text-anchor="middle" font-weight="700">des cris très aigus</text>
+<text x="395" y="228" font-size="11" fill="#2f6f6a" text-anchor="middle" font-weight="700">leurs échos</text>
+<text x="450" y="128" font-size="10.5" fill="#9a5b33" text-anchor="middle">une proie</text>
+<text x="280" y="270" font-size="11.5" fill="#3a3531" text-anchor="middle">On peut décrire ce mécanisme en détail,</text>
+<text x="280" y="288" font-size="11.5" fill="#3a3531" text-anchor="middle">mesurer chaque cri et chaque écho.</text>
+<rect x="556" y="50" width="264" height="260" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="688" y="76" font-size="12.5" fill="#c4564a" text-anchor="middle" font-weight="700">Ce qui échappe à la description</text>
+<circle cx="616" cy="192" r="12" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<path d="M596 236 Q596 208 616 208 Q636 208 636 236" fill="#fbf7ee" stroke="#3a3531" stroke-width="2"/>
+<circle cx="634" cy="174" r="4" fill="#ffffff" stroke="#7a6f63" stroke-width="1.4"/>
+<circle cx="646" cy="160" r="6" fill="#ffffff" stroke="#7a6f63" stroke-width="1.4"/>
+<ellipse cx="722" cy="122" rx="80" ry="40" fill="#ffffff" stroke="#7a6f63" stroke-width="1.4"/>
+<path d="M698.5 123.5 Q708.6 113.4 725.4 116.8 Q721.2 125.2 717.8 128.5 Q713.6 125.2 710.3 130.2 Q706.1 126.8 699.4 130.2 Z M693.5 123.5 Q683.4 113.4 666.6 116.8 Q670.8 125.2 674.2 128.5 Q678.4 125.2 681.7 130.2 Q685.9 126.8 692.6 130.2 Z" fill="#7a6f63"/>
+<ellipse cx="696" cy="126.8" rx="3.8" ry="5.9" fill="#7a6f63"/>
+<circle cx="696" cy="121.0" r="3.1" fill="#7a6f63"/>
+<path d="M694.7 118.9 L692.6 114.7 L692.9 120.5 Z" fill="#7a6f63"/>
+<circle cx="694.7" cy="120.5" r="0.5" fill="#fbf7ee"/>
+<path d="M697.3 118.9 L699.4 114.7 L699.1 120.5 Z" fill="#7a6f63"/>
+<circle cx="697.3" cy="120.5" r="0.5" fill="#fbf7ee"/>
+<text x="752" y="136" font-size="30" fill="#c4564a" text-anchor="middle" font-weight="700">?</text>
+<text x="688" y="270" font-size="11.5" fill="#3a3531" text-anchor="middle">Ce que cela fait de la vivre,</text>
+<text x="688" y="288" font-size="11.5" fill="#3a3531" text-anchor="middle">de l'intérieur, reste hors de portée.</text>
+</svg>
