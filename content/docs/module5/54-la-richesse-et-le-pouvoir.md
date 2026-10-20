@@ -55,6 +55,82 @@ productivité. Les gains de l'informatique sont venus, mais une dizaine d'année
 C'est le débat sur la [technologie normale](docs/module5/85-peut-on-perdre-le-controle/#une-technologie-normale-ou-une-rupture),
 transposé à l'économie.
 
+## Et si la bulle éclatait ?
+
+Personne ne sait si l'IA est une bulle. Les conséquences possibles d'un éclatement, en
+revanche, se laissent décrire, et elles dépassent de loin le secteur de la technologie.
+
+- **Une économie qui en dépend.** En 2026, les dix plus grandes entreprises de l'indice
+  boursier américain S&P 500, presque toutes liées à l'IA, en représentent environ 39 %, une
+  concentration inédite depuis les années 1960, et Nvidia seule environ 8 %. Une chute de
+  ces actions toucherait l'épargne de millions de personnes et les caisses de retraite qui
+  les détiennent. L'économiste Jason Furman calcule qu'au premier semestre de 2025, les
+  investissements dans l'informatique, centres de données en tête, ont fourni à eux seuls
+  environ 92 % de la croissance économique américaine. En 2026, selon la banque ING, ils en
+  fournissent encore environ un tiers. Un arrêt brutal de ces investissements pourrait
+  donc faire basculer l'économie américaine dans la récession.
+- **Une dette qui grandit.** Les géants de la technologie finançaient d'abord leurs
+  centres de données avec leurs profits. Ce n'est plus tout à fait le cas : selon la banque
+  UBS, leurs investissements absorbent en 2026 presque tous les revenus de leurs
+  activités. Ils empruntent donc, souvent par des montages qui sortent la dette de leurs
+  comptes. En octobre 2025, Meta finance ainsi un centre de données en Louisiane par
+  environ 27 milliards de dollars d'obligations, émises par une société commune avec un
+  fonds d'investissement. Oracle emprunte des dizaines de milliards, et le coût de
+  l'assurance contre son défaut atteint à la fin de 2025 son plus haut niveau depuis trois
+  ans. La banque Morgan Stanley prévoit que le crédit privé, des prêts consentis hors des
+  banques, financera environ 800 milliards de dollars de centres de données d'ici 2028.
+  C'est par la dette qu'une crise de marché devient une crise financière, comme en 2008,
+  quand des prêts immobiliers ont entraîné des banques dans leur chute.
+- **Des laboratoires qui brûlent de l'argent.** OpenAI prévoit, selon le *Financial
+  Times*, des flux de trésorerie négatifs d'environ 278 milliards de dollars entre 2026 et
+  2030, en comptant sur une multiplication par dix de ses revenus. Si les investisseurs
+  cessaient de la financer, les entreprises qui lui ont promis des centaines de milliards
+  de dollars de puces et de centres de données perdraient un client, et parfois une partie
+  de leurs propres investissements, à cause des
+  [montages circulaires](docs/module5/54-la-richesse-et-le-pouvoir/#des-sommes-vertigineuses)
+  décrits au début du chapitre.
+
+## Ce que disent les bulles passées
+
+L'histoire offre des précédents, qui invitent à distinguer le sort des investisseurs de
+celui de la société.
+
+- **La bulle Internet.** Entre mars 2000 et octobre 2002, l'indice boursier Nasdaq perd
+  environ 78 % de sa valeur, et il ne retrouve son sommet qu'en 2015. Des milliers
+  d'entreprises disparaissent. Mais la fibre optique posée pendant la bulle reste en
+  place : en 2002, seuls 2 à 5 % des câbles américains servaient, selon une estimation, et
+  ces surplus ont permis, quelques années plus tard, l'essor de la vidéo en ligne et des
+  services infonuagiques.
+- **La fièvre ferroviaire.** Dans le Royaume-Uni des années 1840, la spéculation sur les
+  chemins de fer pousse le Parlement à autoriser des centaines de lignes, puis les cours
+  s'effondrent à partir de 1847. Un tiers des lignes autorisées ne sont jamais
+  construites ; celles qui le sont forment pour longtemps le réseau du pays.
+
+D'où l'idée, défendue en octobre 2025 par Jeff Bezos, le fondateur d'Amazon, que l'IA
+connaît une bulle « industrielle », où l'on finance « les bonnes idées comme les
+mauvaises » : ruineuse pour beaucoup d'investisseurs, mais qui laisse derrière elle des
+infrastructures utiles. Les dirigeants de l'IA eux-mêmes reconnaissent l'excès. En août
+2025, Sam Altman juge que les investisseurs sont « trop excités » par l'IA, et en novembre,
+Sundar Pichai, le dirigeant de Google, voit des « éléments d'irrationalité » dont aucune
+entreprise, la sienne comprise, ne serait à l'abri.
+
+D'autres jugent la comparaison exagérée. En 2026, les actions des grandes entreprises
+technologiques valent environ 25 fois leurs profits attendus, contre près de 60 fois au
+sommet de 2000, et la demande de calcul dépasse encore l'offre : les processeurs
+graphiques disponibles à la location sont presque tous réservés. Contrairement à celles
+de 2000, ces entreprises vendent réellement des produits à des centaines de millions de
+clients.
+
+Au moment où ce cours est écrit, en octobre 2026, la bulle n'a pas éclaté, mais les
+secousses se multiplient. En juin 2026, une vague de ventes fait chuter de près de 10 %
+en une journée la bourse de Séoul, où sont cotés les fabricants de mémoire Samsung et
+SK hynix. En septembre, Oracle invoque un cas de force majeure pour retarder un centre de
+données. À la mi-octobre, la crainte d'une crise de la dette fait chuter les actions et
+les obligations de CoreWeave, un des principaux loueurs de puissance de calcul, endetté à
+plus de 50 milliards de dollars. Si la bulle éclatait, ce sont sans doute ces
+entreprises, très endettées et dépendantes de quelques clients, qui tomberaient les
+premières. Les modèles, les centres de données et les savoir-faire, eux, resteraient.
+
 ## Qui en profite ?
 
 Même si les gains arrivent, leur répartition reste une question ouverte.
