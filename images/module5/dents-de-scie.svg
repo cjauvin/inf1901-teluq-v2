@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Une intelligence en dents de scie</title>
+<desc>Deux panneaux. À gauche, la frontière en dents de scie : six tâches de difficulté comparable pour un humain sont placées sur un même cercle pointillé. La frontière des capacités d'un modèle de langage, une forme hérissée, passe au-delà de certaines tâches, que le modèle réussit (résumer un article, écrire un programme, traduire un texte), et en deçà d'autres, qu'il rate (compter les r de « strawberry », comparer 9,11 et 9,9, la tâche piège de l'étude BCG). À droite, un profil de capacités schématique sur huit tâches : le profil d'un humain est régulier, celui d'un modèle est hérissé, très haut en culture générale, en mathématiques d'olympiade ou en programmation, très bas pour compter les lettres d'un mot ou apprendre d'une seule expérience.</desc>
+<rect x="0" y="0" width="880" height="440" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="440.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Une intelligence en dents de scie</text>
+<rect x="20" y="50" width="440" height="370" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="240.0" y="76.0" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">La frontière en dents de scie</text>
+<polygon points="240.0,156.0 247.8,147.1 255.2,149.7 263.1,149.8 274.8,140.4 286.4,136.6 296.3,138.6 298.9,151.9 306.6,156.6 307.8,168.2 304.4,181.9 308.5,188.1 313.6,193.5 307.9,204.3 301.8,213.5 304.9,218.6 303.0,224.9 289.7,231.6 278.4,236.0 296.5,240.9 301.3,246.8 298.8,251.7 305.0,259.6 312.8,270.0 309.5,276.1 305.0,281.5 308.9,293.8 309.7,305.7 302.4,310.3 298.3,319.2 299.7,339.4 286.1,334.8 272.5,325.4 263.7,324.5 256.3,328.2 247.4,320.9 240.0,311.0 233.4,311.5 226.9,310.4 223.5,297.6 221.1,287.8 216.5,286.4 217.1,275.6 211.8,276.2 203.5,279.5 190.6,285.4 184.6,282.5 182.2,276.5 171.1,275.8 159.1,273.7 157.3,266.1 154.0,259.1 140.1,253.6 130.5,245.6 127.2,236.0 138.1,227.1 138.2,218.0 147.1,211.1 160.9,207.2 164.6,200.9 166.4,193.5 178.3,192.8 189.7,193.8 192.8,188.8 198.7,186.8 211.2,194.8 221.0,203.0 216.1,184.9 218.6,177.2 224.2,177.1 228.1,168.3 233.0,156.0" fill="#3a6ea5" fill-opacity="0.13" stroke="#3a6ea5" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="240" cy="236" r="74" fill="none" stroke="#2f6f6a" stroke-width="1.6" stroke-dasharray="5 4"/>
+<circle cx="277.0" cy="171.9" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="310.0" y="111.8" font-size="10.5" fill="#3a6ea5" text-anchor="start" font-weight="700">résumer</text>
+<text x="310.0" y="124.8" font-size="10.5" fill="#3a6ea5" text-anchor="start">un article</text>
+<circle cx="314.0" cy="236.0" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="366.0" y="233.0" font-size="10.5" fill="#c4564a" text-anchor="start" font-weight="700">compter les r</text>
+<text x="366.0" y="246.0" font-size="10.5" fill="#c4564a" text-anchor="start">de « strawberry »</text>
+<circle cx="277.0" cy="300.1" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="310.0" y="354.2" font-size="10.5" fill="#3a6ea5" text-anchor="start" font-weight="700">écrire</text>
+<text x="310.0" y="367.2" font-size="10.5" fill="#3a6ea5" text-anchor="start">un programme</text>
+<circle cx="203.0" cy="300.1" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="170.0" y="354.2" font-size="10.5" fill="#c4564a" text-anchor="end" font-weight="700">comparer</text>
+<text x="170.0" y="367.2" font-size="10.5" fill="#c4564a" text-anchor="end">9,11 et 9,9</text>
+<circle cx="166.0" cy="236.0" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="114.0" y="233.0" font-size="10.5" fill="#3a6ea5" text-anchor="end" font-weight="700">traduire</text>
+<text x="114.0" y="246.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">un texte</text>
+<circle cx="203.0" cy="171.9" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="170.0" y="111.8" font-size="10.5" fill="#c4564a" text-anchor="end" font-weight="700">la tâche piège</text>
+<text x="170.0" y="124.8" font-size="10.5" fill="#c4564a" text-anchor="end">de l'étude BCG</text>
+<text x="240.0" y="233.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-style="italic">même difficulté</text>
+<text x="240.0" y="246.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-style="italic">pour un humain</text>
+<rect x="40" y="396" width="14" height="10" fill="#3a6ea5" fill-opacity="0.13" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="60.0" y="405.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">ce que le modèle réussit</text>
+<line x1="250" y1="401" x2="272" y2="401" stroke="#2f6f6a" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="278.0" y="405.0" font-size="10.5" fill="#2f6f6a" text-anchor="start">tâches comparables</text>
+<rect x="476" y="50" width="384" height="370" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="668.0" y="76.0" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">Deux profils de capacités</text>
+<line x1="664" y1="90" x2="664" y2="358" stroke="#b8a888" stroke-width="1.2"/>
+<text x="656.0" y="108.0" font-size="10.5" fill="#3a3531" text-anchor="end">culture générale</text>
+<rect x="664" y="97" width="167.2" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="142.0" font-size="10.5" fill="#3a3531" text-anchor="end">mathématiques d'olympiade</text>
+<rect x="664" y="131" width="158.4" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="176.0" font-size="10.5" fill="#3a3531" text-anchor="end">programmation</text>
+<rect x="664" y="165" width="149.6" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="210.0" font-size="10.5" fill="#3a3531" text-anchor="end">rédaction</text>
+<rect x="664" y="199" width="149.6" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="244.0" font-size="10.5" fill="#3a3531" text-anchor="end">compter les lettres d'un mot</text>
+<rect x="664" y="233" width="26.4" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="278.0" font-size="10.5" fill="#3a3531" text-anchor="end">comparer 9,11 et 9,9</text>
+<rect x="664" y="267" width="61.6" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="312.0" font-size="10.5" fill="#3a3531" text-anchor="end">sens commun physique</text>
+<rect x="664" y="301" width="70.4" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="656.0" y="346.0" font-size="10.5" fill="#3a3531" text-anchor="end">apprendre d'une seule expérience</text>
+<rect x="664" y="335" width="17.6" height="14" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<polyline points="760.8,104 716.8,138 743.2,172 769.6,206 831.2,240 831.2,274 822.4,308 813.6,342" fill="none" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="760.8" cy="104" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="716.8" cy="138" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="743.2" cy="172" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="769.6" cy="206" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="831.2" cy="240" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="831.2" cy="274" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="822.4" cy="308" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<circle cx="813.6" cy="342" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<rect x="500" y="388" width="18" height="10" rx="2" fill="#3a6ea5" fill-opacity="0.75"/>
+<text x="524.0" y="397.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">un modèle de langage</text>
+<line x1="668" y1="393" x2="690" y2="393" stroke="#2f6f6a" stroke-width="2"/><circle cx="679" cy="393" r="4" fill="#fbf7ee" stroke="#2f6f6a" stroke-width="2"/>
+<text x="696.0" y="397.0" font-size="10.5" fill="#2f6f6a" text-anchor="start">un humain cultivé</text>
+<text x="668.0" y="413.0" font-size="9.5" fill="#7a6f63" text-anchor="middle" font-style="italic">valeurs schématiques</text>
+</svg>
