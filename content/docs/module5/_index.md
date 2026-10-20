@@ -1,12 +1,12 @@
 ---
-title: "Module 5 - Les problèmes que pose l'IA dans le monde"
+title: "Module 5 - L'IA dans le monde"
 weight: 500
 bookCollapseSection: true
 ---
 
 ![](/images/paperclip2.jpg)
 
-# Module 5 — Les problèmes que pose l'IA dans le monde
+# Module 5 — L'IA dans le monde
 
 Les quatre premiers modules ont expliqué comment fonctionnent les systèmes d'IA, de l'IA
 classique aux grands modèles de langage. Ce dernier module demande quels problèmes ils
