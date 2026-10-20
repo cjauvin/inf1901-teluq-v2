@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La bulle Internet : l'indice Nasdaq de 1995 à 2016</title>
+<desc>Courbe de l'indice boursier Nasdaq de 1995 à 2016. L'indice passe d'environ 750 points en 1995 à un sommet de 5 048 points le 10 mars 2000, puis s'effondre jusqu'à 1 114 points le 9 octobre 2002, une baisse de 78 %. Il remonte lentement, rechute pendant la crise financière de 2008, et ne retrouve son sommet de 2000 qu'en avril 2015, quinze ans plus tard.</desc>
+<rect x="0" y="0" width="860" height="380" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="430.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">La bulle Internet : l'indice Nasdaq de 1995 à 2016</text>
+<rect x="20" y="48" width="820" height="312" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<rect x="270.4" y="70" width="89.7" height="250" fill="#c4564a" fill-opacity="0.08"/>
+<line x1="90" y1="320.0" x2="820" y2="320.0" stroke="#b8a888" stroke-width="1.2"/>
+<text x="82" y="324.0" font-size="10.5" fill="#5b5249" text-anchor="end">0</text>
+<line x1="90" y1="274.5" x2="820" y2="274.5" stroke="#b8a888" stroke-width="0.6"/>
+<text x="82" y="278.5" font-size="10.5" fill="#5b5249" text-anchor="end">1 000</text>
+<line x1="90" y1="229.1" x2="820" y2="229.1" stroke="#b8a888" stroke-width="0.6"/>
+<text x="82" y="233.1" font-size="10.5" fill="#5b5249" text-anchor="end">2 000</text>
+<line x1="90" y1="183.6" x2="820" y2="183.6" stroke="#b8a888" stroke-width="0.6"/>
+<text x="82" y="187.6" font-size="10.5" fill="#5b5249" text-anchor="end">3 000</text>
+<line x1="90" y1="138.2" x2="820" y2="138.2" stroke="#b8a888" stroke-width="0.6"/>
+<text x="82" y="142.2" font-size="10.5" fill="#5b5249" text-anchor="end">4 000</text>
+<line x1="90" y1="92.7" x2="820" y2="92.7" stroke="#b8a888" stroke-width="0.6"/>
+<text x="82" y="96.7" font-size="10.5" fill="#5b5249" text-anchor="end">5 000</text>
+<text x="90.0" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">1995</text>
+<line x1="90.0" y1="320" x2="90.0" y2="325" stroke="#b8a888"/>
+<text x="194.3" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">1998</text>
+<line x1="194.3" y1="320" x2="194.3" y2="325" stroke="#b8a888"/>
+<text x="298.6" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2001</text>
+<line x1="298.6" y1="320" x2="298.6" y2="325" stroke="#b8a888"/>
+<text x="402.9" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2004</text>
+<line x1="402.9" y1="320" x2="402.9" y2="325" stroke="#b8a888"/>
+<text x="507.1" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2007</text>
+<line x1="507.1" y1="320" x2="507.1" y2="325" stroke="#b8a888"/>
+<text x="611.4" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2010</text>
+<line x1="611.4" y1="320" x2="611.4" y2="325" stroke="#b8a888"/>
+<text x="715.7" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2013</text>
+<line x1="715.7" y1="320" x2="715.7" y2="325" stroke="#b8a888"/>
+<text x="820.0" y="338" font-size="10.5" fill="#5b5249" text-anchor="middle">2016</text>
+<line x1="820.0" y1="320" x2="820.0" y2="325" stroke="#b8a888"/>
+<text x="32" y="195.0" font-size="10.5" fill="#5b5249" text-anchor="middle" transform="rotate(-90 32 195.0)">points</text>
+<line x1="270.4" y1="90.5" x2="796.0" y2="90.5" stroke="#7a6f63" stroke-width="1.2" stroke-dasharray="5 4"/>
+<polyline points="90.0,285.9 124.8,272.3 159.5,261.4 194.3,248.6 220.4,251.8 229.0,220.5 246.4,197.3 257.9,185.0 263.8,135.0 270.4,90.5 275.3,151.8 281.2,140.0 287.1,153.2 298.6,207.7 308.0,236.4 316.0,221.8 323.6,255.5 333.3,231.4 350.7,253.6 360.1,269.4 368.1,259.1 402.9,229.1 437.6,221.1 472.4,219.8 507.1,210.2 536.0,190.0 559.3,215.9 582.6,262.3 611.4,216.8 646.2,199.5 681.0,201.6 715.7,182.7 750.5,130.0 785.2,104.5 796.0,90.2 820.0,92.3" fill="none" stroke="#3a6ea5" stroke-width="2.4" stroke-linejoin="round"/>
+<circle cx="270.4" cy="90.5" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="360.1" cy="269.4" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="796.0" cy="90.2" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="260.4" y="88.5" font-size="11" fill="#c4564a" text-anchor="end" font-weight="700">10 mars 2000</text>
+<text x="260.4" y="102.5" font-size="10.5" fill="#c4564a" text-anchor="end">5 048 points</text>
+<text x="370.1" y="273.4" font-size="11" fill="#c4564a" font-weight="700">9 octobre 2002 : 1 114 points (−78 %)</text>
+<text x="788.0" y="78.2" font-size="11" fill="#2f6f6a" text-anchor="end" font-weight="700">avril 2015 : le sommet est retrouvé</text>
+<text x="315.3" y="310" font-size="10.5" fill="#c4564a" text-anchor="middle" font-style="italic">l'éclatement</text>
+<text x="562.8" y="288.3" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">la crise de 2008</text>
+<text x="820" y="352" font-size="9.5" fill="#7a6f63" text-anchor="end" font-style="italic">valeurs approximatives</text>
+</svg>
