@@ -75,7 +75,7 @@
 <line x1="450.0" y1="242" x2="450.0" y2="332" stroke="#2f6f6a" stroke-width="2.2"/>
 <text x="442.0" y="288.0" font-size="10.5" fill="#2f6f6a" text-anchor="end" font-weight="700">voir</text>
 <line x1="534.0" y1="184" x2="470.0" y2="342" stroke="#2f6f6a" stroke-width="2.2"/>
-<text x="546.0" y="283.0" font-size="10.5" fill="#2f6f6a" font-weight="700">entendre</text>
+<text x="514.0" y="267.0" font-size="10.5" fill="#2f6f6a" font-weight="700">entendre</text>
 <rect x="605" y="50" width="280" height="412" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
 <text x="745.0" y="74" font-size="12.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">Un modèle de langage</text>
 <text x="745.0" y="428" font-size="11.5" fill="#3a3531" text-anchor="middle">Des vecteurs définis par d'autres vecteurs ;</text>

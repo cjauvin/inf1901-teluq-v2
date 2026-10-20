@@ -152,7 +152,7 @@ mx, my = monde(X[1])
 o.append(f'<line x1="{xc}" y1="{yc + 18}" x2="{mx}" y2="{my - 24}" stroke="{TEAL}" stroke-width="2.2"/>')
 o.append(f'<text x="{xc - 8}" y="{(yc + my) / 2 - 2}" font-size="10.5" fill="{TEAL}" text-anchor="end" font-weight="700">voir</text>')
 o.append(f'<line x1="{xm}" y1="{ym + 18}" x2="{mx + 20}" y2="{my - 14}" stroke="{TEAL}" stroke-width="2.2"/>')
-o.append(f'<text x="{xm + 12}" y="{(ym + my) / 2 + 22}" font-size="10.5" fill="{TEAL}" font-weight="700">entendre</text>')
+o.append(f'<text x="{(xm + mx + 20) / 2 + 12}" y="{(ym + 18 + my - 14) / 2 + 4}" font-size="10.5" fill="{TEAL}" font-weight="700">entendre</text>')
 
 # ── 3. le modèle de langage ──
 panneau(X[2], "Un modèle de langage", BLEU,
