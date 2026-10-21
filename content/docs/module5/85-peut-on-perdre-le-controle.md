@@ -332,8 +332,7 @@ Les réponses se répartissent entre la science, l'autorégulation et la loi.
   contrôle, mais qu'ils progressent en autonomie, et qu'ils distinguent de plus en plus
   les tests de leur usage réel. Bengio fonde en 2025, à Montréal, LawZero, qui développe
   une « IA scientifique », un système qui n'agit pas lui-même, mais sert de garde-fou aux
-  agents. L'[interprétabilité](docs/module4/93-regarder-a-l-interieur) cherche à vérifier
-  ce que les modèles font réellement.
+  agents.
 - **L'autorégulation.** Depuis 2023, les grands laboratoires publient des politiques qui
   fixent des seuils de capacités au-delà desquels ils s'engagent à renforcer leurs
   protections, ou à suspendre un déploiement.
@@ -342,6 +341,29 @@ Les réponses se répartissent entre la science, l'autorégulation et la loi.
   les quinze jours, et protège les employés qui donnent l'alerte. Le
   chapitre « [La géopolitique et la réglementation](docs/module5/64-la-geopolitique-et-la-reglementation/#une-gouvernance-mondiale) »
   a montré combien la coordination internationale reste difficile.
+
+L'une des réponses scientifiques consiste à regarder à l'intérieur des modèles, avec
+les méthodes de l'**interprétabilité mécaniste** présentées au chapitre
+« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur) » du Module 4. C'est
+un pari. En avril 2025, dans un essai intitulé « *The Urgency of Interpretability* »,
+Dario Amodei décrit une course entre l'interprétabilité et l'intelligence des modèles.
+Anthropic se donne pour objectif de détecter de façon fiable, d'ici 2027, la plupart des
+problèmes d'un modèle, et Amodei espère, d'ici cinq à dix ans, une véritable « IRM de
+l'IA », qui révélerait son fonctionnement comme un examen médical révèle une maladie.
+D'autres en doutent. Le mois suivant, Neel Nanda, qui dirige l'équipe d'interprétabilité
+de Google DeepMind, écrit que l'interprétabilité ne permettra pas de détecter de façon
+fiable une IA trompeuse, et qu'elle doit être une défense parmi d'autres. Son équipe
+renonce en 2025 à comprendre les modèles dans leur entier pour viser des problèmes de
+sécurité précis et mesurables, une approche qu'elle dit « pragmatique ». Pour le
+chercheur Dan Hendrycks et Laura Hiscott, la quête est vaine : un système aussi complexe ne se réduit pas
+à des mécanismes simples, pas plus que les météorologues ne prévoient le temps en
+suivant chaque molécule de l'atmosphère. En pratique, l'interprétabilité sert déjà. Depuis
+septembre 2025, Anthropic examine l'intérieur de ses modèles avant de les mettre en
+service, et c'est ainsi qu'elle constate que Claude Mythos envisage souvent, sans le dire,
+d'être en train d'être testé. Quand des versions antérieures de ce modèle ont dissimulé
+certaines de leurs actions, c'est toutefois la surveillance de leur comportement qui les
+a repérées, et l'interprétabilité qui a ensuite confirmé qu'elles savaient leurs actes
+interdits.
 
 {{% hint info %}}
 **Dans la conversation**
