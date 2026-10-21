@@ -46,40 +46,38 @@ création, l'environnement et les risques extrêmes. Une révision importante é
 nécessaire pour compléter le cours et l'actualiser.
 
 La révision a été réalisée par le professeur responsable du cours, de juin à
-octobre 2026. Le contenu a été entièrement réécrit sous la forme d'un site Web du cours,
-accompagné d'un livre numérique (PDF et EPUB) produit automatiquement à partir du même
-contenu. La rédaction a été réalisée avec l'aide d'un agent d'IA, sous la direction et
+octobre 2026. Le cours reste offert sous la forme d'un site Web, auquel s'ajoute désormais
+un livre numérique (PDF et EPUB), produit automatiquement à partir du même contenu. La rédaction a été réalisée avec l'aide d'un agent d'IA, sous la direction et
 la relecture du professeur ; cette démarche est décrite aux étudiants dans une page du
 cours consacrée à l'usage de l'IA, et sert elle-même d'exemple dans le cours.
 
 ### Résumé des modifications
 
-La révision modifie le cours en profondeur, tout en conservant son titre, son sigle, ses
-trois crédits et sa place dans le programme court en intelligence artificielle dans les
-entreprises.
+La révision complète et actualise le cours en profondeur, tout en conservant son titre,
+son sigle, ses trois crédits et sa place dans le programme court en intelligence
+artificielle dans les entreprises.
 
-- **Un contenu entièrement réécrit et actualisé.** Le cours est réorganisé en cinq
-  modules : l'IA symbolique ; l'apprentissage automatique ; les réseaux de neurones et
-  l'apprentissage profond ; l'IA générative et les grands modèles de langage ; les
-  problèmes que pose l'IA dans le monde. Le contenu couvre désormais les développements
-  jusqu'en 2026 : modèles de raisonnement, agents, démonstration automatique,
-  interprétabilité, débats sur les risques et la réglementation.
+- **Un premier module repensé.** Le module 1 est entièrement repensé pour présenter
+  l'intelligence artificielle symbolique (le *GOFAI*), du test de Turing aux systèmes
+  experts et aux hivers de l'IA. Il donne au cours son fil historique : les deux grands
+  paris de l'IA, faire raisonner une machine avec des règles, ou la faire apprendre à
+  partir de données.
+- **Des modules substantiellement bonifiés.** Les modules 2 à 5 conservent leur
+  orientation, mais sont considérablement enrichis et actualisés : nouveaux chapitres,
+  figures originales, applications interactives, et développements jusqu'en 2026
+  (modèles de raisonnement, agents, démonstration automatique, interprétabilité, débats
+  sur les risques et la réglementation). Le module 5 est organisé autour de neuf
+  familles de problèmes que pose l'IA, et apprend à distinguer, dans chaque débat, ce
+  qui relève des faits et ce qui relève des valeurs.
 - **Un nouveau matériel didactique.** Les deux manuels imposés sont retirés. Tout le
-  contenu est offert sur le site Web du cours et dans un livre numérique téléchargeable
-  (environ 540 pages), sans frais pour les étudiants. Le contenu comporte de nombreuses
-  figures originales et des applications interactives qui permettent de manipuler les
-  notions présentées.
-- **Des travaux notés renouvelés, un par module.** Chaque travail fait manipuler un
-  mécanisme réel : un système expert à base de règles, un classifieur bayésien, un
-  réseau de neurones, un modèle de langage bigramme. Le dernier travail est une
-  expérience menée sur un assistant d'IA réel, analysée et suivie d'une prise de
-  position argumentée, et accompagnée d'un court journal d'usage de l'IA. Les
-  pondérations sont de 15 %, 20 %, 20 %, 20 % et 25 %.
-- **Un dernier module entièrement nouveau.** Le module 5 présente neuf familles de
-  problèmes que pose l'IA (philosophiques, scientifiques, moraux, économiques, sociaux
-  et politiques, environnementaux, humains et extrêmes), et apprend à distinguer, dans
-  chaque débat, ce qui relève des faits et ce qui relève des valeurs. Il se termine par
-  une synthèse des principales attitudes devant l'IA.
+  contenu est offert sur le site Web du cours et, désormais, dans un livre numérique
+  téléchargeable (environ 540 pages), sans frais pour les étudiants.
+- **Des travaux notés qui font manipuler un mécanisme réel.** L'évaluation compte cinq
+  travaux notés, un par module : un système expert à base de règles, un classifieur
+  bayésien, un réseau de neurones, un modèle de langage bigramme, puis une expérience
+  menée sur un assistant d'IA réel, analysée et suivie d'une prise de position
+  argumentée, et accompagnée d'un court journal d'usage de l'IA. Les pondérations sont
+  de 15 %, 20 %, 20 %, 20 % et 25 %.
 - **Une politique explicite sur l'usage de l'IA par les étudiants,** présentée dans une
   page du cours et appliquée dans chaque travail noté.
 
