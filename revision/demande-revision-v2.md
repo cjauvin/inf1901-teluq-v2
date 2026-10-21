@@ -104,7 +104,6 @@ des applications interactives, sans programmation.
 
 ### Ressources internes nécessaires
 
-- Révision linguistique du contenu.
 - Intégration du lien vers le site Web du cours dans l'environnement de cours de la
   TÉLUQ, et mise à jour de la fiche du cours.
 - Mise à jour de la feuille de route et des consignes de dépôt des travaux notés.
