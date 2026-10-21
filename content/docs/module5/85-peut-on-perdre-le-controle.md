@@ -160,6 +160,41 @@ trombone qui ouvre ce module.
 {{% /hint %}}
 
 
+Bostrom travaillait à Oxford aux côtés des fondateurs d'un mouvement qui a beaucoup
+pesé sur l'histoire récente de l'IA, l'**altruisme efficace** (*effective altruism*).
+Son point de départ vient du philosophe Peter Singer, qui demandait en 1972 pourquoi nous
+sauverions sans hésiter un enfant qui se noie sous nos yeux, mais pas des enfants qui
+meurent de faim au loin. En 2009, à Oxford, les philosophes Toby Ord et Will MacAskill
+fondent Giving What We Can, dont les membres s'engagent à donner au moins 10 % de leur
+revenu, et choisissent en 2011 le nom du mouvement. Il s'agit d'utiliser les faits et le
+raisonnement pour faire le plus de bien possible, par exemple en finançant des
+moustiquaires contre le paludisme, l'un des dons les plus efficaces pour sauver des vies.
+
+Une branche du mouvement, le **long-termisme** (*longtermism*), en tire une conséquence
+radicale : si les milliards de personnes qui vivront dans l'avenir comptent autant que
+nous, éviter l'extinction de l'humanité devient la priorité absolue. Dans *The
+Precipice* (2020), Ord estime à environ un sur dix le risque qu'une IA mal alignée cause
+une catastrophe existentielle au cours du siècle, plus que tous les autres risques
+réunis. Le mouvement devient alors le principal bailleur de fonds de la recherche sur la
+sécurité de l'IA. La fondation Open Philanthropy, créée par Dustin Moskovitz, cofondateur
+de Facebook, et Cari Tuna, accorde 30 millions de dollars à OpenAI en 2017, avec un siège
+à son conseil d'administration. Renommée Coefficient Giving en 2025, elle prévoit de
+consacrer plus d'un milliard de dollars à la sécurité de l'IA en 2026. Elle finance aussi
+un programme qui place de jeunes spécialistes de l'IA dans les bureaux du Congrès
+américain, ce qui lui vaut d'être accusée d'orienter la réglementation vers les risques
+lointains.
+
+Le mouvement traverse ensuite deux crises. En 2022, la plateforme de cryptomonnaies FTX
+s'effondre. Son fondateur, Sam Bankman-Fried, qui se présentait comme un altruiste
+efficace et avait investi environ 500 millions de dollars dans Anthropic, est condamné en
+2024 à 25 ans de prison pour fraude. En novembre 2023, le conseil d'administration
+d'OpenAI renvoie Sam Altman, puis le réintègre cinq jours plus tard. Deux des
+administratrices qui avaient voté son départ avaient des liens avec le mouvement, et les
+accélérationnistes y voient un « coup d'État » des catastrophistes. Depuis, les
+dirigeants d'Anthropic, dont plusieurs ont pourtant pris l'engagement de Giving What We
+Can, prennent leurs distances avec l'étiquette. En 2026, des proches de l'administration
+Trump présentent l'altruisme efficace comme la source du « catastrophisme » sur l'IA.
+
 Ce courant d'idées a aussi ses critiques. En 2024, la chercheuse Timnit Gebru et Émile P.
 Torres regroupent sous l'acronyme **TESCREAL** un ensemble de mouvements qui se
 recoupent : transhumanisme, extropianisme, singularitarisme, cosmisme, rationalisme,

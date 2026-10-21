@@ -210,7 +210,8 @@ mais s'opposent sur les faits et les valeurs.
 Une dernière question aide à situer une prise de position : qui parle, et qui la finance ?
 Les entreprises qui vendent l'IA ont intérêt à la présenter à la fois comme très puissante
 et comme sûre entre leurs mains. Des fondations, comme celles du mouvement de l'**altruisme
-efficace** (*effective altruism*), financent la recherche sur certains risques plutôt que
+efficace** (*effective altruism*), présenté au chapitre
+« [Peut-on perdre le contrôle ?](docs/module5/85-peut-on-perdre-le-controle/#deux-figures-de-linquiétude) », financent la recherche sur certains risques plutôt que
 d'autres. Des comités d'action politique financés par l'industrie soutiennent les candidats
 favorables à l'IA. Des critiques gagnent en visibilité à mesure que le sujet inquiète.
 
