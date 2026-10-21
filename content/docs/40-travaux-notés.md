@@ -39,5 +39,5 @@ note finale.*
 
 ## Module 5
 
-[Expérience sur une IA réelle](/docs/module5/99-travail-noté-5), à propos d'un des problèmes du module, suivie d'une analyse et d'une prise de position argumentée.
+[Expérience sur une IA réelle](/docs/module5/99-travail-noté-5), à propos d'un des problèmes du module, suivie d'une analyse et d'une prise de position argumentée, et accompagnée d'un court journal de ses propres usages de l'IA.
 *Pondération : 25% de la note finale.*

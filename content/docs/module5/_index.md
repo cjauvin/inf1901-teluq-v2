@@ -121,3 +121,4 @@ pouvoir* et *La géopolitique et la réglementation*.
 Un [travail noté](docs/module5/99-travail-noté-5) (25 % de la note finale) où vous
 mènerez une petite expérience sur un assistant d'IA réel, à propos d'un des problèmes du
 module, puis l'analyserez en distinguant les faits des valeurs, avant de prendre position.
+Vous tiendrez aussi, pendant une semaine, un court journal de vos usages de l'IA.
