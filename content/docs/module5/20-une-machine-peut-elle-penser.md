@@ -272,6 +272,30 @@ Jauvin, enregistrée à l'été 2025, aborde plusieurs questions de ce chapitre.
 
 <p class="image-credit">Noam Chomsky en 2015. Photo : Augusto Starita / Ministerio de Cultura de la Nación, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons.</p>
 
+## Penser sans les mots
+
+Toute cette discussion suppose que la pensée d'un modèle de langage est faite de mots.
+Ce n'est vrai qu'en surface, et chez l'humain aussi, le lien entre le langage et la
+pensée est plus lâche qu'on ne le croit. En 1975, le philosophe Jerry Fodor soutenait
+que nous pensons dans une « langue de la pensée », un code mental qui n'est ni le
+français ni l'anglais. En 2024, les chercheurs Evelina Fedorenko, Steven Piantadosi et
+Edward Gibson rassemblent dans la revue *Nature* les arguments selon lesquels le langage
+sert d'abord à communiquer, et non à penser. Des personnes qui ont perdu l'usage du
+langage à la suite d'un accident vasculaire cérébral résolvent encore des problèmes de
+logique et d'arithmétique, et les régions du cerveau consacrées au langage restent
+inactives pendant ces tâches.
+
+Les modèles de langage présentent une dissociation semblable. Pour répondre à la
+question « quelle est la capitale de l'État où se trouve Dallas ? », un modèle de
+Claude passe intérieurement par le Texas sans jamais l'écrire, comme le montre le
+chapitre « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#suivre-un-calcul-les-circuits) »
+du Module 4. Des modèles expérimentaux vont plus loin et raisonnent entièrement dans
+l'espace de leurs vecteurs, sans aucun mot, comme l'explique la section
+« [Raisonner sans mots ?](docs/module4/70-du-modele-a-l-assistant/#raisonner-sans-mots) ».
+Si une machine pense, sa pensée n'est donc pas forcément faite de mots, pas plus que la
+nôtre. Les symboles que manipule la chambre de Searle ne sont peut-être pas le bon
+endroit où chercher la pensée, ni chez la machine, ni chez nous.
+
 ## Un débat ouvert
 
 Les chercheurs eux-mêmes sont partagés, presque à parts égales. En 2022, avant même

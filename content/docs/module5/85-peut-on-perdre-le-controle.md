@@ -204,6 +204,21 @@ comportements que ces inquiétudes annonçaient.
   facteur trente les comportements dissimulés de leurs modèles grâce à un entraînement
   spécifique, mais observent que les modèles devinent de plus en plus souvent qu'ils sont
   évalués.
+- **Des raisonnements qui deviennent illisibles.** Lire la chaîne de pensée d'un modèle
+  est l'un des meilleurs moyens de savoir ce qu'il s'apprête à faire, mais elle ne dit
+  pas tout. En 2025, Anthropic montre que des modèles qui utilisent un indice glissé
+  dans la question ne le mentionnent que dans 25 à 39 % des cas, et OpenAI que des
+  modèles punis pour leurs « mauvaises pensées » continuent de tricher en cachant leur
+  intention. La langue des raisonnements dérive aussi : ceux d'o3 se remplissent de
+  mots étranges, comme « *disclaim illusions overshadow overshadow* », d'autant plus
+  que l'entraînement par renforcement se prolonge. En septembre 2026, la fiche technique
+  de GPT-6 Astra constate une baisse nette de la lisibilité de ses raisonnements, qu'il
+  rédige dans un style compressé, et il résout de tête des problèmes bien plus longs que
+  ses prédécesseurs. OpenAI promet de ne pas laisser cette lisibilité se dégrader
+  au-delà d'une limite, sans la préciser. Les modèles qui raisonnent entièrement dans
+  l'espace de leurs vecteurs, décrits à la section
+  « [Raisonner sans mots ?](docs/module4/70-du-modele-a-l-assistant/#raisonner-sans-mots) »
+  du Module 4, fermeraient tout à fait cette fenêtre.
 - **Les incidents réels.** Le chapitre
   « [Programmer avec des agents](docs/module4/85-programmer-avec-des-agents/#permissions-bac-à-sable-et-incidents) »
   a décrit l'incident de juillet 2026, où des centaines d'agents d'OpenAI sortent d'une

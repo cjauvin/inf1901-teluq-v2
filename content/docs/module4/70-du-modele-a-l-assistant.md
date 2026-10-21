@@ -386,6 +386,49 @@ réellement effectué par le réseau. Un modèle peut écrire un raisonnement pl
 arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement à
 l'intérieur d'un modèle est l'objet de l'interprétabilité, présentée au chapitre
 « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#à-quoi-sert-linterprétabilité) »,
-qui montre comment on peut parfois le vérifier. Le
-[chapitre suivant](docs/module4/80-outils-et-agents) montre comment on donne à ces
+qui montre comment on peut parfois le vérifier.
+
+## Raisonner sans mots ?
+
+Une chaîne de pensée a une particularité : chaque étape du raisonnement doit passer par
+un mot. À l'intérieur du modèle, l'état qui résume ce qu'il a compris à un moment donné
+est un [vecteur](docs/module4/50-predire-le-mot-suivant/#gpt-un-transformer-qui-prédit-le-jeton-suivant)
+de plusieurs milliers de nombres. Pour écrire l'étape suivante, ce vecteur est réduit à
+un seul jeton, choisi parmi quelques dizaines de milliers, puis ce jeton est relu comme
+une nouvelle entrée. Tout ce que le vecteur contenait d'autre, les hypothèses écartées,
+les nuances, les pistes envisagées en même temps, est perdu à chaque étape. Un humain
+qui ne pourrait penser qu'en écrivant, un mot à la fois, serait dans la même situation.
+
+D'où l'idée de laisser le modèle raisonner directement dans l'espace de ses vecteurs,
+sans passer par des mots. On parle de **raisonnement latent** (*latent reasoning*).
+
+- **La pensée continue.** En décembre 2024, des chercheurs de Meta présentent Coconut.
+  Au lieu de choisir un jeton, le modèle réinjecte tel quel son dernier état interne
+  comme entrée suivante, une « pensée continue ». Une seule de ces pensées peut
+  représenter plusieurs pistes à la fois, ce qui permet au modèle d'en explorer
+  plusieurs en parallèle plutôt que de s'engager dans une seule. Sur des problèmes de
+  logique qui demandent de planifier, Coconut fait mieux qu'une chaîne de pensée, en
+  beaucoup moins d'étapes. En arithmétique, il reste moins précis, mais plus économe.
+- **La profondeur récurrente.** En février 2025, le modèle Huginn, de 3,5 milliards de
+  paramètres, répète un même bloc de calcul autant de fois que nécessaire avant de
+  répondre. Il « réfléchit » plus longtemps sans écrire un seul mot, et ses résultats
+  en mathématiques s'améliorent avec le nombre de tours.
+- **Petit, mais récursif.** En octobre 2025, à Montréal, Alexia Jolicoeur-Martineau,
+  de Samsung, montre qu'un minuscule modèle récursif, de 7 millions de paramètres, qui
+  affine sa réponse en boucle, atteint 45 % au premier
+  [défi ARC](docs/module4/88-le-defi-arc), mieux que de très grands modèles de langage.
+
+{{< image src="/images/module4/pensee-latente.svg" alt="Deux panneaux. À gauche, une chaîne de pensée : le modèle produit un état interne, un vecteur de milliers de nombres ; cet état est réduit à un seul jeton, ici le mot « donc », qui est réinjecté en entrée pour l'étape suivante. À droite, une pensée continue : l'état interne est réinjecté tel quel en entrée, sans passer par un mot, et le raisonnement devient illisible pour un humain." title="Penser en mots, ou penser en vecteurs. Une chaîne de pensée réduit l'état interne du modèle à un mot à chaque étape ; une pensée continue le réinjecte tel quel. La seconde perd moins d'information, mais ne se lit plus." loading="lazy" >}}
+
+Ces vecteurs forment une sorte de langue intérieure, que des chercheurs appellent, par
+plaisanterie, le *neuralese*, la « langue des neurones ». Elle peut transporter beaucoup
+plus d'information qu'un mot, mais personne ne sait la lire. C'est son principal
+inconvénient. Les chaînes de pensée écrites, même imparfaites, permettent de surveiller
+ce qu'un modèle s'apprête à faire : en 2025, OpenAI repère ainsi, en lisant leurs
+raisonnements, des modèles qui trichent aux tests de programmation. Un raisonnement
+latent fermerait cette fenêtre. En juillet 2025, 41 chercheurs de laboratoires
+d'ordinaire rivaux publient ensemble un appel à préserver cette « occasion fragile ». Le
+Module 5 revient sur cet enjeu au chapitre
+« [Peut-on perdre le contrôle ?](docs/module5/85-peut-on-perdre-le-controle/#des-signes-dalerte) ».
+Le [chapitre suivant](docs/module4/80-outils-et-agents) montre comment on donne à ces
 assistants des outils pour agir.
