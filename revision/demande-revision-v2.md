@@ -9,8 +9,7 @@ compléter ou à trancher.
 
 ## Points à trancher avant de soumettre
 
-1. **La date de diffusion prévue.** [À préciser, par exemple la session d'hiver ou d'été
-   2027.]
+1. **La date de diffusion prévue.** Décidé : janvier 2027 (saisi : 2027-01-04).
 2. **Les deux manuels.** Décidé : ils sont **retirés** du matériel didactique, des documents
    expédiés et de la bibliographie.
 3. **La durée des modules.** Corrigé dans le cours : M1 deux semaines, M2 à M4 trois
@@ -29,7 +28,7 @@ compléter ou à trancher.
 
 ### Diffusion prévue
 
-[AAAA-MM-JJ]
+2027-01-04
 
 ### Pour mon cours, je désire
 
