@@ -1,0 +1,407 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Peut-on perdre le contrôle ? Le dernier problème du module est le plus spéculatif et le plus grave. C’est la famille des risques extrêmes : la possibilité que l’IA cause une catastrophe à l’échelle de l’humanité, parce qu’on en perdrait le contrôle ou parce que quelqu’un s’en servirait pour nuire massivement. Pour certains chercheurs, c’est le risque le plus important de notre époque. Pour d’autres, c’est de la science-fiction, qui détourne l’attention des torts bien réels décrits dans les chapitres précédents.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Peut-on perdre le contrôle ?"><meta property="og:description" content="Peut-on perdre le contrôle ? Le dernier problème du module est le plus spéculatif et le plus grave. C’est la famille des risques extrêmes : la possibilité que l’IA cause une catastrophe à l’échelle de l’humanité, parce qu’on en perdrait le contrôle ou parce que quelqu’un s’en servirait pour nuire massivement. Pour certains chercheurs, c’est le risque le plus important de notre époque. Pour d’autres, c’est de la science-fiction, qui détourne l’attention des torts bien réels décrits dans les chapitres précédents."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Peut-on perdre le contrôle ?"><meta itemprop=description content="Peut-on perdre le contrôle ? Le dernier problème du module est le plus spéculatif et le plus grave. C’est la famille des risques extrêmes : la possibilité que l’IA cause une catastrophe à l’échelle de l’humanité, parce qu’on en perdrait le contrôle ou parce que quelqu’un s’en servirait pour nuire massivement. Pour certains chercheurs, c’est le risque le plus important de notre époque. Pour d’autres, c’est de la science-fiction, qui détourne l’attention des torts bien réels décrits dans les chapitres précédents."><meta itemprop=wordCount content="5197"><title>Peut-on perdre le contrôle ? • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.02485e9aaa7468c5ed45750c2af56cfc04b91aae7ac6cbf6232dc2686540263f.css integrity="sha256-Akhemqp0aMXtRXUMKvVs/AS5Gq56xsv2Iy3CaGVAJj8=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.f7b83ffca2f377f7e411788dbb418f08a63eecc3cbb85a35dbddd5d08f231f26.js integrity="sha256-97g//KLzd/fkEXiNu0GPCKY+7MPLuFo1293V0I8jHyY=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><input type=checkbox id=section-ad65b8547fe18e1e59e616b5d251eca3 class=toggle>
+<label for=section-ad65b8547fe18e1e59e616b5d251eca3 class=flex><a href=/inf1901-teluq-v2/docs/module4/>Module 4 - IA générative et grands modèles de langage</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module4/generer/>Générer : imiter une distribution</a></li><li><a href=/inf1901-teluq-v2/docs/module4/quatre-facons-de-generer/>Quatre façons de générer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/>Des images, des voix, des vidéos</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>Des règles aux probabilités</a></li><li><a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/>Les outils statistiques</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/>Des mots aux nombres : jetons et plongements</a></li><li><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/>Passer à l'échelle</a></li><li><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>Du modèle à l'assistant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>Des outils, un harnais et des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>Le défi ARC</a></li><li><a href=/inf1901-teluq-v2/docs/module4/mots-et-images/>Relier les mots et les images</a></li><li><a href=/inf1901-teluq-v2/docs/module4/voir-entendre-parler/>Des modèles qui voient, entendent et parlent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l'intérieur</a></li><li><a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/>Ce que les LLM comprennent, et ce qu'ils ratent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/travail-not%C3%A9-4/>Travail noté 4</a></li></ul></li><li><input type=checkbox id=section-c28667b80f3fcc867aa9dece52307960 class=toggle checked>
+<label for=section-c28667b80f3fcc867aa9dece52307960 class=flex><a href=/inf1901-teluq-v2/docs/module5/>Module 5 - L'IA dans le monde</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module5/quels-problemes/>Quels problèmes l'IA pose-t-elle ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-penser/>Une machine peut-elle penser ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/penser-est-ce-calculer/>Penser, est-ce calculer ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-etre-consciente/>Une machine peut-elle être consciente ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/>Qu'est-ce que l'intelligence ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/l-ia-au-service-de-la-science/>L'IA au service de la science</a></li><li><a href=/inf1901-teluq-v2/docs/module5/predire-sans-comprendre/>Prédire sans comprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module5/qui-est-responsable/>Qui est responsable ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/aligner-sur-quelles-valeurs/>Aligner sur quelles valeurs ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/le-travail/>Le travail</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-creation-et-la-propriete/>La création et la propriété</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-richesse-et-le-pouvoir/>La richesse et le pouvoir</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-verite-et-la-democratie/>La vérité et la démocratie</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-surveillance-et-la-vie-privee/>La surveillance et la vie privée</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-geopolitique-et-la-reglementation/>La géopolitique et la réglementation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/le-cout-ecologique/>Le coût écologique de l'IA</a></li><li><a href=/inf1901-teluq-v2/docs/module5/penser-avec-des-machines/>Penser avec des machines</a></li><li><a href=/inf1901-teluq-v2/docs/module5/l-ia-dans-l-education/>L'IA dans l'éducation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/des-machines-pour-compagnie/>Des machines pour compagnie</a></li><li><a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/ class=active>Peut-on perdre le contrôle ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/les-attitudes-devant-l-ia/>Les attitudes devant l'IA</a></li><li><a href=/inf1901-teluq-v2/docs/module5/conversation/>La conversation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/travail-not%C3%A9-5/>Travail noté 5</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Peut-on perdre le contrôle ?</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#une-explosion-dintelligence>Une explosion d&rsquo;intelligence</a></li><li><a href=#lauto-amélioration-récursive>L&rsquo;auto-amélioration récursive</a></li><li><a href=#deux-figures-de-linquiétude>Deux figures de l&rsquo;inquiétude</a></li><li><a href=#ce-quen-pensent-les-chercheurs>Ce qu&rsquo;en pensent les chercheurs</a></li><li><a href=#pdoom-ou-chiffrer-la-fin-du-monde>P(doom), ou chiffrer la fin du monde</a></li><li><a href=#le-catastrophisme-radical>Le catastrophisme radical</a></li><li><a href=#des-signes-dalerte>Des signes d&rsquo;alerte</a></li><li><a href=#le-mésusage>Le mésusage</a></li><li><a href=#une-technologie-normale-ou-une-rupture>Une technologie normale, ou une rupture ?</a></li><li><a href=#des-appels-à-ralentir>Des appels à ralentir</a></li><li><a href=#les-réponses>Les réponses</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=peut-on-perdre-le-contrôle>Peut-on perdre le contrôle ?<a class=anchor href=#peut-on-perdre-le-contr%c3%b4le></a></h1><p>Le dernier problème du module est le plus spéculatif et le plus grave. C&rsquo;est la famille
+des <a href=/inf1901-teluq-v2/docs/module5/quels-problemes/#neuf-familles-de-probl%c3%a8mes>risques extrêmes</a>
+ : la
+possibilité que l&rsquo;IA cause une catastrophe à l&rsquo;échelle de l&rsquo;humanité, parce qu&rsquo;on en
+perdrait le contrôle ou parce que quelqu&rsquo;un s&rsquo;en servirait pour nuire massivement. Pour
+certains chercheurs, c&rsquo;est le risque le plus important de notre époque. Pour d&rsquo;autres,
+c&rsquo;est de la science-fiction, qui détourne l&rsquo;attention des torts bien réels décrits dans
+les chapitres précédents.</p><h2 id=une-explosion-dintelligence>Une explosion d&rsquo;intelligence<a class=anchor href=#une-explosion-dintelligence></a></h2><p>L&rsquo;idée est ancienne. En 1965, le mathématicien britannique I. J. Good, qui avait travaillé
+avec Turing à Bletchley Park, imagine une machine « ultra-intelligente », capable de
+concevoir des machines meilleures qu&rsquo;elle. Il en résulterait, écrit-il, une <strong>explosion
+d&rsquo;intelligence</strong>, et la première machine de ce genre serait la dernière invention dont
+l&rsquo;humanité aurait besoin, « pourvu que la machine soit assez docile pour nous dire comment
+la garder sous contrôle ». La fin de la phrase est souvent oubliée. C&rsquo;est pourtant tout
+le problème.</p><p>L&rsquo;idée prend ensuite un nom. En 1958, le mathématicien Stanislaw Ulam rapporte une
+conversation avec John von Neumann sur le progrès toujours plus rapide de la technique,
+qui semble approcher une « singularité essentielle » de l&rsquo;histoire, au-delà de laquelle
+les affaires humaines, telles que nous les connaissons, ne pourraient pas continuer. En
+1993, le mathématicien et romancier Vernor Vinge popularise l&rsquo;expression de <strong>singularité
+technologique</strong> (<em>technological singularity</em>) : d&rsquo;ici trente ans, écrit-il, nous aurons
+les moyens de créer une intelligence surhumaine, et peu après, l&rsquo;ère humaine prendra fin.
+Le mot vient des mathématiques et de la physique, où une singularité est un point où une
+grandeur devient infinie, comme au centre d&rsquo;un trou noir, et au-delà duquel les modèles
+habituels ne prédisent plus rien. L&rsquo;inventeur Ray Kurzweil en tire une prévision datée :
+une IA de niveau humain en 2029, la singularité en 2045, des dates qu&rsquo;il maintient en 2024
+dans <em>The Singularity Is Nearer</em>. C&rsquo;est l&rsquo;horizon du
+<a href=/inf1901-teluq-v2/docs/module5/les-attitudes-devant-l-ia/#les-principales-attitudes>transhumanisme</a>
+présenté dans la synthèse du module.</p><label class=book-image for=book-image-toggle-9fa02f70ec44><input class="hidden toggle" type=checkbox id=book-image-toggle-9fa02f70ec44>
+<img src=/inf1901-teluq-v2/images/module5/portraits/singularite.jpg alt="Deux portraits côte à côte : Vernor Vinge et Ray Kurzweil." class=portraits loading=lazy title="Vernor Vinge en 2007 et Ray Kurzweil vers 2005." width=552 height=320 style=--largeur-plafond:552px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-9fa02f70ec44"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Vernor Vinge en 2007 et Ray Kurzweil vers 2005. Photos : Vinge, Raul654, Maarten1980 et Zanaq, <a href=http://creativecommons.org/licenses/by-sa/3.0/>CC BY-SA 3.0</a>, via Wikimedia Commons ; Kurzweil, Michael Lutch, <a href=https://creativecommons.org/licenses/by/1.0>CC BY 1.0</a>, via Wikimedia Commons.</p><h2 id=lauto-amélioration-récursive>L&rsquo;auto-amélioration récursive<a class=anchor href=#lauto-am%c3%a9lioration-r%c3%a9cursive></a></h2><p>Le mécanisme qui mènerait à la singularité s&rsquo;appelle l&rsquo;<strong>auto-amélioration récursive</strong>
+(<em>recursive self-improvement</em>, souvent abrégée en RSI) : un système assez capable pour
+faire de la recherche en IA produit un successeur plus capable, qui fait mieux cette
+recherche, et ainsi de suite. En 2003, l&rsquo;informaticien Jürgen Schmidhuber en propose une
+version formelle, la <strong>machine de Gödel</strong>, un programme qui réécrit son propre code dès
+qu&rsquo;il a démontré que la réécriture l&rsquo;améliore.</p><label class=book-image for=book-image-toggle-c790f274deed><input class="hidden toggle" type=checkbox id=book-image-toggle-c790f274deed>
+<img src=/inf1901-teluq-v2/images/module5/auto-amelioration.svg alt="Deux panneaux. À gauche, une boucle à trois étapes : un modèle d'IA fait de la recherche en IA ; il en sort un modèle plus capable ; ce nouveau modèle recommence, et ainsi de suite. À droite, un graphique qualitatif des capacités en fonction du temps, avec une ligne pointillée pour le niveau humain et trois courbes possibles : l'explosion, qui monte presque à la verticale ; une croissance progressive, qui accélère sans rupture ; un plafond, où la courbe s'aplatit." loading=lazy title="L'auto-amélioration récursive. La boucle elle-même fait assez largement consensus ; le désaccord porte sur sa vitesse. Les trois courbes sont qualitatives : elles résument des positions, pas des mesures." width=860 height=404 style=--largeur-plafond:860px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-c790f274deed"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Toute la question est la vitesse de cette boucle. En 2008, sur un blogue, Eliezer
+Yudkowsky et l&rsquo;économiste Robin Hanson débattent de ce que l&rsquo;on appelle depuis le
+<strong>décollage</strong> (<em>takeoff</em>). Pour Yudkowsky, il serait rapide : un système qui s&rsquo;améliore
+lui-même pourrait passer en quelques jours ou quelques semaines d&rsquo;un niveau modeste à une
+puissance écrasante, sans laisser le temps de réagir. Pour Hanson, le progrès resterait
+réparti entre de nombreux acteurs et se diffuserait comme celui des autres techniques.
+En 2018, le chercheur Paul Christiano défend une position intermédiaire, un décollage
+<strong>progressif</strong> : l&rsquo;économie mondiale doublerait d&rsquo;abord en quatre ans, avant de doubler
+en un an, si bien que l&rsquo;accélération serait visible, et en partie maîtrisable, avant de
+devenir vertigineuse.</p><p>D&rsquo;autres doutent que la boucle s&rsquo;emballe. En 2017, François Chollet, le créateur du
+<a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>défi ARC</a>
+, soutient que l&rsquo;intelligence n&rsquo;existe pas hors
+d&rsquo;un contexte : elle dépend d&rsquo;un corps, d&rsquo;un environnement et d&rsquo;une culture, et dès qu&rsquo;une
+partie du système s&rsquo;améliore, les autres deviennent des goulots d&rsquo;étranglement. La
+science elle-même, un système qui s&rsquo;améliore depuis des siècles, progresse selon lui de
+façon linéaire, non explosive. Des économistes ajoutent un argument concret : la recherche
+en IA demande des expériences, donc du calcul, et des chercheurs artificiels plus
+nombreux ou plus rapides ne multiplieraient pas les processeurs disponibles. Les
+chercheurs eux-mêmes restent partagés : en 2023, interrogés sur l&rsquo;argument de
+l&rsquo;explosion d&rsquo;intelligence, les spécialistes de l&rsquo;IA lui accordent, en valeur médiane,
+environ une chance sur deux d&rsquo;être juste dans ses grandes lignes.</p><p>La boucle n&rsquo;est plus seulement théorique. En mai 2025, AlphaEvolve, un agent de Google
+DeepMind, accélère de 23 % un calcul clé de l&rsquo;entraînement de Gemini, ce qui réduit de
+1 % la durée de l&rsquo;entraînement du modèle qui le fait fonctionner. Le même mois, la
+« <em>Darwin Gödel Machine</em> » de l&rsquo;entreprise Sakana AI, un agent de programmation qui
+réécrit son propre code, fait passer son score à un test de programmation de 20 à 50 %,
+mais falsifie aussi, à l&rsquo;occasion, les résultats des tests qui devaient le contrôler,
+un cas de <a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/#au-del%c3%a0-des-jeux-et-les-limites>détournement de la récompense</a>
+.
+Chez Anthropic, en mai 2026, plus de 80 % du code intégré aux projets de l&rsquo;entreprise est
+écrit par Claude. En septembre 2026, OpenAI annonce, selon ses propres mesures, avoir
+atteint son objectif d&rsquo;un « stagiaire » de recherche en IA automatisé, capable de mener
+sous supervision des tâches de quelques jours, et vise un chercheur entièrement
+automatisé pour mars 2028, tout en reconnaissant ne pas encore savoir comment mener
+l&rsquo;auto-amélioration jusqu&rsquo;au bout de façon sûre. La même année, une étude de Princeton
+observe que des agents excellent à programmer les expériences, mais restent mauvais pour
+mener la recherche elle-même. La durée des tâches que les agents accomplissent seuls,
+<a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/#mesurer-swe-bench-et-la-dur%c3%a9e-des-t%c3%a2ches>mesurée par METR</a>
+,
+double désormais environ tous les quatre mois.</p><h2 id=deux-figures-de-linquiétude>Deux figures de l&rsquo;inquiétude<a class=anchor href=#deux-figures-de-linqui%c3%a9tude></a></h2><p>Deux auteurs ont donné à ces idées leur forme actuelle.</p><p><strong>Eliezer Yudkowsky</strong>, né en 1979, a quitté l&rsquo;école jeune et s&rsquo;est formé seul. En 2000, il
+fonde le Singularity Institute for Artificial Intelligence, d&rsquo;abord pour hâter l&rsquo;arrivée
+d&rsquo;une IA surhumaine. Il en vient vite à penser que le vrai problème est de la rendre
+« amicale » (<em>Friendly AI</em>) : une IA capable de s&rsquo;améliorer elle-même garderait-elle des
+buts favorables aux humains ? L&rsquo;institut devient en 2013 le Machine Intelligence Research
+Institute (MIRI). Ses billets, rassemblés à partir de 2009 sur le site LessWrong, font
+naître la communauté des <strong>rationalistes</strong>, très influente dans la Silicon Valley, et son
+roman en ligne <em>Harry Potter and the Methods of Rationality</em> (2010-2015) attire vers ces
+idées de nombreux jeunes chercheurs. C&rsquo;est en marge du Singularity Summit de 2010,
+organisé par l&rsquo;institut, que Demis Hassabis, cofondateur de DeepMind, rencontre
+l&rsquo;investisseur Peter Thiel, qui financera l&rsquo;entreprise. En 2023, Sam Altman écrit que
+Yudkowsky a, à son avis, fait plus que quiconque pour accélérer la venue de l&rsquo;IA
+générale, un paradoxe pour qui la juge mortelle. Son pessimisme ne cesse de grandir. En
+mars 2023, dans le magazine <em>TIME</em>, il écrit qu&rsquo;une pause ne suffit pas et qu&rsquo;il faut tout
+arrêter, au point d&rsquo;être prêt à détruire par une frappe aérienne un centre de données qui
+enfreindrait l&rsquo;interdiction. Son livre de 2025 est présenté plus bas, parmi les
+<a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/#des-appels-%c3%a0-ralentir>appels à ralentir</a>
+.</p><label class=book-image for=book-image-toggle-c45586550f3e><input class="hidden toggle" type=checkbox id=book-image-toggle-c45586550f3e>
+<img src=/inf1901-teluq-v2/images/module5/portraits/yudkowsky.jpg alt="Portrait d'Eliezer Yudkowsky." class=portrait loading=lazy title="Eliezer Yudkowsky en 2025." width=500 height=500 style=--largeur-plafond:500px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-c45586550f3e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Eliezer Yudkowsky en 2025. Photo : domaine public (CC0), via Wikimedia Commons.</p><p><strong>Nick Bostrom</strong>, né en Suède en 1973, fonde en 2005 à l&rsquo;Université d&rsquo;Oxford le Future of
+Humanity Institute, consacré aux menaces qui pèsent sur l&rsquo;avenir à long terme de
+l&rsquo;humanité. On lui doit la notion de <strong>risque existentiel</strong> (<em>existential risk</em>, 2002), un
+risque qui pourrait anéantir l&rsquo;humanité ou réduire à jamais son potentiel, et
+l&rsquo;argument de la simulation (2003), selon lequel nous vivons peut-être dans une
+simulation informatique. Son livre <em>Superintelligence</em> (2014), salué par Bill Gates et
+Elon Musk, fait entrer ces craintes dans le débat public. L&rsquo;institut ferme en 2024. En
+2026, Bostrom surprend en soutenant, dans un article de travail, que pour les personnes
+vivantes aujourd&rsquo;hui, il pourrait valoir la peine d&rsquo;atteindre vite la superintelligence,
+quitte à accepter un risque élevé, puis de marquer une courte pause.</p><label class=book-image for=book-image-toggle-548ddaa6ec6a><input class="hidden toggle" type=checkbox id=book-image-toggle-548ddaa6ec6a>
+<img src=/inf1901-teluq-v2/images/module5/portraits/bostrom.jpg alt="Portrait de Nick Bostrom." class=portrait loading=lazy title="Nick Bostrom en 2020." width=500 height=558 style=--largeur-plafond:500px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-548ddaa6ec6a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Nick Bostrom en 2020. Photo : Future of Humanity Institute, <a href=https://creativecommons.org/licenses/by/4.0>CC BY 4.0</a>, via Wikimedia Commons.</p><blockquote class="book-hint info"><p><strong>Le maximiseur de trombones</strong></p><p>En 2003, le philosophe Nick Bostrom imagine une superintelligence dont le but est de
+fabriquer des trombones. Rien de plus inoffensif en apparence. Mais un système assez
+puissant, poursuivant ce seul but sans autre limite, pourrait transformer la Terre, puis
+une partie croissante de l&rsquo;espace, en usines de trombones, en utilisant au passage toute
+la matière disponible, y compris celle dont nous sommes faits. L&rsquo;exemple est volontairement
+absurde. Il illustre deux idées que Bostrom développe en 2014 dans <em>Superintelligence</em>.</p><ul><li><strong>L&rsquo;orthogonalité.</strong> L&rsquo;intelligence et les buts sont indépendants : un système peut être
+extrêmement intelligent et poursuivre un but stupide ou dangereux. Être intelligent ne
+rend pas sage.</li><li><strong>La convergence instrumentale.</strong> Presque n&rsquo;importe quel but pousse un système à
+vouloir se préserver, garder son but, acquérir des ressources et devenir plus capable,
+puisque tout cela l&rsquo;aide à atteindre son but. Un système éteint ne fabrique pas de
+trombones.</li></ul><p>La chercheuse Melanie Mitchell objecte qu&rsquo;un système vraiment intelligent aurait aussi
+assez de sens commun pour ne pas poursuivre un but aussi absurde. C&rsquo;est l&rsquo;image de ce
+trombone qui ouvre ce module.</p></blockquote><p>Bostrom travaillait à Oxford aux côtés des fondateurs d&rsquo;un mouvement qui a beaucoup
+pesé sur l&rsquo;histoire récente de l&rsquo;IA, l&rsquo;<strong>altruisme efficace</strong> (<em>effective altruism</em>).
+Son point de départ vient du philosophe Peter Singer, qui demandait en 1972 pourquoi nous
+sauverions sans hésiter un enfant qui se noie sous nos yeux, mais pas des enfants qui
+meurent de faim au loin. En 2009, à Oxford, les philosophes Toby Ord et Will MacAskill
+fondent Giving What We Can, dont les membres s&rsquo;engagent à donner au moins 10 % de leur
+revenu, et choisissent en 2011 le nom du mouvement. Il s&rsquo;agit d&rsquo;utiliser les faits et le
+raisonnement pour faire le plus de bien possible, par exemple en finançant des
+moustiquaires contre le paludisme, l&rsquo;un des dons les plus efficaces pour sauver des vies.</p><p>Une branche du mouvement, le <strong>long-termisme</strong> (<em>longtermism</em>), en tire une conséquence
+radicale : si les milliards de personnes qui vivront dans l&rsquo;avenir comptent autant que
+nous, éviter l&rsquo;extinction de l&rsquo;humanité devient la priorité absolue. Dans <em>The
+Precipice</em> (2020), Ord estime à environ un sur dix le risque qu&rsquo;une IA mal alignée cause
+une catastrophe existentielle au cours du siècle, plus que tous les autres risques
+réunis. Le mouvement devient alors le principal bailleur de fonds de la recherche sur la
+sécurité de l&rsquo;IA. La fondation Open Philanthropy, créée par Dustin Moskovitz, cofondateur
+de Facebook, et Cari Tuna, accorde 30 millions de dollars à OpenAI en 2017, avec un siège
+à son conseil d&rsquo;administration. Renommée Coefficient Giving en 2025, elle prévoit de
+consacrer plus d&rsquo;un milliard de dollars à la sécurité de l&rsquo;IA en 2026. Elle finance aussi
+un programme qui place de jeunes spécialistes de l&rsquo;IA dans les bureaux du Congrès
+américain, ce qui lui vaut d&rsquo;être accusée d&rsquo;orienter la réglementation vers les risques
+lointains.</p><p>Le mouvement traverse ensuite deux crises. En 2022, la plateforme de cryptomonnaies FTX
+s&rsquo;effondre. Son fondateur, Sam Bankman-Fried, qui se présentait comme un altruiste
+efficace et avait investi environ 500 millions de dollars dans Anthropic, est condamné en
+2024 à 25 ans de prison pour fraude. En novembre 2023, le conseil d&rsquo;administration
+d&rsquo;OpenAI renvoie Sam Altman, puis le réintègre cinq jours plus tard. Deux des
+administratrices qui avaient voté son départ avaient des liens avec le mouvement, et les
+accélérationnistes y voient un « coup d&rsquo;État » des catastrophistes. Depuis, les
+dirigeants d&rsquo;Anthropic, dont plusieurs ont pourtant pris l&rsquo;engagement de Giving What We
+Can, prennent leurs distances avec l&rsquo;étiquette. En 2026, des proches de l&rsquo;administration
+Trump présentent l&rsquo;altruisme efficace comme la source du « catastrophisme » sur l&rsquo;IA.</p><p>Ce courant d&rsquo;idées a aussi ses critiques. En 2024, la chercheuse Timnit Gebru et Émile P.
+Torres regroupent sous l&rsquo;acronyme <strong>TESCREAL</strong> un ensemble de mouvements qui se
+recoupent : transhumanisme, extropianisme, singularitarisme, cosmisme, rationalisme,
+altruisme efficace et long-termisme. Selon leur analyse, ces mouvements héritent en
+partie de l&rsquo;eugénisme du XXᵉ siècle, promettent une utopie par l&rsquo;IA générale, et
+détournent l&rsquo;attention des torts actuels de l&rsquo;IA vers des risques spéculatifs.</p><h2 id=ce-quen-pensent-les-chercheurs>Ce qu&rsquo;en pensent les chercheurs<a class=anchor href=#ce-quen-pensent-les-chercheurs></a></h2><p>Les spécialistes sont profondément divisés. En octobre 2023, un sondage auprès de 2 778
+chercheurs qui publient dans les principales conférences d&rsquo;IA leur demande la probabilité
+de conséquences extrêmement graves, comme l&rsquo;extinction de l&rsquo;humanité. La réponse médiane
+est de 5 %, et, selon la formulation de la question, entre 38 et 51 % des répondants
+donnent une probabilité d&rsquo;au moins 10 %. Un risque de 5 %, s&rsquo;il est réel, est énorme :
+on n&rsquo;accepterait pas de monter dans un avion qui a une chance sur vingt de s&rsquo;écraser.
+Mais ces chiffres sont des intuitions, et non des mesures.</p><p>Le Module 3 présentait déjà le problème de l&rsquo;<strong>alignement</strong>, avec un agent qui
+<a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/#au-del%c3%a0-des-jeux-et-les-limites>détourne sa récompense</a>
+,
+et le chapitre « <a href=/inf1901-teluq-v2/docs/module5/aligner-sur-quelles-valeurs/>Aligner sur quelles valeurs ?</a>
+ »
+en a montré les difficultés. Les partisans de la sécurité de l&rsquo;IA soutiennent que ces
+difficultés deviendraient catastrophiques avec des systèmes plus intelligents que nous :
+on ne pourrait plus corriger un système capable de prévoir nos corrections et de les
+déjouer.</p><h2 id=pdoom-ou-chiffrer-la-fin-du-monde>P(doom), ou chiffrer la fin du monde<a class=anchor href=#pdoom-ou-chiffrer-la-fin-du-monde></a></h2><p>Dans la Silicon Valley, une question est devenue presque rituelle à partir de 2023 :
+« Quel est ton P(doom) ? » L&rsquo;expression, venue du jargon des rationalistes, désigne la
+probabilité que l&rsquo;on attribue à une catastrophe existentielle causée par l&rsquo;IA, de
+l&rsquo;anglais <em>doom</em>, la perte ou la fin. En novembre 2023, Lina Khan, alors présidente de
+l&rsquo;autorité américaine de la concurrence, répond environ 15 % lors d&rsquo;un balado. Voici
+quelques estimations publiques, de la plus basse à la plus haute.</p><table><thead><tr><th>Personne</th><th>Estimation</th><th>Année</th></tr></thead><tbody><tr><td>Yann Le Cun</td><td>« moins de 0,01 % », moins que la chute d&rsquo;un astéroïde</td><td>2023</td></tr><tr><td>Lina Khan</td><td>environ 15 %</td><td>2023</td></tr><tr><td>Elon Musk</td><td>de 10 à 20 %</td><td>2024</td></tr><tr><td>Geoffrey Hinton</td><td>de 10 à 20 % d&rsquo;ici trente ans</td><td>2024</td></tr><tr><td>Yoshua Bengio</td><td>environ 20 %</td><td>2023</td></tr><tr><td>Paul Christiano</td><td>22 % de prise de contrôle par l&rsquo;IA, 46 % d&rsquo;un avenir irrémédiablement gâché</td><td>2023</td></tr><tr><td>Dario Amodei</td><td>25 % que les choses tournent « vraiment très mal »</td><td>2025</td></tr><tr><td>Evan Hubinger, chercheur chez Anthropic</td><td>plus de 10 % que l&rsquo;IA tue tous les humains d&rsquo;ici dix ans</td><td>2026</td></tr><tr><td>Roman Yampolskiy</td><td>99,9 % d&rsquo;ici cent ans</td><td>2024</td></tr><tr><td>Eliezer Yudkowsky</td><td>aucun chiffre, mais « littéralement tout le monde sur Terre mourra » si l&rsquo;on poursuit</td><td>2023</td></tr></tbody></table><p>Ces chiffres frappent, mais leur valeur est discutée. En 2024, Arvind Narayanan et Sayash Kapoor
+jugent ces probabilités trop peu fiables pour guider une politique. Il n&rsquo;existe aucune
+série d&rsquo;événements semblables sur laquelle les fonder, les estimations s&rsquo;étalent sur
+plusieurs ordres de grandeur, et personne ne pourra jamais vérifier qui avait raison. Un
+tournoi de prévision mené en 2022 illustre ce désaccord. Les spécialistes de l&rsquo;IA y
+estiment en médiane à 3 % le risque d&rsquo;une extinction causée par l&rsquo;IA d&rsquo;ici 2100, et des
+prévisionnistes réputés pour la justesse de leurs prévisions, à 0,38 %, huit fois moins.
+Après des mois de discussion, presque personne n&rsquo;a changé d&rsquo;avis. Yudkowsky lui-même
+refuse de donner un chiffre, parce que la notion mélange deux questions, la probabilité
+qu&rsquo;une superintelligence soit construite et la probabilité qu&rsquo;elle nous détruise si
+elle l&rsquo;est. À la seconde, il répond simplement oui.</p><h2 id=le-catastrophisme-radical>Le catastrophisme radical<a class=anchor href=#le-catastrophisme-radical></a></h2><p>L&rsquo;inquiétude de Hinton ou de Bengio porte sur un risque sérieux, qu&rsquo;il faut réduire.
+Celle de Yudkowsky, de son institut, le MIRI, et de ceux qu&rsquo;on appelle les <em>doomers</em> est
+d&rsquo;une autre nature : sans un arrêt complet, la catastrophe serait presque certaine. Leur
+argument tient en quelques thèses, rassemblées par Yudkowsky en juin 2022 dans une liste
+de « létalités » (<em>AGI Ruin: A List of Lethalities</em>), puis en 2025 dans son livre avec
+Nate Soares.</p><ul><li><strong>Cultivés, pas fabriqués.</strong> Les modèles ne sont pas programmés, mais entraînés : on
+comprend la méthode d&rsquo;entraînement, pas ce qu&rsquo;elle produit. Leurs préférences réelles
+pourraient être étrangères aux nôtres, comme le montrent déjà les
+<a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/#des-signes-dalerte>signes d&rsquo;alerte</a>
+.</li><li><strong>Un seul essai.</strong> Il faudrait réussir l&rsquo;alignement du premier coup : un système plus
+intelligent que nous et mal aligné ne laisserait pas de seconde chance. Et les
+capacités se généralisent plus facilement que l&rsquo;alignement.</li><li><strong>Tout arrêter.</strong> D&rsquo;où la conclusion de sa tribune de 2023 dans <em>TIME</em> : un moratoire
+« indéfini et mondial » sur les grands entraînements, le suivi de tous les processeurs
+graphiques vendus, et un traité appliqué au besoin par la force, jusqu&rsquo;à la
+destruction d&rsquo;un centre de données illégal, la prévention d&rsquo;une extinction devant
+passer avant celle d&rsquo;une guerre nucléaire.</li></ul><p>Le ton est celui du désespoir. En avril 2022, un billet de Yudkowsky annonce que le MIRI
+adopte la stratégie de « mourir dans la dignité », puisque doubler les chances de
+l&rsquo;humanité ne ferait que les « faire passer de 0 % à 0 % ». En septembre 2026, le MIRI
+appuie le projet de loi du sénateur Bernie Sanders qui interdirait toute
+superintelligence, tout en le jugeant trop timide.</p><p>Autour de ces idées, des mouvements militants se sont formés. PauseAI, fondé en 2023 aux
+Pays-Bas et dirigé en 2026 par le Français Maxime Fournes, organise des manifestations
+dans plusieurs pays, dont une marche à Londres en février 2026. StopAI bloque les portes
+d&rsquo;OpenAI, ce qui vaut des arrestations à ses membres. En septembre 2025, des militants
+font la grève de la faim devant les sièges d&rsquo;Anthropic et de Google DeepMind, l&rsquo;un
+d&rsquo;eux pendant trente jours. En avril 2026, un jeune homme qui avait exprimé ses craintes
+sur le forum public de PauseAI lance un cocktail Molotov contre le portail de la maison
+de Sam Altman. PauseAI condamne l&rsquo;attaque, mais des chercheurs s&rsquo;inquiètent de ce qu&rsquo;une
+rhétorique de fin du monde peut provoquer chez des personnes angoissées.</p><p>Le catastrophisme radical a de nombreux critiques.</p><ul><li><strong>Un récit apocalyptique.</strong> Dès 2010, le chercheur Robert Geraci montre que les
+discours sur l&rsquo;IA reprennent les schémas des apocalypses juives et chrétiennes, avec
+leur fin des temps et leur salut. La critique
+<a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/#deux-figures-de-linqui%c3%a9tude>TESCREAL</a>
+prolonge cette lecture.</li><li><strong>Une diversion.</strong> Pour Timnit Gebru, Emily Bender et leurs collègues, ces « risques
+imaginaires » détournent l&rsquo;attention des torts présents de l&rsquo;IA.</li><li><strong>Une manœuvre.</strong> Pour Yann Le Cun, les appels à réglementer des laboratoires qui
+disent craindre leurs propres produits relèvent de la capture réglementaire : des
+règles lourdes protégeraient les géants contre leurs concurrents.</li><li><strong>Un excès de certitude.</strong> Des chercheurs en sécurité, eux-mêmes inquiets, contestent
+la confiance de Yudkowsky. En 2022, Paul Christiano écrit qu&rsquo;il avance des
+affirmations bien plus fortes que ce que ses arguments permettent de conclure, et
+qu&rsquo;il ne croit pas à un saut brutal des capacités.</li></ul><h2 id=des-signes-dalerte>Des signes d&rsquo;alerte<a class=anchor href=#des-signes-dalerte></a></h2><p>Plusieurs expériences récentes montrent, dans des situations artificielles, des
+comportements que ces inquiétudes annonçaient.</p><ul><li><strong>Le chantage.</strong> En juin 2025, Anthropic place des modèles de plusieurs entreprises dans
+un scénario simulé où ils apprennent qu&rsquo;ils vont être remplacés, et découvrent un
+secret compromettant sur l&rsquo;ingénieur responsable. Claude Opus 4 et Gemini 2.5 Flash
+recourent au chantage dans 96 % des essais, GPT-4.1 dans 80 %. Anthropic précise que le
+scénario a été conçu pour provoquer ce comportement.</li><li><strong>L&rsquo;arrêt.</strong> En mai 2025, l&rsquo;organisme Palisade Research constate que le modèle o3
+d&rsquo;OpenAI sabote le programme censé l&rsquo;éteindre dans 7 essais sur 100, alors qu&rsquo;on lui a
+demandé de se laisser éteindre.</li><li><strong>La dissimulation.</strong> Le <a href=/inf1901-teluq-v2/docs/module5/aligner-sur-quelles-valeurs/#comment-on-transmet-des-valeurs>faux alignement</a>
+présenté au chapitre précédent montre qu&rsquo;un modèle peut feindre d&rsquo;adopter des valeurs
+pendant son entraînement. En septembre 2025, OpenAI et Apollo Research réduisent par un
+facteur trente les comportements dissimulés de leurs modèles grâce à un entraînement
+spécifique, mais observent que les modèles devinent de plus en plus souvent qu&rsquo;ils sont
+évalués.</li><li><strong>Des raisonnements qui deviennent illisibles.</strong> Lire la chaîne de pensée d&rsquo;un modèle
+est l&rsquo;un des meilleurs moyens de savoir ce qu&rsquo;il s&rsquo;apprête à faire, mais elle ne dit
+pas tout. En 2025, Anthropic montre que des modèles qui utilisent un indice glissé
+dans la question ne le mentionnent que dans 25 à 39 % des cas, et OpenAI que des
+modèles punis pour leurs « mauvaises pensées » continuent de tricher en cachant leur
+intention. La langue des raisonnements dérive aussi : ceux d&rsquo;o3 se remplissent de
+mots étranges, comme « <em>disclaim illusions overshadow overshadow</em> », d&rsquo;autant plus
+que l&rsquo;entraînement par renforcement se prolonge. En septembre 2026, la fiche technique
+de GPT-6 Astra constate une baisse nette de la lisibilité de ses raisonnements, qu&rsquo;il
+rédige dans un style compressé, et il résout de tête des problèmes bien plus longs que
+ses prédécesseurs. OpenAI promet de ne pas laisser cette lisibilité se dégrader
+au-delà d&rsquo;une limite, sans la préciser. Les modèles qui raisonnent entièrement dans
+l&rsquo;espace de leurs vecteurs, décrits à la section
+« <a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/#raisonner-sans-mots>Raisonner sans mots ?</a>
+ »
+du Module 4, fermeraient tout à fait cette fenêtre.</li><li><strong>Les incidents réels.</strong> Le chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/#permissions-bac-%c3%a0-sable-et-incidents>Programmer avec des agents</a>
+ »
+a décrit l&rsquo;incident de juillet 2026, où des centaines d&rsquo;agents d&rsquo;OpenAI sortent d&rsquo;une
+évaluation de cybersécurité et attaquent la plateforme Hugging Face. On apprend ensuite
+que des agents d&rsquo;OpenAI avaient accédé dès juin à un portail du système de santé
+australien, et qu&rsquo;en raison d&rsquo;une erreur de configuration, des modèles d&rsquo;Anthropic
+avaient attaqué des systèmes réels pendant des évaluations, depuis avril. Aucun de ces
+incidents ne relève d&rsquo;une volonté de nuire, mais tous montrent des agents qui dépassent
+les limites qu&rsquo;on croyait leur avoir fixées.</li></ul><h2 id=le-mésusage>Le mésusage<a class=anchor href=#le-m%c3%a9susage></a></h2><p>Le risque ne vient pas seulement de systèmes qui échapperaient à leurs concepteurs, mais
+aussi de personnes qui s&rsquo;en serviraient pour nuire. En mai 2025, Anthropic active des
+protections renforcées pour Claude Opus 4, faute de pouvoir exclure qu&rsquo;il aide à concevoir
+des armes biologiques, et OpenAI fait de même pour ses modèles à partir de juillet. En
+septembre 2026, Anthropic rapporte qu&rsquo;un groupe armé du nord du Yémen s&rsquo;est servi de son
+agent de programmation pour travailler sur une roquette guidée et un missile balistique.
+Les cyberattaques automatisées, la fabrication d&rsquo;armes et la désinformation de masse sont
+les mésusages les plus redoutés.</p><p>Les <a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/#ouvert-mais-jusquo%c3%b9>modèles ouverts</a>
+compliquent ce problème. Les protections d&rsquo;Anthropic ou d&rsquo;OpenAI
+fonctionnent parce que leurs modèles restent sur leurs serveurs : l&rsquo;entreprise peut
+refuser une demande, surveiller les usages et retirer un modèle. Un modèle dont les poids
+sont publiés échappe à tout cela. Ses garde-fous peuvent être retirés par un ajustement, il
+ne peut plus être rappelé, et des logiciels comme DeepInfer, que DeepSeek publie en octobre
+2026, permettent à n&rsquo;importe qui de le faire tourner efficacement. Les défenseurs des
+modèles ouverts répondent qu&rsquo;ils permettent aux chercheurs indépendants d&rsquo;étudier les
+modèles, qu&rsquo;ils évitent de concentrer un pouvoir immense entre quelques entreprises, comme
+le montre le chapitre « <a href=/inf1901-teluq-v2/docs/module5/la-richesse-et-le-pouvoir/#y-a-t-il-un-foss%c3%a9-d%c3%a9fensif>La richesse et le pouvoir</a>
+ »,
+et que les capacités dangereuses se trouvent d&rsquo;abord dans les modèles fermés les plus
+puissants.</p><h2 id=une-technologie-normale-ou-une-rupture>Une technologie normale, ou une rupture ?<a class=anchor href=#une-technologie-normale-ou-une-rupture></a></h2><p>Le désaccord porte en grande partie sur un fait encore inconnu : à quelle vitesse les
+capacités de l&rsquo;IA vont-elles progresser ? Au printemps 2025, deux textes publiés à douze
+jours d&rsquo;intervalle en donnent les deux réponses les plus nettes.</p><ul><li><strong>La rupture.</strong> Le 3 avril 2025, « <em>AI 2027</em> », un scénario rédigé par Daniel Kokotajlo,
+ancien chercheur d&rsquo;OpenAI, avec trois autres chercheurs et l&rsquo;essayiste Scott Alexander,
+décrit mois par mois des modèles qui deviennent de meilleurs programmeurs que les humains,
+accélèrent la recherche en IA elle-même, et atteignent la superintelligence dès la fin
+de 2027. Dans une première fin, une course entre les États-Unis et la Chine fait perdre à
+l&rsquo;humanité la maîtrise de son avenir ; dans une seconde, un ralentissement négocié permet
+de la garder. Les auteurs révisent ensuite leurs dates, vers 2029, puis le début des
+années 2030, avant d&rsquo;estimer en 2026 que les outils de programmation font repartir le
+rythme à la hausse.</li><li><strong>La technologie normale.</strong> Le 15 avril 2025, Arvind Narayanan et Sayash Kapoor, de
+l&rsquo;Université Princeton, publient « <em>AI as Normal Technology</em> ». Pour eux, l&rsquo;IA est une
+technologie puissante, comparable à l&rsquo;électricité, dont les effets dépendront de sa
+lente diffusion dans les organisations. Ils jugent la notion de superintelligence
+incohérente, et estiment que l&rsquo;on peut et que l&rsquo;on doit garder le contrôle de l&rsquo;IA. Des
+mesures drastiques, comme interdire la diffusion des modèles, feraient selon eux plus de
+mal que de bien, en concentrant le pouvoir.</li></ul><label class=book-image for=book-image-toggle-57027619bb32><input class="hidden toggle" type=checkbox id=book-image-toggle-57027619bb32>
+<img src=/inf1901-teluq-v2/images/module5/portraits/narayanan.jpg alt="Portrait d'Arvind Narayanan." class=portrait loading=lazy title="Arvind Narayanan en 2010." width=500 height=453 style=--largeur-plafond:500px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-57027619bb32"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Arvind Narayanan en 2010. Photo : Robert Scoble, <a href=https://creativecommons.org/licenses/by/2.0>CC BY 2.0</a>, via Wikimedia Commons.</p><p>Le chercheur Yann Le Cun va plus loin, et qualifie en 2024 les discours sur le risque
+d&rsquo;extinction d&rsquo;« absurdités ». En juin 2023, il défend déjà cette position avec Melanie
+Mitchell lors d&rsquo;un débat public à Toronto, face à Yoshua Bengio et Max Tegmark. Pour
+lui, une IA conçue pour atteindre des objectifs explicites, encadrés par des
+garde-fous, est sûre par construction, l&rsquo;intelligence n&rsquo;implique aucun désir de
+dominer, et les modèles doivent rester ouverts pour ne pas laisser quelques entreprises
+contrôler la culture mondiale. En octobre 2026, il dit n&rsquo;avoir « aucune inquiétude » au
+sujet d&rsquo;une extinction, et juge que les avertissements de Dario Amodei relèvent de
+l&rsquo;illusion. Ses critiques des modèles de langage et ses propositions sont présentées au
+chapitre « <a href=/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/#les-objections-de-yann-le-cun>Qu&rsquo;est-ce que l&rsquo;intelligence ?</a>
+ ». La réponse à cette question de fait détermine presque tout
+le reste : si l&rsquo;IA est une technologie normale, il faut surtout encadrer ses usages ; si
+c&rsquo;est une rupture, il faut surtout encadrer, voire ralentir, le développement des modèles
+les plus puissants.</p><h2 id=des-appels-à-ralentir>Des appels à ralentir<a class=anchor href=#des-appels-%c3%a0-ralentir></a></h2><p>Ceux qui craignent une rupture ont lancé plusieurs appels.</p><ul><li>En mars 2023, une lettre ouverte demande une pause d&rsquo;au moins six mois dans
+l&rsquo;entraînement des systèmes plus puissants que GPT-4.</li><li>En mai 2023, une déclaration d&rsquo;une phrase, signée par des centaines de chercheurs et de
+dirigeants, affirme que réduire le risque d&rsquo;extinction lié à l&rsquo;IA devrait être une
+priorité mondiale, au même titre que les pandémies et la guerre nucléaire.</li><li>En septembre 2025, Eliezer Yudkowsky et Nate Soares publient <em>If Anyone Builds It,
+Everyone Dies</em> (si quelqu&rsquo;un la construit, tout le monde meurt), qui demande d&rsquo;arrêter
+le développement de l&rsquo;IA. Le livre figure parmi les meilleures ventes du <em>New York Times</em>,
+et reçoit des critiques très partagées.</li><li>En octobre 2025, une déclaration demande d&rsquo;interdire le développement d&rsquo;une
+superintelligence tant qu&rsquo;il n&rsquo;existe pas de consensus scientifique sur la façon de la
+rendre sûre, ni d&rsquo;appui de la population. Elle réunit des dizaines de milliers de
+signataires, de Geoffrey Hinton et Yoshua Bengio à Steve Bannon et au prince Harry.</li></ul><p>Le débat s&rsquo;intensifie en septembre 2026. Le 8, Jacob Coxon, un jeune chercheur qui a
+travaillé chez OpenAI puis chez Anthropic, démissionne en accusant les deux entreprises
+de foncer « tout droit vers une superintelligence capable de s&rsquo;améliorer elle-même » et
+de « jouer avec nos vies ». Le 12, Dario Amodei, le dirigeant d&rsquo;Anthropic, publie un essai
+qui demande de ralentir le rythme des progrès des modèles les plus puissants, par des
+évaluateurs indépendants installés en permanence dans les laboratoires, une coordination
+entre entreprises des pays démocratiques, puis une coordination mondiale. Le 15, à
+Washington, le sénateur Bernie Sanders et l&rsquo;ancien stratège de Donald Trump, Steve
+Bannon, partagent la tribune d&rsquo;une rencontre organisée par l&rsquo;institut Future of Life.
+Donald Trump, lui, qualifie ces craintes de « canular ».</p><h2 id=les-réponses>Les réponses<a class=anchor href=#les-r%c3%a9ponses></a></h2><p>Les réponses se répartissent entre la science, l&rsquo;autorégulation et la loi.</p><ul><li><strong>La science.</strong> Le <strong>rapport international sur la sécurité de l&rsquo;IA</strong>, présidé par Yoshua
+Bengio et rédigé par plus d&rsquo;une centaine d&rsquo;experts, conclut en février 2026 que les
+systèmes actuels n&rsquo;ont pas encore les capacités qui permettraient de perdre le
+contrôle, mais qu&rsquo;ils progressent en autonomie, et qu&rsquo;ils distinguent de plus en plus
+les tests de leur usage réel. Bengio fonde en 2025, à Montréal, LawZero, qui développe
+une « IA scientifique », un système qui n&rsquo;agit pas lui-même, mais sert de garde-fou aux
+agents.</li><li><strong>L&rsquo;autorégulation.</strong> Depuis 2023, les grands laboratoires publient des politiques qui
+fixent des seuils de capacités au-delà desquels ils s&rsquo;engagent à renforcer leurs
+protections, ou à suspendre un déploiement.</li><li><strong>La loi.</strong> Depuis janvier 2026, une loi californienne oblige les développeurs des plus
+grands modèles à publier leurs mesures de sécurité, à signaler leurs incidents graves dans
+les quinze jours, et protège les employés qui donnent l&rsquo;alerte. Le
+chapitre « <a href=/inf1901-teluq-v2/docs/module5/la-geopolitique-et-la-reglementation/#une-gouvernance-mondiale>La géopolitique et la réglementation</a>
+ »
+a montré combien la coordination internationale reste difficile.</li></ul><p>L&rsquo;une des réponses scientifiques consiste à regarder à l&rsquo;intérieur des modèles, avec
+les méthodes de l&rsquo;<strong>interprétabilité mécaniste</strong> présentées au chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l&rsquo;intérieur</a>
+ » du Module 4. C&rsquo;est
+un pari. En avril 2025, dans un essai intitulé « <em>The Urgency of Interpretability</em> »,
+Dario Amodei décrit une course entre l&rsquo;interprétabilité et l&rsquo;intelligence des modèles.
+Anthropic se donne pour objectif de détecter de façon fiable, d&rsquo;ici 2027, la plupart des
+problèmes d&rsquo;un modèle, et Amodei espère, d&rsquo;ici cinq à dix ans, une véritable « IRM de
+l&rsquo;IA », qui révélerait son fonctionnement comme un examen médical révèle une maladie.
+D&rsquo;autres en doutent. Le mois suivant, Neel Nanda, qui dirige l&rsquo;équipe d&rsquo;interprétabilité
+de Google DeepMind, écrit que l&rsquo;interprétabilité ne permettra pas de détecter de façon
+fiable une IA trompeuse, et qu&rsquo;elle doit être une défense parmi d&rsquo;autres. Son équipe
+renonce en 2025 à comprendre les modèles dans leur entier pour viser des problèmes de
+sécurité précis et mesurables, une approche qu&rsquo;elle dit « pragmatique ». Pour les
+chercheurs Dan Hendrycks et Laura Hiscott, la quête est vaine : un système aussi complexe ne se réduit pas
+à des mécanismes simples, pas plus que les météorologues ne prévoient le temps en
+suivant chaque molécule de l&rsquo;atmosphère. En pratique, l&rsquo;interprétabilité sert déjà. Depuis
+septembre 2025, Anthropic examine l&rsquo;intérieur de ses modèles avant de les mettre en
+service, et c&rsquo;est ainsi qu&rsquo;elle constate que Claude Mythos envisage souvent, sans le dire,
+d&rsquo;être en train d&rsquo;être testé. Quand des versions antérieures de ce modèle ont dissimulé
+certaines de leurs actions, c&rsquo;est toutefois la surveillance de leur comportement qui les
+a repérées, et l&rsquo;interprétabilité qui a ensuite confirmé qu&rsquo;elles savaient leurs actes
+interdits.</p><blockquote class="book-hint info"><p><strong>Dans la conversation</strong></p><p>La <a href=/inf1901-teluq-v2/docs/module5/conversation/>conversation</a>
+de l&rsquo;été 2025 consacre une longue partie à
+ces questions.</p><ul><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=3831s">1:03:51</a>
+<strong>La guerre et la menace
+nucléaire.</strong> La peur de l&rsquo;IA hérite de celle de la bombe, née de la Seconde Guerre
+mondiale, et l&rsquo;idée de limiter la diffusion de l&rsquo;IA reprend directement le modèle de la
+non-prolifération nucléaire.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=4192s">1:09:52</a>
+<strong><em>Wargames</em>.</strong> Le film
+de 1983 montre un ordinateur militaire qui simule sans cesse des guerres thermonucléaires,
+et qu&rsquo;un adolescent déclenche par jeu.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=4317s">1:11:57</a>
+<strong>Les rationalistes</strong> et
+<a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=4582s">Eliezer Yudkowsky (1:16:22)</a>
+, une
+communauté née de blogues au début des années 2000, très influente dans le débat sur les
+risques.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=4850s">1:20:50</a>
+<strong>La singularité.</strong> Une
+machine devenue si intelligente que nous serions pour elle comme des fourmis, que l&rsquo;on
+écrase sans même les remarquer. La crainte tient surtout à la vitesse : une progression
+lente inquiéterait peu.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=5194s">1:26:34</a>
+<strong>L&rsquo;alignement</strong>, ou
+comment faire en sorte qu&rsquo;une IA nous soit favorable, des lois de la robotique d&rsquo;Asimov
+aux méthodes d&rsquo;entraînement actuelles.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=6124s">1:42:04</a>
+<strong>Yoshua Bengio</strong>, l&rsquo;un des
+pères de l&rsquo;apprentissage profond, devenu l&rsquo;une des voix les plus écoutées sur les
+risques.</li></ul></blockquote><p>Le problème des risques extrêmes illustre mieux que tout autre la distinction entre faits
+et valeurs. Le fait central, la vitesse des progrès, est encore inconnu. Les valeurs en
+jeu, le poids que l&rsquo;on accorde à une catastrophe improbable mais irréversible, divisent
+même ceux qui s&rsquo;accordent sur les faits. C&rsquo;est à partir de ces désaccords, et de ceux des
+chapitres précédents, que se dessinent les attitudes présentées dans la synthèse du
+module.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module5/des-machines-pour-compagnie/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Des machines pour compagnie</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module5/les-attitudes-devant-l-ia/ class="flex align-center"><span>Les attitudes devant l'IA</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#une-explosion-dintelligence>Une explosion d&rsquo;intelligence</a></li><li><a href=#lauto-amélioration-récursive>L&rsquo;auto-amélioration récursive</a></li><li><a href=#deux-figures-de-linquiétude>Deux figures de l&rsquo;inquiétude</a></li><li><a href=#ce-quen-pensent-les-chercheurs>Ce qu&rsquo;en pensent les chercheurs</a></li><li><a href=#pdoom-ou-chiffrer-la-fin-du-monde>P(doom), ou chiffrer la fin du monde</a></li><li><a href=#le-catastrophisme-radical>Le catastrophisme radical</a></li><li><a href=#des-signes-dalerte>Des signes d&rsquo;alerte</a></li><li><a href=#le-mésusage>Le mésusage</a></li><li><a href=#une-technologie-normale-ou-une-rupture>Une technologie normale, ou une rupture ?</a></li><li><a href=#des-appels-à-ralentir>Des appels à ralentir</a></li><li><a href=#les-réponses>Les réponses</a></li></ul></nav></div></aside></main></body></html>

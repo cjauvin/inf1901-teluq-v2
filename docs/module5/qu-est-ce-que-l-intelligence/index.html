@@ -1,0 +1,298 @@
+<!doctype html><html lang=fr dir=ltr data-theme=auto><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Qu’est-ce que l’intelligence ? L’expression « intelligence artificielle » suppose que l’on sait ce qu’est l’intelligence. Les chapitres précédents ont montré qu’on ne s’accorde ni sur ce que signifie penser , ni sur ce qu’est la conscience . L’intelligence ne fait pas exception. Ce chapitre, le dernier de la famille des problèmes philosophiques, présente les principales façons de la définir, et montre que la question, longtemps théorique, a désormais des enjeux très concrets : des contrats de plusieurs milliards de dollars dépendent de la réponse.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="Qu'est-ce que l'intelligence ?"><meta property="og:description" content="Qu’est-ce que l’intelligence ? L’expression « intelligence artificielle » suppose que l’on sait ce qu’est l’intelligence. Les chapitres précédents ont montré qu’on ne s’accorde ni sur ce que signifie penser , ni sur ce qu’est la conscience . L’intelligence ne fait pas exception. Ce chapitre, le dernier de la famille des problèmes philosophiques, présente les principales façons de la définir, et montre que la question, longtemps théorique, a désormais des enjeux très concrets : des contrats de plusieurs milliards de dollars dépendent de la réponse."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Qu'est-ce que l'intelligence ?"><meta itemprop=description content="Qu’est-ce que l’intelligence ? L’expression « intelligence artificielle » suppose que l’on sait ce qu’est l’intelligence. Les chapitres précédents ont montré qu’on ne s’accorde ni sur ce que signifie penser , ni sur ce qu’est la conscience . L’intelligence ne fait pas exception. Ce chapitre, le dernier de la famille des problèmes philosophiques, présente les principales façons de la définir, et montre que la question, longtemps théorique, a désormais des enjeux très concrets : des contrats de plusieurs milliards de dollars dépendent de la réponse."><meta itemprop=wordCount content="3529"><title>Qu'est-ce que l'intelligence ? • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.02485e9aaa7468c5ed45750c2af56cfc04b91aae7ac6cbf6232dc2686540263f.css integrity="sha256-Akhemqp0aMXtRXUMKvVs/AS5Gq56xsv2Iy3CaGVAJj8=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.f7b83ffca2f377f7e411788dbb418f08a63eecc3cbb85a35dbddd5d08f231f26.js integrity="sha256-97g//KLzd/fkEXiNu0GPCKY+7MPLuFo1293V0I8jHyY=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
+</button>
+<button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3.25"/><path d="M8 1v1.5m0 11V15M1 8h1.5m11 0H15M3.05 3.05l1.06 1.06m7.78 7.78 1.06 1.06M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06"/></svg>
+</button>
+<button type=button data-theme-value=dark data-tooltip="Thème sombre" aria-label="Thème sombre">
+<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.5 9.7A5.8 5.8.0 016.3 2.5a5.8 5.8.0 107.2 7.2z"/></svg></button></div><script>(function(){var e="book-theme",s=["auto","light","dark"],o=document.documentElement,t=Array.prototype.slice.call(document.querySelectorAll(".theme-switch [data-theme-value]"));function i(){try{var t=localStorage.getItem(e);if(s.indexOf(t)!==-1)return t}catch{}return"auto"}function n(e){o.dataset.theme=e,t.forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.themeValue===e))})}t.forEach(function(t){t.addEventListener("click",function(){var s=t.dataset.themeValue;try{localStorage.setItem(e,s)}catch{}n(s)})}),n(i())})()</script><ul><li><a href=/inf1901-teluq-v2/docs/pr%C3%A9sentation/>Présentation du cours</a></li><li><a href=/inf1901-teluq-v2/docs/telecharger/>Télécharger le cours en livre</a></li><li><a href=/inf1901-teluq-v2/docs/philosophie/>Approche pédagogique du cours</a></li><li><a href=/inf1901-teluq-v2/docs/professeurs/>Les professeurs</a></li><li><a href=/inf1901-teluq-v2/docs/travaux-not%C3%A9s/>Travaux notés</a></li><li><a href=/inf1901-teluq-v2/docs/feuille-de-route/>Feuille de route</a></li><li><a href=/inf1901-teluq-v2/docs/google-sheets/>Google Sheets</a></li><li><a href=/inf1901-teluq-v2/docs/assistants-intelligents/>Usage de l'IA (pour ce cours)</a></li><li><a href=/inf1901-teluq-v2/docs/discord/>Serveur Discord</a></li><li><input type=checkbox id=section-5e281d8473b56529fc69758f77e3fa19 class=toggle>
+<label for=section-5e281d8473b56529fc69758f77e3fa19 class=flex><a href=/inf1901-teluq-v2/docs/module1/>Module 1 - Aux origines : l'intelligence artificielle symbolique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module1/turing/>Turing et la question fondatrice (1950)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/deux-paris/>Deux paris rivaux (1956-1958)</a></li><li><a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/>L'âge d'or symbolique : chercher et raisonner</a></li><li><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a></li><li><a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer l'expertise : les systèmes experts</a></li><li><a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a></li><li><a href=/inf1901-teluq-v2/docs/module1/travail-not%C3%A9-1/>Travail noté 1</a></li></ul></li><li><input type=checkbox id=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=toggle>
+<label for=section-7d339bf3d4ad25f3a31a5419c1ee3b34 class=flex><a href=/inf1901-teluq-v2/docs/module2/>Module 2 - Apprentissage automatique</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module2/le-probleme/>Le problème</a></li><li><a href=/inf1901-teluq-v2/docs/module2/modele-le-plus-bete/>Le modèle le plus bête</a></li><li><a href=/inf1901-teluq-v2/docs/module2/les-donnees/>Regarder les données</a></li><li><a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>Prédire par ressemblance</a></li><li><a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/>Un modèle qui s'entraîne</a></li><li><a href=/inf1901-teluq-v2/docs/module2/classer/>Classer</a></li><li><a href=/inf1901-teluq-v2/docs/module2/arbres-de-decision/>Poser des questions : les arbres de décision</a></li><li><a href=/inf1901-teluq-v2/docs/module2/generaliser/>Généraliser</a></li><li><a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/>Bien évaluer un modèle</a></li><li><a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/>Trois façons d'apprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module2/travail-not%C3%A9-2/>Travail noté 2</a></li></ul></li><li><input type=checkbox id=section-063d233b937a5521d7d633a690db810c class=toggle>
+<label for=section-063d233b937a5521d7d633a690db810c class=flex><a href=/inf1901-teluq-v2/docs/module3/>Module 3 - Réseaux de neurones et apprentissage profond</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module3/un-neurone/>Un neurone</a></li><li><a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/>Une couche cachée</a></li><li><a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/>Entraîner un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L'apprentissage profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/materiel-et-outils/>Le matériel et les outils</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/>Voir : les réseaux convolutifs</a></li><li><a href=/inf1901-teluq-v2/docs/module3/reseaux-recurrents/>Lire une séquence : les réseaux récurrents</a></li><li><a href=/inf1901-teluq-v2/docs/module3/attention-transformer/>L'attention et le Transformer</a></li><li><a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>Apprendre à jouer : le renforcement profond</a></li><li><a href=/inf1901-teluq-v2/docs/module3/tromper-un-reseau/>Tromper un réseau</a></li><li><a href=/inf1901-teluq-v2/docs/module3/travail-not%C3%A9-3/>Travail noté 3</a></li></ul></li><li><input type=checkbox id=section-ad65b8547fe18e1e59e616b5d251eca3 class=toggle>
+<label for=section-ad65b8547fe18e1e59e616b5d251eca3 class=flex><a href=/inf1901-teluq-v2/docs/module4/>Module 4 - IA générative et grands modèles de langage</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module4/generer/>Générer : imiter une distribution</a></li><li><a href=/inf1901-teluq-v2/docs/module4/quatre-facons-de-generer/>Quatre façons de générer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/>Des images, des voix, des vidéos</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>Des règles aux probabilités</a></li><li><a href=/inf1901-teluq-v2/docs/module4/les-outils-statistiques/>Les outils statistiques</a></li><li><a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/>Des mots aux nombres : jetons et plongements</a></li><li><a href=/inf1901-teluq-v2/docs/module4/predire-le-mot-suivant/>Prédire le mot suivant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/passer-a-l-echelle/>Passer à l'échelle</a></li><li><a href=/inf1901-teluq-v2/docs/module4/du-modele-a-l-assistant/>Du modèle à l'assistant</a></li><li><a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>Des outils, un harnais et des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/programmer-avec-des-agents/>Programmer avec des agents</a></li><li><a href=/inf1901-teluq-v2/docs/module4/demontrer/>Démontrer</a></li><li><a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>Le défi ARC</a></li><li><a href=/inf1901-teluq-v2/docs/module4/mots-et-images/>Relier les mots et les images</a></li><li><a href=/inf1901-teluq-v2/docs/module4/voir-entendre-parler/>Des modèles qui voient, entendent et parlent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/regarder-a-l-interieur/>Regarder à l'intérieur</a></li><li><a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/>Ce que les LLM comprennent, et ce qu'ils ratent</a></li><li><a href=/inf1901-teluq-v2/docs/module4/travail-not%C3%A9-4/>Travail noté 4</a></li></ul></li><li><input type=checkbox id=section-c28667b80f3fcc867aa9dece52307960 class=toggle checked>
+<label for=section-c28667b80f3fcc867aa9dece52307960 class=flex><a href=/inf1901-teluq-v2/docs/module5/>Module 5 - L'IA dans le monde</a>
+<img src=/inf1901-teluq-v2/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/inf1901-teluq-v2/docs/module5/quels-problemes/>Quels problèmes l'IA pose-t-elle ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-penser/>Une machine peut-elle penser ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/penser-est-ce-calculer/>Penser, est-ce calculer ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-etre-consciente/>Une machine peut-elle être consciente ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/ class=active>Qu'est-ce que l'intelligence ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/l-ia-au-service-de-la-science/>L'IA au service de la science</a></li><li><a href=/inf1901-teluq-v2/docs/module5/predire-sans-comprendre/>Prédire sans comprendre</a></li><li><a href=/inf1901-teluq-v2/docs/module5/qui-est-responsable/>Qui est responsable ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/aligner-sur-quelles-valeurs/>Aligner sur quelles valeurs ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/le-travail/>Le travail</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-creation-et-la-propriete/>La création et la propriété</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-richesse-et-le-pouvoir/>La richesse et le pouvoir</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-verite-et-la-democratie/>La vérité et la démocratie</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-surveillance-et-la-vie-privee/>La surveillance et la vie privée</a></li><li><a href=/inf1901-teluq-v2/docs/module5/la-geopolitique-et-la-reglementation/>La géopolitique et la réglementation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/le-cout-ecologique/>Le coût écologique de l'IA</a></li><li><a href=/inf1901-teluq-v2/docs/module5/penser-avec-des-machines/>Penser avec des machines</a></li><li><a href=/inf1901-teluq-v2/docs/module5/l-ia-dans-l-education/>L'IA dans l'éducation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/des-machines-pour-compagnie/>Des machines pour compagnie</a></li><li><a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/>Peut-on perdre le contrôle ?</a></li><li><a href=/inf1901-teluq-v2/docs/module5/les-attitudes-devant-l-ia/>Les attitudes devant l'IA</a></li><li><a href=/inf1901-teluq-v2/docs/module5/conversation/>La conversation</a></li><li><a href=/inf1901-teluq-v2/docs/module5/travail-not%C3%A9-5/>Travail noté 5</a></li></ul></li><li><a href=/inf1901-teluq-v2/docs/ressources-additionnelles/>Ressources supplémentaires</a></li><li><a href=/inf1901-teluq-v2/docs/conclusion/>Conclusion</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><input type=checkbox class=toggle id=menu-control>
+<label for=menu-control><img src=/inf1901-teluq-v2/icons/menu.svg class=book-icon alt=Menu></label><h3>Qu'est-ce que l'intelligence ?</h3><input type=checkbox class=toggle id=toc-control>
+<label for=toc-control><img src=/inf1901-teluq-v2/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#plus-de-soixante-dix-définitions>Plus de soixante-dix définitions</a></li><li><a href=#le-paradoxe-de-moravec>Le paradoxe de Moravec</a></li><li><a href=#leffet-ia>L&rsquo;effet IA</a></li><li><a href=#étroite-ou-générale>Étroite ou générale</a></li><li><a href=#une-intelligence-en-dents-de-scie>Une intelligence en dents de scie</a></li><li><a href=#les-objections-de-yann-le-cun>Les objections de Yann Le Cun</a></li><li><a href=#les-modèles-du-monde>Les modèles du monde</a></li><li><a href=#gary-marcus-et-le-retour-du-symbolique>Gary Marcus et le retour du symbolique</a></li><li><a href=#lintelligence-comme-apprentissage>L&rsquo;intelligence comme apprentissage</a></li><li><a href=#une-ia-générale-en-2026>Une IA générale en 2026 ?</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=quest-ce-que-lintelligence>Qu&rsquo;est-ce que l&rsquo;intelligence ?<a class=anchor href=#quest-ce-que-lintelligence></a></h1><p>L&rsquo;expression « intelligence artificielle » suppose que l&rsquo;on sait ce qu&rsquo;est
+l&rsquo;intelligence. Les chapitres précédents ont montré qu&rsquo;on ne s&rsquo;accorde ni sur ce que
+signifie <a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-penser/>penser</a>
+, ni sur ce qu&rsquo;est la
+<a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-etre-consciente/>conscience</a>
+. L&rsquo;intelligence ne
+fait pas exception. Ce chapitre, le dernier de la famille des problèmes philosophiques,
+présente les principales façons de la définir, et montre que la question, longtemps
+théorique, a désormais des enjeux très concrets : des contrats de plusieurs milliards
+de dollars dépendent de la réponse.</p><h2 id=plus-de-soixante-dix-définitions>Plus de soixante-dix définitions<a class=anchor href=#plus-de-soixante-dix-d%c3%a9finitions></a></h2><p>En 2007, les chercheurs Shane Legg et Marcus Hutter rassemblent plus de soixante-dix
+définitions de l&rsquo;intelligence, proposées par des psychologues, des philosophes et des
+chercheurs en IA. Ils en tirent une synthèse : l&rsquo;intelligence mesure la capacité d&rsquo;un
+agent à atteindre ses buts dans une grande variété d&rsquo;environnements. Legg fondera
+quelques années plus tard DeepMind, avec Demis Hassabis et Mustafa Suleyman.</p><p>Les psychologues mesurent l&rsquo;intelligence depuis plus d&rsquo;un siècle. En 1904, Charles
+Spearman remarque que les personnes qui réussissent bien un test cognitif tendent à
+réussir aussi les autres, et il attribue cette corrélation à un <strong>facteur général</strong>,
+noté <em>g</em>, que les tests de quotient intellectuel cherchent à mesurer. En 1983, Howard
+Gardner propose au contraire une théorie des <strong>intelligences multiples</strong>, linguistique,
+logique, spatiale, musicale, corporelle ou sociale, indépendantes les unes des autres.
+L&rsquo;idée est très populaire dans l&rsquo;enseignement, mais les psychologues lui reprochent de
+manquer d&rsquo;appuis expérimentaux.</p><p>L&rsquo;intelligence animale complique encore le tableau. En 2002, à Oxford, une corneille de
+Nouvelle-Calédonie nommée Betty, devant un petit seau de nourriture coincé au fond d&rsquo;un
+tube, tord un fil de fer droit pour en faire un crochet, sans qu&rsquo;on le lui ait jamais
+appris. Un chien, un poulpe ou une corneille ont des capacités que nous n&rsquo;avons pas, et
+il n&rsquo;est pas évident de les ranger sur une seule échelle avec la nôtre.</p><h2 id=le-paradoxe-de-moravec>Le paradoxe de Moravec<a class=anchor href=#le-paradoxe-de-moravec></a></h2><p>Le Module 1 a présenté, avec <a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lapog%c3%a9e-deep-blue-bat-kasparov-1997>Deep Blue</a>
+,
+un constat qui traverse toute l&rsquo;histoire de l&rsquo;IA. En 1988, le roboticien Hans Moravec
+le formule ainsi : il est relativement facile de faire réussir à un ordinateur un test
+d&rsquo;intelligence ou une partie de dames au niveau d&rsquo;un adulte, et difficile, voire
+impossible, de lui donner les capacités de perception et de mouvement d&rsquo;un enfant d&rsquo;un
+an. Le psychologue Steven Pinker le résume en 1994 : les problèmes difficiles sont
+faciles, et les problèmes faciles sont difficiles.</p><p>Le paradoxe tient encore en 2026. Des modèles obtiennent la médaille d&rsquo;or aux
+<a href=/inf1901-teluq-v2/docs/module4/demontrer/#les-olympiades-de-la-g%c3%a9om%c3%a9trie-%c3%a0-lor>Olympiades de mathématiques</a>
+,
+et, en avril 2026, à Pékin, un robot humanoïde court un semi-marathon en un peu plus de
+cinquante minutes, plus vite que le record du monde humain, alors que plusieurs de ses
+concurrents tombent ou heurtent des obstacles. Mais aucun robot ne sait encore ranger
+une cuisine qu&rsquo;il n&rsquo;a jamais vue. Une explication souvent avancée tient aux données :
+les textes et les parties d&rsquo;échecs abondent, alors que personne n&rsquo;a enregistré des
+millions d&rsquo;heures de gestes ordinaires, plier une chemise ou ranger une assiette. Une
+autre tient à la nature des problèmes : les échecs n&rsquo;ont qu&rsquo;un seul jeu, et peu de
+règles, alors que chaque cuisine est différente. C&rsquo;est le
+<a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/#le-mur-du-sens-commun>mur du sens commun</a>
+du
+Module 1.</p><h2 id=leffet-ia>L&rsquo;effet IA<a class=anchor href=#leffet-ia></a></h2><p>Le Module 1 a aussi présenté l&rsquo;<a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#lh%c3%a9ritage-invisible>« effet IA »</a>
+ :
+dès qu&rsquo;une machine réussit une tâche, on cesse de considérer cette tâche comme une
+preuve d&rsquo;intelligence. La formule la plus connue, popularisée par Douglas Hofstadter
+en 1979, est attribuée à Larry Tesler : « l&rsquo;IA, c&rsquo;est tout ce qui n&rsquo;a pas encore été
+fait ». Une autre, attribuée à John McCarthy, dit que dès que cela marche, plus personne
+n&rsquo;appelle cela de l&rsquo;IA. L&rsquo;historienne Pamela McCorduck notait déjà, dans <em>Machines Who
+Think</em> (1979), qu&rsquo;à chaque réussite d&rsquo;un ordinateur, un chœur de critiques s&rsquo;élevait
+pour dire que ce n&rsquo;était pas penser.</p><p>L&rsquo;effet IA peut se lire de deux façons. Pour les uns, c&rsquo;est une injustice : on déplace
+les poteaux du but chaque fois que la machine s&rsquo;apprête à marquer, et l&rsquo;on refusera
+toujours le mot « intelligence » à une machine. Pour les autres, c&rsquo;est un apprentissage :
+chaque réussite nous apprend qu&rsquo;une tâche que l&rsquo;on croyait exiger de l&rsquo;intelligence
+peut être accomplie sans elle, et précise ainsi ce que l&rsquo;on entend par ce mot.</p><h2 id=étroite-ou-générale>Étroite ou générale<a class=anchor href=#%c3%a9troite-ou-g%c3%a9n%c3%a9rale></a></h2><p>Deep Blue jouait aux échecs mieux que Kasparov, mais ne savait rien faire d&rsquo;autre. On
+parle d&rsquo;<strong>IA étroite</strong> (<em>narrow AI</em>) pour désigner un système spécialisé dans une tâche,
+et d&rsquo;<strong>IA générale</strong> (<em>artificial general intelligence</em>, AGI) pour un système capable
+d&rsquo;apprendre et d&rsquo;accomplir à peu près tout ce que fait un humain. L&rsquo;expression apparaît
+en 1997 chez le physicien Mark Gubrud, et elle est reprise au début des années 2000 par
+Shane Legg et le chercheur Ben Goertzel. Elle désigne aujourd&rsquo;hui l&rsquo;objectif affiché de
+la plupart des grands laboratoires.</p><p>Personne ne s&rsquo;accorde pourtant sur sa définition, et les définitions retenues ont des
+conséquences.</p><ul><li><strong>Une définition économique.</strong> La charte d&rsquo;OpenAI, en 2018, définit l&rsquo;IA générale
+comme des systèmes très autonomes qui surpassent les humains dans la plupart des
+travaux qui ont une valeur économique. Selon des documents révélés à la fin de 2024,
+le contrat entre OpenAI et Microsoft considérait l&rsquo;IA générale comme atteinte quand
+OpenAI pourrait en tirer environ 100 milliards de dollars de profits. Depuis
+l&rsquo;accord révisé d&rsquo;octobre 2025, une déclaration d&rsquo;IA générale par OpenAI doit être
+vérifiée par un comité d&rsquo;experts indépendants.</li><li><strong>Des niveaux.</strong> En novembre 2023, des chercheurs de Google DeepMind proposent de
+classer les systèmes selon leur performance et leur généralité. Les niveaux vont
+d&rsquo;« émergent », à peu près égal à un humain sans formation, à « surhumain », meilleur
+que tous les humains, en passant par « compétent », « expert » et « virtuose ». Selon
+eux, les modèles de langage de 2023 étaient des IA générales « émergentes ».</li><li><strong>Un profil cognitif.</strong> En octobre 2025, une trentaine de chercheurs, dont Yoshua
+Bengio, proposent de mesurer l&rsquo;IA générale dans dix domaines tirés des théories
+psychologiques de l&rsquo;intelligence, comme le raisonnement, les connaissances, la lecture
+ou la mémoire. Sur cette échelle, GPT-4 obtient 27 %, et GPT-5 environ 57 %, avec un
+profil très inégal : presque rien pour la capacité à retenir durablement ce qu&rsquo;il
+apprend.</li></ul><p>L&rsquo;IA générale suppose aussi que l&rsquo;intelligence humaine soit elle-même générale, ce qui
+ne va pas de soi. Nous calculons mal, nous apprenons les mathématiques formelles au prix
+de longues années d&rsquo;efforts, et notre intelligence est taillée pour la vie que menaient
+nos ancêtres. Elle est peut-être, elle aussi, une forme particulière d&rsquo;intelligence.</p><h2 id=une-intelligence-en-dents-de-scie>Une intelligence en dents de scie<a class=anchor href=#une-intelligence-en-dents-de-scie></a></h2><p>Les grands modèles de langage compliquent la distinction entre étroit et général. Ils
+réussissent des tâches très variées, mais de façon inégale. En 2023, une expérience
+menée auprès de 758 consultants du cabinet BCG compare des tâches réalisées avec et sans
+GPT-4. Pour les tâches à la portée du modèle, les consultants aidés réalisent 12 % de
+tâches en plus, 25 % plus vite, et avec une qualité supérieure de plus de 40 %. Pour une
+tâche qui dépasse le modèle, en apparence semblable, ils ont au contraire 19 points de
+pourcentage de chances en moins d&rsquo;arriver à la bonne réponse. Les auteurs parlent d&rsquo;une
+<strong>frontière en dents de scie</strong> (<em>jagged frontier</em>) : on ne sait pas d&rsquo;avance de quel
+côté tombe une tâche.</p><p>L&rsquo;informaticien Andrej Karpathy parle d&rsquo;une <strong>intelligence en dents de scie</strong> (<em>jagged
+intelligence</em>) : un modèle capable de résoudre des problèmes de mathématiques difficiles
+peut se tromper en comparant 9,11 et 9,9, ou en comptant les lettres
+d&rsquo;un mot, comme le montrait l&rsquo;exemple de
+<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#des-erreurs-r%c3%a9v%c3%a9latrices><em>strawberry</em></a>
+au
+Module 4. L&rsquo;intelligence humaine n&rsquo;a pas ce profil, ce qui rend nos intuitions sur
+l&rsquo;intelligence des machines peu fiables.</p><label class=book-image for=book-image-toggle-83154def5bf9><input class="hidden toggle" type=checkbox id=book-image-toggle-83154def5bf9>
+<img src=/inf1901-teluq-v2/images/module5/dents-de-scie.svg alt="Deux panneaux. À gauche, la frontière en dents de scie : six tâches de difficulté comparable pour un humain sont placées sur un même cercle pointillé. La frontière des capacités d'un modèle de langage, une forme hérissée, passe au-delà de certaines tâches, que le modèle réussit (résumer un article, écrire un programme, traduire un texte), et en deçà d'autres, qu'il rate (compter les r de « strawberry », comparer 9,11 et 9,9, la tâche piège de l'étude BCG). À droite, un profil de capacités schématique sur huit tâches : le profil d'un humain est régulier, celui d'un modèle est hérissé." loading=lazy title="L'intelligence en dents de scie. À gauche, des tâches également difficiles pour un humain tombent de part et d'autre de la frontière des capacités du modèle (d'après l'étude BCG de 2023 et les schémas d'Ethan Mollick). À droite, un profil schématique : régulier chez un humain, hérissé chez un modèle de langage, qui excelle là où un humain peine et échoue là où un enfant réussit." width=880 height=440 style=--largeur-plafond:880px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-83154def5bf9"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=les-objections-de-yann-le-cun>Les objections de Yann Le Cun<a class=anchor href=#les-objections-de-yann-le-cun></a></h2><p>Yann Le Cun, le pionnier des
+<a href=/inf1901-teluq-v2/docs/module3/reseaux-convolutifs/#yann-le-cun-et-les-ch%c3%a8ques>réseaux convolutifs</a>
+présenté au Module 3, lauréat du prix Turing 2018 avec Geoffrey Hinton et Yoshua Bengio,
+est l&rsquo;un des critiques les plus constants des grands modèles de langage, et l&rsquo;un des plus
+écoutés, puisqu&rsquo;il a dirigé la recherche en IA de Meta de 2013 à 2025. Ses critiques
+tiennent en quelques thèses.</p><label class=book-image for=book-image-toggle-d47dfd7e87ae><input class="hidden toggle" type=checkbox id=book-image-toggle-d47dfd7e87ae>
+<img src=/inf1901-teluq-v2/images/module5/portraits/lecun.jpg alt="Portrait de Yann Le Cun." class=portrait loading=lazy title="Yann Le Cun en 2025." width=500 height=543 style=--largeur-plafond:500px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-d47dfd7e87ae"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Yann Le Cun en 2025. Photo : École polytechnique, <a href=https://creativecommons.org/licenses/by-sa/2.0>CC BY-SA 2.0</a>, via Wikimedia Commons.</p><ul><li><strong>Des erreurs qui s&rsquo;accumulent.</strong> En mars 2023, lors d&rsquo;un débat à l&rsquo;Université de New
+York, il affirme que les modèles autorégressifs, qui
+<a href=/inf1901-teluq-v2/docs/module4/generer/>génèrent un jeton après l&rsquo;autre</a>
+, sont « condamnés ». Si
+chaque jeton a une petite probabilité <em>e</em> de faire sortir la réponse de l&rsquo;ensemble des
+réponses correctes, la probabilité qu&rsquo;une réponse de <em>n</em> jetons reste correcte vaut
+(1 − <em>e</em>)<sup><em>n</em></sup>, et diminue donc de façon exponentielle avec la longueur.
+L&rsquo;argument est contesté : il suppose des erreurs indépendantes, de probabilité
+constante, et dont on ne se relève jamais, alors que les modèles qui raisonnent savent
+revenir sur leurs pas.</li><li><strong>Trop peu de données.</strong> Un enfant de quatre ans a passé environ 16 000 heures
+éveillé. Selon les calculs de Le Cun, son nerf optique lui a transmis pendant ce temps
+au moins autant de données que tout le texte sur lequel on entraîne les plus grands
+modèles. L&rsquo;essentiel de ce que nous savons du monde ne s&rsquo;apprend pas dans les livres.</li><li><strong>Moins qu&rsquo;un chat.</strong> Un enfant de dix ans apprend en quelques minutes à desservir la
+table et à remplir le lave-vaisselle, et un jeune de dix-sept ans apprend à conduire en
+une vingtaine d&rsquo;heures. Aucun robot n&rsquo;en est capable. C&rsquo;est le
+<a href=/inf1901-teluq-v2/docs/module5/qu-est-ce-que-l-intelligence/#le-paradoxe-de-moravec>paradoxe de Moravec</a>
+,
+et Le Cun prédit que l&rsquo;on obtiendra une IA du niveau d&rsquo;un chat, puis d&rsquo;un chien, avant
+une IA de niveau humain.</li><li><strong>Pas d&rsquo;intelligence générale.</strong> Pour lui, l&rsquo;expression même d&rsquo;« intelligence
+générale » n&rsquo;a pas de sens, puisque l&rsquo;intelligence humaine est très spécialisée et ne
+sait faire qu&rsquo;une infime partie des tâches possibles. Il préfère parler
+d&rsquo;« intelligence machine avancée », AMI selon le sigle anglais, un clin d&rsquo;œil au mot
+français. En décembre 2025, Demis Hassabis lui répond publiquement qu&rsquo;il confond
+intelligence générale et intelligence universelle, et Le Cun juge le désaccord en
+grande partie affaire de mots.</li></ul><p>Il manque selon lui aux modèles de langage quatre capacités : comprendre le monde
+physique, une mémoire durable, raisonner et planifier. En janvier 2025, à Davos, il
+prédit que le paradigme actuel a une durée de vie de trois à cinq ans. En mars 2025, il
+déclare ne plus s&rsquo;intéresser aux modèles de langage, de simples « générateurs de
+jetons ». Ses positions sur les risques de l&rsquo;IA sont présentées au chapitre
+« <a href=/inf1901-teluq-v2/docs/module5/peut-on-perdre-le-controle/#une-technologie-normale-ou-une-rupture>Peut-on perdre le contrôle ?</a>
+ ».</p><h2 id=les-modèles-du-monde>Les modèles du monde<a class=anchor href=#les-mod%c3%a8les-du-monde></a></h2><p>Ce que Le Cun propose à la place est un <strong>modèle du monde</strong> (<em>world model</em>). La notion
+n&rsquo;est pas neuve. Au Module 1,
+<a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/#shrdlu-ou-le-sommet-de-lambition>SHRDLU</a>
+maintenait une représentation explicite de son monde de blocs, écrite à la main, et le
+Module 4 a montré qu&rsquo;un petit modèle entraîné sur des parties d&rsquo;Othello se
+<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#perroquets-ou-mod%c3%a8les-du-monde>construisait de lui-même une représentation du plateau</a>
+.
+Au sens de Le Cun, un modèle du monde est un réseau qui apprend, en observant, à prédire
+comment le monde évolue, en particulier sous l&rsquo;effet de ses propres actions. Il peut
+alors planifier, c&rsquo;est-à-dire imaginer les conséquences de plusieurs actions avant
+d&rsquo;agir.</p><p>En 2022, dans « <em>A Path Towards Autonomous Machine Intelligence</em> », Le Cun décrit une
+architecture complète, organisée autour d&rsquo;un tel modèle : un module de perception, un
+modèle du monde, un coût qui mesure si une situation est bonne ou mauvaise, un acteur qui
+cherche les actions qui minimisent ce coût, et une mémoire. Un système qui agit pour
+atteindre des objectifs explicites, encadrés par des garde-fous, serait selon lui
+contrôlable par construction, et non par un réglage après coup.</p><p>La pièce centrale de cette architecture est le <strong>JEPA</strong> (<em>Joint Embedding Predictive
+Architecture</em>, une architecture prédictive dans l&rsquo;espace des représentations). Un modèle
+génératif prédit l&rsquo;image suivante d&rsquo;une vidéo pixel par pixel, ou le mot suivant d&rsquo;un
+texte, y compris tout ce qui est imprévisible, comme le mouvement de chaque feuille d&rsquo;un
+arbre. Un JEPA transforme d&rsquo;abord les images en
+<a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/#les-plongements>représentations</a>
+abstraites, puis
+prédit seulement la représentation de l&rsquo;image suivante. Il peut ainsi ignorer les
+détails imprévisibles et se concentrer sur l&rsquo;essentiel.</p><label class=book-image for=book-image-toggle-d383adbd6530><input class="hidden toggle" type=checkbox id=book-image-toggle-d383adbd6530>
+<img src=/inf1901-teluq-v2/images/module5/generatif-contre-jepa.svg alt="Deux panneaux. À gauche, un modèle génératif reçoit une image, une balle près d'un arbre, et doit prédire l'image suivante pixel par pixel. Comme il ne peut pas savoir où iront la balle et chaque feuille, il produit une image floue, comparée pixel par pixel à la vraie image suivante. À droite, un JEPA : un encodeur transforme chaque image en une représentation abstraite, une courte rangée de nombres ; un prédicteur prédit la représentation de l'image suivante à partir de celle de l'image actuelle, et la comparaison se fait entre représentations." loading=lazy title="Modèle génératif contre JEPA. Le modèle génératif doit prédire chaque pixel, même imprévisible, et sa prédiction devient floue. Le JEPA ne prédit que la représentation abstraite de l'image suivante, et la compare à celle de la vraie image." width=900 height=430 style=--largeur-plafond:900px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-d383adbd6530"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Meta en publie plusieurs versions : I-JEPA pour les images en 2023, V-JEPA pour la vidéo
+en 2024, puis V-JEPA 2 en juin 2025, entraîné sur plus d&rsquo;un million d&rsquo;heures de vidéo.
+Après moins de 62 heures de vidéos de robots, V-JEPA 2 permet à des bras robotisés de
+saisir et de déplacer des objets dans des laboratoires où ils n&rsquo;ont jamais été
+entraînés. Le Cun pousse la logique jusqu&rsquo;au bout dans une diapositive restée célèbre,
+qui recommande d&rsquo;abandonner les modèles génératifs, les modèles probabilistes et
+l&rsquo;<a href=/inf1901-teluq-v2/docs/module3/renforcement-profond/>apprentissage par renforcement</a>
+, ce dernier
+n&rsquo;étant à utiliser qu&rsquo;en dernier recours.</p><p>En novembre 2025, Le Cun annonce son départ de Meta, qui vient de réorganiser sa
+recherche autour de la course à la superintelligence. Il fonde à Paris AMI Labs, dirigé
+par Alexandre LeBrun, avec des bureaux à New York, à Montréal et à Singapour. En mars
+2026, l&rsquo;entreprise lève 1,03 milliard de dollars, la plus grosse levée de démarrage de
+l&rsquo;histoire européenne, sans produit ni revenus prévus avant plusieurs années. Ses
+premiers résultats, publiés en 2026, comprennent des modèles du monde assez petits pour
+s&rsquo;entraîner sur un seul processeur graphique.</p><p>Le Cun n&rsquo;est pas seul à miser sur les modèles du monde.</p><ul><li><strong>Apprendre en rêvant.</strong> En 2018, David Ha et Jürgen Schmidhuber entraînent un agent
+« dans son propre rêve » : un modèle du monde appris d&rsquo;un jeu vidéo lui sert de
+simulateur, et la stratégie apprise dans ce rêve fonctionne ensuite dans le vrai jeu.
+En avril 2025, l&rsquo;agent DreamerV3, qui suit le même principe, devient le premier à
+trouver des diamants dans Minecraft sans aucune donnée humaine.</li><li><strong>Des mondes interactifs.</strong> En août 2025, Google DeepMind présente Genie 3, qui génère
+en temps réel des mondes que l&rsquo;on peut explorer pendant quelques minutes, et dont
+l&rsquo;entreprise Waymo se sert en 2026 pour simuler des situations de conduite.</li><li><strong>Pour les robots.</strong> Nvidia diffuse depuis 2025 ses modèles Cosmos, destinés à la
+robotique et aux voitures autonomes.</li><li><strong>L&rsquo;intelligence spatiale.</strong> World Labs, l&rsquo;entreprise de l&rsquo;informaticienne Fei-Fei Li,
+lance en novembre 2025 Marble, qui crée des mondes en trois dimensions à partir d&rsquo;un
+texte ou d&rsquo;une image. En septembre 2026, AMD annonce son rachat pour environ
+8,2 milliards de dollars.</li><li><strong>Des simulateurs du monde.</strong> OpenAI présentait dès 2024 ses modèles vidéo comme des
+« simulateurs du monde », et l&rsquo;équipe de Sora, après la fermeture du service en mars
+2026, se consacre à la simulation du monde pour la robotique, comme le rappelle la
+<a href=/inf1901-teluq-v2/docs/module4/images-voix-videos/#la-vid%c3%a9o>section sur la vidéo</a>
+du Module 4.</li></ul><p>Ces systèmes ne suivent pas tous la voie de Le Cun : Genie, Cosmos et Sora sont
+génératifs, et prédisent bel et bien des pixels. Mais tous parient que l&rsquo;intelligence
+passe par une compréhension du monde physique, qui manque aux modèles de langage. La
+question reste ouverte, puisque les modèles de langage, de plus en plus capables de voir
+et d&rsquo;agir, pourraient aussi acquérir cette compréhension par d&rsquo;autres voies.</p><h2 id=gary-marcus-et-le-retour-du-symbolique>Gary Marcus et le retour du symbolique<a class=anchor href=#gary-marcus-et-le-retour-du-symbolique></a></h2><p>L&rsquo;autre grand critique des modèles de langage, Gary Marcus, professeur émérite de
+psychologie à l&rsquo;Université de New York, part d&rsquo;une tout autre tradition. Spécialiste de
+l&rsquo;acquisition du langage chez l&rsquo;enfant, élève de Steven Pinker, il défend depuis les
+années 1990 l&rsquo;idée que l&rsquo;esprit humain manipule des symboles et des règles, et que les
+réseaux de neurones, si doués soient-ils pour reconnaître des formes, généralisent mal
+dès qu&rsquo;on sort de ce qu&rsquo;ils ont vu.</p><label class=book-image for=book-image-toggle-ef35860591fe><input class="hidden toggle" type=checkbox id=book-image-toggle-ef35860591fe>
+<img src=/inf1901-teluq-v2/images/module5/portraits/marcus.jpg alt="Portrait de Gary Marcus." class=portrait loading=lazy title="Gary Marcus en 2022." width=380 height=380 style=--largeur-plafond:380px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-ef35860591fe"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Gary Marcus en 2022. Photo : Web Summit, <a href=https://creativecommons.org/licenses/by/2.0>CC BY 2.0</a>, via Wikimedia Commons.</p><p>En 2018, dans « <em>Deep Learning: A Critical Appraisal</em> », il dresse la liste des
+faiblesses de l&rsquo;apprentissage profond : un besoin énorme de données, une incapacité à
+raisonner de façon fiable, une fragilité devant les cas inhabituels, une boîte noire. En
+2022, il publie un article au titre provocateur, « <em>Deep Learning Is Hitting a Wall</em> »
+(l&rsquo;apprentissage profond se heurte à un mur), quelques mois avant la sortie de ChatGPT.
+Depuis, il recense sur son blogue chaque
+<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#les-hallucinations>hallucination</a>
+et chaque erreur
+de raisonnement des modèles, et chaque promesse non tenue de leurs concepteurs, au point
+d&rsquo;être devenu, pour beaucoup, le critique attitré de l&rsquo;industrie. En mai 2023, il témoigne
+devant le Sénat américain aux côtés de Sam Altman, et réclame une agence chargée de
+contrôler les modèles avant leur mise en service.</p><p>Sa proposition est l&rsquo;<strong>IA neurosymbolique</strong> (<em>neurosymbolic AI</em>) : associer les réseaux
+de neurones, qui apprennent à reconnaître, à des systèmes symboliques, qui représentent
+des connaissances et raisonnent selon des règles. C&rsquo;est une façon de réconcilier les
+<a href=/inf1901-teluq-v2/docs/module1/deux-paris/>deux paris</a>
+du Module 1, l&rsquo;IA symbolique et l&rsquo;apprentissage,
+que Marcus juge complémentaires plutôt que rivaux. En 2026, il voit sa thèse confirmée
+dans l&rsquo;évolution des assistants eux-mêmes : les meilleurs résultats viennent désormais de
+modèles qui écrivent et exécutent du code et qui appellent des outils, c&rsquo;est-à-dire de
+modèles associés à des systèmes symboliques. Ses détracteurs lui reprochent de déplacer sans cesse la cible, à
+mesure que les modèles réussissent ce qu&rsquo;il les disait incapables de faire.</p><p>Marcus et Le Cun s&rsquo;opposent sur presque tout le reste : Le Cun rejette le symbolique et
+mise sur l&rsquo;apprentissage de modèles du monde, Marcus juge les risques de l&rsquo;IA bien réels
+et réclame une réglementation stricte. Ils partagent pourtant le même diagnostic, celui
+d&rsquo;une impasse des modèles de langage seuls, ce qui rappelle que la critique de ces
+modèles ne forme pas un camp, mais plusieurs.</p><h2 id=lintelligence-comme-apprentissage>L&rsquo;intelligence comme apprentissage<a class=anchor href=#lintelligence-comme-apprentissage></a></h2><p>En 2019, François Chollet propose une autre définition, présentée au chapitre
+« <a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/#mesurer-lintelligence-pas-les-comp%c3%a9tences>Le défi ARC</a>
+ »
+du Module 4 : l&rsquo;intelligence n&rsquo;est pas une compétence, mais l&rsquo;<strong>efficacité avec
+laquelle un système acquiert des compétences nouvelles</strong>, compte tenu de ce qu&rsquo;il savait
+au départ et de l&rsquo;expérience dont il a disposé. Un système qui a besoin de millions
+d&rsquo;exemples pour apprendre ce qu&rsquo;un enfant saisit en trois est compétent, mais peu
+intelligent.</p><label class=book-image for=book-image-toggle-5b478b57a5bf><input class="hidden toggle" type=checkbox id=book-image-toggle-5b478b57a5bf>
+<img src=/inf1901-teluq-v2/images/module5/portraits/chollet.jpg alt="Portrait de François Chollet." class=portrait loading=lazy title="François Chollet en 2020." width=500 height=499 style=--largeur-plafond:500px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-5b478b57a5bf"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>François Chollet en 2020. Photo : Ramosset, <a href=https://creativecommons.org/licenses/by-sa/4.0>CC BY-SA 4.0</a>, via Wikimedia Commons.</p><p>Les tests ARC, construits sur cette définition, suivent eux-mêmes le cycle de l&rsquo;effet
+IA. ARC-AGI-3, publié en mars 2026, propose de petits jeux sans consignes, dont chacun a été réussi par des humains, et où les meilleurs modèles obtiennent moins de 1 % à leur
+sortie. En septembre 2026, GPT-6 Astra atteint 62,7 % dans les conditions standard du
+test, et près de 100 % quand on l&rsquo;équipe d&rsquo;un <a href=/inf1901-teluq-v2/docs/module4/outils-et-agents/>harnais</a>
+adapté, avec moins
+d&rsquo;actions qu&rsquo;un humain médian sur la plupart des niveaux. Les organisateurs précisent
+qu&rsquo;ils ne prétendent pas pour autant qu&rsquo;il s&rsquo;agit d&rsquo;une IA générale. Chollet lui-même,
+qui jugeait l&rsquo;IA générale lointaine, estimait en 2025 qu&rsquo;elle pourrait arriver dans
+environ cinq ans.</p><h2 id=une-ia-générale-en-2026>Une IA générale en 2026 ?<a class=anchor href=#une-ia-g%c3%a9n%c3%a9rale-en-2026></a></h2><p>La question n&rsquo;est plus seulement théorique. En mars 2026, Jensen Huang, le dirigeant de
+Nvidia, déclare dans un entretien que l&rsquo;IA générale est déjà là, selon la définition que
+lui propose son interlocuteur : une IA capable de bâtir une entreprise d&rsquo;un milliard de
+dollars. En septembre 2026, après la sortie de GPT-6 Astra, il écrit que l&rsquo;IA générale
+« est arrivée », et le président d&rsquo;OpenAI, Greg Brockman, juge raisonnable de penser que
+nous sommes entrés dans l&rsquo;ère de l&rsquo;IA générale. OpenAI n&rsquo;a pourtant fait aucune
+déclaration officielle, et le comité d&rsquo;experts prévu par l&rsquo;accord avec Microsoft ne
+s&rsquo;est pas prononcé.</p><p>Ces déclarations montrent surtout que la réponse dépend de la définition. Selon que
+l&rsquo;on retient la valeur économique, un score à un test, la variété des compétences ou
+l&rsquo;efficacité de l&rsquo;apprentissage, l&rsquo;IA générale est déjà là, presque là, ou encore
+lointaine. On retrouve le constat de Turing en 1950 : la question « les machines
+peuvent-elles penser ? » ne se tranche pas tant que l&rsquo;on ne s&rsquo;accorde pas sur le sens
+des mots. La différence est qu&rsquo;aujourd&rsquo;hui, des entreprises, des investisseurs et des
+gouvernements ont intérêt à ce que la réponse soit l&rsquo;une plutôt que l&rsquo;autre.</p><blockquote class="book-hint info"><p><strong>Dans la conversation</strong></p><p>La <a href=/inf1901-teluq-v2/docs/module5/conversation/>conversation</a>
+de l&rsquo;été 2025 s&rsquo;ouvre sur ces questions.</p><ul><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=0s">0:00</a>
+<strong>Le paradoxe de Moravec.</strong>
+On a battu Kasparov, mais on ne sait pas faire un robot qui range la vaisselle. Une
+explication tient aux données, que Tesla accumule par exemple pour la conduite
+automobile ; une autre tient au fait que les échecs n&rsquo;ont qu&rsquo;un jeu et peu de règles,
+alors que chaque cuisine est différente.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=360s">6:00</a>
+<strong>La vision de l&rsquo;IA
+classique.</strong> Les premiers programmes d&rsquo;échecs ne reposaient pas sur des données, mais
+sur l&rsquo;idée ancienne que l&rsquo;intelligence pourrait se formaliser en un petit ensemble de
+règles.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=540s">9:00</a>
+<strong>Les objectifs
+changeants.</strong> Après Deep Blue, on a conclu que ce n&rsquo;était « pas exactement » de
+l&rsquo;intelligence, mais un savoir-faire très étroit.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=714s">11:54</a>
+<strong>Google Maps, est-ce de
+l&rsquo;IA ?</strong> En 1970, tout le monde aurait dit oui ; aujourd&rsquo;hui, personne. Pourtant,
+connaître toutes les rues de Londres était une compétence que les chauffeurs de taxi
+devaient prouver par des examens.</li><li><a href="https://www.youtube.com/watch?v=R8sqq_gJbUI&amp;t=1036s">17:16</a>
+<strong>L&rsquo;IA générale.</strong> Un
+modèle de langage est-il général, ou une sorte de Deep Blue du langage ? La
+discussion se demande si l&rsquo;être humain lui-même a une intelligence générale, lui qui
+multiplie mal les grands nombres, et rappelle qu&rsquo;un chien est intelligent sans parler.</li></ul></blockquote></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module5/une-machine-peut-elle-etre-consciente/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
+<span>Une machine peut-elle être consciente ?</span>
+</a></span><span><a href=/inf1901-teluq-v2/docs/module5/l-ia-au-service-de-la-science/ class="flex align-center"><span>L'IA au service de la science</span>
+<img src=/inf1901-teluq-v2/icons/forward.svg class=book-icon alt=Forward></a></span></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay" aria-hidden=true></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#plus-de-soixante-dix-définitions>Plus de soixante-dix définitions</a></li><li><a href=#le-paradoxe-de-moravec>Le paradoxe de Moravec</a></li><li><a href=#leffet-ia>L&rsquo;effet IA</a></li><li><a href=#étroite-ou-générale>Étroite ou générale</a></li><li><a href=#une-intelligence-en-dents-de-scie>Une intelligence en dents de scie</a></li><li><a href=#les-objections-de-yann-le-cun>Les objections de Yann Le Cun</a></li><li><a href=#les-modèles-du-monde>Les modèles du monde</a></li><li><a href=#gary-marcus-et-le-retour-du-symbolique>Gary Marcus et le retour du symbolique</a></li><li><a href=#lintelligence-comme-apprentissage>L&rsquo;intelligence comme apprentissage</a></li><li><a href=#une-ia-générale-en-2026>Une IA générale en 2026 ?</a></li></ul></nav></div></aside></main></body></html>
