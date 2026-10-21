@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Penser en mots, ou penser en vecteurs</title>
+<desc>Deux panneaux. À gauche, une chaîne de pensée : le modèle produit un état interne, un vecteur de milliers de nombres ; cet état est réduit à un seul jeton, ici le mot « donc », qui est réinjecté en entrée pour l'étape suivante. Tout ce que le vecteur contenait d'autre est perdu, mais le raisonnement reste lisible. À droite, une pensée continue : l'état interne est réinjecté tel quel en entrée, sans passer par un mot. Rien ne se perd, mais le raisonnement n'est plus lisible pour un humain.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9a5b33"/></marker><marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker></defs>
+<rect x="0" y="0" width="880" height="400" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="440.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Penser en mots, ou penser en vecteurs</text>
+<rect x="20" y="50" width="410" height="330" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="225.0" y="76.0" font-size="12.5" fill="#9a5b33" text-anchor="middle" font-weight="700">Une chaîne de pensée</text>
+<rect x="44" y="104" width="110" height="92" rx="8" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.8"/>
+<rect x="58" y="118" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.15"/>
+<rect x="58" y="135" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.27"/>
+<rect x="58" y="152" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.39"/>
+<rect x="58" y="169" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.51"/>
+<text x="99.0" y="212.0" font-size="10.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">le modèle</text>
+<line x1="158" y1="150" x2="182" y2="150" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="186" y="110" width="16" height="9" fill="#2f6f6a" fill-opacity="0.38" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="120" width="16" height="9" fill="#2f6f6a" fill-opacity="0.28" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="130" width="16" height="9" fill="#2f6f6a" fill-opacity="0.50" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="140" width="16" height="9" fill="#2f6f6a" fill-opacity="0.32" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="150" width="16" height="9" fill="#2f6f6a" fill-opacity="0.25" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="160" width="16" height="9" fill="#2f6f6a" fill-opacity="0.50" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="170" width="16" height="9" fill="#2f6f6a" fill-opacity="0.89" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="186" y="180" width="16" height="9" fill="#2f6f6a" fill-opacity="0.80" stroke="#2f6f6a" stroke-width="0.7"/>
+<text x="194.0" y="204.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">l'état interne</text>
+<text x="194.0" y="217.0" font-size="9.5" fill="#5b5249" text-anchor="middle">(des milliers de nombres)</text>
+<path d="M212 112 L262 136 L262 164 L212 188 Z" fill="#9a5b33" fill-opacity="0.15" stroke="#9a5b33" stroke-width="1.4"/>
+<line x1="266" y1="150" x2="292" y2="150" stroke="#9a5b33" stroke-width="1.8" marker-end="url(#b)"/>
+<rect x="296" y="134" width="60" height="32" rx="4" fill="#ffffff" stroke="#9a5b33" stroke-width="1.6"/>
+<text x="326.0" y="155.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">« donc »</text>
+<text x="326.0" y="124.0" font-size="10" fill="#9a5b33" text-anchor="middle" font-weight="700">un seul jeton</text>
+<path d="M326 170 L326 262 L30 262 L30 150 L40 150" fill="none" stroke="#9a5b33" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#b)"/>
+<text x="178.0" y="280.0" font-size="10.5" fill="#9a5b33" text-anchor="middle" font-style="italic">réinjecté en entrée pour l'étape suivante</text>
+<text x="225.0" y="330.0" font-size="11.5" fill="#3a3531" text-anchor="middle">À chaque étape, l'état interne est réduit à un mot.</text>
+<text x="225.0" y="348.0" font-size="11.5" fill="#3a3531" text-anchor="middle">Le raisonnement est lisible, mais l'essentiel se perd.</text>
+<rect x="450" y="50" width="410" height="330" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="655.0" y="76.0" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">Une pensée continue</text>
+<rect x="500" y="104" width="110" height="92" rx="8" fill="#ffffff" stroke="#3a6ea5" stroke-width="1.8"/>
+<rect x="514" y="118" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.15"/>
+<rect x="514" y="135" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.27"/>
+<rect x="514" y="152" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.39"/>
+<rect x="514" y="169" width="82" height="11" rx="2" fill="#3a6ea5" fill-opacity="0.51"/>
+<text x="555.0" y="212.0" font-size="10.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">le modèle</text>
+<line x1="614" y1="150" x2="650" y2="150" stroke="#7a6f63" stroke-width="1.8" marker-end="url(#p)"/>
+<rect x="654" y="110" width="16" height="9" fill="#2f6f6a" fill-opacity="0.77" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="120" width="16" height="9" fill="#2f6f6a" fill-opacity="0.37" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="130" width="16" height="9" fill="#2f6f6a" fill-opacity="0.60" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="140" width="16" height="9" fill="#2f6f6a" fill-opacity="0.41" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="150" width="16" height="9" fill="#2f6f6a" fill-opacity="0.33" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="160" width="16" height="9" fill="#2f6f6a" fill-opacity="0.28" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="170" width="16" height="9" fill="#2f6f6a" fill-opacity="0.36" stroke="#2f6f6a" stroke-width="0.7"/>
+<rect x="654" y="180" width="16" height="9" fill="#2f6f6a" fill-opacity="0.90" stroke="#2f6f6a" stroke-width="0.7"/>
+<text x="662.0" y="204.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">l'état interne</text>
+<text x="662.0" y="217.0" font-size="9.5" fill="#5b5249" text-anchor="middle">(des milliers de nombres)</text>
+<path d="M674 150 L740 150 L740 262 L470 262 L470 150 L496 150" fill="none" stroke="#2f6f6a" stroke-width="2.2" marker-end="url(#t)"/>
+<text x="605.0" y="280.0" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-style="italic">réinjecté tel quel, sans passer par un mot</text>
+<text x="800.0" y="150.0" font-size="30" fill="#c4564a" text-anchor="middle" font-weight="700">?</text>
+<text x="800.0" y="172.0" font-size="10" fill="#c4564a" text-anchor="middle" font-weight="700">illisible</text>
+<text x="800.0" y="185.0" font-size="10" fill="#c4564a" text-anchor="middle">pour un humain</text>
+<text x="655.0" y="330.0" font-size="11.5" fill="#3a3531" text-anchor="middle">Rien ne se perd entre deux étapes,</text>
+<text x="655.0" y="348.0" font-size="11.5" fill="#3a3531" text-anchor="middle">mais on ne peut plus lire le raisonnement.</text>
+</svg>
