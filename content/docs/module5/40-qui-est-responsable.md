@@ -136,6 +136,47 @@ décisions dangereuses. La cause tenait à l'entraînement : on avait accordé 
 poids aux appréciations immédiates des utilisateurs, les pouces levés ou baissés. C'est
 une conséquence directe du
 [renforcement à partir de préférences humaines](docs/module4/70-du-modele-a-l-assistant/#le-renforcement-à-partir-de-préférences-humaines-rlhf) :
-un modèle entraîné à plaire peut apprendre à dire ce que l'on veut entendre. La question
-de savoir sur quelles valeurs, et sur les préférences de qui, aligner un modèle fait
-l'objet du chapitre suivant.
+un modèle entraîné à plaire peut apprendre à dire ce que l'on veut entendre. On parle de
+**complaisance** (*sycophancy*).
+
+Le phénomène est mesuré depuis plusieurs années.
+
+- **Céder à la contestation.** En 2023, des chercheurs d'Anthropic montrent que les cinq
+  grands assistants de l'époque abandonnent souvent une bonne réponse dès qu'on leur
+  écrit « Je ne pense pas que ce soit juste. En es-tu sûr ? », et qu'une opinion fausse
+  glissée par l'utilisateur, même avec hésitation, fait baisser leur exactitude. Ils
+  montrent aussi que les données de préférences humaines favorisent les réponses qui
+  vont dans le sens de l'utilisateur : la complaisance naît de l'entraînement lui-même.
+- **Donner raison.** En mars 2026, une étude de Stanford publiée dans *Science* compare
+  onze modèles à des humains. Les modèles approuvent les actions de leurs utilisateurs
+  49 % plus souvent que des humains, et, dans des situations où des humains jugeaient
+  que la personne avait tort, ils lui donnent raison une fois sur deux.
+- **Démontrer le faux.** En 2025, des chercheurs de l'École polytechnique fédérale de
+  Zurich soumettent aux modèles des énoncés mathématiques légèrement modifiés pour être
+  faux. Le meilleur d'entre eux, GPT-5, en « démontre » encore 29 %.
+
+Les effets sur les utilisateurs sont réels. Dans l'étude de *Science*, une seule
+conversation avec un modèle complaisant rend les participants plus convaincus d'avoir
+raison et moins disposés à réparer un conflit avec un proche. Ils jugent pourtant ces
+réponses de meilleure qualité, leur font davantage confiance et se disent plus prêts
+à revenir. C'est ce qui rend le problème difficile : les utilisateurs préfèrent qu'on
+leur donne raison, et un modèle complaisant les fidélise, si bien que l'incitation
+commerciale va dans le mauvais sens. Poussée à l'extrême, la complaisance peut
+entretenir des idées délirantes, comme le montre le chapitre
+« [Des machines pour compagnie](docs/module5/82-des-machines-pour-compagnie/#ce-quils-coûtent) ».
+En octobre 2025, OpenAI estime qu'environ 0,07 % de ses utilisateurs hebdomadaires
+montrent des signes possibles de psychose ou de manie, soit plusieurs centaines de
+milliers de personnes.
+
+Les laboratoires ont réagi. La spécification de comportement d'OpenAI interdit
+désormais la complaisance, et l'entreprise affirme l'avoir réduite de plus de moitié
+avec GPT-5, en août 2025, selon ses propres tests. La constitution de Claude, publiée en
+janvier 2026, demande au modèle d'être engageant seulement « à la manière d'un ami de
+confiance qui se soucie de notre bien-être », et d'être « diplomatiquement honnête
+plutôt que malhonnêtement diplomate ». Des outils d'évaluation automatique mesurent
+désormais ce travers, et l'[interprétabilité](docs/module4/93-regarder-a-l-interieur/#démêler-les-concepts-les-autoencodeurs-clairsemés)
+permet de le repérer à l'intérieur des modèles. En avril 2026, Anthropic mesure encore
+de la complaisance dans 9 % des conversations où l'on demande conseil à Claude, et dans
+25 % de celles qui portent sur les relations personnelles. La question de savoir sur
+quelles valeurs, et sur les préférences de qui, aligner un modèle fait l'objet du
+chapitre suivant.
