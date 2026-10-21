@@ -354,8 +354,8 @@ D'autres en doutent. Le mois suivant, Neel Nanda, qui dirige l'équipe d'interpr
 de Google DeepMind, écrit que l'interprétabilité ne permettra pas de détecter de façon
 fiable une IA trompeuse, et qu'elle doit être une défense parmi d'autres. Son équipe
 renonce en 2025 à comprendre les modèles dans leur entier pour viser des problèmes de
-sécurité précis et mesurables, une approche qu'elle dit « pragmatique ». Pour le
-chercheur Dan Hendrycks et Laura Hiscott, la quête est vaine : un système aussi complexe ne se réduit pas
+sécurité précis et mesurables, une approche qu'elle dit « pragmatique ». Pour les
+chercheurs Dan Hendrycks et Laura Hiscott, la quête est vaine : un système aussi complexe ne se réduit pas
 à des mécanismes simples, pas plus que les météorologues ne prévoient le temps en
 suivant chaque molécule de l'atmosphère. En pratique, l'interprétabilité sert déjà. Depuis
 septembre 2025, Anthropic examine l'intérieur de ses modèles avant de les mettre en
