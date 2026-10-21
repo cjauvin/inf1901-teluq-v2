@@ -9,7 +9,7 @@ compléter ou à trancher.
 
 ## Points à trancher avant de soumettre
 
-1. **La date de diffusion prévue.** Décidé : janvier 2027 (saisi : 2027-01-04).
+1. **La date de diffusion prévue.** Décidé : janvier 2027 (saisi : 2027-01-04).
 2. **Les deux manuels.** Décidé : ils sont **retirés** du matériel didactique, des documents
    expédiés et de la bibliographie.
 3. **La durée des modules.** Corrigé dans le cours : M1 deux semaines, M2 à M4 trois
@@ -37,13 +37,13 @@ compléter ou à trancher.
 
 ### Contexte de réalisation
 
-Le cours INF 1901 a été conçu avant l'arrivée des grands modèles de langage dans l'usage
-courant. Depuis 2022, l'intelligence artificielle a connu des transformations rapides :
-assistants conversationnels, modèles capables de raisonner et de programmer, agents
-autonomes, débats publics sur l'emploi, la création, l'environnement et les risques
-extrêmes. Le contenu du cours, son matériel didactique, qui reposait sur deux manuels
-parus en 2018 et 2019, et ses évaluations ne permettaient plus de rendre compte de ces
-transformations.
+La première version du cours INF 1901 a été conçue à l'été 2025, dans des délais très
+courts. Elle reposait en grande partie sur deux manuels parus en 2018 et 2019, antérieurs
+à l'essor de l'IA générative, et la rapidité de sa conception avait laissé plusieurs
+volets incomplets. Le domaine a en outre continué d'évoluer très vite : modèles capables
+de raisonner et de programmer, agents autonomes, débats publics sur l'emploi, la
+création, l'environnement et les risques extrêmes. Une révision importante était
+nécessaire pour compléter le cours et l'actualiser.
 
 La révision a été réalisée par le professeur responsable du cours, de juin à
 octobre 2026. Le contenu a été entièrement réécrit sous la forme d'un site Web du cours,
