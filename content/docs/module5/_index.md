@@ -87,7 +87,8 @@ ignore encore et ce qui relève d'un choix.
 **La synthèse**
 
 21. [*Les attitudes devant l'IA*](docs/module5/90-les-attitudes-devant-l-ia) : les plans
-    de désaccord, les principales attitudes, les imaginaires.
+    de désaccord, les principales attitudes, le spectre de l'accélération au refus, les
+    imaginaires.
 22. [*La conversation*](docs/module5/95-conversation) : la conversation de deux heures
     entre Daniel Lemire et Christian Jauvin, enregistrée à l'été 2025, dont des extraits
     accompagnent les chapitres.

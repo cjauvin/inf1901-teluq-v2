@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Le spectre des attitudes devant l'IA</title>
+<desc>Un plan à deux axes. Horizontalement, ce qu'il faudrait faire du développement de l'IA, de « accélérer » à gauche à « arrêter » à droite. Verticalement, les risques qui comptent le plus, des torts présents en bas aux risques futurs et extrêmes en haut. À gauche, de haut en bas : le successionnisme, le transhumanisme, l'accélérationnisme, la souveraineté, le d/acc, la normalisation. Au centre : l'usage pragmatique, la construction prudente, le souci des IA, le scepticisme, les voix spirituelles. À droite : la critique des torts présents, l'alarme réformiste, la protection et le refus, et, tout en haut à droite, l'abolition. Positions schématiques.</desc>
+<defs><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker></defs>
+<rect x="0" y="0" width="900" height="560" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="450.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Le spectre des attitudes devant l'IA</text>
+<rect x="20" y="48" width="860" height="492" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<rect x="110.0" y="80" width="270.0" height="390" fill="#2f6f6a" fill-opacity="0.05"/>
+<rect x="380.0" y="80" width="195.0" height="390" fill="#3a6ea5" fill-opacity="0.05"/>
+<rect x="575.0" y="80" width="285.0" height="390" fill="#c4564a" fill-opacity="0.05"/>
+<line x1="110" y1="484" x2="860" y2="484" stroke="#7a6f63" stroke-width="1.6" marker-start="url(#p)" marker-end="url(#p)"/>
+<text x="110" y="504" font-size="11.5" fill="#2f6f6a" font-weight="700">accélérer</text>
+<text x="485.0" y="504" font-size="11.5" fill="#5b5249" text-anchor="middle">Que faire du développement de l'IA ?</text>
+<text x="860" y="504" font-size="11.5" fill="#c4564a" font-weight="700" text-anchor="end">arrêter</text>
+<line x1="80" y1="470" x2="80" y2="80" stroke="#7a6f63" stroke-width="1.6" marker-start="url(#p)" marker-end="url(#p)"/>
+<text x="66" y="84" font-size="10.5" fill="#5b5249" text-anchor="end">risques</text>
+<text x="66" y="98" font-size="10.5" fill="#5b5249" text-anchor="end">futurs</text>
+<text x="66" y="456" font-size="10.5" fill="#5b5249" text-anchor="end">torts</text>
+<text x="66" y="470" font-size="10.5" fill="#5b5249" text-anchor="end">présents</text>
+<text x="58" y="275.0" font-size="10.5" fill="#5b5249" text-anchor="middle" transform="rotate(-90 58 275.0)">Quels risques comptent le plus ?</text>
+<circle cx="132.5" cy="99.5" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="142.5" y="98.5" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">le successionnisme</text>
+<text x="142.5" y="111.5" font-size="10" fill="#5b5249" text-anchor="start">Sutton, Faggella</text>
+<circle cx="162.5" cy="169.7" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="172.5" y="168.7" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">le transhumanisme</text>
+<text x="172.5" y="181.7" font-size="10" fill="#5b5249" text-anchor="start">Kurzweil</text>
+<circle cx="155.0" cy="267.2" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="165.0" y="266.2" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">l'accélérationnisme</text>
+<text x="165.0" y="279.2" font-size="10" fill="#5b5249" text-anchor="start">Andreessen, Verdon</text>
+<circle cx="267.5" cy="345.2" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="277.5" y="344.2" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">la souveraineté</text>
+<text x="277.5" y="357.2" font-size="10" fill="#5b5249" text-anchor="start">droite technologique, Europe, Québec</text>
+<circle cx="335.0" cy="220.4" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="345.0" y="219.4" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">le d/acc</text>
+<text x="345.0" y="232.4" font-size="10" fill="#5b5249" text-anchor="start">Buterin</text>
+<circle cx="357.5" cy="419.3" r="6" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="367.5" y="418.3" font-size="11.5" fill="#2f6f6a" text-anchor="start" font-weight="700">la normalisation</text>
+<text x="367.5" y="431.3" font-size="10" fill="#5b5249" text-anchor="start">Narayanan, Kapoor</text>
+<circle cx="447.5" cy="298.4" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="457.5" y="297.4" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">l'usage pragmatique</text>
+<text x="457.5" y="310.4" font-size="10" fill="#5b5249" text-anchor="start">la plupart des gens</text>
+<circle cx="470.0" cy="134.6" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="480.0" y="133.6" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">la construction prudente</text>
+<text x="480.0" y="146.6" font-size="10" fill="#5b5249" text-anchor="start">Anthropic</text>
+<circle cx="500.0" cy="212.6" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="510.0" y="211.6" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">le souci des IA</text>
+<text x="510.0" y="224.6" font-size="10" fill="#5b5249" text-anchor="start">bien-être des modèles</text>
+<circle cx="507.5" cy="450.5" r="6" fill="#3a6ea5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="517.5" y="449.5" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">le scepticisme</text>
+<text x="517.5" y="462.5" font-size="10" fill="#5b5249" text-anchor="start">Marcus</text>
+<circle cx="590.0" cy="321.8" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="600.0" y="320.8" font-size="11.5" fill="#c4564a" text-anchor="start" font-weight="700">les voix spirituelles</text>
+<text x="600.0" y="333.8" font-size="10" fill="#5b5249" text-anchor="start">Léon XIV</text>
+<circle cx="605.0" cy="423.2" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="615.0" y="422.2" font-size="11.5" fill="#c4564a" text-anchor="start" font-weight="700">la critique des torts présents</text>
+<text x="615.0" y="435.2" font-size="10" fill="#5b5249" text-anchor="start">Gebru, Bender</text>
+<circle cx="695.0" cy="165.8" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="685.0" y="164.8" font-size="11.5" fill="#c4564a" text-anchor="end" font-weight="700">l'alarme réformiste</text>
+<text x="685.0" y="177.8" font-size="10" fill="#5b5249" text-anchor="end">Hinton, Bengio</text>
+<circle cx="785.0" cy="353.0" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="775.0" y="352.0" font-size="11.5" fill="#c4564a" text-anchor="end" font-weight="700">la protection et le refus</text>
+<text x="775.0" y="365.0" font-size="10" fill="#5b5249" text-anchor="end">syndicats, néo-luddites</text>
+<circle cx="837.5" cy="95.6" r="6" fill="#c4564a" stroke="#ffffff" stroke-width="1.5"/>
+<text x="827.5" y="94.6" font-size="11.5" fill="#c4564a" text-anchor="end" font-weight="700">l'abolition</text>
+<text x="827.5" y="107.6" font-size="10" fill="#5b5249" text-anchor="end">Yudkowsky, PauseAI</text>
+<text x="860" y="532" font-size="9.5" fill="#7a6f63" text-anchor="end" font-style="italic">positions schématiques</text>
+</svg>

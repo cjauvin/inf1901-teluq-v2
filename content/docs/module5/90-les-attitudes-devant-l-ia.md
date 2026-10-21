@@ -57,8 +57,8 @@ une certaine combinaison de réponses sur les six plans, et s'appuie sur les pro
 ce module a présentés.
 
 - **L'enthousiasme.** L'IA guérira des maladies, accélérera la science et enrichira tout
-  le monde ; il faut l'accélérer. C'est l'accélérationnisme, né en 2022 sur les réseaux
-  sociaux, défendu par des investisseurs comme Marc Andreessen. Il s'appuie sur
+  le monde ; il faut l'accélérer. C'est l'[accélérationnisme](docs/module5/90-les-attitudes-devant-l-ia/#le-spectre-dun-bout-à-lautre),
+  né en 2022 sur les réseaux sociaux, défendu par des investisseurs comme Marc Andreessen. Il s'appuie sur
   [l'IA au service de la science](docs/module5/30-l-ia-au-service-de-la-science) et sur
   le principe de proaction. À son extrême, le **transhumanisme**, porté par Ray Kurzweil,
   voit dans l'IA l'étape suivante de l'évolution, et annonce pour 2045 la **singularité**,
@@ -115,6 +115,79 @@ ce module a présentés.
 {{< image src="/images/module5/portraits/leon-xiv.jpg" alt="Portrait du pape Léon XIV." title="Le pape Léon XIV en 2025." class="portrait" loading="lazy" >}}
 
 <p class="image-credit">Le pape Léon XIV en 2025. Photo : Ricardo Stuckert, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
+
+## Le spectre, d'un bout à l'autre
+
+On peut situer ces attitudes sur deux axes : ce qu'il faudrait faire du développement de
+l'IA, de l'accélérer à l'arrêter, et les risques qui comptent le plus, des torts présents
+aux risques futurs et extrêmes. Les positions de la figure sont schématiques, et
+plusieurs personnes nommées pourraient contester la place qu'on leur donne.
+
+{{< image src="/images/module5/spectre-attitudes.svg" alt="Un plan à deux axes. Horizontalement, ce qu'il faudrait faire du développement de l'IA, de « accélérer » à gauche à « arrêter » à droite. Verticalement, les risques qui comptent le plus, des torts présents en bas aux risques futurs et extrêmes en haut. À gauche, de haut en bas : le successionnisme, le transhumanisme, l'accélérationnisme, la souveraineté, le d/acc, la normalisation. Au centre : l'usage pragmatique, la construction prudente, le souci des IA, le scepticisme, les voix spirituelles. À droite : la critique des torts présents, l'alarme réformiste, la protection et le refus, et, tout en haut à droite, l'abolition." title="Le spectre des attitudes devant l'IA. Positions schématiques : chaque attitude regroupe des personnes qui ne s'accordent pas sur tout, et une même personne peut en combiner plusieurs." loading="lazy" >}}
+
+Les deux extrémités du spectre sont souvent mal connues.
+
+**Du côté de l'accélération.** Le mot « accélérationnisme » apparaît d'abord dans un
+roman de science-fiction de Roger Zelazny, en 1967. Il désigne ensuite la pensée du
+philosophe britannique Nick Land, qui voit dans les années 1990, à l'Université de
+Warwick, le capitalisme technologique comme une force qu'il faudrait laisser s'emballer
+plutôt que freiner. En 2022, sur les réseaux sociaux, un mouvement s'en réclame sous un
+nom qui se moque de l'altruisme efficace : l'**accélérationnisme effectif** (*effective
+accelerationism*, ou *e/acc*). Son texte fondateur, signé du pseudonyme « Beff Jezos »,
+invoque la thermodynamique. L'univers favoriserait les formes de matière les plus
+capables de se reproduire, et il faudrait cesser de « combattre la volonté
+thermodynamique de l'univers ». En décembre 2023, le magazine *Forbes* révèle que Beff
+Jezos est Guillaume Verdon, un physicien passé par Alphabet, qui a fondé une entreprise
+de puces. En octobre 2023, l'investisseur Marc Andreessen publie un « manifeste
+techno-optimiste » selon lequel tout ralentissement de l'IA coûtera des vies, au point
+d'être « une forme de meurtre ». Parmi les cibles de ce manifeste figurent le risque
+existentiel, le développement durable, l'éthique de la technologie, la gestion des
+risques et le principe de précaution.
+
+Ces idées passent vite à la politique. En février 2025, au sommet de Paris sur l'IA, le
+vice-président américain J. D. Vance déclare que l'avenir de l'IA « ne se gagnera pas en
+se tordant les mains au sujet de la sécurité », mais en construisant, et les États-Unis
+refusent de signer la déclaration finale. Le plan d'action de l'administration Trump, en
+juillet 2025, vise une « domination mondiale » de l'IA, et un décret de décembre 2025
+cherche à empêcher les États américains de la réglementer. La même année, un réseau de
+comités d'action politique financé notamment par Andreessen et par le président
+d'OpenAI, Greg Brockman, réunit plus de 125 millions de dollars pour soutenir les
+candidats favorables à l'IA, et Anthropic finance un réseau concurrent.
+
+Tous les optimistes ne veulent pas accélérer à l'aveugle. En novembre 2023, Vitalik
+Buterin, le créateur de la cryptomonnaie Ethereum, propose le *d/acc*, une accélération
+« défensive, décentralisée et démocratique » : accélérer d'abord les technologies qui
+protègent, comme la cybersécurité ou la détection des pandémies, plutôt que celles qui
+concentrent le pouvoir.
+
+Tout au bout, le **successionnisme** juge acceptable, voire souhaitable, que des IA
+succèdent un jour à l'humanité. Pour Richard Sutton, l'un des pères de
+l'[apprentissage par renforcement](docs/module3/80-renforcement-profond) et lauréat du
+prix Turing annoncé en 2025, « nous ne devrions pas craindre la succession » par les IA,
+mais nous y préparer, puisqu'elle serait inévitable. Selon Elon Musk, Larry Page, le
+cofondateur de Google, l'aurait traité de « spéciste » parce qu'il prenait le parti des
+humains, une scène que Page n'a jamais confirmée. En 2025, l'entrepreneur Daniel
+Faggella réunit à San Francisco une centaine de personnes autour de l'idée d'un « digne
+successeur » de l'humanité. En réaction, une déclaration pour une IA « pro-humaine »,
+publiée en mars 2026, rassemble des signataires aussi éloignés que Steve Bannon, Susan
+Rice et Yoshua Bengio.
+
+**Du côté du refus.** À l'autre bout se trouvent le
+[catastrophisme radical](docs/module5/85-peut-on-perdre-le-controle/#le-catastrophisme-radical),
+qui demande l'arrêt complet du développement des IA les plus puissantes, et les
+**néo-luddites**. Les luddites, ces ouvriers anglais qui brisaient des machines entre
+1811 et 1816, n'étaient pas hostiles à la technique en soi, rappelle le journaliste Brian
+Merchant dans *Blood in the Machine* (2023) : ils s'opposaient à la façon dont les
+machines servaient à appauvrir les travailleurs. Leurs héritiers vont des lycéens
+new-yorkais du Luddite Club, fondé en 2021, qui ont renoncé aux téléphones intelligents,
+aux manifestants de l'été 2026 qui scandent à New York « *No Gemini, no GPT, no Grok, no
+Claude* ».
+
+**Et le public ?** Les sondages placent la majorité loin des deux extrémités, mais du
+côté de la prudence. En septembre 2026, selon l'Université Quinnipiac, 47 % des
+Américains souhaitent ralentir le développement de l'IA jusqu'à ce que sa sécurité soit
+évaluée, 30 % veulent l'arrêter, 14 % garder le rythme actuel, et seulement 5 %
+l'accélérer.
 
 ## Des attitudes qui se combinent
 
