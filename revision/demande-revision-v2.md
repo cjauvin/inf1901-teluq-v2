@@ -37,23 +37,25 @@ compléter ou à trancher.
 
 ### Contexte de réalisation
 
-La première version du cours INF 1901 a été conçue à l'été 2025, dans des délais très
-courts. Elle reposait en grande partie sur deux manuels parus en 2018 et 2019, antérieurs
+La première version du cours INF 1901, conçue à l'été 2025 dans des délais très courts,
+en était une ébauche. Elle reposait en grande partie sur deux manuels parus en 2018 et 2019, antérieurs
 à l'essor de l'IA générative, et la rapidité de sa conception avait laissé plusieurs
 volets incomplets. Le domaine a en outre continué d'évoluer très vite : modèles capables
 de raisonner et de programmer, agents autonomes, débats publics sur l'emploi, la
 création, l'environnement et les risques extrêmes. Une révision importante était
-nécessaire pour compléter le cours et l'actualiser.
+nécessaire pour en faire une version achevée.
 
 La révision a été réalisée par le professeur responsable du cours, de juin à
-octobre 2026. Le cours reste offert sous la forme d'un site Web, auquel s'ajoute désormais
-un livre numérique (PDF et EPUB), produit automatiquement à partir du même contenu. La rédaction a été réalisée avec l'aide d'un agent d'IA, sous la direction et
+octobre 2026. L'ensemble du contenu a été revu et repensé, et en grande partie réécrit.
+Le cours reste offert sous la forme d'un site Web, auquel s'ajoute désormais un livre
+numérique (PDF et EPUB), produit automatiquement à partir du même contenu. La rédaction a été réalisée avec l'aide d'un agent d'IA, sous la direction et
 la relecture du professeur ; cette démarche est décrite aux étudiants dans une page du
 cours consacrée à l'usage de l'IA, et sert elle-même d'exemple dans le cours.
 
 ### Résumé des modifications
 
-La révision complète et actualise le cours en profondeur, tout en conservant son titre,
+La révision fait de cette ébauche la version achevée du cours. Elle en revoit et repense
+l'ensemble, tout en conservant son titre,
 son sigle, ses trois crédits et sa place dans le programme court en intelligence
 artificielle dans les entreprises.
 
@@ -62,8 +64,9 @@ artificielle dans les entreprises.
   experts et aux hivers de l'IA. Il donne au cours son fil historique : les deux grands
   paris de l'IA, faire raisonner une machine avec des règles, ou la faire apprendre à
   partir de données.
-- **Des modules substantiellement bonifiés.** Les modules 2 à 5 conservent leur
-  orientation, mais sont considérablement enrichis et actualisés : nouveaux chapitres,
+- **Des modules entièrement revus.** Les modules 2 à 5 conservent leur orientation,
+  mais ont été revus et repensés de fond en comble, et considérablement enrichis et
+  actualisés : nouveaux chapitres,
   figures originales, applications interactives, et développements jusqu'en 2026
   (modèles de raisonnement, agents, démonstration automatique, interprétabilité, débats
   sur les risques et la réglementation). Le module 5 est organisé autour de neuf
