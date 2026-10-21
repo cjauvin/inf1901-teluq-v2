@@ -11,17 +11,11 @@ compléter ou à trancher.
 
 1. **La date de diffusion prévue.** [À préciser, par exemple la session d'hiver ou d'été
    2027.]
-2. **Les deux manuels.** La fiche actuelle impose deux manuels à acheter
-   (*La plus belle histoire de l'intelligence*, 2018, et *Quand la machine apprend*,
-   2019). La v2 ne s'y réfère nulle part : tout le contenu est sur le site du cours et
-   dans le livre numérique téléchargeable. Les textes ci-dessous proposent de les
-   **retirer**.
-3. **La durée des modules.** Les pages d'accueil des modules annoncent 2 + 4 + 4 + 4 + 4
-   = 18 semaines (162 heures), alors que la feuille de route et la fiche officielle
-   prévoient 15 semaines (135 heures pour 3 crédits). Les textes ci-dessous suivent la
-   feuille de route : **M1 deux semaines, M2 à M4 trois semaines chacun, M5 quatre
-   semaines**, travaux notés compris. Il faudrait corriger en conséquence les pages
-   d'accueil des modules 2 à 4.
+2. **Les deux manuels.** Décidé : ils sont **retirés** du matériel didactique, des documents
+   expédiés et de la bibliographie.
+3. **La durée des modules.** Corrigé dans le cours : M1 deux semaines, M2 à M4 trois
+   semaines chacun, M5 quatre semaines, travaux notés compris, soit 15 semaines et
+   135 heures.
 4. **Le titre du cours.** Le titre actuel, *Initiation à l'intelligence artificielle :
    concepts et réflexions*, convient toujours à la v2. Les textes ci-dessous le
    conservent.
@@ -169,16 +163,10 @@ artificiels et les risques extrêmes, ainsi que les principales attitudes devant
   (4ᵉ éd.). Pearson.
 - Mitchell, M. (2019). *Artificial Intelligence: A Guide for Thinking Humans*.
   Farrar, Straus and Giroux.
-- Le Cun, Y. (2019). *Quand la machine apprend : la révolution des neurones artificiels
-  et de l'apprentissage profond*. Odile Jacob.
-- Dehaene, S., Le Cun, Y. et Girardon, J. (2018). *La plus belle histoire de
-  l'intelligence*. Robert Laffont.
 - Narayanan, A. et Kapoor, S. (2024). *AI Snake Oil*. Princeton University Press.
 - Turing, A. M. (1950). Computing Machinery and Intelligence. *Mind*, 59(236),
   433-460.
 
-[Les deux anciens manuels peuvent rester dans la bibliographie, comme lectures
-complémentaires facultatives, tout en étant retirés du matériel obligatoire.]
 
 ---
 
@@ -276,4 +264,4 @@ travaux.]
 
 ### Documents expédiés
 
-Aucun. [Retirer les deux manuels du tableau actuel.]
+Aucun. Les deux manuels qui figuraient dans le tableau sont retirés.

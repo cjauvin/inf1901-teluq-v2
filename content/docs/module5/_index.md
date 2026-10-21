@@ -112,7 +112,7 @@ Au terme de ce module, vous devriez être en mesure de :
 
 ## Durée
 
-Quatre semaines, soit environ 36 heures. Trois chapitres, marqués « approfondissement »
+Quatre semaines, travail noté compris, soit environ 36 heures. Trois chapitres, marqués « approfondissement »
 dans le parcours, sont facultatifs : *Penser, est-ce calculer ?*, *La richesse et le
 pouvoir* et *La géopolitique et la réglementation*.
 

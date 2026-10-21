@@ -184,7 +184,7 @@ Au terme de ce module, vous devriez être en mesure de :
 
 ## Durée
 
-Quatre semaines, soit environ 36 heures. Trois chapitres, marqués « approfondissement »
+Trois semaines, travail noté compris, soit environ 27 heures. Trois chapitres, marqués « approfondissement »
 dans le parcours, sont facultatifs : *Les outils statistiques*, *Démontrer* et
 *Le défi ARC*. La suite du module et le travail noté ne les supposent pas.
 

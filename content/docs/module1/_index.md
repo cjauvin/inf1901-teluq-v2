@@ -81,7 +81,7 @@ Le [travail noté 1](docs/module1/99-travail-noté-1) clôt le module.
 
 ## Durée
 
-Deux semaines, soit environ 18 heures.
+Deux semaines, travail noté compris, soit environ 18 heures.
 
 ## Évaluation
 
