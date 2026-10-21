@@ -106,6 +106,23 @@ programmation moderne. Nous y reviendrons dans « [Les hivers et la
 bascule](docs/module1/60-hivers) », pour évaluer ce que le GOFAI a laissé.
 {{% /hint %}}
 
+{{% hint info %}}
+**HAL 9000, le rêve de 1968**
+
+En 1968 sort *2001 : l'odyssée de l'espace*, de Stanley Kubrick, écrit avec le romancier
+Arthur C. Clarke. Son ordinateur de bord, HAL 9000, converse avec les astronautes, joue
+aux échecs, reconnaît les voix et lit même sur les lèvres. Le principal conseiller du
+film en matière d'IA, non crédité au générique, est Marvin Minsky, l'un des
+organisateurs de l'[atelier de Dartmouth](docs/module1/20-deux-paris/#le-moment-lété-1956-à-dartmouth)
+et l'un des fondateurs du laboratoire d'IA du MIT. Dans le roman de Clarke, c'est
+d'ailleurs à « Minsky et Good » que l'on doit la percée qui a mené à HAL. Deux ans plus
+tard, au MIT, le programme SHRDLU, présenté ci-dessous, déplace des blocs sur une table
+virtuelle. L'écart entre HAL et SHRDLU mesure l'optimisme de l'époque. HAL revient au
+Module 4, parmi les [rêves de machines qui parlent](docs/module4/40-des-regles-aux-probabilites),
+et au Module 5, comme exemple d'une
+[IA mal alignée](docs/module5/42-aligner-sur-quelles-valeurs/#un-vieux-problème).
+{{% /hint %}}
+
 ## SHRDLU, ou le sommet de l'ambition
 
 C'est dans ce contexte optimiste qu'un jeune chercheur du MIT, **Terry Winograd**,

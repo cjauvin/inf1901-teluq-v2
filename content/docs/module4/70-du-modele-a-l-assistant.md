@@ -14,6 +14,36 @@ une conversation. Ce chapitre présente les étapes qui transforment un modèle 
 en assistant, le travail humain qu'elles demandent, et les modèles plus récents qui
 « raisonnent » avant de répondre.
 
+## Avant ChatGPT, Clippy
+
+L'idée d'un assistant logiciel n'est pas neuve. À la fin de 1996, Microsoft livre
+Office 97 avec un « assistant Office », dont le personnage le plus connu est un trombone
+animé aux grands yeux, Clippit, que tout le monde appelle Clippy. Quand l'utilisateur
+tape une adresse puis « Dear », Clippy surgit : « On dirait que vous écrivez une lettre.
+Voulez-vous de l'aide ? »
+
+{{< image src="/images/module4/clippy.png" alt="Le trombone animé Clippy, posé sur une feuille de papier, avec sa bulle : « It looks like you're writing a letter. Would you like help? »" title="Clippy, l'assistant de Microsoft Office." loading="lazy" >}}
+
+<p class="image-credit">Clippy, l'assistant de Microsoft Office, dans sa version des années 2000. Image © Microsoft, reproduite à des fins d'enseignement.</p>
+
+Clippy est issu d'un projet de recherche sérieux. À partir de 1993, le projet Lumière de
+Microsoft Research, dirigé par Eric Horvitz, utilise des
+[réseaux bayésiens](docs/module2/60-classer/#raisonner-sous-incertitude-les-réseaux-bayésiens),
+présentés au Module 2, pour déduire des actions de l'utilisateur ce qu'il cherche à faire,
+et pour décider s'il vaut la peine de l'interrompre. Le produit n'en garde qu'une partie,
+l'analyse bayésienne des questions que l'utilisateur tape lui-même. Le calcul qui
+décidait quand intervenir, jugé trop prudent, est remplacé par des règles simples, et
+Clippy se met à surgir à tout propos. Il devient le symbole de l'assistant agaçant. En
+2001, Microsoft le désactive par défaut dans Office XP, avec une campagne publicitaire
+qui annonce qu'Office est devenu si simple que Clippy n'a plus d'emploi, puis le retire
+en 2007. Le personnage garde pourtant ses nostalgiques : en 2021, Microsoft en fait une
+émoji, et en octobre 2025, Mico, le nouvel avatar de son assistant Copilot, se change en
+Clippy quand on le touche avec insistance.
+
+Clippy montre ce qui manquait aux assistants d'avant : comprendre ce que l'on demande, en
+langue ordinaire, et savoir quand se taire. Les étapes décrites dans ce chapitre ont
+fini par rendre la première possible ; la seconde reste un défi.
+
 ## Un modèle de base ne répond pas
 
 Après le **préentraînement** (*pre-training*), le modèle est un **modèle de base** (*base model*). Il a

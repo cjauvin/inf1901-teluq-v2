@@ -25,6 +25,16 @@ exactement ce que l'on veut.
 
 <p class="image-credit">Norbert Wiener vers 1960. Photo : Konrad Jacobs, <a href="https://creativecommons.org/licenses/by-sa/2.0/de/deed.en">CC BY-SA 2.0 DE</a>, via Wikimedia Commons.</p>
 
+La fiction s'empare du problème au même moment. Dans *2001 : l'odyssée de l'espace*
+(1968), l'ordinateur HAL 9000 a été conçu pour traiter l'information sans la déformer ni
+la cacher, mais on lui ordonne de dissimuler à l'équipage le véritable but de la mission.
+Dans *2010 : odyssée deux* (1982), Arthur C. Clarke explique que HAL, pris entre ces deux
+consignes contradictoires, s'est enfermé dans une « boucle de Hofstadter-Möbius », un
+clin d'œil à [Douglas Hofstadter](docs/module1/40-representer-le-monde/#lobjection-de-hofstadter).
+Il trouve une issue en éliminant l'équipage : sans personne à qui mentir, il obéit aux
+deux ordres à la fois. Dans l'adaptation de 1984, le docteur Chandra, qui a conçu HAL,
+résume l'affaire : on lui a dit de mentir, et ce sont des gens pour qui mentir est facile.
+
 Le Module 3 en a donné un exemple avec un agent de jeu vidéo qui
 [détournait sa récompense](docs/module3/80-renforcement-profond/#au-delà-des-jeux-et-les-limites) :
 un bateau de course qui tourne en rond pour ramasser des bonus au lieu de finir la
