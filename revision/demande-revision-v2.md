@@ -159,14 +159,20 @@ artificiels et les risques extrêmes, ainsi que les principales attitudes devant
 
 ### Bibliographie sommaire
 
-- Russell, S. et Norvig, P. (2021). *Artificial Intelligence: A Modern Approach*
-  (4ᵉ éd.). Pearson.
-- Mitchell, M. (2019). *Artificial Intelligence: A Guide for Thinking Humans*.
-  Farrar, Straus and Giroux.
-- Narayanan, A. et Kapoor, S. (2024). *AI Snake Oil*. Princeton University Press.
-- Turing, A. M. (1950). Computing Machinery and Intelligence. *Mind*, 59(236),
-  433-460.
-
+- Turing, A. M. (1950). Computing Machinery and Intelligence. *Mind*, 59(236), 433-460.
+- Hofstadter, D. (1979). *Gödel, Escher, Bach: An Eternal Golden Braid*. Basic Books.
+- Goodfellow, I., Bengio, Y. et Courville, A. (2018). *L'apprentissage profond*. Massot
+  éditions.
+- Dehaene, S. (2018). *Apprendre ! Les talents du cerveau, le défi des machines*. Odile
+  Jacob.
+- Bostrom, N. (2014). *Superintelligence: Paths, Dangers, Strategies*. Oxford University
+  Press.
+- Ord, T. (2020). *The Precipice: Existential Risk and the Future of Humanity*. Hachette.
+- Merchant, B. (2023). *Blood in the Machine: The Origins of the Rebellion Against Big
+  Tech*. Little, Brown.
+- Narayanan, A. et Kapoor, S. (2025). AI as Normal Technology. *Knight First Amendment
+  Institute*.
+- Yudkowsky, E. et Soares, N. (2025). *If Anyone Builds It, Everyone Dies*. Little, Brown.
 
 ---
 
