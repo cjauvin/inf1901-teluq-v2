@@ -703,7 +703,7 @@ est guidé par la distance qui le sépare du but. Lancez les deux recherches, pu
 comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
 avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
 observez dans quels cas l&rsquo;heuristique aide beaucoup et dans quels cas elle mène
-la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1792601450641152157 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
+la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1792612077518197256 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
 partir de données décrites par des milliers de caractéristiques. Ce sera la
 <a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a> (<em>curse of dimensionality</em>), au
 <a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>.</p><h2 id=lapogée-deep-blue-bat-kasparov-1997>L&rsquo;apogée : Deep Blue bat Kasparov (1997)<a class=anchor href=#lapog%c3%a9e-deep-blue-bat-kasparov-1997></a></h2><p>En mai 1997, à New York, se joue un match devenu célèbre. D&rsquo;un côté, <strong>Garry
@@ -876,7 +876,18 @@ ailleurs. Le <strong>web sémantique</strong>, les <strong>ontologies</strong> e
 par la recherche de Google ou par Wikidata en sont les descendants directs, et les
 <em>cases héritées</em> des frames ressemblent aux <strong>objets</strong> de la
 programmation moderne. Nous y reviendrons dans « <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la
-bascule</a> », pour évaluer ce que le GOFAI a laissé.</p></blockquote><h2 id=shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition<a class=anchor href=#shrdlu-ou-le-sommet-de-lambition></a></h2><p>C&rsquo;est dans ce contexte optimiste qu&rsquo;un jeune chercheur du MIT, <strong>Terry Winograd</strong>,
+bascule</a> », pour évaluer ce que le GOFAI a laissé.</p></blockquote><blockquote class="book-hint info"><p><strong>HAL 9000, le rêve de 1968</strong></p><p>En 1968 sort <em>2001 : l&rsquo;odyssée de l&rsquo;espace</em>, de Stanley Kubrick, écrit avec le romancier
+Arthur C. Clarke. Son ordinateur de bord, HAL 9000, converse avec les astronautes, joue
+aux échecs, reconnaît les voix et lit même sur les lèvres. Le principal conseiller du
+film en matière d&rsquo;IA, non crédité au générique, est Marvin Minsky, l&rsquo;un des
+organisateurs de l&rsquo;<a href=/inf1901-teluq-v2/docs/module1/deux-paris/#le-moment-l%c3%a9t%c3%a9-1956-%c3%a0-dartmouth>atelier de Dartmouth</a>
+et l&rsquo;un des fondateurs du laboratoire d&rsquo;IA du MIT. Dans le roman de Clarke, c&rsquo;est
+d&rsquo;ailleurs à « Minsky et Good » que l&rsquo;on doit la percée qui a mené à HAL. Deux ans plus
+tard, au MIT, le programme SHRDLU, présenté ci-dessous, déplace des blocs sur une table
+virtuelle. L&rsquo;écart entre HAL et SHRDLU mesure l&rsquo;optimisme de l&rsquo;époque. HAL revient au
+Module 4, parmi les <a href=/inf1901-teluq-v2/docs/module4/des-regles-aux-probabilites/>rêves de machines qui parlent</a>,
+et au Module 5, comme exemple d&rsquo;une
+<span title="Ce module sera publié plus tard">IA mal alignée</span>.</p></blockquote><h2 id=shrdlu-ou-le-sommet-de-lambition>SHRDLU, ou le sommet de l&rsquo;ambition<a class=anchor href=#shrdlu-ou-le-sommet-de-lambition></a></h2><p>C&rsquo;est dans ce contexte optimiste qu&rsquo;un jeune chercheur du MIT, <strong>Terry Winograd</strong>,
 réalise vers <strong>1970</strong> un programme qu&rsquo;on considère encore comme l&rsquo;un des résultats
 les plus avancés de l&rsquo;IA symbolique, <strong>SHRDLU</strong>. Le programme dialogue en anglais
 ordinaire avec un humain à propos d&rsquo;un petit monde de <strong>blocs colorés</strong> (cubes,
@@ -890,9 +901,9 @@ robotique virtuel. Pour l&rsquo;époque, la conversation est très impressionnan
 tiens.</p></blockquote><p>Dans cet échange, SHRDLU <strong>lève une ambiguïté</strong> (quelle pyramide), <strong>résout un
 pronom</strong> (ce à quoi renvoie « le »), <strong>agit</strong> sur le monde et <strong>se souvient</strong> de ce
 qu&rsquo;il vient de faire. On peut aussi lui demander « Pourquoi as-tu fait ça ? », et
-il <strong>explique</strong> son raisonnement.</p><label class=book-image for=book-image-toggle-b97d666dcd15><input class="hidden toggle" type=checkbox id=book-image-toggle-b97d666dcd15>
+il <strong>explique</strong> son raisonnement.</p><label class=book-image for=book-image-toggle-f158bf88bc04><input class="hidden toggle" type=checkbox id=book-image-toggle-f158bf88bc04>
 <img src=/inf1901-teluq-v2/images/module1/micromonde-shrdlu.svg alt="Le micro-monde de SHRDLU : un cube rouge, une pile de blocs, une pyramide et une boîte posés sur une table, avec un bras robotique." loading=lazy title="Le « micro-monde » de SHRDLU : un univers très petit, entièrement décrit à la main." width=660 height=360 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-b97d666dcd15"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le film de démonstration d&rsquo;époque ci-dessous (en anglais) montre SHRDLU en
+</label><script>(function(){const e=document.getElementById("book-image-toggle-f158bf88bc04"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le film de démonstration d&rsquo;époque ci-dessous (en anglais) montre SHRDLU en
 fonctionnement : les ordres tapés au clavier, les réponses du programme et le bras
 virtuel qui déplace les blocs.</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading=eager referrerpolicy=strict-origin-when-cross-origin src="https://www.youtube.com/embed/bo4RvYJYOzI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 title="YouTube video"></iframe></div><p>SHRDLU y parvient parce qu&rsquo;il maintient un <strong>modèle du monde</strong> (<em>world model</em>),
 c&rsquo;est-à-dire une représentation interne de sa petite scène : quel bloc repose sur
@@ -941,9 +952,9 @@ d&rsquo;<strong>encoder à la main</strong>, fait après fait et règle après r
 commun humain. Des équipes y ont consacré des <strong>décennies</strong> et des dizaines de
 millions de dollars, et ont saisi des millions d&rsquo;assertions, comme « un café chaud
 refroidit si on le laisse » ou « on ne peut pas être à deux endroits à la fois ».
-C&rsquo;est le projet le plus ambitieux de l&rsquo;histoire du GOFAI.</p><label class=book-image for=book-image-toggle-8dbb0f8900fd><input class="hidden toggle" type=checkbox id=book-image-toggle-8dbb0f8900fd>
+C&rsquo;est le projet le plus ambitieux de l&rsquo;histoire du GOFAI.</p><label class=book-image for=book-image-toggle-a0bdd4980379><input class="hidden toggle" type=checkbox id=book-image-toggle-a0bdd4980379>
 <img src=/inf1901-teluq-v2/images/module1/cyc-assertions.svg alt="Cinq entrées de la base de CYC, écrites dans son langage, CycL, avec leur traduction en français : Bill Clinton fait partie des présidents des États-Unis ; tous les arbres sont des plantes ; Paris est la capitale de la France ; tout animal à colonne vertébrale a une mère biologique ; et une règle générale : si un objet appartient à une catégorie, il appartient aussi à toutes celles qui la contiennent." loading=lazy title="Le sens commun écrit à la main : quelques entrées de CYC dans son langage, CycL, et leur signification." width=660 height=481 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-8dbb0f8900fd"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>CYC n&rsquo;a jamais atteint son objectif. La raison n&rsquo;est pas un manque d&rsquo;argent ou de
+</label><script>(function(){const e=document.getElementById("book-image-toggle-a0bdd4980379"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>CYC n&rsquo;a jamais atteint son objectif. La raison n&rsquo;est pas un manque d&rsquo;argent ou de
 compétence, mais le fait que la tâche n&rsquo;a <strong>pas de fin</strong>. Chaque évidence saisie
 en fait apparaître dix autres, et chacune de celles-ci en suppose cent. On ne peut
 pas compléter le sens commun par petites quantités, parce qu&rsquo;il s&rsquo;étend à mesure
@@ -980,9 +991,9 @@ suivante. Il n&rsquo;y a plus de réponse unique. On peut proposer <code>xyd</co
 recommencer au début de l&rsquo;alphabet. La « bonne » réponse dépend de la façon dont
 on perçoit la situation. C&rsquo;est ce que Hofstadter veut montrer : l&rsquo;intelligence
 n&rsquo;est pas l&rsquo;exécution d&rsquo;une règle, mais une <strong>perception fluide, sensible au
-contexte</strong>.</p><label class=book-image for=book-image-toggle-e05f44cb5125><input class="hidden toggle" type=checkbox id=book-image-toggle-e05f44cb5125>
+contexte</strong>.</p><label class=book-image for=book-image-toggle-075e054a95da><input class="hidden toggle" type=checkbox id=book-image-toggle-075e054a95da>
 <img src=/inf1901-teluq-v2/images/module1/copycat-analogie.svg alt="L'énigme de Copycat : abc devient abd, ijk devient ijl, puis le cas xyz qui admet plusieurs réponses (xyd, wyz, xya)." loading=lazy title="L'énigme de Copycat : pour « xyz », la réponse dépend de la façon dont on perçoit la suite." width=660 height=440 style=--largeur-plafond:660px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-e05f44cb5125"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Les deux micro-mondes ont donc des rôles opposés. SHRDLU utilisait un micro-monde
+</label><script>(function(){const e=document.getElementById("book-image-toggle-075e054a95da"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Les deux micro-mondes ont donc des rôles opposés. SHRDLU utilisait un micro-monde
 pour <strong>simplifier</strong> le problème, c&rsquo;est-à-dire pour avoir un univers assez petit
 pour tout y énumérer d&rsquo;avance. Hofstadter réduit le sien pour la raison
 <strong>inverse</strong>. Il écarte tout le savoir encyclopédique afin d&rsquo;<strong>isoler l&rsquo;essentiel</strong>,
@@ -1113,7 +1124,7 @@ suivante</a>.</p><p>Dans l&rsquo;applet ci-dessous, choisissez ce que vous obser
 faites avancer le moteur d&rsquo;inférence règle par règle. Vous le verrez examiner
 chaque règle, déclencher celles dont les conditions sont réunies et ajouter des
 faits à la base, jusqu&rsquo;au diagnostic. Essayez plusieurs combinaisons, et trouvez
-celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1792601450689329111 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
+celle pour laquelle le système ne peut rien conclure.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/moteur-inference.html id=applet-1792612077579353973 class=applet-iframe width=100% height=640 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=lâge-dor-mycin-xcon-et-le-boom>L&rsquo;âge d&rsquo;or : MYCIN, XCON et le boom<a class=anchor href=#l%c3%a2ge-dor-mycin-xcon-et-le-boom></a></h2><p>Le premier système expert est généralement considéré comme étant <strong>DENDRAL</strong>,
 développé à Stanford à partir de 1965. Il identifiait des <strong>molécules</strong> à partir de
 données de spectrométrie, comme le ferait un chimiste expérimenté. Le plus connu
 est cependant <strong>MYCIN</strong>, conçu au début des années 1970 par <strong>Edward Shortliffe</strong>.
@@ -2022,7 +2033,7 @@ impaires pour les valeurs ; la réalité est un peu plus complexe, mais le pri
 est celui-là). Pour réaliser une instruction, le CPU exécute un petit programme
 câblé directement dans ses circuits. C&rsquo;est à cet endroit que la logique rejoint la
 matière.</p><p>Vous pouvez exécuter vous-même, pas à pas, une version interactive de ce petit
-programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1792601450641883116 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
+programme :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/cpu-simulator.html id=applet-1792612077519927185 class=applet-iframe width=100% height=297 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p><strong>Niveau des langages de programmation</strong></p><p>Le niveau suivant est implémenté dans le langage du niveau précédent. De la même
 façon qu&rsquo;on peut écrire un jeu ou un système d&rsquo;exploitation (<em>operating system</em>) en
 langage machine, on peut y écrire un autre langage. Ce langage est plus <em>abstrait</em>,
 plus éloigné de la réalité physique, et il permet d&rsquo;exprimer des idées plus complexes
@@ -2144,7 +2155,7 @@ peut prendre n&rsquo;importe quelle forme.</p><p>L&rsquo;applet ci-dessous perme
 des points rouges et des points bleus. Chaque point coloré est un exemple connu,
 et le fond montre, comme plus haut, la prédiction de kNN pour tout nouveau point.
 Ajoutez des points, déplacez-les, faites varier <em>k</em> et observez comment la
-frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1792601450662897112 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie que
+frontière de décision change.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1792612077554426334 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=le-choix-de-k>Le choix de k<a class=anchor href=#le-choix-de-k></a></h2><p>L&rsquo;applet soulève rapidement une question : quelle valeur faut-il donner à <strong>k</strong> ?</p><p>Les deux extrêmes sont instructifs. Avec <strong>k = 1</strong>, chaque prédiction ne s&rsquo;appuie que
 sur le voisin le plus proche. La frontière suit alors le moindre détail, fait le tour
 de chaque point individuel et devient très irrégulière. Le modèle suit les exemples
 connus de si près qu&rsquo;il réagit au moindre point aberrant (<em>outlier</em>). Ce défaut porte
@@ -2208,7 +2219,7 @@ Notre droite en a deux, ce qui suffit pour représenter une <em>tendance</em>, a
 direction et une hauteur. Si on change m et b, on obtient une autre droite, donc
 un autre modèle. Le problème consiste à trouver le couple (m, b) qui donne la
 droite la mieux ajustée au nuage.</p><p>Essayez vous-même. Dans l&rsquo;applet ci-dessous, déplacez la droite (vous ajustez
-ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1792601450696344953 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
+ainsi m et b à la main) et cherchez la position qui colle le mieux aux points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression.html id=applet-1792612077591707679 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=mesurer-lerreur>Mesurer l&rsquo;erreur<a class=anchor href=#mesurer-lerreur></a></h2><p>En déplaçant la droite, vous avez cherché à la placer « bien ». Il faut cependant
 préciser ce que « bien » veut dire. Il nous faut une mesure, que nous avons déjà
 rencontrée avec le modèle le plus bête sans encore la définir précisément :
 l&rsquo;<strong>erreur</strong>.</p><p>Pour une droite donnée, l&rsquo;erreur sur une maison est l&rsquo;écart entre le prix que la
@@ -2230,7 +2241,7 @@ point est relié à la droite par un petit ressort vertical. Un point éloigné 
 fort, un point proche tire à peine. La meilleure droite est celle où les forces de
 tous ces ressorts s&rsquo;équilibrent, c&rsquo;est-à-dire la position de moindre tension.
 Cette position correspond à la droite de plus petite erreur. Vous pouvez
-l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1792601450696733888 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
+l&rsquo;observer dans l&rsquo;applet suivante :</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/linear-regression-with-springs.html id=applet-1792612077592175846 class=applet-iframe width=100% height=635 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Trouver cette droite à la main, comme dans l&rsquo;applet, reste possible en deux
 dimensions. Il reste à voir comment une machine peut la trouver seule, y compris
 quand le modèle n&rsquo;a plus deux paramètres, mais des milliers. C&rsquo;est l&rsquo;objet de la
 <a href=#apprendre-cest-descendre-la-pente>section suivante</a>.</p><h2 id=apprendre-cest-descendre-la-pente>Apprendre, c&rsquo;est descendre la pente<a class=anchor href=#apprendre-cest-descendre-la-pente></a></h2><p>L&rsquo;idée présentée dans cette section est au cœur de tout l&rsquo;apprentissage
@@ -2323,7 +2334,7 @@ des statisticiens dans les années 1950 et, malgré son nom (il contient
 utilisés. Dans l&rsquo;applet ci-dessous, déplacez la ligne de décision pour séparer
 au mieux les deux groupes. Vous ajustez ainsi ses deux paramètres à la main,
 comme vous déplaciez la droite de régression au <a href=/inf1901-teluq-v2/docs/module2/entrainer-un-modele/#un-mod%c3%a8le-qui-tient-en-deux-nombres>chapitre précédent</a>. Vous pouvez
-aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1792601450705198728 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
+aussi ajouter, retirer ou déplacer des points.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/logistic-regression.html id=applet-1792612077602842656 class=applet-iframe width=100% height=663 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second changement concerne l&rsquo;erreur. On ne peut plus mesurer une distance
 verticale au point, puisqu&rsquo;on ne prédit plus une valeur. On compte plutôt les
 cas où le modèle se <strong>trompe de côté</strong> : un point bien placé ne coûte rien, un
 point du mauvais côté coûte cher. La barre à droite de l&rsquo;applet affiche cette
@@ -2390,7 +2401,7 @@ Tous les autres points n&rsquo;ont aucune influence sur la frontière : on peut
 déplacer, les retirer ou en ajouter loin de la bande, sans que rien change. C&rsquo;est
 une différence importante avec la régression logistique, où chaque point tire un
 peu sur la frontière.</p><p>Dans l&rsquo;applet ci-dessous, la frontière est recalculée à chaque modification. La
-bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1792601450705516034 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
+bande colorée montre la marge, et les vecteurs de support sont entourés.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/svm.html id=applet-1792612077603363210 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Déplacez un point éloigné de la frontière. Rien ne change.</li><li>Déplacez un des points entourés. La frontière et la bande bougent aussitôt.</li><li>Ajoutez un point au milieu de la bande. La marge se rétrécit, et la frontière
 se réorganise autour de ce nouveau point.</li><li>Glissez un point rouge au milieu des bleus, puis réglez le curseur de
 tolérance, décrit ci-dessous.</li></ol><p><strong>La marge souple.</strong> Quand les groupes se chevauchent, aucune droite ne les sépare
 parfaitement, et aucune bande vide n&rsquo;existe. La méthode accepte alors que certains
@@ -2566,7 +2577,7 @@ mais il appelle aussi parfois quand il confond l&rsquo;alarme avec la sonnerie d
 téléphone. Marie entend moins bien, mais se trompe rarement.</p><label class=book-image for=book-image-toggle-1836709f5a96><input class="hidden toggle" type=checkbox id=book-image-toggle-1836709f5a96>
 <img src=/inf1901-teluq-v2/images/module2/reseau-alarme.svg alt="Cinq nœuds. Cambriolage et Séisme pointent vers Alarme, qui pointe vers Jean appelle et Marie appelle. Chaque nœud porte sa table : cambriolage 0,1 % ; séisme 0,2 % ; l'alarme sonne à 95 % s'il y a cambriolage et séisme, 94 % s'il y a seulement cambriolage, 29 % s'il y a seulement séisme, 0,1 % sinon ; Jean appelle à 90 % si l'alarme sonne et 5 % sinon ; Marie appelle à 70 % si l'alarme sonne et 1 % sinon." loading=lazy title="Le réseau de l'alarme : cinq variables, et une petite table de probabilités par variable." width=700 height=470 style=--largeur-plafond:700px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-1836709f5a96"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Dans l&rsquo;applet ci-dessous, cliquez sur un nœud pour indiquer ce que vous savez :
-vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1792601450706632823 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
+vrai, faux ou inconnu. Les probabilités des autres nœuds sont recalculées aussitôt.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/bayes-alarme.html id=applet-1792612077604846407 class=applet-iframe width=100% height=612 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Sans aucune observation, la probabilité d&rsquo;un cambriolage est de 0,1 %.
 Indiquez que l&rsquo;alarme sonne. Elle passe à environ 37 %.</li><li>Indiquez ensuite qu&rsquo;il y a eu un tremblement de terre. La probabilité du
 cambriolage retombe à 0,3 %. Le séisme explique l&rsquo;alarme, et le cambriolage
 n&rsquo;est plus nécessaire pour l&rsquo;expliquer. Ce raisonnement s&rsquo;appelle
@@ -2800,7 +2811,7 @@ rouges et bleus, un arbre appris en direct et le fond correspondant dans le plan
 profondeur maximale de 1 à 8 et observez les rectangles se multiplier autour des
 points isolés. Ajoutez un point d&rsquo;une couleur au milieu de l&rsquo;autre couleur et
 observez comment l&rsquo;arbre s&rsquo;adapte. Survolez une zone du plan pour voir son chemin
-s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1792601450722872476 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
+s&rsquo;allumer dans l&rsquo;arbre.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/decision-tree.html id=applet-1792612077620679630 class=applet-iframe width=100% height=605 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=larbre-du-titanic>L&rsquo;arbre du <em>Titanic</em><a class=anchor href=#larbre-du-titanic></a></h2><p>Passons maintenant de nos maisons à des données réelles, celles que nous
 utiliserons à propos des fuites dans <a href=/inf1901-teluq-v2/docs/module2/bien-evaluer/><em>Bien évaluer un
 modèle</em></a> : la liste des 1309 passagers du
 <em>Titanic</em>, avec pour chacun la classe, le sexe, l&rsquo;âge et l&rsquo;indication de sa
@@ -3059,7 +3070,7 @@ comme kNN le classait selon ses voisins. La différence est que le SVM ne garde
 que les vecteurs de support, et qu&rsquo;il pondère leur influence pour obtenir la plus
 grande marge.</p><p>L&rsquo;applet ci-dessous est celle de la section sur la marge, avec le jeu de points
 « XOR » et le noyau gaussien. Le curseur de portée règle la distance à laquelle
-deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1792601450731694672 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
+deux points se ressemblent encore.</p><div class=applet-wrapper style=width:100%><iframe src="/inf1901-teluq-v2/html/applets/svm.html?jeu=xor&amp;noyau=gaussien" id=applet-1792612077631922319 class=applet-iframe width=100% height=709 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le noyau linéaire. Aucune droite ne convient, et des points restent
 mal classés.</li><li>Revenez au noyau gaussien. La frontière se courbe et sépare les quatre groupes.</li><li>Réduisez la portée. La frontière se met à entourer chaque groupe de près, et
 presque tous les points deviennent des vecteurs de support. C&rsquo;est le
 sur-apprentissage (<em>overfitting</em>) de la
@@ -3083,7 +3094,7 @@ trop souple finit par suivre le hasard autant que le signal. Pour observer ce
 compromis (et le mesurer, puisque nous savons maintenant le faire), revenons à
 kNN. Son seul réglage, le nombre de voisins $k$, contrôle directement la
 souplesse du modèle. Dans l&rsquo;applet ci-dessous, faites glisser lentement $k$
-d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1792601450731738859 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
+d&rsquo;une extrémité à l&rsquo;autre et observez la frontière.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/knn.html id=applet-1792612077631980848 class=applet-iframe width=100% height=692 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Avec <strong>$k = 1$</strong>, chaque point ne consulte que son plus proche voisin. La
 frontière se déforme pour entourer chaque exemple, forme des îlots autour des
 points isolés et suit tous les détails. L&rsquo;erreur d&rsquo;entraînement est nulle,
 puisque chaque exemple est son propre plus proche voisin. Cependant, cette
@@ -3604,7 +3615,7 @@ l&rsquo;expliquer par une comparaison. Pour organiser une fête, on veut répart
 invités autour de $k$ tables, en plaçant chaque table au centre de son groupe,
 pour que chacun soit le plus près possible de la sienne. k-means procède de
 cette façon, par ajustements successifs :</p><ol><li>placer $k$ « centres » au hasard ;</li><li>rattacher chaque point au centre le plus proche (ce qui donne des groupes provisoires) ;</li><li>déplacer chaque centre au milieu de son groupe ;</li><li>répéter les étapes 2 et 3 jusqu&rsquo;à ce que plus rien ne change.</li></ol><p>Dans l&rsquo;applet ci-dessous, choisissez le nombre de groupes et observez les
-centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1792601450752580822 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
+centres se déplacer, étape par étape, vers le centre des amas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/kmeans.html id=applet-1792612077659512143 class=applet-iframe width=100% height=596 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Ce résultat ressemble à de la classification, puisque les points sont répartis
 en groupes de couleurs. La différence est cependant importante : ici, <strong>les
 points n&rsquo;avaient aucune étiquette au départ.</strong> Vous n&rsquo;avez pas indiqué à
 l&rsquo;algorithme ce que représente chaque groupe. Vous lui avez seulement donné le
@@ -3647,7 +3658,7 @@ points de l&rsquo;objet. La PCA choisit cet angle automatiquement, quel que soit
 de dimensions.</p><p>Dans l&rsquo;applet ci-dessous, un nuage de points en deux dimensions doit être réduit à
 une seule. Faites tourner l&rsquo;axe. Les points se projettent sur lui, et l&rsquo;indicateur
 montre la part de l&rsquo;étalement conservée. Cherchez l&rsquo;angle qui la rend la plus
-grande, puis comparez-le avec celui que trouve le bouton « PCA ».</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/acp.html id=applet-1792601450752687733 class=applet-iframe width=100% height=515 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Appliquée aux 784 pixels des chiffres manuscrits, la PCA donne la figure
+grande, puis comparez-le avec celui que trouve le bouton « PCA ».</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/acp.html id=applet-1792612077659575161 class=applet-iframe width=100% height=515 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Appliquée aux 784 pixels des chiffres manuscrits, la PCA donne la figure
 ci-dessous. Chaque chiffre y est réduit à deux nombres, ses positions le long des
 deux premières composantes principales. Les 0 et les 1 se séparent assez bien,
 mais la plupart des chiffres se chevauchent. Ces deux nombres ne conservent
@@ -3708,7 +3719,7 @@ des récompenses et des punitions, et <strong>renforce</strong> peu à peu les a
 mènent au succès, d&rsquo;où le nom de cette famille. Dans l&rsquo;applet ci-dessous, un
 agent (le point jaune) cherche la sortie (<strong>+1</strong>) d&rsquo;une petite grille en
 évitant un piège (<strong>−1</strong>), sans aucune connaissance au départ. Lancez
-l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1792601450753363889 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
+l&rsquo;entraînement.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/reinforcement.html id=applet-1792612077660012620 class=applet-iframe width=100% height=728 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Au début, l&rsquo;agent se déplace au hasard. Puis, d&rsquo;un épisode à l&rsquo;autre, une
 <strong>carte de valeur</strong> se forme (les cases se colorent selon leur valeur estimée)
 et une <strong>politique</strong> (<em>policy</em>) apparaît. Les flèches, qui indiquent pour chaque case le
 meilleur mouvement, finissent par former un chemin sûr vers le but. Le curseur
@@ -4024,7 +4035,7 @@ d&rsquo;activation celui du corps cellulaire, et la sortie celui de l&rsquo;axon
 Un neurone biologique est beaucoup plus complexe qu&rsquo;une somme suivie d&rsquo;une
 fonction. Le chapitre « <a href=/inf1901-teluq-v2/docs/module3/apprentissage-profond/>L&rsquo;apprentissage profond</a> » reviendra sur ce que cette
 comparaison permet de dire, et sur ce qu&rsquo;elle ne permet pas.</p><h2 id=un-neurone-à-manipuler>Un neurone à manipuler<a class=anchor href=#un-neurone-%c3%a0-manipuler></a></h2><p>Dans l&rsquo;applet ci-dessous, vous réglez vous-même les entrées et les paramètres d&rsquo;un
-neurone, et vous observez sa sortie.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/neuron.html id=applet-1792601450609210109 class=applet-iframe width=100% height=547 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Essayez les trois manipulations suivantes :</p><ol><li>Fixez les deux entrées à 1. Trouvez des poids qui donnent une sortie proche de
+neurone, et vous observez sa sortie.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/neuron.html id=applet-1792612077478495927 class=applet-iframe width=100% height=547 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Essayez les trois manipulations suivantes :</p><ol><li>Fixez les deux entrées à 1. Trouvez des poids qui donnent une sortie proche de
 1, puis des poids qui donnent une sortie proche de 0.</li><li>Donnez un poids de zéro à la première entrée. Faites varier cette entrée, et
 observez que la sortie ne change plus.</li><li>Donnez un poids négatif à la seconde entrée. Augmentez cette entrée, et
 observez que la sortie diminue.</li></ol><h2 id=ce-quun-neurone-seul-ne-peut-pas-faire>Ce qu&rsquo;un neurone seul ne peut pas faire<a class=anchor href=#ce-quun-neurone-seul-ne-peut-pas-faire></a></h2><p>Un neurone seul a la même limite que la régression logistique. Sa somme pondérée
@@ -4096,7 +4107,7 @@ caractéristiques</strong>.</p><h2 id=deux-droites-à-déplacer>Deux droites à 
 déplacer et la faire pivoter, comme dans l&rsquo;applet de la
 <a href=/inf1901-teluq-v2/docs/module2/classer/#tracer-une-fronti%c3%a8re-la-r%c3%a9gression-logistique>régression logistique</a>. La zone délimitée par les deux droites est colorée : c&rsquo;est
 là que le réseau répond « vrai ». Un point mal classé est entouré d&rsquo;un cercle
-orange.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/xor-deux-droites.html id=applet-1792601450625315160 class=applet-iframe width=100% height=667 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Placez les deux droites pour que la zone colorée contienne les deux points
+orange.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/xor-deux-droites.html id=applet-1792612077495999214 class=applet-iframe width=100% height=667 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Placez les deux droites pour que la zone colorée contienne les deux points
 rouges, et aucun point bleu.</li><li>Cherchez une autre solution, avec des droites orientées autrement. Il en existe
 plusieurs.</li><li>Choisissez ensuite le second jeu de points, « un groupe entouré », où un groupe
 rouge est entouré de points bleus. Constatez que deux droites ne suffisent plus.</li><li>Ajoutez une troisième droite, avec le bouton « 3 », et entourez le groupe rouge.</li></ol><h2 id=plus-de-neurones-plus-de-formes>Plus de neurones, plus de formes<a class=anchor href=#plus-de-neurones-plus-de-formes></a></h2><p>Deux neurones cachés donnent deux droites. Trois neurones en donnent trois, ce qui
@@ -4192,7 +4203,7 @@ poids de départ sont tirés au hasard. Quand vous lancez l&rsquo;entraînement,
 voit les quatre cas en boucle et corrige ses poids par rétropropagation. Les deux
 droites sont celles des neurones cachés, comme dans
 <a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/#deux-droites-%c3%a0-d%c3%a9placer>l&rsquo;applet du chapitre précédent</a>,
-mais cette fois personne ne les déplace.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/xor-entrainement.html id=applet-1792601450633747270 class=applet-iframe width=100% height=561 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Lancez l&rsquo;entraînement. Observez les droites se placer et l&rsquo;erreur descendre.</li><li>Repartez de nouveaux poids de départ, plusieurs fois, avec le bouton « Nouveaux
+mais cette fois personne ne les déplace.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/xor-entrainement.html id=applet-1792612077510010509 class=applet-iframe width=100% height=561 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Lancez l&rsquo;entraînement. Observez les droites se placer et l&rsquo;erreur descendre.</li><li>Repartez de nouveaux poids de départ, plusieurs fois, avec le bouton « Nouveaux
 poids ». Le réseau ne trouve pas toujours la même solution, et il lui arrive de
 rester bloqué avec une erreur élevée, environ une fois sur cinq.</li><li>Changez le taux d&rsquo;apprentissage. S&rsquo;il est très petit, l&rsquo;apprentissage est très
 lent. S&rsquo;il est trop grand, l&rsquo;erreur oscille ou reste élevée, au lieu de
@@ -4657,7 +4668,7 @@ vertical. Les pixels du trait valent 1, les autres 0.</p><table><thead><tr><th s
 la même zone contient un trait horizontal, les pixels de la rangée du milieu valent</p><ol><li>La somme vaut alors −1 + 2 − 1 = 0, et le filtre ne détecte rien.</li></ol></div></details><h2 id=un-filtre-à-manipuler>Un filtre à manipuler<a class=anchor href=#un-filtre-%c3%a0-manipuler></a></h2><p>Dans l&rsquo;applet ci-dessous, l&rsquo;image d&rsquo;un chiffre est à gauche, le filtre au centre,
 et le résultat de la convolution à droite. Plus une case du résultat est foncée,
 plus le motif du filtre est présent à cet endroit. Les sommes négatives sont
-ramenées à zéro.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/convolution.html id=applet-1792601450699203188 class=applet-iframe width=100% height=548 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le chiffre 7, puis comparez les filtres « traits verticaux »,
+ramenées à zéro.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/convolution.html id=applet-1792612077595294534 class=applet-iframe width=100% height=548 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Choisissez le chiffre 7, puis comparez les filtres « traits verticaux »,
 « traits horizontaux » et « obliques / ». Chacun fait ressortir une partie
 différente du chiffre.</li><li>Passez la souris sur l&rsquo;image. Le carré rouge montre les neuf pixels recouverts
 par le filtre, et la somme obtenue s&rsquo;affiche sous le filtre.</li><li>Déplacez le chiffre avec les flèches. Le résultat se déplace avec lui, sans
@@ -4811,7 +4822,7 @@ peut pas y répondre : un seul 1 hors de la fenêtre change la réponse.</p><p>
 change si le bit vaut 1, et reste le même s&rsquo;il vaut 0. C&rsquo;est exactement le XOR de
 l&rsquo;état et du nouveau bit. La cellule de ce réseau est donc le
 <a href=/inf1901-teluq-v2/docs/module3/une-couche-cachee/#le-xor-r%c3%a9solu-avec-trois-neurones>petit réseau du XOR</a>
-du chapitre « Une couche cachée », avec les mêmes poids, appliqué à chaque étape.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/parite.html id=applet-1792601450713850308 class=applet-iframe width=100% height=523 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Avancez d&rsquo;un pas à la fois et suivez l&rsquo;état. Il passe près de 1 (en rouge)
+du chapitre « Une couche cachée », avec les mêmes poids, appliqué à chaque étape.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/parite.html id=applet-1792612077610130831 class=applet-iframe width=100% height=523 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Avancez d&rsquo;un pas à la fois et suivez l&rsquo;état. Il passe près de 1 (en rouge)
 quand le nombre de 1 lus jusque-là est impair, et revient près de 0 (en bleu)
 quand il est pair.</li><li>Passez la souris sur une cellule pour voir le calcul de ses trois neurones.</li><li>Lisez toute la suite, puis cliquez sur le premier bit pour le changer. La
 réponse finale change aussi : l&rsquo;information du premier bit a traversé toutes
@@ -4947,7 +4958,7 @@ représentation contient une part de l&rsquo;information des mots qu&rsquo;il a 
 Les arcs le relient aux autres mots, d&rsquo;autant plus épais que le poids est grand, et
 les poids s&rsquo;affichent sous chaque mot. Ces poids ont été choisis pour l&rsquo;exemple.
 Dans un vrai Transformer, ils sont calculés par le réseau, et ils sont en général
-moins nets.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/attention.html id=applet-1792601450735181252 class=applet-iframe width=100% height=530 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Le mot « il » est choisi. Observez où il porte son attention.</li><li>Remplacez la fin de la phrase par « … trop haut. » L&rsquo;attention de « il » se
+moins nets.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/attention.html id=applet-1792612077639160814 class=applet-iframe width=100% height=530 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Le mot « il » est choisi. Observez où il porte son attention.</li><li>Remplacez la fin de la phrase par « … trop haut. » L&rsquo;attention de « il » se
 déplace vers « camion ».</li><li>Cliquez sur « fatigué », puis sur « haut » dans la seconde phrase. Chacun
 regarde le nom qu&rsquo;il qualifie.</li><li>Cliquez sur « monté ». Il regarde surtout « chien » et « camion », son sujet et
 son complément.</li></ol><h2 id=le-transformer>Le Transformer<a class=anchor href=#le-transformer></a></h2><p>En 2017, huit chercheurs de Google, dont Ashish Vaswani, publient un article
@@ -5132,7 +5143,7 @@ qui mène à la meilleure valeur connue, sauf de temps en temps où elle essaie 
 coup au hasard. À la fin de la partie, elle rapproche la valeur de chaque position
 jouée du résultat obtenu.</p><p>Le morpion ne compte que quelques milliers de positions. Une table suffit donc, et
 il n&rsquo;est pas nécessaire d&rsquo;utiliser un réseau. Mais le principe de l&rsquo;auto-jeu est
-celui d&rsquo;AlphaZero.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/morpion.html id=applet-1792601450743564018 class=applet-iframe width=100% height=420 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Avant tout entraînement, mesurez le niveau de la machine. Elle joue au hasard,
+celui d&rsquo;AlphaZero.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/morpion.html id=applet-1792612077649310413 class=applet-iframe width=100% height=420 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>Avant tout entraînement, mesurez le niveau de la machine. Elle joue au hasard,
 et perd la plupart de ses parties contre un joueur parfait.</li><li>Entraînez-la par étapes, 100 parties, puis 1 000, puis plusieurs fois 10 000, et
 observez son niveau progresser. Le « joueur parfait » de l&rsquo;applet calcule tous
 les coups possibles jusqu&rsquo;à la fin de la partie, avec la méthode
@@ -5185,7 +5196,7 @@ couleur compte environ 150 000 valeurs. Des changements minuscules, tous orient�
 dans le même sens, finissent par s&rsquo;additionner et faire basculer la réponse.</p><h2 id=tromper-un-réseau-à-manipuler>Tromper un réseau à manipuler<a class=anchor href=#tromper-un-r%c3%a9seau-%c3%a0-manipuler></a></h2><p>Dans l&rsquo;applet ci-dessous, un classifieur de chiffres a été entraîné sur des chiffres
 dessinés par l&rsquo;ordinateur. C&rsquo;est un modèle simple, une
 <a href=/inf1901-teluq-v2/docs/module2/classer/#tracer-une-fronti%c3%a8re-la-r%c3%a9gression-logistique>régression logistique</a> à dix sorties, sans couche cachée, et non
-un réseau profond. Le principe de l&rsquo;attaque est le même.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/adverse.html id=applet-1792601450895977625 class=applet-iframe width=100% height=444 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>La force est à zéro, et le classifieur reconnaît le 3. Augmentez lentement la
+un réseau profond. Le principe de l&rsquo;attaque est le même.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/adverse.html id=applet-1792612077788096879 class=applet-iframe width=100% height=444 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><ol><li>La force est à zéro, et le classifieur reconnaît le 3. Augmentez lentement la
 force. Observez la perturbation, et le moment où la réponse bascule vers 8.</li><li>Regardez l&rsquo;image modifiée au moment où la réponse bascule. Le 3 reste
 parfaitement lisible pour nous.</li><li>Essayez d&rsquo;autres paires de chiffres. Certaines demandent une force beaucoup plus
 grande que d&rsquo;autres. Par exemple, faire dire 1 à un 6 est difficile.</li></ol><h2 id=pourquoi-cest-possible>Pourquoi c&rsquo;est possible<a class=anchor href=#pourquoi-cest-possible></a></h2><p>Plusieurs explications se complètent.</p><p><strong>La dimension.</strong> Une image est un point dans un espace qui compte autant de
@@ -5309,7 +5320,7 @@ hasard. Le compteur indique le nombre d&rsquo;<strong>époques</strong> (<em>epo
 « <a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/#lentra%c3%aenement-en-pratique>Entraîner un réseau</a> ».</li></ul><p>Si l&rsquo;application est coupée sur votre écran, ouvrez-la
 <a href="/inf1901-teluq-v2/html/playground/index.html#dataset=gauss&amp;amp;networkShape=&amp;amp;showTestData_hide=true&amp;amp;percTrainData_hide=true&amp;amp;batchSize_hide=true&amp;amp;dataset_hide=false&amp;amp;activation_hide=true&amp;amp;problem=classification&amp;amp;problem_hide=true&amp;amp;regularization_hide=true&amp;amp;regularizationRate_hide=true&amp;amp;learningRate_hide=true&amp;amp;discretize_hide=true#dataset=gauss&amp;amp;networkShape=&amp;amp;showTestData_hide=true&amp;amp;percTrainData_hide=true&amp;amp;batchSize_hide=true&amp;amp;dataset_hide=false&amp;amp;activation_hide=true&amp;amp;problem=classification&amp;amp;problem_hide=true&amp;amp;regularization_hide=true&amp;amp;regularizationRate_hide=true&amp;amp;learningRate_hide=true&amp;amp;discretize_hide=true">en pleine page</a>.</p></blockquote><h2 id=consignes>Consignes<a class=anchor href=#consignes></a></h2><ol><li>Faites les expériences proposées dans les questions ci-dessous, avec
 l&rsquo;application.</li><li>Répondez aux questions dans un fichier PDF (<strong>aucun autre format ne sera
-accepté</strong>). Les réponses doivent être claires et précises.</li></ol><div class=applet-wrapper style=width:150%><iframe src="/inf1901-teluq-v2/html/playground/index.html#dataset=gauss&amp;networkShape=&amp;showTestData_hide=true&amp;percTrainData_hide=true&amp;batchSize_hide=true&amp;dataset_hide=false&amp;activation_hide=true&amp;problem=classification&amp;problem_hide=true&amp;regularization_hide=true&amp;regularizationRate_hide=true&amp;learningRate_hide=true&amp;discretize_hide=true" id=applet-1792601450916303398 class=applet-iframe width=150% height=651 loading=lazy data-iresize=true data-transform-scale=0.9></iframe></div><h2 id=questions>Questions<a class=anchor href=#questions></a></h2><h3 id=un-problème-facile>Un problème facile<a class=anchor href=#un-probl%c3%a8me-facile></a></h3><ol><li><p>Parmi les quatre jeux de données proposés, lequel vous semble le plus facile à
+accepté</strong>). Les réponses doivent être claires et précises.</li></ol><div class=applet-wrapper style=width:150%><iframe src="/inf1901-teluq-v2/html/playground/index.html#dataset=gauss&amp;networkShape=&amp;showTestData_hide=true&amp;percTrainData_hide=true&amp;batchSize_hide=true&amp;dataset_hide=false&amp;activation_hide=true&amp;problem=classification&amp;problem_hide=true&amp;regularization_hide=true&amp;regularizationRate_hide=true&amp;learningRate_hide=true&amp;discretize_hide=true" id=applet-1792612077812974015 class=applet-iframe width=150% height=651 loading=lazy data-iresize=true data-transform-scale=0.9></iframe></div><h2 id=questions>Questions<a class=anchor href=#questions></a></h2><h3 id=un-problème-facile>Un problème facile<a class=anchor href=#un-probl%c3%a8me-facile></a></h3><ol><li><p>Parmi les quatre jeux de données proposés, lequel vous semble le plus facile à
 classer, en séparant les points orange des points bleus, pour un algorithme
 d&rsquo;apprentissage automatique en général, et pas seulement pour un réseau de
 neurones ? Expliquez pourquoi.</p></li><li><p>Choisissez le jeu des deux groupes de points disposés en diagonale.</p><p style=text-align:center><img src=/inf1901-teluq-v2/images/module3/tn3/prob1.png alt="Le jeu de données des deux groupes : des points orange en bas à gauche, des points bleus en haut à droite." style=width:50%;height:auto width=598 height=594></p><p>Vérifiez qu&rsquo;il n&rsquo;y a aucune couche cachée et que seules les caractéristiques
@@ -5350,7 +5361,7 @@ bruité, seuls 20 % des points servent à l&rsquo;entraînement, et le réseau c
 couches cachées de huit neurones. Les autres points forment le <strong>jeu de test</strong>
 (<em>test set</em>). Ils sont affichés avec un contour, et leur perte, la « perte de
 test », est indiquée au-dessus de la perte d&rsquo;entraînement. Ne modifiez pas le
-ratio des données d&rsquo;entraînement.</p><div class=applet-wrapper style=width:150%><iframe src="/inf1901-teluq-v2/html/playground/index.html#dataset=gauss&amp;noise=45&amp;networkShape=8,8,8&amp;percTrainData=20&amp;showTestData=true&amp;batchSize_hide=true&amp;activation_hide=true&amp;problem=classification&amp;problem_hide=true&amp;regularization_hide=true&amp;regularizationRate_hide=true&amp;learningRate_hide=true&amp;discretize_hide=true" id=applet-1792601450916467915 class=applet-iframe width=150% height=651 loading=lazy data-iresize=true data-transform-scale=0.9></iframe></div><ol start=13><li>Lancez l&rsquo;entraînement et laissez-le tourner longtemps, plusieurs milliers
+ratio des données d&rsquo;entraînement.</p><div class=applet-wrapper style=width:150%><iframe src="/inf1901-teluq-v2/html/playground/index.html#dataset=gauss&amp;noise=45&amp;networkShape=8,8,8&amp;percTrainData=20&amp;showTestData=true&amp;batchSize_hide=true&amp;activation_hide=true&amp;problem=classification&amp;problem_hide=true&amp;regularization_hide=true&amp;regularizationRate_hide=true&amp;learningRate_hide=true&amp;discretize_hide=true" id=applet-1792612077813254020 class=applet-iframe width=150% height=651 loading=lazy data-iresize=true data-transform-scale=0.9></iframe></div><ol start=13><li>Lancez l&rsquo;entraînement et laissez-le tourner longtemps, plusieurs milliers
 d&rsquo;époques. Observez les deux pertes et la frontière. Que se passe-t-il ? Quel
 nom donne-t-on à ce phénomène ? Comment pourrait-on l&rsquo;éviter ? (Voir
 « <a href=/inf1901-teluq-v2/docs/module2/generaliser/#trop-coller-ou-trop-lisser-le-compromis-biais-variance>Généraliser</a> »
@@ -5577,7 +5588,7 @@ nombres. Personne ne choisit ces places. Elles découlent des poids de l&rsquo;e
 ajustés pendant l&rsquo;entraînement pour que le décodeur puisse reconstruire l&rsquo;image à
 partir de ces deux nombres. Chaque chiffre occupe sa
 propre région, sans que personne n&rsquo;ait indiqué au réseau quel chiffre était quel
-chiffre : il n&rsquo;a vu aucune étiquette.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/espace-latent.html id=applet-1792601450598032593 class=applet-iframe width=100% height=544 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Promenez la souris au centre de la région d&rsquo;un chiffre, puis vers ses bords.
+chiffre : il n&rsquo;a vu aucune étiquette.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/espace-latent.html id=applet-1792612077459211237 class=applet-iframe width=100% height=544 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Promenez la souris au centre de la région d&rsquo;un chiffre, puis vers ses bords.
 Le chiffre change d&rsquo;inclinaison et d&rsquo;épaisseur. Le réseau a appris à ranger ces
 variations le long de la carte.</li><li>Placez la souris entre deux régions. Le décodeur produit une forme
 intermédiaire, un chiffre qui hésite entre les deux.</li><li>Cliquez dans la région des 7, puis dans celle des 0. La bande sous l&rsquo;image
@@ -5751,7 +5762,7 @@ vue.</p><p>L&rsquo;applet ci-dessous montre un modèle de diffusion entraîné s
 plus simples que des images. Chaque exemple n&rsquo;est qu&rsquo;un point du plan, et les
 exemples d&rsquo;entraînement sont des milliers de points tirés dans la feuille d&rsquo;érable
 du drapeau du Canada. Le principe est exactement le même que pour des images de
-millions de pixels.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/diffusion.html id=applet-1792601450622076924 class=applet-iframe width=100% height=614 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Cliquez sur « Brouiller la feuille ». Les points s&rsquo;écartent de la feuille, étape
+millions de pixels.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/diffusion.html id=applet-1792612077491504368 class=applet-iframe width=100% height=614 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Cliquez sur « Brouiller la feuille ». Les points s&rsquo;écartent de la feuille, étape
 par étape, jusqu&rsquo;à former un nuage informe. Les six points suivis font chacun
 une marche au hasard.</li><li>Cliquez sur « Générer de nouveaux points ». Un nouveau nuage est tiré au hasard,
 puis le réseau le ramène, étape par étape, vers la forme qu&rsquo;il a apprise.</li><li>Une fois la génération terminée, déplacez le curseur de l&rsquo;étape 100 à
@@ -5975,7 +5986,7 @@ américains après une visioconférence où ses collègues, dont le directeur
 financier, étaient tous des hypertrucages.</li></ul><p>Peut-on distinguer à l&rsquo;œil une image générée d&rsquo;une vraie photo ? L&rsquo;applet
 ci-dessous propose dix portraits. Cinq sont de vraies photos, cinq ont été générés
 par des modèles de différentes époques, de 2019 à 2026. Pour chacun, décidez s&rsquo;il
-s&rsquo;agit d&rsquo;une vraie photo, puis lisez l&rsquo;explication.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/vraie-ou-generee.html id=applet-1792601450630069554 class=applet-iframe width=100% height=442 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Les visages produits par les modèles de 2019 et 2020 se trahissent encore par des
+s&rsquo;agit d&rsquo;une vraie photo, puis lisez l&rsquo;explication.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/vraie-ou-generee.html id=applet-1792612077503792828 class=applet-iframe width=100% height=442 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Les visages produits par les modèles de 2019 et 2020 se trahissent encore par des
 défauts visibles, surtout dans le fond et les accessoires. Ceux des modèles
 récents n&rsquo;en ont presque plus. Deux autres moyens sont donc à l&rsquo;étude.</p><ul><li><strong>Marquer les contenus générés.</strong> SynthID, présenté par Google DeepMind en 2023,
 insère dans les images, les sons et les textes générés une marque invisible
@@ -6148,7 +6159,7 @@ de suite. Chaque probabilité s&rsquo;estime ensuite en comptant :</p>$$P(w_i \
 $P(\text{Nemo} \mid \text{capitaine}) = 400 / 1000 = 0{,}4$.</p><p>L&rsquo;applet ci-dessous contient un modèle à n-grammes entraîné sur deux romans de Jules
 Verne, <em>Le Tour du monde en quatre-vingts jours</em> et <em>Vingt mille lieues sous les
 mers</em>. À droite, elle affiche le contexte utilisé et les mots suivants les plus
-probables.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/ngrammes.html id=applet-1792601450652602043 class=applet-iframe width=100% height=469 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Avec des n-grammes de taille 1, cliquez sur « Générer 40 mots ». Le modèle tire
+probables.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/ngrammes.html id=applet-1792612077535593195 class=applet-iframe width=100% height=469 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Avec des n-grammes de taille 1, cliquez sur « Générer 40 mots ». Le modèle tire
 chaque mot selon sa seule fréquence dans les romans, et le texte n&rsquo;a aucun sens.</li><li>Passez à la taille 2 et recommencez. Les paires de mots deviennent correctes
 (« Le capitaine Nemo »), mais les phrases partent dans toutes les directions.</li><li>Passez aux tailles 3 et 4. Le texte devient plus fluide, mais les passages
 surlignés se multiplient. Ce sont des suites d&rsquo;au moins huit mots recopiées telles
@@ -6257,7 +6268,7 @@ meilleur chemin qui y mène, puis prolonge ces chemins d&rsquo;un mot à l&rsquo
 ne croît plus qu&rsquo;en proportion de la longueur de la phrase.</p><p>L&rsquo;applet ci-dessous contient un petit HMM pour le français. Ses probabilités ont été
 fixées à la main, pour l&rsquo;exemple. Chaque colonne correspond à un mot, chaque rangée
 à une étiquette, et les cases vides sont les étiquettes impossibles pour ce mot. Le
-trait vert est le chemin trouvé par l&rsquo;algorithme de Viterbi.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/hmm.html id=applet-1792601450681782962 class=applet-iframe width=100% height=752 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Avec « la petite brise la glace », le modèle lit « la petite (fille) brise la
+trait vert est le chemin trouvé par l&rsquo;algorithme de Viterbi.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/hmm.html id=applet-1792612077569217446 class=applet-iframe width=100% height=752 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Avec « la petite brise la glace », le modèle lit « la petite (fille) brise la
 glace ». Cliquez sur la case « nom » de <em>brise</em> pour imposer cette étiquette. Le
 modèle trouve alors l&rsquo;autre lecture, « la petite brise (vent) la glace (gèle) »,
 et indique combien elle est moins probable.</li><li>Choisissez « les poules du couvent couvent ». Le même mot reçoit deux étiquettes
@@ -6385,7 +6396,7 @@ plus fréquente, par exemple <em>e</em> suivi d&rsquo;<em>s</em> ;</li><li>on 
 découpés en plusieurs morceaux, mais ils peuvent toujours être écrits, au pire
 caractère par caractère. Les modèles actuels utilisent des vocabulaires de 100 000 à
 200 000 jetons.</p><p>L&rsquo;applet ci-dessous découpe un texte avec le vocabulaire de GPT-4o, un modèle
-d&rsquo;OpenAI.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/jetons.html id=applet-1792601450684550881 class=applet-iframe width=100% height=378 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Comparez la phrase en français et la même phrase en anglais. La phrase française
+d&rsquo;OpenAI.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/jetons.html id=applet-1792612077572979820 class=applet-iframe width=100% height=378 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Comparez la phrase en français et la même phrase en anglais. La phrase française
 demande nettement plus de jetons. Le vocabulaire a été construit sur des textes
 majoritairement anglais, où les mots anglais sont plus fréquents et sont donc
 devenus des jetons entiers. Comme l&rsquo;usage de ces modèles est souvent facturé au
@@ -6484,7 +6495,7 @@ la réputation de word2vec, mais elles ne fonctionnent pas toujours, comme le mo
 l&rsquo;applet ci-dessous.</p><p>L&rsquo;applet utilise de vrais plongements, ceux que l&rsquo;entreprise Facebook (aujourd&rsquo;hui Meta) a publiés en 2018
 pour 157 langues, avec une méthode proche de word2vec (fastText). Ceux du français
 ont été appris sur des milliards de mots de pages Web. L&rsquo;applet en contient 17 258,
-les plus fréquents.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/plongements.html id=applet-1792601450685309661 class=applet-iframe width=100% height=531 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Dans l&rsquo;onglet « Voisins d&rsquo;un mot », cherchez les voisins de « chat », puis de
+les plus fréquents.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/plongements.html id=applet-1792612077574000822 class=applet-iframe width=100% height=531 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Dans l&rsquo;onglet « Voisins d&rsquo;un mot », cherchez les voisins de « chat », puis de
 « Montréal ». Les voisins de « Montréal » sont d&rsquo;autres villes canadiennes,
 « Sherbrooke », « Toronto », « Québec ». Personne n&rsquo;a indiqué au modèle qu&rsquo;il
 s&rsquo;agit de villes, ni qu&rsquo;elles sont au Canada.</li><li>Dans l&rsquo;onglet « Analogies », essayez <em>homme : roi :: femme : ?</em>. Essayez ensuite
@@ -6944,7 +6955,27 @@ continue des textes, mais il ne répond pas. ChatGPT, Claude ou Gemini sont pour
 des assistants : ils suivent des consignes, refusent certaines demandes et tiennent
 une conversation. Ce chapitre présente les étapes qui transforment un modèle de base
 en assistant, le travail humain qu&rsquo;elles demandent, et les modèles plus récents qui
-« raisonnent » avant de répondre.</p><h2 id=un-modèle-de-base-ne-répond-pas>Un modèle de base ne répond pas<a class=anchor href=#un-mod%c3%a8le-de-base-ne-r%c3%a9pond-pas></a></h2><p>Après le <strong>préentraînement</strong> (<em>pre-training</em>), le modèle est un <strong>modèle de base</strong> (<em>base model</em>). Il a
+« raisonnent » avant de répondre.</p><h2 id=avant-chatgpt-clippy>Avant ChatGPT, Clippy<a class=anchor href=#avant-chatgpt-clippy></a></h2><p>L&rsquo;idée d&rsquo;un assistant logiciel n&rsquo;est pas neuve. À la fin de 1996, Microsoft livre
+Office 97 avec un « assistant Office », dont le personnage le plus connu est un trombone
+animé aux grands yeux, Clippit, que tout le monde appelle Clippy. Quand l&rsquo;utilisateur
+tape une adresse puis « Dear », Clippy surgit : « On dirait que vous écrivez une lettre.
+Voulez-vous de l&rsquo;aide ? »</p><label class=book-image for=book-image-toggle-266f3fcb8564><input class="hidden toggle" type=checkbox id=book-image-toggle-266f3fcb8564>
+<img src=/inf1901-teluq-v2/images/module4/clippy.png alt="Le trombone animé Clippy, posé sur une feuille de papier, avec sa bulle : « It looks like you're writing a letter. Would you like help? »" loading=lazy title="Clippy, l'assistant de Microsoft Office." width=130 height=308 style=--largeur-plafond:130px>
+</label><script>(function(){const e=document.getElementById("book-image-toggle-266f3fcb8564"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p class=image-credit>Clippy, l'assistant de Microsoft Office, dans sa version des années 2000. Image © Microsoft, reproduite à des fins d'enseignement.</p><p>Clippy est issu d&rsquo;un projet de recherche sérieux. À partir de 1993, le projet Lumière de
+Microsoft Research, dirigé par Eric Horvitz, utilise des
+<a href=/inf1901-teluq-v2/docs/module2/classer/#raisonner-sous-incertitude-les-r%c3%a9seaux-bay%c3%a9siens>réseaux bayésiens</a>,
+présentés au Module 2, pour déduire des actions de l&rsquo;utilisateur ce qu&rsquo;il cherche à faire,
+et pour décider s&rsquo;il vaut la peine de l&rsquo;interrompre. Le produit n&rsquo;en garde qu&rsquo;une partie,
+l&rsquo;analyse bayésienne des questions que l&rsquo;utilisateur tape lui-même. Le calcul qui
+décidait quand intervenir, jugé trop prudent, est remplacé par des règles simples, et
+Clippy se met à surgir à tout propos. Il devient le symbole de l&rsquo;assistant agaçant. En
+2001, Microsoft le désactive par défaut dans Office XP, avec une campagne publicitaire
+qui annonce qu&rsquo;Office est devenu si simple que Clippy n&rsquo;a plus d&rsquo;emploi, puis le retire
+en 2007. Le personnage garde pourtant ses nostalgiques : en 2021, Microsoft en fait une
+émoji, et en octobre 2025, Mico, le nouvel avatar de son assistant Copilot, se change en
+Clippy quand on le touche avec insistance.</p><p>Clippy montre ce qui manquait aux assistants d&rsquo;avant : comprendre ce que l&rsquo;on demande, en
+langue ordinaire, et savoir quand se taire. Les étapes décrites dans ce chapitre ont
+fini par rendre la première possible ; la seconde reste un défi.</p><h2 id=un-modèle-de-base-ne-répond-pas>Un modèle de base ne répond pas<a class=anchor href=#un-mod%c3%a8le-de-base-ne-r%c3%a9pond-pas></a></h2><p>Après le <strong>préentraînement</strong> (<em>pre-training</em>), le modèle est un <strong>modèle de base</strong> (<em>base model</em>). Il a
 appris à continuer n&rsquo;importe quel texte de façon plausible, et c&rsquo;est tout.</p><blockquote class="book-hint info"><p><strong>Continuer ou répondre</strong></p><p>On donne à un modèle de base le texte suivant :</p><pre tabindex=0><code>Quelle est la capitale du Canada ?</code></pre><p>Une suite plausible, sur le Web, est une autre question, comme dans une liste de
 questions d&rsquo;examen :</p><pre tabindex=0><code>Quelle est la capitale du Canada ?
 Quelle est la capitale de l&#39;Australie ?
@@ -6991,15 +7022,15 @@ comble en bonne partie cet écart. Ils l&rsquo;appliquent à GPT-3 pour obtenir
 personnes, recrutées pour l&rsquo;occasion, rédigent environ 13 000 réponses modèles et
 comparent des dizaines de milliers de réponses produites par le modèle. Ces données
 servent aux deux étapes présentées ci-dessous. ChatGPT, ouvert au public huit mois
-plus tard, en est une variante entraînée sur des dialogues.</p><label class=book-image for=book-image-toggle-69590e4dce68><input class="hidden toggle" type=checkbox id=book-image-toggle-69590e4dce68>
+plus tard, en est une variante entraînée sur des dialogues.</p><label class=book-image for=book-image-toggle-b74b0084351f><input class="hidden toggle" type=checkbox id=book-image-toggle-b74b0084351f>
 <img src=/inf1901-teluq-v2/images/module4/instructgpt.svg alt="En haut, une consigne : « Explique l'alunissage à un enfant de six ans, en quelques phrases. » Elle est donnée à deux modèles. À gauche, GPT-3, un modèle de base, la continue par d'autres consignes du même genre : explique la théorie de la gravité à un enfant de six ans, explique la théorie de la relativité, explique le big bang, explique l'évolution. Il continue une liste de consignes. À droite, InstructGPT y répond : des gens sont allés sur la Lune, ils ont pris des photos de ce qu'ils voyaient et les ont envoyées sur la Terre, pour que tout le monde puisse les voir." loading=lazy title="La même consigne donnée à GPT-3 et à InstructGPT, d'après l'exemple publié par OpenAI en 2022. Le modèle de base n'a rien de faux : une liste de consignes est une suite plausible. Mais il ne répond pas." width=840 height=420 style=--largeur-plafond:840px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-69590e4dce68"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le modèle de base contient pourtant l&rsquo;essentiel des connaissances et des capacités
+</label><script>(function(){const e=document.getElementById("book-image-toggle-b74b0084351f"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le modèle de base contient pourtant l&rsquo;essentiel des connaissances et des capacités
 de l&rsquo;assistant. Il reste à lui apprendre à s&rsquo;en servir pour répondre. C&rsquo;est l&rsquo;objet
 de deux étapes supplémentaires, regroupées sous le nom de <strong>post-entraînement</strong>
 (<em>post-training</em>), beaucoup moins coûteuses que le préentraînement, du moins jusqu&rsquo;aux
-modèles de raisonnement, dont le renforcement mobilise une part croissante du calcul.</p><label class=book-image for=book-image-toggle-30b19f14baa2><input class="hidden toggle" type=checkbox id=book-image-toggle-30b19f14baa2>
+modèles de raisonnement, dont le renforcement mobilise une part croissante du calcul.</p><label class=book-image for=book-image-toggle-b37c8e354aeb><input class="hidden toggle" type=checkbox id=book-image-toggle-b37c8e354aeb>
 <img src=/inf1901-teluq-v2/images/module4/du-modele-a-l-assistant.svg alt="Trois colonnes reliées par des flèches. 1, le préentraînement : des milliers de milliards de jetons de textes, la tâche de prédire le jeton suivant, et pour résultat un modèle de base qui continue des textes. 2, l'ajustement par instructions : des dizaines de milliers d'exemples de requêtes et de bonnes réponses rédigées par des humains, et pour résultat un modèle qui répond aux requêtes. 3, l'apprentissage par renforcement : des humains comparent des réponses, un modèle de récompense apprend leurs préférences, et le modèle est ajusté pour obtenir la meilleure récompense ; pour les mathématiques et le code, la récompense peut venir d'une vérification automatique. Le résultat est un assistant. 4, en grisé, au moment de la réponse : aucun entraînement, les poids ne changent plus, mais le modèle peut réfléchir plus ou moins longtemps avant de répondre ; plus de calcul donne de meilleures réponses. Des accolades regroupent les étapes : la première est le préentraînement, la deuxième et la troisième forment le post-entraînement, la quatrième se passe au moment de la réponse." loading=lazy title="Les trois étapes de l'entraînement d'un assistant, puis son utilisation. Le préentraînement représente l'essentiel du coût de l'entraînement ; au moment de la réponse, le modèle ne change plus." width=900 height=470 style=--largeur-plafond:900px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-30b19f14baa2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=imiter-de-bonnes-réponses>Imiter de bonnes réponses<a class=anchor href=#imiter-de-bonnes-r%c3%a9ponses></a></h2><p>La deuxième étape est un <strong>ajustement par instructions</strong> (<em>instruction tuning</em>). Des
+</label><script>(function(){const e=document.getElementById("book-image-toggle-b37c8e354aeb"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><h2 id=imiter-de-bonnes-réponses>Imiter de bonnes réponses<a class=anchor href=#imiter-de-bonnes-r%c3%a9ponses></a></h2><p>La deuxième étape est un <strong>ajustement par instructions</strong> (<em>instruction tuning</em>). Des
 personnes rédigent des dizaines de milliers d&rsquo;exemples de requêtes, accompagnées de la
 réponse qu&rsquo;un bon assistant devrait donner. Le modèle de base est ensuite entraîné sur
 ces exemples, toujours en prédisant le jeton suivant, mais seulement sur des
@@ -7032,9 +7063,9 @@ notées, et moins probables ceux des réponses mal notées. Sur un grand nombre
 d&rsquo;essais, les choix qui reviennent dans les bonnes réponses finissent par se
 dégager. C&rsquo;est l&rsquo;<a href=/inf1901-teluq-v2/docs/module3/entrainer-un-reseau/#le-probl%c3%a8me-des-couches-cach%c3%a9es>attribution de la responsabilité</a>
 du Module 3, à l&rsquo;échelle d&rsquo;une réponse entière : le joueur ne sait qu&rsquo;à la fin de la
-partie s&rsquo;il a gagné, sans savoir quels coups l&rsquo;ont fait gagner.</p><label class=book-image for=book-image-toggle-47b615db1ee2><input class="hidden toggle" type=checkbox id=book-image-toggle-47b615db1ee2>
+partie s&rsquo;il a gagné, sans savoir quels coups l&rsquo;ont fait gagner.</p><label class=book-image for=book-image-toggle-7883ecaaccc0><input class="hidden toggle" type=checkbox id=book-image-toggle-7883ecaaccc0>
 <img src=/inf1901-teluq-v2/images/module4/une-note-pour-tout.svg alt="Trois parties. En haut, imiter : dans un texte écrit par d'autres, « Il en reste 23 − 20 = 3 », le bon jeton est connu à chaque position, et chaque jeton reçoit sa propre correction. Au milieu, le renforcement : à la question de la cafétéria, qui avait 23 pommes, en utilise 20 et en achète 6, le modèle tire quatre réponses complètes. Deux mènent à 9 et reçoivent la note 1 : tous leurs jetons sont rendus plus probables. Deux mènent à une réponse fausse, 49 et 18, et reçoivent la note 0 : tous leurs jetons sont rendus moins probables. La dernière contient pourtant une bonne étape, 23 − 20 = 3, pénalisée quand même, parce que la note ne dit pas quelle étape était fautive. En bas, sur un grand nombre d'essais : « Elle avait 23 pommes », présent dans toutes les réponses, est poussé dans les deux sens et l'effet s'annule ; « 23 − 20 = 3 », plus fréquent dans les bonnes réponses, est renforcé ; « 3 × 6 = 18 », présent seulement dans les mauvaises, est affaibli." loading=lazy title="Imiter, ou recevoir une note. Une seule réponse ne dit pas quelle étape était bonne ou fautive ; c'est en comparant un grand nombre de réponses que les bons choix se dégagent." width=840 height=624 style=--largeur-plafond:840px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-47b615db1ee2"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><table><thead><tr><th></th><th>Préentraînement et ajustement par instructions</th><th>Renforcement</th></tr></thead><tbody><tr><td>Le texte</td><td>écrit par d&rsquo;autres</td><td>écrit par le modèle</td></tr><tr><td>Ce qu&rsquo;on connaît</td><td>le bon jeton, à chaque position</td><td>une note, pour toute la réponse</td></tr><tr><td>Ce que le modèle apprend</td><td>à imiter</td><td>à obtenir de meilleures notes</td></tr></tbody></table><p>Cette différence a deux conséquences. D&rsquo;abord, le modèle peut trouver des réponses
+</label><script>(function(){const e=document.getElementById("book-image-toggle-7883ecaaccc0"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><table><thead><tr><th></th><th>Préentraînement et ajustement par instructions</th><th>Renforcement</th></tr></thead><tbody><tr><td>Le texte</td><td>écrit par d&rsquo;autres</td><td>écrit par le modèle</td></tr><tr><td>Ce qu&rsquo;on connaît</td><td>le bon jeton, à chaque position</td><td>une note, pour toute la réponse</td></tr><tr><td>Ce que le modèle apprend</td><td>à imiter</td><td>à obtenir de meilleures notes</td></tr></tbody></table><p>Cette différence a deux conséquences. D&rsquo;abord, le modèle peut trouver des réponses
 meilleures que celles qu&rsquo;on aurait su lui montrer, puisqu&rsquo;il n&rsquo;est plus limité à
 imiter. Ensuite, il peut aussi trouver des façons d&rsquo;obtenir une bonne note sans donner
 une bonne réponse, en exploitant les défauts du modèle de récompense. C&rsquo;est le
@@ -7049,7 +7080,7 @@ c&rsquo;est la troisième étape d&rsquo;InstructGPT. Les évaluateurs préfère
 1,3 milliard de paramètres, à celles de GPT-3, cent fois plus grand. ChatGPT est
 construit selon la même méthode.</p><p>L&rsquo;applet ci-dessous vous place dans le rôle d&rsquo;un évaluateur. Pour chacune des six
 requêtes, choisissez la réponse que vous préférez. Le bilan montre ce que vos choix
-enseigneraient à un modèle de récompense.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/annotateur.html id=applet-1792601450727500560 class=applet-iframe width=100% height=372 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le modèle de récompense apprend tout ce qui explique les choix des évaluateurs, y
+enseigneraient à un modèle de récompense.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/annotateur.html id=applet-1792612077626847207 class=applet-iframe width=100% height=372 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le modèle de récompense apprend tout ce qui explique les choix des évaluateurs, y
 compris ce qui n&rsquo;a rien à voir avec la qualité. Les études sur de vrais évaluateurs
 montrent une préférence pour les réponses longues, assurées et qui donnent raison à
 l&rsquo;utilisateur. Les assistants entraînés de cette façon ont donc tendance à allonger
@@ -7106,9 +7137,9 @@ L&rsquo;ajustement par instructions lui apprend justement à reconnaître la <st
 illocutoire</strong> d&rsquo;une requête. La tâche est plus subtile qu&rsquo;il n&rsquo;y paraît, car beaucoup
 d&rsquo;actes sont <strong>indirects</strong>, comme le montre John Searle, l&rsquo;élève d&rsquo;Austin, en 1975.
 « Sais-tu quelle heure il est ? » est, à la lettre, une question sur ce que sait
-l&rsquo;autre. La réponse « Oui » est exacte, mais personne ne l&rsquo;attend.</p><label class=book-image for=book-image-toggle-972e01f2638e><input class="hidden toggle" type=checkbox id=book-image-toggle-972e01f2638e>
+l&rsquo;autre. La réponse « Oui » est exacte, mais personne ne l&rsquo;attend.</p><label class=book-image for=book-image-toggle-8819815ae172><input class="hidden toggle" type=checkbox id=book-image-toggle-8819815ae172>
 <img src=/inf1901-teluq-v2/images/module4/actes-de-parole.svg alt="À gauche, une bulle : « Sais-tu quelle heure il est ? ». Trois flèches en partent vers trois niveaux. L'acte locutoire, ce qui est dit : une question sur ce que sait l'autre. L'acte illocutoire, ce qu'on fait en le disant : une demande, « dis-moi l'heure ». L'acte perlocutoire, l'effet produit : l'autre regarde sa montre et donne l'heure. En bas, deux réponses possibles. « Oui. » répond à la lettre, au niveau locutoire : c'est exact, mais personne ne l'attend. « Il est 15 h 20. » répond à l'acte, au niveau illocutoire." loading=lazy title="Les trois niveaux d'un acte de parole, selon John Austin. Répondre, c'est reconnaître l'acte accompli, pas seulement les mots." width=840 height=490 style=--largeur-plafond:840px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-972e01f2638e"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le niveau perlocutoire éclaire le RLHF. Le modèle de récompense n&rsquo;évalue pas
+</label><script>(function(){const e=document.getElementById("book-image-toggle-8819815ae172"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Le niveau perlocutoire éclaire le RLHF. Le modèle de récompense n&rsquo;évalue pas
 directement si une réponse est vraie. Il prédit l&rsquo;effet qu&rsquo;elle produira sur un
 évaluateur : sera-t-elle préférée ? Optimiser cet effet, c&rsquo;est optimiser un acte
 perlocutoire, et la <a href=#le-renforcement-%c3%a0-partir-de-pr%c3%a9f%c3%a9rences-humaines-rlhf>complaisance</a>
@@ -7130,9 +7161,9 @@ plus tard, une équipe japonaise montre qu&rsquo;il suffit d&rsquo;ajouter à la
 avant de conclure, et il se trompe moins. On parle de <strong>chaîne de pensée</strong>
 (<em>chain of thought</em>). L&rsquo;explication est simple : chaque jeton écrit devient un contexte
 pour les suivants, et un calcul écrit en plusieurs lignes est plus facile à
-poursuivre qu&rsquo;un résultat à deviner d&rsquo;un coup.</p><label class=book-image for=book-image-toggle-bed8ca1c1ed8><input class="hidden toggle" type=checkbox id=book-image-toggle-bed8ca1c1ed8>
+poursuivre qu&rsquo;un résultat à deviner d&rsquo;un coup.</p><label class=book-image for=book-image-toggle-813b3f924643><input class="hidden toggle" type=checkbox id=book-image-toggle-813b3f924643>
 <img src=/inf1901-teluq-v2/images/module4/chaine-de-pensee.svg alt="Deux colonnes. Dans chacune, une requête contient un exemple résolu, puis une nouvelle question. L'exemple : Roger a 5 balles de tennis ; il achète 2 boîtes de 3 balles ; combien de balles a-t-il maintenant ? La nouvelle question : la cafétéria avait 23 pommes ; elle en utilise 20 pour le dîner et en achète 6 ; combien en a-t-elle ? À gauche, l'exemple donne la réponse directement, « La réponse est 11 », et le modèle répond à son tour directement : « La réponse est 27 », ce qui est faux. À droite, l'exemple détaille les étapes, et le modèle fait de même : la cafétéria avait 23 pommes, elle en a utilisé 20, il en reste 23 − 20 = 3 ; elle en a acheté 6, elle en a donc 3 + 6 = 9 ; la réponse est 9, ce qui est juste. Le résultat intermédiaire, 3, est réutilisé dans le calcul suivant." loading=lazy title="La chaîne de pensée, d'après l'exemple de l'article de Jason Wei et ses collègues (2022). Le modèle n'en sait pas plus à droite qu'à gauche : il écrit seulement ses étapes, et chaque résultat écrit lui sert pour le suivant." width=840 height=482 style=--largeur-plafond:840px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-bed8ca1c1ed8"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;étape suivante consiste à entraîner les modèles à raisonner de cette façon. Pour les
+</label><script>(function(){const e=document.getElementById("book-image-toggle-813b3f924643"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;étape suivante consiste à entraîner les modèles à raisonner de cette façon. Pour les
 mathématiques ou la programmation, on n&rsquo;a pas besoin d&rsquo;un évaluateur humain : on peut
 vérifier automatiquement si la réponse finale est juste, ou si le programme passe ses
 tests. Le modèle produit de longs raisonnements, et ceux qui mènent à une réponse
@@ -7195,9 +7226,9 @@ répondre. Il « réfléchit » plus longtemps sans écrire un seul mot, et 
 en mathématiques s&rsquo;améliorent avec le nombre de tours.</li><li><strong>Petit, mais récursif.</strong> En octobre 2025, à Montréal, Alexia Jolicoeur-Martineau,
 de Samsung, montre qu&rsquo;un minuscule modèle récursif, de 7 millions de paramètres, qui
 affine sa réponse en boucle, atteint 45 % au premier
-<a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>défi ARC</a>, mieux que de très grands modèles de langage.</li></ul><label class=book-image for=book-image-toggle-f3ad9fd1538b><input class="hidden toggle" type=checkbox id=book-image-toggle-f3ad9fd1538b>
+<a href=/inf1901-teluq-v2/docs/module4/le-defi-arc/>défi ARC</a>, mieux que de très grands modèles de langage.</li></ul><label class=book-image for=book-image-toggle-105c4d85f7b0><input class="hidden toggle" type=checkbox id=book-image-toggle-105c4d85f7b0>
 <img src=/inf1901-teluq-v2/images/module4/pensee-latente.svg alt="Deux panneaux. À gauche, une chaîne de pensée : le modèle produit un état interne, un vecteur de milliers de nombres ; cet état est réduit à un seul jeton, ici le mot « donc », qui est réinjecté en entrée pour l'étape suivante. À droite, une pensée continue : l'état interne est réinjecté tel quel en entrée, sans passer par un mot, et le raisonnement devient illisible pour un humain." loading=lazy title="Penser en mots, ou penser en vecteurs. Une chaîne de pensée réduit l'état interne du modèle à un mot à chaque étape ; une pensée continue le réinjecte tel quel. La seconde perd moins d'information, mais ne se lit plus." width=880 height=400 style=--largeur-plafond:880px>
-</label><script>(function(){const e=document.getElementById("book-image-toggle-f3ad9fd1538b"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces vecteurs forment une sorte de langue intérieure, que des chercheurs appellent, par
+</label><script>(function(){const e=document.getElementById("book-image-toggle-105c4d85f7b0"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>Ces vecteurs forment une sorte de langue intérieure, que des chercheurs appellent, par
 plaisanterie, le <em>neuralese</em>, la « langue des neurones ». Elle peut transporter beaucoup
 plus d&rsquo;information qu&rsquo;un mot, mais personne ne sait la lire. C&rsquo;est son principal
 inconvénient. Les chaînes de pensée écrites, même imparfaites, permettent de surveiller
@@ -7509,7 +7540,7 @@ s&rsquo;arrête quand il donne sa réponse finale.</p><label class=book-image fo
 </label><script>(function(){const e=document.getElementById("book-image-toggle-305d4d5b523a"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;applet ci-dessous montre, étape par étape, le contexte d&rsquo;un agent. Les traces ont
 été rédigées pour l&rsquo;exercice, mais elles suivent la forme réelle de ces échanges.
 Le premier scénario montre une question qui demande deux recherches et un calcul. Le
-second montre ce qui peut mal tourner.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/agent.html id=applet-1792601450749035510 class=applet-iframe width=100% height=380 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second scénario illustre une <strong>injection d&rsquo;instructions</strong> (<em>prompt injection</em>).
+second montre ce qui peut mal tourner.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/agent.html id=applet-1792612077656025495 class=applet-iframe width=100% height=380 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Le second scénario illustre une <strong>injection d&rsquo;instructions</strong> (<em>prompt injection</em>).
 Le modèle reçoit tout dans un même flux de texte : les consignes de l&rsquo;utilisateur, et
 le contenu des pages, des courriels ou des documents qu&rsquo;il lit. Il distingue mal les
 deux. Une instruction cachée dans une page peut donc détourner un agent, comme les
@@ -7583,7 +7614,7 @@ montre que cette vérification sert aussi à l&rsquo;entraînement des modèles.
 <img src=/inf1901-teluq-v2/images/module4/boucle-agent-code.svg alt="Une boucle en quatre étapes autour d'une tâche : explorer le projet, avec ls, find, grep et cat ; modifier le code, en ajoutant par exemple deux lignes à la ligne 3 de notes.py ; vérifier, en lançant les tests ou la compilation, avec python -m pytest ou make ; lire le résultat, c'est-à-dire les messages d'erreur et le code de sortie, puis revenir à l'exploration. Quand les tests passent, l'agent sort de la boucle : il consulte git diff, résume ce qu'il a fait et, si on le lui permet, enregistre une version avec git commit. Une note rappelle que tout passe par du texte : commandes, résultats et erreurs." loading=lazy title="La boucle d'un agent de programmation. À chaque tour, le modèle écrit une commande, le harnais l'exécute, et le résultat, du texte, s'ajoute au contexte." width=840 height=478 style=--largeur-plafond:840px>
 </label><script>(function(){const e=document.getElementById("book-image-toggle-5567d0a86f11"),t=function(t){t.key==="Escape"&&e.checked&&(e.checked=!1)};e.addEventListener("change",function(){this.checked?document.addEventListener("keydown",t):document.removeEventListener("keydown",t)})})()</script><p>L&rsquo;applet ci-dessous déroule deux sessions, étape par étape. La première corrige un
 test qui échoue. La seconde montre ce qui peut mal tourner, et c&rsquo;est à vous de
-décider, au moment où le harnais demande la permission.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/agent-code.html id=applet-1792601450757080203 class=applet-iframe width=100% height=548 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=la-culture-unix-des-outils-faits-pour-le-texte>La culture Unix : des outils faits pour le texte<a class=anchor href=#la-culture-unix-des-outils-faits-pour-le-texte></a></h2><p>Les commandes de l&rsquo;applet, <code>ls</code>, <code>grep</code>, <code>cat</code> ou <code>git</code>, ne datent pas des agents.
+décider, au moment où le harnais demande la permission.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/agent-code.html id=applet-1792612077662574666 class=applet-iframe width=100% height=548 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><h2 id=la-culture-unix-des-outils-faits-pour-le-texte>La culture Unix : des outils faits pour le texte<a class=anchor href=#la-culture-unix-des-outils-faits-pour-le-texte></a></h2><p>Les commandes de l&rsquo;applet, <code>ls</code>, <code>grep</code>, <code>cat</code> ou <code>git</code>, ne datent pas des agents.
 La plupart viennent d&rsquo;<strong>Unix</strong>, le système d&rsquo;exploitation créé à partir de 1969 par
 Ken Thompson et Dennis Ritchie, aux Bell Labs, dont descendent aujourd&rsquo;hui Linux et
 macOS. En 1973, Doug McIlroy y ajoute le <strong>tube</strong> (<em>pipe</em>), qui envoie le texte produit
@@ -7914,7 +7945,7 @@ personne ne peut avoir vues. Le corpus et ses outils sont distribués sous une l
 libre, sur le dépôt <a href=https://github.com/fchollet/ARC-AGI>fchollet/ARC-AGI</a>. Le
 corpus a depuis été renommé <strong>ARC-AGI-1</strong>, quand d&rsquo;autres versions ont suivi.</p><h2 id=à-vous-de-jouer>À vous de jouer<a class=anchor href=#%c3%a0-vous-de-jouer></a></h2><p>L&rsquo;applet ci-dessous reprend l&rsquo;interface de test officielle, traduite. Les douze
 premières tâches viennent du jeu d&rsquo;entraînement d&rsquo;ARC-AGI-1, de la plus facile à la
-plus difficile. La dernière vient d&rsquo;ARC-AGI-2, présenté plus bas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/arc.html id=applet-1792601450889254472 class=applet-iframe width=100% height=627 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>En 2024, une équipe de l&rsquo;Université de New York fait passer les 800 tâches publiques à
+plus difficile. La dernière vient d&rsquo;ARC-AGI-2, présenté plus bas.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/arc.html id=applet-1792612077781837189 class=applet-iframe width=100% height=627 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>En 2024, une équipe de l&rsquo;Université de New York fait passer les 800 tâches publiques à
 plus de 1 700 personnes. En moyenne, une personne réussit 76 % des tâches
 d&rsquo;entraînement et 64 % des tâches d&rsquo;évaluation, qui sont plus difficiles, avec trois
 essais. Surtout, 790 des 800 tâches sont réussies par au moins une personne : la
@@ -8070,7 +8101,7 @@ et la phrase « une photo d&rsquo;un chat » y reçoivent des vecteurs proch
 l&rsquo;idée des <a href=/inf1901-teluq-v2/docs/module4/des-mots-aux-nombres/#tout-devient-vecteur>plongements</a>
 du chapitre sur les mots, étendue à deux types de données à la fois.</p><p>L&rsquo;applet ci-dessous utilise le vrai modèle CLIP. Il a placé douze images et vingt
 légendes dans son espace, et l&rsquo;applet affiche la ressemblance entre chaque image et
-chaque légende.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/clip.html id=applet-1792601450892246578 class=applet-iframe width=100% height=660 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Dans l&rsquo;onglet « Chercher une image par une phrase », choisissez des légendes
+chaque légende.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/clip.html id=applet-1792612077784806909 class=applet-iframe width=100% height=660 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques manipulations à faire :</p><ol><li>Dans l&rsquo;onglet « Chercher une image par une phrase », choisissez des légendes
 précises, puis des légendes générales comme « un animal » ou « un instrument de
 musique ». CLIP trouve la bonne image même quand la légende ne la décrit
 qu&rsquo;indirectement.</li><li>Choisissez « le drapeau du Canada ». Aucune image ne montre le drapeau, mais la
@@ -8157,7 +8188,7 @@ publié par Google en 2020 sous le titre « <em>An Image is Worth 16x16 Words<
 image vaut 16 × 16 mots »). Il découpe une image en carreaux de 16 pixels de côté et
 les traite comme les mots d&rsquo;une phrase. Une même architecture peut donc traiter le
 texte et les images, à condition de transformer les deux en suites de jetons.</p><p>L&rsquo;applet ci-dessous découpe une photo de la même façon. Faites varier la taille des
-carreaux et observez le nombre de jetons obtenus.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/jetons-visuels.html id=applet-1792601450900157426 class=applet-iframe width=100% height=502 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Des carreaux plus petits conservent plus de détails, mais ils produisent beaucoup plus
+carreaux et observez le nombre de jetons obtenus.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/jetons-visuels.html id=applet-1792612077794893846 class=applet-iframe width=100% height=502 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Des carreaux plus petits conservent plus de détails, mais ils produisent beaucoup plus
 de jetons. Avec des carreaux de 8 pixels, cette image de 448 pixels de côté donne
 3 136 jetons, autant qu&rsquo;un long texte. Comme le calcul de l&rsquo;attention augmente avec
 le carré du nombre de jetons, la résolution des images est un compromis entre
@@ -8346,7 +8377,7 @@ puisse tout en voir. L&rsquo;applet suivante reprend ce modèle. Un petit résea
 passer cinq concepts par deux neurones seulement, puis les reconstruire à la sortie.
 Les cinq concepts n&rsquo;ont pas tout à fait la même importance pour l&rsquo;entraînement : le
 premier, « chat », compte le plus, et « Python » le moins. Le réseau a été entraîné
-d&rsquo;avance pour huit niveaux de rareté.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/superposition.html id=applet-1792601450905091480 class=applet-iframe width=100% height=690 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques observations à faire :</p><ul><li><strong>Des concepts fréquents.</strong> Avec le curseur à gauche, chaque concept est présent
+d&rsquo;avance pour huit niveaux de rareté.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/superposition.html id=applet-1792612077800111765 class=applet-iframe width=100% height=690 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Quelques observations à faire :</p><ul><li><strong>Des concepts fréquents.</strong> Avec le curseur à gauche, chaque concept est présent
 dans tous les exemples. Le réseau ne garde que les deux plus importants, à angle
 droit, un par neurone, et renonce aux trois autres. C&rsquo;est ce que ferait une
 <a href=/inf1901-teluq-v2/docs/module2/trois-facons-d-apprendre/#r%c3%a9duire-la-dimension>analyse en composantes principales</a> : on
