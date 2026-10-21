@@ -72,11 +72,12 @@ artificielle dans les entreprises.
 - **Un nouveau matériel didactique.** Les deux manuels imposés sont retirés. Tout le
   contenu est offert sur le site Web du cours et, désormais, dans un livre numérique
   téléchargeable (environ 540 pages), sans frais pour les étudiants.
-- **Des travaux notés qui font manipuler un mécanisme réel.** L'évaluation compte cinq
-  travaux notés, un par module : un système expert à base de règles, un classifieur
-  bayésien, un réseau de neurones, un modèle de langage bigramme, puis une expérience
-  menée sur un assistant d'IA réel, analysée et suivie d'une prise de position
-  argumentée, et accompagnée d'un court journal d'usage de l'IA. Les pondérations sont
+- **Deux travaux notés nouveaux.** Le travail noté 1, qui accompagne le module 1
+  repensé, fait jouer à l'étudiant le rôle du moteur d'inférence d'un système expert à
+  base de règles. Le travail noté 5 devient une expérience menée sur un assistant d'IA
+  réel, analysée et suivie d'une prise de position argumentée, et accompagnée d'un court
+  journal d'usage de l'IA. Les travaux notés 2 à 4 sont conservés : un classifieur
+  bayésien, un réseau de neurones, un modèle de langage bigramme. Les pondérations sont
   de 15 %, 20 %, 20 %, 20 % et 25 %.
 - **Une politique explicite sur l'usage de l'IA par les étudiants,** présentée dans une
   page du cours et appliquée dans chaque travail noté.
