@@ -185,6 +185,95 @@ difficultés deviendraient catastrophiques avec des systèmes plus intelligents 
 on ne pourrait plus corriger un système capable de prévoir nos corrections et de les
 déjouer.
 
+## P(doom), ou chiffrer la fin du monde
+
+Dans la Silicon Valley, une question est devenue presque rituelle à partir de 2023 :
+« Quel est ton P(doom) ? » L'expression, venue du jargon des rationalistes, désigne la
+probabilité que l'on attribue à une catastrophe existentielle causée par l'IA, de
+l'anglais *doom*, la perte ou la fin. En novembre 2023, Lina Khan, alors présidente de
+l'autorité américaine de la concurrence, répond environ 15 % lors d'un balado. Voici
+quelques estimations publiques, de la plus basse à la plus haute.
+
+| Personne | Estimation | Année |
+|---|---|---|
+| Yann Le Cun | « moins de 0,01 % », moins que la chute d'un astéroïde | 2023 |
+| Lina Khan | environ 15 % | 2023 |
+| Elon Musk | de 10 à 20 % | 2024 |
+| Geoffrey Hinton | de 10 à 20 % d'ici trente ans | 2024 |
+| Yoshua Bengio | environ 20 % | 2023 |
+| Paul Christiano | 22 % de prise de contrôle par l'IA, 46 % d'un avenir irrémédiablement gâché | 2023 |
+| Dario Amodei | 25 % que les choses tournent « vraiment très mal » | 2025 |
+| Evan Hubinger, chercheur chez Anthropic | plus de 10 % que l'IA tue tous les humains d'ici dix ans | 2026 |
+| Roman Yampolskiy | 99,9 % d'ici cent ans | 2024 |
+| Eliezer Yudkowsky | aucun chiffre, mais « littéralement tout le monde sur Terre mourra » si l'on poursuit | 2023 |
+
+Ces chiffres frappent, mais leur valeur est discutée. En 2024, Arvind Narayanan et Sayash Kapoor
+jugent ces probabilités trop peu fiables pour guider une politique. Il n'existe aucune
+série d'événements semblables sur laquelle les fonder, les estimations s'étalent sur
+plusieurs ordres de grandeur, et personne ne pourra jamais vérifier qui avait raison. Un
+tournoi de prévision mené en 2022 illustre ce désaccord. Les spécialistes de l'IA y
+estiment en médiane à 3 % le risque d'une extinction causée par l'IA d'ici 2100, et des
+prévisionnistes réputés pour la justesse de leurs prévisions, à 0,38 %, huit fois moins.
+Après des mois de discussion, presque personne n'a changé d'avis. Yudkowsky lui-même
+refuse de donner un chiffre, parce que la notion mélange deux questions, la probabilité
+qu'une superintelligence soit construite et la probabilité qu'elle nous détruise si
+elle l'est. À la seconde, il répond simplement oui.
+
+## Le catastrophisme radical
+
+L'inquiétude de Hinton ou de Bengio porte sur un risque sérieux, qu'il faut réduire.
+Celle de Yudkowsky, de son institut, le MIRI, et de ceux qu'on appelle les *doomers* est
+d'une autre nature : sans un arrêt complet, la catastrophe serait presque certaine. Leur
+argument tient en quelques thèses, rassemblées par Yudkowsky en juin 2022 dans une liste
+de « létalités » (*AGI Ruin: A List of Lethalities*), puis en 2025 dans son livre avec
+Nate Soares.
+
+- **Cultivés, pas fabriqués.** Les modèles ne sont pas programmés, mais entraînés : on
+  comprend la méthode d'entraînement, pas ce qu'elle produit. Leurs préférences réelles
+  pourraient être étrangères aux nôtres, comme le montrent déjà les
+  [signes d'alerte](docs/module5/85-peut-on-perdre-le-controle/#des-signes-dalerte).
+- **Un seul essai.** Il faudrait réussir l'alignement du premier coup : un système plus
+  intelligent que nous et mal aligné ne laisserait pas de seconde chance. Et les
+  capacités se généralisent plus facilement que l'alignement.
+- **Tout arrêter.** D'où la conclusion de sa tribune de 2023 dans *TIME* : un moratoire
+  « indéfini et mondial » sur les grands entraînements, le suivi de tous les processeurs
+  graphiques vendus, et un traité appliqué au besoin par la force, jusqu'à la
+  destruction d'un centre de données illégal, la prévention d'une extinction devant
+  passer avant celle d'une guerre nucléaire.
+
+Le ton est celui du désespoir. En avril 2022, un billet de Yudkowsky annonce que le MIRI
+adopte la stratégie de « mourir dans la dignité », puisque doubler les chances de
+l'humanité ne ferait que les « faire passer de 0 % à 0 % ». En septembre 2026, le MIRI
+appuie le projet de loi du sénateur Bernie Sanders qui interdirait toute
+superintelligence, tout en le jugeant trop timide.
+
+Autour de ces idées, des mouvements militants se sont formés. PauseAI, fondé en 2023 aux
+Pays-Bas et dirigé en 2026 par le Français Maxime Fournes, organise des manifestations
+dans plusieurs pays, dont une marche à Londres en février 2026. StopAI bloque les portes
+d'OpenAI, ce qui vaut des arrestations à ses membres. En septembre 2025, des militants
+font la grève de la faim devant les sièges d'Anthropic et de Google DeepMind, l'un
+d'eux pendant trente jours. En avril 2026, un jeune homme qui avait exprimé ses craintes
+sur le forum public de PauseAI lance un cocktail Molotov contre le portail de la maison
+de Sam Altman. PauseAI condamne l'attaque, mais des chercheurs s'inquiètent de ce qu'une
+rhétorique de fin du monde peut provoquer chez des personnes angoissées.
+
+Le catastrophisme radical a de nombreux critiques.
+
+- **Un récit apocalyptique.** Dès 2010, le chercheur Robert Geraci montre que les
+  discours sur l'IA reprennent les schémas des apocalypses juives et chrétiennes, avec
+  leur fin des temps et leur salut. La critique
+  [TESCREAL](docs/module5/85-peut-on-perdre-le-controle/#deux-figures-de-linquiétude)
+  prolonge cette lecture.
+- **Une diversion.** Pour Timnit Gebru, Emily Bender et leurs collègues, ces « risques
+  imaginaires » détournent l'attention des torts présents de l'IA.
+- **Une manœuvre.** Pour Yann Le Cun, les appels à réglementer des laboratoires qui
+  disent craindre leurs propres produits relèvent de la capture réglementaire : des
+  règles lourdes protégeraient les géants contre leurs concurrents.
+- **Un excès de certitude.** Des chercheurs en sécurité, eux-mêmes inquiets, contestent
+  la confiance de Yudkowsky. En 2022, Paul Christiano écrit qu'il avance des
+  affirmations bien plus fortes que ce que ses arguments permettent de conclure, et
+  qu'il ne croit pas à un saut brutal des capacités.
+
 ## Des signes d'alerte
 
 Plusieurs expériences récentes montrent, dans des situations artificielles, des
