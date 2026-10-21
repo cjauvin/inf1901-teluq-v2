@@ -74,7 +74,7 @@ artificielle dans les entreprises.
   qui relève des faits et ce qui relève des valeurs.
 - **Un nouveau matériel didactique.** Les deux manuels imposés sont retirés. Tout le
   contenu est offert sur le site Web du cours et, désormais, dans un livre numérique
-  téléchargeable (environ 540 pages), sans frais pour les étudiants.
+  téléchargeable (près de 580 pages), sans frais pour les étudiants.
 - **Deux travaux notés nouveaux.** Le travail noté 1, qui accompagne le module 1
   repensé, fait jouer à l'étudiant le rôle du moteur d'inférence d'un système expert à
   base de règles. Le travail noté 5 devient une expérience menée sur un assistant d'IA

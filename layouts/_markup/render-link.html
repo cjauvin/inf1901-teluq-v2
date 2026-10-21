@@ -1,13 +1,8 @@
-{{- /* Copie du crochet de hugo-book, plus une règle : en production, un lien
-       vers un module pas encore publié (voir le cascade de hugo.toml) devient
-       du texte simple, pour éviter les 404. */ -}}
+{{- /* Copie du crochet de hugo-book. Une branche y changeait en texte simple, en
+       production, les liens vers un module pas encore publié ; elle a été retirée
+       à la publication du dernier module (voir l'historique git pour la rétablir). */ -}}
 {{- $destination := .Destination -}}
-{{- if and hugo.IsProduction (findRE `(^|/)docs/module5([/#]|$)` $destination) -}}
-<span title="Ce module sera publié plus tard">{{ .Text | safeHTML }}</span>
-{{- else -}}
 {{- if .Page.Site.Params.BookPortableLinks -}}
   {{- $destination = partial "docs/links/portable-link" . -}}
 {{- end -}}
 <a href="{{ $destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
-{{- end -}}
-{{- /**/ -}}
