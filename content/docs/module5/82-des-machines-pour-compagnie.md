@@ -19,6 +19,28 @@ Il aborde des situations de détresse, et même des suicides. Si vous traversez 
 difficile, vous pouvez joindre, au Québec, le 1 866 APPELLE (1 866 277-3553), ou, partout
 au Canada, le 9-8-8, par téléphone ou par texto.
 
+{{% hint info %}}
+**Weizenbaum, le premier critique**
+
+Joseph Weizenbaum, l'auteur d'ELIZA, est aussi le premier à s'en être inquiété. Il avait
+conçu son programme comme une parodie de psychothérapeute, et il est troublé de voir ses
+utilisateurs s'y attacher. Il l'est davantage encore quand, en 1966, trois psychiatres,
+dont Kenneth Colby, proposent dans une revue médicale d'en faire un véritable outil de
+thérapie : grâce au temps partagé, écrivent-ils, un système informatique conçu à cette fin
+pourrait recevoir plusieurs centaines de patients par heure. Pour Weizenbaum, confier une
+relation de soin à un programme qui ne comprend rien est une faute, même si les patients
+s'en disent satisfaits.
+
+En 1976, dans *Computer Power and Human Reason* (la puissance de l'ordinateur et la raison
+humaine), il distingue **décider**, une opération de calcul qu'une machine peut un jour
+accomplir, et **choisir**, qui relève du jugement, et donc d'une personne responsable.
+Il en tire une thèse qui reste au cœur des débats actuels : certaines tâches ne devraient
+pas être confiées à des machines, qu'elles en soient capables ou non. Sa critique, que
+beaucoup de ses collègues du MIT jugeaient alors excessive, se lit aujourd'hui comme une
+anticipation des compagnons artificiels, des applications de soutien psychologique et du
+[vide de responsabilité](docs/module5/40-qui-est-responsable/#le-vide-de-responsabilité).
+{{% /hint %}}
+
 ## Des compagnons artificiels
 
 Les **compagnons artificiels** (*AI companions*) sont des assistants conçus pour entretenir

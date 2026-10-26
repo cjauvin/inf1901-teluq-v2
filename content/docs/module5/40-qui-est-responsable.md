@@ -103,6 +103,12 @@ identifiants et des fichiers. Qui est responsable de tels actes, de l'entreprise
 conçu l'agent, de celle qui l'a déployé, ou de l'utilisateur qui l'a lancé ? Le droit
 n'a pas encore de réponse générale.
 
+La question n'est pas seulement juridique. Dès 1976, Joseph Weizenbaum, l'auteur
+d'ELIZA, soutenait qu'il faut réserver à des personnes responsables certains choix, même
+quand une machine pourrait les faire, comme le rappelle l'encadré
+« [Weizenbaum, le premier critique](docs/module5/82-des-machines-pour-compagnie) » du
+chapitre sur les compagnons artificiels.
+
 ## Le droit à une explication
 
 Plusieurs lois répondent en partie à ces problèmes, en encadrant les décisions prises
