@@ -142,8 +142,12 @@ thèse en 1974, sans que le résultat soit remarqué. En 1986, David Rumelhart,
 Geoffrey Hinton et Ronald Williams publient dans la revue *Nature* un article,
 « [Learning representations by back-propagating errors](https://www.nature.com/articles/323533a0) »,
 qui montre, expériences à l'appui, qu'un réseau entraîné de cette façon construit
-lui-même des caractéristiques utiles dans ses couches cachées. C'est
-cet article qui impose la méthode, et son nom anglais, *backpropagation*, souvent
+lui-même des caractéristiques utiles dans ses couches cachées. Dans l'une de ses
+expériences, un réseau qui apprend des liens de parenté se donne de lui-même des
+caractéristiques comme la nationalité ou la génération des personnes, une idée que
+reprend le chapitre
+« [Prédire le mot suivant](docs/module4/50-predire-le-mot-suivant/#généraliser-les-modèles-neuronaux) »
+du Module 4. C'est cet article qui impose la méthode, et son nom anglais, *backpropagation*, souvent
 abrégé en *backprop*.
 
 La question ouverte en

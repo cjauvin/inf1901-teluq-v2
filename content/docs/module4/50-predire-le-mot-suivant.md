@@ -22,6 +22,27 @@ Il s'appuie sur les jetons et les plongements présentés au chapitre
 
 ## Généraliser : les modèles neuronaux
 
+L'idée d'apprendre une représentation pour chaque symbole venait de loin. En 1986, dans
+l'article de *Nature* qui impose la
+[rétropropagation](docs/module3/30-entrainer-un-reseau/#1986), David Rumelhart, Geoffrey
+Hinton et Ronald Williams entraînent un petit réseau sur deux arbres généalogiques de même
+structure, l'un anglais, l'autre italien. On lui présente une personne et une relation,
+par exemple « Victoria » et « père », et il doit répondre « Christopher ». Chaque personne
+entre dans le réseau par une petite couche de six neurones, dont les poids, tirés au
+hasard au départ, s'ajustent pendant l'entraînement. En examinant ces poids, les auteurs
+découvrent que le réseau s'est donné de lui-même des caractéristiques que personne ne lui
+avait indiquées : un neurone distingue les Anglais des Italiens, un autre la génération,
+un autre la branche de la famille. Le réseau répond même correctement sur des faits qu'on
+ne lui a jamais montrés. C'est l'une des premières démonstrations qu'un réseau apprend des
+**représentations distribuées** (*distributed representations*) de symboles, des
+plongements avant la lettre.
+
+{{< image src="/images/module4/arbres-genealogiques.svg" alt="Deux panneaux. À gauche, deux arbres généalogiques de même structure, sur trois générations : une famille anglaise (Christopher et Penelope, Andrew et Christine ; Margaret et Arthur, Victoria et James, Jennifer et Charles ; Colin et Charlotte) et une famille italienne (Roberto et Maria, Pierro et Francesca ; Gina et Emilio, Lucia et Marco, Angela et Tomaso ; Alfonso et Sophia). À droite, le vecteur de six nombres appris pour quelques personnes : un des nombres distingue les Anglais des Italiens, un autre la génération, un autre la branche de la famille." title="L'expérience des arbres généalogiques (Rumelhart, Hinton et Williams, 1986). Le réseau apprend des liens de parenté ; dans les vecteurs qu'il se donne pour chaque personne apparaissent la nationalité, la génération et la branche de la famille, que personne ne lui a indiquées. Valeurs schématiques." loading="lazy" >}}
+
+L'article de 2003 en est l'héritier direct : il transpose l'idée des vingt-quatre
+personnes de 1986 aux dizaines de milliers de mots d'une langue, et cite Hinton comme
+précurseur.
+
 En 2003, Yoshua Bengio, Réjean Ducharme, Pascal Vincent et Christian Jauvin, à
 l'Université de Montréal, publient un article intitulé « A Neural Probabilistic
 Language Model » (Christian Jauvin est l'auteur de ce cours). Ils remplacent le

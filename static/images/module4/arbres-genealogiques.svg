@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 480" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Les arbres généalogiques de 1986</title>
+<desc>Deux panneaux. À gauche, deux arbres généalogiques de même structure, sur trois générations : une famille anglaise (Christopher et Penelope, Andrew et Christine ; Margaret et Arthur, Victoria et James, Jennifer et Charles ; Colin et Charlotte) et une famille italienne (Roberto et Maria, Pierro et Francesca ; Gina et Emilio, Lucia et Marco, Angela et Tomaso ; Alfonso et Sophia). Le réseau apprend des faits comme « le père de Victoria est Christopher ». À droite, le vecteur de six nombres appris pour quelques personnes : un des nombres distingue les Anglais des Italiens, un autre la génération, un autre la branche de la famille. Personne n'a donné ces caractéristiques au réseau.</desc>
+<rect x="0" y="0" width="920" height="480" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="460.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Des caractéristiques que personne n'a programmées (1986)</text>
+<rect x="20" y="50" width="490" height="410" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="36.0" y="74.0" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">Une famille anglaise</text>
+<text x="122.0" y="104.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">Christopher</text>
+<text x="130.0" y="104.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="138.0" y="104.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">Penelope</text>
+<text x="342.0" y="104.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">Andrew</text>
+<text x="350.0" y="104.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="358.0" y="104.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">Christine</text>
+<text x="78.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">Margaret</text>
+<text x="86.0" y="158.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="94.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">Arthur</text>
+<text x="242.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">Victoria</text>
+<text x="250.0" y="158.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="258.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">James</text>
+<text x="402.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="end">Jennifer</text>
+<text x="410.0" y="158.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="418.0" y="158.0" font-size="10.5" fill="#3a6ea5" text-anchor="start">Charles</text>
+<line x1="130.0" y1="108" x2="130.0" y2="127.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="110.8" y1="127.0" x2="219.6" y2="127.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="110.8" y1="127.0" x2="110.8" y2="146" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="219.6" y1="127.0" x2="219.6" y2="146" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="350.0" y1="108" x2="350.0" y2="127.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="272.0" y1="127.0" x2="379.6" y2="127.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="272.0" y1="127.0" x2="272.0" y2="146" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="379.6" y1="127.0" x2="379.6" y2="146" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="250.0" y1="162" x2="250.0" y2="181.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="222.0" y1="181.0" x2="284.0" y2="181.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="222.0" y1="181.0" x2="222.0" y2="200" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="284.0" y1="181.0" x2="284.0" y2="200" stroke="#b8a888" stroke-width="1.3"/>
+<text x="222.0" y="212.0" font-size="10.5" fill="#3a6ea5" text-anchor="middle">Colin</text>
+<text x="284.0" y="212.0" font-size="10.5" fill="#3a6ea5" text-anchor="middle">Charlotte</text>
+<text x="36.0" y="272.0" font-size="11.5" fill="#c4564a" text-anchor="start" font-weight="700">Une famille italienne</text>
+<text x="122.0" y="302.0" font-size="10.5" fill="#c4564a" text-anchor="end">Roberto</text>
+<text x="130.0" y="302.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="138.0" y="302.0" font-size="10.5" fill="#c4564a" text-anchor="start">Maria</text>
+<text x="342.0" y="302.0" font-size="10.5" fill="#c4564a" text-anchor="end">Pierro</text>
+<text x="350.0" y="302.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="358.0" y="302.0" font-size="10.5" fill="#c4564a" text-anchor="start">Francesca</text>
+<text x="78.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="end">Gina</text>
+<text x="86.0" y="356.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="94.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="start">Emilio</text>
+<text x="242.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="end">Lucia</text>
+<text x="250.0" y="356.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="258.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="start">Marco</text>
+<text x="402.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="end">Angela</text>
+<text x="410.0" y="356.0" font-size="10.5" fill="#7a6f63" text-anchor="middle">=</text>
+<text x="418.0" y="356.0" font-size="10.5" fill="#c4564a" text-anchor="start">Tomaso</text>
+<line x1="130.0" y1="306" x2="130.0" y2="325.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="110.8" y1="325.0" x2="228.0" y2="325.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="110.8" y1="325.0" x2="110.8" y2="344" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="228.0" y1="325.0" x2="228.0" y2="344" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="350.0" y1="306" x2="350.0" y2="325.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="272.0" y1="325.0" x2="385.2" y2="325.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="272.0" y1="325.0" x2="272.0" y2="344" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="385.2" y1="325.0" x2="385.2" y2="344" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="250.0" y1="360" x2="250.0" y2="379.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="222.0" y1="379.0" x2="284.0" y2="379.0" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="222.0" y1="379.0" x2="222.0" y2="398" stroke="#b8a888" stroke-width="1.3"/>
+<line x1="284.0" y1="379.0" x2="284.0" y2="398" stroke="#b8a888" stroke-width="1.3"/>
+<text x="222.0" y="410.0" font-size="10.5" fill="#c4564a" text-anchor="middle">Alfonso</text>
+<text x="284.0" y="410.0" font-size="10.5" fill="#c4564a" text-anchor="middle">Sophia</text>
+<text x="265.0" y="444.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">Le réseau apprend 100 faits comme « le père de Victoria est Christopher ».</text>
+<rect x="528" y="50" width="372" height="410" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="714.0" y="76.0" font-size="12" fill="#2f6f6a" text-anchor="middle" font-weight="700">Le vecteur appris pour chaque personne</text>
+<text x="666.0" y="132" font-size="9.5" fill="#3a3531" font-weight="700" transform="rotate(-38 666.0 132)">nationalité</text>
+<text x="690.0" y="132" font-size="9.5" fill="#3a3531" font-weight="700" transform="rotate(-38 690.0 132)">génération</text>
+<text x="786.0" y="132" font-size="9.5" fill="#3a3531" font-weight="700" transform="rotate(-38 786.0 132)">branche</text>
+<text x="644.0" y="156.0" font-size="10.5" fill="#3a6ea5" text-anchor="end" font-weight="700">Christopher</text>
+<rect x="656.0" y="140" width="21" height="21" rx="2" fill="#3a6ea5" fill-opacity="0.85" stroke="#3a6ea5" stroke-width="0.8"/>
+<rect x="680.0" y="140" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.20" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="140" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.35" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="140" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.40" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="140" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.57" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="140" width="21" height="21" rx="2" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a" stroke-width="0.8"/>
+<text x="644.0" y="188.0" font-size="10.5" fill="#3a6ea5" text-anchor="end" font-weight="700">Andrew</text>
+<rect x="656.0" y="172" width="21" height="21" rx="2" fill="#3a6ea5" fill-opacity="0.85" stroke="#3a6ea5" stroke-width="0.8"/>
+<rect x="680.0" y="172" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.20" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="172" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.36" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="172" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.38" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="172" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.41" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="172" width="21" height="21" rx="2" fill="#9a5b33" fill-opacity="0.85" stroke="#9a5b33" stroke-width="0.8"/>
+<text x="644.0" y="220.0" font-size="10.5" fill="#3a6ea5" text-anchor="end" font-weight="700">Victoria</text>
+<rect x="656.0" y="204" width="21" height="21" rx="2" fill="#3a6ea5" fill-opacity="0.85" stroke="#3a6ea5" stroke-width="0.8"/>
+<rect x="680.0" y="204" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.55" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="204" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.23" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="204" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.38" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="204" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.43" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="204" width="21" height="21" rx="2" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a" stroke-width="0.8"/>
+<text x="644.0" y="252.0" font-size="10.5" fill="#3a6ea5" text-anchor="end" font-weight="700">Colin</text>
+<rect x="656.0" y="236" width="21" height="21" rx="2" fill="#3a6ea5" fill-opacity="0.85" stroke="#3a6ea5" stroke-width="0.8"/>
+<rect x="680.0" y="236" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.90" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="236" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.51" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="236" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.19" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="236" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.29" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="236" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.25" stroke="#b8a888" stroke-width="0.8"/>
+<text x="644.0" y="284.0" font-size="10.5" fill="#c4564a" text-anchor="end" font-weight="700">Roberto</text>
+<rect x="656.0" y="268" width="21" height="21" rx="2" fill="#c4564a" fill-opacity="0.85" stroke="#c4564a" stroke-width="0.8"/>
+<rect x="680.0" y="268" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.20" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="268" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.19" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="268" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.51" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="268" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.46" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="268" width="21" height="21" rx="2" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a" stroke-width="0.8"/>
+<text x="644.0" y="316.0" font-size="10.5" fill="#c4564a" text-anchor="end" font-weight="700">Pierro</text>
+<rect x="656.0" y="300" width="21" height="21" rx="2" fill="#c4564a" fill-opacity="0.85" stroke="#c4564a" stroke-width="0.8"/>
+<rect x="680.0" y="300" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.20" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="300" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.17" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="300" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.59" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="300" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.58" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="300" width="21" height="21" rx="2" fill="#9a5b33" fill-opacity="0.85" stroke="#9a5b33" stroke-width="0.8"/>
+<text x="644.0" y="348.0" font-size="10.5" fill="#c4564a" text-anchor="end" font-weight="700">Lucia</text>
+<rect x="656.0" y="332" width="21" height="21" rx="2" fill="#c4564a" fill-opacity="0.85" stroke="#c4564a" stroke-width="0.8"/>
+<rect x="680.0" y="332" width="21" height="21" rx="2" fill="#7a6f63" fill-opacity="0.55" stroke="#7a6f63" stroke-width="0.8"/>
+<rect x="704.0" y="332" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.44" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="728.0" y="332" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.43" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="752.0" y="332" width="21" height="21" rx="2" fill="#b8a888" fill-opacity="0.22" stroke="#b8a888" stroke-width="0.8"/>
+<rect x="776.0" y="332" width="21" height="21" rx="2" fill="#2f6f6a" fill-opacity="0.85" stroke="#2f6f6a" stroke-width="0.8"/>
+<rect x="552" y="378" width="12" height="12" fill="#3a6ea5" fill-opacity="0.85"/>
+<text x="570.0" y="388.0" font-size="10" fill="#5b5249" text-anchor="start">anglais</text>
+<rect x="620" y="378" width="12" height="12" fill="#c4564a" fill-opacity="0.85"/>
+<text x="638.0" y="388.0" font-size="10" fill="#5b5249" text-anchor="start">italien</text>
+<rect x="688" y="378" width="12" height="12" fill="#7a6f63" fill-opacity="0.2"/>
+<rect x="702" y="378" width="12" height="12" fill="#7a6f63" fill-opacity="0.55"/>
+<rect x="716" y="378" width="12" height="12" fill="#7a6f63" fill-opacity="0.9"/>
+<text x="734.0" y="388.0" font-size="10" fill="#5b5249" text-anchor="start">1ʳᵉ à 3ᵉ génération</text>
+<rect x="552" y="398" width="12" height="12" fill="#2f6f6a" fill-opacity="0.85"/>
+<rect x="566" y="398" width="12" height="12" fill="#9a5b33" fill-opacity="0.85"/>
+<text x="584.0" y="408.0" font-size="10" fill="#5b5249" text-anchor="start">l'une ou l'autre branche de la famille</text>
+<text x="714.0" y="444.0" font-size="9.5" fill="#7a6f63" text-anchor="middle" font-style="italic">Valeurs schématiques, d'après l'article.</text>
+</svg>
