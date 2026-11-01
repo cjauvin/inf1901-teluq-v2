@@ -36,6 +36,26 @@ pratiques se font dans un tableur et dans des applications interactives, sans
 programmation. Il fait partie du programme court en intelligence artificielle dans les
 entreprises.
 
+## Un cours exhaustif et à jour
+
+Le cours contient beaucoup de matière, et ce choix est délibéré. Il poursuit un double
+objectif.
+
+1. **Être exhaustif.** L'IA touche à l'informatique, aux mathématiques, à la linguistique,
+   aux sciences cognitives, à la philosophie, à l'économie et au droit. Plutôt que de s'en
+   tenir à quelques sujets, le cours cherche à couvrir le domaine le plus largement
+   possible : son histoire, ses mécanismes, ses applications et les débats qu'il suscite,
+   avec les personnes et les travaux qui les ont marqués. Il peut ainsi servir d'ouvrage de
+   référence, à consulter bien après la fin du cours. Les objectifs de chaque module,
+   précisés dans son introduction, en indiquent l'essentiel, et certains chapitres,
+   marqués « approfondissement », sont facultatifs.
+2. **Être évolutif et à jour.** Le domaine change de mois en mois : de nouveaux modèles
+   paraissent, des entreprises naissent ou disparaissent, des débats s'ouvrent ou se
+   déplacent. Le cours est mis à jour en continu pour suivre ces changements, et les
+   événements récents y sont toujours datés. Les
+   [livres PDF et EPUB](docs/15-telecharger) sont produits de nouveau à chaque mise à jour,
+   et leur page de titre indique la date de la version.
+
 ## Objectifs du cours
 
 Ce cours vise à offrir une base solide sur les concepts fondamentaux de l'intelligence
