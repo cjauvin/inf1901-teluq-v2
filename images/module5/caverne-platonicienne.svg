@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>L'hypothèse de la représentation platonicienne</title>
+<desc>Trois colonnes. À gauche, le monde, représenté par un chat. Au centre, ses ombres, les seules données que voient les modèles : une photo du chat et une phrase, « Un chat dort au soleil ». À droite, ce qu'en tire chaque modèle, entraîné séparément : un modèle de vision, qui n'a vu que des images, et un modèle de langage, qui n'a lu que des textes. Chacun place six concepts dans son espace de représentation : chat, chien et lion d'un côté, voiture et vélo d'un autre, pomme à part. Les deux nuages sont disposés différemment, mais les voisinages sont les mêmes. Une double flèche entre eux demande si ces voisinages sont semblables.</desc>
+<defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7a6f63"/></marker><marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f6a"/></marker></defs>
+<rect x="0" y="0" width="920" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="460.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Des ombres différentes, une même structure ?</text>
+<text x="125.0" y="66.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Le monde</text>
+<text x="345.0" y="66.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Ses ombres : les données</text>
+<text x="690.0" y="66.0" font-size="12" fill="#3a3531" text-anchor="middle" font-weight="700">Ce qu'en tire chaque modèle</text>
+<rect x="30" y="80" width="190" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<ellipse cx="118.0" cy="272.4" rx="32.0" ry="38.4" fill="#3a3531" fill-opacity="1.0"/>
+<circle cx="118.0" cy="221.2" r="20.8" fill="#3a3531" fill-opacity="1.0"/>
+<polygon points="111.6,206.8 97.2,186.0 97.2,214.8" fill="#3a3531" fill-opacity="1.0"/>
+<polygon points="124.4,206.8 138.8,186.0 138.8,214.8" fill="#3a3531" fill-opacity="1.0"/>
+<path d="M143.6 301.2 Q185.2 298.0 172.4 256.4" fill="none" stroke="#3a3531" stroke-opacity="1.0" stroke-width="8.0" stroke-linecap="round"/>
+<text x="125.0" y="360.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">hors de la caverne,</text>
+<text x="125.0" y="375.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">aucun modèle n'y accède</text>
+<rect x="250" y="80" width="190" height="360" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<rect x="290" y="105" width="110" height="80" rx="3" fill="#efe7d3" stroke="#7a6f63" stroke-width="1.2"/>
+<ellipse cx="338.0" cy="153.7" rx="12.4" ry="14.9" fill="#7a6f63" fill-opacity="0.75"/>
+<circle cx="338.0" cy="133.8" r="8.1" fill="#7a6f63" fill-opacity="0.75"/>
+<polygon points="335.5,128.3 329.9,120.2 329.9,131.4" fill="#7a6f63" fill-opacity="0.75"/>
+<polygon points="340.5,128.3 346.1,120.2 346.1,131.4" fill="#7a6f63" fill-opacity="0.75"/>
+<path d="M347.9 164.8 Q364.0 163.6 359.1 147.5" fill="none" stroke="#7a6f63" stroke-opacity="0.75" stroke-width="3.1" stroke-linecap="round"/>
+<text x="345.0" y="205.0" font-size="10.5" fill="#3a6ea5" text-anchor="middle" font-weight="700">une image</text>
+<rect x="270" y="290" width="150" height="46" rx="3" fill="#efe7d3" stroke="#7a6f63" stroke-width="1.2"/>
+<text x="345.0" y="318.0" font-size="10.5" fill="#3a3531" text-anchor="middle" font-style="italic">« Un chat dort au soleil. »</text>
+<text x="345.0" y="356.0" font-size="10.5" fill="#9a5b33" text-anchor="middle" font-weight="700">un texte</text>
+<line x1="196.0" y1="205.0" x2="284.0" y2="155.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#g)"/>
+<line x1="198.0" y1="296.0" x2="264.0" y2="312.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#g)"/>
+<rect x="470" y="80" width="420" height="160" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="486.0" y="104.0" font-size="11.5" fill="#3a6ea5" text-anchor="start" font-weight="700">Modèle de vision</text>
+<text x="486.0" y="120.0" font-size="10" fill="#5b5249" text-anchor="start" font-style="italic">n'a vu que des images</text>
+<line x1="748.0" y1="156.0" x2="698.0" y2="190.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="748.0" y1="156.0" x2="710.0" y2="122.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="698.0" y1="190.0" x2="710.0" y2="122.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="788.0" y1="204.0" x2="836.0" y2="178.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="710.0" cy="122.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="710.0" y="112.0" font-size="10" fill="#3a3531" text-anchor="middle">lion</text>
+<circle cx="748.0" cy="156.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="758.0" y="160.0" font-size="10" fill="#3a3531" text-anchor="start">chat</text>
+<circle cx="698.0" cy="190.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="688.0" y="194.0" font-size="10" fill="#3a3531" text-anchor="end">chien</text>
+<circle cx="788.0" cy="204.0" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="778.0" y="208.0" font-size="10" fill="#3a3531" text-anchor="end">voiture</text>
+<circle cx="836.0" cy="178.0" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="846.0" y="182.0" font-size="10" fill="#3a3531" text-anchor="start">vélo</text>
+<circle cx="832.0" cy="122.0" r="5" fill="#9a5b33" stroke="#ffffff" stroke-width="1.2"/>
+<text x="842.0" y="126.0" font-size="10" fill="#3a3531" text-anchor="start">pomme</text>
+<rect x="470" y="280" width="420" height="160" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="486.0" y="304.0" font-size="11.5" fill="#9a5b33" text-anchor="start" font-weight="700">Modèle de langage</text>
+<text x="486.0" y="320.0" font-size="10" fill="#5b5249" text-anchor="start" font-style="italic">n'a lu que des textes</text>
+<line x1="738.0" y1="324.0" x2="758.0" y2="370.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="738.0" y1="324.0" x2="698.0" y2="338.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="758.0" y1="370.0" x2="698.0" y2="338.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="706.0" y1="408.0" x2="750.0" y2="416.0" stroke="#b8a888" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="698.0" cy="338.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="688.0" y="342.0" font-size="10" fill="#3a3531" text-anchor="end">lion</text>
+<circle cx="738.0" cy="324.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="738.0" y="314.0" font-size="10" fill="#3a3531" text-anchor="middle">chat</text>
+<circle cx="758.0" cy="370.0" r="5" fill="#2f6f6a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="768.0" y="374.0" font-size="10" fill="#3a3531" text-anchor="start">chien</text>
+<circle cx="706.0" cy="408.0" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="696.0" y="412.0" font-size="10" fill="#3a3531" text-anchor="end">voiture</text>
+<circle cx="750.0" cy="416.0" r="5" fill="#c4564a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="760.0" y="420.0" font-size="10" fill="#3a3531" text-anchor="start">vélo</text>
+<circle cx="830.0" cy="388.0" r="5" fill="#9a5b33" stroke="#ffffff" stroke-width="1.2"/>
+<text x="840.0" y="392.0" font-size="10" fill="#3a3531" text-anchor="start">pomme</text>
+<line x1="400.0" y1="145.0" x2="466.0" y2="150.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#g)"/>
+<line x1="420.0" y1="313.0" x2="466.0" y2="330.0" stroke="#7a6f63" stroke-width="1.6" marker-end="url(#g)"/>
+<line x1="760" y1="246" x2="760" y2="274" stroke="#2f6f6a" stroke-width="1.6" marker-start="url(#t)" marker-end="url(#t)"/>
+<text x="748.0" y="264.0" font-size="10.5" fill="#2f6f6a" text-anchor="end" font-weight="700">des voisinages semblables ?</text>
+</svg>
