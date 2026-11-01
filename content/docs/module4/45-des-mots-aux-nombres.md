@@ -288,6 +288,11 @@ Cette idée a de nombreux usages.
   génération d'une image par un texte. C'est le sujet du chapitre
   « [Relier les mots et les images](docs/module4/90-mots-et-images) ».
 
+Des modèles entraînés séparément, l'un sur des images, l'autre sur des textes, finissent
+même par disposer leurs vecteurs de façon semblable, comme l'expose la section
+« [La représentation platonicienne](docs/module5/20-une-machine-peut-elle-penser/#la-représentation-platonicienne) »
+du Module 5.
+
 Les mots sont maintenant des vecteurs, et le Transformer sait les modifier d'après
 leur contexte. Le [chapitre suivant](docs/module4/50-predire-le-mot-suivant) montre comment un modèle s'en
 sert pour prédire le mot suivant d'un texte, et pour écrire.

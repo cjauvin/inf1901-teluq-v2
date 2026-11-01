@@ -203,6 +203,47 @@ Trois réponses sont proposées à cette objection.
   l'objection du robot à Searle. Pour Harnad et Searle, ces images, ces sons et ces actions
   ne seraient pourtant que d'autres symboles, transmis à la machine sous forme de nombres.
 
+## La représentation platonicienne
+
+En 2024, quatre chercheurs du MIT, Minyoung Huh, Brian Cheung, Tongzhou Wang et Phillip
+Isola, apportent au débat un élément empirique avec l'**hypothèse de la représentation
+platonicienne** (*Platonic Representation Hypothesis*). Le nom vient de l'allégorie de la
+caverne de Platon : des prisonniers, enchaînés face à une paroi, ne connaissent du monde
+que les ombres qui s'y projettent. Pour les auteurs, les données d'entraînement sont de
+telles ombres. Une photo de chat et la phrase « Un chat dort au soleil » sont deux
+projections différentes d'une même réalité, et des modèles assez puissants, entraînés sur
+l'une ou sur l'autre, finiraient par en reconstruire la même structure.
+
+Pour le vérifier, ils comparent des modèles de vision, qui n'ont vu que des images, et des
+modèles de langage, qui n'ont lu que des textes. Ils leur soumettent un millier d'images
+tirées de Wikipédia, avec leurs légendes. Pour chaque image, ils cherchent ses plus proches
+voisines dans l'espace du modèle de vision, puis, pour sa légende, les plus proches
+voisines dans l'espace du modèle de langage, au sens des
+[plongements](docs/module4/45-des-mots-aux-nombres/#les-plongements) du Module 4. Les deux
+listes se recoupent en partie, et d'autant plus que le modèle de langage est performant.
+Le recoupement reste modeste : le meilleur score atteint 0,16 sur un maximum de 1, et les
+auteurs laissent ouvert s'il faut le juger fort ou faible.
+
+{{< image src="/images/module5/caverne-platonicienne.svg" alt="Trois colonnes. À gauche, le monde, représenté par un chat, hors de la caverne : aucun modèle n'y accède. Au centre, ses ombres, les seules données que voient les modèles : une photo du chat et une phrase, « Un chat dort au soleil ». À droite, ce qu'en tire chaque modèle, entraîné séparément : un modèle de vision, qui n'a vu que des images, et un modèle de langage, qui n'a lu que des textes. Chacun place six concepts dans son espace : chat, chien et lion proches les uns des autres, voiture et vélo ensemble, pomme à part. Les deux nuages sont disposés différemment, mais les voisinages sont les mêmes." title="L'hypothèse de la représentation platonicienne. Les images et les textes seraient deux ombres d'une même réalité. Un modèle de vision et un modèle de langage, entraînés séparément, disposeraient leurs concepts de façon différente, mais avec les mêmes voisinages. Positions schématiques." loading="lazy" >}}
+
+En 2025, une équipe de l'université Cornell va plus loin pour le texte seul. Son système
+vec2vec traduit les plongements d'un modèle de langage dans l'espace d'un autre, sans
+aucun exemple apparié, comme si tous partageaient une même géométrie sous-jacente. Les
+critiques suivent. En 2026, deux études montrent que les mesures utilisées gonflent la
+ressemblance, en particulier pour les grands modèles, et qu'une fois ces mesures
+corrigées, il reste surtout une structure grossière commune : des voisinages locaux
+partagés, plutôt qu'un modèle unique de la réalité. Les auteurs de la première proposent
+à la place une hypothèse « aristotélicienne », du nom du philosophe qui cherchait les
+formes dans les choses particulières plutôt que dans un monde des Idées.
+
+Pour le problème de l'ancrage, la portée de ces résultats est précise. Ils suggèrent que
+les textes portent une partie de la structure du monde, assez pour qu'un modèle qui n'a
+jamais rien vu organise ses concepts à peu près comme un modèle qui n'a fait que voir.
+C'est un argument en faveur de l'ancrage emprunté, la première des
+[trois réponses](#le-problème-de-lancrage) présentées plus haut. Ils ne règlent pas pour
+autant la question de Searle : deux systèmes peuvent partager une même structure sans que
+l'un ou l'autre comprenne ce dont il parle.
+
 ## La chambre chinoise à l'ère des modèles de langage
 
 Un grand modèle de langage ressemble beaucoup à la chambre de Searle : des jetons
