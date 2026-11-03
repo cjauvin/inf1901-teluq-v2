@@ -35,6 +35,23 @@ se joue d'abord sur les puces.
   DeepInfer, que DeepSeek publie en octobre, tourne aussi bien sur ces puces que sur celles
   de Nvidia. Le pari américain, contrôler l'IA chinoise en contrôlant les puces, en devient
   plus incertain.
+- **La distillation.** Un modèle peut apprendre à imiter un autre à partir de ses seules
+  réponses, par
+  [distillation](docs/module4/60-passer-a-l-echelle/#la-distillation-un-grand-modèle-comme-professeur).
+  Dès janvier 2025, OpenAI dit avoir des indices que DeepSeek a ainsi distillé ses
+  modèles, sans en présenter la preuve. En février 2026, OpenAI, dans une note au Congrès,
+  ainsi que Google et Anthropic, dans des rapports, dénoncent ces « attaques par
+  distillation ». Anthropic dit avoir repéré environ 24 000 faux comptes et plus de 16
+  millions d'échanges, qu'elle attribue aux laboratoires chinois DeepSeek, Moonshot et
+  MiniMax. En avril, la Maison-Blanche accuse des entités « principalement établies en
+  Chine » de mener des campagnes « à l'échelle industrielle », et un projet de loi est
+  déposé à la Chambre des représentants. En septembre, un avis conjoint de la NSA, du FBI
+  et de l'agence américaine de cybersécurité nomme six entreprises chinoises, dont
+  DeepSeek, Moonshot et Alibaba. À la fin d'octobre 2026, aucune sanction n'a encore été
+  prise. Les critiques relèvent l'ironie de la situation : des entreprises qui se sont
+  entraînées sur les textes du Web, sans demander la permission de leurs auteurs, se
+  plaignent d'être copiées, comme le rappelle le chapitre « [La création et la
+  propriété](docs/module5/52-la-creation-et-la-propriete) ».
 - **Les autres.** Les pays du Golfe, comme l'Arabie saoudite et les Émirats arabes unis,
   investissent massivement dans des centres de données, en échange de garanties qu'ils ne
   céderont pas la technologie américaine à la Chine. L'Union européenne annonce en 2025

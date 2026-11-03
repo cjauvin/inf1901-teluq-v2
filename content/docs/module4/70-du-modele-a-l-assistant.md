@@ -386,7 +386,8 @@ milliers de raisonnements choisis ou rédigés, pour que le modèle adopte une f
 lisible, puis le renforcement prend le relais. Une fois entraîné, un modèle de
 raisonnement produit à son tour des chaînes de pensée en grande quantité. Elles
 servent de corpus pour ajuster des modèles plus petits, qui apprennent ainsi à
-raisonner par imitation. C'est la **distillation**.
+raisonner par imitation. C'est la **distillation**, que présente le chapitre
+« [Passer à l'échelle](docs/module4/60-passer-a-l-echelle/#la-distillation-un-grand-modèle-comme-professeur) ».
 
 En septembre 2024, OpenAI présente o1, le premier d'une série de **modèles de
 raisonnement** (*reasoning models*), qui « réfléchissent » parfois plusieurs minutes

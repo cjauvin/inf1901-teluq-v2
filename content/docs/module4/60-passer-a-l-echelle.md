@@ -340,6 +340,64 @@ en ouvrant les autres. Le Module 5 revient sur ce que l'ouverture change pour
 l'[économie](docs/module5/54-la-richesse-et-le-pouvoir/#y-a-t-il-un-fossé-défensif) et
 pour les [risques de mésusage](docs/module5/85-peut-on-perdre-le-controle/#le-mésusage).
 
+## La distillation : un grand modèle comme professeur
+
+Les petits modèles les plus capables ne sont souvent pas entraînés seuls : ils
+apprennent auprès d'un grand modèle, qui leur sert de professeur. C'est la
+**distillation** (*knowledge distillation*). L'idée remonte à 2006, quand Cristian
+Buciluă, Rich Caruana et Alexandru Niculescu-Mizil compressent un ensemble de centaines de
+classifieurs en un seul petit réseau de neurones, entraîné à reproduire ses réponses.
+Elle prend son nom en 2015, dans un article de Geoffrey Hinton, Oriol Vinyals et Jeff
+Dean, chez Google.
+
+Leur observation part d'un fait vu au Module 3 : un classifieur de chiffres manuscrits
+ne répond pas seulement « c'est un 2 », il donne
+[une probabilité pour chacun des dix chiffres](docs/module3/20-une-couche-cachee/#plus-de-neurones-plus-de-formes).
+Devant un 2, un bon réseau est presque certain de sa réponse, mais il accorde aussi une
+petite probabilité au 3 ou au 7, selon la façon dont le 2 est tracé. Ces petites
+probabilités disent quels chiffres se ressemblent, une information que l'étiquette « 2 »
+ne contient pas, et que Hinton appelle, dans ses conférences, la **connaissance sombre**
+(*dark knowledge*). L'élève, un réseau plus petit, apprend donc à reproduire toute la
+distribution du professeur, et non la seule bonne réponse. L'article en donne un exemple
+frappant : un élève entraîné sans jamais voir un seul 3 en reconnaît ensuite 98,6 %,
+après un simple réglage, parce que les probabilités du professeur lui en ont appris
+la forme.
+
+{{< image src="/images/module4/distillation.svg" alt="Deux panneaux, avec le même chiffre 2 manuscrit. À gauche, l'étiquette seule : un diagramme en barres sur les dix chiffres, avec une seule barre, toute la probabilité sur le 2. À droite, la réponse d'un grand réseau, le professeur : la barre du 2 domine, avec 0,80, mais le 3 reçoit 0,12 et le 7, 0,05, les autres chiffres presque rien. En bas : l'élève, un réseau plus petit, apprend à reproduire la distribution de droite, et y apprend aussi que ce 2 ressemble un peu à un 3, et un peu à un 7." title="La distillation. L'étiquette ne dit qu'une chose, « c'est un 2 ». Le professeur en dit davantage : ce 2 ressemble un peu à un 3, et un peu à un 7. L'élève apprend à reproduire toute cette distribution. Valeurs schématiques." loading="lazy" >}}
+
+Avec les modèles de langage, la distillation devient une pièce centrale de la fabrication
+des modèles.
+
+- **Des modèles plus légers.** En 2019, DistilBERT, de l'entreprise Hugging Face, est 40 %
+  plus petit et 60 % plus rapide que
+  [BERT](docs/module4/50-predire-le-mot-suivant/#trois-façons-dassembler-le-transformer),
+  et en conserve 97 % des capacités.
+- **Imiter les textes d'un modèle fermé.** En mars 2023, des chercheurs de l'Université
+  Stanford ajustent le petit modèle LLaMA de Meta sur 52 000 réponses produites par un
+  modèle d'OpenAI, pour moins de 600 dollars. Leur modèle, Alpaca, rivalise avec son
+  professeur dans leurs essais. Faute d'accès aux probabilités d'un modèle fermé, l'élève
+  imite ici ses textes, comme dans
+  l'[ajustement par instructions](docs/module4/70-du-modele-a-l-assistant/#imiter-de-bonnes-réponses).
+- **Les petits modèles des grandes entreprises.** Google indique que ses modèles Gemma 2
+  et Gemma 3, ainsi que ses modèles Gemini Flash, sont distillés de modèles plus grands.
+  Meta entraîne en 2024 ses plus petits modèles Llama, de 1 et 3 milliards de paramètres,
+  sur les probabilités de ses modèles de 8 et 70 milliards.
+- **Distiller le raisonnement.** En janvier 2025, DeepSeek fait produire à son modèle R1
+  environ 800 000 exemples de
+  [raisonnements](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr),
+  qui servent à ajuster six modèles ouverts plus petits, de 1,5 à 70 milliards de
+  paramètres. Celui de 32 milliards dépasse o1-mini, un modèle de raisonnement d'OpenAI,
+  sur la plupart des tests. Les auteurs constatent aussi que, pour un modèle de cette
+  taille, la distillation donne de bien meilleurs résultats que l'apprentissage par
+  renforcement mené directement sur lui.
+
+La distillation a une conséquence qui dépasse la technique. Un modèle de pointe sert,
+qu'il le veuille ou non, de professeur à tous ceux qui peuvent l'interroger, y compris
+ses concurrents. Les conditions d'utilisation d'OpenAI interdisent, depuis au moins 2023,
+d'utiliser ses réponses pour développer un modèle concurrent, et le Module 5 raconte
+comment la question est devenue, en 2026, une affaire de
+[géopolitique](docs/module5/64-la-geopolitique-et-la-reglementation/#une-course-entre-deux-puissances).
+
 ## Ce que coûte une réponse
 
 L'entraînement se paie une fois ; l'utilisation, à chaque réponse. Les entreprises
@@ -361,7 +419,7 @@ an selon la tâche. Plusieurs techniques y contribuent.
   moins de mémoire, et perd peu en qualité : un modèle de 7 milliards de paramètres
   passe d'environ 14 à 4 gigaoctets, et tient dans un ordinateur portable.
 - **Les petits modèles.** Des modèles de quelques milliards de paramètres, souvent
-  obtenus par [distillation](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr)
+  obtenus par [distillation](#la-distillation-un-grand-modèle-comme-professeur)
   d'un grand modèle, tournent directement sur un téléphone, comme celui qu'Apple
   intègre à ses appareils en 2024, ou les plus petits modèles Llama de Meta.
 

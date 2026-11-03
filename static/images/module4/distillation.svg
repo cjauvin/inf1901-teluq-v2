@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 450" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>La distillation</title>
+<desc>Deux panneaux, avec le même chiffre 2 manuscrit, À gauche, l'étiquette seule : un diagramme en barres sur les dix chiffres, avec une seule barre, toute la probabilité sur le 2. À droite, la réponse d'un grand réseau, le professeur : la barre du 2 domine, avec 0,80, mais le 3 reçoit 0,12 et le 7, 0,05, les autres chiffres presque rien. En bas : l'élève, un réseau plus petit, apprend à reproduire la distribution de droite, et y apprend aussi que ce 2 ressemble un peu à un 3.</desc>
+<rect x="0" y="0" width="920" height="450" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="460.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Ce que le professeur sait de plus que l'étiquette</text>
+<rect x="20" y="50" width="430" height="330" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="235.0" y="76.0" font-size="12.5" fill="#7a6f63" text-anchor="middle" font-weight="700">L'étiquette seule</text>
+<rect x="60" y="88" width="84" height="84" rx="4" fill="#3a3531"/>
+<path d="M84 120 C84 100 120 100 120 120 C120 134 100 144 82 156 L124 156" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="166.0" y="128.0" font-size="10.5" fill="#5b5249" text-anchor="start">une seule information :</text>
+<text x="166.0" y="144.0" font-size="10.5" fill="#5b5249" text-anchor="start" font-style="italic">« c'est un 2 »</text>
+<line x1="52" y1="336" x2="416" y2="336" stroke="#b8a888" stroke-width="1.2"/>
+<rect x="60" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="72.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">0</text>
+<rect x="96" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="108.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">1</text>
+<rect x="132" y="206.0" width="24" height="130.0" rx="2" fill="#7a6f63" fill-opacity="0.85"/>
+<text x="144.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">2</text>
+<text x="144.0" y="199.0" font-size="10.5" fill="#7a6f63" text-anchor="middle" font-weight="700">1</text>
+<rect x="168" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="180.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">3</text>
+<rect x="204" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="216.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">4</text>
+<rect x="240" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="252.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">5</text>
+<rect x="276" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="288.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">6</text>
+<rect x="312" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="324.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">7</text>
+<rect x="348" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="360.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">8</text>
+<rect x="384" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="396.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">9</text>
+<rect x="470" y="50" width="430" height="330" rx="10" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="685.0" y="76.0" font-size="12.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">La réponse du professeur</text>
+<rect x="510" y="88" width="84" height="84" rx="4" fill="#3a3531"/>
+<path d="M534 120 C534 100 570 100 570 120 C570 134 550 144 532 156 L574 156" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="616.0" y="128.0" font-size="10.5" fill="#5b5249" text-anchor="start">un grand réseau entraîné répond</text>
+<text x="616.0" y="144.0" font-size="10.5" fill="#5b5249" text-anchor="start">par une probabilité par chiffre</text>
+<line x1="502" y1="336" x2="866" y2="336" stroke="#b8a888" stroke-width="1.2"/>
+<rect x="510" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="522.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">0</text>
+<rect x="546" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="558.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">1</text>
+<rect x="582" y="232.0" width="24" height="104.0" rx="2" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="594.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">2</text>
+<text x="594.0" y="225.0" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">0,80</text>
+<rect x="618" y="320.4" width="24" height="15.6" rx="2" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="630.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">3</text>
+<text x="630.0" y="313.4" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">0,12</text>
+<rect x="654" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="666.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">4</text>
+<rect x="690" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="702.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">5</text>
+<rect x="726" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="738.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">6</text>
+<rect x="762" y="329.5" width="24" height="6.5" rx="2" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="774.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">7</text>
+<text x="774.0" y="322.5" font-size="10.5" fill="#2f6f6a" text-anchor="middle" font-weight="700">0,05</text>
+<rect x="798" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="810.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">8</text>
+<rect x="834" y="334.5" width="24" height="1.5" rx="2" fill="#b8a888" fill-opacity="0.85"/>
+<text x="846.0" y="352.0" font-size="11" fill="#5b5249" text-anchor="middle">9</text>
+<text x="460.0" y="408.0" font-size="11.5" fill="#3a3531" text-anchor="middle" font-style="italic">L'élève, un réseau plus petit, apprend à reproduire la distribution de droite :</text>
+<text x="460.0" y="426.0" font-size="11.5" fill="#3a3531" text-anchor="middle" font-style="italic">il y apprend aussi que ce 2 ressemble un peu à un 3, et un peu à un 7.</text>
+<text x="886.0" y="370.0" font-size="9.5" fill="#7a6f63" text-anchor="end" font-style="italic">valeurs schématiques</text>
+</svg>
