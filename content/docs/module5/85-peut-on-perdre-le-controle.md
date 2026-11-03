@@ -461,7 +461,9 @@ Les réponses se répartissent entre la science, l'autorégulation et la loi.
   fixent des seuils de capacités au-delà desquels ils s'engagent à renforcer leurs
   protections, ou à suspendre un déploiement.
 - **La loi.** Depuis janvier 2026, une loi californienne oblige les développeurs des plus
-  grands modèles à publier leurs mesures de sécurité, à signaler leurs incidents graves dans
+  grands modèles, les
+  [modèles de frontière](docs/module4/60-passer-a-l-echelle/#les-modèles-de-frontière),
+  à publier leurs mesures de sécurité, à signaler leurs incidents graves dans
   les quinze jours, et protège les employés qui donnent l'alerte. Le
   chapitre « [La géopolitique et la réglementation](docs/module5/64-la-geopolitique-et-la-reglementation/#une-gouvernance-mondiale) »
   a montré combien la coordination internationale reste difficile.

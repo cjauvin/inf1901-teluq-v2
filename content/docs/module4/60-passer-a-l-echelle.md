@@ -251,6 +251,54 @@ d'auteur fait l'objet de nombreux procès, comme celui que le *New York Times* a
 intenté à OpenAI et à Microsoft en décembre 2023. Le [Module 5](docs/module5) revient
 sur ces coûts environnementaux et juridiques.
 
+## Les modèles de frontière
+
+On appelle **modèles de frontière** (*frontier models*) les modèles qui repoussent, à un
+moment donné, la limite de ce que l'IA sait faire. Anthropic emploie le terme dès mars
+2023, et il s'impose en juillet de la même année, avec un article de chercheurs de
+laboratoires, d'universités et de centres de recherche, « *Frontier AI Regulation* ». Sa
+définition d'origine ne parle pas seulement de performance : un modèle de frontière est
+assez capable pour posséder des capacités dangereuses, qui feraient courir des risques
+graves à la sécurité publique. Le terme sert aussitôt à organiser le secteur. Le même
+mois, Anthropic, Google, Microsoft et OpenAI fondent le Frontier Model Forum, et en
+novembre, le premier sommet mondial sur la sécurité de l'IA, à Bletchley Park, consacre
+sa déclaration à l'« IA de frontière », comme le rappelle le chapitre
+« [La géopolitique et la réglementation](docs/module5/64-la-geopolitique-et-la-reglementation/#une-gouvernance-mondiale) »
+du Module 5.
+
+Cette frontière se déplace vite. Selon Epoch AI, le calcul utilisé pour entraîner les
+modèles de tête est multiplié par cinq environ chaque année, et seule une poignée de
+laboratoires suit le rythme, américains comme OpenAI, Google DeepMind, Anthropic, xAI et
+Meta, ou chinois comme DeepSeek et Alibaba. Les modèles ouverts suivent de près : en
+2026, ils n'auraient plus qu'environ quatre mois de retard sur les meilleurs modèles
+fermés, contre un an en 2024.
+
+{{< image src="/images/module4/frontiere-calcul.svg" alt="Un nuage de points. L'axe horizontal donne la date de sortie, de 2018 à 2026, l'axe vertical le calcul utilisé pour l'entraînement, sur une échelle logarithmique, de 10 puissance 19 à 10 puissance 28 opérations. Chaque point est un modèle notable recensé par Epoch AI ; les modèles de frontière, en brun, montent régulièrement. On lit GPT-1 en 2018, GPT-3 en 2020, GPT-4 en 2023, Llama 3.1 405B, un modèle ouvert, en 2024, Grok 3, premier modèle au-delà de 10 puissance 26, en février 2025, et GPT-6 Astra en septembre 2026, proche de 10 puissance 27. Deux droites horizontales marquent les seuils : 10 puissance 25 opérations, celui de l'AI Act européen, et 10 puissance 26, celui des lois de la Californie et de New York. DeepSeek V3, un modèle ouvert sorti en décembre 2024 et proche des meilleurs modèles, reste sous le seuil européen." title="Le calcul d'entraînement des modèles notables recensés par Epoch AI. De GPT-1 à GPT-6 Astra, celui des modèles de frontière a été multiplié par plus de dix millions. Données : Epoch AI, octobre 2026." loading="lazy" >}}
+
+Pour désigner ces modèles, les lois ont besoin d'un critère simple, et elles ont choisi la
+quantité de calcul d'entraînement. L'AI Act européen présume qu'un modèle entraîné avec
+plus de $10^{25}$ opérations présente un « risque systémique ». Les lois de la Californie, en
+vigueur depuis janvier 2026, et de l'État de New York, à partir de 2027, visent les
+modèles entraînés avec plus de $10^{26}$ opérations, et leurs obligations les plus lourdes,
+les développeurs dont le chiffre d'affaires dépasse 500 millions de dollars. Selon les
+estimations d'Epoch AI, Grok 3, de l'entreprise xAI, est le premier modèle à franchir ce
+second seuil, en février 2025.
+
+Ces seuils sont contestés. Le calcul n'est qu'un indicateur indirect des capacités, et les
+gains d'efficacité l'en éloignent de plus en plus. DeepSeek V3, en décembre 2024,
+approche les meilleurs modèles avec environ $3 \times 10^{24}$ opérations, sous le seuil européen,
+et un modèle obtenu par
+[distillation](docs/module4/60-passer-a-l-echelle/#la-distillation-un-grand-modèle-comme-professeur),
+présentée plus loin dans ce chapitre, hérite des capacités de son professeur sans en avoir
+dépensé le calcul. La chercheuse Sara Hooker, pourtant coautrice de l'article de 2023,
+développe cette critique en 2024. Une autre critique vise le terme lui-même. Pour Andrew
+Ng ou Yann Le Cun, insister sur les dangers des modèles de frontière sert les grandes
+entreprises, seules capables d'assumer le coût des règles qu'elles réclament. On parle de
+**capture réglementaire** (*regulatory capture*) quand une réglementation profite ainsi
+aux entreprises qu'elle devait encadrer, comme le discute le chapitre
+« [Peut-on perdre le contrôle ?](docs/module5/85-peut-on-perdre-le-controle/#le-catastrophisme-radical) »
+du Module 5.
+
 ## Modèles fermés, modèles ouverts
 
 Les modèles les plus puissants, ceux d'OpenAI, de Google ou d'Anthropic, sont

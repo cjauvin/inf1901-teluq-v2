@@ -80,6 +80,9 @@ Les grandes puissances ont adopté des approches très différentes.
   nationale « aussi peu contraignante que possible ». Certains États légifèrent quand même :
   la Californie, en septembre 2025, et l'État de New York, en décembre, obligent les grands
   développeurs à publier leurs mesures de sécurité et à signaler leurs incidents graves.
+  Elles visent les
+  [modèles de frontière](docs/module4/60-passer-a-l-echelle/#les-modèles-de-frontière),
+  qu'elles désignent par un seuil de calcul d'entraînement, comme le fait l'AI Act.
 - **La Chine : contrôler.** Depuis août 2023, les services d'IA générative destinés au
   public doivent y respecter les « valeurs fondamentales du socialisme » et passer une
   évaluation de sécurité. Depuis septembre 2025, les contenus générés doivent porter une
