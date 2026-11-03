@@ -2,7 +2,7 @@
 Prenons l’exemple d’un labyrinthe. À chaque instant, vous êtes dans une certaine position, qu’on appelle un état. À partir de cet état, quelques actions sont possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un nouvel état. L’ensemble de tous les états atteignables forme une grande arborescence, l’espace d’états (state space). Résoudre le labyrinthe revient alors à trouver un chemin dans cette arborescence, depuis l’état de départ jusqu’à l’état-but (la sortie).
 "><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/"><meta property="og:site_name" content="INF1901 - Initiation à l'IA : concepts et réflexions"><meta property="og:title" content="L'âge d'or symbolique : chercher et raisonner"><meta property="og:description" content="L’âge d’or symbolique : chercher et raisonner Résoudre, c’est explorer Une fois le pari symbolique posé, il reste une question pratique : comment faire raisonner une machine ? Les pionniers de l’IA trouvent une réponse très générale, parce qu’elle s’applique à des problèmes très différents. Presque tout problème peut se reformuler comme l’exploration d’un espace de possibilités.
 Prenons l’exemple d’un labyrinthe. À chaque instant, vous êtes dans une certaine position, qu’on appelle un état. À partir de cet état, quelques actions sont possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un nouvel état. L’ensemble de tous les états atteignables forme une grande arborescence, l’espace d’états (state space). Résoudre le labyrinthe revient alors à trouver un chemin dans cette arborescence, depuis l’état de départ jusqu’à l’état-but (la sortie)."><meta property="og:locale" content="fr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="L'âge d'or symbolique : chercher et raisonner"><meta itemprop=description content="L’âge d’or symbolique : chercher et raisonner Résoudre, c’est explorer Une fois le pari symbolique posé, il reste une question pratique : comment faire raisonner une machine ? Les pionniers de l’IA trouvent une réponse très générale, parce qu’elle s’applique à des problèmes très différents. Presque tout problème peut se reformuler comme l’exploration d’un espace de possibilités.
-Prenons l’exemple d’un labyrinthe. À chaque instant, vous êtes dans une certaine position, qu’on appelle un état. À partir de cet état, quelques actions sont possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un nouvel état. L’ensemble de tous les états atteignables forme une grande arborescence, l’espace d’états (state space). Résoudre le labyrinthe revient alors à trouver un chemin dans cette arborescence, depuis l’état de départ jusqu’à l’état-but (la sortie)."><meta itemprop=wordCount content="2326"><title>L'âge d'or symbolique : chercher et raisonner • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.02485e9aaa7468c5ed45750c2af56cfc04b91aae7ac6cbf6232dc2686540263f.css integrity="sha256-Akhemqp0aMXtRXUMKvVs/AS5Gq56xsv2Iy3CaGVAJj8=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.dcb4bffcdab2322a6b074f763af05476e8cde27d14935839bddbfef779b6083d.js integrity="sha256-3LS//NqyMiprB092OvBUdujN4n0Uk1g5vdv+93m2CD0=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
+Prenons l’exemple d’un labyrinthe. À chaque instant, vous êtes dans une certaine position, qu’on appelle un état. À partir de cet état, quelques actions sont possibles (avancer, tourner à gauche, tourner à droite), et chacune mène à un nouvel état. L’ensemble de tous les états atteignables forme une grande arborescence, l’espace d’états (state space). Résoudre le labyrinthe revient alors à trouver un chemin dans cette arborescence, depuis l’état de départ jusqu’à l’état-but (la sortie)."><meta itemprop=wordCount content="2319"><title>L'âge d'or symbolique : chercher et raisonner • INF1901 - Initiation à l'IA : concepts et réflexions</title><link rel=icon href=/inf1901-teluq-v2/favicon.svg type=image/svg+xml><link rel=icon href=/inf1901-teluq-v2/favicon.png sizes=any><link rel=apple-touch-icon href=/inf1901-teluq-v2/apple-touch-icon.png><link rel=manifest href=/inf1901-teluq-v2/manifest.json><link rel=canonical href=https://cjauvin.github.io/inf1901-teluq-v2/docs/module1/chercher-raisonner/><link rel=stylesheet href=/inf1901-teluq-v2/book.min.02485e9aaa7468c5ed45750c2af56cfc04b91aae7ac6cbf6232dc2686540263f.css integrity="sha256-Akhemqp0aMXtRXUMKvVs/AS5Gq56xsv2Iy3CaGVAJj8=" crossorigin=anonymous><script type=module src=/inf1901-teluq-v2/fr.search.min.ed207e3e19b9989b1070678606409598a8e8d84049c5112501e53265db44ca13.js integrity="sha256-7SB+Phm5mJsQcGeGBkCVmKjo2EBJxRElAeUyZdtEyhM=" crossorigin=anonymous></script><script>(function(){try{var e=localStorage.getItem("book-theme");(e==="light"||e==="dark"||e==="auto")&&(document.documentElement.dataset.theme=e)}catch{}})()</script><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link rel=stylesheet href=/inf1901-teluq-v2/css/applet.css></head><body dir=ltr class="book-kind-page book-type-docs"><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/inf1901-teluq-v2/><img src=/inf1901-teluq-v2/images/paperclip-logo.png alt=Logo><span>INF1901 - Initiation à l'IA : concepts et réflexions</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Rechercher aria-label=Rechercher maxlength=64><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><div class=theme-switch role=group aria-label="Thème de la page"><button type=button data-theme-value=auto data-tooltip="Thème du système" aria-label="Thème du système">
 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="1.5" y="2.5" width="13" height="9" rx="1.5"/><path d="M5.5 14h5"/></svg>
 </button>
 <button type=button data-theme-value=light data-tooltip="Thème clair" aria-label="Thème clair">
@@ -45,13 +45,10 @@ central de l&rsquo;IA symbolique (<em>symbolic AI</em>). Pour démontrer un thé
 diagnostiquer une panne ou lever l&rsquo;ambiguïté d&rsquo;une phrase, le GOFAI ramène le
 problème à l&rsquo;exploration d&rsquo;un espace de possibilités, jusqu&rsquo;à y trouver une
 solution. Nous la retrouverons dans « <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le
-monde</a>
- » et « <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
-l&rsquo;expertise</a>
- ».
+monde</a> » et « <a href=/inf1901-teluq-v2/docs/module1/systemes-experts/>Capturer
+l&rsquo;expertise</a> ».
 À la fin du module, dans <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#la-bascule><em>Les hivers et la
-bascule</em></a>
-, c&rsquo;est aussi elle qui marquera la
+bascule</em></a>, c&rsquo;est aussi elle qui marquera la
 différence avec l&rsquo;autre tradition : l&rsquo;IA symbolique cherche une solution, alors
 que l&rsquo;apprentissage automatique (<em>machine learning</em>) apprend à partir d&rsquo;exemples.</p><h2 id=lexplosion-combinatoire>L&rsquo;explosion combinatoire<a class=anchor href=#lexplosion-combinatoire></a></h2><p>L&rsquo;exploration d&rsquo;un arbre de possibilités a cependant une limite importante. Pour
 la plupart des problèmes intéressants, cet arbre est <strong>extrêmement grand</strong>.</p><p>Les échecs en sont l&rsquo;exemple le plus connu. À chaque tour, un joueur dispose en
@@ -94,20 +91,17 @@ est guidé par la distance qui le sépare du but. Lancez les deux recherches, pu
 comparez le nombre de cases explorées : elles trouvent le même chemin, mais pas
 avec le même effort. Ajoutez ou retirez des murs en cliquant sur la grille, et
 observez dans quels cas l&rsquo;heuristique aide beaucoup et dans quels cas elle mène
-la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1793720343240144141 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
+la recherche dans une mauvaise direction.</p><div class=applet-wrapper style=width:100%><iframe src=/inf1901-teluq-v2/html/applets/astar.html id=applet-1793730856395521402 class=applet-iframe width=100% height=557 loading=lazy data-iresize=true data-transform-scale=1.0></iframe></div><p>Nous retrouverons cette limite, sous un autre nom, quand il s&rsquo;agira d&rsquo;apprendre à
 partir de données décrites par des milliers de caractéristiques. Ce sera la
-<a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a>
-(<em>curse of dimensionality</em>), au
-<a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>
-.</p><h2 id=lapogée-deep-blue-bat-kasparov-1997>L&rsquo;apogée : Deep Blue bat Kasparov (1997)<a class=anchor href=#lapog%c3%a9e-deep-blue-bat-kasparov-1997></a></h2><p>En mai 1997, à New York, se joue un match devenu célèbre. D&rsquo;un côté, <strong>Garry
+<a href=/inf1901-teluq-v2/docs/module2/predire-par-ressemblance/>malédiction de la dimension</a> (<em>curse of dimensionality</em>), au
+<a href=/inf1901-teluq-v2/docs/module2/>Module 2</a>.</p><h2 id=lapogée-deep-blue-bat-kasparov-1997>L&rsquo;apogée : Deep Blue bat Kasparov (1997)<a class=anchor href=#lapog%c3%a9e-deep-blue-bat-kasparov-1997></a></h2><p>En mai 1997, à New York, se joue un match devenu célèbre. D&rsquo;un côté, <strong>Garry
 Kasparov</strong>, champion du monde d&rsquo;échecs en titre, considéré par beaucoup comme le
 plus grand joueur de l&rsquo;histoire. De l&rsquo;autre, <strong>Deep Blue</strong>, un superordinateur
 conçu par IBM. Au terme de six parties, la machine l&rsquo;emporte. C&rsquo;est la première
 fois qu&rsquo;un champion du monde en exercice perd contre un ordinateur dans un match
 en conditions officielles. L&rsquo;événement a un retentissement mondial, et la presse
 y voit le jour où la machine a « dépassé » l&rsquo;humain.</p><p>Deep Blue applique directement les techniques <a href=/inf1901-teluq-v2/docs/module1/chercher-raisonner/#lexplosion-combinatoire>décrites plus
-haut</a>
-. Il n&rsquo;utilise
+haut</a>. Il n&rsquo;utilise
 aucun réseau de neurones et aucun apprentissage. Il repose sur de la <strong>recherche
 par force brute</strong> (la machine évalue jusqu&rsquo;à 200 millions de positions par
 seconde), guidée par des <strong>heuristiques</strong> mises au point avec l&rsquo;aide de grands
@@ -128,17 +122,14 @@ puissante qui joue aux échecs.</p><p>IBM a relevé un autre défi quatorze ans 
 difficile, le langage. En 2011, son système Watson a battu les meilleurs champions
 du jeu télévisé <em>Jeopardy!</em>, en combinant le savoir structuré de l&rsquo;IA symbolique et
 l&rsquo;apprentissage statistique. Nous le retrouverons à la fin du module, dans
-<a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#un-%c3%a9clair-hybride-watson-2011><em>Les hivers et la bascule</em></a>
-.</p><blockquote class="book-hint info"><p>Le cas Deep Blue illustre un constat qui revient dans toute l&rsquo;histoire de l&rsquo;IA.
+<a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/#un-%c3%a9clair-hybride-watson-2011><em>Les hivers et la bascule</em></a>.</p><blockquote class="book-hint info"><p>Le cas Deep Blue illustre un constat qui revient dans toute l&rsquo;histoire de l&rsquo;IA.
 Les tâches que nous jugeons les plus « intellectuelles » (jouer aux échecs,
 démontrer un théorème) se sont révélées <strong>relativement faciles</strong> à mécaniser. À
 l&rsquo;inverse, ce qu&rsquo;un enfant de trois ans fait sans effort (comprendre une phrase,
 reconnaître une scène, faire preuve de bon sens) a longtemps résisté. C&rsquo;est le
 <strong>paradoxe de Moravec</strong>, sur lequel nous reviendrons au
-<a href=/inf1901-teluq-v2/docs/module2/le-probleme/#pourquoi-on-ne-peut-pas-simplement-le-programmer>Module 2</a>
-.</p></blockquote><p>Ces difficultés montrent déjà les limites de cette période, sur lesquelles nous
-reviendrons dans « <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a>
- ». La même époque a cependant produit un autre type de programme. Il ne
+<a href=/inf1901-teluq-v2/docs/module2/le-probleme/#pourquoi-on-ne-peut-pas-simplement-le-programmer>Module 2</a>.</p></blockquote><p>Ces difficultés montrent déjà les limites de cette période, sur lesquelles nous
+reviendrons dans « <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la bascule</a> ». La même époque a cependant produit un autre type de programme. Il ne
 calcule pas pour gagner une partie, mais semble parler et écouter, et son cas est
 encore plus surprenant.</p><h2 id=lautre-visage-eliza-ou-lillusion-de-comprendre>L&rsquo;autre visage : ELIZA, ou l&rsquo;illusion de comprendre<a class=anchor href=#lautre-visage-eliza-ou-lillusion-de-comprendre></a></h2><p>L&rsquo;IA symbolique de cette période ne se limite pas à la recherche et au calcul.
 L&rsquo;un de ses épisodes les plus marquants concerne une machine qui semblait non pas
@@ -161,11 +152,9 @@ devenu l&rsquo;un des principaux critiques de l&rsquo;IA. On appelle aujourd&rsq
 ELIZA »</strong> cette forte tendance à <em>projeter</em> de la compréhension, et même des
 émotions, sur n&rsquo;importe quelle machine qui manie le langage.</p><p>ELIZA est en quelque sorte l&rsquo;inverse du test de Turing. Elle montre qu&rsquo;il peut
 être facile de donner l&rsquo;illusion de penser sans rien comprendre. Cette mise en
-garde prendra toute son importance avec les agents conversationnels (<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#lillusion-de-comprendre>module 4</a>
-) et
+garde prendra toute son importance avec les agents conversationnels (<a href=/inf1901-teluq-v2/docs/module4/comprendre-et-rater/#lillusion-de-comprendre>module 4</a>) et
 dans le débat, toujours ouvert, sur ce que « comprendre » veut dire pour une
-machine (<a href=/inf1901-teluq-v2/docs/module5/>module 5</a>
-).</p><p>Une dernière précision est importante pour la suite. On pourrait voir en ELIZA
+machine (<a href=/inf1901-teluq-v2/docs/module5/>module 5</a>).</p><p>Une dernière précision est importante pour la suite. On pourrait voir en ELIZA
 l&rsquo;ancêtre direct de ChatGPT, comme s&rsquo;il s&rsquo;agissait du même procédé à plus grande
 échelle. C&rsquo;est presque l&rsquo;inverse. ELIZA n&rsquo;est qu&rsquo;un petit ensemble de règles
 écrites à la main (repérer un mot, produire une réponse à partir d&rsquo;un gabarit),
@@ -200,13 +189,11 @@ donnée comme une autre ») explique pourquoi Lisp convenait si bien à des sy
 destinés à raisonner sur des symboles.</p></div></details><p>Pendant des décennies, Lisp est resté le langage principal de l&rsquo;IA symbolique. On
 a même construit des ordinateurs spécialisés, les <strong>« machines Lisp »</strong>, pour
 l&rsquo;exécuter plus efficacement. Nous verrons dans « <a href=/inf1901-teluq-v2/docs/module1/hivers-et-bascule/>Les hivers et la
-bascule</a>
- » que leur effondrement, vers 1987,
+bascule</a> » que leur effondrement, vers 1987,
 marque l&rsquo;un des hivers de l&rsquo;IA.</p><p>Deep Blue cherchait et ELIZA manipulait du langage, mais aucun des deux ne
 connaissait vraiment le monde. Pour aller plus loin, il fallait donner à la
 machine une façon de <strong>représenter ce qu&rsquo;elle sait</strong>. C&rsquo;est le grand chantier de
-« <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a>
- », qui s&rsquo;est
+« <a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/>Représenter le monde</a> », qui s&rsquo;est
 soldé par un échec important.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/inf1901-teluq-v2/docs/module1/deux-paris/ class="flex align-center"><img src=/inf1901-teluq-v2/icons/backward.svg class=book-icon alt=Backward>
 <span>Deux paris rivaux (1956-1958)</span>
 </a></span><span><a href=/inf1901-teluq-v2/docs/module1/representer-le-monde/ class="flex align-center"><span>Représenter le monde</span>
