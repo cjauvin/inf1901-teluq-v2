@@ -7,10 +7,10 @@ title: "Accueil"
 # Bienvenue !
 
 {{% hint warning %}}
-**Version 2, en construction.** Ce site présente la nouvelle version du cours,
-qu'on est en train de refaire. Pour l'instant, seuls les modules 1 et 2 sont
-publiés ; les modules 3 à 5 s'ajouteront à mesure qu'ils seront prêts. La
-version actuelle du cours reste accessible à
+**Version 2.** Ce site présente la nouvelle version du cours, dont les cinq
+modules sont maintenant publiés. Le contenu est mis à jour en continu, comme
+l'explique la [présentation du cours](docs/10-présentation/#un-cours-exhaustif-et-à-jour).
+La version 1 du cours reste accessible à
 [cjauvin.github.io/inf1901-teluq](https://cjauvin.github.io/inf1901-teluq/).
 {{% /hint %}}
 
