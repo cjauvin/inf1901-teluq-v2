@@ -401,7 +401,9 @@ médaille d'or aux Olympiades internationales de mathématiques. Le chapitre
 raisonnent sans aucune règle de logique écrite à la main avaient été annoncées au
 chapitre « [Deux paris rivaux](docs/module1/20-deux-paris) » du Module 1.
 
-Ces modèles ouvrent un troisième levier. Jusque-là, pour obtenir un meilleur modèle,
+Ces modèles ouvrent un troisième levier, que la section
+« [Jusqu'où ?](docs/module4/60-passer-a-l-echelle/#jusquoù) » du chapitre précédent situe
+parmi les autres. Jusque-là, pour obtenir un meilleur modèle,
 on agrandissait le modèle et ses données, comme le décrivent les
 [lois d'échelle](docs/module4/60-passer-a-l-echelle/#des-lois-déchelle). Avec o1,
 OpenAI montre que la justesse des réponses augmente aussi, de façon régulière, avec le

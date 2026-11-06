@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, -apple-system, sans-serif">
+<title>Les trois leviers de l'échelle</title>
+<desc>Une frise de 2018 à 2026 avec trois bandes horizontales, dont l'épaisseur indique, de façon schématique, la place de chaque levier dans l'effort des laboratoires. Première bande, agrandir le pré-entraînement, le modèle et ses données : épaisse dès le départ, avec GPT-2 en 2019, les lois d'échelle de Kaplan et GPT-3 en 2020, Chinchilla en 2022 et GPT-4 en 2023 ; à partir de la fin de 2024, la bande est hachurée, les rendements sont discutés, avec GPT-4.5 en février 2025 et GPT-6 Astra en septembre 2026. Deuxième bande, l'apprentissage par renforcement : un mince filet à partir de 2022, celui des préférences humaines, qui s'élargit à partir de o1, en septembre 2024, avec DeepSeek R1, o3 et Grok 4 en 2025. Troisième bande, le calcul au moment de la réponse : absente jusqu'à o1, puis de plus en plus large. Au-dessus, la périodisation d'Ilya Sutskever : l'âge de la recherche jusqu'en 2020, l'âge de l'échelle de 2020 à 2025, puis un retour à la recherche, avec de gros ordinateurs.</desc>
+<rect x="0" y="0" width="920" height="470" rx="14" fill="#efe7d3" stroke="#d9cbac"/>
+<text x="460.0" y="32" font-size="15" fill="#3a3531" text-anchor="middle" font-weight="600">Trois façons de dépenser plus de calcul</text>
+<defs><pattern id="hachures" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#9a5b33" fill-opacity="0.35"/><line x1="0" y1="0" x2="0" y2="7" stroke="#9a5b33" stroke-width="3"/></pattern></defs>
+<rect x="252.0" y="62" width="138.2" height="24" rx="5" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="321.1" y="78.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">l'âge de la recherche</text>
+<rect x="394.2" y="62" width="351.6" height="24" rx="5" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="570.0" y="78.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">l'âge de l'échelle</text>
+<rect x="749.8" y="62" width="138.2" height="24" rx="5" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="818.9" y="78.0" font-size="10.5" fill="#5b5249" text-anchor="middle" font-style="italic">retour à la recherche</text>
+<text x="234.0" y="78.0" font-size="10.5" fill="#7a6f63" text-anchor="end" font-style="italic">selon Ilya Sutskever (2025)</text>
+<rect x="250" y="100" width="640" height="310" fill="#fbf7ee" stroke="#d9cbac"/>
+<text x="285.6" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2018</text>
+<line x1="321.1" y1="100" x2="321.1" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="356.7" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2019</text>
+<line x1="392.2" y1="100" x2="392.2" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="427.8" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2020</text>
+<line x1="463.3" y1="100" x2="463.3" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="498.9" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2021</text>
+<line x1="534.4" y1="100" x2="534.4" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="570.0" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2022</text>
+<line x1="605.6" y1="100" x2="605.6" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="641.1" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2023</text>
+<line x1="676.7" y1="100" x2="676.7" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="712.2" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2024</text>
+<line x1="747.8" y1="100" x2="747.8" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="783.3" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2025</text>
+<line x1="818.9" y1="100" x2="818.9" y2="410" stroke="#d9cbac" stroke-width="0.8"/>
+<text x="854.4" y="428.0" font-size="11" fill="#5b5249" text-anchor="middle">2026</text>
+<text x="234.0" y="158.0" font-size="12" fill="#9a5b33" text-anchor="end" font-weight="700">Agrandir le pré-entraînement</text>
+<text x="234.0" y="174.0" font-size="10.5" fill="#5b5249" text-anchor="end">le modèle et ses données</text>
+<text x="234.0" y="258.0" font-size="12" fill="#2f6f6a" text-anchor="end" font-weight="700">Le renforcement</text>
+<text x="234.0" y="274.0" font-size="10.5" fill="#5b5249" text-anchor="end">après le pré-entraînement</text>
+<text x="234.0" y="350.0" font-size="12" fill="#3a6ea5" text-anchor="end" font-weight="700">Réfléchir plus longtemps</text>
+<text x="234.0" y="366.0" font-size="10.5" fill="#5b5249" text-anchor="end">le calcul au moment de la réponse</text>
+<polygon points="253.6,145.0 879.3,145.0 879.3,175.0 253.6,175.0" fill="#9a5b33" fill-opacity="0.85"/>
+<rect x="737.1" y="145.0" width="142.2" height="30.0" fill="#fbf7ee"/>
+<rect x="737.1" y="145.0" width="142.2" height="30.0" fill="url(#hachures)"/>
+<line x1="329.6" y1="135.0" x2="329.6" y2="145.0" stroke="#3a3531" stroke-width="1.2"/>
+<circle cx="329.6" cy="135.0" r="2.2" fill="#3a3531"/>
+<text x="329.6" y="129.0" font-size="10" fill="#3a3531" text-anchor="middle" font-weight="700">GPT-2</text>
+<line x1="395.8" y1="175.0" x2="395.8" y2="185.0" stroke="#3a3531" stroke-width="1.2"/>
+<circle cx="395.8" cy="185.0" r="2.2" fill="#3a3531"/>
+<text x="395.8" y="199.0" font-size="10" fill="#3a3531" text-anchor="middle" font-weight="700">Kaplan</text>
+<line x1="421.4" y1="135.0" x2="421.4" y2="145.0" stroke="#3a3531" stroke-width="1.2"/>
+<circle cx="421.4" cy="135.0" r="2.2" fill="#3a3531"/>
+<text x="421.4" y="129.0" font-size="10" fill="#3a3531" text-anchor="middle" font-weight="700">GPT-3</text>
+<line x1="551.5" y1="135.0" x2="551.5" y2="145.0" stroke="#3a3531" stroke-width="1.2"/>
+<circle cx="551.5" cy="135.0" r="2.2" fill="#3a3531"/>
+<text x="551.5" y="129.0" font-size="10" fill="#3a3531" text-anchor="middle" font-weight="700">Chinchilla</text>
+<line x1="619.8" y1="135.0" x2="619.8" y2="145.0" stroke="#3a3531" stroke-width="1.2"/>
+<circle cx="619.8" cy="135.0" r="2.2" fill="#3a3531"/>
+<text x="619.8" y="129.0" font-size="10" fill="#3a3531" text-anchor="middle" font-weight="700">GPT-4</text>
+<line x1="759.2" y1="135.0" x2="759.2" y2="145.0" stroke="#9a5b33" stroke-width="1.2"/>
+<circle cx="759.2" cy="135.0" r="2.2" fill="#9a5b33"/>
+<text x="759.2" y="129.0" font-size="10" fill="#9a5b33" text-anchor="middle" font-weight="700">GPT-4.5</text>
+<line x1="866.5" y1="135.0" x2="866.5" y2="145.0" stroke="#9a5b33" stroke-width="1.2"/>
+<circle cx="866.5" cy="135.0" r="2.2" fill="#9a5b33"/>
+<text x="870.5" y="129.0" font-size="10" fill="#9a5b33" text-anchor="end" font-weight="700">GPT-6 Astra</text>
+<text x="808.2" y="197.0" font-size="10" fill="#9a5b33" text-anchor="middle" font-style="italic">des rendements discutés</text>
+<polygon points="534.4,260.0 540.1,258.0 719.3,258.0 726.4,257.0 790.4,246.0 879.3,244.0 879.3,276.0 790.4,274.0 726.4,263.0 719.3,262.0 540.1,262.0 534.4,260.0" fill="#2f6f6a" fill-opacity="0.85"/>
+<text x="541.6" y="278.0" font-size="10" fill="#2f6f6a" text-anchor="start" font-style="italic">préférences humaines (RLHF)</text>
+<line x1="726.4" y1="247.0" x2="726.4" y2="257.0" stroke="#2f6f6a" stroke-width="1.2"/>
+<circle cx="726.4" cy="247.0" r="2.2" fill="#2f6f6a"/>
+<text x="726.4" y="241.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">o1</text>
+<line x1="751.3" y1="267.3" x2="751.3" y2="277.3" stroke="#2f6f6a" stroke-width="1.2"/>
+<circle cx="751.3" cy="277.3" r="2.2" fill="#2f6f6a"/>
+<text x="751.3" y="291.3" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">R1</text>
+<line x1="768.4" y1="239.8" x2="768.4" y2="249.8" stroke="#2f6f6a" stroke-width="1.2"/>
+<circle cx="768.4" cy="239.8" r="2.2" fill="#2f6f6a"/>
+<text x="768.4" y="233.8" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">o3</text>
+<line x1="784.8" y1="273.0" x2="784.8" y2="283.0" stroke="#2f6f6a" stroke-width="1.2"/>
+<circle cx="784.8" cy="283.0" r="2.2" fill="#2f6f6a"/>
+<text x="784.8" y="297.0" font-size="10" fill="#2f6f6a" text-anchor="middle" font-weight="700">Grok 4</text>
+<polygon points="720.8,352.0 726.4,350.0 776.2,342.0 879.3,338.0 879.3,366.0 776.2,362.0 726.4,354.0 720.8,352.0" fill="#3a6ea5" fill-opacity="0.85"/>
+<line x1="726.4" y1="340.0" x2="726.4" y2="350.0" stroke="#3a6ea5" stroke-width="1.2"/>
+<circle cx="726.4" cy="340.0" r="2.2" fill="#3a6ea5"/>
+<text x="726.4" y="334.0" font-size="10" fill="#3a6ea5" text-anchor="middle" font-weight="700">o1</text>
+<line x1="745.6" y1="357.1" x2="745.6" y2="367.1" stroke="#3a6ea5" stroke-width="1.2"/>
+<circle cx="745.6" cy="367.1" r="2.2" fill="#3a6ea5"/>
+<text x="745.6" y="381.1" font-size="10" fill="#3a6ea5" text-anchor="middle" font-weight="700">o3 et ARC</text>
+<text x="890.0" y="452.0" font-size="9.5" fill="#7a6f63" text-anchor="end" font-style="italic">épaisseur des bandes schématique : la place du levier dans l'effort des laboratoires</text>
+</svg>

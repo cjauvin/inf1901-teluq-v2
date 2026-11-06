@@ -49,13 +49,28 @@ modèle sur des textes qu'il n'a jamais vus, c'est-à-dire sa capacité à préd
 jeton suivant. Cette erreur diminue de façon très régulière quand on augmente le
 nombre de paramètres, la quantité de données ou la quantité de calcul. Sur un
 graphique à échelles logarithmiques, les points s'alignent sur une droite. On parle
-de **lois d'échelle** (*scaling laws*).
+de **lois d'échelle** (*scaling laws*). Il s'agit de **lois de puissance** (*power laws*) :
+chaque fois qu'on multiplie le calcul par dix, l'erreur diminue d'une même proportion,
+jusqu'à un plancher qu'aucun modèle ne franchit, puisqu'une part du texte reste
+imprévisible.
+
+L'observation n'est pas tout à fait neuve. Dès décembre 2017, une équipe de Baidu
+Research montre que l'erreur diminue selon une loi de puissance quand la quantité de
+données d'entraînement augmente, dans quatre domaines, la traduction automatique, la
+modélisation du langage, la classification d'images et la reconnaissance de la parole.
+L'étude de Kaplan étend ce constat à la taille des modèles et au calcul, et en tire une
+recette.
 
 {{< image src="/images/module4/loi-d-echelle.svg" alt="Un schéma. L'axe horizontal donne la quantité de calcul utilisée pour l'entraînement, l'axe vertical l'erreur du modèle sur des textes qu'il n'a jamais vus, tous deux sur une échelle logarithmique. Des points, un par modèle entraîné, s'alignent sur une droite qui descend régulièrement. La droite est prolongée en pointillé vers la droite : on peut prédire l'erreur d'un modèle plus grand avant de l'entraîner." title="Le principe d'une loi d'échelle (schéma) : en prolongeant la droite, on prévoit l'erreur d'un modèle plus grand avant de l'entraîner." loading="lazy" >}}
 
 Ces lois ont une conséquence pratique. Avant de dépenser des dizaines de millions de
 dollars pour entraîner un très grand modèle, on peut entraîner une série de petits
-modèles, tracer la droite, et prévoir le résultat. Elles confirment aussi la
+modèles, tracer la droite, et prévoir le résultat. En 2023, OpenAI dit avoir ainsi
+prévu l'erreur finale de GPT-4 à partir de modèles entraînés avec jusqu'à 10 000 fois
+moins de calcul. Ces lois prédisent cependant une erreur moyenne sur le jeton suivant,
+pas ce que le modèle saura faire. La section
+« [Des capacités qui apparaissent ?](docs/module4/60-passer-a-l-echelle/#des-capacités-qui-apparaissent) »
+montre que ce passage de l'un à l'autre est discuté. Elles confirment aussi la
 [leçon amère](docs/module3/40-apprentissage-profond/#la-leçon-amère) de Richard
 Sutton, présentée au Module 3 : les méthodes générales qui tirent parti d'une
 quantité croissante de calcul finissent par l'emporter. Elles prolongent enfin
@@ -479,11 +494,49 @@ multiplient, une question que reprend le [Module 5](docs/module5).
 
 ## Jusqu'où ?
 
-Les lois d'échelle décrivent une tendance, pas une loi de la nature. À partir de 2024,
-plusieurs observateurs constatent que les gains obtenus en agrandissant seulement les
-modèles diminuent, et que les données de qualité se raréfient. Les entreprises
-explorent alors une autre direction : consacrer davantage de calcul non plus à
-l'entraînement, mais au moment de répondre, en laissant le modèle « réfléchir » plus
-longtemps avant de donner sa réponse. Ces modèles de raisonnement sont présentés au
-[chapitre suivant](docs/module4/70-du-modele-a-l-assistant), qui montre aussi comment un modèle qui complète du
-texte devient un assistant qui répond.
+Les lois d'échelle décrivent une tendance, pas une loi de la nature, et elles reposent
+sur deux ressources limitées, le calcul et les données. Les textes de qualité se
+raréfient, comme l'a montré la section
+« [Le prix de la taille](docs/module4/60-passer-a-l-echelle/#le-prix-de-la-taille) ».
+
+À l'automne 2024, plusieurs médias rapportent que les gains obtenus en agrandissant les
+modèles diminuent. Selon le site *The Information*, le modèle suivant d'OpenAI, nommé
+Orion, atteint le niveau de GPT-4 dès le cinquième de son entraînement, mais le dépasse
+ensuite beaucoup moins que GPT-4 ne dépassait GPT-3. L'agence Bloomberg décrit des
+difficultés semblables chez Google et Anthropic. En décembre, à la conférence NeurIPS,
+Ilya Sutskever, cofondateur d'OpenAI, annonce la fin du pré-entraînement « tel que nous
+le connaissons » : les données sont, selon lui, le « combustible fossile » de l'IA, et
+« nous n'avons qu'un seul Internet ». Le modèle d'OpenAI sort en février 2025 sous le
+nom de GPT-4.5. Il aurait demandé environ dix fois plus de calcul que GPT-4 et coûte
+75 dollars par million de jetons lus, pour des gains jugés modestes. OpenAI cesse de
+l'offrir aux développeurs dès juillet.
+
+Les laboratoires misent alors sur deux autres façons de dépenser du calcul, qui ont
+elles aussi leurs lois d'échelle. La première est l'**apprentissage par renforcement**
+à grande échelle, qui entraîne un modèle déjà pré-entraîné à résoudre des problèmes dont
+on peut vérifier la réponse. En septembre 2024, OpenAI montre que la justesse de son
+modèle o1 augmente régulièrement avec le calcul consacré à ce renforcement. En avril
+2025, o3 en utilise dix fois plus, et en juillet, xAI dit avoir mené celui de Grok 4
+« à l'échelle du pré-entraînement ». La seconde est le calcul au moment de la réponse :
+on laisse le modèle « réfléchir » plus longtemps avant de répondre. Le chapitre suivant
+présente ces
+[modèles de raisonnement](docs/module4/70-du-modele-a-l-assistant/#des-modèles-qui-raisonnent-rlvr).
+Le renforcement a toutefois ses limites. En 2025, le philosophe Toby Ord et Epoch AI
+estiment qu'il rapporte peu par unité de calcul, et que son budget, qui approche déjà
+celui du pré-entraînement, ne pourra pas croître longtemps au même rythme.
+
+{{< image src="/images/module4/trois-leviers.svg" alt="Une frise de 2018 à 2026 avec trois bandes horizontales, dont l'épaisseur indique, de façon schématique, la place de chaque levier dans l'effort des laboratoires. Première bande, agrandir le pré-entraînement, le modèle et ses données : épaisse dès le départ, avec GPT-2 en 2019, les lois d'échelle de Kaplan et GPT-3 en 2020, Chinchilla en 2022 et GPT-4 en 2023 ; à partir de la fin de 2024, la bande est hachurée, les rendements sont discutés, avec GPT-4.5 en février 2025 et GPT-6 Astra en septembre 2026. Deuxième bande, l'apprentissage par renforcement : un mince filet à partir de 2022, celui des préférences humaines, qui s'élargit à partir de o1, en septembre 2024, avec DeepSeek R1, o3 et Grok 4 en 2025. Troisième bande, réfléchir plus longtemps, le calcul au moment de la réponse : absente jusqu'à o1, puis de plus en plus large, avec o3 et le test ARC. Au-dessus, la périodisation d'Ilya Sutskever : l'âge de la recherche jusqu'en 2020, l'âge de l'échelle de 2020 à 2025, puis un retour à la recherche." title="Trois façons de dépenser plus de calcul. Jusqu'en 2024, on agrandit surtout le pré-entraînement ; depuis, le renforcement et le temps de réflexion prennent une place croissante. L'épaisseur des bandes est schématique." loading="lazy" >}}
+
+Le pré-entraînement n'a pas dit son dernier mot. En novembre 2025, Oriol Vinyals, de
+Google DeepMind, attribue les progrès de Gemini 3 au pré-entraînement autant qu'au
+post-entraînement, et n'y voit « aucun mur en vue ». Le même mois, Sutskever résume la
+période en trois âges : de 2012 à 2020, « l'âge de la recherche », de 2020 à 2025,
+« l'âge de l'échelle », et désormais un retour à la recherche, « avec de gros
+ordinateurs ». En septembre 2026, GPT-6 Astra, le plus grand entraînement d'OpenAI,
+aurait demandé près de $10^{27}$ opérations selon Epoch AI, sans qu'on sache quelle part
+en revient au pré-entraînement et au renforcement. Le débat n'est donc pas tranché.
+L'échelle continue de payer, mais elle n'est plus le seul levier, et la recherche de
+méthodes plus efficaces est redevenue centrale.
+
+Le [chapitre suivant](docs/module4/70-du-modele-a-l-assistant) montre comment un modèle
+qui complète du texte devient un assistant qui répond, puis un modèle qui raisonne.
