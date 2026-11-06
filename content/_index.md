@@ -15,34 +15,38 @@ La version 1 du cours reste accessible à
 {{% /hint %}}
 
 Bienvenue dans le cours **INF 1901 Initiation à l'intelligence artificielle :
-concepts et réflexions**. Ce cours vous offre une occasion unique de vous
-initier au domaine de l’intelligence artificielle (IA) dans un contexte
-professionnel.
+concepts et réflexions**. En quelques années, l'intelligence artificielle (IA) est passée
+des laboratoires à la vie de tous les jours. Ce cours vous propose de comprendre comment
+fonctionnent ces systèmes, d'où ils viennent, et quels problèmes ils posent.
 
-Ce cours explore l'évolution de l'intelligence artificielle, des systèmes
-symboliques à la révolution de l'IA générative récente. Il examine les
-fondements de l'apprentissage automatique, ancrés dans les données, les
-statistiques et les algorithmes, tout en clarifiant des concepts clés comme
-l'entraînement, l'inférence et la généralisation. Une attention particulière est
-portée aux réseaux de neurones et à l'apprentissage profond, en détaillant leur
-structure et leurs analogies avec le cerveau humain, en portant une attention
-particulière sur la vision artificielle où les progrès initiaux furent les plus
-décisifs. Le cours retrace également le développement des modèles de langage.
-Enfin il aborde les enjeux éthiques, philosophiques et sociétaux de
-l'intelligence artificielle, incluant l'alignement des systèmes, la singularité
-technologique et leurs effets sur la société.
+Il suit l'histoire de l'IA en cinq modules.
 
-Aucune expérience préalable en IA n’est requise pour réussir ce cours –
-seulement une curiosité et une volonté d’apprendre. Que vous soyez une ou un
-professionnel cherchant à approfondir vos compétences ou une personne passionnée
-par les possibilités de l’IA, ce cours est conçu pour vous. Nous vous invitons à
-consulter le site Web du cours dès son lancement pour découvrir la feuille de
-route et la liste des activités prévues. Le site du cours comprend une dizaine
-de vidéos et plusieurs activités interactives  à réaliser dans votre navigateur Web.
-Il ne s'agit pas d'un cours  léger&nbsp;: vous compterez près de 35,000 mots et
-des dizaines d'illustrations. Si vous avez des questions, n’hésitez pas à nous
-contacter. Nous sommes impatients de collaborer avec vous dans cette aventure&nbsp;!
+1. [Aux origines : l'intelligence artificielle symbolique](docs/module1) : faire
+   raisonner une machine avec des règles et des symboles, de Turing aux systèmes
+   experts.
+2. [Apprentissage automatique](docs/module2) : apprendre à partir de données plutôt
+   que de règles écrites à la main.
+3. [Réseaux de neurones et apprentissage profond](docs/module3) : du neurone
+   artificiel au Transformer.
+4. [IA générative et grands modèles de langage](docs/module4) : des modèles qui
+   produisent du texte, des images et du code, jusqu'aux assistants et aux agents.
+5. [L'IA dans le monde](docs/module5) : les questions philosophiques, éthiques,
+   sociales et politiques que pose l'IA.
 
+Aucune expérience préalable en IA, en programmation ou en mathématiques avancées n'est
+requise, seulement de la curiosité. Les mécanismes sont expliqués par des exemples
+concrets, des figures et une trentaine d'applications interactives à manipuler dans votre
+navigateur, et chaque [travail noté](docs/40-travaux-notés) vous fait construire ou
+utiliser l'un d'eux, dans un tableur ou avec un assistant d'IA réel.
 
-Au plaisir de vous guider dans cette initiation à l'intelligence artificielle&nbsp;:
-concepts et réflexions. Nous vous souhaitons du succès dans vos apprentissage.
+Le cours est volumineux, parce qu'il vise à couvrir le domaine le plus largement possible
+et à suivre son actualité, comme l'explique la
+[présentation du cours](docs/10-présentation/#un-cours-exhaustif-et-à-jour). Les
+objectifs de chaque module en indiquent l'essentiel, et le cours entier peut aussi être
+[téléchargé en livre](docs/15-telecharger), en PDF ou en EPUB. La
+[feuille de route](docs/45-feuille-de-route) donne le calendrier des activités, et le
+[serveur Discord](docs/80-discord) du cours vous permet de poser vos questions et de
+discuter des idées du cours.
+
+Au plaisir de vous guider dans cette initiation à l'intelligence artificielle, et bon
+succès dans vos apprentissages !
