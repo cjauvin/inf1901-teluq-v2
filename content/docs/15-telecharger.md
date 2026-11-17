@@ -5,6 +5,14 @@ slug: telecharger
 livreExclude: true
 ---
 
+{{% hint info %}}
+
+*« Qu’est-ce qu’un nombre, pour qu’un homme puisse le connaître, et qu’est-ce qu’un homme, pour qu’il puisse connaître un nombre ? »*
+
+Warren McCulloch (la question à laquelle il voulait consacrer sa vie, posée en 1917)
+
+{{% /hint %}}
+
 # Télécharger le cours en livre
 
 Le contenu publié du cours est aussi offert sous forme de deux livres, pour une
