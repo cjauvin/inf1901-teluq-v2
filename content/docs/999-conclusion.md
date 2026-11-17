@@ -4,6 +4,14 @@ weight: 999
 slug: conclusion
 ---
 
+{{% hint info %}}
+
+*« Qu’est-ce qu’un nombre, pour qu’un homme puisse le connaître, et qu’est-ce qu’un homme, pour qu’il puisse connaître un nombre ? »*
+
+Warren McCulloch (la question à laquelle il voulait consacrer sa vie, posée en 1917)
+
+{{% /hint %}}
+
 # Conclusion
 
 Merci d'avoir participé à ce cours d'initiation à l'IA&nbsp;!
