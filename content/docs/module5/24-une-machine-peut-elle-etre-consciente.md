@@ -294,6 +294,10 @@ mais beaucoup moins la théorie qu'il propose à la place. Tom Stafford rappelle
 certains des effets qu'il cite n'ont pas été reproduits. On peut d'ailleurs admettre
 que l'introspection est peu fiable sans conclure que l'esprit n'a aucune profondeur.
 
+{{< image src="/images/module5/chater-mind-is-flat.jpg" alt="Couverture du livre The Mind is Flat de Nick Chater : le titre en lettres blanches posé sur des cubes gris, sur fond rouge." title="The Mind is Flat, de Nick Chater (2018)." class="portrait" loading="lazy" >}}
+
+<p class="image-credit">Couverture de l'édition américaine de <em>The Mind is Flat</em>, de Nick Chater (Yale University Press, 2018).</p>
+
 Le parallèle avec les modèles est direct. Le modèle qui additionne 36 et 59 par deux
 chemins, puis décrit la retenue apprise à l'école (chapitre
 « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#suivre-un-calcul-les-circuits) »),
