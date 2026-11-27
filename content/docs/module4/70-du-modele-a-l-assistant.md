@@ -420,6 +420,10 @@ arriver à sa réponse par un autre chemin. Savoir ce qui se passe réellement �
 l'intérieur d'un modèle est l'objet de l'interprétabilité, présentée au chapitre
 « [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#à-quoi-sert-linterprétabilité) »,
 qui montre comment on peut parfois le vérifier.
+Les humains ne font d'ailleurs pas toujours mieux, puisque leurs propres explications sont
+souvent construites après coup, comme le montre la section
+« [Et l'introspection humaine ?](docs/module5/24-une-machine-peut-elle-etre-consciente/#et-lintrospection-humaine) »
+du Module 5.
 
 ## Raisonner sans mots ?
 

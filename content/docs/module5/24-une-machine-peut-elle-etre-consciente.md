@@ -244,6 +244,69 @@ en lisant des humains qui décrivent leur propre conscience. Le modèle Claude O
 interrogé en 2026, s'attribue une probabilité de 15 à 20 % d'être conscient, tout en
 doutant lui-même de la valeur de cette estimation.
 
+## Et l'introspection humaine ?
+
+Ces études comparent l'introspection des modèles à celle d'un humain qui saurait
+toujours pourquoi il agit. La psychologie montre pourtant que l'introspection humaine
+est elle aussi peu fiable. Nous expliquons volontiers nos choix, mais ces explications
+sont souvent construites après coup, sans accès réel à leurs causes. On parle de
+**confabulation**. Trois expériences sont devenues classiques.
+
+- **Les bas de nylon.** En 1977, Richard Nisbett et Timothy Wilson, sous le couvert
+  d'une étude de consommation dans un magasin, demandent à des passants de désigner la
+  meilleure de quatre paires de bas de nylon, en réalité identiques. La paire placée le
+  plus à droite est préférée à celle de gauche dans un rapport de près de quatre contre
+  un. Aucun participant ne mentionne la position, et presque tous nient qu'elle ait pu
+  jouer quand on le leur demande.
+- **L'interprète.** À la fin des années 1970, Michael Gazzaniga et Joseph LeDoux
+  étudient un patient au **cerveau divisé** (*split-brain*), dont les deux hémisphères
+  ont été séparés chirurgicalement pour traiter une épilepsie. Ils montrent une patte
+  de poulet à son hémisphère gauche, qui contrôle la parole, et une scène de neige à son
+  hémisphère droit. Sa main droite choisit l'image d'un poulet, sa main gauche celle
+  d'une pelle. Interrogé, le patient, dont l'hémisphère qui parle n'a pas vu la neige,
+  explique sans hésiter que la patte va avec le poulet et qu'il faut une pelle pour
+  nettoyer le poulailler. Gazzaniga appelle **l'interprète** ce mécanisme de
+  l'hémisphère gauche, qui donne une explication cohérente à des actions dont il ignore
+  la cause.
+- **La cécité au choix** (*choice blindness*). En 2005, Petter Johansson et Lars Hall,
+  de l'université de Lund, montrent à des participants des paires de photos de visages
+  et leur demandent de désigner le plus attirant. Par un tour de passe-passe, ils leur
+  remettent parfois la photo rejetée, en leur demandant de justifier leur choix. Environ
+  un échange sur huit est remarqué sur le moment. Les autres participants justifient un
+  choix qu'ils n'ont pas fait, avec autant de détails et d'assurance que pour leurs
+  vrais choix. L'un d'eux dit aimer les boucles d'oreilles, alors que le visage qu'il
+  avait choisi n'en portait pas. L'expérience a été reprise avec des confitures et des
+  thés, puis avec des opinions morales et politiques.
+
+Le psychologue Nick Chater, de la Warwick Business School, tire de ces résultats une
+thèse radicale dans *The Mind is Flat* (2018), traduit en français sous le titre
+*Et si le cerveau était bête ?* Selon lui, si nous voyons mal dans nos profondeurs
+mentales, c'est qu'il n'y en a pas. Il n'existe pas de croyances ni de motifs cachés
+qui attendraient d'être découverts. L'esprit improvise chaque réponse, chaque
+préférence et chaque émotion sur le moment, à partir de ce qu'il perçoit et du
+souvenir de ses interprétations précédentes, puis il en fait un récit cohérent. Chater
+compare cette illusion à celle de la vision : nous ne voyons en couleur et en détail
+qu'une petite zone d'environ deux degrés, et nous avons pourtant l'impression de
+percevoir tout le champ visuel avec précision. Sa thèse rejoint l'[illusionnisme](#les-théories-scientifiques)
+de Dennett et Frankish, et elle est contestée. Les psychologues Susan Blackmore et
+Emily Troscianko jugent convaincante sa critique de la psychologie de sens commun,
+mais beaucoup moins la théorie qu'il propose à la place. Tom Stafford rappelle que
+certains des effets qu'il cite n'ont pas été reproduits. On peut d'ailleurs admettre
+que l'introspection est peu fiable sans conclure que l'esprit n'a aucune profondeur.
+
+Le parallèle avec les modèles est direct. Le modèle qui additionne 36 et 59 par deux
+chemins, puis décrit la retenue apprise à l'école (chapitre
+« [Regarder à l'intérieur](docs/module4/93-regarder-a-l-interieur/#suivre-un-calcul-les-circuits) »),
+fait ce que faisaient les passants devant les bas de nylon. En 2023, une étude sur les
+chaînes de pensée cite d'ailleurs explicitement Nisbett et Wilson. Un biais glissé dans
+la question change la réponse du modèle, sans que son raisonnement écrit le mentionne
+jamais. Ce parallèle ne prouve pas que les modèles pensent ou ressentent comme nous. Il
+montre seulement qu'une introspection fidèle ne suffit pas à séparer l'humain de la
+machine, puisque ni l'un ni l'autre n'a un accès direct et complet à ses propres
+mécanismes. Une différence demeure cependant : l'interprétabilité permet de suivre le
+calcul d'un modèle avec une précision que les neurosciences n'atteignent pas encore
+pour le cerveau.
+
 ## L'illusion de la conscience
 
 Le risque inverse est d'attribuer une conscience à une machine qui n'en a pas. En juin
